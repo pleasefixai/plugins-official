@@ -1,0 +1,7 @@
+{
+  "id": "quickbooks",
+  "name": "QuickBooks",
+  "description": "Accounts, invoices and reports from QuickBooks.",
+  "category": "finance_ops",
+  "homepage": "https://quickbooks.intuit.com"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "close",
+  "name": "Close",
+  "description": "Leads, contacts, opportunities and call activity from your Close CRM.",
+  "group": "crm",
+  "url": "https://mcp.close.com/mcp",
+  "auth": {
+    "scopes": [
+      "mcp.read",
+      "mcp.write_destructive",
+      "mcp.write_safe",
+      "offline_access"
+    ],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "dcr"
+    }
+  },
+  "writes": true
+}

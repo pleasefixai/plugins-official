@@ -1,0 +1,54 @@
+{
+  "id": "slack",
+  "name": "Slack",
+  "description": "Messages, threads and search from your Slack workspace.",
+  "group": "communication",
+  "url": "https://mcp.slack.com/mcp",
+  "auth": {
+    "scopes": [
+      "canvases:read",
+      "canvases:write",
+      "channels:history",
+      "channels:read",
+      "channels:write",
+      "chat:write",
+      "emoji:read",
+      "files:read",
+      "files:write",
+      "groups:history",
+      "groups:read",
+      "groups:write",
+      "im:history",
+      "im:write",
+      "lists:read",
+      "lists:write",
+      "mpim:history",
+      "mpim:read",
+      "mpim:write",
+      "reactions:read",
+      "reactions:write",
+      "search:read.files",
+      "search:read.im",
+      "search:read.mpim",
+      "search:read.private",
+      "search:read.public",
+      "search:read.users",
+      "users:read",
+      "users:read.email",
+      "im:read"
+    ],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "provided",
+      "client_id": "9438114503268.11904478686407"
+    }
+  },
+  "writes": true,
+  "precondition": "Until Pleasefix is listed on the Slack Marketplace, a workspace admin must install its app with the MCP setting enabled before you can connect.",
+  "token_shape": "slack_user",
+  "unstated_lifetime": "open_ended",
+  "callback_port": 53219,
+  "redirect_uri": "https://cloud.pleasefix.ai/oauth/slack/callback"
+}

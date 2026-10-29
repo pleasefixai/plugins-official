@@ -1,0 +1,18 @@
+{
+  "id": "tally",
+  "name": "Tally",
+  "description": "Forms, submissions and form analytics from your Tally account.",
+  "group": "forms_data",
+  "url": "https://api.tally.so/mcp",
+  "auth": {
+    "scopes": [
+      "mcp"
+    ],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "dcr"
+    }
+  }
+}

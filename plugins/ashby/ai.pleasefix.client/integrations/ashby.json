@@ -1,0 +1,20 @@
+{
+  "id": "ashby",
+  "name": "Ashby",
+  "description": "Candidates, jobs, interviews and offers from your Ashby account.",
+  "group": "crm",
+  "url": "https://mcp.ashbyhq.com/mcp/v1",
+  "auth": {
+    "scopes": [
+      "openid",
+      "mcp",
+      "offline_access"
+    ],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "dcr"
+    }
+  }
+}

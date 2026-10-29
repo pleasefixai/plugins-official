@@ -1,0 +1,19 @@
+{
+  "id": "fireflies",
+  "name": "Fireflies",
+  "description": "Meeting transcripts and recordings from your Fireflies account.",
+  "group": "meetings",
+  "url": "https://api.fireflies.ai/mcp",
+  "auth": {
+    "scopes": [
+      "profile",
+      "email"
+    ],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "dcr"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "pipedrive",
+  "name": "Pipedrive",
+  "description": "Deals, contacts, organisations and activities from your Pipedrive CRM.",
+  "group": "crm",
+  "url": "https://mcp.pipedrive.ai/mcp",
+  "auth": {
+    "scopes": [
+      "activities:full",
+      "admin",
+      "contacts:full",
+      "deals:full",
+      "leads:full",
+      "search:read"
+    ],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "dcr"
+    }
+  },
+  "writes": true
+}

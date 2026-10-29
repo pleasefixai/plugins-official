@@ -1,0 +1,20 @@
+{
+  "id": "clickup",
+  "name": "ClickUp",
+  "description": "Tasks, lists, docs and spaces from your ClickUp workspace.",
+  "group": "projects_time",
+  "url": "https://mcp.clickup.com/mcp",
+  "auth": {
+    "scopes": [
+      "read",
+      "write"
+    ],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "dcr"
+    }
+  },
+  "writes": true
+}

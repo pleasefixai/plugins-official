@@ -1,0 +1,7 @@
+{
+  "id": "netsuite",
+  "name": "NetSuite",
+  "description": "Ledgers, invoices and financial reports from Oracle NetSuite.",
+  "category": "finance_ops",
+  "homepage": "https://netsuite.com"
+}

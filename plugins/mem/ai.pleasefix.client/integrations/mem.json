@@ -1,0 +1,20 @@
+{
+  "id": "mem",
+  "name": "Mem",
+  "description": "Notes and their linked context from your Mem account.",
+  "group": "knowledge",
+  "url": "https://mcp.mem.ai/mcp",
+  "auth": {
+    "scopes": [
+      "content.read",
+      "content.write"
+    ],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "dcr"
+    }
+  },
+  "writes": true
+}

@@ -1,0 +1,7 @@
+{
+  "id": "bloomberg",
+  "name": "Bloomberg",
+  "description": "Market data, news and analytics from Bloomberg.",
+  "category": "market_data",
+  "homepage": "https://bloomberg.com"
+}

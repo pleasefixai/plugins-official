@@ -1,0 +1,22 @@
+{
+  "id": "morningstar",
+  "name": "Morningstar",
+  "description": "Fund, equity and market research data from your Morningstar account.",
+  "group": "market_data",
+  "url": "https://mcp.morningstar.com/mcp",
+  "auth": {
+    "scopes": [
+      "offline_access",
+      "openid",
+      "email",
+      "profile"
+    ],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "dcr"
+    }
+  },
+  "precondition": "Your Morningstar account needs a licensed seat."
+}

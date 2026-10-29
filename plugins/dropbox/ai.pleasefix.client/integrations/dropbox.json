@@ -1,0 +1,27 @@
+{
+  "id": "dropbox",
+  "name": "Dropbox",
+  "description": "Files, folders and shared links from your Dropbox account.",
+  "group": "storage",
+  "url": "https://mcp.dropbox.com/mcp",
+  "auth": {
+    "scopes": [
+      "account_info.read",
+      "file_requests.read",
+      "file_requests.write",
+      "files.content.read",
+      "files.content.write",
+      "files.metadata.read",
+      "sharing.read",
+      "sharing.write"
+    ],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "dcr"
+    }
+  },
+  "writes": true,
+  "precondition": "Dropbox gives every app the same client identity, so neither its consent screen nor its audit log names Pleasefix."
+}

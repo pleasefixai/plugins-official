@@ -1,0 +1,60 @@
+{
+  "id": "microsoft_365",
+  "name": "Microsoft 365",
+  "description": "Mail, calendar, files and meetings through your firm's Microsoft 365 account.",
+  "group": "communication",
+  "url": "https://mcp-ms365.pleasefix.ai/mcp",
+  "headers": {
+    "X-Pleasefix-Relay-Token": "${PLEASEFIX_AUTH_TOKEN}"
+  },
+  "auth": {
+    "scopes": [
+      "openid",
+      "profile",
+      "email",
+      "offline_access",
+      "Mail.ReadWrite",
+      "Mail.Read.Shared",
+      "MailboxSettings.Read",
+      "MailboxSettings.ReadWrite",
+      "Calendars.ReadWrite",
+      "Calendars.Read.Shared",
+      "Contacts.ReadWrite",
+      "Files.Read.All",
+      "Sites.Read.All",
+      "OnlineMeetings.Read",
+      "OnlineMeetingTranscript.Read.All",
+      "OnlineMeetingRecording.Read.All",
+      "OnlineMeetingArtifact.Read.All",
+      "CallTranscripts.Read.All",
+      "ChannelMessage.Read.All",
+      "ChannelMessage.ReadWrite",
+      "Channel.ReadBasic.All",
+      "ChatMessage.Read",
+      "ChatMember.Read",
+      "Chat.ReadWrite",
+      "Team.ReadBasic.All",
+      "TeamMember.Read.All",
+      "User.Read",
+      "User.Read.All",
+      "People.Read",
+      "Notes.Read",
+      "Notes.Create",
+      "Notes.ReadWrite",
+      "Tasks.ReadWrite"
+    ],
+    "discovery": {
+      "mode": "static",
+      "issuer": "https://login.microsoftonline.com/organizations/v2.0",
+      "authorization_endpoint": "https://login.microsoftonline.com/organizations/oauth2/v2.0/authorize",
+      "token_endpoint": "https://login.microsoftonline.com/organizations/oauth2/v2.0/token"
+    },
+    "registration": {
+      "mode": "provided",
+      "client_id": "c3e20385-aa59-4c04-86f5-014ab0930c31"
+    }
+  },
+  "writes": true,
+  "callback_port": 43781,
+  "redirect_uri": "http://localhost:43781/callback"
+}

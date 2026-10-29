@@ -1,0 +1,7 @@
+{
+  "id": "google_workspace",
+  "name": "Google Workspace",
+  "description": "Gmail, Calendar and Drive from your Google Workspace account.",
+  "category": "communication",
+  "homepage": "https://workspace.google.com"
+}

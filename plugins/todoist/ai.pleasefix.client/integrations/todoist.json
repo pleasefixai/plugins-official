@@ -1,0 +1,19 @@
+{
+  "id": "todoist",
+  "name": "Todoist",
+  "description": "Tasks, projects and comments from your Todoist account.",
+  "group": "projects_time",
+  "url": "https://ai.todoist.net/mcp",
+  "auth": {
+    "scopes": [
+      "data:read_write"
+    ],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "dcr"
+    }
+  },
+  "writes": true
+}

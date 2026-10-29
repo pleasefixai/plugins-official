@@ -1,0 +1,7 @@
+{
+  "id": "moodys",
+  "name": "Moody's",
+  "description": "Credit ratings and research from Moody's.",
+  "category": "market_data",
+  "homepage": "https://moodys.com"
+}

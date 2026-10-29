@@ -1,0 +1,29 @@
+{
+  "id": "posthog",
+  "name": "PostHog",
+  "description": "Insights, dashboards and product analytics from your PostHog project.",
+  "group": "product_analytics",
+  "url": "https://mcp.posthog.com/mcp?mode=tools&readonly=true&features=core,workspace,product_analytics,insights,sql,dashboards,notebooks,business_knowledge,surveys,annotations,data_schema",
+  "auth": {
+    "scopes": [
+      "organization:read",
+      "project:read",
+      "insight:read",
+      "dashboard:read",
+      "query:read",
+      "event_definition:read",
+      "property_definition:read",
+      "notebook:read",
+      "business_knowledge:read",
+      "survey:read",
+      "annotation:read",
+      "user:read"
+    ],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "dcr"
+    }
+  }
+}

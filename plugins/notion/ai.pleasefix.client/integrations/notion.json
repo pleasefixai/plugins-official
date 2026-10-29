@@ -1,0 +1,18 @@
+{
+  "id": "notion",
+  "name": "Notion",
+  "description": "Pages and databases from your Notion workspace.",
+  "group": "knowledge",
+  "url": "https://mcp.notion.com/mcp",
+  "auth": {
+    "scopes": [
+      "default"
+    ],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "dcr"
+    }
+  }
+}

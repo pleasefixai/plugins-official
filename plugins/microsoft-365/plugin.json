@@ -1,0 +1,12 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "microsoft-365",
+  "version": "1.0.0",
+  "description": "Mail, calendar, files and meetings through your firm's Microsoft 365 account.",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "mark.svg"
+    }
+  }
+}

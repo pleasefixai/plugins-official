@@ -1,0 +1,18 @@
+{
+  "id": "float",
+  "name": "Float",
+  "description": "People, projects and scheduled time from your Float account.",
+  "group": "projects_time",
+  "url": "https://mcp.float.com/mcp",
+  "auth": {
+    "scopes": [
+      "basic"
+    ],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "dcr"
+    }
+  }
+}

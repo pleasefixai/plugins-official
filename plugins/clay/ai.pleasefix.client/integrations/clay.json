@@ -1,0 +1,18 @@
+{
+  "id": "clay",
+  "name": "Clay",
+  "description": "Enriched company and people records from your Clay workspace.",
+  "group": "crm",
+  "url": "https://api.clay.com/v3/mcp",
+  "auth": {
+    "scopes": [
+      "mcp"
+    ],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "dcr"
+    }
+  }
+}
