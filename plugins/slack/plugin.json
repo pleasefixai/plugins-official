@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "slack",
   "version": "1.0.0",
-  "description": "Messages, threads and search from your Slack workspace.",
+  "description": "Messages, threads and search from your Slack workspace. Test edit.",
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
