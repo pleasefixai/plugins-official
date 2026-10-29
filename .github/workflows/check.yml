@@ -1,0 +1,49 @@
+name: check
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GITLEAKS_VERSION: 8.30.1
+      GITLEAKS_SHA256: 551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Fetch the tags
+        run: git fetch --tags --force origin
+
+      # The checkout is the PR merged into its base, so its first parent is the base.
+      - name: Check the plugin folders
+        run: .github/scripts/check-plugins.sh HEAD^1
+
+      - name: Generate the index with fake download facts
+        run: |
+          shopt -s nullglob
+          previous=
+          prev_tag=$(git tag -l 'index-*' | sort -V | tail -n 1)
+          if [[ -n $prev_tag ]]; then
+            gh release download "$prev_tag" --pattern marketplace.json --output "$RUNNER_TEMP/previous.json"
+            previous=$RUNNER_TEMP/previous.json
+          fi
+          for dir in plugins/*/; do basename "$dir"; done |
+            jq -R -n '[inputs | {key: ., value: {sha256: ("0" * 64), size: 0}}] | from_entries' >"$RUNNER_TEMP/facts.json"
+          .github/scripts/build-index.sh index-0 "$RUNNER_TEMP/facts.json" ${previous:+"$previous"} >"$RUNNER_TEMP/marketplace.json"
+          jq '{plugins: (.plugins | length), versions: ([.plugins[].versions[]] | length), requestable: (.requestable | length)}' "$RUNNER_TEMP/marketplace.json"
+
+      - name: Scan for secrets
+        run: |
+          cd "$RUNNER_TEMP"
+          curl -sSfLO "https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}/gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz"
+          echo "${GITLEAKS_SHA256}  gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz" | sha256sum -c -
+          tar -xzf "gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz" gitleaks
+          cd "$GITHUB_WORKSPACE"
+          "$RUNNER_TEMP/gitleaks" git --no-banner --redact --log-opts="HEAD^1..HEAD" .

@@ -23,4 +23,4 @@ Some plugins are written by Pleasefix. Others come from their upstream authors. 
 
 ## Licence
 
-Each upstream author keeps the licence of their plugin. A plugin folder that has its own licence file is under that licence. The other files in this repository are under the MIT licence, in [LICENSE](LICENSE).
+Each imported plugin keeps the licence of its upstream author. The licence is in the plugin's `LICENSE` file and in the `license` field of its `plugin.json`.
