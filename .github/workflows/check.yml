@@ -27,6 +27,7 @@ jobs:
 
       - name: Generate the index with fake download facts
         run: |
+          shopt -s nullglob
           previous=
           prev_tag=$(git tag -l 'index-*' | sort -V | tail -n 1)
           if [[ -n $prev_tag ]]; then
@@ -35,7 +36,7 @@ jobs:
           fi
           for dir in plugins/*/; do basename "$dir"; done |
             jq -R -n '[inputs | {key: ., value: {sha256: ("0" * 64), size: 0}}] | from_entries' >"$RUNNER_TEMP/facts.json"
-          .github/scripts/build-index.sh index-0 "$RUNNER_TEMP/facts.json" $previous >"$RUNNER_TEMP/marketplace.json"
+          .github/scripts/build-index.sh index-0 "$RUNNER_TEMP/facts.json" ${previous:+"$previous"} >"$RUNNER_TEMP/marketplace.json"
           jq '{plugins: (.plugins | length), versions: ([.plugins[].versions[]] | length), requestable: (.requestable | length)}' "$RUNNER_TEMP/marketplace.json"
 
       - name: Scan for secrets

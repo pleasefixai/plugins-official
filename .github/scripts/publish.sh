@@ -8,7 +8,7 @@
 # creates nothing. A run that fails halfway can run again: it skips each
 # version that already has a release.
 set -euo pipefail
-shopt -s inherit_errexit
+shopt -s inherit_errexit nullglob
 
 dry_run=false
 [[ ${1:-} == --dry-run ]] && dry_run=true
@@ -69,6 +69,11 @@ for dir in plugins/*/; do
       cp "$dir/ai.pleasefix.client/$mark" "$work/$tag/mark.${mark##*.}"
       assets+=("$work/$tag/mark.${mark##*.}")
     fi
+    while IFS=$'\t' read -r logo asset; do
+      mkdir -p "$work/$tag"
+      cp "$logo" "$work/$tag/$asset"
+      assets+=("$work/$tag/$asset")
+    done < <("$scripts/row-logos.sh" "$dir")
     release "$tag" "${assets[@]}" --repo "$repo" --target "$sha" --latest=false \
       --title "$tag" --notes "$note"
     released=$((released + 1))

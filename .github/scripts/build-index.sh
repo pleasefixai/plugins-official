@@ -10,7 +10,7 @@
 # takes them from the previous index, which must then list its latest version.
 # Each plugin's older versions come from the previous index, as they are.
 set -euo pipefail
-shopt -s inherit_errexit
+shopt -s inherit_errexit nullglob
 
 index_tag=$1
 facts=$2
@@ -22,20 +22,22 @@ fi
 
 base="https://github.com/${GITHUB_REPOSITORY:-pleasefixai/plugins-official}/releases/download"
 ext_key='ai.pleasefix.client'
+scripts=$(dirname "$(realpath "$0")")
 
 plugins=$(
   for dir in plugins/*/; do
     dir=${dir%/}
     rows=("$dir/$ext_key"/integrations/*.json)
-    [[ -e ${rows[0]} ]] || rows=()
     skills=("$dir"/skills/*/SKILL.md)
-    [[ -e ${skills[0]} ]] || skills=()
     category=other
     if ((${#rows[@]} == 1)); then
       category=$(jq -er '.group' "${rows[0]}") || { echo "$dir: the row has no group" >&2; exit 1; }
     fi
+    logos=$("$scripts/row-logos.sh" "$dir" | jq -R -n '[inputs | split("\t") | {key: (.[1] | ltrimstr("row-") | sub("\\.[^.]*$"; "")), value: .[1]}] | from_entries')
+    row_list=$(for row in "${rows[@]}"; do jq '{id, name, group}' "$row"; done | jq -s 'sort_by(.id)')
     jq --arg folder "${dir#plugins/}" --arg category "$category" \
       --argjson mcps ${#rows[@]} --argjson skills ${#skills[@]} \
+      --argjson rows "$row_list" --argjson logos "$logos" \
       --arg base "$base" --arg key "$ext_key" '
       def need(f; what): f // error("\($folder): plugin.json has no \(what)");
       need(.name; "name") as $name
@@ -52,6 +54,7 @@ plugins=$(
           required: ($ext.required // false),
           withdrawn: ($ext.withdrawn // false),
           contents: {mcps: $mcps, skills: $skills},
+          rows: [$rows[] | . + (if $logos[.id] then {mark: "\($release)/\($logos[.id])"} else {} end)],
           version: {
             version: $version,
             engines: need($ext.engines; "engines"),
@@ -64,7 +67,6 @@ plugins=$(
 
 requestable=$(
   for file in requestable/*.json; do
-    [[ -e $file ]] || continue
     mark=
     for ext in svg png; do
       [[ -f ${file%.json}.$ext ]] && { mark=$ext; break; }
