@@ -103,6 +103,11 @@ for url in $(jq -r '.requestable[].mark // empty' "$work/index/marketplace.json"
 done
 
 # 4. Stop if nothing changed: same index, same requestable logos.
+if ((released == 0)) && [[ -z $prev_tag ]] &&
+  [[ $(jq '(.plugins + .requestable) | length' "$work/index/marketplace.json") == 0 ]]; then
+  echo "The catalog is empty. No index."
+  exit 0
+fi
 if ((released == 0)) && [[ -n $prev_tag ]]; then
   "$scripts/build-index.sh" "$prev_tag" "$work/facts.json" "$previous" >"$work/same.json"
   mkdir -p "$work/prev-assets"
