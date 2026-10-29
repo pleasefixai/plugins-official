@@ -34,7 +34,7 @@ plugins=$(
       category=$(jq -er '.group' "${rows[0]}") || { echo "$dir: the row has no group" >&2; exit 1; }
     fi
     logos=$("$scripts/row-logos.sh" "$dir" | jq -R -n '[inputs | split("\t") | {key: (.[1] | ltrimstr("row-") | sub("\\.[^.]*$"; "")), value: .[1]}] | from_entries')
-    row_list=$(for row in "${rows[@]}"; do jq '{id, name, group}' "$row"; done | jq -s 'sort_by(.id)')
+    row_list=$(for row in "${rows[@]}"; do jq . "$row"; done | jq -s 'sort_by(.id)')
     jq --arg folder "${dir#plugins/}" --arg category "$category" \
       --argjson mcps ${#rows[@]} --argjson skills ${#skills[@]} \
       --argjson rows "$row_list" --argjson logos "$logos" \
