@@ -48,6 +48,10 @@ plugins=$(
       | {
           name: $name,
           description: need(.description; "description"),
+          author: (.author | if type == "object" then .name else . end | if . == "" then null else . end),
+          homepage: .homepage,
+          license: .license,
+          keywords: (.keywords // []),
           category: $category,
           mark: (if $ext.mark then "\($release)/mark.\($ext.mark | split(".") | last)" else null end),
           format: ($ext.format // false),
@@ -61,7 +65,7 @@ plugins=$(
             url: "\($release)/\($name)-\($version).tar.gz"
           }
         }
-      | del(.. | nulls)' "$dir/plugin.json"
+      | with_entries(select(.value != null))' "$dir/plugin.json"
   done
 )
 
