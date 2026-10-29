@@ -112,7 +112,7 @@ if ((released == 0)) && [[ -n $prev_tag ]]; then
   "$scripts/build-index.sh" "$prev_tag" "$work/facts.json" "$previous" >"$work/same.json"
   mkdir -p "$work/prev-assets"
   gh release download "$prev_tag" --repo "$repo" --pattern 'requestable-*' --dir "$work/prev-assets" 2>/dev/null || true
-  if [[ $(jq -S . "$work/same.json") == $(jq -S . "$previous") ]] &&
+  if [[ $(jq -S . "$work/same.json") == "$(jq -S . "$previous")" ]] &&
     diff -r --exclude marketplace.json "$work/index" "$work/prev-assets" >/dev/null; then
     echo "Nothing changed since $prev_tag. No new index."
     exit 0
