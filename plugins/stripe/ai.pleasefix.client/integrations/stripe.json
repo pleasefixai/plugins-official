@@ -1,0 +1,18 @@
+{
+  "id": "stripe",
+  "name": "Stripe",
+  "description": "Payments, customers, invoices and subscriptions.",
+  "group": "finance_ops",
+  "url": "https://mcp.stripe.com",
+  "auth": {
+    "scopes": [
+      "mcp"
+    ],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "dcr"
+    }
+  }
+}

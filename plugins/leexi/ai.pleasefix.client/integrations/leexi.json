@@ -1,0 +1,19 @@
+{
+  "id": "leexi",
+  "name": "Leexi",
+  "description": "Meeting recordings and transcripts from your Leexi account.",
+  "group": "meetings",
+  "url": "https://api.leexi.ai/mcp",
+  "auth": {
+    "scopes": [
+      "read:calls",
+      "read:documentation_resources"
+    ],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "dcr"
+    }
+  }
+}

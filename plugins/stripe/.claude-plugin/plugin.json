@@ -1,0 +1,5 @@
+{
+  "name": "stripe",
+  "version": "1.0.0",
+  "description": "Payments, customers, invoices and subscriptions."
+}

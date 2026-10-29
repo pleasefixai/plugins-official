@@ -1,0 +1,7 @@
+{
+  "id": "lseg",
+  "name": "LSEG",
+  "description": "Market data and company information from LSEG.",
+  "category": "market_data",
+  "homepage": "https://lseg.com"
+}

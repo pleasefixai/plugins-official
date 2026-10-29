@@ -1,0 +1,7 @@
+{
+  "id": "msci",
+  "name": "MSCI",
+  "description": "Indexes, ESG ratings and analytics from MSCI.",
+  "category": "market_data",
+  "homepage": "https://msci.com"
+}

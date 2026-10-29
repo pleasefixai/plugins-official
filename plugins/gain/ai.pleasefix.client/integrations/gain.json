@@ -1,0 +1,22 @@
+{
+  "id": "gain",
+  "name": "Gain",
+  "description": "Private company financials and ownership data from your Gain account.",
+  "group": "private_markets",
+  "url": "https://gain.ai/mcp",
+  "auth": {
+    "scopes": [
+      "email",
+      "offline_access",
+      "openid",
+      "profile"
+    ],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "dcr"
+    }
+  },
+  "precondition": "Your Gain account needs a licensed seat."
+}

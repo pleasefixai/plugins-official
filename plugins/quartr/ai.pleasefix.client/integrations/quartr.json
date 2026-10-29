@@ -1,0 +1,19 @@
+{
+  "id": "quartr",
+  "name": "Quartr",
+  "description": "Earnings calls, transcripts and filings from your Quartr account.",
+  "group": "market_data",
+  "url": "https://mcp.quartr.com/mcp",
+  "auth": {
+    "scopes": [
+      "mcp:tools"
+    ],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "dcr"
+    }
+  },
+  "precondition": "Your Quartr account needs a licensed seat."
+}

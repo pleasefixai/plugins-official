@@ -1,0 +1,18 @@
+{
+  "id": "fathom",
+  "name": "Fathom",
+  "description": "Meeting recordings, transcripts and summaries from your Fathom account.",
+  "group": "meetings",
+  "url": "https://fathom.video/mcp",
+  "auth": {
+    "scopes": [
+      "mcp"
+    ],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "dcr"
+    }
+  }
+}

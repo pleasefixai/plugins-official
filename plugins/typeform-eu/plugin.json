@@ -1,0 +1,12 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "typeform-eu",
+  "version": "1.0.0",
+  "description": "Forms, questions and responses from a Typeform account on EU data residency.",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "mark.svg"
+    }
+  }
+}

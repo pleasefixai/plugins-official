@@ -1,0 +1,12 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "expensify",
+  "version": "1.0.0",
+  "description": "Expense reports and receipts from your Expensify account.",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "mark.svg"
+    }
+  }
+}

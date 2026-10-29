@@ -1,0 +1,19 @@
+{
+  "id": "dealroom",
+  "name": "Dealroom",
+  "description": "Company, funding and investor data from your Dealroom account.",
+  "group": "private_markets",
+  "url": "https://mcp.dealroom.co/mcp",
+  "auth": {
+    "scopes": [
+      "openid",
+      "read:current_user"
+    ],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "dcr"
+    }
+  }
+}

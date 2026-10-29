@@ -1,0 +1,18 @@
+{
+  "id": "circleback",
+  "name": "Circleback",
+  "description": "Meeting notes, transcripts and action items from your Circleback account.",
+  "group": "meetings",
+  "url": "https://circleback.ai/api/mcp",
+  "auth": {
+    "scopes": [
+      "user"
+    ],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "dcr"
+    }
+  }
+}

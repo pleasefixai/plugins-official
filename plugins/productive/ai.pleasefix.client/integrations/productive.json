@@ -1,0 +1,20 @@
+{
+  "id": "productive",
+  "name": "Productive.io",
+  "description": "Projects, time entries, budgets and invoices from your Productive account.",
+  "group": "projects_time",
+  "url": "https://mcp.productive.io/mcp",
+  "auth": {
+    "scopes": [
+      "read",
+      "write"
+    ],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "dcr"
+    }
+  },
+  "writes": true
+}

@@ -1,0 +1,20 @@
+{
+  "id": "attio",
+  "name": "Attio",
+  "description": "Records, lists, notes and tasks from your Attio workspace.",
+  "group": "crm",
+  "url": "https://mcp.attio.com/mcp",
+  "auth": {
+    "scopes": [
+      "mcp",
+      "offline_access",
+      "openid"
+    ],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "dcr"
+    }
+  }
+}

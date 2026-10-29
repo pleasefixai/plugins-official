@@ -1,0 +1,12 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "circleback",
+  "version": "1.0.0",
+  "description": "Meeting notes, transcripts and action items from your Circleback account.",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "mark.png"
+    }
+  }
+}

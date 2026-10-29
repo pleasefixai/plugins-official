@@ -1,0 +1,12 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "clay",
+  "version": "1.0.0",
+  "description": "Enriched company and people records from your Clay workspace.",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "mark.png"
+    }
+  }
+}

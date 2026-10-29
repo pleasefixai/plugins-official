@@ -1,0 +1,12 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "capitaliq",
+  "version": "1.0.0",
+  "description": "Company financials, estimates and market data from your S&P Capital IQ account.",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "mark.png"
+    }
+  }
+}

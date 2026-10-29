@@ -1,0 +1,12 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "close",
+  "version": "1.0.0",
+  "description": "Leads, contacts, opportunities and call activity from your Close CRM.",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "mark.png"
+    }
+  }
+}

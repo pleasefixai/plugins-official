@@ -1,0 +1,33 @@
+{
+  "id": "typeform",
+  "name": "Typeform",
+  "description": "Forms, questions and responses from your Typeform account.",
+  "group": "forms_data",
+  "url": "https://api.typeform.com/mcp",
+  "auth": {
+    "scopes": [
+      "accounts:read",
+      "automations:read",
+      "automations:write",
+      "contacts:read",
+      "contacts:write",
+      "forms:read",
+      "forms:write",
+      "responses:read",
+      "responses:write",
+      "insights:read",
+      "webhooks:read",
+      "webhooks:write",
+      "workspaces:read",
+      "workspaces:write"
+    ],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "dcr"
+    }
+  },
+  "writes": true,
+  "regional_sibling": "typeform_eu"
+}

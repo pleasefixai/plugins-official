@@ -1,0 +1,20 @@
+{
+  "id": "linear",
+  "name": "Linear",
+  "description": "Issues, projects and cycles from your Linear workspace.",
+  "group": "projects_time",
+  "url": "https://mcp.linear.app/mcp",
+  "auth": {
+    "scopes": [
+      "read",
+      "write"
+    ],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "dcr"
+    }
+  },
+  "writes": true
+}

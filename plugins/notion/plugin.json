@@ -1,0 +1,12 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "notion",
+  "version": "1.0.0",
+  "description": "Pages and databases from your Notion workspace.",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "mark.svg"
+    }
+  }
+}

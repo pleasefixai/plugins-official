@@ -1,0 +1,18 @@
+{
+  "id": "expensify",
+  "name": "Expensify",
+  "description": "Expense reports and receipts from your Expensify account.",
+  "group": "finance_ops",
+  "url": "https://www.expensify.com/mcp",
+  "auth": {
+    "scopes": [
+      "mcp:tools"
+    ],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "dcr"
+    }
+  }
+}

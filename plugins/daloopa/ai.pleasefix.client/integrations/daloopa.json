@@ -1,0 +1,17 @@
+{
+  "id": "daloopa",
+  "name": "Daloopa",
+  "description": "Fundamentals and KPIs from public filings, from your Daloopa account.",
+  "group": "market_data",
+  "url": "https://mcp.daloopa.com/server/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "dcr"
+    }
+  },
+  "precondition": "Your Daloopa account needs a licensed seat."
+}

@@ -1,0 +1,7 @@
+{
+  "id": "factiva",
+  "name": "Factiva",
+  "description": "News and business information from Dow Jones Factiva.",
+  "category": "market_data",
+  "homepage": "https://dowjones.com"
+}

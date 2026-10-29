@@ -1,0 +1,21 @@
+{
+  "id": "grata",
+  "name": "Grata",
+  "description": "Private company profiles and search results from your Grata account.",
+  "group": "private_markets",
+  "url": "https://mcp.grata.com",
+  "auth": {
+    "scopes": [
+      "openid",
+      "profile",
+      "email",
+      "offline_access"
+    ],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "dcr"
+    }
+  }
+}

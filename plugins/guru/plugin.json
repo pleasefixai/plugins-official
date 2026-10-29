@@ -1,0 +1,12 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "guru",
+  "version": "1.0.0",
+  "description": "Cards, collections and answers from your Guru knowledge base.",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "mark.png"
+    }
+  }
+}

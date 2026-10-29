@@ -1,0 +1,24 @@
+{
+  "id": "readai",
+  "name": "Read.ai",
+  "description": "Meeting transcripts, summaries and highlights from your Read.ai account.",
+  "group": "meetings",
+  "url": "https://api.read.ai/mcp",
+  "auth": {
+    "scopes": [
+      "openid",
+      "profile",
+      "email",
+      "offline_access",
+      "offline",
+      "mcp:execute",
+      "meeting:read"
+    ],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "dcr"
+    }
+  }
+}

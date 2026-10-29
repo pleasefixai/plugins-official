@@ -1,0 +1,19 @@
+{
+  "id": "otter",
+  "name": "Otter.ai",
+  "description": "Meeting transcripts and summaries from your Otter.ai account.",
+  "group": "meetings",
+  "url": "https://mcp.otter.ai/mcp",
+  "auth": {
+    "scopes": [
+      "profile:read",
+      "conversations:read"
+    ],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "dcr"
+    }
+  }
+}

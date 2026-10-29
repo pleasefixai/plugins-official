@@ -1,0 +1,40 @@
+{
+  "id": "pennylane",
+  "name": "Pennylane",
+  "description": "Invoices, ledger entries and accounting records from your Pennylane account.",
+  "group": "finance_ops",
+  "url": "https://mcp.pennylane.com/mcp",
+  "auth": {
+    "scopes": [
+      "mcp:account:read",
+      "mcp:changelog:read",
+      "mcp:companies:read",
+      "mcp:company:read",
+      "mcp:customer:read",
+      "mcp:customer_invoice:read",
+      "mcp:customer_payment:read",
+      "mcp:financial_report:read",
+      "mcp:firm_file:read",
+      "mcp:journal:read",
+      "mcp:ledger_account:read",
+      "mcp:ledger_entry:read",
+      "mcp:ledger_entry_line:read",
+      "mcp:product:read",
+      "mcp:supplier:read",
+      "mcp:supplier_invoice:read",
+      "mcp:supplier_payment:read",
+      "mcp:tax_return:read",
+      "mcp:transaction:read",
+      "mcp:trial_balance:read",
+      "mcp:vat_return:read",
+      "mcp:private_api"
+    ],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "dcr"
+    }
+  },
+  "writes": true
+}
