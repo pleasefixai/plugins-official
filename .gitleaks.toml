@@ -1,0 +1,27 @@
+# The secret scan of the check workflow reads this file. It keeps gitleaks' default rules and allows only values that cannot be a secret.
+
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "The sha256 hash of each upstream skill, in a plugin's manifest (upstream.skills)."
+condition = "AND"
+paths = ['''^plugins/[^/]+/plugin\.json$''']
+regexTarget = "secret"
+regexes = ['''^[0-9a-f]{64}$''']
+
+[[allowlists]]
+description = "Placeholders in vendors' examples, and example JWTs cut short with '...'."
+regexTarget = "secret"
+regexes = [
+  '''^(YOUR_)?(DOWNLOAD_)?ACCESS_TOKEN$''',
+  '''^xoxb-YOUR-TOKEN$''',
+  '''^eyJ[A-Za-z0-9_-]*\.\.\.$''',
+]
+
+[[allowlists]]
+description = "The sample plainToken and encryptedToken of Zoom's webhook validation docs."
+condition = "AND"
+paths = ['''^plugins/zoom/skills/''']
+regexTarget = "secret"
+regexes = ['''^qgg8vlvZRS6UYooatFL8Aw$''', '''^23a89b634c017e5364a1c8d9c8ea909b60dd5599e2bb04bb1558d9c3a121faa5$''']
