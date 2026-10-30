@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "exa",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Web search, page contents and deep research results from Exa.",
   "author": {
     "name": "Exa"
@@ -31,7 +31,19 @@
         "skills": {
           "exa-agent": "38080bb6623743a5f046f05a51769cbd1bc13cd547202472a680d6f6737fef0a",
           "search": "af1bc9d949387b500acaf9303696b0b22eedc8c4b1ee8269838c4dd5d44e5aac"
-        }
+        },
+        "also": [
+          {
+            "marketplace": "cursor",
+            "plugin": "exa",
+            "commit": "ad3981e888990edae97f8480c577775a6d706ce4",
+            "skills": {
+              "exa-best-practices": "7c8f39f289713f12505a6f7296732a34b99f5b059989c568e83e1980aed766b5",
+              "exa-fetch": "6ae77c692d086d5b3dfc7aa1d48d152930aca1407b79b031f43b92be309baddd",
+              "exa-web-search": "2fa48a533ab111053dfbf4deb215b80249c54de82141a6ab358a7d02b6242b8d"
+            }
+          }
+        ]
       }
     }
   }

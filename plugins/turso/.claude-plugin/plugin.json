@@ -1,0 +1,5 @@
+{
+  "name": "turso",
+  "version": "1.0.0",
+  "description": "Organizations, databases and groups in Turso Cloud, and SQL queries on them."
+}

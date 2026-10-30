@@ -1,0 +1,16 @@
+{
+  "id": "robinhood",
+  "name": "Robinhood",
+  "description": "Portfolio, positions, orders, watchlists and trades in your Robinhood Agentic account.",
+  "group": "market_data",
+  "url": "https://agent.robinhood.com/mcp/trading",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

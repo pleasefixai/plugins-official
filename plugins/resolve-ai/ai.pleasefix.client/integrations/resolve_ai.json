@@ -1,0 +1,16 @@
+{
+  "id": "resolve_ai",
+  "name": "Resolve AI",
+  "description": "Investigations, alerts, incidents and production context from Resolve AI.",
+  "group": "developer_tools",
+  "url": "https://app0.resolve.ai/mcp/v2",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

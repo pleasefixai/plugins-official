@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "co-invest",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Market research, your Liquid portfolio and the trades you authorise in stocks and crypto.",
   "author": {
     "name": "Liquid"
@@ -21,6 +21,7 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "mark": "integrations/co_invest.png",
       "upstream": {
         "kind": "imported",
         "marketplace": "cursor",

@@ -1,0 +1,5 @@
+{
+  "name": "valtown",
+  "version": "1.0.0",
+  "description": "Vals, HTTP endpoints, crons and SQLite data in your Val Town account."
+}

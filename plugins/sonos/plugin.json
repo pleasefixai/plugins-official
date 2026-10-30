@@ -1,0 +1,30 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "sonos",
+  "version": "1.0.0",
+  "description": "Music, radio, Sonos favorites and playlists played on your Sonos speakers.",
+  "author": {
+    "name": "Sonos"
+  },
+  "homepage": "https://www.sonos.com",
+  "license": "MIT",
+  "keywords": [
+    "sonos",
+    "music",
+    "audio",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/sonos.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "sonos",
+        "commit": "72861f1693a98a87d0e9dc224e03c44931dd25a2",
+        "skills": {}
+      }
+    }
+  }
+}

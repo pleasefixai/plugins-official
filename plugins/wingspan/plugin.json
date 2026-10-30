@@ -1,0 +1,42 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "wingspan",
+  "version": "1.0.0",
+  "description": "Contractors, payables and contractor payments in your Wingspan account.",
+  "author": {
+    "name": "Wingspan"
+  },
+  "homepage": "https://github.com/wingspanHQ/mcp-claude-plugin",
+  "license": "MIT",
+  "keywords": [
+    "wingspan",
+    "contractors",
+    "payments",
+    "payables",
+    "onboarding",
+    "1099",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/wingspan.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "wingspan",
+        "commit": "7f99cb3d1789a91390fa7abf1571328736b5e0a6",
+        "skills": {
+          "checking-payments": "2be628a2ef9edaf9a9b4e063c140232d911b245faf9c7b10e62351919fa73522",
+          "connect": "5c6a44e9fa351446693892b00f62b74d11ad1ef8ffa4d119afe1f51369d5ca84",
+          "creating-draft-payables": "100b3d2efbf3aeb09bdc98b4d1f16a9e13999bd3e55cda0c6446d6c739525416",
+          "finding-contractors": "5873225a8701041144f870a500b3ece84d45a670891c0b83f268c39b03399320",
+          "onboarding-contractors": "95b4c13a55561f772812401f969ebc1a8995478f3d63212c7ae31b10773985c0",
+          "outstanding": "dc8c306d2e1a25d48d6d0c38056cce3543353e5a0daef411daab5567c127daed",
+          "troubleshooting-connection": "36de790a099e433f02ca0aef8004f3d6793e965ca7077df573188d6c2df3dc9f",
+          "using-wingspan-tools": "1eccffa8c3efe1c7122b8bacd910bcfd3202a6cf1e5a5a77b326126c9a4cb0e5"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "sanity",
+  "version": "1.0.0",
+  "description": "Documents, schemas, releases and media in your Sanity projects.",
+  "author": {
+    "name": "Sanity"
+  },
+  "homepage": "https://www.sanity.io",
+  "license": "MIT",
+  "keywords": [
+    "sanity",
+    "cms",
+    "content-lake",
+    "groq",
+    "content",
+    "structured-content",
+    "visual-editing"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/sanity.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "sanity",
+        "commit": "88d6cdfa7cb06c99edd5f376efa4dac21ae3f877",
+        "skills": {
+          "content-experimentation-best-practices": "9629140a05bf6f953b8de9e4a55e78a91f55b7a264412f72c300f95a1a132208",
+          "content-modeling-best-practices": "e2e116de290021654228166d0aa4297133d0a531d869099eb3dff2b21093c867",
+          "portable-text-conversion": "39df6df9fea5e88aa98d01ef7414b56679671b7f05c7589e66cf10aa280a9bbb",
+          "portable-text-serialization": "92a460ec058ee9994d8698c1528680cd929d36961fe04d7b5b5a721b8db79f35",
+          "sanity-best-practices": "b5a7a6b06af450fe1dfbe62bcadbc8296b72452d168caa533f215e039e6c318c",
+          "sanity-migration": "711ace1fcfd7c1f832d6fbce08cf199586b465f5d3d4ee946ec1823347e59683",
+          "sanity-studio-upgrade": "0080dbe4b6ddfdef3215c4b018903b3a5dce2290ca6b9671788a71f26c02eaa0",
+          "seo-aeo-best-practices": "d842b8abb217f5eb146e83bb4bedd58123f028a17111804eeac4210946e47acc"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "postiz",
+  "name": "Postiz",
+  "description": "Scheduled posts, media and analytics for your social channels in Postiz.",
+  "group": "marketing",
+  "url": "https://mcp.postiz.com/mcp-oauth-dynamic",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

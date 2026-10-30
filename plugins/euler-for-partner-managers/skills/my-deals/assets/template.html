@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Deals — {{CUSTOMER}}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>
+/* Inline the FULL contents of assets/styles.css here (self-contained).
+   Lightweight: no JS, no images (text wordmark — the remote logo SVG renders
+   broken in Claude); fonts load with display=swap. Set <html lang> to the
+   report language (e.g. pt-BR for a Portuguese request). */
+</style>
+</head>
+<body>
+
+<!-- ─── Topbar (text wordmark) ─── -->
+<header class="topbar">
+  <div class="container topbar-inner">
+    <div class="brand">
+      <span class="brand-mark">Euler</span>
+      <span class="brand-divider" aria-hidden="true"></span>
+      <span class="brand-label">My Deals · {{CUSTOMER}}</span>
+    </div>
+  </div>
+</header>
+
+<!-- ─── Hero — pipeline totals front and center ─── -->
+<section class="hero">
+  <div class="container">
+    <!-- eyebrow tone: green (pipeline healthy, multiple stages) | amber (deals stalled or few) | default (active pipeline) -->
+    <span class="hero-eyebrow amber"><span class="dot" aria-hidden="true"></span>{{OPEN_COUNT}} open deals · {{PARTNER}}</span>
+    <h1>Your pipeline</h1>
+    <p>{{ONE_LINE_READ}} <span class="data-pill complete">Complete data</span></p>
+
+    <div class="quick-facts">
+      <div class="fact"><div class="fact-label">Open deals</div><div class="fact-value">{{OPEN_COUNT}}</div><div class="fact-sub">across {{STAGE_COUNT}} stages</div></div>
+      <div class="fact"><div class="fact-label">Open value</div><div class="fact-value">{{OPEN_VALUE}}</div><div class="fact-sub">total pipeline</div></div>
+      <div class="fact"><div class="fact-label">Closed-won</div><div class="fact-value">{{CLOSED_WON_COUNT}}</div><div class="fact-sub">{{CLOSED_WON_VALUE}} lifetime</div></div>
+      <div class="fact"><div class="fact-label">Avg deal size</div><div class="fact-value">{{AVG_SIZE}}</div><div class="fact-sub">open deals average</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── 01 · Open pipeline — grouped by stage ─── -->
+<section>
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">01 · Open pipeline</div>
+      <h2 class="section-title">Deals by stage</h2>
+      <p class="section-subtitle">Grouped by stage · largest amount first within each stage.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Stage</th>
+            <th>Deal</th>
+            <th class="numeric">Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- row · clone, max 1 per open deal · group by stage (early→late), largest amount first; stage cell bold on first row of group (blank/repeat OK); flag test entries "(test?)"; no internal IDs. Empty state: drop table, render .note "No open deals — submit a referral with /euler-for-partners:submit-a-referral." -->
+          <tr>
+            <td><strong>{{STAGE_NAME}}</strong></td>
+            <td><strong>{{DEAL_NAME}}</strong><!-- cell-note: only if last_stage_change_date < 9999 (null sentinel ≥9999 = skip) --><div class="cell-note">{{N}} days in stage</div></td>
+            <td class="numeric">{{AMOUNT}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">{{PIPELINE_NOTE}}</p>
+  </div>
+</section>
+
+<!-- ─── 02 · By stage — distribution chips ─── -->
+<section class="pt0">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">02 · By stage</div>
+      <h2 class="section-title">Stage breakdown</h2>
+      <p class="section-subtitle">Count of open deals per stage.</p>
+    </div>
+    <!-- swatch color by stage: brand (early/Qualified) · amber (mid/Demo) · violet (Negotiating) · green (late/Contracting) · gray (other); adapt to real stage names -->
+    <div class="dist">
+      <!-- chip · clone, max 1 per stage with ≥1 open deal -->
+      <div class="dist-chip"><span class="swatch brand"></span><span class="k">{{STAGE_NAME}}</span><span class="v">{{COUNT}}</span></div>
+    </div>
+    <p class="note">{{STAGE_NOTE}}</p>
+  </div>
+</section>
+
+<!-- ─── Footer (text wordmark) ─── -->
+<footer>
+  <div class="container footer-inner">
+    <span class="brand-mark footer-mark">Euler</span>
+    <p>My Deals · {{CUSTOMER}}</p>
+    <p class="mono">euler · my-deals</p>
+  </div>
+</footer>
+
+</body>
+</html>

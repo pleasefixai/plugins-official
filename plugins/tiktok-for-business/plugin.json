@@ -1,0 +1,36 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "tiktok-for-business",
+  "version": "1.0.0",
+  "description": "Ad campaigns, ad groups, ads, audiences and reports in your TikTok Ads Manager.",
+  "author": {
+    "name": "Cursor"
+  },
+  "homepage": "https://business-api.tiktok.com/portal/docs/tiktok-ads-mcp-server/v1.3",
+  "license": "MIT",
+  "keywords": [
+    "tiktok",
+    "tiktok ads",
+    "tiktok for business",
+    "advertising",
+    "ads",
+    "campaigns",
+    "smart+",
+    "reporting",
+    "audiences",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/tiktok_for_business.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "tiktok-for-business",
+        "commit": "1ba91fc25c0977741dd0e267849e6234b037ed0a",
+        "skills": {}
+      }
+    }
+  }
+}

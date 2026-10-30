@@ -1,0 +1,33 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "wonder",
+  "version": "1.0.0",
+  "description": "Designs on a Wonder canvas, where each design is real code.",
+  "author": {
+    "name": "Wonder"
+  },
+  "homepage": "https://wonder.design",
+  "license": "MIT",
+  "keywords": [
+    "wonder",
+    "design",
+    "ui",
+    "canvas",
+    "design-to-code",
+    "code-to-design",
+    "design-system",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "wonder",
+        "commit": "e60f8bd908e13ec49b3738f54e1e42d659915286",
+        "skills": {}
+      }
+    }
+  }
+}

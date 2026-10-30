@@ -1,0 +1,16 @@
+{
+  "id": "trello",
+  "name": "Trello",
+  "description": "Boards, lists, cards and checklists in your Trello workspace.",
+  "group": "projects_time",
+  "url": "https://mcp.trello.com/v1",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

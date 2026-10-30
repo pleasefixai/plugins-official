@@ -1,0 +1,42 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "windsor-ai",
+  "version": "1.0.0",
+  "description": "Marketing, sales and finance data from 325+ sources, like Google Ads, through Windsor.ai.",
+  "author": {
+    "name": "Windsor.ai"
+  },
+  "homepage": "https://windsor.ai",
+  "license": "MIT",
+  "keywords": [
+    "data",
+    "analytics",
+    "marketing",
+    "sales",
+    "crm",
+    "ecommerce",
+    "finance",
+    "google-ads",
+    "facebook-ads",
+    "hubspot",
+    "salesforce",
+    "shopify",
+    "stripe",
+    "business-intelligence"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/windsor_ai.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "windsor-ai",
+        "commit": "d7ba1cb036c7ca765536355fb85f13a3237ea3f9",
+        "skills": {
+          "business-data": "76128057a6b882efa2e31c3b52b0bcd33943d446832d23fbe4eda4e531ac4a04"
+        }
+      }
+    }
+  }
+}

@@ -218,8 +218,8 @@ follows this structure:
 <!-- ═══ DOCUMENT FOOTER ═══ -->
 <div class="doc-foot">
   This POC is a disposable deployment-proof — your original repo was not modified.
-  For the authoritative in-repo migration (git branch, tests, eval), run
-  <code>/migration-to-aws:llm-to-bedrock</code>. Generated {{ RUN_DATE }}.
+  The authoritative in-repo migration (git branch, tests, eval) is a separate step.
+  Generated {{ RUN_DATE }}.
 </div>
 
 </div><!-- .page -->

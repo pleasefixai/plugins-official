@@ -1,0 +1,42 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "zapier",
+  "version": "1.0.0",
+  "description": "Actions in the 8,000+ apps that you connect to your Zapier account.",
+  "author": {
+    "name": "Zapier"
+  },
+  "homepage": "https://github.com/zapier/zapier-mcp/tree/main/plugins/zapier",
+  "license": "MIT",
+  "keywords": [
+    "zapier",
+    "mcp",
+    "model-context-protocol",
+    "automation",
+    "integrations",
+    "workflow",
+    "ai-actions",
+    "api",
+    "no-code",
+    "ai-tools",
+    "productivity"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/zapier.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "zapier",
+        "commit": "5360f152b96735712e5f925ad728732cb86888df",
+        "skills": {
+          "zapier-demo": "9f490775f3399af68a1eb1d1de989987b618e8e1405403275dfc375791cae670",
+          "zapier-explore": "f1ead2f8e6fd43d3c4e7880ddc9d8223dfc4fec9159af568bafab40a581ee969",
+          "zapier-onboard": "eec3708098c0cdcdea2f134e4a1d1c3f63b5febb8933b14494b9c375d4835c42",
+          "zapier-status": "d09dfc9b4cec99ba21989e4b04754f843486828113a1b14b53b6095856f786eb"
+        }
+      }
+    }
+  }
+}

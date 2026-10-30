@@ -1,0 +1,24 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "replit",
+  "version": "1.0.0",
+  "description": "Apps in your Replit account, to build, change and publish.",
+  "author": {
+    "name": "Replit"
+  },
+  "homepage": "https://replit.com",
+  "license": "MIT",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/replit.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "replit",
+        "commit": "a9c04d39cb5d7ae351f9c786b6d0247196cc54ea",
+        "skills": {}
+      }
+    }
+  }
+}

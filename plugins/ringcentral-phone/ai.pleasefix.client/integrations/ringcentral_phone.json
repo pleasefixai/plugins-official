@@ -1,0 +1,16 @@
+{
+  "id": "ringcentral_phone",
+  "name": "RingCentral Phone",
+  "description": "Calls, AI call notes, SMS, voicemail and fax from your RingCentral phone.",
+  "group": "communication",
+  "url": "https://mcp.labs.ringcentral.com/ringex/phone",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

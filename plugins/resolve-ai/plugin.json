@@ -1,0 +1,37 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "resolve-ai",
+  "version": "1.0.0",
+  "description": "Investigations, alerts, incidents and production context from Resolve AI.",
+  "author": {
+    "name": "Resolve AI"
+  },
+  "homepage": "https://resolve.ai",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/resolve_ai.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "resolve-ai",
+        "commit": "89c7dc993ae94479971099afe3e3901529f68fc7",
+        "skills": {
+          "alerts": "d31e47c8f75685bc29d883de27975883ee0ba3621126b841cedfb663959b33f2",
+          "apply-fix": "b1370ef714a17accdec1e5206ac5773c41622af83fcb4a9f0314d9b78344ccaf",
+          "ask": "947c363690436392050fa66bd9b47b2ea9f496f496ff3312b978629f5da5d24c",
+          "chats": "937ef86a7445d0daa2274149147f78b3df9ceaac5243000c072a4274b17be67f",
+          "create-skill": "0c8476975f4e356cca76188a8aa7a91f567920d6eca5f21398dbda219e80e087",
+          "demo": "ebb2d2f1f6f801b316e375426e76e13fb708def97f3cd14e237af720b7f95cd3",
+          "feedback": "323e156e11f1921560f82f7299cb1dfd9f3187582bfe877dc13a064a2bb42bda",
+          "help-resolve": "c0c39c5cc9a2aa9f7f23454d5ddb7d7b751f060f745816ce1e4cd4703d2734f1",
+          "investigate": "a24ffebb8d0a6f3199654bf996a0c557c0d39dffe4c3c426f3091ae6c0cd940a",
+          "investigations": "45e589c5f2674f39a876186d3bacfde3a942a44d7b6b245245995a08d993dc04",
+          "overview": "76d2d1b37119320464cf31bc20acd5fca64b7c7d12f44379c7e0c69da6e23171",
+          "prod-context": "c180ac564b28554adc77f66f6594fcba1dcf72124f3af4fb990e64643992ee49",
+          "steer": "fbeae4e1f35b60a9292523c89474c279b02e3db75923c0c84505df7ee6b62567"
+        }
+      }
+    }
+  }
+}

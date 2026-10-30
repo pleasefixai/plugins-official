@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "airwallex-agentos",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Payouts, cards, billing and treasury from your Airwallex account.",
   "author": {
     "name": "Airwallex"
@@ -39,7 +39,22 @@
         "guessed": {
           "airwallex_agentos.name": "14df8aee88db4456",
           "airwallex_dev.name": "d5b3f3dec631f502"
-        }
+        },
+        "also": [
+          {
+            "marketplace": "claude",
+            "plugin": "airwallex-dev",
+            "commit": "877551077786664d1cbeb32013443291c66e69e6",
+            "skills": {
+              "airwallex-ai-provider-card-mit": "d9e29f49bf86e7e2208e6cf5d6e1554dec1828690e17254221fc4db2990c5fe0",
+              "airwallex-billing-checkout": "4b451cc040225f6e53bc1313213bae2eec73b8309457c50aa5f5d6b10a60b488",
+              "airwallex-dropin": "babc5d3b344f885d52366ba5320ff5a687b2ab5e742547be172cbf440a5a671c",
+              "airwallex-hpp": "ef1ac685703c8b2b38deeeb9ab1f66e67aaf0bce446a4979058741d000515c9b",
+              "airwallex-kyc": "e1f84726504c0925682c781e0773969f63f11e57395b3c8406afc5f214b50afc",
+              "airwallex-split-card": "6cb8574d0864bb1a6a62388cfb9d72b335fa8ab5ec9280070bd8c215eda4efc7"
+            }
+          }
+        ]
       }
     }
   }

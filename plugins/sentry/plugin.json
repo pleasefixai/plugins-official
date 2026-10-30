@@ -1,0 +1,48 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "sentry",
+  "version": "1.0.0",
+  "description": "Issues, errors, traces and releases from your Sentry projects.",
+  "author": {
+    "name": "Sentry"
+  },
+  "homepage": "https://github.com/getsentry/plugin-claude",
+  "license": "MIT",
+  "keywords": [
+    "sentry",
+    "debugging",
+    "monitoring",
+    "error-tracking"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "sentry",
+        "commit": "73e53541d7af21672e27428c7067f4264b8a3d65",
+        "skills": {
+          "sentry-create-alert": "e60a2219fb167cc44690ebf5af4b2d92dfef2dc74c47d2f3e2d3a2a89502f9eb",
+          "sentry-debug-issue": "55c900717662aa3da5dcb9df7f11ebb6f0caeca2492417d4ac86bc22d9d22207",
+          "sentry-fix-stack-traces": "64c9566d131e948f6197d209fd29748443fcca84fd8d0e503dc84f2615c11944",
+          "sentry-get-started": "3dc0021c162a3267c42b85c2d924e5de1ab9f2caa92357901b5ff37e6cf00a37",
+          "sentry-instrument": "829a8771dcb8c8c1018b6f7d5cca5f1fca1736131af5beef29cd7f5a91f4a793",
+          "sentry-otel-exporter-setup": "88cf2f9ab4afb237b559a3b7fcdaeb652e0908311b1163cf475eaeb5532e08c7",
+          "sentry-setup-releases": "63d3dc4f4cede8a8b00fca74b0b6c54b1566a61a7c44ff901adea880b4c97ac1",
+          "sentry-snapshots-cocoa": "c17323b7c46660634a5fd9215514f10c78b326367d4b0136ae5ad3130c6144c3"
+        },
+        "also": [
+          {
+            "marketplace": "codex",
+            "plugin": "sentry",
+            "commit": "0722921d5542fc593105c27bd52630babd8b8c2a",
+            "skills": {
+              "sentry": "eee4c82b3f62976bea652633ac838b835c7a2a775a5719ed8924e444ad840a43"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

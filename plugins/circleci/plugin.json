@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "circleci",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Pipelines, workflows, jobs and test results from your CircleCI organisation.",
   "author": {
     "name": "CircleCI"
@@ -26,7 +26,20 @@
         "marketplace": "cursor",
         "plugin": "circleci",
         "commit": "51411dbc62f6e07509846d5b08c0659b1471853a",
-        "skills": {}
+        "skills": {},
+        "also": [
+          {
+            "marketplace": "codex",
+            "plugin": "circleci",
+            "commit": "0722921d5542fc593105c27bd52630babd8b8c2a",
+            "skills": {
+              "builds": "8f73e9fa7911b866671bbf916155adf9506c5cb25702752e2789ce5bb578ef42",
+              "chunk": "40b998ea943d6f333e795dba5d2a51607888e8b3e0a349af8277952ab9b5ac49",
+              "cli": "9c01176fb5302d3e97fcb49d2a2560f5083d779c80fd2db27bd405add80223cd",
+              "config": "fab9b27494314440512c7716d2694bcd761ef0024ea1ebab2b3c4a0e505fc855"
+            }
+          }
+        ]
       }
     }
   }

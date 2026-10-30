@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "miro",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Boards, diagrams, sticky notes and documents in your Miro workspace.",
   "author": {
     "name": "Miro"
@@ -59,7 +59,17 @@
           "miro-code-explain-on-board": "a7c96ab71be4747905889bfc1396cf2a7dce6427382d2163fa70a9c227e3af3d",
           "miro-code-review": "ecbcf79321753f40a5372409c3778bc7a420d719fb010bcf3aa05de59d4d0614",
           "miro-code-spec": "70213a490738985d6ce773e0b14dfd777a39d6cb250a00ee22c81d8f60f48fda"
-        }
+        },
+        "also": [
+          {
+            "marketplace": "cursor",
+            "plugin": "miro",
+            "commit": "9627168a40c694c61a8734cbcdd452d21e560bdc",
+            "skills": {
+              "miro-mcp": "872c924c5ebe7e3716fe5cc0224f3086beaa78778b37885baabf6e75f22a1a0a"
+            }
+          }
+        ]
       }
     }
   }

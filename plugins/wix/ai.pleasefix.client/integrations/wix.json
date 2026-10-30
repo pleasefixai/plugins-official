@@ -1,0 +1,16 @@
+{
+  "id": "wix",
+  "name": "Wix",
+  "description": "Sites, stores, CMS collections and apps in your Wix account.",
+  "group": "design",
+  "url": "https://mcp.wix.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

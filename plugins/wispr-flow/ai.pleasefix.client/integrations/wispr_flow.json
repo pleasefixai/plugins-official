@@ -1,0 +1,16 @@
+{
+  "id": "wispr_flow",
+  "name": "Wispr Flow",
+  "description": "Meeting notes, transcripts and calendar context from Wispr Flow.",
+  "group": "meetings",
+  "url": "https://api.wisprflow.ai/connect/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

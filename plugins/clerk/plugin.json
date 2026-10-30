@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "clerk",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Applications, users, domains and instance settings from your Clerk workspace.",
   "author": {
     "name": "Clerk"

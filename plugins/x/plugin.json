@@ -1,0 +1,43 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "x",
+  "version": "1.0.0",
+  "description": "Posts, timelines, trends, Spaces, communities, lists and bookmarks on X.",
+  "author": {
+    "name": "Cursor"
+  },
+  "homepage": "https://docs.x.com/tools/mcp",
+  "license": "MIT",
+  "keywords": [
+    "x",
+    "twitter",
+    "posts",
+    "search",
+    "trends",
+    "news",
+    "spaces",
+    "communities",
+    "lists",
+    "bookmarks",
+    "calls",
+    "livestream",
+    "chat",
+    "social",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/x.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "x",
+        "commit": "1ba91fc25c0977741dd0e267849e6234b037ed0a",
+        "skills": {
+          "x-api-mcp-guide": "1327bc932588d6ae0bccb7023aec804bf60d10e257bd8abd47b388a770e59e3a"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "riverside",
+  "name": "Riverside",
+  "description": "Recordings, transcripts, video edits and social clips in your Riverside account.",
+  "group": "design",
+  "url": "https://mcp.riverside.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

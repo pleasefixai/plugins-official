@@ -1,0 +1,16 @@
+{
+  "id": "shippo",
+  "name": "Shippo",
+  "description": "Shipping rates, labels, tracking and address checks for 40+ carriers, through Shippo.",
+  "group": "other",
+  "url": "https://mcp.shippo.com",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "name": "sentry",
+  "version": "1.0.0",
+  "description": "Issues, errors, traces and releases from your Sentry projects."
+}

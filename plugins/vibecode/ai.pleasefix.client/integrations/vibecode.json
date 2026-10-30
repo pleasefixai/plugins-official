@@ -1,0 +1,16 @@
+{
+  "id": "vibecode",
+  "name": "Vibecode",
+  "description": "iPhone apps and web apps that you build by chat in Vibecode.",
+  "group": "developer_tools",
+  "url": "https://api.vibecodeapp.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

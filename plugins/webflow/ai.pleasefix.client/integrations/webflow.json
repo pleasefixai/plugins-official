@@ -1,0 +1,16 @@
+{
+  "id": "webflow",
+  "name": "Webflow",
+  "description": "Sites, pages, CMS collections and assets in your Webflow account.",
+  "group": "design",
+  "url": "https://mcp.webflow.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

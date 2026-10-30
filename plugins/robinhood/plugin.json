@@ -1,0 +1,36 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "robinhood",
+  "version": "1.0.0",
+  "description": "Portfolio, positions, orders, watchlists and trades in your Robinhood Agentic account.",
+  "author": {
+    "name": "Cursor"
+  },
+  "homepage": "https://robinhood.com/us/en/support/articles/agentic-trading-overview/",
+  "license": "MIT",
+  "keywords": [
+    "robinhood",
+    "brokerage",
+    "trading",
+    "portfolio",
+    "stocks",
+    "options",
+    "crypto",
+    "market data",
+    "watchlists",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/robinhood.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "robinhood",
+        "commit": "1ba91fc25c0977741dd0e267849e6234b037ed0a",
+        "skills": {}
+      }
+    }
+  }
+}

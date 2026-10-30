@@ -1,0 +1,16 @@
+{
+  "id": "synthflow_docs",
+  "name": "Synthflow (docs)",
+  "description": "Synthflow documentation and API references.",
+  "group": "communication",
+  "url": "https://docs.synthflow.ai/_mcp/server",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "shopify",
+  "name": "Shopify",
+  "description": "Shopify stores to build and run: products, pages, design and settings.",
+  "group": "other",
+  "url": "https://setup.shopify.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

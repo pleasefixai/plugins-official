@@ -1,0 +1,16 @@
+{
+  "id": "zernio",
+  "name": "Zernio",
+  "description": "Social posts, schedules, comments, messages and ads on 14 networks, through Zernio.",
+  "group": "marketing",
+  "url": "https://mcp.zernio.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "sumup",
+  "version": "1.0.0",
+  "description": "Payments, checkouts, card readers and transactions in your SumUp merchant account.",
+  "author": {
+    "name": "SumUp"
+  },
+  "homepage": "https://www.sumup.com/",
+  "license": "Apache-2.0",
+  "keywords": [
+    "sumup",
+    "payments",
+    "checkout",
+    "terminal",
+    "online",
+    "api",
+    "sdk",
+    "card-present",
+    "card-not-present",
+    "upgrade",
+    "migration",
+    "debug",
+    "mcp",
+    "testing"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/sumup.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "sumup",
+        "commit": "6922c7052ae9d0be834f27361b785bd80e0829cc",
+        "skills": {
+          "sumup": "beef71d02062f8b7d01f11fa050a7e66ed59e5615eec33e12cd9f49a7b600c8e",
+          "sumup-best-practices": "9d9ef80a2d045cc9545c6423ac7c5c4c29e4455804924b00a72369fd1b006dbd",
+          "sumup-debug": "e529020c818e2188a8a41d95f43ce4a39271aee0f9318767583a4cbd3386d510",
+          "sumup-mcp": "ee442a832faec38aaed194e55716cb70d7f7a6d54d720b86327b30f85027ce80",
+          "sumup-testing": "78a8908c31eae55384256a71697206372a5b3c7a4586f522315984d08caec76e",
+          "upgrade-sumup": "2394abf45df7c0e6049a2fcfbf2151b66cd7497abfe764d493ec8dca8b7fa144"
+        }
+      }
+    }
+  }
+}

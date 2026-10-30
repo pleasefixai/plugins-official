@@ -1,0 +1,16 @@
+{
+  "id": "thousandeyes",
+  "name": "Cisco ThousandEyes",
+  "description": "Network tests, alerts, outages and path views from your Cisco ThousandEyes account.",
+  "group": "developer_tools",
+  "url": "https://api.thousandeyes.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

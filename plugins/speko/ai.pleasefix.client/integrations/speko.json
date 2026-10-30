@@ -1,0 +1,16 @@
+{
+  "id": "speko",
+  "name": "Speko",
+  "description": "Speech-to-text, text-to-speech and phone calls across many voice models, through Speko.",
+  "group": "developer_tools",
+  "url": "https://mcp.speko.ai/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

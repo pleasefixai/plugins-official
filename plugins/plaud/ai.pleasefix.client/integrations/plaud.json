@@ -1,0 +1,16 @@
+{
+  "id": "plaud",
+  "name": "Plaud",
+  "description": "Recordings, transcripts, summaries and action items from your Plaud notes.",
+  "group": "meetings",
+  "url": "https://mcp.plaud.ai/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

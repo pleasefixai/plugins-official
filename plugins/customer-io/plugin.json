@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "customer-io",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Campaigns, segments and people in your Customer.io workspace.",
   "author": {
     "name": "Cursor"
@@ -29,7 +29,21 @@
         "skills": {},
         "guessed": {
           "customer_io.name": "652a28d5b3227c50"
-        }
+        },
+        "also": [
+          {
+            "marketplace": "cursor",
+            "plugin": "customerio",
+            "commit": "1c4e00d8cdda279b7801d10da141b461d017ad33",
+            "skills": {
+              "customerio": "5afd7b80dd0a125850dab7c1d3e6018c54ae966420007013740c90ebbaaa34d5",
+              "customerio-design-studio": "b63bad15d3fe98fe4b67d6b9f9d15b616de788476c8e4001fa0a59762514f318",
+              "customerio-journeys": "7c4c215ff2ba6431dc4f65f2ac4ccc23e8595d9c2343d2d7d7b8ed77e068e89e",
+              "customerio-pipelines": "222399ed447a7439c1d1164b48b2ec7ead03085458f3a22d2b045238eb052727",
+              "customerio-sdk": "f283806ed319dc3fcce3de7625889c9c58ff5ab2f36c081b989d7f9c1bdee265"
+            }
+          }
+        ]
       }
     }
   }

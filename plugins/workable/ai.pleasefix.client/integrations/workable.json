@@ -1,0 +1,16 @@
+{
+  "id": "workable",
+  "name": "Workable",
+  "description": "Candidates, jobs, hiring pipelines and employee records in your Workable account.",
+  "group": "other",
+  "url": "https://mcp.workable.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "vantage",
+  "version": "1.0.0",
+  "description": "Cloud costs, cost reports, budgets and savings recommendations from Vantage.",
+  "author": {
+    "name": "Vantage"
+  },
+  "homepage": "https://vantage.sh",
+  "keywords": [
+    "vantage",
+    "mcp",
+    "cloud costs",
+    "finops",
+    "cost management",
+    "cost visibility",
+    "cost optimization",
+    "cost recommendations"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/vantage.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "vantage",
+        "commit": "0ceae67cf71fdb92426352eb39a1eb84de400c89",
+        "skills": {}
+      }
+    }
+  }
+}

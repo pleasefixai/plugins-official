@@ -1,0 +1,32 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "semrush",
+  "version": "1.0.0",
+  "description": "Keywords, backlinks, traffic and competitor data from your Semrush account.",
+  "author": {
+    "name": "Cursor"
+  },
+  "homepage": "https://developer.semrush.com/api/v4/introduction/semrush-mcp/",
+  "license": "MIT",
+  "keywords": [
+    "semrush",
+    "seo",
+    "keywords",
+    "backlinks",
+    "competitive-intelligence",
+    "marketing",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "semrush",
+        "commit": "1ba91fc25c0977741dd0e267849e6234b037ed0a",
+        "skills": {}
+      }
+    }
+  }
+}

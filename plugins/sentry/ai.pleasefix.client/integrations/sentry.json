@@ -1,0 +1,16 @@
+{
+  "id": "sentry",
+  "name": "Sentry",
+  "description": "Issues, errors, traces and releases from your Sentry projects.",
+  "group": "developer_tools",
+  "url": "https://mcp.sentry.dev/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "upstash",
+  "name": "Upstash",
+  "description": "Redis, QStash, Vector and Search in your Upstash account, with guides for its SDKs.",
+  "group": "developer_tools",
+  "url": "https://mcp.upstash.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

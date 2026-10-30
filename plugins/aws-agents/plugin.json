@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "aws-agents",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "AWS documentation and regional availability, to build and run AI agents on AWS.",
   "author": {
     "name": "Amazon Web Services"
@@ -65,7 +65,27 @@
           "agents-harden": "89740b755f3b559406c237fce059c0af9969abfc973e3ae4fa340a6cd5cb1f8e",
           "agents-optimize": "94a99b2e8f97d512572021f72fdb5c01fa9dd9d4d01f8082366ed679eaafce0e",
           "agents-pay": "1229e3ae1b36822122227a7b51c60d79456e3e54496fb7670424ec5402a0d90f"
-        }
+        },
+        "also": [
+          {
+            "marketplace": "claude",
+            "plugin": "databases-on-aws",
+            "commit": "fbefb3764e67558fe10ac834dd85db49734aa9b6",
+            "skills": {
+              "dsql": "5db24141faa6490217f026c860c6c8be5d57fadf371548cc8efe67fc5f89deeb"
+            }
+          },
+          {
+            "marketplace": "claude",
+            "plugin": "deploy-on-aws",
+            "commit": "fbefb3764e67558fe10ac834dd85db49734aa9b6",
+            "skills": {
+              "aws-architecture-diagram": "93f3ebe8246225b400a6ffe9c1a6e611e6979af9b6067b24676c29a838c8a434",
+              "deploy": "8c8c4ce41438d265bd7b770fc3594b3e3fb0668b5cdf0c297475f67fdb5f21b1",
+              "elastic-beanstalk": "fa0b99759d383a106c840e30effd6518b052df4ee00fb7853deec63bbd513c15"
+            }
+          }
+        ]
       }
     }
   }

@@ -1,0 +1,16 @@
+{
+  "id": "vertiso_memory",
+  "name": "Vertiso Memory",
+  "description": "Memories, decisions, projects and session handoffs that your agents share in Vertiso.",
+  "group": "knowledge",
+  "url": "https://memory.vertiso.ai/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

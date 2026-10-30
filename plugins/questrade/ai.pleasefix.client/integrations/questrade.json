@@ -1,0 +1,16 @@
+{
+  "id": "questrade",
+  "name": "Questrade",
+  "description": "Your Questrade accounts, positions and balances, with live quotes and watchlists.",
+  "group": "market_data",
+  "url": "https://mcp.questrade.com/v1/brokerage/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

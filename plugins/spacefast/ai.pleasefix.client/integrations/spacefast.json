@@ -1,0 +1,16 @@
+{
+  "id": "spacefast",
+  "name": "Spacefast",
+  "description": "Websites, dashboards and reports published as shareable Spaces on Spacefast.",
+  "group": "developer_tools",
+  "url": "https://mcp.spacefast.com",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

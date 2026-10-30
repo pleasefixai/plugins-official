@@ -1,0 +1,37 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "zernio",
+  "version": "1.0.0",
+  "description": "Social posts, schedules, comments, messages and ads on 14 networks, through Zernio.",
+  "author": {
+    "name": "Zernio"
+  },
+  "keywords": [
+    "social-media",
+    "scheduling",
+    "ads",
+    "inbox",
+    "whatsapp",
+    "api",
+    "instagram",
+    "tiktok",
+    "linkedin",
+    "twitter",
+    "youtube",
+    "facebook",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/zernio.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "zernio",
+        "commit": "568faceb2f1950fa2d4826ab9b0f7cfda8331ab6",
+        "skills": {}
+      }
+    }
+  }
+}

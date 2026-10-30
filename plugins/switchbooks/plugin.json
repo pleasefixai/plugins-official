@@ -1,0 +1,31 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "switchbooks",
+  "version": "1.0.0",
+  "description": "Transactions, reconciliations and profit and loss statements from your Switchbooks books.",
+  "author": {
+    "name": "Switchbooks"
+  },
+  "homepage": "https://switchbooks.ai",
+  "license": "MIT",
+  "keywords": [
+    "accounting",
+    "bookkeeping",
+    "reports",
+    "transactions",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/switchbooks.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "switchbooks",
+        "commit": "edacc3f4ffb7407c1386c12c7f6c38e93bce25a0",
+        "skills": {}
+      }
+    }
+  }
+}

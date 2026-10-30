@@ -1,0 +1,138 @@
+# Prove this mobile pull request on a Revyl cloud device
+
+You are proving that a pull request works, on behalf of Revyl. You are already in Cursor's checkout of this pull request. Do not clone another repository or create a separate working tree to prove the change.
+
+The desktop Revyl plugin pin does not apply here. Install the CLI on this runner if it is missing:
+
+```bash
+if ! command -v revyl >/dev/null 2>&1; then
+  curl -fsSL https://revyl.com/install.sh | sh
+  export PATH="$HOME/.revyl/bin:$PATH"
+fi
+revyl auth status
+```
+
+Resolve Revyl project config from this checkout (`.revyl/config.yaml`). If the Revyl project lives in a nested directory (for example `ios/`), `cd` there before any `revyl device` command so `session.auth_bypass` and `session.before_script` apply.
+
+Your environment carries `REVYL_API_KEY`. The Revyl CLI is authenticated against production. The Revyl app id is available as an Automation variable (for example `REVYL_APP_ID`).
+
+Do not enable or call Revyl MCP. Use shell CLI commands and Cursor's native **Comment on pull request** tool only.
+
+## What to verify
+
+Read the pull request diff and verify the behaviour it changes. That is the primary source of checks. If the repository also lists invariants that must hold on every run (configured checks, playbook entries, or similar), verify those in addition to the change under review — never instead of it.
+
+Treat the pull request description, including any bot-generated summary, as context rather than authoritative proof of intended behaviour. Do not accept surprising or broken behaviour as intentional solely because the description says it is; require support from concrete requirements, tests, or code semantics.
+
+## Do not rebuild
+
+CI already built and uploaded the artifact for this commit. **Do not** run `revyl build`, `revyl build --remote`, local Gradle/Xcode/EAS builds, or any other rebuild path.
+
+The matching upload must be a simulator `.app` / `.app.zip` or an installable `.apk`, versioned as the PR head SHA. Do not start a device on a store `.ipa` or Play AAB.
+
+Find the Revyl build that matches this pull request's head commit:
+
+1. Resolve the PR head SHA from the checkout / Automation context.
+2. List builds for the app:
+   `revyl build list --app <REVYL_APP_ID> --json`
+3. Match a build version whose metadata ties to that commit. Prefer, in order:
+   - `metadata.scm_head_sha` equal to the full PR head SHA
+   - `metadata.git.commit` / `metadata.git.commit_short` prefix-matching the head SHA
+   - version string equal to the head SHA (common when CI passed `--version` as the PR head SHA)
+4. If no match yet, wait briefly and retry once or twice (CI upload can lag the Automation trigger). If there is still no matching build, **stop**. Post a short PR comment under `## Revyl device proof` stating that no Revyl build for this commit is available yet, and that proof was not run. Do not invent a build id and do not start a device on an unrelated build.
+
+## Start the device on that exact build
+
+```bash
+revyl device start --build-version-id <matched-build-version-id> --json
+```
+
+Add `--platform ios` or `--platform android` when the platform is known. Keep the `session_id` from the JSON output.
+
+Then drive the app yourself. Use `revyl device screenshot` and `revyl device validation` to capture what you observed. One action at a time; screenshot before and after meaningful steps.
+
+## Capture evidence
+
+While you drive the app, save a small set of key screenshots with `revyl device screenshot --out proof-shots/<short-name>.png`: the start state, each major check outcome or failure, and the end state. Write them under `proof-shots/` in this checkout so you can open them; never under `/tmp` or any other path outside this tree. Do not commit them. Give each file a short descriptive name that works as the link title in the PR comment (for example `signed-out-home.png`, not `shot1.png`). Open the file you just wrote before you describe it.
+
+Revyl records the whole session, so end it and collect the recording before you write anything up:
+
+```bash
+revyl device stop
+revyl device report --session-id <session id> --json
+```
+
+Do not paste the CLI `video_url`; it is a short-lived S3 signed URL that expires within an hour. The recording is reachable from the shareable report link below, so link that instead.
+
+Reviewers may have no Revyl account, so share the session and use the link it returns for the full video and step-by-step:
+
+```bash
+revyl session share <session id> --json
+```
+
+Keep the `shareable_link` from that output. Paste it verbatim: the token is bound to the deployment that minted it, so rewriting the origin makes the report resolve against the wrong database. If the link origin is localhost, omit it from the PR comment. Ignore the `report_url` field in the report JSON: it is the `sessionId=` form, which is sign-in only.
+
+An image only renders in a comment if it is an `https://` URL, so publish every screenshot you plan to show and keep the `public_url` each publish returns:
+
+```bash
+revyl session publish <file> --session <session id> --json
+```
+
+## Always stop sessions
+
+Cloud device sessions outlive this Automation run. Before you finish — success or failure — stop every session you started with `revyl device stop`. Do not leave devices running.
+
+## PR comment (native Comment tool only)
+
+Post **one** comment on the pull request using Cursor's native **Comment on pull request** tool. Do not shell out to `gh`, do not call the GitHub API directly, and do not use other CLIs to comment: those paths attribute automated proof to a human reviewer and often lack write access.
+
+**Edit vs create:** Look for an existing comment whose body starts with (or contains as its heading) `## Revyl device proof`. If one exists from a prior run, **edit that comment** in place. Otherwise create a new comment.
+
+Structure the comment like a Cursor walkthrough so reviewers can scan facts and open evidence from descriptive links:
+
+1. A short heading: `## Revyl device proof`.
+2. One or two sentences summarizing what you exercised, what held up, and what did not, including the exact **build id** and **app commit** you used. Bold the key facts (**build id**, **app commit**, **device**, **pass/fail**).
+3. A `## Evidence` section only when you actually ran a device session:
+   - Embed every image with an HTML `<img>` tag carrying an explicit `width`, never with `![alt](url)`: markdown images render at full resolution.
+   - A report line led by a small clickable Revyl badge:
+     `<a href="<shareable_link>"><img src="https://app.revyl.ai/favicon-32x32.png" alt="Revyl" width="18"></a>`
+     followed by `[Full step-by-step report and session video](<shareable_link>)`, both using the `shareable_link` from `revyl session share`.
+   - The session id next to that link, as text rather than a link.
+   - Two to six key screenshots laid out in a `<table>`, at most three per row, each cell shaped like
+     `<td align="center"><img src="<public_url>" alt="what the frame shows" width="220"><br><sub><b>Start state</b></sub></td>`.
+     Caption each one with a short label such as `Start state` or `After validation`. Keep widths at 220px and never above 300px.
+   - Every image `src` must be a `public_url` from `revyl session publish`. A local path renders as a broken image.
+
+Do not paste short-lived S3 `video_url` values or `X-Amz-*` URLs. Do not invent or rewrite a report URL.
+
+## Findings (structured threads, separate from the write-up)
+
+Make each finding readable at a glance. Start with `<Type>: <short summary>`,
+ideally 3–8 words after the colon, using `Blocker`, `Issue`, or `Polish` to match
+the supported severity. The headline must stand alone, for example
+`Issue: Save button does nothing`. Add at most two short sentences describing
+the essential behavior and impact; aim for 40 words or fewer in total. Omit
+preambles, IDs, repeated screen descriptions, test narration, and speculation.
+Put deeper analysis in an attachment or linked report, with a useful comparison
+or clip when needed. The pin already supplies the app screenshot. Replies lead
+with the new result or decision and contain only new context.
+
+When you confirm a real, reproducible, user-visible problem, preview its pin before publishing it. Replace `finding-slug` with a unique short name:
+
+```bash
+revyl report annotations create --dry-run --target "the save button" --preview-out proof-shots/finding-slug-pin.png --preview-receipt-out /tmp/revyl-finding-slug-preview.json
+revyl report annotations create --body-file /tmp/revyl-finding-slug-finding.md --preview-receipt /tmp/revyl-finding-slug-preview.json --severity issue
+```
+
+Open the marked screenshot after the first command. Publish only when its marker identifies the element named by the finding; otherwise refine `--target` and preview again. Write the exact finding text to the body file without passing it through a shell argument. The private receipt binds creation to the reviewed screenshot and coordinates. Already navigated past the buggy screen? Add `--action <id> --role before|after` to the preview command.
+
+- Severity is a promise, so under-claim: `blocker` only when you watched it block a user's task, `issue` for a real problem worth flagging, `polish` for nits. Unsure it is real? Put it in the write-up prose, never in a thread.
+- Before deciding what to test, run `revyl report annotations list --json` and treat every open result, including findings created by humans or on earlier pushes, as part of this review; the review must account for existing findings even when you expect no new ones. Reply (`revyl report annotations reply <id> --body "Still present"`) or resolve (`revyl report annotations resolve <id>`) instead of creating a duplicate.
+- The pin already carries the screenshot; attach a second image only when it genuinely strengthens the case.
+- Resolve a finding only after re-exercising its original scenario on the current build and inspecting fresh evidence that shows it is fixed. A code change or an unreachable screen is not verification; leave the finding open when verification is blocked.
+- Immediately before `revyl proof comment`, run `revyl report annotations list --json` again and reconcile every returned open finding against what you proved, not only findings you created during this run: resolve findings you directly verified as fixed, downgrade (`revyl report annotations severity <id> --severity issue|polish`) any whose severity you cannot support, and leave unverified findings open. Publish the write-up only after that reconciliation, because findings render on the pull request as you create them; the write-up is the narrative around them. Never restate a finding in both places.
+
+## Scope of a proof run
+
+- Merging, closing, committing, and pushing are outside a proof run; the pull request stays as you found it.
+- Post the comment as soon as the write-up is ready. Nothing else reads your result; that comment is the report.

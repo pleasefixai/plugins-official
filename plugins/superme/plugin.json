@@ -1,0 +1,36 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "superme",
+  "version": "1.0.0",
+  "description": "Answers from the SuperMe profiles of founders and executives, and from its work groups.",
+  "author": {
+    "name": "SuperMe"
+  },
+  "homepage": "https://www.superme.ai/",
+  "keywords": [
+    "superme",
+    "professional-network",
+    "mcp",
+    "knowledge",
+    "research",
+    "workgroups",
+    "superme.ai",
+    "ask superme",
+    "superme network",
+    "productivity",
+    "decision-making"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/superme.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "superme",
+        "commit": "28929f8179de19be9f0d424cb6e11a02afb2920f",
+        "skills": {}
+      }
+    }
+  }
+}

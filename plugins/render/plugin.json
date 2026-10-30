@@ -1,0 +1,64 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "render",
+  "version": "1.0.0",
+  "description": "Services, deploys, logs and metrics of your apps on Render.",
+  "author": {
+    "name": "Render"
+  },
+  "homepage": "https://render.com",
+  "license": "MIT",
+  "keywords": [
+    "render",
+    "deploy",
+    "cloud",
+    "blueprint",
+    "monitoring",
+    "debugging"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/render.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "render",
+        "commit": "d7ecf826c5971eb7dfdb5aed79fa838a8d67ff46",
+        "skills": {
+          "render-background-workers": "96c9a0833d88dc4245f53cba1977d778bb6445d7842a63a0f29b2ac7dc274ad3",
+          "render-blueprints": "19a998da0c9ac54a2d719aa17811816b3b85589138fba2f9d9cb07f4af435429",
+          "render-cli": "724b37ec3fc900c9f343949ea76272533931d94042d70e9fee2ed33f668b2860",
+          "render-cron-jobs": "3cfa19da6764f253e430ac9dc3e03a7a31a7e47c78eb2206ed882fdc1f3bf8d8",
+          "render-debug": "af71986ed0c3e8da289666b74822e4a5bbcd7d9b203e64c37417d08ae8f3769b",
+          "render-deploy": "54da7b6dd41c7ca0c81964488987236a7edbfde2a7ebac8631e6a013a209cc0d",
+          "render-disks": "25f7ab4923a728d661260a064ddf93cef294c46367f862c4e509f6da4a8c1fb3",
+          "render-docker": "b31ba56ff141d4e0fbc415d5c8d6b3798ac972cb0ef73c1d9383bb8e5ed19c5a",
+          "render-domains": "0bf0e0a43bc0fe90bdeb792202b40ceb49bd0f8f0120f225de7e914e5a90c5da",
+          "render-env-vars": "465eb8e75d91a08884cb5bc487afe178b0659efa688ddc33bed75d57701a885c",
+          "render-keyvalue": "df4981aa32bb93537f541d6e547eafc4a366a61c7a91461d5e78e4643e06ff42",
+          "render-mcp": "dc876e49f67991ae49e3191f74158c203e0813d2816fd68fe33376ec867526e8",
+          "render-migrate-from-heroku": "a2c76993a5304e439568acc0d8c934893388c6b3c62d9ef80daddb4c6bc1e9f0",
+          "render-monitor": "170601775eb498c34b6acac2f66827c18d2db9e53eabb38f4acc084d15b7bafc",
+          "render-networking": "f2570cf3b2fff727e064a5f43a168f6c6f3c22d8e17033b003c9c5b8a0a4ae0e",
+          "render-postgres": "bcb0fc92d3f1b1da9acd2c89e87c31076727fd4f27020742706263a264317103",
+          "render-private-services": "f0e03b07a31f1226d93f91581acc89941e6cdd30a5a43bb9ec7e9c30be3be0f5",
+          "render-scaling": "850c6585e95e9015f4d2ae444b093b058641db01b8d48a5721562047986a8688",
+          "render-static-sites": "9b5767542fac044b613c5d37673a2453a71d5fd2ded80b3c679278ffa743bffc",
+          "render-web-services": "be506cafb9117ba6f258a54973c3a7281c879993333c5714e0844f0c97c80b06",
+          "render-workflows": "5305cdd26d67b6f2d0fe311bdfed54c205056b39840819f49c1b74429df72c6d"
+        },
+        "also": [
+          {
+            "marketplace": "cursor",
+            "plugin": "render",
+            "commit": "a4cad87982f39f64bdc828424c17f38310c89517",
+            "skills": {
+              "render-sandboxes": "7517aef57acf38adff783373b52465510f4e409802033bf82bfbd3d0942ac81a"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

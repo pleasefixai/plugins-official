@@ -17,17 +17,17 @@ signals + eliminations, from design.json's `scores`/`eliminated`).
 
 ## Step 2 — Check downstream availability
 
-Both downstream skills — `gcp-to-aws` and `llm-to-bedrock` — are part of this same plugin, so
-they are always available; no availability check or install is needed.
+The downstream skill `gcp-to-aws` is part of this same plugin, so it is always available; no
+availability check or install is needed.
 
 ## Step 3 — Direct the user
 
 - For infrastructure/container migration (ECS/EKS/Lambda compute): invoke the **`gcp-to-aws`
   skill** — it lives in this same plugin (`migration-to-aws`). Point the user to re-run it with
   the handoff summary at `$RUN_DIR/handoff-summary.md`.
-- For AI/LLM workload migration (model swap, SDK rewrite): invoke the **`llm-to-bedrock` skill**
-  (`/migration-to-aws:llm-to-bedrock`) — also in this same plugin, no separate install. Point
-  the user to re-run it with the handoff summary at `$RUN_DIR/handoff-summary.md`.
+- For AI/LLM workload migration (model swap, SDK rewrite): this plugin has no skill that
+  rewrites the code for Bedrock. Point the user to the model recommendation in the handoff
+  summary at `$RUN_DIR/handoff-summary.md` as the starting point for that change.
 
 ## Step 4 — Finish
 

@@ -1,0 +1,16 @@
+{
+  "id": "switchbooks",
+  "name": "Switchbooks",
+  "description": "Transactions, reconciliations and profit and loss statements from your Switchbooks books.",
+  "group": "finance_ops",
+  "url": "https://app.switchbooks.ai/api/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

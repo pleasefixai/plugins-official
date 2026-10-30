@@ -1,0 +1,42 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "shop",
+  "version": "1.0.0",
+  "description": "Products from millions of stores, with carts, checkout and orders in Shop.",
+  "author": {
+    "name": "Shopify"
+  },
+  "homepage": "https://shop.dev",
+  "license": "MIT",
+  "keywords": [
+    "shop",
+    "shop app",
+    "shop pay",
+    "shopify",
+    "shopping",
+    "buy",
+    "products",
+    "price comparison",
+    "cart",
+    "checkout",
+    "orders",
+    "order tracking",
+    "delivery",
+    "ecommerce",
+    "ucp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "shop",
+        "commit": "967b00f13e40bef9603716bbf313667f70f2dd81",
+        "skills": {
+          "shop": "15a1c813efc75373ab8ed95b495d310e023bf6cbaff2a673d2f8911496730e4e"
+        }
+      }
+    }
+  }
+}

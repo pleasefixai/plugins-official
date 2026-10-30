@@ -1,0 +1,16 @@
+{
+  "id": "revyl",
+  "name": "Revyl",
+  "description": "Mobile app tests on Revyl cloud devices, run and verified by your agent.",
+  "group": "developer_tools",
+  "url": "https://backend.revyl.ai/api/v1/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

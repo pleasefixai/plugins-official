@@ -1,0 +1,16 @@
+{
+  "id": "tubealfred_youtube",
+  "name": "TubeAlfred",
+  "description": "YouTube video transcripts, comments and channel data, through TubeAlfred.",
+  "group": "knowledge",
+  "url": "https://mcp.tubealfred.com/",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

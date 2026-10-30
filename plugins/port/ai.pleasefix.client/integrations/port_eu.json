@@ -1,0 +1,19 @@
+{
+  "id": "port_eu",
+  "name": "Port (EU)",
+  "description": "Software catalog, workflows and AI agents in your Port portal, hosted in the EU.",
+  "group": "developer_tools",
+  "url": "https://mcp.port.io/v1",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  },
+  "headers": {
+    "x-read-only-mode": "0"
+  }
+}

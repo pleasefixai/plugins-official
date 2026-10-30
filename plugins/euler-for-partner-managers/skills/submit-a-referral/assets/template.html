@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Referral submitted — {{REFERRED}}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>/* Inline the FULL contents of assets/styles.css here (self-contained). No JS, no images. */</style>
+</head>
+<body>
+<header class="topbar"><div class="container topbar-inner"><div class="brand">
+  <span class="brand-mark">Euler</span><span class="brand-divider" aria-hidden="true"></span>
+  <span class="brand-label">Referral submitted · {{CUSTOMER}}</span>
+</div></div></header>
+<section class="hero"><div class="container">
+  <span class="hero-eyebrow"><span class="dot" aria-hidden="true"></span>{{STATUS}}</span>
+  <h1>Referral sent — <span class="accent">{{REFERRED}}</span></h1>
+  <p>{{ONE_LINE_CONFIRMATION}}</p>
+  <div class="quick-facts">
+    <div class="fact"><div class="fact-label">Type</div><div class="fact-value" style="font-size:clamp(15px,3vw,18px)">{{TYPE}}</div></div>
+    <div class="fact"><div class="fact-label">Submitted to</div><div class="fact-value" style="font-size:clamp(15px,3vw,18px)">{{CUSTOMER}}</div></div>
+    <div class="fact"><div class="fact-label">Status</div><div class="fact-value" style="font-size:clamp(15px,3vw,18px)">{{STATUS}}</div></div>
+  </div>
+</div></section>
+<section class="pt0"><div class="container">
+  <div class="section-header"><div class="section-eyebrow">What you submitted</div></div>
+  <!-- row · clone per Q&A -->
+  <div class="table-wrap"><table>
+    <thead><tr><th>Question</th><th>Your answer</th></tr></thead>
+    <tbody>
+      <tr><td><strong>{{Q1}}</strong></td><td>{{A1}}</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">{{NEXT_STEP_NOTE}}</p>
+</div></section>
+<footer><div class="container footer-inner">
+  <span class="brand-mark footer-mark">Euler</span><p>Referral · {{CUSTOMER}}</p><p class="mono">euler · submit-a-referral</p>
+</div></footer>
+</body>
+</html>

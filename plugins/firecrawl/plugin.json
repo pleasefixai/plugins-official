@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "firecrawl",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Web search, page scraping and site crawls with Firecrawl.",
   "author": {
     "name": "Firecrawl"
@@ -20,7 +20,25 @@
           "firecrawl": "864519742045dd910c8582fedae9ddb161a9a745f6e6ba13fca8b9cc7e711055",
           "firecrawl-developer-index": "33644fc1ae815c2fadfdbdd3a01231610527874a376c815b1c0d8e108d4d37b5",
           "firecrawl-research-index": "b4920b1aed0aa21db7cd722eb0aa45fb2512f1c29c0d4843a1cae1692ccffb4a"
-        }
+        },
+        "also": [
+          {
+            "marketplace": "cursor",
+            "plugin": "firecrawl",
+            "commit": "866f30d4dc0b3eca6a05884f6b6db6d914a5967c",
+            "skills": {
+              "firecrawl-agent": "3f4f17b7917c1337c5237ec3443d7151d73e93d16ed4bd7e041bbaaab3598689",
+              "firecrawl-crawl": "8ca47eed996e9111b6e25619ebae30516620f43f60bb44528fcc7002d7c9ea98",
+              "firecrawl-download": "e7f488561784e3caa62709ae131b588fb6a76827deca3698c125c46f54b86ad8",
+              "firecrawl-interact": "4ae6137e9407124143100e8740e5a3d90034945213e5838ca3a5c4bc7fe71306",
+              "firecrawl-map": "f74cd3b7c1a176b2a1cfd54d97ab592a5043750cc626d7cf3a17db512b04593d",
+              "firecrawl-monitor": "92f5c494fba0f1cdb178196acf3bdc0b97c97c20d81c7b8dbe675ad25a51d4fb",
+              "firecrawl-parse": "ed60be6f42b1c5c7d4aa43ac2d917804a3a75eff3d7fc7347bdaf7913c128326",
+              "firecrawl-scrape": "71ac8d21e87467358060974e754c9286dd0864d410b0a028d37853eaedaa623e",
+              "firecrawl-search": "0aeb076e12c7a16d208d74fcdec6508724cf362c37eb050bd878cb3edec602fa"
+            }
+          }
+        ]
       }
     }
   }

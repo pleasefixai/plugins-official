@@ -1,0 +1,16 @@
+{
+  "id": "turso",
+  "name": "Turso",
+  "description": "Organizations, databases and groups in Turso Cloud, and SQL queries on them.",
+  "group": "developer_tools",
+  "url": "https://mcp.turso.ai/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

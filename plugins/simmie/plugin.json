@@ -1,0 +1,30 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "simmie",
+  "version": "1.0.0",
+  "description": "Sales roleplay simulations, scoring rubrics and practice links in Simmie.",
+  "author": {
+    "name": "Simmie"
+  },
+  "homepage": "https://www.simmie.ai/",
+  "keywords": [
+    "sales",
+    "training",
+    "roleplay",
+    "enablement",
+    "simmie"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/simmie.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "simmie",
+        "commit": "b1a05068ec831ddc4b636da25fd371d84e1bfffa",
+        "skills": {}
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "restream",
+  "version": "1.0.0",
+  "description": "Live streams to social platforms, recordings and AI clips with Restream.",
+  "author": {
+    "name": "Restream"
+  },
+  "homepage": "https://restream.io",
+  "license": "MIT",
+  "keywords": [
+    "restream",
+    "streaming",
+    "mcp",
+    "video",
+    "analytics"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/restream.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "restream",
+        "commit": "20ee9f2490b937174aee16f90f21de0c1fbf35a6",
+        "skills": {}
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "windmill-hr",
+  "version": "1.0.0",
+  "description": "Performance reviews, feedback, 1:1s and pulse surveys in your Windmill workspace.",
+  "author": {
+    "name": "Windmill"
+  },
+  "homepage": "https://gowindmill.com",
+  "license": "MIT",
+  "keywords": [
+    "windmill",
+    "hr",
+    "people-ops",
+    "feedback",
+    "one-on-ones",
+    "pulse-surveys",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/windmill_hr.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "windmill-hr",
+        "commit": "6f69a5aeb91d63e16f9462f062319d952861f9a2",
+        "skills": {
+          "collect-feedback": "d517a90611806785e590d839788fbdecac7dd16cd8c06b4c52c2b12b2a198378",
+          "create-pulse": "845cd5bcd2433655b6303bdcae9129438fbc989176e2b47dbd8b52bd2de08b0f",
+          "manage-1on1s": "3b9545abbb4eddbace4d0c9621a57560134a5bd3ccd7b5210dca1fa3e3cb6d6d",
+          "manage-notes": "900bec8e91a5b25246d0bc15794059ca116f027feef0c552a3f0dfebb4f53694",
+          "manage-pulse": "b5ca666b0c626ffbef36074be5ad5aece87304a3268cf1fe88e20bafb0b1351e"
+        }
+      }
+    }
+  }
+}

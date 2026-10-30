@@ -1,0 +1,16 @@
+{
+  "id": "resend",
+  "name": "Resend",
+  "description": "Emails, domains, audiences and broadcasts in your Resend account.",
+  "group": "developer_tools",
+  "url": "https://mcp.resend.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

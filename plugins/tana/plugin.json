@@ -1,0 +1,44 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "tana",
+  "version": "1.0.0",
+  "description": "Meetings, transcripts, nodes, tasks and calendar events from your Tana workspace.",
+  "author": {
+    "name": "Tana Labs"
+  },
+  "homepage": "https://tana.inc",
+  "license": "MIT",
+  "keywords": [
+    "tana",
+    "meetings",
+    "transcripts",
+    "screen-share",
+    "mcp",
+    "notes",
+    "tasks",
+    "calendar"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/tana.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "tana",
+        "commit": "133f6b54b7c389dacd82b6520d2fe43563573ff3",
+        "skills": {
+          "add-to-meeting": "4e1bf91d2dd230a26a2c7df1e436ac1991023224d9e6a2af434ed2c2a9718d3d",
+          "ask-tana": "a19bfb8108ee02de2701117d385f9b326651da50002e39ec8024680016ec741e",
+          "create-from-meeting": "6247ff8a15d5b56c0418ab0e41862ccbc1392a40271028094ff044eb9a5ac995",
+          "do-my-tasks": "ec5cfba3c5ebc63670f2202e00e70f4aeaa5ffbb66c180f714ff81a0a036b5ac",
+          "find-prior-art": "90d110528c43f0ef01a8074b0a3e38eeaeef56ae808e121dba8320ff9c43d761",
+          "implement-from-meeting": "fdb478d04675d99ef3905129629e82da374e96b89b2744ddec49dde5b0ace518",
+          "prep-meeting": "40e2229fc760de9124f9128577bfc5b2318dde81995e8aa28bd8403b48f990c3",
+          "schedule-meeting": "06f160d2df2e1e416dcf96a88181eebfe385ea074010a64820e9cbf374f8b6c2",
+          "tana-meeting": "080d94e518ba89e7a2d96069eb9ad41a8a42ab1ab872ea32e5c1b9baf513a73f"
+        }
+      }
+    }
+  }
+}

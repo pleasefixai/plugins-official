@@ -1,0 +1,32 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "streak",
+  "version": "1.0.0",
+  "description": "Pipelines, boxes, contacts, organizations and tasks in your Streak CRM for Gmail.",
+  "author": {
+    "name": "Streak"
+  },
+  "homepage": "https://streak.com",
+  "license": "MIT",
+  "keywords": [
+    "streak",
+    "crm",
+    "sales",
+    "pipelines",
+    "contacts",
+    "tasks"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/streak.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "streak",
+        "commit": "f637391a6b25ec199ac85ee6e20884b554fd7883",
+        "skills": {}
+      }
+    }
+  }
+}

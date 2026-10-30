@@ -1,0 +1,16 @@
+{
+  "id": "streamline_icons",
+  "name": "Streamline Icons",
+  "description": "Icons, illustrations and emojis from Streamline and open sets like Lucide and Heroicons.",
+  "group": "design",
+  "url": "https://public-api.streamlinehq.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

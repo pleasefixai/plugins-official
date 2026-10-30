@@ -1,0 +1,32 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "writer-mcp",
+  "version": "1.0.0",
+  "description": "Writer playbooks, their runs and the deliverables that they produce.",
+  "author": {
+    "name": "WRITER"
+  },
+  "homepage": "https://writer.com/",
+  "license": "MIT",
+  "keywords": [
+    "writer",
+    "writer ai",
+    "writer playbooks",
+    "writer deliverables",
+    "mcp",
+    "enterprise"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/writer_mcp.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "writer-mcp",
+        "commit": "b00c003fabd7417a4c8b83e942aa9d07fc16fc73",
+        "skills": {}
+      }
+    }
+  }
+}

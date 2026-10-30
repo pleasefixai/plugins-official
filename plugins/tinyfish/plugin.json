@@ -1,0 +1,35 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "tinyfish",
+  "version": "1.0.0",
+  "description": "Web search, page content, multi-step web automations and remote browsers from TinyFish.",
+  "author": {
+    "name": "Cursor"
+  },
+  "homepage": "https://docs.tinyfish.ai/mcp-integration",
+  "license": "MIT",
+  "keywords": [
+    "tinyfish",
+    "web automation",
+    "browser agent",
+    "web search",
+    "scraping",
+    "content extraction",
+    "browser sessions",
+    "playwright",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/tinyfish.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "tinyfish",
+        "commit": "1ba91fc25c0977741dd0e267849e6234b037ed0a",
+        "skills": {}
+      }
+    }
+  }
+}

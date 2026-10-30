@@ -1,0 +1,16 @@
+{
+  "id": "zapier",
+  "name": "Zapier",
+  "description": "Actions in the 8,000+ apps that you connect to your Zapier account.",
+  "group": "automation",
+  "url": "https://mcp.zapier.com/api/v1/connect",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

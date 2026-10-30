@@ -1,0 +1,39 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "sideshift",
+  "version": "1.0.0",
+  "description": "UGC campaigns, creators, contracts, messages and payouts in your SideShift company.",
+  "author": {
+    "name": "SideShift"
+  },
+  "homepage": "https://sideshift.app",
+  "license": "Apache-2.0",
+  "keywords": [
+    "sideshift",
+    "mcp",
+    "creator-economy",
+    "campaigns",
+    "creators",
+    "influencer-marketing",
+    "recruiting",
+    "ugc",
+    "creator-discovery",
+    "campaign-management"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/sideshift.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "sideshift",
+        "commit": "eb2f99eb1f68131ed794fc5f3c827247f6edc0b4",
+        "skills": {
+          "sideshift-operations": "32be57c6575beaf6a5293e5e0403d9269f29fad291784ac3acec39274c99d171",
+          "sideshift-setup": "27aa2d11d33887d4ec6965d615ef12fec66b8e65f0119479f3807385a1948abb"
+        }
+      }
+    }
+  }
+}

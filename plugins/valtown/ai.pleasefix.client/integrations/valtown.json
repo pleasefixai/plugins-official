@@ -1,0 +1,16 @@
+{
+  "id": "valtown",
+  "name": "Val Town",
+  "description": "Vals, HTTP endpoints, crons and SQLite data in your Val Town account.",
+  "group": "developer_tools",
+  "url": "https://api.val.town/v3/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

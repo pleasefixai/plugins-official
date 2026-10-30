@@ -1,0 +1,38 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "spacefast",
+  "version": "1.0.0",
+  "description": "Websites, dashboards and reports published as shareable Spaces on Spacefast.",
+  "author": {
+    "name": "Spacefast"
+  },
+  "homepage": "https://spacefast.com",
+  "license": "MIT",
+  "keywords": [
+    "spacefast",
+    "publish-to-spacefast",
+    "artifact-sharing",
+    "hosting"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/spacefast.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "spacefast",
+        "commit": "c29b4cbf52bc4564f42fe05622cfcffaf9d7ae82",
+        "skills": {
+          "build-website": "59c86650a1d6d299321f19549ec0fc4b05c2caa972e0d9092b46c777fb2abc16",
+          "custom-domain": "e90d477513fe6fc1e683fa59bd21565c34794c7b13d10a1d672bba49dfbe44a7",
+          "edit-space": "589bc66afda21967ec75ed22aaf0c1f035ffd91973ed59fe80910b4477b0fdeb",
+          "fix-deployment": "9b8cf6d552701680b39157a5b5c68d7c4308ca1ae5f08d9e2d105939b8e942d2",
+          "setup": "1f3567313062d032164da5a03152b2b54720cd351906a41f4e99d7b01771996a",
+          "share-space": "e60477e7f3db029241ffccbf16513f68b476c9b649ab1e05705ba4e6d062e633",
+          "spacefast": "86a751b8e540297f08dfdeb9a39d85f6e63823fe01fa2144dcf304176f4070d3"
+        }
+      }
+    }
+  }
+}

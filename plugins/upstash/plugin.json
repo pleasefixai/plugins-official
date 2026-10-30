@@ -1,0 +1,56 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "upstash",
+  "version": "1.0.0",
+  "description": "Redis, QStash, Vector and Search in your Upstash account, with guides for its SDKs.",
+  "author": {
+    "name": "Upstash"
+  },
+  "homepage": "https://upstash.com/",
+  "license": "MIT",
+  "keywords": [
+    "upstash",
+    "mcp",
+    "redis",
+    "cache",
+    "qstash",
+    "queue",
+    "vector",
+    "search",
+    "workflow",
+    "ratelimit",
+    "box",
+    "sandbox",
+    "blob",
+    "storage",
+    "serverless"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/upstash.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "upstash",
+        "commit": "b0850d0abedb81269e2ea07e755e9488c3d65d39",
+        "skills": {
+          "upstash": "4fbd59790466fade83ea33a1e6664c7c2ef87205ae43d09c3e730b030facc7dd",
+          "upstash-blob-js": "480e1735486ccebaaa656c146e02d118482ec2d9874be594b5edd61ef2d8bf0c",
+          "upstash-box-cli": "4cee9e3d23fd60306ac8ff4dfb043134364909958193c383e9b0e5ae3b2c333b",
+          "upstash-box-js": "0a3e92b8d26da424fe18e8b12ad746390de8d7835d4a76c9a5833f4bfed0b956",
+          "upstash-box-py": "3dd343b7888cd6bbe257935c0c928234d91dfe6644e2f7880539462471356a61",
+          "upstash-box-remote-work": "f15a247886b3e36c6612175291cde50b2353ca2f0ad3ad58ee5490a9b007de1a",
+          "upstash-cli": "5dd1c03c4d7dca0e3cea6ba6aad54e0c171528dad402559e28d6e185d668c0ae",
+          "upstash-qstash-js": "a3b133dfdb853c37bcd8e576c7390ac35abdaefa54362fd7ffc074e451a4850b",
+          "upstash-ratelimit-js": "7acc57ecca30c92e5af8e31ad8da5f161810838b3617aa5d818622dad7acdd26",
+          "upstash-redis-js": "dea6e6a11529da587b10272244479340994f5ae37933a3ba0f6f705d09167a7a",
+          "upstash-redis-start": "0edc8085988812e393f3b11b135388a0ed7a8e1f4858729a2ffc1457b50aefc8",
+          "upstash-search-js": "54895de7a673d046ef1da96b92f2a38ac68a88563d9b29bdd29f97ac0c7c33f2",
+          "upstash-vector-js": "ae81c1435198a463f4dbd6d0f685b8d619a45419eb3b3546292d94477afcfe4a",
+          "upstash-workflow-js": "6060ee6d0be4d35b8e9f097e195490e70e88360ec90c540854423816a0ad7f5e"
+        }
+      }
+    }
+  }
+}

@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "chainguard",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Hardened container images, packages, advisories and version history from Chainguard.",
   "author": {
     "name": "Chainguard"
@@ -20,6 +20,7 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "mark": "integrations/chainguard_cg_api.png",
       "upstream": {
         "kind": "imported",
         "marketplace": "cursor",

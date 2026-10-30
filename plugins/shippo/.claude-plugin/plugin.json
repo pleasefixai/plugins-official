@@ -1,0 +1,5 @@
+{
+  "name": "shippo",
+  "version": "1.0.0",
+  "description": "Shipping rates, labels, tracking and address checks for 40+ carriers, through Shippo."
+}

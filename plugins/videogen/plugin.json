@@ -1,0 +1,34 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "videogen",
+  "version": "1.0.0",
+  "description": "Videos made in VideoGen from text, images or scripts, and exported as MP4.",
+  "author": {
+    "name": "VideoGen"
+  },
+  "homepage": "https://videogen.io/",
+  "license": "MIT",
+  "keywords": [
+    "ai video editor",
+    "ai video generator",
+    "image to video",
+    "script to video",
+    "text to video",
+    "videogen"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/videogen.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "videogen",
+        "commit": "739a79b7eadb1c2ea7815a08edfeebd358653e6f",
+        "skills": {
+          "videogen": "48461303b449d4a8c535477f6e0e51c3addcf4a3cd9b8e9b6ef06a0021d9b519"
+        }
+      }
+    }
+  }
+}

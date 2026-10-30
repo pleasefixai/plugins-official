@@ -1,0 +1,36 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "senselab",
+  "version": "1.0.0",
+  "description": "Memories, shared rooms and decision traces that help your agents learn in SenseLab.",
+  "author": {
+    "name": "SenseLab"
+  },
+  "homepage": "https://sense-lab.ai",
+  "license": "Apache-2.0",
+  "keywords": [
+    "senselab",
+    "continual-learning",
+    "agent-memory",
+    "memory",
+    "knowledge-base",
+    "multi-agent",
+    "rooms",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/senselab.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "senselab",
+        "commit": "9019d546386ee321ce795a976db61ede668541f6",
+        "skills": {
+          "senselab-learning": "e87b78037cb0fbf505cfd4607e3a122fb35bb26843c4744ab5cc7d8fe5fdce7e"
+        }
+      }
+    }
+  }
+}

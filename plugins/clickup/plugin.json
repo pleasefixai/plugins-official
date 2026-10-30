@@ -1,12 +1,31 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "clickup",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Tasks, lists, docs and spaces from your ClickUp workspace.",
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
-      "mark": "mark.svg"
+      "mark": "mark.svg",
+      "upstream": {
+        "kind": "skills",
+        "marketplace": "codex",
+        "plugin": "clickup",
+        "commit": "0722921d5542fc593105c27bd52630babd8b8c2a",
+        "skills": {},
+        "also": [
+          {
+            "marketplace": "cursor",
+            "plugin": "clickup",
+            "commit": "1f40631e03a8d3b393ad67a39eaae599fe9669c9",
+            "skills": {
+              "daily-standup": "532b2b2b6411a851ae3e0f2f3e6ff58a43a893d3303291904a01e1ca80c21939",
+              "repeat-project": "c96f7a6197a0fe9b5e74c33df2c124d1ae7ad7724d60133a14c4a6378069764a",
+              "task-decomposition": "6e4c27083f0188623f6454e6352d06c3577e7e4271e62963318dd1501f099720"
+            }
+          }
+        ]
+      }
     }
   }
 }

@@ -1,0 +1,5 @@
+{
+  "name": "roboflow",
+  "version": "1.0.0",
+  "description": "Datasets, annotations, model training and vision workflows in your Roboflow workspace."
+}

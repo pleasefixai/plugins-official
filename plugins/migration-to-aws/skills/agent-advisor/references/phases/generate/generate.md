@@ -79,8 +79,8 @@ commercials/runbook text from decision-refs/temporal.md (never restate). The Bed
 runs HERE conditionally:
 
 - Ask the user: "Move Activity LLM calls to Bedrock as part of this migration?"
-- **Yes** → append "Bedrock migration" section to recommendation.md §3c: (a) point to
-  `/migration-to-aws:llm-to-bedrock` skill as follow-up, (b) REQUIRE replay safety per
+- **Yes** → append "Bedrock migration" section to recommendation.md §3c: (a) name the move of
+  the Activity LLM calls to Bedrock as a follow-up, (b) REQUIRE replay safety per
   decision-refs/temporal.md runbook 3 (keep Workflow determinism against recorded history, or
   isolate via Worker Versioning / new task queue). If deeply-coupled AI integrations flagged,
   note the rewrite must respect the shim.
@@ -201,7 +201,7 @@ question to the user in the same message:
 >   after Step 7 the state machine loads `references/phases/migration-plan/migration-plan.md`.
 > - **No** → set `phases.migration_plan = "skipped"`. For `migrate`, keep the classic
 >   pointer: follow handoff-migration.md Steps 2–4 (direct the user to
->   `/migration-to-aws:llm-to-bedrock` or `gcp-to-aws` with `handoff-summary.md`).
+>   `gcp-to-aws` with `handoff-summary.md`).
 
 ## Step 7 — Write state and branch
 

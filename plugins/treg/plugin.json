@@ -1,0 +1,36 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "treg",
+  "version": "1.0.0",
+  "description": "SEO, social, ad and company enrichment data from 4,000+ provider endpoints, through Treg.",
+  "author": {
+    "name": "Superdesign"
+  },
+  "homepage": "http://superdesign.dev/",
+  "license": "Apache-2.0",
+  "keywords": [
+    "api",
+    "tools",
+    "seo",
+    "serp",
+    "backlinks",
+    "enrichment",
+    "web-data",
+    "oauth"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/treg.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "treg",
+        "commit": "06d0428f2d2b679e7e7f75537c812a47113aaa83",
+        "skills": {
+          "treg": "07d345e9b7715c5c3ebe6a40723ec9d6f2b3adf088891c444da1503a0d885634"
+        }
+      }
+    }
+  }
+}

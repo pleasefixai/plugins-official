@@ -1,0 +1,32 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "wispr-flow",
+  "version": "1.0.0",
+  "description": "Meeting notes, transcripts and calendar context from Wispr Flow.",
+  "author": {
+    "name": "Wispr Flow"
+  },
+  "homepage": "https://wispr.ai",
+  "keywords": [
+    "meetings",
+    "notes",
+    "transcripts",
+    "calendar",
+    "dictation",
+    "productivity",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/wispr_flow.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "wispr-flow",
+        "commit": "894bbf0e1fa36fc982bf40cf0a0d0bdb7ee3bd62",
+        "skills": {}
+      }
+    }
+  }
+}

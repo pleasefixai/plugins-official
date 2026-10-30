@@ -1,0 +1,16 @@
+{
+  "id": "runway",
+  "name": "Runway",
+  "description": "Images, videos, music and speech generated with Runway and its partner models.",
+  "group": "design",
+  "url": "https://mcp.runwayml.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

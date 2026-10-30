@@ -1,0 +1,33 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "vexo",
+  "version": "1.0.0",
+  "description": "Spoken requests from your Vexo Band, run as tasks with the results sent back to Vexo.",
+  "author": {
+    "name": "VexoAI"
+  },
+  "homepage": "https://www.vexoai.com/",
+  "keywords": [
+    "vexo",
+    "conversations",
+    "memory",
+    "transcripts",
+    "context",
+    "coding",
+    "tasks",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/vexo.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "vexo",
+        "commit": "473b78a98386c6f0be8318a426d938018feeec44",
+        "skills": {}
+      }
+    }
+  }
+}

@@ -110,7 +110,7 @@ non-agent), STOP with `_halt_and_inform`:
 > agent loop, tool use, or model-backed reasoning. agent-advisor is focused on **agentic
 > workloads** (choosing a runtime + model for AI agents), so it isn't the right fit here.
 > For a straight compute migration, use the **`migration-to-aws`** main flow (containers, batch,
-> services) or **`heroku-to-aws`**; for an LLM-SDK-to-Bedrock swap, use **`llm-to-bedrock`**.
+> services) or **`heroku-to-aws`**.
 
 Do NOT select a primary, ask questions, write answers.json, or score. This gate is the SINGLE
 place the non-agent case is handled — every step after it (primary selection, questioning,

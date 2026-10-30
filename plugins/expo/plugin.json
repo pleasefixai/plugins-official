@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "expo",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Expo and EAS builds, updates, app store submissions and docs for React Native apps.",
   "author": {
     "name": "Expo Team"
@@ -59,7 +59,26 @@
           "expo-ui": "b19782198d7495895374f25686aa7da349955a7834ffe130e2133a20b65930bd",
           "expo-upgrade": "9952d662c5addc0592a038723f43d43f9b02447831a8c1d9fc28884f6a4f3aaf",
           "expo-web-to-native": "94f6913fecdf10a9782e28fb673eb2dc386ce9680f6ae1b73f52b4ac36ad2ca0"
-        }
+        },
+        "also": [
+          {
+            "marketplace": "codex",
+            "plugin": "expo",
+            "commit": "0722921d5542fc593105c27bd52630babd8b8c2a",
+            "skills": {
+              "building-native-ui": "06ea876a521dde973cc09a6e0acff79db2353e8a96f8649eafb49c5df0953b36",
+              "codex-expo-run-actions": "2a5c787fd5c27973dcc53c2a14b49b944cc2b7d9849a6a075f46fe7d712d85f8",
+              "expo-api-routes": "bef0f3b84279ebe8f9247cbe37b0e74d4a4633cde55efcefbe68ffeef4a8e3ac",
+              "expo-cicd-workflows": "cda3696d0637336e6024d966e740494ef665937665e267fb3fc12397db6ef9ed",
+              "expo-deployment": "9811b4450a0323842c9d9179294796dcae151a56ce3c9df28ba458b9b23e3c9b",
+              "expo-tailwind-setup": "0a1af9232d759716b1b688a6689f492ee003249c7c01e1e7ec1cedb666113704",
+              "expo-ui-jetpack-compose": "f940cd1eba6e116572590a27ba61943d6b13d119c84f8db38506bd5d2d180352",
+              "expo-ui-swift-ui": "ddf3861e49cc4c56ed8096c70fe0232243877986dc32944ce167ae58e145ebde",
+              "native-data-fetching": "76fa39a6a1e32a75c1668221118741a98cd70c87392bf53249bcf087273dda34",
+              "upgrading-expo": "2e6501df57bace3420bd0967226029e92301c7d0d09d039400db9644a8528760"
+            }
+          }
+        ]
       }
     }
   }

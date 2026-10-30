@@ -1,0 +1,16 @@
+{
+  "id": "vanta_eu",
+  "name": "Vanta (EU)",
+  "description": "Tests, controls, documents and frameworks in your Vanta account hosted in the EU.",
+  "group": "developer_tools",
+  "url": "https://mcp.eu.vanta.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

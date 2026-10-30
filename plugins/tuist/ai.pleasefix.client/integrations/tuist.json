@@ -1,0 +1,16 @@
+{
+  "id": "tuist",
+  "name": "Tuist",
+  "description": "Builds, test runs, bundles and cache runs from your Tuist dashboard.",
+  "group": "developer_tools",
+  "url": "https://tuist.dev/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

@@ -7,11 +7,9 @@ description: |
   Use whenever a request pairs live or scraped web data WITH a Databricks destination — e.g. "scrape
   Amazon/Walmart prices into a Delta table and build a dashboard", "load Zillow/Instagram/Maps/search
   results into Databricks and build a dashboard or app", "showcase Nimble + Databricks to a prospect".
-  Prefer it over nimble-web-expert or competitor-intel when the data lands in Databricks. Do NOT use
-  for one-off web fetches or CSV exports with no Databricks destination — use nimble-web-expert
-  instead. Do NOT use for competitor or company research briefings — use competitor-intel or
-  company-deep-dive instead. Do NOT use for generic Databricks work with no Nimble/web-data angle —
-  use the official databricks-* skills instead.
+  Do NOT use for one-off web fetches or CSV exports with no Databricks destination. Do NOT use for
+  competitor or company research briefings. Do NOT use for generic Databricks work with no
+  Nimble/web-data angle — use the official databricks-* skills instead.
 allowed-tools:
   - Bash(databricks:*)
   - Bash(python3:*)
@@ -142,8 +140,8 @@ item-level matching wasn't confident.
 - Summarize what was built and the **headline insight** (the comparison takeaway).
 - **Offer to share** the dashboard/app link — if a Slack or Notion connector is available, offer to
   post it there (Slack = the link + headline; Notion = a short dated page). Mention once; don't nag.
-- **Suggest next steps** with sibling skills, e.g. `competitor-intel` / `company-deep-dive` for
-  business signals on the brands surfaced, or `nimble-web-expert` for a one-off deeper pull.
+- **Suggest next steps**, e.g. business signals on the brands surfaced, or a one-off deeper pull
+  with the Nimble tools.
 - Offer iterations (more charts, item-level matching, theming, a scheduled refresh job).
 
 ## Reference map

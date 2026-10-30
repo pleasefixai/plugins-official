@@ -1,0 +1,16 @@
+{
+  "id": "token_security",
+  "name": "Token Security",
+  "description": "Identities, non-human identities, AI agents, secrets and findings from Token Security.",
+  "group": "developer_tools",
+  "url": "https://mcp.app.token.security/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "token-security",
+  "version": "1.0.0",
+  "description": "Identities, non-human identities, AI agents, secrets and findings from Token Security.",
+  "author": {
+    "name": "Token Security"
+  },
+  "homepage": "https://www.token.security",
+  "license": "MIT",
+  "keywords": [
+    "security",
+    "identity",
+    "iam",
+    "nhi",
+    "secrets",
+    "ai-agents",
+    "findings",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/token_security.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "token-security",
+        "commit": "dd5099c64c6a34d7e2993c80630cf1e64b4a3416",
+        "skills": {
+          "ai-agent-inventory": "946ab880996397b602f06425cc68418b76131c5b4bc313155497c15ea25ab984",
+          "identity-blast-radius": "e30cc3b9be53db8ce3865c10d9df7cf62052511467071e4b344eed87cef9319e",
+          "secrets-exposure": "261f9b07396c0d94a3d8e5b291f6ca299dace8ede7004dc0111f8b134ba3c3b1",
+          "triage-finding": "9109242c4092549c6946b8b7aea11d3c2c425cb22aa9cf4edf8cb29aaa00c006"
+        }
+      }
+    }
+  }
+}

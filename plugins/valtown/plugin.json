@@ -1,0 +1,44 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "valtown",
+  "version": "1.0.0",
+  "description": "Vals, HTTP endpoints, crons and SQLite data in your Val Town account.",
+  "author": {
+    "name": "Val Town"
+  },
+  "homepage": "https://val.town",
+  "license": "MIT",
+  "keywords": [
+    "val-town",
+    "deno",
+    "serverless",
+    "typescript",
+    "cursor",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/valtown.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "valtown",
+        "commit": "555ff7492c9c70ada2c4e9b66d7dea9367d7ce71",
+        "skills": {
+          "blob-storage": "75bda6207b4b6d3624b0393af1b107aed784028103d088db7db172cdcf3fe1c2",
+          "client-side-js": "8c8ef15585fc4670679a6128fcca9d54551d1288569a270fc338398c732fc374",
+          "create-skill": "bbc28210d50d938948fb44399c95d1c0300b84a6688f436c0a1ac57338802557",
+          "cron-and-intervals": "42e7960ca1dc545b32806fd9254bad7b7111d793dc8ad256370c6d7e65ff4049",
+          "email": "c9460230161ba548b69fef0dc5452eb222eb321b0fe5dbfc4c8c717903314e06",
+          "http-endpoints": "f10ead03b9656072f15a68ebf90828b579242b75234aed26058e71ca06a7a06b",
+          "oauth": "40483a5cb512e5c640a52c639e1895c438887d32976f99d9db0c983a33301a87",
+          "react-ui": "a19bdbcb74c8f1b19bfc12d371698478a04917ec8dbd68873f6f37618253fb78",
+          "restricted-access": "d7b9cf3814a80b1453d3d878163fab82ed7f4cc6df6e7e8934e0ed19e3e74d88",
+          "sqlite-storage": "29ac40c6029b92a2f848e25faa703ffcb906ad2014e7e023acfc0d969f15d07f",
+          "third-party-integrations": "a913b23516da7006904c57473cb72e8b35c7878ce919ac6659efbb25c0346009"
+        }
+      }
+    }
+  }
+}

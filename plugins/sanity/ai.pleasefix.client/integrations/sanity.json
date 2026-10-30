@@ -1,0 +1,16 @@
+{
+  "id": "sanity",
+  "name": "Sanity",
+  "description": "Documents, schemas, releases and media in your Sanity projects.",
+  "group": "developer_tools",
+  "url": "https://mcp.sanity.io",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

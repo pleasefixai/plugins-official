@@ -1,12 +1,32 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "notion",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Pages and databases from your Notion workspace.",
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
-      "mark": "mark.svg"
+      "mark": "mark.svg",
+      "upstream": {
+        "kind": "skills",
+        "marketplace": "claude",
+        "plugin": "notion",
+        "commit": "9847f2aa1a15f25df35ed1fb7b4557dbb60cd651",
+        "skills": {},
+        "also": [
+          {
+            "marketplace": "codex",
+            "plugin": "notion",
+            "commit": "0722921d5542fc593105c27bd52630babd8b8c2a",
+            "skills": {
+              "notion-knowledge-capture": "fd606f4e9e4a11c8960bb71b850ec938975b04831afcb2b0800291e29777dc87",
+              "notion-meeting-intelligence": "eb89535cb661886080f5edbbe38a401349079eea899ee47d667c01e69814fb0e",
+              "notion-research-documentation": "3be98aedc47889ce69915d4d658677cb78f7cd9f43d9638068b7d1df7ba4445b",
+              "notion-spec-to-implementation": "ed96550abddada939f52996a0043389a454ba9f76fba6bf572c730884c554379"
+            }
+          }
+        ]
+      }
     }
   }
 }

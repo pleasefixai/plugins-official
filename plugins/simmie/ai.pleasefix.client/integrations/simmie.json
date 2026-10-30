@@ -1,0 +1,16 @@
+{
+  "id": "simmie",
+  "name": "Simmie",
+  "description": "Sales roleplay simulations, scoring rubrics and practice links in Simmie.",
+  "group": "crm",
+  "url": "https://mcp.simmie.ai/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

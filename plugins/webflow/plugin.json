@@ -1,0 +1,59 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "webflow",
+  "version": "1.0.0",
+  "description": "Sites, pages, CMS collections and assets in your Webflow account.",
+  "author": {
+    "name": "Webflow"
+  },
+  "homepage": "https://webflow.com",
+  "license": "MIT",
+  "keywords": [
+    "webflow",
+    "mcp",
+    "cms",
+    "ai",
+    "site-audit",
+    "seo",
+    "accessibility",
+    "link-checker",
+    "asset-optimization",
+    "flowkit"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/webflow.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "webflow",
+        "commit": "62181e454a1ed72a7f9788ddbc59b3404d6140fd",
+        "skills": {
+          "accessibility-audit": "d56c7f23d225369d679567a4917f477b34eea235c55e5042fe3809df0f788333",
+          "asset-audit": "198434ea1f0b854708ffcf11d744f17efbf7c2cb52fac555371d551a4ef2fff2",
+          "bulk-cms-update": "a52b7443f4a90055778f5d9718b5c6203ab5e13f0ee95e670c9c240652167b28",
+          "cms-best-practices": "b2155b6946cce16916cdbd6c9a01b72d0cf32c583a6cdce9c01e1d7203d8a3f2",
+          "cms-collection-setup": "a76e25c9a8333105cc04942513be73102788cb88e6c3312dca138424139a849b",
+          "code-component-command": "fbc164b6094567421b69776aaae185048d12e27079fe0c4bd595cdf47ce2a915",
+          "component-audit": "e572a907d462103af9db0e8c122cf4f09482ada40ed66e32a78234ec10243e96",
+          "component-scaffold": "8af8c5182ddb5a680e0e405ea4214ad6aeb5b68c4f9297ce93b7511fc7e1db20",
+          "convert-component": "9728a9716ead8972cc053dfd822c9d0178b60379e10fb2a2fb46048818d29375",
+          "custom-code-management": "254c08869dcf45830a3ebc359b419dcd2c2813f34e75834bed22f18365c6f280",
+          "deploy-guide": "5cc8214b8f22f413294a15b0c97fe67577efdf100fa0a7f106dbb54e10f39c5c",
+          "designer-extension-command": "67ff751b903674229e6627d010dcb86e7e19e74e1058b4caa0cbf7cfd7841382",
+          "devlink-command": "2a15171e87c0485b83068d8a004aa133e1b33e40b4e0aea41bd046e97b8a5b77",
+          "flowkit-naming": "13c6a52fa5588c45623ecc77c3f65538746160f8c4e2197aa1a2a6e92d11d836",
+          "link-checker": "d3c616ffd41daa1b6ddd2a5dc441e911803df6c8c15c9f221148f6dafd3987dc",
+          "local-dev-setup": "34865cfb27f37401dc53d7f5bedb4629182ddb41a29a51c497ea0ad2c42d45ce",
+          "pre-deploy-check": "da8786364aea5943fb4bdcd74366fc06d364de60dfa795c29483b96964d5eea6",
+          "safe-publish": "2e9d85b5a0875932d21d3c0f1023ddae72c3163de56a349b927fb4a3bc097eb7",
+          "site-audit": "6b81abec758c5bee2bc050f3f37ed60bb18ad88b7270b4630de72be022914da6",
+          "troubleshoot-deploy": "255e9a9faf24d82416fffeb1f7c07a5d6c1c0d9200586481f74e5f589562834e",
+          "webflow-cli-troubleshooter": "24b1a668ffe043b82f6bb32849806f4a5de4a6230c54137c8b276f3c13b98c9d",
+          "webflow-cloud-command": "a406aa64ce5dd77778c2238c9b3ef61eb569dcf02c2b137763730c086f4dcc15"
+        }
+      }
+    }
+  }
+}

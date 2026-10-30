@@ -1,0 +1,43 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "runway-api",
+  "version": "1.0.0",
+  "description": "Guides and docs for adding Runway video, image and audio generation to your apps.",
+  "author": {
+    "name": "Runway"
+  },
+  "homepage": "https://dev.runway.com/agents",
+  "license": "MIT",
+  "keywords": [
+    "runway",
+    "runway-dev",
+    "api",
+    "sdk",
+    "mcp",
+    "video",
+    "image",
+    "audio",
+    "characters",
+    "model-router"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "runway-api",
+        "commit": "3dcbb5b6cdc652e3bb651d6e6c5765e0afc515de",
+        "skills": {
+          "runway-dev": "03f38e540657a933b68115b0e60f7b992fbbcadf790d709697baf9eddb8051dd",
+          "runway-dev-characters": "ee2b5f01efd371b10f7dadbbfa244b19f715b2aa6bd95876277b57ae544b82fd",
+          "runway-dev-model-routers": "2faaf0ca52a878ccc13e1cb39ee703ab50e90e8cb236fc1cdea9285e78882336",
+          "runway-dev-models": "306292981ffb47003d2d3b497f40984b9385f41ed32341b30337dba1bbd0abf5",
+          "runway-dev-recipes": "cc2867cb6a8ca82af834a201b208758014b8ab91981907bce74d8bdb7724d95a",
+          "runway-dev-setup": "85536f33bfc7e727cf2467c20c472691fc80017d3a5db8df5522ce1cee9585f4",
+          "runway-dev-workflows": "dc3fb4be46df7c999758068cccde163931ab783594b376d653d45a3296324746"
+        }
+      }
+    }
+  }
+}

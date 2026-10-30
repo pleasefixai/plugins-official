@@ -1,0 +1,8 @@
+{
+  "id": "razorpay_ace_marketplace",
+  "name": "Razorpay ACE Marketplace",
+  "description": "Products, carts and checkout across Indian D2C brands, through Razorpay.",
+  "group": "other",
+  "url": "https://merchants.agent.razorpay.com/mcp",
+  "auth": null
+}

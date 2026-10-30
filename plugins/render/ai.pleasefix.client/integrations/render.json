@@ -1,0 +1,16 @@
+{
+  "id": "render",
+  "name": "Render",
+  "description": "Services, deploys, logs and metrics of your apps on Render.",
+  "group": "developer_tools",
+  "url": "https://mcp.render.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

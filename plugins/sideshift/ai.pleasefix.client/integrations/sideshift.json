@@ -1,0 +1,16 @@
+{
+  "id": "sideshift",
+  "name": "SideShift",
+  "description": "UGC campaigns, creators, contracts, messages and payouts in your SideShift company.",
+  "group": "marketing",
+  "url": "https://app.sideshift.app/api/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

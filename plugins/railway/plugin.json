@@ -1,0 +1,35 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "railway",
+  "version": "1.0.0",
+  "description": "Projects, services, databases and deployments on Railway.",
+  "author": {
+    "name": "Railway"
+  },
+  "homepage": "https://docs.railway.com/ai/claude-code-plugin",
+  "license": "MIT",
+  "keywords": [
+    "railway",
+    "deployment",
+    "hosting",
+    "infrastructure",
+    "databases",
+    "mcp",
+    "agent-skills"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/railway.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "railway",
+        "commit": "a100f93e482c5153774fed74d0b3fb8f8ca63342",
+        "skills": {
+          "use-railway": "d60046fbec4400b2b4df9d2773d76523a42dadb16687e80d0b2446fd18d6cafd"
+        }
+      }
+    }
+  }
+}

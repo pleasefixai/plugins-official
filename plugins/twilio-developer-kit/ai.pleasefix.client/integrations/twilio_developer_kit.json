@@ -1,0 +1,8 @@
+{
+  "id": "twilio_developer_kit",
+  "name": "Twilio Developer Kit",
+  "description": "Guides and docs for building with Twilio messaging, voice, Verify and SendGrid email.",
+  "group": "developer_tools",
+  "url": "https://mcp.twilio.com/docs",
+  "auth": null
+}

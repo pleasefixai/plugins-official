@@ -1,0 +1,52 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "rootly",
+  "version": "1.0.0",
+  "description": "Incidents, alerts, on-call schedules and retrospectives in your Rootly account.",
+  "author": {
+    "name": "Rootly"
+  },
+  "homepage": "https://rootly.com",
+  "license": "Apache-2.0",
+  "keywords": [
+    "incident-management",
+    "on-call",
+    "sre",
+    "devops",
+    "deploy-safety",
+    "retrospectives",
+    "rootly"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/rootly.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "rootly",
+        "commit": "65832aa6ff7a7b39c6bd64899a7a64646e3948ed",
+        "skills": {
+          "action": "81a80daad6eac07e7f88312ca92b0c857d7d3c9a45c50aa497fbc48ec224e392",
+          "alert": "5ca773338dab7ce53ff8badbc42f92c199d8f86c7716f75f81df06216fa6f6e8",
+          "announce": "9de0b441e56ac330db65b4e45bf1231822de7459cd46404e9c18ed276099f90e",
+          "ask": "66d2c9e05f1f6e97ca2a878a23203ff1968552d35c691d0e669f6006db029420",
+          "brief": "790f97b68ce3d001573c25eb3b077e268fe1777c71f434c108a4ea0173fb6884",
+          "cover": "7fd3f847ba7dd071f5012132e589819db86b6d7fab7aadcbca1b092eb4fb7172",
+          "deploy-check": "7d9aee36bd16022248013692cd676559eab28dd7155d180bc2222d06e40f75fa",
+          "handoff": "86ed33b5d734059f6d3a82d39c200807cc312fd846bc333e0262d4e1fc0b4216",
+          "lookup": "5cfe084f391b7c8645b1afb261b2bd1b23a4976270431f707c024b72a4abb216",
+          "my": "20b5d1f45acb36908933ce9ea3d5975fe40169524df3efcf51239cfde419e599",
+          "oncall": "9b411db35fc7e6bdb54e35a96706dfe99a43f79d60cc912ed5e2cc8d4035724b",
+          "respond": "ac5f6813beb88de925924034eeb83111f6aa2f9f9ac862880350546c906856d0",
+          "retro": "3512a64d8250c4f194c059f59f40a202f67ad2c56c84d777eaacb3f9469eeb3a",
+          "setup": "2a86de2a4bbb369c77397f4d1787b9a1d296c6b1c45b3dc7772c74ae6de92cda",
+          "status": "a72e1ae5b23acef372bc0e8d1aefec79941fd59b963e8c6c3dce9bafa3b88031",
+          "swap": "ccac35843cf7b87931180a708e75e32c0d351b6a357386ef77ca56723f749c8e",
+          "test": "b3f4aed9cde26a8055b9f13f1ebaf7c28f7b8e8ba576d783b482e41dca6b4ff8",
+          "trend": "2454123fe7e4c3477436bfa975afee4c7dfa5aa8754cd5bb20bcdb9a34c5875e"
+        }
+      }
+    }
+  }
+}

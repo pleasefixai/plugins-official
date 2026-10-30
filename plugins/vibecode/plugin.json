@@ -1,0 +1,35 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "vibecode",
+  "version": "1.0.0",
+  "description": "iPhone apps and web apps that you build by chat in Vibecode.",
+  "author": {
+    "name": "Vibecode"
+  },
+  "homepage": "https://www.vibecodeapp.com/",
+  "license": "MIT",
+  "keywords": [
+    "vibecode",
+    "app-builder",
+    "iphone",
+    "ios",
+    "web-app",
+    "no-code",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/vibecode.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "vibecode",
+        "commit": "5ddd21d5a354d4d49887db413019f9810831b18b",
+        "skills": {
+          "vibecode": "f27bb7dec33fd2dae8bb02ec8b09c447aa037556bde619835cf20fb0423d76d3"
+        }
+      }
+    }
+  }
+}

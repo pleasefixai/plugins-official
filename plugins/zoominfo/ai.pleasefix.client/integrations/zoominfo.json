@@ -1,0 +1,16 @@
+{
+  "id": "zoominfo",
+  "name": "ZoomInfo",
+  "description": "Companies, contacts, buyer intent and lead enrichment from ZoomInfo.",
+  "group": "crm",
+  "url": "https://mcp.zoominfo.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

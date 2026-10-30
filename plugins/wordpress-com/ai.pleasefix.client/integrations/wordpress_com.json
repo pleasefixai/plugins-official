@@ -1,0 +1,16 @@
+{
+  "id": "wordpress_com",
+  "name": "WordPress.com",
+  "description": "Sites, posts, pages and media in your WordPress.com account.",
+  "group": "marketing",
+  "url": "https://public-api.wordpress.com/wpcom/v2/mcp/v1",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

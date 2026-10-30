@@ -1,0 +1,36 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "vanta",
+  "version": "1.0.0",
+  "description": "Tests, controls, documents and frameworks in your Vanta account.",
+  "author": {
+    "name": "Vanta"
+  },
+  "homepage": "https://help.vanta.com/en/articles/14094979-connecting-to-vanta-mcp#h_887ce3f337",
+  "license": "MIT",
+  "keywords": [
+    "vanta",
+    "security",
+    "compliance",
+    "mcp",
+    "grc",
+    "risk"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/vanta_aus.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "vanta",
+        "commit": "345d86b55faa649e955b7ea5569cf52d8425c2d5",
+        "skills": {
+          "fix-test": "600134d2ac7fa973400bbe12e9cbffcfae75b20a5444e1bd018a207190f4c1b1",
+          "list-tests": "ec36bd88ac5e0a0b387f7eea42583263deacaf6eac4d0529a253346b19487aa9",
+          "test-remediation": "eb8ee19ee2714c647eaf271f0416fb5bc123ffd64fe07bd15a656eda76b36c96"
+        }
+      }
+    }
+  }
+}

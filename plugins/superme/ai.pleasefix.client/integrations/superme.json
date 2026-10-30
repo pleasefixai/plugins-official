@@ -1,0 +1,16 @@
+{
+  "id": "superme",
+  "name": "SuperMe",
+  "description": "Answers from the SuperMe profiles of founders and executives, and from its work groups.",
+  "group": "knowledge",
+  "url": "https://mcp.superme.ai",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

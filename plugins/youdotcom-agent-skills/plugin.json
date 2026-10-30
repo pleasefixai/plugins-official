@@ -1,0 +1,48 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "youdotcom-agent-skills",
+  "version": "1.0.0",
+  "description": "Web search, research with citations and page content from You.com.",
+  "author": {
+    "name": "You.com"
+  },
+  "homepage": "https://you.com",
+  "license": "MIT",
+  "keywords": [
+    "you.com",
+    "claude-code",
+    "agent-skills",
+    "mcp",
+    "web-search",
+    "content-extraction",
+    "research",
+    "finance",
+    "citations",
+    "ard",
+    "ai-catalog",
+    "x402",
+    "mpp",
+    "codex",
+    "chatgpt",
+    "cursor"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/youdotcom_agent_skills.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "youdotcom-agent-skills",
+        "commit": "a692b6f34fac566c72bc7fcc6cafbd7c0f7889c1",
+        "skills": {
+          "you-discover": "dd9fa6e25ab68b32ac8f5e5e3e21a4fd1b426156c8c8a5238b7c8b4b5b77abe2",
+          "you-finance": "e1b047c077f1e3716bfe20f52cce9ae4b1ccbe9e30eb99b42f90a4f13939dc26",
+          "you-free": "89f0e9bb667e34cca956f5c27bed02ef4c5bcaac9d3ba150a30fa42c0e29fa85",
+          "you-research": "9cb5ea64c3cbc6dfb528d5e2e984f8fb453e671ba3e5eaba97f7dbd905dfe6fd",
+          "you-web": "9ace0e424fafe5cd48a694ea3f6cae16c071f79d958c83fc28b7985ccf93f3b6"
+        }
+      }
+    }
+  }
+}

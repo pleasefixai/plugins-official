@@ -1,0 +1,46 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "port",
+  "version": "1.0.0",
+  "description": "Software catalog, workflows and AI agents in your Port developer portal.",
+  "author": {
+    "name": "Port"
+  },
+  "homepage": "https://www.port.io/",
+  "license": "MIT",
+  "keywords": [
+    "platform-engineering",
+    "developer-platform",
+    "agentic-SDLC",
+    "self-service",
+    "workflows",
+    "context-lake",
+    "devops",
+    "mcp",
+    "developer-portal",
+    "idp",
+    "software-catalog"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/port_eu.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "port",
+        "commit": "c231a9181ca730e69ec3179a1f1b3f0a1381807b",
+        "skills": {
+          "port-blueprints": "22caaecae7cddd1ddfe260fcded5f9758eaaba0215f1adb08f4dea96341bae2b",
+          "port-context-lake": "8eedef314030388d967059bff3e4c0d0c6425168ee318efaf2e307235b3a4f08",
+          "port-dashboards": "a9c63943037f6c06f7293a62f154550a5299d6a8818414a232feb56b0a3ecd6e",
+          "port-getting-started": "78e2feef71d1669a16d05e0c56af56402e077e2af9bc4cfd0aeceab604b77dce",
+          "port-integrations": "70a5bbfdb41aed830d16a794a2c746099a87aa449dc0679e33194e8c1f339d3f",
+          "port-permissions": "e019e65afdadad6e7e57799c7264da818e83a478bd42cfc8ac9a04bd80118a68",
+          "port-terraform": "92cf06a9fe38a39286e930214783a1a275e83b97a2f1ac715804a25c2a33cc6f",
+          "port-workflows": "c06899b626a10c366db4e7a32b9f20fbdf4df11a3ce33365370b1dea57dc0b7a"
+        }
+      }
+    }
+  }
+}

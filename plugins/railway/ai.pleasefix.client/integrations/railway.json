@@ -1,0 +1,16 @@
+{
+  "id": "railway",
+  "name": "Railway",
+  "description": "Projects, services, databases and deployments on Railway.",
+  "group": "developer_tools",
+  "url": "https://mcp.railway.com",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

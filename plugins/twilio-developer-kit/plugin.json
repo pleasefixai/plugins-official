@@ -1,0 +1,111 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "twilio-developer-kit",
+  "version": "1.0.0",
+  "description": "Guides and docs for building with Twilio messaging, voice, Verify and SendGrid email.",
+  "author": {
+    "name": "Twilio"
+  },
+  "homepage": "https://www.twilio.com",
+  "license": "MIT",
+  "keywords": [
+    "twilio",
+    "sms",
+    "voice",
+    "whatsapp",
+    "rcs",
+    "messaging",
+    "verify",
+    "sendgrid",
+    "email",
+    "compliance",
+    "conversation-relay",
+    "conversation-memory",
+    "conversation-intelligence",
+    "conversation-orchestrator",
+    "agent-connect",
+    "enterprise-knowledge",
+    "api"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/twilio_developer_kit.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "twilio-developer-kit",
+        "commit": "8aba46fb65dc8d9a20f4b301a68352064b4159a5",
+        "skills": {
+          "twilio-account-setup": "774a3da1a604c9dcacb759a46f4ef83d36832ef2a17b1ca622496ebd720c736d",
+          "twilio-agent-augmentation-architect": "d99ffb7d7a1d8fb0cfdf9a596257195f06481229e723c92e3b7aca1d70bc5be6",
+          "twilio-agent-connect": "ea6ba7d51b18022b96e86f6a4149d9fd43724886d0a3d661e8e8df652d9fd7b3",
+          "twilio-ai-agent-architect": "ac970a6d189f2fa455931854853cea75a8098e0ed0418ef6a94101c5ace78b48",
+          "twilio-call-recordings": "b3fe8a415cc17a56c4034036c093e6e6c084bd5b6be7296ada3484adc5ea6e86",
+          "twilio-cli-reference": "6ca5d86dec67ae0c93f719863aadb6a73179ed7c016c36fbd351394351b250a0",
+          "twilio-compliance-onboarding": "895f5b5e4eefe2ae4a1eb97ed6dd67aad33a22dd65b326a79192a8ed1f0488b0",
+          "twilio-compliance-traffic": "f5bb8e2a188397ea3eb0840fa90f0150220e6fe88c95497792e13708c4083b7a",
+          "twilio-conference-calls": "48a7112678e4b2a7c95b8ce1d16da57a6bfcaa6a79c6a6a5288f1603a9fb7bd2",
+          "twilio-content-template-builder": "c9184f54469f2704398146de5a5882b7a54009097a295e5165ac5744788c7f89",
+          "twilio-conversation-intelligence": "584e86a50e08318cf8837e003747ec64bec3bdf8107e170a9dbd2ff387fc26d0",
+          "twilio-conversation-memory": "418e76d7143fe5bf5d90c0a14c55e5670a37ad69eb13fd1d2dce53e74d449a38",
+          "twilio-conversation-orchestrator": "62c806651a4d11b3a03fdf46827ee0d6c0e96bbebee51152eb88b6f9fad20ee6",
+          "twilio-conversations-classic-api": "f8d42f70339d03bb178ad5dd63115b888ab3cce3f36d092b38b0e591f7d14046",
+          "twilio-customer-support-architect": "9b15b990e3b692f667d1b573bedb942430b94cc167fb77ddaeda718a9253dbaf",
+          "twilio-debugging-observability": "15b64b07d0d2dfa60cf6cf0e0c8d2ca1ea654501d60242e110c0a107d35eb35a",
+          "twilio-email-deliverability-advisor": "351127eaf46321ec4cb4ebff2afe04d66c9d698eef30e1761bec13b0ae463087",
+          "twilio-email-send": "e1239e416e2b572361cc5c20ff53971fe75c7cda1a6bb916afe1c20dbe438052",
+          "twilio-enterprise-knowledge": "a1397d145af8dca7cfedfeaadbf774212fd05c209b94d11c8fbce937a65ec00c",
+          "twilio-iam-auth-setup": "104859a44b31ca1ba2a60d5c2bfcc1196f62d0b9976c4ab9060dcdf876f06bc3",
+          "twilio-identity-verification-advisor": "b912e2c8ab056c734eaf3090d911f05bf4b17d9ef49d2e2d242986f030e662b5",
+          "twilio-lookup-phone-intelligence": "f70339acd428484b1afe618173d5886a774063ad3190f2dafd6d66d7df3f7046",
+          "twilio-marketing-promotions-advisor": "d0ec2a869e99722da397441b6b3f75780fa611d795bc2b6aa8fd4f8259b6e394",
+          "twilio-messaging-channel-advisor": "381b44b9075296737ea271dfd217f47500e1e01e02734025b74d18969d5da759",
+          "twilio-messaging-overview": "53133c4cd93e1a107c137039ca3151974ca8a0c18b43bb81dd633d02f7c5c5e6",
+          "twilio-messaging-services": "9698350adcc15fb0153250e01a042cb0f89b45716a11442f08b40d57928cd20c",
+          "twilio-messaging-webhooks": "6b299f0f14e7d04fd1368fb3ba2904235ff3e592d97ddc020ae97821d437339d",
+          "twilio-migrate-messaging-to-verify": "43f9cc5346d86744a171522c7018d63a2cdc02ed66275668aa9aaf911ae33a9b",
+          "twilio-notifications-alerts-advisor": "d94e86cd42484998dd883e146b0c625a3b0317a04a55a5897addfe2b4dfb7ad9",
+          "twilio-numbers-senders": "32800a54efa07209795aa35902e8f15ff2b1c4e3df4b82c257375b23decd9801",
+          "twilio-organizations-setup": "9f78df6857f52be5a504d519baf1ddfdd83c87c921cc2922641f4022d2afca77",
+          "twilio-rcs-messaging": "14ccd2476b2710d68203a21385e6c9b85c4f1704ccb27ac1a2388a4917594e2f",
+          "twilio-regulatory-compliance-bundles": "e1a5b13590ba0e31a312eed192e9d2a7450e20a8f5d8d1a936db65a56ed8b8af",
+          "twilio-reliability-patterns": "141db429630c58d6d357dc133ef81750e38b6a819603b6dec430890e7ce0db69",
+          "twilio-security-api-auth": "dba6f4fb9adaa4395bcd7d36bf180719202bbb4e704990cbbfa6415e0ec88425",
+          "twilio-security-compliance-hipaa": "1a20db020b609d92b1e9250b71a7f5b4cfaca1ab4394a8840d903d53f4acf9c7",
+          "twilio-security-hardening": "10454eecfba2fba57538efd1270155b495d54eaf972154ff3d14e2701a3e031e",
+          "twilio-send-message": "6edcfaede453a1f6d2b39db1bb0a08dc4d90c410a99474d0addbaed1682b7ed7",
+          "twilio-sendgrid-account-setup": "60c8846b596b71de01ee954eabbb006559aa74e1e350c6a374f51098b6b37dc1",
+          "twilio-sendgrid-deliverability-advisor": "2c280c761f00972ce1b20caa686f78e92116f65cef72bd69586af1e5f9eee122",
+          "twilio-sendgrid-email-send": "97e90ba009f64794700cc907a56d29ff79e923eadd0706cac7d617d6f5dead0a",
+          "twilio-sendgrid-email-settings": "26a55d08ba368e9bebdd72e95f3bbdbfa53dceeee6ab89ec90418eaa8312509d",
+          "twilio-sendgrid-engagement-quality": "13b77c90bf76b580d2722ae81bc3cdb6913910333c241460b5efc05c36d8eb94",
+          "twilio-sendgrid-inbound-parse": "843c6c3b1b27bd57847def43584d0857ec1ae71539cca32f3a34d4d1be41d253",
+          "twilio-sendgrid-suppressions": "25ea43c642300c4042ce45f8f73c102d9c3620e3b8a34fa074650d315fcb0dec",
+          "twilio-sendgrid-webhooks": "ddd9dac0e5da463bdb093615db8fd0c09cf5461dd0a0167f4bcef0994a51e1ed",
+          "twilio-sms-isv-setup": "e673f032a94dd2e1714fdc48d0052325a13c9bff3a937fa57697a95c6630583f",
+          "twilio-sms-send-message": "c5181751655de27156549509a834ed4fab7347b935ceaccb9fb765dfd2b99cba",
+          "twilio-studio-flows": "c28f9d517251be868b828f41d7ade29f7d8b03d68d000502173f9d6d43eb900a",
+          "twilio-taskrouter-routing": "bc9400b0b1fbcf5461189e03cdeff9390663e93424f74b3b960838066c2809d8",
+          "twilio-verify-send-otp": "c78532689c464e0a16fe944df989cc3837179fc49fba3e9b524e0b577e4c4b83",
+          "twilio-voice-conversation-relay": "24d42d512c9a9ebb2f2d55825525d565a9c2ed193df4b8fd4eb29a4aa4175946",
+          "twilio-voice-outbound-calls": "db0894a469f9cf01e17293724f3a9cf9e2dab5f7a230b4738ac48460374b3dce",
+          "twilio-voice-twiml": "46e658d09af9e112e00ab3cd5b446634f5573ca3acdd42b4cc1e4e03d08470a4",
+          "twilio-webhook-architecture": "eb07860e1a95341a076f1c47d9fbc86ad6f145edbc358c2bc1d719e8ceda9559",
+          "twilio-whatsapp-manage-senders": "af867481ba11307ceb7fffa850ddb4211df0345c9f22726cc7e5f4f0395c90a5",
+          "twilio-whatsapp-send-message": "5e3f9c65967e8c69983571a6566d893bc2bf0560c8e2eff52ed9651c47cf37c3"
+        },
+        "also": [
+          {
+            "marketplace": "codex",
+            "plugin": "twilio-developer-kit",
+            "commit": "0722921d5542fc593105c27bd52630babd8b8c2a",
+            "skills": {
+              "twilio-customer-memory": "3f9e66fb2f0dd1d2329d67f6f9b6c624de0ca5dfbfb67bfff0e7da4af6ee1b4e"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

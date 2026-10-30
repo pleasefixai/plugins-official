@@ -1,0 +1,45 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "roboflow",
+  "version": "1.0.0",
+  "description": "Datasets, annotations, model training and vision workflows in your Roboflow workspace.",
+  "author": {
+    "name": "Roboflow"
+  },
+  "homepage": "https://roboflow.com/",
+  "license": "Apache-2.0",
+  "keywords": [
+    "roboflow",
+    "computer-vision",
+    "datasets",
+    "annotation",
+    "training",
+    "inference",
+    "workflows",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/roboflow.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "roboflow",
+        "commit": "76ae1ac18c1d8a92516c4ab41699d794117b4802",
+        "skills": {
+          "roboflow-api-reference": "8a45509ae6877b02d0813c79eefee4dc0a09bff8599877fbd97b7624b1b53b61",
+          "roboflow-batch-processing": "7f24351abf8b68a3c5abf9b24956f3314662019e04c0f572bea4df852d4c95b8",
+          "roboflow-cloud-storage": "fc6df4ba6d66a93724d18ac5d82e7c7d32ce19029ba0cbc5603edba60adb7256",
+          "roboflow-custom-weights-upload": "9f7ef6ce4b67614aa50bbafcac1768394f4c4efd8805c4d703d6974f10cce715",
+          "roboflow-data-management": "f0d7c8eb49f14a6d49a5af271eb2406bb8a28580f45922fbf37f9ff832c47087",
+          "roboflow-inference": "0459df00b09c36f9a76a51f111994715939615ec687d0b89c1f58880e5e9595f",
+          "roboflow-plans-and-pricing": "44784c79dcba639a1eae84b9606f629cadcf7fc51f7bbb0a516577d9c66487e2",
+          "roboflow-product-navigation": "d6758ef9e02d63e2e7f5a08c46380172649df0082f75f6295ecb687c7ae72b87",
+          "roboflow-training-and-evaluation": "11e8c6bcf3bb5d28678f0e557d83eb83fdde26d50c9f43549d54fae3d0c64119",
+          "roboflow-universe": "7755620d21a5dc1c37c9d74a64bfda68299e256c4cdbf12f56dfcab850d4e1bd"
+        }
+      }
+    }
+  }
+}

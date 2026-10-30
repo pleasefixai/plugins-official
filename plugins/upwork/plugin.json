@@ -1,0 +1,32 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "upwork",
+  "version": "1.0.0",
+  "description": "Freelance talent, job posts, proposals and contracts in your Upwork account.",
+  "author": {
+    "name": "Cursor"
+  },
+  "homepage": "https://www.upwork.com/ai/mcp",
+  "license": "MIT",
+  "keywords": [
+    "upwork",
+    "freelance",
+    "hiring",
+    "jobs",
+    "contracts",
+    "proposals",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "upwork",
+        "commit": "1ba91fc25c0977741dd0e267849e6234b037ed0a",
+        "skills": {}
+      }
+    }
+  }
+}
