@@ -15,9 +15,19 @@ description = "Placeholders in vendors' examples, and example JWTs cut short wit
 regexTarget = "secret"
 regexes = [
   '''^(YOUR_)?(DOWNLOAD_)?ACCESS_TOKEN$''',
+  '''^YOUR_[A-Z_]+$''',
+  '''^your-password$''',
   '''^xoxb-YOUR-TOKEN$''',
   '''^eyJ[A-Za-z0-9_-]*\.\.\.$''',
+  '''^sk-live-abc123\.\.\.$''',
 ]
+
+[[allowlists]]
+description = "The sample sdk_token values of ClickFunnels' page examples, on old.example."
+condition = "AND"
+paths = ['''^plugins/clickfunnels/skills/''']
+regexTarget = "secret"
+regexes = ['''^cfp_aB3xY7zQ9pK2mNvT8r5JcDef$''', '''^cfp_Z9yX8wV7uT6sR5qP4nM3kJ2h$''']
 
 [[allowlists]]
 description = "The sample plainToken and encryptedToken of Zoom's webhook validation docs."
