@@ -1,8 +1,0 @@
-{
-  "id": "blackrock_advisor_center_plugin",
-  "name": "BlackRock Advisor Center 360°",
-  "description": "Portfolio reviews, fund health checks and wealth projections from Advisor Center 360°.",
-  "group": "market_data",
-  "url": "https://ac360-mcp.blackrock.com/mcp",
-  "auth": null
-}
