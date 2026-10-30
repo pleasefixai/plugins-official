@@ -1,0 +1,16 @@
+{
+  "id": "adapter_mind",
+  "name": "Adapter",
+  "description": "Decisions, task outcomes and conventions that your Adapter workspace keeps for your agent.",
+  "group": "knowledge",
+  "url": "https://api.adapter.com/v1/mcp/mind/http",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

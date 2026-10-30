@@ -1,12 +1,28 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "airtable",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Bases, tables and records from your Airtable workspace.",
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
-      "mark": "mark.svg"
+      "mark": "mark.svg",
+      "upstream": {
+        "kind": "skills",
+        "marketplace": "claude",
+        "plugin": "airtable",
+        "commit": "812ee67f1fd3d76fb45ff8df40afaa0448602ba8",
+        "skills": {
+          "agent-activity-log": "0127e478b3eddb933575e7f8d070769540185a97bf65346b7af75eff80fad848",
+          "airtable-cli": "e45e4a96abdc69ce1a457db84c3d54206d1d9ee15222c6f420a000101e9474b2",
+          "airtable-filters": "3da6f1092493e9173e060aa15bd90b5c1460e2575bf780765bbbda919c72208d",
+          "airtable-overview": "d01787998d3139119aaf3b945dff47f1f2ed3caf974ecc1cb995638acc4e270b",
+          "marketing-ops": "38a404ec532d38075ae2968a63a43af03831d0613991a4b4ce414d4fc057c47d",
+          "product-ops": "57103a4eb561a234fdd9e38811db107fbad5ac7d952f5abb88aa22fbd96a2f08",
+          "sales-ops": "11830656af71a070330ecadbdfddc35c6c2283844ab89cbbcac0a50445e3b329",
+          "show-airtable-link": "39b83f4cbee19c11325d95cf3042f1b167e24ab3f4c279f3fc25d848fa1efa61"
+        }
+      }
     }
   }
 }

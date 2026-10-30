@@ -1,0 +1,32 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "alpaca-trading",
+  "version": "1.0.0",
+  "description": "Orders, positions, portfolio and market data from your Alpaca trading account.",
+  "author": {
+    "name": "Alpaca"
+  },
+  "homepage": "https://alpaca.markets",
+  "license": "MIT",
+  "keywords": [
+    "trading",
+    "market-data"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/alpaca_trading.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "alpaca-trading",
+        "commit": "6fb47e3294349e0bf3dfd9f811ae59f512f27d00",
+        "skills": {},
+        "guessed": {
+          "alpaca_trading.name": "a5ffd2833ae93820",
+          "alpaca_trading_paper.name": "e53c378995084bd3"
+        }
+      }
+    }
+  }
+}

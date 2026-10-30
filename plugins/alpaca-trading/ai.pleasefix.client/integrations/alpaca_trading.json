@@ -1,0 +1,16 @@
+{
+  "id": "alpaca_trading",
+  "name": "Alpaca Trading API (alpaca-trading)",
+  "description": "Orders, positions, portfolio and market data from your Alpaca trading account.",
+  "group": "market_data",
+  "url": "https://api.alpaca.markets/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

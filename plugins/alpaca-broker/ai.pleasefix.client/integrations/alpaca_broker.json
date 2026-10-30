@@ -1,0 +1,16 @@
+{
+  "id": "alpaca_broker",
+  "name": "Alpaca Broker API (alpaca-broker)",
+  "description": "End-customer accounts, funding, orders and positions on Alpaca's Broker API.",
+  "group": "finance_ops",
+  "url": "https://broker-api.alpaca.markets/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

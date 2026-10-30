@@ -1,0 +1,16 @@
+{
+  "id": "activecampaign",
+  "name": "ActiveCampaign",
+  "description": "Contacts, deals, email campaigns and automations from your ActiveCampaign account.",
+  "group": "marketing",
+  "url": "https://mcp.app-us1.com/http",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

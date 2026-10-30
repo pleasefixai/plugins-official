@@ -1,0 +1,16 @@
+{
+  "id": "alpaca_broker_sandbox",
+  "name": "Alpaca Broker API (alpaca-broker-sandbox)",
+  "description": "The same Broker API on Alpaca's sandbox, with test accounts and no real money.",
+  "group": "finance_ops",
+  "url": "https://broker-api.sandbox.alpaca.markets/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

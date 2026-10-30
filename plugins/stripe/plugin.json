@@ -1,12 +1,30 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "stripe",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Payments, customers, invoices and subscriptions.",
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
-      "mark": "mark.svg"
+      "mark": "mark.svg",
+      "upstream": {
+        "kind": "skills",
+        "marketplace": "claude",
+        "plugin": "stripe",
+        "commit": "deae744bc0cbf6034b4b6f22f51c690b71a4e779",
+        "skills": {
+          "connect-recommend": "69cbda6604f21bc684ae62dc38413bb62f762871e34d5ecf7fe66aaaacd60fec",
+          "connect-required-verification-information": "3de1f9190e319f05a76f867cad991426c5c8ff20b657b001daea277daa16d481",
+          "metronome": "b0f82b36ed78c95c5344d3b21a38b0a3b20475545b33be1751ef27d1427b5630",
+          "stripe-apps": "9cda5d8ff2640ac14d2f6acdfac31eb0081a32528021a83d0b66d918509465d2",
+          "stripe-best-practices": "cd21bec03f0bec16d06df4c818c7f13c3a5d1f9c7a287ea193dd9a7bbef1a77d",
+          "stripe-directory": "7fff24f219bc53d779bcdbddcbecac6b89972df53a56b9aff67918304d5f32b8",
+          "stripe-docs": "354fb04e9c979223bfecabc994fff41c8da5b5ea155684f1b4ade3a6fed07bac",
+          "stripe-pay": "9577944516f408c0367ecc63d5425ec5288dd9faeb044bc5d32e09679dd49c78",
+          "stripe-projects": "f50bdb39096e80876612dd824ebe22ae6a44867039098021848bda3c9ae3bf5d",
+          "upgrade-stripe": "a0eabbf9e4eaa1118d8f0c40ba1f4a4544c2875d2140a79acc31b012763eda11"
+        }
+      }
     }
   }
 }

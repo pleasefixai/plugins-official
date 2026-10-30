@@ -1,0 +1,16 @@
+{
+  "id": "agentmail",
+  "name": "AgentMail",
+  "description": "Email inboxes for your agent, with the messages and threads it sends and reads.",
+  "group": "communication",
+  "url": "https://mcp.agentmail.to/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

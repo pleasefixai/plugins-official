@@ -1,0 +1,8 @@
+{
+  "id": "aave_mcp",
+  "name": "Aave",
+  "description": "Aave lending markets, wallet positions and governance, with transactions for you to sign.",
+  "group": "finance_ops",
+  "url": "https://mcp.aave.com",
+  "auth": null
+}

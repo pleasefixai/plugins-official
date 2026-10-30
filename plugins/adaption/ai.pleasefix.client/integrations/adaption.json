@@ -1,0 +1,16 @@
+{
+  "id": "adaption",
+  "name": "Adaption",
+  "description": "Datasets, synthetic data and fine-tuning runs from your Adaption account.",
+  "group": "developer_tools",
+  "url": "https://api.prod.adaptionlabs.ai/api/v1/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

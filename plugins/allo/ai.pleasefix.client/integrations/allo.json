@@ -1,0 +1,16 @@
+{
+  "id": "allo",
+  "name": "Allo",
+  "description": "Calls, texts, transcripts and contacts from your Allo business phone system.",
+  "group": "communication",
+  "url": "https://mcp.withallo.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

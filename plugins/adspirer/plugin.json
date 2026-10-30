@@ -1,0 +1,54 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "adspirer",
+  "version": "1.0.0",
+  "description": "Ad campaigns on Google, Meta, TikTok, LinkedIn, Amazon and ChatGPT, through Adspirer.",
+  "author": {
+    "name": "Adspirer"
+  },
+  "homepage": "https://www.adspirer.com/",
+  "license": "MIT",
+  "keywords": [
+    "advertising",
+    "google ads",
+    "meta ads",
+    "tiktok ads",
+    "linkedin ads",
+    "amazon ads",
+    "chatgpt ads",
+    "performance marketing",
+    "campaign management",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/adspirer.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "adspirer",
+        "commit": "58d5d248e616d8ac4493aea15ca9e0aa358c4709",
+        "skills": {
+          "adspirer-agent": "0bbfdc2454b621c72ffaa1ab7c58d293388104856015d928fe14869b2cd2b6e1",
+          "adspirer-amazon-ads": "77dbf5ee5bd0175030bbb948d13fcbe97fa6cd0bd34387fc468acb04ca891693",
+          "adspirer-chatgpt-ads": "a3d9e72a29bfd119b0fa8573a63317260f214566f501701c209fea1290826d57",
+          "adspirer-creative": "e164e281b7be4c71dec861c289cf7c23ea4ea761542c5dd6095a807d60a55d7b",
+          "adspirer-docs": "e7fab90b093330b6f2b978fab2572e31dee49b718d8025e0e377f95d3d6a188f",
+          "adspirer-google-ads": "83f8004f5c89ddea0009c3a778af913b560547d70fb6fb6b94ff03264a975495",
+          "adspirer-launch": "33ad18f8d575f3ff8c9f440087e74b5654954b347d1a188f9e7ce62554dec49c",
+          "adspirer-linkedin-ads": "89da8603897802fc6c224881a033c13e6892a17fdc2a52c5cdea02681f59b56d",
+          "adspirer-mcp": "b6c205953db46a44d9a8b924100069a8bfc897153d9e8ac69c895c1e765b2f80",
+          "adspirer-meta-ads": "e145063ba365c70535b976a1274d838fd07d0968766e6c9c0506d8de3d967282",
+          "adspirer-optimize": "ee39758957725cbcdb1752aa312027ede2cfd774097ecd11861aa2e747e1cc88",
+          "adspirer-performance-review": "b1d0e3c0d4efbd6382ffb1df0ad22824692089197e78ab94532d91df3c618488",
+          "adspirer-setup": "3b07d03c1a86773346ce2d3e59e5199cb52bbb487823b12792db250b575cee0a",
+          "adspirer-tiktok-ads": "9bba94f6c5fcf9fc3d2ee0f25949aa42530be667680abad13a6a399a284829a3"
+        },
+        "guessed": {
+          "adspirer.name": "430f5ba23d74d50a"
+        }
+      }
+    }
+  }
+}

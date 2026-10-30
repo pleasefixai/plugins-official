@@ -1,0 +1,5 @@
+{
+  "name": "aave-mcp",
+  "version": "1.0.0",
+  "description": "Aave lending markets, wallet positions and governance, with transactions for you to sign."
+}

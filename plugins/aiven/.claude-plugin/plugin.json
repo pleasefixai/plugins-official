@@ -1,0 +1,5 @@
+{
+  "name": "aiven",
+  "version": "1.0.0",
+  "description": "Managed PostgreSQL, Kafka, OpenSearch and other services in your Aiven projects."
+}

@@ -1,0 +1,67 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "zoom",
+  "version": "1.0.0",
+  "description": "Meetings, recordings, transcripts and Docs from your Zoom account.",
+  "author": {
+    "name": "Zoom"
+  },
+  "homepage": "https://developers.zoom.us/",
+  "license": "MIT",
+  "keywords": [
+    "zoom",
+    "codex-plugin",
+    "connector",
+    "meetings",
+    "transcripts",
+    "recordings",
+    "docs",
+    "developers",
+    "rest-api",
+    "meeting-sdk",
+    "video-sdk",
+    "webhooks",
+    "oauth"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/zoom.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "codex",
+        "plugin": "zoom",
+        "commit": "0722921d5542fc593105c27bd52630babd8b8c2a",
+        "skills": {
+          "build-zoom-bot": "8b9a7a5268245f94b49501d20c623966ea9c1a67c45397147a33c99df63d0531",
+          "build-zoom-meeting-app": "8b20336d337cbb1a360f686ac4a5e51b40af6131f283c9c8ea62a9c1c8df7564",
+          "choose-zoom-approach": "46ba928abe40f439ed46c4f6dc135c079b298b2dc0bd5b0cebf02ff6395fbb01",
+          "cobrowse-sdk": "5c1ae198ee6943f32cd6c9fac3a2446a8386bf3e5375ecedd1c5ee587f4f1409",
+          "contact-center": "a229ed8bf04828b0d0533d1ecd3c08ed99eaf4e3b6acfb174fd199ac7e62dbd4",
+          "debug-zoom": "77a362c6ebc0177a3f29df73631e52f19ee6b2046194fd18130fe0e4c72f8de3",
+          "debug-zoom-integration": "5b0d39a6cb621d1732b7b8ef3d3461153511d21a3f945bcbc2a85c0090f3c0d1",
+          "general": "5476e3cc27b0cc29a4d0e1fa7e48d2e9b450b106e82591cf1e30d9c16cf24a8a",
+          "meeting-sdk": "f16613fb7b5f87060a51f1abf249bb602ef5bd9a558bcb71a8b273e3019af524",
+          "oauth": "1bb204d9f1b4515a010810cd36074f9206784ea3ab3c7c8b9f9b36a5a0a48163",
+          "phone": "caf9f3684e7c4af7a536cc03db03286e282bfac3ccc000e0b4611b58bf605a94",
+          "plan-zoom-integration": "333b8de0e04437e7e9826e92338e9ebb972f3d8a3c1e3425b4a295d99d0bf9af",
+          "plan-zoom-product": "43324b63e62f26474651c2cc0f64d7457d9d7f490f0f13da7ff4f246d7792904",
+          "probe-sdk": "d0c6f92be0b7b4bee0f398eccfde77fdd7a982be90d496c1c1204fb78f2f16f5",
+          "rest-api": "609f98740ec5bdd3dee047489e53c4a10a1607b016abbb2574d4680642dd4042",
+          "rivet-sdk": "473ceb877cf87ac7c1f1eb3e84bfe89ddb43bfd829a0d068a52cf950064f08b2",
+          "rtms": "eb94fc207a7660b310ba26619143ab0e4279b7dcf568fa8a021377fbed754c14",
+          "scribe": "933c199fdec40e75650f224850b06f34fcabfb14fed62905a8669b39a8f08d2b",
+          "setup-zoom-oauth": "30312acc748e85c4e32b438f548c2a59edbf4e5c25b447ae0f516fc97d3f39a8",
+          "start": "9e6d1b2c82c0310a4cfc7843664fbad0ce624ed2fbb1ced22c2a1394b2c10382",
+          "team-chat": "6c5c3d3274e3d373a0960573e40f99d20cdc4c22a915338c25457f479f4d7a4b",
+          "ui-toolkit": "440adc812507742fae4cca1351e3e779dfab184dbcf53da8930a110a0a567119",
+          "video-sdk": "377b74c68fcc10624cc6d2236b379a7b8e8b7cb62dc8d6b41f4c2dbd81c76ef0",
+          "virtual-agent": "df276794b9f448b1f3b1d84d7cb3a88309e273be67fbf081b4786cd8614db13d",
+          "webhooks": "5caee610e7da92bad8e1226e0b3dda312759b275027af22ee1ab8d16cb24c8a6",
+          "websockets": "51e085a56c28f7b9051268d1c7e7eb1fa9be77afdf91557f8a82254523de0427",
+          "zoom-apps-sdk": "70b8fb5b896e1ec176f96ee33051624c5a6f4b80c10fcd89f2a659e31d0f7db9"
+        }
+      }
+    }
+  }
+}

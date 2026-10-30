@@ -1,0 +1,36 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "adapter-mind",
+  "version": "1.0.0",
+  "description": "Decisions, task outcomes and conventions that your Adapter workspace keeps for your agent.",
+  "author": {
+    "name": "Adapter"
+  },
+  "homepage": "https://adapter.com",
+  "license": "MIT",
+  "keywords": [
+    "memory",
+    "knowledge",
+    "context",
+    "mcp",
+    "adapter"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/adapter_mind.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "adapter-mind",
+        "commit": "cbcc253dac319244f4b1402b9a9d9fe571108069",
+        "skills": {
+          "adapter-mind": "21ededd22cf8dc7394e994c4750732a8736ed2b2981d7b5d001c969975ae56bc"
+        },
+        "guessed": {
+          "adapter_mind.name": "0252b84901033771"
+        }
+      }
+    }
+  }
+}

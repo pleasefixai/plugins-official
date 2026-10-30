@@ -1,0 +1,26 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "airops-grok-plugin",
+  "version": "1.0.0",
+  "description": "Brand kits, content opportunities, AI search visibility and knowledge bases from AirOps.",
+  "author": {
+    "name": "AirOps"
+  },
+  "homepage": "https://airops.com",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/airops_grok_plugin.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "airops-grok-plugin",
+        "commit": "4d7ef52617828d5af960a6a0f84e5af572c09bdd",
+        "skills": {},
+        "guessed": {
+          "airops_grok_plugin.name": "31c532fed65ab416"
+        }
+      }
+    }
+  }
+}

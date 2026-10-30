@@ -1,0 +1,16 @@
+{
+  "id": "airwallex_dev",
+  "name": "Airwallex (airwallex-dev)",
+  "description": "Airwallex's sandbox, to build and test an integration with the Airwallex API.",
+  "group": "finance_ops",
+  "url": "https://mcp.sandbox.airwallex.com/developer",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

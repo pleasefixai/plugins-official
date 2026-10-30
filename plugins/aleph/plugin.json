@@ -1,0 +1,33 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "aleph",
+  "version": "1.0.0",
+  "description": "Financial plans, forecasts and consolidated finance data from your Aleph account.",
+  "author": {
+    "name": "Aleph"
+  },
+  "homepage": "https://www.getaleph.com/",
+  "keywords": [
+    "aleph",
+    "mcp",
+    "finance",
+    "data",
+    "productivity"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/aleph.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "aleph",
+        "commit": "e05b6e65399af242d38a427466fa8c34816bbf7c",
+        "skills": {},
+        "guessed": {
+          "aleph.name": "4f5112ad894ab56f"
+        }
+      }
+    }
+  }
+}

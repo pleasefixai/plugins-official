@@ -1,0 +1,16 @@
+{
+  "id": "alpaca_trading_paper",
+  "name": "Alpaca Trading API (alpaca-trading-paper)",
+  "description": "Paper trading on Alpaca: the same orders and market data, with no real money.",
+  "group": "market_data",
+  "url": "https://paper-api.alpaca.markets/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

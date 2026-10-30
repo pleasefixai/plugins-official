@@ -1,0 +1,16 @@
+{
+  "id": "aiven",
+  "name": "Aiven",
+  "description": "Managed PostgreSQL, Kafka, OpenSearch and other services in your Aiven projects.",
+  "group": "developer_tools",
+  "url": "https://mcp.aiven.live/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

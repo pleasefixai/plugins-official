@@ -1,0 +1,49 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "adobe-for-creativity",
+  "version": "1.0.0",
+  "description": "Photo and video edits, design templates, fonts and PDFs with Adobe's creative tools.",
+  "author": {
+    "name": "Adobe"
+  },
+  "homepage": "https://github.com/adobe/skills/tree/main/plugins/creative-cloud/adobe-for-creativity",
+  "license": "Apache-2.0",
+  "keywords": [
+    "adobe",
+    "creative-cloud",
+    "image-editing",
+    "design"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/adobe_for_creativity.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "adobe-for-creativity",
+        "commit": "0f487c9b1b98d8e62dfc80ee4d28b29f5471261f",
+        "skills": {
+          "adobe": "ca2702b1f25a24a22094569726f3753f534eba879e0a2e7c3b33fa2ff914fc0c",
+          "adobe-anydocx": "226a2a2e351fd81c3300deff176d868c7a6c94b736a150546e9c47d1ec533623",
+          "adobe-anyexcel": "6550314b820b104947fbfe5e84d4383a858560da6b58fd62b776b0d0b47f1b99",
+          "adobe-anypdf": "9b9fb8c8956f6001f5c2acd1098ab9eb98cdc26ba20a9f65c5939d617d0e634c",
+          "adobe-anypptx": "2066fb2d43504fe69d939e664ce7c232199266779ea70f187b8314b99d4205b0",
+          "adobe-batch-edit-photos": "7a1600623a9265bc10252f4d323f067f8ad6177fa35d4a972f609a8191eccbca",
+          "adobe-create-pdfs-from-data": "e5f9ea90fc4e23133328044e4b92389917051f7bd972b52a797cd4cb8a06de9f",
+          "adobe-create-social-variations": "51bfa5d4fc43e2ffc03175cc837f988648b9203bada873ee9a6346c4c0f6593a",
+          "adobe-design-from-template": "1a2e1ab58d9bfed5f596cef27f73a18bb095c416e59acd8ac8e8f27feb49c217",
+          "adobe-design-to-pdf": "2f38ea71ad164c6225b5e72da4227041c3709617b4c5c2fba02a7b218008d91a",
+          "adobe-document-review": "357b750006c514c49d83257b3d8614231382efe0ee28e30243a7b230c0ec3a86",
+          "adobe-edit-quick-cut": "0fa588e81b5b0545ad1ce5ee386fc39d41586cd6cef468676a595bc5c463f9bf",
+          "adobe-fonts": "60c864e4140702d49ae43691981a0f1d1a8e06bac3deab65c46a0bfdc44e440a",
+          "adobe-resize-photos-and-videos": "6309ed6fbee3a96e53c5103d950deff490129e89718c15c86d40e25e910e04db",
+          "adobe-retouch-portraits": "b7b41960470234144598a9781e755de989a3bdf589a3d2987ad5c161bdc033b9"
+        },
+        "guessed": {
+          "adobe_for_creativity.group": "a77de8a6daa11295"
+        }
+      }
+    }
+  }
+}

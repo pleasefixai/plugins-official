@@ -1,0 +1,5 @@
+{
+  "name": "agentmail",
+  "version": "1.0.0",
+  "description": "Email inboxes for your agent, with the messages and threads it sends and reads."
+}

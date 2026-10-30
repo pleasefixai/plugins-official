@@ -1,0 +1,16 @@
+{
+  "id": "adspirer_retail_ads",
+  "name": "Adspirer Retail Ads",
+  "description": "Amazon Ads and Walmart Connect campaigns, keywords and results, through Adspirer.",
+  "group": "marketing",
+  "url": "https://mcp.adspirer.com/retail-ads",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

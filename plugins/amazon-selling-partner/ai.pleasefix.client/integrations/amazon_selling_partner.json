@@ -1,0 +1,16 @@
+{
+  "id": "amazon_selling_partner",
+  "name": "Amazon Selling Partner",
+  "description": "Listings, inventory, sales and support cases from your Amazon Seller Central account.",
+  "group": "other",
+  "url": "https://sellingpartner-ai.amazon.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}
