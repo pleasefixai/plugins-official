@@ -1,0 +1,16 @@
+{
+  "id": "google_calendar",
+  "name": "Google Calendar",
+  "description": "Events, availability and schedules in your Google Calendar.",
+  "group": "projects_time",
+  "url": "https://calendarmcp.googleapis.com/mcp/v1",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

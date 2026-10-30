@@ -1,0 +1,35 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "docusign",
+  "version": "1.0.0",
+  "description": "Envelopes, templates, workflows and agreements in your Docusign account.",
+  "author": {
+    "name": "Cursor"
+  },
+  "homepage": "https://cursor.com/",
+  "license": "MIT",
+  "keywords": [
+    "docusign",
+    "esignature",
+    "agreements",
+    "mcp",
+    "envelopes",
+    "contracts"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/docusign.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "docusign",
+        "commit": "1ba91fc25c0977741dd0e267849e6234b037ed0a",
+        "skills": {},
+        "guessed": {
+          "docusign.name": "8db5d17a025f0ddd"
+        }
+      }
+    }
+  }
+}

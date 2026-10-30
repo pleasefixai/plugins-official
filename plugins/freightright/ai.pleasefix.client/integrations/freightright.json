@@ -1,0 +1,16 @@
+{
+  "id": "freightright",
+  "name": "Freight Right",
+  "description": "Freight rates, quote requests, bookings and shipment tracking from Freight Right.",
+  "group": "other",
+  "url": "https://mcp.freightright.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

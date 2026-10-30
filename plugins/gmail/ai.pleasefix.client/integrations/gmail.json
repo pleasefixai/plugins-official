@@ -1,0 +1,16 @@
+{
+  "id": "gmail",
+  "name": "Gmail",
+  "description": "Threads, messages, drafts and labels in your Gmail account.",
+  "group": "communication",
+  "url": "https://gmailmcp.googleapis.com/mcp/v1",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "fal_ai",
+  "name": "fal",
+  "description": "Images, video, music, voice and 3D models generated from a prompt with fal.",
+  "group": "design",
+  "url": "https://mcp.fal.ai/mcp-relay",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "expo",
+  "name": "Expo",
+  "description": "Expo and EAS builds, updates, app store submissions and docs for React Native apps.",
+  "group": "developer_tools",
+  "url": "https://mcp.expo.dev/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

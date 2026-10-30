@@ -1,0 +1,46 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "fal-ai",
+  "version": "1.0.0",
+  "description": "Images, video, music, voice and 3D models generated from a prompt with fal.",
+  "author": {
+    "name": "fal"
+  },
+  "homepage": "https://fal.ai/",
+  "license": "MIT",
+  "keywords": [
+    "fal",
+    "fal.ai",
+    "fal ai",
+    "fal mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/fal_ai.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "fal-ai",
+        "commit": "24d134744e5c0c889c0b6e07b485861cab337975",
+        "skills": {
+          "character-design": "1c49c0027b0b3467b01c9f2660e52e61184816a381f6937723112eaf3dbf074b",
+          "cinematography": "62e87d0b0ff55c031c3ae7ccfee7c08170529a3b616bd871e69815fdacba1f74",
+          "commercial": "02b021019b27c73f1174632e7f926f740695169693d03343ff73b0902c034542",
+          "fal-gamedev": "e445da61a3880105c6b7ac947d31693657498a3bfddd64a8e03dcde5566940d7",
+          "fal-media": "e07ef43509a6492e4a98083a127ff19afe66252dad7d8479ae0e5f78b89469e7",
+          "fal-models-catalog": "d52e9cc6b106a7bb89954be6754e3a72ffc133a906d0af261f118dfdf68a2374",
+          "fal-prompting": "50df9b4f6dbdc513d7beb5bcf3811fd4842b4b67349296413b2c2f3e3b30cafc",
+          "fal-recipes": "e0f7ee93256e51b6d489b2b9aeee8671530eb2860e065ee3a8da68de9e4b8d6d",
+          "fal-regenerate-3d": "0e025a9d0f480ab89adaabdcf66c2578ad18b15ccf78e2fa933936c284d661f4",
+          "fal-workflow": "db7dd11c763f3bf8db4a31cfdb6ba8e2d163b195160960a9bcccb4ee9e7745c2",
+          "fan-cam": "9a1962a1ba4a12e0ae8d3f8d59986a00092db76304fe8f9db088e2dc23fc6568",
+          "marketing": "edbdda36828854af51c9cd6cb6ed83ab3f31a4501e381ff6166da83c4a87f74e",
+          "model-routing": "53cd9ffcd6d74b7115719c54a32a8d2b6c1e541c0fa39bec6c2f6107253b2487",
+          "storytelling": "1e47f5853bfdc1a3e73a5e4f77e52ec909b157029085fed4f3c44c1e04e2d3fa",
+          "ugc": "c47ad0bf64338cb54425ee65be6ef8cf409825b9f527a0f7ebe864f81fd82950"
+        }
+      }
+    }
+  }
+}

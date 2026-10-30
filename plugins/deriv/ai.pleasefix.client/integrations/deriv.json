@@ -1,0 +1,8 @@
+{
+  "id": "deriv",
+  "name": "Deriv",
+  "description": "Deriv API schemas, payload checks and guides for building trading apps.",
+  "group": "developer_tools",
+  "url": "https://mcp-api-v2.deriv.com/mcp",
+  "auth": null
+}

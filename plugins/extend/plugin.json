@@ -1,0 +1,40 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "extend",
+  "version": "1.0.0",
+  "description": "Documents parsed, extracted, classified and split by Extend, and filled PDF forms.",
+  "author": {
+    "name": "Extend"
+  },
+  "homepage": "https://www.extend.ai",
+  "license": "MIT",
+  "keywords": [
+    "documents",
+    "pdf",
+    "ocr",
+    "extraction",
+    "parsing",
+    "classification",
+    "document-ai",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/extend.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "extend",
+        "commit": "0505e11039251684da328753ac092d7c0b2a02af",
+        "skills": {
+          "extend-api": "8d74916bbb6e5302a8d91373c3b1b4959a41bf76ba4f6d14cd08962a521aa74f",
+          "extend-cli": "2c2f3db8448c640f4887beecd22beac39aa8855e2c35fcf4806c4478a51ebfdd"
+        },
+        "guessed": {
+          "extend.name": "496a37e3a10b9755"
+        }
+      }
+    }
+  }
+}

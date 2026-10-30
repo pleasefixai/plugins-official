@@ -1,0 +1,32 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "flexport",
+  "version": "1.0.0",
+  "description": "Shipments, freight rates and bookings in your Flexport account.",
+  "author": {
+    "name": "Flexport"
+  },
+  "homepage": "https://www.flexport.com",
+  "license": "Apache-2.0",
+  "keywords": [
+    "flexport",
+    "flexport mcp",
+    "flexport shipment tracking"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/flexport.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "flexport",
+        "commit": "de61460a94b8cf7cfb61a3b533725d212edb7ecc",
+        "skills": {},
+        "guessed": {
+          "flexport.name": "dfc20ecfdc18b6ca"
+        }
+      }
+    }
+  }
+}

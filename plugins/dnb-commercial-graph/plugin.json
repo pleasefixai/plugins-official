@@ -1,0 +1,34 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "dnb-commercial-graph",
+  "version": "1.0.0",
+  "description": "Business entities, corporate linkage and firmographic data from the D&B Commercial Graph.",
+  "author": {
+    "name": "Dun & Bradstreet"
+  },
+  "homepage": "https://dnb.com",
+  "license": "MIT",
+  "keywords": [
+    "dnb",
+    "risk",
+    "entity-resolution",
+    "compliance",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/dnb_commercial_graph.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "dnb-commercial-graph",
+        "commit": "e35685997d159cb187109f8ce04b3696b1050e4c",
+        "skills": {},
+        "guessed": {
+          "dnb_commercial_graph.name": "3a95fd2ae97c2607"
+        }
+      }
+    }
+  }
+}

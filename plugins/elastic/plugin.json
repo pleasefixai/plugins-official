@@ -1,0 +1,79 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "elastic",
+  "version": "1.0.0",
+  "description": "Elastic documentation for Elasticsearch, Kibana, Observability and Security.",
+  "author": {
+    "name": "Elastic"
+  },
+  "homepage": "https://elastic.co",
+  "keywords": [
+    "elastic",
+    "elasticsearch",
+    "kibana",
+    "observability",
+    "security",
+    "cloud",
+    "serverless",
+    "esql",
+    "search",
+    "ingest",
+    "dashboards",
+    "alerting",
+    "connectors",
+    "vega",
+    "opentelemetry",
+    "apm",
+    "logs",
+    "slo",
+    "siem",
+    "detection",
+    "alerts",
+    "cases",
+    "documentation",
+    "mcp",
+    "docs"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/elastic.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "elastic",
+        "commit": "a1abb8e703e7c17a3611fbb5afa82361cef0b23a",
+        "skills": {
+          "alert-triage": "12cbcd23f23f8b1b97fa51b822c1f2f7ed433fc074685aa598cd0fe4699e8089",
+          "case-management": "babca36c31a8db2156b0b2feaf9851273025249dbef03da0ad407e991b53ee1b",
+          "detection-rule-management": "4ed139818399d3a03a3c1e6c1a95df90204699aa141d3601a03801265053ae1c",
+          "elasticsearch-anomaly-detection": "b3e4a9e2e1346ddee63cafe77a99658096e1ef449a9336a8b9d82d029b49d36c",
+          "elasticsearch-anomaly-detection-explainer": "c8e0e24a19b91c060dce9b19f8a1cbf3e9af7c3230a026d9e4033796c0a87d1a",
+          "elasticsearch-cluster-health": "d5a3c381574a0489ff002f65a0a4516d9432f536b4a5c1f496e80d05f8940af4",
+          "elasticsearch-esql": "d2d52b4950e05d16800321de89f9ba38625941558432f801bcb3253ebc5f4a3b",
+          "elasticsearch-index-design": "5d04c1a37af900b0442047766f81b3fd4f7d274f8343c30fee8baf7df43f0b22",
+          "elasticsearch-ingest": "4e8f2845736881da99aa38aacd184621be28835a5b335212923f043ba04e6916",
+          "elasticsearch-onboarding": "8c2afe64f2b7db206f4bd72efe64c15c0c1d084f1a4c5783e0126284e17a6d46",
+          "elasticsearch-query-optimization": "57cb20a575514a324cf39acd0a34c6229b8e6a7c7e75ae08607d05639685940e",
+          "elasticsearch-reindex": "2f20cffa224e7c7f7c09d0bd9d59df2fff55d065a33a74f7910b4364eb5975bf",
+          "elasticsearch-search-relevance": "fa1157b64c644000a0de124d609f51bc68a13e074d02ca61882e3f10e5d54ad9",
+          "generate-security-sample-data": "f66c0f31875c105c915f2a34e91e6ea888c9f29db70a786956be2e7fbee720e4",
+          "k8s-investigation": "853951afba7e99eceadd2f755d8f5549ca3e0ebb39ae492bbab12316f86c2afa",
+          "kibana-agent-builder": "ec70509c63d7d405c9cd661c72979e4106c7ed3cdbc81d9b0837a9e7de24da07",
+          "kibana-alerting-rules": "6d0ca3d6e10b393aacc6240b0a59738fa75413aa2c5cda17c21eeb3565307a55",
+          "kibana-anomaly-detection": "474b20c7bcc40f5c94010a106fac9972a28e52fba01cedcae55d5cd49f04bec3",
+          "kibana-dashboards": "a6a2d80dee63f4d6b20505527b96cef6fee61d3d5eeae62fa134c09568e3caf1",
+          "kibana-workflows": "29f5bfca63d1f6fd9136397f007bf883bd809bc62f1e0addbc3da980491a3e05",
+          "llm-obs": "2bc79f122dd93caf6f528bfe6309025576c099426826b344f38f57b6ce98ff8c",
+          "onboarding": "f93526f7664e90078f578daf5b0df3b1715adc77521845a8e6b76b6bb741a249",
+          "provisioning": "0a2a9013a008f14f2170c90eb7f7a8c8556d15805fe7bd1d62e0007aa98cddc7",
+          "service-reliability": "991b787142c100a83c258a80abdda993b251bd28c20eb58355e31cf95d806ca3",
+          "sre-triage": "30f4c6ac6ce16e6516e7d6381f349f99b82d4e030b831dec1c828db144e95ae4"
+        },
+        "guessed": {
+          "elastic.name": "5e7c4d821aae0157"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "crunchbase",
+  "version": "1.0.0",
+  "description": "Company profiles, funding rounds, investors and acquisitions from Crunchbase.",
+  "author": {
+    "name": "Crunchbase"
+  },
+  "homepage": "https://crunchbase.com",
+  "license": "MIT",
+  "keywords": [
+    "crunchbase",
+    "mcp",
+    "company-research",
+    "funding",
+    "investors"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/crunchbase.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "crunchbase",
+        "commit": "f49e286c866048285498050a252930afa6cb3d69",
+        "skills": {},
+        "guessed": {
+          "crunchbase.name": "e1f0660fd384cbb5"
+        }
+      }
+    }
+  }
+}

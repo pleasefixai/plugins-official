@@ -1,0 +1,43 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "gitbook",
+  "version": "1.0.0",
+  "description": "GitBook documentation sites, spaces, pages and change requests.",
+  "author": {
+    "name": "GitBook"
+  },
+  "homepage": "https://gitbook.com/",
+  "license": "MIT",
+  "keywords": [
+    "gitbook",
+    "documentation",
+    "docs",
+    "markdown",
+    "git-sync",
+    "openapi",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/gitbook.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "gitbook",
+        "commit": "db34970f5e29cc5fa7daf7442424c3e3fb793595",
+        "skills": {
+          "build-integration": "d1433ca50b485782fad9480907358fe202c4c844854986c38a67fd1b6d9be6e4",
+          "configure-site": "697c9adc6c84e0a0d13991bebc35d1c5510cb96c403390eb7b4bc9b8e9e8e654",
+          "cr-create": "b0b77e62b9058ba1f09af43385454e5ed967d617d2f1fa3b2e2288642ba1f7b9",
+          "cr-review": "354b5f2e5ad4d67ac3067f051b227393a491b05b9c1f8e4a46a51601743175f0",
+          "write-docs": "12203842996804aff605791e710db0e240e34683c86bb34b7d7d03c2c85192f2",
+          "write-openapi": "ae88df4e026399410c349fcc001f4bc5784fdb99e13cb68c1588cf3ff3135e22"
+        },
+        "guessed": {
+          "gitbook.name": "4b99830d6d19f406"
+        }
+      }
+    }
+  }
+}

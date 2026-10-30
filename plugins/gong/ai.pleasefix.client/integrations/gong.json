@@ -1,0 +1,16 @@
+{
+  "id": "gong",
+  "name": "Gong",
+  "description": "Calls, account summaries and deal insights from Gong.",
+  "group": "crm",
+  "url": "https://mcp.gong.io/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

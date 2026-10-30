@@ -1,0 +1,38 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "gc-ai",
+  "version": "1.0.0",
+  "description": "Your GC AI legal knowledge base: documents, matters, review playbooks and answers.",
+  "author": {
+    "name": "GC AI"
+  },
+  "homepage": "https://docs.gc.ai/api-reference/mcp/overview",
+  "license": "MIT",
+  "keywords": [
+    "legal",
+    "contracts",
+    "document-review",
+    "playbooks",
+    "gc-ai"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/gc_ai.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "gc-ai",
+        "commit": "efda779972c7b7162e79234e164bc2f359a8a518",
+        "skills": {
+          "ask": "47d0a25308eb60ca8fe094e575978237144a581ab1102e02bf3dd4746cec669c",
+          "organize-matter": "60e21c5da8eb5fb2d985c675b586b0938182524bde901c45ab9ebd868f99933a",
+          "review-document": "9942dc8926d494231b72989e4b57d1dec77e5892b3a518773350cd8136ae496f"
+        },
+        "guessed": {
+          "gc_ai.name": "0175d19bc365fabe"
+        }
+      }
+    }
+  }
+}

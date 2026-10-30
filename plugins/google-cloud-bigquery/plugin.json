@@ -1,0 +1,36 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "google-cloud-bigquery",
+  "version": "1.0.0",
+  "description": "Datasets, tables and SQL queries in Google Cloud BigQuery.",
+  "author": {
+    "name": "Cursor"
+  },
+  "homepage": "https://cursor.com/",
+  "license": "MIT",
+  "keywords": [
+    "google cloud bigquery",
+    "google cloud",
+    "bigquery",
+    "sql",
+    "analytics",
+    "data warehouse",
+    "datasets",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "google-cloud-bigquery",
+        "commit": "1ba91fc25c0977741dd0e267849e6234b037ed0a",
+        "skills": {},
+        "guessed": {
+          "google_cloud_bigquery.name": "57528f3638455325"
+        }
+      }
+    }
+  }
+}

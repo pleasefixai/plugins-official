@@ -1,0 +1,16 @@
+{
+  "id": "firecrawl",
+  "name": "Firecrawl",
+  "description": "Web search, page scraping and site crawls with Firecrawl.",
+  "group": "knowledge",
+  "url": "https://mcp.firecrawl.dev/v2/mcp-search",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

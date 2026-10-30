@@ -1,0 +1,16 @@
+{
+  "id": "github",
+  "name": "GitHub",
+  "description": "Repositories, pull requests, issues and Actions runs on GitHub.",
+  "group": "developer_tools",
+  "url": "https://api.githubcopilot.com/mcp/",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

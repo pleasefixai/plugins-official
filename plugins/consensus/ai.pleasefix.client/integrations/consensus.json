@@ -1,0 +1,16 @@
+{
+  "id": "consensus",
+  "name": "Consensus",
+  "description": "Peer-reviewed research papers and findings from the Consensus academic search engine.",
+  "group": "knowledge",
+  "url": "https://mcp.consensus.app/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

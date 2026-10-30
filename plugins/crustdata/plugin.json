@@ -1,0 +1,47 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "crustdata",
+  "version": "1.0.0",
+  "description": "People and company search and enrichment from Crustdata's B2B data.",
+  "author": {
+    "name": "Crustdata"
+  },
+  "homepage": "https://crustdata.com/",
+  "license": "MIT",
+  "keywords": [
+    "b2b-data",
+    "enrichment",
+    "prospecting",
+    "gtm",
+    "sales",
+    "recruiting",
+    "people-search",
+    "company-data"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/crustdata.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "crustdata",
+        "commit": "e768f8021d67bb219800c82b629661f756974270",
+        "skills": {
+          "account-research": "ff7a33f1a9ae07cee7e5f30cce8432e8b8fb8206b26144da06251c48406ef9f5",
+          "candidate-sourcing": "74f6dde4a76f62656b060ca058b325bcb5344b614ced170c7add5a964998a045",
+          "email-enrichment": "df405305055cbcfa03ea23ba951590eca537dada6648ccd9a11f5e18a72106f3",
+          "icp-builder": "4207934fddaf31a574fb3ce7129a5c1236d0a51856117f919646103b41c3d471",
+          "meeting-prep": "5a9ed09b84218a578192ddd5a584e078278e3d98a3d5de71f762133244c66ecf",
+          "sales-outreach": "12aa8061c16e49b7b3bbf42f4aa74989782e673713bf709d7a8a9dad2275dc4a",
+          "sales-prospecting": "652f01ed9cdf1cf4a57c918dfe0bf71e5825f18278ef9c874459649baaf6cf74",
+          "social-connections": "e831641ffa7a4229978580208128eece5e4a8d97352a9d26d0021a6889f51baf",
+          "warm-path-workspace": "33a4c14196c3ce4ebf33adfb46a1691fafd54b90cc442f570f16ec2c640c8470"
+        },
+        "guessed": {
+          "crustdata.name": "751386c081e95748"
+        }
+      }
+    }
+  }
+}

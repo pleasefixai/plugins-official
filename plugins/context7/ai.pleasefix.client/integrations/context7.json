@@ -1,0 +1,16 @@
+{
+  "id": "context7",
+  "name": "Context7",
+  "description": "Current, version-specific documentation and code examples for software libraries.",
+  "group": "developer_tools",
+  "url": "https://mcp.context7.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "id": "figma",
+  "name": "Figma",
+  "description": "Designs, components, variables and design context from your Figma files.",
+  "group": "design",
+  "url": "https://mcp.figma.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  },
+  "headers": {
+    "X-Figma-Plugin-Bundle": "figma_prod@2_2_157"
+  }
+}

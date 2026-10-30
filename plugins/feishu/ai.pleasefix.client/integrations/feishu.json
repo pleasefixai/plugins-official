@@ -1,0 +1,16 @@
+{
+  "id": "feishu",
+  "name": "Feishu",
+  "description": "Feishu docs to search, create and update, and Feishu messages and groups.",
+  "group": "projects_time",
+  "url": "https://mcp.feishu.cn/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

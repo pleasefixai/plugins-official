@@ -1,0 +1,34 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "falconer",
+  "version": "1.0.0",
+  "description": "Documents in your Falconer knowledge base, to read, search and update.",
+  "author": {
+    "name": "Falconer"
+  },
+  "homepage": "https://falconer.com",
+  "license": "Apache-2.0",
+  "keywords": [
+    "falconer",
+    "mcp",
+    "docs",
+    "documents",
+    "knowledge"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/falconer.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "falconer",
+        "commit": "6bc853e02db13b1660a998e2e88dc02762a8fafb",
+        "skills": {},
+        "guessed": {
+          "falconer.name": "8826a8db134f008f"
+        }
+      }
+    }
+  }
+}

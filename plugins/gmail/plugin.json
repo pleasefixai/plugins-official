@@ -1,0 +1,33 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "gmail",
+  "version": "1.0.0",
+  "description": "Threads, messages, drafts and labels in your Gmail account.",
+  "author": {
+    "name": "OpenAI"
+  },
+  "homepage": "https://workspace.google.com/products/gmail/",
+  "license": "MIT",
+  "keywords": [
+    "gmail",
+    "email",
+    "google",
+    "google workspace",
+    "mail",
+    "inbox",
+    "threads",
+    "drafts"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "codex",
+        "plugin": "gmail",
+        "commit": "0722921d5542fc593105c27bd52630babd8b8c2a",
+        "skills": {}
+      }
+    }
+  }
+}

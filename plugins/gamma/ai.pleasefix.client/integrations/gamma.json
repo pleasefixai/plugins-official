@@ -1,0 +1,16 @@
+{
+  "id": "gamma",
+  "name": "Gamma",
+  "description": "Presentations, documents and webpages generated with Gamma.",
+  "group": "design",
+  "url": "https://mcp.gamma.app/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "gitbook",
+  "name": "GitBook",
+  "description": "GitBook documentation sites, spaces, pages and change requests.",
+  "group": "knowledge",
+  "url": "https://mcp.gitbook.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

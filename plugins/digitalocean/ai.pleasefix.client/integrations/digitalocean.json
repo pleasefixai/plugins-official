@@ -1,0 +1,16 @@
+{
+  "id": "digitalocean",
+  "name": "DigitalOcean",
+  "description": "Droplets, App Platform apps, Kubernetes, databases and networking on DigitalOcean.",
+  "group": "developer_tools",
+  "url": "https://mcp.digitalocean.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "name": "google-cloud-bigquery",
+  "version": "1.0.0",
+  "description": "Datasets, tables and SQL queries in Google Cloud BigQuery."
+}

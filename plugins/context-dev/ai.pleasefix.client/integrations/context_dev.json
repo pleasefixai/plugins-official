@@ -1,0 +1,16 @@
+{
+  "id": "context_dev",
+  "name": "Context.dev",
+  "description": "Live web pages, searches, crawls and structured data extracted with Context.dev.",
+  "group": "knowledge",
+  "url": "https://mcp.context.dev/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

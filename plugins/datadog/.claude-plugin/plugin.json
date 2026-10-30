@@ -1,0 +1,5 @@
+{
+  "name": "datadog",
+  "version": "1.0.0",
+  "description": "Logs, metrics, traces, monitors and incidents from your Datadog account (US1 site)."
+}

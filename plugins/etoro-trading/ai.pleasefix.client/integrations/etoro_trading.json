@@ -1,0 +1,16 @@
+{
+  "id": "etoro_trading",
+  "name": "eToro",
+  "description": "Your eToro portfolio, positions and watchlists, market research and trades.",
+  "group": "market_data",
+  "url": "https://mcp.public-api.etoro.com",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

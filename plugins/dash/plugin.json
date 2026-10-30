@@ -1,0 +1,45 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "dash",
+  "version": "1.0.0",
+  "description": "AI agents, agent sessions, shadow AI and supply-chain risk, and AI spend in Dash Security.",
+  "author": {
+    "name": "Dash Security"
+  },
+  "homepage": "https://dash.security",
+  "license": "MIT",
+  "keywords": [
+    "dash",
+    "security",
+    "ai-security",
+    "agent-security",
+    "mcp",
+    "shadow-ai",
+    "supply-chain",
+    "ai-spend",
+    "ai-governance",
+    "runtime-detection"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/dash.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "dash",
+        "commit": "c58f686639ff0812520d2caedb417c48c10eb957",
+        "skills": {
+          "agent-session-investigation": "94ea0560fd72d30cba110b1e3f69a0f65fcff4f102036c829f7217ef8e66c64f",
+          "agentic-estate-discovery": "1c83b62d361670ae5be049404fbaab3d60144e4b9f52f7ac9a4947c1768cf0e9",
+          "ai-spend": "dfe93e1c1d03435ece7a9f1987e174dbd97f7aa7964c6b4435c2bfbc16704e53",
+          "shadow-ai-risk": "a94a9e25ee53fe504780f9cdb6f21d6045ce73c00d4fa834072f04996bec809a",
+          "supply-chain-risk": "486302df32f774ae5866022245a1ae73c871a5f70fcc2b93e9816e8da2223013"
+        },
+        "guessed": {
+          "dash.name": "a26be5168cd1e6e6"
+        }
+      }
+    }
+  }
+}

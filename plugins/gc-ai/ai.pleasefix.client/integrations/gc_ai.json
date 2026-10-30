@@ -1,0 +1,16 @@
+{
+  "id": "gc_ai",
+  "name": "GC AI",
+  "description": "Your GC AI legal knowledge base: documents, matters, review playbooks and answers.",
+  "group": "finance_ops",
+  "url": "https://app.gc.ai/api/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

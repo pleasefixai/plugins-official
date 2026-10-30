@@ -1,0 +1,16 @@
+{
+  "id": "datadog",
+  "name": "Datadog",
+  "description": "Logs, metrics, traces, monitors and incidents from your Datadog account (US1 site).",
+  "group": "developer_tools",
+  "url": "https://mcp.datadoghq.com/v1/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

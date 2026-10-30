@@ -1,0 +1,34 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "envoy",
+  "version": "1.0.0",
+  "description": "Visitors, employees, desks and rooms in your Envoy workplace.",
+  "author": {
+    "name": "Envoy"
+  },
+  "homepage": "https://mcp.envoy.com",
+  "license": "MIT",
+  "keywords": [
+    "envoy",
+    "mcp",
+    "workplace",
+    "visitors",
+    "desks",
+    "rooms"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "envoy",
+        "commit": "c87094aeee89987562b6f1ae2099ec231a65149e",
+        "skills": {},
+        "guessed": {
+          "envoy.name": "93163a5fed0d40cf"
+        }
+      }
+    }
+  }
+}

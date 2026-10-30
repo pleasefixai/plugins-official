@@ -1,0 +1,8 @@
+{
+  "id": "forge_skills_ads_mcp",
+  "name": "Atlassian Forge (design system)",
+  "description": "Atlassian Design System components, tokens and icons.",
+  "group": "developer_tools",
+  "url": "https://mcp.atlassian.com/v1/ads/public/mcp",
+  "auth": null
+}

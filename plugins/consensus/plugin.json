@@ -1,0 +1,23 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "consensus",
+  "version": "1.0.0",
+  "description": "Peer-reviewed research papers and findings from the Consensus academic search engine.",
+  "author": {
+    "name": "Consensus"
+  },
+  "homepage": "https://consensus.app",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/consensus.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "codex",
+        "plugin": "consensus",
+        "commit": "0722921d5542fc593105c27bd52630babd8b8c2a",
+        "skills": {}
+      }
+    }
+  }
+}

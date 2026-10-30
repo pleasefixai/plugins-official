@@ -1,0 +1,16 @@
+{
+  "id": "gojiberry",
+  "name": "Gojiberry AI",
+  "description": "Warm leads, buying signals and outreach campaigns in your Gojiberry workspace.",
+  "group": "crm",
+  "url": "https://mcp.gojiberry.ai/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

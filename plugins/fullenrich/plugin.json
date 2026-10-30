@@ -1,0 +1,51 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "fullenrich",
+  "version": "1.0.0",
+  "description": "Prospects, verified emails and phone numbers found by FullEnrich's waterfall enrichment.",
+  "author": {
+    "name": "Fullenrich"
+  },
+  "homepage": "https://fullenrich.com",
+  "license": "MIT",
+  "keywords": [
+    "enrichment",
+    "b2b",
+    "sales",
+    "prospecting",
+    "email-finder",
+    "phone-finder",
+    "crm",
+    "mcp",
+    "contact-enrichment",
+    "email-verification",
+    "phone-enrichment",
+    "recruiting"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/fullenrich.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "fullenrich",
+        "commit": "5c727120c6ca6ef89d3b17dbd6916b1bee73fdcb",
+        "skills": {
+          "full-crm": "d4fbe9be586dbd20aea5727042edfaf9aabf1683b5734090466f301fc7dcf3b3",
+          "full-csv": "3d7bb6c66a8d24558965a1abd3162c10cac8911122f2ebd8f19ad0f5bf35d3ff",
+          "full-lookalike": "e1335a01f5f8f4ae319d832ecfb274c7d08bf68af081c938652345fe28e96bf0",
+          "full-meeting": "0d24a182e1704dfa5d6fa365e83d2fa03236c98d27f248a58cd832012d867472",
+          "full-org": "85fe29d9a9e33ea5d6f8a791458da077fe1e5c945431eb00863876cd7df7bc84",
+          "full-outreach": "9ba84964f7dad0853f561cacd3ae299aa6e8896d048f447fcd26e8d7b36b98ee",
+          "full-prospecting": "cca1d066a01d5fb621ca145fb9a04296f4d43c44ddcef1b43166d088f5888aaa",
+          "full-sequence": "bbd29102ebd57d38b7fe044febf06242cfe8e8d348ad080f6ad6e5c689da0a63",
+          "full-talent": "9ddc5a03e5d60852c8622080f33967d921f629827997ecca8fc919cc92b99854"
+        },
+        "guessed": {
+          "fullenrich.name": "48db6a79af9d58ca"
+        }
+      }
+    }
+  }
+}

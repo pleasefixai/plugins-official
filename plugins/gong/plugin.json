@@ -1,0 +1,35 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "gong",
+  "version": "1.0.0",
+  "description": "Calls, account summaries and deal insights from Gong.",
+  "author": {
+    "name": "Cursor"
+  },
+  "homepage": "https://cursor.com/",
+  "license": "MIT",
+  "keywords": [
+    "gong",
+    "mcp",
+    "revenue",
+    "sales",
+    "calls",
+    "deals"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/gong.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "gong",
+        "commit": "1ba91fc25c0977741dd0e267849e6234b037ed0a",
+        "skills": {},
+        "guessed": {
+          "gong.name": "447c8e23d49f4e67"
+        }
+      }
+    }
+  }
+}

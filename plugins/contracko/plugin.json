@@ -1,0 +1,52 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "contracko",
+  "version": "1.0.0",
+  "description": "Contracts, key terms, obligations and renewal deadlines from your Contracko account.",
+  "author": {
+    "name": "Contracko"
+  },
+  "homepage": "https://contracko.com",
+  "license": "MIT",
+  "keywords": [
+    "contracko",
+    "contract-management",
+    "mcp",
+    "legal",
+    "procurement",
+    "contracts",
+    "clm",
+    "contract-repository",
+    "renewals",
+    "reminders",
+    "vendor-management",
+    "contract-review",
+    "ai-contract-review",
+    "contract-analysis",
+    "contract-data-extraction",
+    "contract-parsing",
+    "contract-lifecycle-management",
+    "obligations"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/contracko.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "contracko",
+        "commit": "f9b23700473e6f72b6969659babe603e4912534d",
+        "skills": {
+          "contracko": "220c38794079cf62169680be13f027908adb0eac0103bcbb23b0d5a565be6018",
+          "contracko-create": "e16b7f4c15cb13677db7456b0c1b60e035ec100ce7c755597fe92d682eb69944",
+          "contracko-import": "16b0368bc7da7ed16a7b1fb03d5d36afa5a19ec37b22ff45d681268bd273e66d",
+          "contracko-review": "e8597da5de281bf015798116cbb4925f4aa18025a4fe20c526d378fac06a78c1"
+        },
+        "guessed": {
+          "contracko.name": "248b382e9255e48e"
+        }
+      }
+    }
+  }
+}

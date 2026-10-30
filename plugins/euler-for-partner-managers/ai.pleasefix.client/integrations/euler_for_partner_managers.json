@@ -1,0 +1,16 @@
+{
+  "id": "euler_for_partner_managers",
+  "name": "EULER for Partner Managers",
+  "description": "Partners, referrals, deal registrations and partner performance in EULER.",
+  "group": "crm",
+  "url": "https://mcp.eulerapp.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

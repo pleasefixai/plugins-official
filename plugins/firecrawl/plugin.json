@@ -1,0 +1,27 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "firecrawl",
+  "version": "1.0.0",
+  "description": "Web search, page scraping and site crawls with Firecrawl.",
+  "author": {
+    "name": "Firecrawl"
+  },
+  "homepage": "https://github.com/firecrawl/firecrawl-claude-plugin.git",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/firecrawl.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "firecrawl",
+        "commit": "3e1fb0c319d71b067906b8b602208dded3932cdb",
+        "skills": {
+          "firecrawl": "864519742045dd910c8582fedae9ddb161a9a745f6e6ba13fca8b9cc7e711055",
+          "firecrawl-developer-index": "33644fc1ae815c2fadfdbdd3a01231610527874a376c815b1c0d8e108d4d37b5",
+          "firecrawl-research-index": "b4920b1aed0aa21db7cd722eb0aa45fb2512f1c29c0d4843a1cae1692ccffb4a"
+        }
+      }
+    }
+  }
+}

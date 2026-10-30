@@ -1,0 +1,16 @@
+{
+  "id": "executor",
+  "name": "Executor",
+  "description": "The tools you connect in Executor, plus the custom tools and automations you build.",
+  "group": "automation",
+  "url": "https://executor.sh/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}
