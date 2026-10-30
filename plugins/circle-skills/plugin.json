@@ -1,0 +1,52 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "circle-skills",
+  "version": "1.0.0",
+  "description": "Circle documentation and code resources for USDC, wallets and stablecoin payments.",
+  "author": {
+    "name": "Circle"
+  },
+  "homepage": "https://www.circle.com",
+  "license": "Apache-2.0",
+  "keywords": [
+    "usdc",
+    "stablecoin",
+    "circle",
+    "cctp",
+    "wallets",
+    "web3",
+    "payments"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/circle_skills.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "circle-skills",
+        "commit": "58ab8648bb1ae9d037a3bf5197ad3bb01262f5b1",
+        "skills": {
+          "accept-agent-payments": "e65939691811a52e4c7dc4544efeafa6da4ab25d032c4a02f0d4f801fb328624",
+          "agent-wallet-policy": "b75f0cd3dade7a142e4f291090d28a8353b1bc309da6588cee094b9dc070e33f",
+          "bridge-stablecoin": "f246521fb106e33c6ef3e9f8ba77d1622f0a94cac9cb9d2ce1e9ab184e5e747b",
+          "fund-agent-wallet": "21699092874928c6c4eeb547e246ea2df3b2980192c75946d6153fc34132aaf6",
+          "pay-via-agent-wallet": "ce7cd594c94ac7da6a1122276790bc911f769a21a3e93f91079eb2980fc28791",
+          "recover-eco-funds": "8458ad8862b92bcccdc1a718cc21c473a35b32f67fa8b07ed8d995bd075f6e92",
+          "swap-tokens": "41a7081fddc95df67316cdad1bd43c9b5773b10e0c45f3812b36afaa6ddb75b2",
+          "unify-balance": "8b8e6fcc92b3b54295afff8ff0f61df12df3d65018500b44bf23994c5d3bb144",
+          "use-agent-wallet": "11e9f7bc43a56045c05d735d57fd8c008484a825525a32890096541e6b32125f",
+          "use-arc": "aa5dc40be847758312e743f24f9e7e7bcecc1111708bc06d8f41f287e5d39fec",
+          "use-circle-cli": "38f89d5c972d42010e056be4a459ee7d3c1238f4eefd342e2e2c006a77f8f9d4",
+          "use-circle-wallets": "137af723fc08fdb9e1e24d6560823d2df7d59f7f8dfbe7bd35339ed7a68f8e0e",
+          "use-developer-controlled-wallets": "49c5fefedffb27be500acc8e2f9d46975681468d49fb62037ec9197ef872e3a3",
+          "use-gateway": "577c11568b9a537e29b1e44afbf5d67a1a79e5da33107b4a5c8800d47b4a8df9",
+          "use-modular-wallets": "6757b818b2f8f057a9b5d62f57f2e2c8536014c762f0c8d6a1ba2a613e0509df",
+          "use-smart-contract-platform": "e371531311f28b71b8c487c9eb935b35d2d05ced5477659c2c0715c7a8d52790",
+          "use-usdc": "5a878057c4adb9579db9d036cae8e49612375365b71081bd59f310a254647b8f",
+          "use-user-controlled-wallets": "b634337c36700f626ddf3056473d5512c89cccc48440427e0ac719f3e11fdfdd"
+        }
+      }
+    }
+  }
+}

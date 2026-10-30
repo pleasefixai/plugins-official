@@ -1,0 +1,16 @@
+{
+  "id": "chainguard_cg_apk",
+  "name": "Chainguard (cg-apk)",
+  "description": "Packages in Chainguard's APK repositories, and their contents.",
+  "group": "developer_tools",
+  "url": "https://apk.cgr.dev/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

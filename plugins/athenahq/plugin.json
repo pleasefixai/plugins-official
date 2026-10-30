@@ -1,0 +1,33 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "athenahq",
+  "version": "1.0.0",
+  "description": "How AI assistants mention, cite and rank your brand and its competitors, from AthenaHQ.",
+  "author": {
+    "name": "AthenaHQ"
+  },
+  "homepage": "https://athenahq.ai",
+  "license": "MIT",
+  "keywords": [
+    "athenahq",
+    "geo",
+    "ai-search",
+    "mcp",
+    "share-of-voice"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/athenahq.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "athenahq",
+        "commit": "3d2aa341c7adcadaf63d25a0be563f00ebff9cda",
+        "skills": {
+          "athenahq": "7d7f4958504a49970faa2f294eb070b051692612ceb55c29feda85a91c9b8c07"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "cartesia",
+  "version": "1.0.0",
+  "description": "Text to speech, speech to text, voice clones and voice agents from your Cartesia account.",
+  "author": {
+    "name": "Cartesia"
+  },
+  "homepage": "https://cartesia.ai",
+  "license": "MIT",
+  "keywords": [
+    "cartesia",
+    "tts",
+    "stt",
+    "sonic",
+    "ink",
+    "line",
+    "voice",
+    "speech",
+    "mcp",
+    "agents",
+    "text-to-speech",
+    "speech-to-text",
+    "asr",
+    "automatic-speech-recognition",
+    "transcription",
+    "realtime",
+    "voice-agents"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/cartesia.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "cartesia",
+        "commit": "0ee3f4a4ad8e9cf9d314962448b721cdc34fae42",
+        "skills": {
+          "cartesia-api": "d7f3914a27fb482f04dbad5e76c461ec98d978b3fab732fbbb9ad7c492e04a6a",
+          "cartesia-line": "8fe7e267250e832c9ae5cc122082b08d536cdb0d7f8f3435580cecca5f6e340e"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "canva",
+  "name": "Canva",
+  "description": "Designs, brand kits and templates from your Canva account.",
+  "group": "design",
+  "url": "https://mcp.canva.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

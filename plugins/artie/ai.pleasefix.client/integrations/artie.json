@@ -1,0 +1,16 @@
+{
+  "id": "artie",
+  "name": "Artie",
+  "description": "Data pipelines, connectors and replication status from your Artie account.",
+  "group": "developer_tools",
+  "url": "https://mcp.artie.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

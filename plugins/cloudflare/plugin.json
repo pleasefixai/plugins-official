@@ -1,0 +1,51 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "cloudflare",
+  "version": "1.0.0",
+  "description": "Workers, storage, DNS and the other resources of your Cloudflare account.",
+  "author": {
+    "name": "Cloudflare"
+  },
+  "homepage": "https://github.com/cloudflare/skills",
+  "license": "Apache-2.0",
+  "keywords": [
+    "cloudflare",
+    "workers",
+    "durable-objects",
+    "agents",
+    "mcp",
+    "wrangler",
+    "serverless",
+    "compute",
+    "storage",
+    "applications"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/cloudflare.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "cloudflare",
+        "commit": "b052c32bab7dd493513260228a36c88294f343f1",
+        "skills": {
+          "agents-sdk": "2338cd234ff946eeb95ebdabaf12fb5acd8b46c99dd8aed1d588aa7719c2d9e9",
+          "cloudflare": "61af4fe2aac829f7f938ff3b1534be7ac61d4a3f09e093034c575fdc5c5098af",
+          "cloudflare-email-service": "30b4819cadb357e1b488c0dbf1b4f3c2525545e904a222851386d3048b3ce285",
+          "cloudflare-one": "4836c3d93d50d9efcca42abce7ed48c0ffea349201dc8f28b840575db89188dc",
+          "cloudflare-one-migrations": "fecdb1efad93b71de47b49f90253cf361706884488e734f0848b22ef210736ca",
+          "durable-objects": "d0d6dadd6b2fa51f81f07c4957e66af5471565b36de1ab1e574dfb3dcd71a517",
+          "nextjs-on-cloudflare": "8a6210c0c275c7a2c7a498375d28062cf46aefd480725b5e064be79aaa457172",
+          "sandbox-migrate-to-next": "77dec2d5dc2ec204949c70da59bf811280c9cf9567b9e46d0d1aa53ff5aaef24",
+          "sandbox-next": "cfe4b80db77d0156ebc240d44a4bddbd656384d6bfb4ae7c18e32d9ef4fe47c4",
+          "sandbox-stable": "63fd52bf420b3b04db65badbe158c30f79c520847c589dc65f6d9a8fee088b01",
+          "turnstile-spin": "8014eb1554af54d7c99e0aea9cd3e607f4f5092b560b2c42e0ada2eb74d06b6f",
+          "web-perf": "8f96cf1dd7d77f844c8547f0c0932e423d470a937911bedd291d7d7dff13be45",
+          "workers-best-practices": "5ea906efdbc430bb0d26b1f1dde3a975335246be2a7d550222dad347e48745f2",
+          "wrangler": "78cfa92a43921d26687b812399bbb90c50181bc77f162a1cb737c55404630c01"
+        }
+      }
+    }
+  }
+}

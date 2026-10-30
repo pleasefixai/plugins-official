@@ -1,0 +1,35 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "antom-integration",
+  "version": "1.0.0",
+  "description": "Payments, refunds, reports and subscriptions from your Antom merchant account.",
+  "author": {
+    "name": "Antom"
+  },
+  "homepage": "https://www.antom.com/",
+  "license": "MIT",
+  "keywords": [
+    "antom",
+    "payments",
+    "payment-integration",
+    "checkout",
+    "subscription",
+    "tokenized-payment"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/antom_integration.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "antom-integration",
+        "commit": "a1b0fb441f51358e029287d0f3f8ab1cd12af373",
+        "skills": {
+          "antom-integration": "38356acd3143a1da0dd087316c37ebf56ef110cb8cfc1b2a5ce05843efde6f5a",
+          "antom-reconciliation-expert": "2590ab6fc36691a18b5241e9e8a9a1cb6316786567506dbe4b071af6f07ea8ec"
+        }
+      }
+    }
+  }
+}

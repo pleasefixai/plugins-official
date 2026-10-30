@@ -1,0 +1,35 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "co-invest",
+  "version": "1.0.0",
+  "description": "Market research, your Liquid portfolio and the trades you authorise in stocks and crypto.",
+  "author": {
+    "name": "Liquid"
+  },
+  "homepage": "https://liquid.trade",
+  "license": "MIT",
+  "keywords": [
+    "liquid",
+    "Co-Invest",
+    "trading",
+    "portfolio",
+    "markets",
+    "perpetuals",
+    "prediction markets",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "co-invest",
+        "commit": "7ebb4bda3200efde4182c4264a7e5092debdacd8",
+        "skills": {
+          "coinvest": "290f026ebd0c22b06fe14c9a42264d5ce96883c3e9fac0cff870f9aa0803b115"
+        }
+      }
+    }
+  }
+}

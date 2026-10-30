@@ -1,0 +1,58 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "bulkpublish",
+  "version": "1.0.0",
+  "description": "Social media posts, schedules, channels and analytics on 15 networks, from BulkPublish.",
+  "author": {
+    "name": "BulkPublish"
+  },
+  "homepage": "https://bulkpublish.com",
+  "license": "MIT",
+  "keywords": [
+    "bulkpublish",
+    "social-media",
+    "scheduling",
+    "publishing",
+    "analytics",
+    "marketing",
+    "content",
+    "mcp",
+    "x",
+    "linkedin",
+    "instagram",
+    "facebook",
+    "tiktok",
+    "youtube",
+    "threads",
+    "bluesky",
+    "mastodon",
+    "pinterest",
+    "discord",
+    "telegram",
+    "automation",
+    "bulkpublish mcp",
+    "bulkpublish social media",
+    "bulkpublish scheduler"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/bulkpublish.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "bulkpublish",
+        "commit": "f173acb5025126fb67eb975852af0b0912e54b64",
+        "skills": {
+          "bulk-publish": "b0cdbb02e2de9b2862e6826edb29db6f450b1efad4d970c06899bddd7bc122b3",
+          "get-analytics": "fc55198029c56d4baeaa3f36a66d90a229b330e0528e1e6248d93c3198f32ab1",
+          "manage-channels": "9ea1baee7695794fef2b932624603365a497658c221659b61731c3cf91fded76",
+          "manage-inbox": "93ff2e828cce163c21d1e3649d907e38941e8c8d8d9b337f4708a3a1ab21571b",
+          "platform-reference": "8170e93f9aa4bf849de881854ee7f3205f9d0d3fcb59c1658fd4082385f6751c",
+          "schedule-post": "e0cb266f8708f42e7676047681bd49543899206f308def1e533aaae2f5187a3f",
+          "using-bulkpublish": "952ecd385b5fe94d3bdcd40c7925251a39ffc5d5eaca0b7e05bcce2328eb72b7"
+        }
+      }
+    }
+  }
+}

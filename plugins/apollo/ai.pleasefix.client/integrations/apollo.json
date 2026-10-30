@@ -1,0 +1,16 @@
+{
+  "id": "apollo",
+  "name": "Apollo.io",
+  "description": "Prospects, contacts, accounts and outreach sequences from your Apollo.io account.",
+  "group": "crm",
+  "url": "https://mcp.apollo.io/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

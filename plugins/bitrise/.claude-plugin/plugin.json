@@ -1,0 +1,5 @@
+{
+  "name": "bitrise",
+  "version": "1.0.0",
+  "description": "Mobile app builds, workflows, tests and releases from your Bitrise workspace."
+}

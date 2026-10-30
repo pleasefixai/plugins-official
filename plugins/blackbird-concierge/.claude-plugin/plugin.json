@@ -1,0 +1,5 @@
+{
+  "name": "blackbird-concierge",
+  "version": "1.0.0",
+  "description": "Restaurant search and reservations on OpenTable, Resy and SevenRooms, through Blackbird."
+}

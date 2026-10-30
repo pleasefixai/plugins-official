@@ -1,0 +1,16 @@
+{
+  "id": "appwrite",
+  "name": "Appwrite",
+  "description": "Databases, users, storage and documentation of your Appwrite projects.",
+  "group": "developer_tools",
+  "url": "https://mcp.appwrite.io/",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

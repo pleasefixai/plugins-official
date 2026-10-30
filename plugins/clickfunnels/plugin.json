@@ -1,0 +1,55 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "clickfunnels",
+  "version": "1.0.0",
+  "description": "Funnels, pages, contacts, orders and emails from your ClickFunnels workspace.",
+  "author": {
+    "name": "ClickFunnels"
+  },
+  "homepage": "https://clickfunnels.com",
+  "license": "MIT",
+  "keywords": [
+    "clickfunnels",
+    "funnels",
+    "contacts",
+    "crm",
+    "store",
+    "orders",
+    "marketing",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/clickfunnels.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "clickfunnels",
+        "commit": "4debcbbe75687e986570fa5aff7fdd4bb13ba4a5",
+        "skills": {
+          "clickfunnels": "7831baaf822bd8aa44c2dc257a5defd037264a73f2eef1628ad17cf4d7986ada",
+          "clickfunnels-blogs": "baa559141d8523e4fba102e1f855bce4e9184ed6a55af6ab0fc2c2a5b5cc3443",
+          "clickfunnels-contacts": "5e9b2e9b786fe98a945e50c71143b4a04f8cf9f65c6627347456f6fa3135cbe9",
+          "clickfunnels-courses": "ebaa3456000d06b03d66703081e8d8e3a2b7f512594a9df7d1df13e35c2b42cf",
+          "clickfunnels-emails": "6fd97c849c39257e23c473e69c3680ce21b4ad716dab1b25dbe5284b25e66c65",
+          "clickfunnels-external-purchases": "7ba4b64baccb9bd2ec7f497ef2fa6c6e725649a156ca29baa9cfb0ca4e37882b",
+          "clickfunnels-funnels": "1429e511b315819d0cf5dbe86b63f80d6a1507f385e11d4bcb21691d95ff5a14",
+          "clickfunnels-import-external-blog-post": "8d9d702b0ac2490ada3ca3d8c966c9d5c6ddd135e43e174ddd04662c8ea01221",
+          "clickfunnels-opportunities": "f3aacff93ebdb69ca5475ae34fb15d504df49f8038cbf3cd32decc48c8dc162c",
+          "clickfunnels-orders": "c8cbb6cff48cd7eac3c27ef89f0d0d3ba9b2974c2cdeadad14fb7be8641b8674",
+          "clickfunnels-page-markup": "f298aa73fab56134e14864001fcf6bc8b86a74bee405059d82a4fc05e986e9a8",
+          "clickfunnels-pages": "3c521ae81627e95c535419b4acd3169cde5beedaea2006dc318c04159655e4ab",
+          "clickfunnels-products": "1182d979e658d6a472b5229b1d376094acf98366d61edf4cfd2ae6f324e13fe3",
+          "clickfunnels-refine-filters": "001da95f3ed8de6e559343ddff40a8cd11a6ce88649e734d3d0854a31d8ca39b",
+          "clickfunnels-sdk-checkout": "091c03172d239e338e8c264882bd1d0f00554e79629e1dd5a4204dc11644bc44",
+          "clickfunnels-sdk-external-page": "9018a89850911c053fe852100cf97e760fe908ebc718a35e38bd357d22e36619",
+          "clickfunnels-sdk-migrate-external-page-domain": "a9ee74da7957587c9273b9e150ad3da8818d82ebf0821cdbafccccea9f7ee66c",
+          "clickfunnels-stats": "d8648910cec62f41a8538a279ad1d275cc3212c07a76622ddd2888ac60025ef3",
+          "clickfunnels-subscription-changes": "cb432693880483ec0cad64701ff0df270508d93134ede4179b19a5c1382ea543",
+          "clickfunnels-workflows": "72258d7193c8984ed136f50959a6f37fa428bea5ba99702978f81785403b6ab9"
+        }
+      }
+    }
+  }
+}

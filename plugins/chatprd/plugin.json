@@ -1,0 +1,36 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "chatprd",
+  "version": "1.0.0",
+  "description": "Product requirement documents, templates and projects from your ChatPRD account.",
+  "author": {
+    "name": "ChatPRD"
+  },
+  "homepage": "https://www.chatprd.ai/",
+  "license": "MIT",
+  "keywords": [
+    "prd",
+    "product",
+    "requirements",
+    "specs",
+    "planning",
+    "documents"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "chatprd",
+        "commit": "03d7c257859d7c79fb73b70964a05500dbf386e9",
+        "skills": {
+          "check-prd-alignment": "aa22709dec70ac3334390212d152bc495f7856b50abbd1bc6e95e03bd24b9a80",
+          "implement-from-prd": "4abe542891f3a2f63bebe55ced5d0ce4acdb6f534afbdc64876bb06d6a535c02",
+          "update-prd": "f6950a4611da8fa6fc2f230b9bc6e61f103914dbe20c39c69a5dc1de550f87a0",
+          "write-prd": "566eaefca7af0077e9d8c7bfc452d2d4265eafc1fec55b43d8c41f0a001bf541"
+        }
+      }
+    }
+  }
+}

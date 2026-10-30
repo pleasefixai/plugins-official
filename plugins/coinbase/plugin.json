@@ -1,0 +1,34 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "coinbase",
+  "version": "1.0.0",
+  "description": "Balances, quotes and trades from your Coinbase account.",
+  "author": {
+    "name": "Cursor"
+  },
+  "homepage": "https://cursor.com/",
+  "license": "MIT",
+  "keywords": [
+    "coinbase",
+    "crypto",
+    "trading",
+    "portfolio",
+    "balances",
+    "market data",
+    "advanced trade",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/coinbase.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "coinbase",
+        "commit": "1ba91fc25c0977741dd0e267849e6234b037ed0a",
+        "skills": {}
+      }
+    }
+  }
+}

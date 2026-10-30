@@ -1,0 +1,5 @@
+{
+  "name": "circleci",
+  "version": "1.0.0",
+  "description": "Pipelines, workflows, jobs and test results from your CircleCI organisation."
+}

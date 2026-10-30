@@ -1,0 +1,16 @@
+{
+  "id": "buffer",
+  "name": "Buffer",
+  "description": "Social media posts, queues, ideas and post analytics from your Buffer account.",
+  "group": "marketing",
+  "url": "https://mcp.buffer.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

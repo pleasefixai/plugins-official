@@ -1,0 +1,41 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "clearskies",
+  "version": "1.0.0",
+  "description": "CRM records, meetings, call transcripts and email connected to your Clearskies workspace.",
+  "author": {
+    "name": "Clearskies"
+  },
+  "homepage": "http://www.clearskies.cc",
+  "license": "MIT",
+  "keywords": [
+    "clearskies",
+    "crm",
+    "sales",
+    "revenue",
+    "pipeline",
+    "calls",
+    "email",
+    "revops",
+    "workflow",
+    "automation",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/clearskies.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "clearskies",
+        "commit": "449a47ebfbe08bf0e159c717e80fd6809c721bd6",
+        "skills": {
+          "ai-update-salesforce-field": "c3c9cd8c7c7bfd5c24f44d36cdeca4571bf942ed2668875e5a087ef670d8319f",
+          "clearskies-workflow-builder": "c045f71b81afcb09d8976260bc5feeb433be226a328dfb71bb752110b10797c4",
+          "use-clearskies-revenue-data": "91befb20bd3eb175980ce749f2f8a81542fccf8bc171f271e7328cf15ab0fb17"
+        }
+      }
+    }
+  }
+}

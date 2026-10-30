@@ -1,0 +1,5 @@
+{
+  "name": "atlan",
+  "version": "1.0.0",
+  "description": "Data assets, lineage, glossary terms and owners from your Atlan data catalog."
+}

@@ -1,0 +1,16 @@
+{
+  "id": "basedash",
+  "name": "Basedash",
+  "description": "Answers from your company data, with the dashboards and charts of your Basedash workspace.",
+  "group": "product_analytics",
+  "url": "https://charts.basedash.com/api/public/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

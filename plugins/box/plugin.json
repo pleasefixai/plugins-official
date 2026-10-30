@@ -1,0 +1,52 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "box",
+  "version": "1.0.0",
+  "description": "Files, folders, hubs and Box AI answers from your Box account.",
+  "author": {
+    "name": "Box"
+  },
+  "homepage": "https://github.com/box/skills",
+  "license": "MIT",
+  "keywords": [
+    "box",
+    "content",
+    "cloud-storage",
+    "file-management",
+    "collaboration",
+    "ai",
+    "box-ai",
+    "mcp",
+    "box-platform",
+    "box-mcp",
+    "box-hubs",
+    "box-doc-gen",
+    "box-content-cloud",
+    "content-management",
+    "document-management",
+    "enterprise-content"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/box.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "box",
+        "commit": "84320fd8984b95cab430335cd341d8314c14bbcb",
+        "skills": {
+          "box": "18166f489b2754ac16d71081c4954e2409b5dffbe7d444d0268bbc3468976a4e",
+          "box-cli": "8869fa8f6e61ff46078788773c44e0e362b383dd6b39540badbe3bf5def972d6",
+          "box-integration-best-practices": "116ec23a61cdc2ad73eb5304efaf392a3d38d2a490dddc3e3e6086509b7b659f",
+          "box-legal-workflows": "eab72281a8258a5be66fda7c1adad6564e5d66beb8a9cd2898e663e509c78b65",
+          "box-legal-workflows-contract": "d3f12bdf632bde92246f2d619efd430d74240f0ded85ab25b4b3de98da6b422d",
+          "box-legal-workflows-intake": "78cdf4e4112dbac226d22e879b71940e64eded2c0b687277f1c8210ab1329d86",
+          "box-legal-workflows-ma": "22fabc58888b8576cf6d385e2410adfaf46c151329535ad90ec6a80e7ea3e5a3",
+          "box-mcp": "e3b049bd61977776e7d3184776a89a39261771ee6eaa5c69a6693e11c01ff9d9",
+          "box-sdk-development": "bab9397741d63c31603f45f7fef3498911d1b10eee62125ca4f3d8a27fb38a3c"
+        }
+      }
+    }
+  }
+}

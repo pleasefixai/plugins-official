@@ -1,0 +1,8 @@
+{
+  "id": "circle_skills",
+  "name": "Circle",
+  "description": "Circle documentation and code resources for USDC, wallets and stablecoin payments.",
+  "group": "developer_tools",
+  "url": "https://api.circle.com/v1/codegen/mcp",
+  "auth": null
+}

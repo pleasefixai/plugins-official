@@ -1,0 +1,42 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "appwrite",
+  "version": "1.0.0",
+  "description": "Databases, users, storage and documentation of your Appwrite projects.",
+  "author": {
+    "name": "Appwrite"
+  },
+  "homepage": "https://appwrite.io",
+  "license": "BSD-3-Clause",
+  "keywords": [
+    "appwrite",
+    "claude-code",
+    "mcp",
+    "skills"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/appwrite.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "appwrite",
+        "commit": "ab3c90b37c95b7068f0c064dc562cf21958e8e19",
+        "skills": {
+          "cli": "bc94781d934d96f563d17a062f5b957b9900e07270ec336ade9e9da199721b90",
+          "dart": "cd64a85e9d4fd166c972b219f726f7fe5695efd0233dce4eaff570f59f211b69",
+          "dotnet": "37be74feebbdbd0b2a5ee095133546484359dc83c5720651b67c6739727f0ac9",
+          "go": "9dadca1119f7d4f851b5cd066d92cf9d181af1b7478432d197cd949ec5b5f801",
+          "kotlin": "bb31979013d319df8805683da478a2ec25149726abb57bd5ab367cc8668dcbf8",
+          "php": "a84746e37ba393df71848b094a040322b91947fa968327c026bbb8718e428754",
+          "python": "fd1ed28c6a08e71dd43abf1e6df76deec61b93a2b60639758222710063c26f83",
+          "ruby": "4981d2dadaad8c3a478436e09d95ca4cb079f4b96bc6f8ab060fe51b57f01b13",
+          "rust": "2bfa4d754bdb3af1d653ab5ec2b270e72598142c751bb26d43c90e2cafe4bcaa",
+          "swift": "cbdc745f464df7c8ada1b3875daa608ec95e145bac85ca40a8fe53e7030f2793",
+          "typescript": "941cf5ac3106c3dbbf8e168d5f0c074bfcf562b278bca895239cbca6ff6dec49"
+        }
+      }
+    }
+  }
+}

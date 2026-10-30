@@ -1,0 +1,35 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "asana",
+  "version": "1.0.0",
+  "description": "Tasks, projects, goals and portfolios from your Asana workspace.",
+  "author": {
+    "name": "Asana"
+  },
+  "homepage": "https://asana.com/",
+  "license": "MIT",
+  "keywords": [
+    "asana",
+    "mcp",
+    "productivity",
+    "project management",
+    "tasks"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/asana.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "asana",
+        "commit": "caf02337846594b6af5221ea5165c1dd0d273d9b",
+        "skills": {
+          "asana-mcp-troubleshooting": "8ce611a736ce50da89e4678665fb090d4102ba785c197e77b415e1885814a7f6",
+          "asana-setup": "d87e04dd94f6cc5c292a4c74ef5522778114d5af7149d2326722961531393c8b",
+          "asana-usage": "c42c159aa9eca81f414edd76c2666cbd65baef00211da19c347d67f4e5571c21"
+        }
+      }
+    }
+  }
+}

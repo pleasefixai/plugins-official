@@ -1,0 +1,16 @@
+{
+  "id": "atlassian",
+  "name": "Atlassian",
+  "description": "Jira issues and Confluence pages from your Atlassian sites.",
+  "group": "projects_time",
+  "url": "https://mcp.atlassian.com/v2/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

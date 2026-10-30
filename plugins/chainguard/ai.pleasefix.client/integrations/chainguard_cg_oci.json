@@ -1,0 +1,16 @@
+{
+  "id": "chainguard_cg_oci",
+  "name": "Chainguard (cg-oci)",
+  "description": "Chainguard container images, with their tags and digests.",
+  "group": "developer_tools",
+  "url": "https://cgr.dev/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

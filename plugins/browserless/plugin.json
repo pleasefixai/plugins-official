@@ -1,0 +1,39 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "browserless",
+  "version": "1.0.0",
+  "description": "Headless browsers in the Browserless cloud, to scrape, crawl and search the web.",
+  "author": {
+    "name": "Browserless"
+  },
+  "homepage": "https://www.browserless.io/",
+  "license": "MIT",
+  "keywords": [
+    "browserless",
+    "automation",
+    "browser",
+    "browser-automation",
+    "web-scraping",
+    "crawler",
+    "screenshot",
+    "pdf",
+    "puppeteer",
+    "playwright",
+    "lighthouse",
+    "headless-chrome",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/browserless.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "browserless",
+        "commit": "53a49eddc0124477c849c53862b9f6cf707c5b6b",
+        "skills": {}
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "codspeed",
+  "version": "1.0.0",
+  "description": "Benchmark results, performance reports and flame graphs from your CodSpeed projects.",
+  "author": {
+    "name": "CodSpeed"
+  },
+  "homepage": "https://codspeed.io",
+  "license": "MIT",
+  "keywords": [
+    "codspeed",
+    "performance",
+    "profiling",
+    "optimization",
+    "benchmarking"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/codspeed.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "codspeed",
+        "commit": "59cfc90540bb3717d8acf4ad03f7b5531c8e1a3d",
+        "skills": {
+          "codspeed-optimize": "a653078ffdd8063e65e6135e274041fbfe013f6c4d1734f1af31e87e02882b16",
+          "codspeed-setup-harness": "91d7c78cfce661eaea47432fccae70d2584118d0d945324901daf8035e1b00fa"
+        }
+      }
+    }
+  }
+}

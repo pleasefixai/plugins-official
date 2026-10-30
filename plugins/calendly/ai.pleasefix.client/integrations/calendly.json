@@ -1,0 +1,16 @@
+{
+  "id": "calendly",
+  "name": "Calendly",
+  "description": "Event types, availability and bookings from your Calendly account.",
+  "group": "projects_time",
+  "url": "https://mcp.calendly.com/",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

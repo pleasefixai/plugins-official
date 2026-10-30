@@ -1,0 +1,35 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "blackrock-advisor-center-plugin",
+  "version": "1.0.0",
+  "description": "Portfolio reviews, fund health checks and wealth projections from Advisor Center 360°.",
+  "author": {
+    "name": "BlackRock Advisor Center"
+  },
+  "homepage": "https://github.com/blackrock/advisor-center-agent-skills",
+  "keywords": [
+    "advisor-center",
+    "advisor-center-360",
+    "portfolio-analysis",
+    "wealth-management"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "blackrock-advisor-center-plugin",
+        "commit": "591c758960c18c26fe8342ddb8ad3ba4dcfac6fe",
+        "skills": {
+          "ac360-capability-router": "e5987efec39e7c472483b72082e821dc2aa6bdd651f3b32be9ba97c4a82901a3",
+          "guided-benchmark-selection": "8cd5dc819138fa5aea50b890f9525cbffc710cdf208faa999d9f4049ea97317f",
+          "guided-portfolio-builder": "de73a8f804242d0e3da59f60be1e93e8c4deb1ecb799311f6735f24c0b48bbcf",
+          "portfolio-observations-and-opportunities": "91767fc7f674bda33ba5a8e6c1d0990ab3dd48e18ab68a3b20306c61eaafd506",
+          "portfolio-review": "e245faddd15260fca42dc43822549f30c48425dca39d317a472b95b35e89dad7",
+          "wealth-projections": "81344a974eb242c3fe17b237359e974ca78821e4de9e67a7ab752e9d57691fb2"
+        }
+      }
+    }
+  }
+}

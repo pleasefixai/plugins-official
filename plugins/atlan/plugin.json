@@ -1,0 +1,36 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "atlan",
+  "version": "1.0.0",
+  "description": "Data assets, lineage, glossary terms and owners from your Atlan data catalog.",
+  "author": {
+    "name": "Atlan"
+  },
+  "homepage": "https://docs.atlan.com/",
+  "license": "Apache-2.0",
+  "keywords": [
+    "data-catalog",
+    "data-governance",
+    "metadata",
+    "lineage",
+    "data-quality",
+    "semantic-search",
+    "glossary",
+    "mcp",
+    "atlan"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "atlan",
+        "commit": "17b7ae3b4852a24a9271a55eb339dea0b38f1f60",
+        "skills": {
+          "atlan-search": "b772c227c94de7844558586feffd866d562defdd77777a839e54cdeb13c28b44"
+        }
+      }
+    }
+  }
+}

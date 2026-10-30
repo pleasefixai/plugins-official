@@ -1,0 +1,16 @@
+{
+  "id": "clarify",
+  "name": "Clarify",
+  "description": "Records, lists, campaigns and meetings from your Clarify CRM.",
+  "group": "crm",
+  "url": "https://api.clarify.ai/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

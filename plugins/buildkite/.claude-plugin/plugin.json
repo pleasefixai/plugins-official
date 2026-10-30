@@ -1,0 +1,5 @@
+{
+  "name": "buildkite",
+  "version": "1.0.0",
+  "description": "Pipelines, builds, jobs and test results from your Buildkite organisation."
+}

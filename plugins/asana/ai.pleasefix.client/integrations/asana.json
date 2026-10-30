@@ -1,0 +1,16 @@
+{
+  "id": "asana",
+  "name": "Asana",
+  "description": "Tasks, projects, goals and portfolios from your Asana workspace.",
+  "group": "projects_time",
+  "url": "https://mcp.asana.com/v2/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "confidence",
+  "name": "Confidence",
+  "description": "Confidence documentation and SDK guides for feature flags and experiments.",
+  "group": "product_analytics",
+  "url": "https://mcp.confidence.dev/mcp/docs",
+  "auth": null,
+  "headers": {
+    "x-confidence-mcp-consumer": "plugin"
+  }
+}

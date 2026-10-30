@@ -1,0 +1,16 @@
+{
+  "id": "ahrefs",
+  "name": "Ahrefs",
+  "description": "Keywords, backlinks, rankings and site audits from your Ahrefs account.",
+  "group": "marketing",
+  "url": "https://api.ahrefs.com/mcp/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

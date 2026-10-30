@@ -1,0 +1,36 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "basedash",
+  "version": "1.0.0",
+  "description": "Answers from your company data, with the dashboards and charts of your Basedash workspace.",
+  "author": {
+    "name": "Basedash"
+  },
+  "homepage": "https://www.basedash.com",
+  "license": "MIT",
+  "keywords": [
+    "basedash",
+    "mcp",
+    "analytics",
+    "bi",
+    "data"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/basedash.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "basedash",
+        "commit": "1e3a70a1863f1f160c54969e075dedbdeb34deb8",
+        "skills": {
+          "analyze-company-data": "41f1de686bde95705cf788e92a46a7ca014366ec290267b70dda278ebdc8a066",
+          "discover-company-data": "15afaba0cdc7bc0c4281c022820572f1073c8d3f5c39a94008044808f5327956",
+          "inspect-dashboards-and-charts": "c9bfeedef2495c635269b6842056d26c9bd69771a6655995b1faa8bca2aa5bf5",
+          "manage-dashboards-and-charts": "751d74ce8c5e10e97fe46cdffa54b3d098820cca1cd9b21b823179f0a4ae0adc"
+        }
+      }
+    }
+  }
+}

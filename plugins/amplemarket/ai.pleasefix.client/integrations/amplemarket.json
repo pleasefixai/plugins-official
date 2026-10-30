@@ -1,0 +1,16 @@
+{
+  "id": "amplemarket",
+  "name": "Amplemarket",
+  "description": "People and company search, lead enrichment and sequences from your Amplemarket account.",
+  "group": "crm",
+  "url": "https://mcp.amplemarket.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

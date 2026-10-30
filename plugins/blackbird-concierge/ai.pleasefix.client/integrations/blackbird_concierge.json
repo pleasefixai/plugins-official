@@ -1,0 +1,16 @@
+{
+  "id": "blackbird_concierge",
+  "name": "Blackbird Concierge",
+  "description": "Restaurant search and reservations on OpenTable, Resy and SevenRooms, through Blackbird.",
+  "group": "other",
+  "url": "https://concierge.api.blackbird.xyz/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

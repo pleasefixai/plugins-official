@@ -1,0 +1,37 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "apify",
+  "version": "1.0.0",
+  "description": "Actors, runs and the web data they scrape, from your Apify account.",
+  "author": {
+    "name": "Apify"
+  },
+  "homepage": "https://apify.com/",
+  "license": "Apache-2.0",
+  "keywords": [
+    "apify",
+    "scraping",
+    "automation",
+    "leads",
+    "data-extraction"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/apify.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "apify",
+        "commit": "2d191083883fa31bde4a477527bf6223a23fd18e",
+        "skills": {
+          "apify-actor-development": "7f31eefba24dbcebff0064213cbfb850662df5be758fac1362804a0fb38caae7",
+          "apify-actorization": "9ddbd0a78fe8704c4944137978b16c3dbf01cdc5c5a5ca9c94b11c90ba8a7ab8",
+          "apify-generate-output-schema": "874af845d414206082770983e4f6077a54b3e829fbd92dcbec107f98f277ae3c",
+          "apify-sdk-integration": "d33a0d18ecf451f17b17f65bc9c828b4d61b8a2479a67b1623ffbf9c3e64e77c",
+          "apify-ultimate-scraper": "b95758846753935f38cd977ad4eb016b3bbbfe1fcd482f61c5a28e250068ee2d"
+        }
+      }
+    }
+  }
+}

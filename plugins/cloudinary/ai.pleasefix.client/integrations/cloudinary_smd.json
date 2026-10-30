@@ -1,0 +1,16 @@
+{
+  "id": "cloudinary_smd",
+  "name": "Cloudinary (structured metadata)",
+  "description": "Structured metadata fields and their values on your Cloudinary assets.",
+  "group": "design",
+  "url": "https://structured-metadata.mcp.cloudinary.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "aws-agents",
+  "version": "1.0.0",
+  "description": "AWS documentation and regional availability, to build and run AI agents on AWS.",
+  "author": {
+    "name": "Amazon Web Services"
+  },
+  "homepage": "https://github.com/aws/agent-toolkit-for-aws",
+  "license": "Apache-2.0",
+  "keywords": [
+    "aws",
+    "amazon",
+    "amazon-web-services",
+    "ai",
+    "ai-agents",
+    "agents",
+    "agentcore",
+    "bedrock",
+    "amazon-bedrock",
+    "iam",
+    "deploy",
+    "debug",
+    "memory",
+    "gateway",
+    "policy",
+    "cedar",
+    "evaluation",
+    "evals",
+    "strands",
+    "langgraph",
+    "mcp",
+    "a2a",
+    "multi-agent",
+    "tool-use",
+    "rag",
+    "vpc",
+    "observability",
+    "cloudwatch",
+    "tracing",
+    "x-ray",
+    "production-hardening",
+    "jwt",
+    "sigv4",
+    "oauth",
+    "openapi",
+    "code-interpreter",
+    "browser-tool",
+    "rate-limiting"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "aws-agents",
+        "commit": "0d6167ad2e6dfb858098c4162fe74d04c975532f",
+        "skills": {
+          "agents-build": "36b7820a8ff0b9756c64381a851b3470d16d0ba536828c9792c6541720ad8052",
+          "agents-connect": "98a7f6492b2eb3c2841b5123a1bef71398bf9d8f181310145fffb1014a1c574c",
+          "agents-debug": "36442465da7bf61b82780681804693c44f7d970b13f7f2bc5a29609f6ba31bf1",
+          "agents-deploy": "ceeab63a6eec266bb1d4b928cc0811f30ad48251079d79baedbe8a82bf7e2094",
+          "agents-get-started": "3ebb6d7eba0c91f69a326e103c1020363f36bd71b7484544131fa670bac1b07f",
+          "agents-harden": "89740b755f3b559406c237fce059c0af9969abfc973e3ae4fa340a6cd5cb1f8e",
+          "agents-optimize": "94a99b2e8f97d512572021f72fdb5c01fa9dd9d4d01f8082366ed679eaafce0e",
+          "agents-pay": "1229e3ae1b36822122227a7b51c60d79456e3e54496fb7670424ec5402a0d90f"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "cloudinary",
+  "version": "1.0.0",
+  "description": "Images, videos and their metadata from your Cloudinary account.",
+  "author": {
+    "name": "Cloudinary"
+  },
+  "homepage": "https://cloudinary.com/documentation",
+  "license": "MIT",
+  "keywords": [
+    "cloudinary",
+    "media",
+    "images",
+    "video",
+    "transformations",
+    "asset-management",
+    "optimization",
+    "mcp",
+    "cursor",
+    "plugin",
+    "skills",
+    "videos",
+    "asset management"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/cloudinary_analysis.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "cloudinary",
+        "commit": "86be53409e3fb1c465cd5ff4d1dc937a2860f45c",
+        "skills": {
+          "claimable-cloud": "61187dc843c29e1a5244cdd4c264cd2b9672acb8c4b52867f02b9bbf659b179b",
+          "cloudinary-docs": "382028e566f172910abb7eed65055b65a6267d6290b2417fd9a620e3782e4520",
+          "cloudinary-transformations": "fbd7a6a329ff274b06885109365e275859d35e9e43a4c2ebafb59dc34c21b06d"
+        }
+      }
+    }
+  }
+}

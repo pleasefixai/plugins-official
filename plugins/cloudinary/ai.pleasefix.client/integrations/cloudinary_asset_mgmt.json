@@ -1,0 +1,16 @@
+{
+  "id": "cloudinary_asset_mgmt",
+  "name": "Cloudinary (asset management)",
+  "description": "Images, videos, folders and transformations in your Cloudinary account.",
+  "group": "design",
+  "url": "https://asset-management.mcp.cloudinary.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

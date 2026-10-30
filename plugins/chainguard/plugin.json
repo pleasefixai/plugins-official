@@ -1,0 +1,42 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "chainguard",
+  "version": "1.0.0",
+  "description": "Hardened container images, packages, advisories and version history from Chainguard.",
+  "author": {
+    "name": "Chainguard"
+  },
+  "homepage": "https://www.chainguard.dev/",
+  "license": "Apache-2.0",
+  "keywords": [
+    "chainguard",
+    "security",
+    "containers",
+    "sbom",
+    "cve",
+    "supply-chain",
+    "libraries"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "chainguard",
+        "commit": "4bb0158c2b1a443932b83bb9f344b7a718310d0a",
+        "skills": {
+          "chainguard-check-advisories": "fcb80cf27cff228e79a757e97adf89f3ebac80279568163f06fd3d5fab71c324",
+          "chainguard-compare-versions": "763fbb80708692f36d56df25f1422fc93089a9d38b94668c0efda7d799bbb58e",
+          "chainguard-find-image": "6fab33b83dbef29a69a2f1748a4a9315767ad885799ea7495d2b6bfad53e577a",
+          "chainguard-inspect-image": "2139bda9a6e1c8df6675d8263a99f83d3389e4a14dea60947873a6adf8771e97",
+          "chainguard-libraries-java": "2e9cec55963cff1c66fb6bb3b6795b029bc5bfb6c5533927781c4d503206568a",
+          "chainguard-libraries-javascript": "790b090420cb73c45c69c2c5914e8bc43e42f7c223ce834064659e076d081d7a",
+          "chainguard-libraries-python": "8b288252f89ff562b680ab16e9392a631df640bd7d8aef5e78eb4f67c0044a48",
+          "chainguard-migrate-dockerfile": "970e2689a8fdb186a50fdc18cdaaa56feb2abbdbc2e490ca9d15a0c348b3c34a",
+          "chainguard-setup-auth": "06353a13bd44fd4fb0a7bdd9ec0273581b37db049ca2b6bc888dfe5ded549037"
+        }
+      }
+    }
+  }
+}

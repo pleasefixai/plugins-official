@@ -1,0 +1,16 @@
+{
+  "id": "cloudinary_env_config",
+  "name": "Cloudinary (environment settings)",
+  "description": "Upload presets, named transformations and other settings of your Cloudinary account.",
+  "group": "design",
+  "url": "https://environment-config.mcp.cloudinary.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "catalyst_by_zoho",
+  "name": "Catalyst by Zoho",
+  "description": "Tables, data, cache and storage buckets of your Catalyst by Zoho projects.",
+  "group": "developer_tools",
+  "url": "https://catalyst.zohomcp.com/mcp/message",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}
