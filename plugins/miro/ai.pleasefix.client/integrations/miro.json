@@ -1,0 +1,19 @@
+{
+  "id": "miro",
+  "name": "Miro",
+  "description": "Boards, diagrams, sticky notes and documents in your Miro workspace.",
+  "group": "design",
+  "url": "https://mcp.miro.com/",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  },
+  "headers": {
+    "X-AI-Source": "claude-code-plugin"
+  }
+}

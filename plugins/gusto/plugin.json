@@ -1,0 +1,37 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "gusto",
+  "version": "1.0.0",
+  "description": "Payroll, employees, contractors, time off and reports in your Gusto account.",
+  "author": {
+    "name": "Cursor"
+  },
+  "homepage": "https://docs.gusto.com/app-integrations/docs/mcp",
+  "license": "MIT",
+  "keywords": [
+    "gusto",
+    "payroll",
+    "hr",
+    "employees",
+    "contractors",
+    "benefits",
+    "time off",
+    "timesheets",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "gusto",
+        "commit": "1ba91fc25c0977741dd0e267849e6234b037ed0a",
+        "skills": {},
+        "guessed": {
+          "gusto.name": "2ca767f3ea486c08"
+        }
+      }
+    }
+  }
+}

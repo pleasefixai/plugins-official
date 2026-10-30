@@ -1,0 +1,8 @@
+{
+  "id": "paradedb",
+  "name": "ParadeDB",
+  "description": "ParadeDB documentation: full-text search, vector search and analytics in Postgres.",
+  "group": "developer_tools",
+  "url": "https://docs.paradedb.com/mcp",
+  "auth": null
+}

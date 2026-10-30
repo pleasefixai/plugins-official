@@ -1,0 +1,36 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "hubspot",
+  "version": "1.0.0",
+  "description": "Contacts, companies, deals and tickets in your HubSpot CRM.",
+  "author": {
+    "name": "Cursor"
+  },
+  "homepage": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/integrate-with-the-remote-hubspot-mcp-server",
+  "license": "MIT",
+  "keywords": [
+    "hubspot",
+    "crm",
+    "mcp",
+    "sales",
+    "marketing",
+    "contacts",
+    "deals"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/hubspot.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "hubspot",
+        "commit": "1ba91fc25c0977741dd0e267849e6234b037ed0a",
+        "skills": {},
+        "guessed": {
+          "hubspot.name": "5f5f6ddd5dbf1710"
+        }
+      }
+    }
+  }
+}

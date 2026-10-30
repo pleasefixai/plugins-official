@@ -1,0 +1,37 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "pendo-analytics",
+  "version": "1.0.0",
+  "description": "Feature adoption, account health, session replays and feedback from Pendo.",
+  "author": {
+    "name": "Pendo"
+  },
+  "homepage": "https://github.com/pendo-io/claude-pendo-plugin/tree/main/plugins/pendo-analytics",
+  "license": "MIT",
+  "keywords": [
+    "pendo",
+    "analytics",
+    "customer-success",
+    "product-management"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/pendo_analytics.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "pendo-analytics",
+        "commit": "a0f85260c61b93c4511f59545612323a41c3f845",
+        "skills": {
+          "account-health": "5b320ae39c4f5841439b81cc6c3e09c575114ce5dca3f935e58740a3aab245fc",
+          "app-health": "4bdaf909a465c4e401d569fda443f85c4114f87c72962d5ae8256be81fa33460",
+          "data-informed-planning": "5241954c4f34567df22b5c02921e21bc23c490f4e566b5fb87a06bc9c0565cf4",
+          "feature-adoption": "15565eccb5be7397513ae4bbc285f4358e51208489923b8e13dcb5a6cfaace3e",
+          "feedback-analysis": "cb8df02037c48d993a4e0710497923a8828fa3102e85bed61f1b158f04c294d6",
+          "replay-triage": "7b85c702cd97305875a4f24364242afe7ff14cf52da0ffffb0187b3e2a1e665e"
+        }
+      }
+    }
+  }
+}

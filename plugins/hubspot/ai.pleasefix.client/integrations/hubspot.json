@@ -1,0 +1,16 @@
+{
+  "id": "hubspot",
+  "name": "HubSpot",
+  "description": "Contacts, companies, deals and tickets in your HubSpot CRM.",
+  "group": "crm",
+  "url": "https://mcp.hubspot.com",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

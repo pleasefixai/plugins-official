@@ -1,12 +1,12 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "coinbase",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Balances, quotes and trades from your Coinbase account.",
   "author": {
     "name": "Cursor"
   },
-  "homepage": "https://cursor.com/",
+  "homepage": "https://docs.cdp.coinbase.com/coinbase-for-agents/overview",
   "license": "MIT",
   "keywords": [
     "coinbase",

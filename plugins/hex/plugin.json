@@ -1,0 +1,33 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "hex",
+  "version": "1.0.0",
+  "description": "Projects, data and analyses in your Hex workspace.",
+  "author": {
+    "name": "Hex"
+  },
+  "homepage": "https://hex.tech/",
+  "keywords": [
+    "hex",
+    "mcp",
+    "data",
+    "analytics",
+    "notebooks"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/hex.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "hex",
+        "commit": "58b7f25fd332f6d5a3f928a9748b415bdb47d476",
+        "skills": {},
+        "guessed": {
+          "hex.name": "69493e6f1a6957ca"
+        }
+      }
+    }
+  }
+}

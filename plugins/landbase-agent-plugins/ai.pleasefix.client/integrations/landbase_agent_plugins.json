@@ -1,0 +1,16 @@
+{
+  "id": "landbase_agent_plugins",
+  "name": "Landbase",
+  "description": "B2B lists of companies and people from Landbase, built and enriched from a search.",
+  "group": "crm",
+  "url": "https://mcp.landbase.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

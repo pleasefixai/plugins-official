@@ -1,0 +1,16 @@
+{
+  "id": "mcp_server_for_wordpress",
+  "name": "WordPress",
+  "description": "Posts, pages, media and users of your WordPress site, through miniOrange.",
+  "group": "marketing",
+  "url": "https://gateway.miniorange.ai/v2/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "padlet",
+  "name": "Padlet",
+  "description": "Padlet boards and their posts.",
+  "group": "projects_time",
+  "url": "https://mcp.padlet.com/?toolsets=core",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

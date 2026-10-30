@@ -1,0 +1,16 @@
+{
+  "id": "monday_crm",
+  "name": "monday CRM",
+  "description": "Contacts, accounts, deals and activities in your monday CRM boards.",
+  "group": "crm",
+  "url": "https://mcp.monday.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

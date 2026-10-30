@@ -1,0 +1,36 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "klaviyo",
+  "version": "1.0.0",
+  "description": "Profiles, segments, campaigns and flows in your Klaviyo account.",
+  "author": {
+    "name": "Cursor"
+  },
+  "homepage": "https://developers.klaviyo.com/en/docs/klaviyo_mcp_server",
+  "license": "MIT",
+  "keywords": [
+    "klaviyo",
+    "marketing",
+    "email",
+    "sms",
+    "campaigns",
+    "segments",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/klaviyo.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "klaviyo",
+        "commit": "1ba91fc25c0977741dd0e267849e6234b037ed0a",
+        "skills": {},
+        "guessed": {
+          "klaviyo.name": "d5e7e20540c5d604"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "knock",
+  "name": "Knock",
+  "description": "Notification workflows, templates and channels in your Knock account.",
+  "group": "developer_tools",
+  "url": "https://mcp.knock.app/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

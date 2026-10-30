@@ -1,0 +1,78 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "picsart",
+  "version": "1.0.0",
+  "description": "Images, videos and audio generated and edited with Picsart AI.",
+  "author": {
+    "name": "PicsArt, Inc."
+  },
+  "homepage": "https://picsart.com",
+  "license": "MIT",
+  "keywords": [
+    "picsart",
+    "gen-ai",
+    "mcp",
+    "video",
+    "screen-recording",
+    "reels",
+    "motion-design",
+    "short-film",
+    "video-editing"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/picsart.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "picsart",
+        "commit": "b72fb526bcc5e532c2cdf3fe6a0ecb53dbfa71a4",
+        "skills": {
+          "ai-presenter": "7ff7bd82ebaebfe6d1c5e804bdcd90a9846b7abd9e5863fd1a1aa7ba6f7a66d9",
+          "animate-design": "bc8cc86c4ef55c2226284a8efa3376145e92540b12d65a9cb81b62151d19125f",
+          "background-music": "a0f7ec2360e0a68dacf8d4966b047a5a136855eff1b47feb47f5d4e9f7c436b5",
+          "caption-decorations": "ad9ab4fd3832e805ccd9ded7c0da33641bc7af2e7417540037fc2a5280f636f4",
+          "cut-footage-into-reel": "e51916d8603464f193ed70a65d78935ad2f2d918312d9aae05803c3bdd854227",
+          "design-layer-import": "afbf7c07c4c39f10b261c4c674f61a83c4d159f2d8a7cdfa991cf8f1017f91cb",
+          "drama-series-writing": "2325124fc702ee16046583f9c3531cc8d499891ece28b956b94afc8e10bc766f",
+          "film-cast-design": "6714084a1968f723abb87467a886e761689c09185b8a7fd5f8a9ab14b71d1ede",
+          "film-cutting": "afc4890306f8d6b3226bf1f28d9fc9ec2d94aecc5fe44f4e6c9c465d287cdc72",
+          "film-finishing": "3e9804af0a05931748b9a9da9bbc46f251d67e09478e288d305e4cec6e7741e2",
+          "film-shot-generation": "76b1b7dd8caf5b60f6cae9123e5bf86d808271ceaeb3008f01c40352e36f1a61",
+          "film-story-writing": "8597934d0900715945ea4fab53867e271838f479f449f5025a463b263e2a7119",
+          "footage-analysis": "3126794e50c11797daa3c0227b4eca9649df820fbd05ba862655e30be76f5314",
+          "footage-reframing": "49648856c17431bf083a5c88af38e1f3732cd6ff9ec3a9854b32bf16be844935",
+          "generate-media": "e4abac15d106e2dabb0b9af37273386df53c8e5f445ce0c51b782c8b30e0f6c9",
+          "get-started": "c53c35c6d8d6c4b3907a52c576336e759521ae71b55f417ca0aa849cf8bdba22",
+          "make-screen-videos": "6a1cb2b7ae490bdfbcc7150f8f7adee6aa9ee69e81b4f0767ca21f7f217ca7aa",
+          "make-short-drama": "ee40fd85fafee6e8692271c598d9859873135315766af8edf7aa10e09f4184dd",
+          "motion-design-craft": "2db75cfc193f007c8603fd9e7f10036571c2518606b70783af3d60e8bb01b7eb",
+          "motion-tracking-from-video": "87be28759e7c3702ef605e864aeeefd540576bd67a098e53f743bef9ec34cd84",
+          "movie-producer": "117b852a77d5c255583c10c72c13b9ae2071e926b0a5c08243a0c1fbed9c3a62",
+          "open-picsart-app": "235a16580ce36a42cb89d6baa6c91162df53d0d2b35e2583345d5c7e01cd07c8",
+          "photo-slideshow": "64fd5feaf31fd1471fb2b623929ff68e81d0ad2e91fd8ca521cbfc35db10bc06",
+          "picsart-add-media": "52a145e0e33e4336c8830043324965a121d3b545b183aae1e7348ca5cfdd9467",
+          "picsart-video-rules": "1d8b3fe63f50737522294f1a03610a8987a1907d724dea23bbc678d507a574af",
+          "quality-review": "4d6b84d26eb5b866fe8f84641da0dff527a2cda3597bfe7fc354ee40743fa419",
+          "realistic-color-grade": "cedac6cbcc9b5b7906765c08b26ab253c2cb529f1f0f96c011baffba68e27b3b",
+          "recreate-video": "7a2346930b32209ef76638e9fabd7e2d2bdc40b7ac9f9a8de4b6f16c123cab32",
+          "reference-fragment-matching": "ede5a260fe356b852e9120dd8a5bf1b77653f120b6cf684154213566bc252838",
+          "resting-frame-rules": "29ea7c56d48a9adab0195beeaf64af3852405604560b617769ea6bb1eaf5d5ca",
+          "retention-hooks": "d2c5c26e5f2a1c0e960a0be1e4e59d139cbcbd36a85be62f2c86fe51861c4ad7",
+          "scene-building-basics": "c00aba7dc786eed73fb50d08e1579f7ede840a52332e8675eb540531df338062",
+          "screen-recording-analysis": "95c9a7bfe73f600bf546d47ccce953d374c61012e8046983b23fe47f96cbaaa8",
+          "screen-recording-layouts": "2c6f5de8a3fcadc30173689a6f006bed6ceda45fc689ff2637ad263298f46435",
+          "screen-recording-zoom": "31eb3e396b75e03388d3c22a993a35e3297d67af59d8e03642a6a8789a638582",
+          "screen-ui-redesign": "da654ae31761e433981ec60350c195510fa22a789bc59836e03cf650c5b4b40e",
+          "speech-aware-cutting": "11c9b78c3a5e0c4a099fe6feec9501c0ba692a0d252e7c9454c1056eda738fbf",
+          "spoken-captions": "142d4fde659ed15ecb22d139be954800311468b57e8c06e4b28889758acf9c46",
+          "style-guide-builder": "d470ab430125f476ecd9902f9824ca08e825562ef2810ada9ffd8feb083b5434",
+          "video-prompt-engineer": "aecc57400a4c2980dec891a86966912fb19e0687a4f049cbf17a37b8e5ea6a5a",
+          "visual-style": "b9f83d7226ede0a04aa05bb3c6bb1776a7a9b23f7f30d2c0bde346fdc6b9b82d",
+          "voice-over-generation": "c80f11a790219098fb214b4898e551f8a5bd90e4d36ba214ef74f7c678b2666b"
+        }
+      }
+    }
+  }
+}

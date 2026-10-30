@@ -1,0 +1,42 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "neon",
+  "version": "1.0.0",
+  "description": "Projects, branches, databases and queries in your Neon Postgres account.",
+  "author": {
+    "name": "Neon"
+  },
+  "homepage": "https://github.com/neondatabase/agent-skills/tree/main/plugins/neon-postgres",
+  "license": "Apache-2.0",
+  "keywords": [
+    "neon",
+    "lakebase",
+    "postgres",
+    "serverless",
+    "database",
+    "mcp",
+    "cursor"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/neon.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "neon",
+        "commit": "827249744ed96416d799b68fb6bf033f4068b18a",
+        "skills": {
+          "neon": "70e999c2e48b71454138770b0568388e1e9677bdb340c11dc357f445ede61e7a",
+          "neon-ai-gateway": "bdd1b64bddec859540262736d762523d606457a5c5aaef05d9e7b95eb77364de",
+          "neon-auth": "b78ec6ef5cc974c82a144fba350e93d3952fcbda5430b80f7ed516f40afeb43a",
+          "neon-functions": "08cf029be74f4e9fef855ae5ea1ad07a4a6e8caa899b1e2e379fac299bdd61e7",
+          "neon-object-storage": "ba00b37df94de4fb97bc773ce0c085e90d7d35a41994f413cdf69a84a0201a9b",
+          "neon-postgres": "00467686fa0b00029c9534b5d89b92777697e82bae4d85b28bf48cfafdba7289",
+          "neon-postgres-branches": "41919fd34e5f2de58174587d433904f2d6676e5401dd0b2f82f89f510ee9674f",
+          "neon-postgres-egress-optimizer": "647d0bb54609b64c64001f557007628c51e83c85b3ef0fbecf12ed452fa7d031"
+        }
+      }
+    }
+  }
+}

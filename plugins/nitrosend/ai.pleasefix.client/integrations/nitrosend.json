@@ -1,0 +1,16 @@
+{
+  "id": "nitrosend",
+  "name": "Nitrosend",
+  "description": "Campaigns, automated flows and transactional email in your Nitrosend account.",
+  "group": "marketing",
+  "url": "https://api.nitrosend.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

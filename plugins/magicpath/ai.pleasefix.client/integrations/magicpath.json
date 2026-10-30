@@ -1,0 +1,16 @@
+{
+  "id": "magicpath",
+  "name": "MagicPath",
+  "description": "Interactive UI designs and components on your MagicPath canvas.",
+  "group": "design",
+  "url": "https://api.magicpath.ai/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

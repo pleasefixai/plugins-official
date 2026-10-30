@@ -1,0 +1,16 @@
+{
+  "id": "grafana_cloud_mcp",
+  "name": "Grafana Cloud",
+  "description": "Dashboards, metrics, logs, traces and alerts in your Grafana Cloud stack.",
+  "group": "developer_tools",
+  "url": "https://mcp.grafana.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

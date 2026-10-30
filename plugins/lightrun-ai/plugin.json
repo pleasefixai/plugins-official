@@ -1,0 +1,39 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "lightrun-ai",
+  "version": "1.0.0",
+  "description": "Live logs, snapshots and metrics from your running services, added through Lightrun.",
+  "author": {
+    "name": "Lightrun"
+  },
+  "homepage": "https://lightrun.com",
+  "license": "MIT",
+  "keywords": [
+    "lightrun",
+    "runtime-debugging",
+    "skills",
+    "observability"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/lightrun_ai.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "lightrun-ai",
+        "commit": "d2b954cd12e27119d37a9e262b36c306dc3d76a8",
+        "skills": {
+          "lightrun-ask-prod": "a268c8893dbf3981a2e267b6cdbc14154ea18cc7b4e643f547ad5052d3a589ba",
+          "lightrun-error-remediation-automation": "ce5c7f496c5dd6c7849c1464884e3b7e9247dafa8c6f8553cb9cd946de18e71b",
+          "lightrun-live-runtime-debugging": "433708c1ee015cd027299ca513c683298134704addc62c22cf929ae4840ed87a",
+          "lightrun-runtime-aware-pr-review": "65ddecb7fe5106d60db0942f71fe441660b0f723267dd11fd8e63fbeec2ae5ca",
+          "lightrun-slow-execution-diagnosis": "28040c7d48890644699d4f31fc51dda7dc78cab09b29cecc70c2b39aa4f502e4"
+        },
+        "guessed": {
+          "lightrun_ai.name": "2eb0084a538cf713"
+        }
+      }
+    }
+  }
+}

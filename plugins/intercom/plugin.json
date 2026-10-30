@@ -1,0 +1,37 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "intercom",
+  "version": "1.0.0",
+  "description": "Conversations, contacts, companies and help center articles in your Intercom workspace.",
+  "author": {
+    "name": "Intercom"
+  },
+  "homepage": "https://github.com/intercom/claude-plugin-external",
+  "license": "MIT",
+  "keywords": [
+    "intercom",
+    "customer-support",
+    "conversations",
+    "contacts",
+    "messenger",
+    "crm",
+    "api"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "intercom",
+        "commit": "62773a7d4b8aac31545d6888fe6479be3bc53804",
+        "skills": {
+          "customer-360": "d7984bd98160102d51336a35359dbec300439f7b23e58ed706318513de0fac24",
+          "install-cli": "f2e9705c79964fb22b2bff266c19f853cdda25703653fc7302f35279430413b4",
+          "install-messenger": "67537582e7da9d5a6a177bfdf1d9f5a1632e8ac41a6407976050070319ad77f0",
+          "intercom-analysis": "552a7c647911630c0d3ee3d98a337ac36877ce24dc86d4f19b073196a7aff72e"
+        }
+      }
+    }
+  }
+}

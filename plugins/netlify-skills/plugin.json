@@ -1,0 +1,49 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "netlify-skills",
+  "version": "1.0.0",
+  "description": "Sites, deploys, functions, forms and settings of your Netlify projects.",
+  "author": {
+    "name": "Netlify"
+  },
+  "homepage": "https://github.com/netlify/context-and-tools",
+  "keywords": [
+    "netlify",
+    "deployment",
+    "serverless",
+    "edge-functions",
+    "cdn",
+    "hosting",
+    "jamstack",
+    "functions"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/netlify_skills.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "netlify-skills",
+        "commit": "dc9ebf1b994420a4791e9d5d7cd68f62e07a0a41",
+        "skills": {
+          "netlify-access-control": "1aedb209cdc62c034ce6202eb64681bf35ba2c166e56d3767df7630780bbe838",
+          "netlify-agent-runner": "3f079c7a9dcd0e52f913bbdf172d825a95470ca716c9699a89c960699693a1e1",
+          "netlify-ai-gateway": "e48d790dda083f9a89821409bc50e655441ef4c6163062d7bb07f30c9a22dbad",
+          "netlify-blobs": "b4e70af08f6cc77cfe43d8f803ac8e560671af5ad45d254f390135c2bea5b656",
+          "netlify-caching": "b0e5b6498cead0e0c69a83a6445c881df9bef3c9c91e4430faa66b4db8eadd70",
+          "netlify-config": "6730718dad0e68d59ee808112fe1654011a8e5f2e50511dff62c1a1a01aa385f",
+          "netlify-database": "8aeb757ba81232288b8c4db8184add6e689e62978b47aa22199ae979537f94fc",
+          "netlify-deploy": "aa4c30698b5d8b3dd5a4d032c9ec3977828aefb74684ad8139275857fd6b1700",
+          "netlify-edge-functions": "569fe1058c830980ef2b1b2b0fe023a5fff2f9218db0b860d43c0f41f9348721",
+          "netlify-forms": "5009d5c5e5f24b0383af3e684ba13bbd69e8c21f24c20a67240359198b974800",
+          "netlify-frameworks": "784cb7beed07605be5747b3265b8c71828e80b64acc60bda9e0186e845981e44",
+          "netlify-functions": "c1a35c81d78234dd03f4bba15d1eabc551f29460e780e4a4b9b50ab91c10e7ad",
+          "netlify-identity": "6d5922f8674d4b45e24435af954b6d719d76ba829b1f632c5237ef9e680a569e",
+          "netlify-image-cdn": "3f2de7e618785af6df83857134e828619cc5d4bdb893853bcdacbe007e813b4d",
+          "netlify-mcp-servers": "8d4c7dc02937218eef202376010ec4aa527e7ceba0edaf0da0498e214998fd1b"
+        }
+      }
+    }
+  }
+}

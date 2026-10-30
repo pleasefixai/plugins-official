@@ -1,0 +1,16 @@
+{
+  "id": "netlify_skills",
+  "name": "Netlify",
+  "description": "Sites, deploys, functions, forms and settings of your Netlify projects.",
+  "group": "developer_tools",
+  "url": "https://netlify-mcp.netlify.app/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

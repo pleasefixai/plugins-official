@@ -1,12 +1,12 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "ahrefs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Keywords, backlinks, rankings and site audits from your Ahrefs account.",
   "author": {
     "name": "Cursor"
   },
-  "homepage": "https://cursor.com/",
+  "homepage": "https://ahrefs.com/mcp",
   "license": "MIT",
   "keywords": [
     "ahrefs",

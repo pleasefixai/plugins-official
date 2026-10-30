@@ -1,0 +1,16 @@
+{
+  "id": "paybox_plugin",
+  "name": "PayBox",
+  "description": "Token swaps and transfers, x402 payments and virtual cards from MoonPay's PayBox wallets.",
+  "group": "finance_ops",
+  "url": "https://api.paybox.sh/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

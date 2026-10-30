@@ -1,0 +1,16 @@
+{
+  "id": "make",
+  "name": "Make",
+  "description": "Scenarios, AI agents and their runs in your Make organization.",
+  "group": "automation",
+  "url": "https://mcp.make.com/cursor",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

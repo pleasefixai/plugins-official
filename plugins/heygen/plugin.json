@@ -1,0 +1,47 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "heygen",
+  "version": "1.0.0",
+  "description": "Avatar videos, personalized video messages and translated videos made with HeyGen.",
+  "author": {
+    "name": "HeyGen"
+  },
+  "homepage": "https://www.heygen.com/",
+  "license": "MIT",
+  "keywords": [
+    "heygen",
+    "avatar",
+    "identity",
+    "video",
+    "digital-twin",
+    "video-message",
+    "presenter",
+    "talking-head",
+    "ai-avatar",
+    "avatar-video",
+    "translate",
+    "dub",
+    "localization",
+    "voice-cloning",
+    "lip-sync"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "heygen",
+        "commit": "396fa481ee17ef5bdfc0c4122f468c4e3080fbe0",
+        "skills": {
+          "heygen-avatar": "ef55126e0a011911558b959cebbd1312b014f8ffc8d072719ace36f47e79361c",
+          "heygen-translate": "1bc76c346d812fe7bbb183a096e2fc87995d3e255d5064a17b37036331e143de",
+          "heygen-video": "d4cd78efe32be30eb47a098f4b5fb6f95c5d7bd1bbf6efdfd854b649a5cc6d64"
+        },
+        "guessed": {
+          "heygen.name": "4f556efbe75b6b56"
+        }
+      }
+    }
+  }
+}

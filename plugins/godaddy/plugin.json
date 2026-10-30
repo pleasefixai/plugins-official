@@ -1,12 +1,12 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "godaddy",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Domain name ideas and availability checks from GoDaddy.",
   "author": {
     "name": "Cursor"
   },
-  "homepage": "https://cursor.com/",
+  "homepage": "https://developer.godaddy.com/en/docs/api-users/mcp",
   "license": "MIT",
   "keywords": [
     "godaddy",

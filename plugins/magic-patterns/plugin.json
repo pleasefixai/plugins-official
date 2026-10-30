@@ -1,0 +1,33 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "magic-patterns",
+  "version": "1.0.0",
+  "description": "UI prototypes, designs and inspiration in your Magic Patterns account.",
+  "author": {
+    "name": "Magic Patterns"
+  },
+  "homepage": "https://www.magicpatterns.com/",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/magic_patterns.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "magic-patterns",
+        "commit": "95423dbebeed508436bcedad8df39334f05b7f28",
+        "skills": {
+          "inspiration": "97041921bf742b8b3b43f71abccca8577989fdad51de5a642251b5b876c26fa0",
+          "integrate-magic-patterns-design": "3ab13a60a36ab91f38743af1e6fe3775b37b132ee6f6f4f234e0169d6f4c66f8",
+          "prototype": "8421f2d49b1d026159dd46ee1fa31a9d120936cf56837ea044711c85f99476f1",
+          "recreate-as-raw-html": "49608f5552887a1df91e7bbd29de1e3ffd466a132325e6ce6362c85c58b363eb",
+          "recreate-as-react": "1b7c69a598ee75cc8ba2f622436c9ad12dded14b7ed40f814019bca4d67097d8",
+          "upload-to-magic-patterns": "6f6b316168d5e6e76ccd135cf3a299a69eb077e91575afc010c7f61d049e734e"
+        },
+        "guessed": {
+          "magic_patterns.name": "758f6f731f2e7488"
+        }
+      }
+    }
+  }
+}

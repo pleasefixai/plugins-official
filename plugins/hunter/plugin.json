@@ -1,0 +1,51 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "hunter",
+  "version": "1.0.0",
+  "description": "Professional email addresses, their verification, and company data from Hunter.",
+  "author": {
+    "name": "Hunter.io"
+  },
+  "homepage": "https://hunter.io",
+  "license": "MIT",
+  "keywords": [
+    "hunter",
+    "email",
+    "leads",
+    "b2b",
+    "prospecting",
+    "sales",
+    "enrichment",
+    "verification",
+    "sequences",
+    "outreach",
+    "crm"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/hunter.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "hunter",
+        "commit": "44f0f5689d2d5cc2de2470550225a16447cb9a80",
+        "skills": {
+          "build-sequences": "35f11e08a003072ee53d065a190e1c0ae8ecaedcbc676a1ccf176cd2bd20bae1",
+          "check-usage": "ea16ccfbc712c3bf0aee68168d64553100ec614a3411855699e1c73d68411692",
+          "company-enrichment": "80a6660edb454a94d90eae50a3d0d457d3d1c83824b53a8dc2bfdf8ee7b0b2f4",
+          "company-lists": "5a2851fa8c83dedc1f31dc251c13ef9d7fbd5821b97c27e2e7268f3191d8c1be",
+          "discover": "f7840fee365be324d6fc347104ef5c005a49eeea55060f8ea8a991592b3fbdc9",
+          "domain-search": "00115bb680af0c8254effc3b16a95929274bb5f63aec7a825e0e862646e90073",
+          "email-finder": "43944b5fa13499b10bc965f64df293546224e4a2c620634f1821136363d43c08",
+          "email-verifier": "d04f3ac4571f4a89be8fa4a6a606f3e57e33482aa139c8cd451ffba844ab113a",
+          "lead-lists": "c89ab355d80e2709adb3a75947742b161cf10552eb9cdf1f4302767af5d6622d",
+          "manage-leads": "8d9b3308865fcbb58efbcde2113b3454ae6c342bc58e1307ff2a487f4ac84f3b",
+          "person-enrichment": "84f7f55abd0533255d75839e030d7d53de7602f7d378150017139bbdff7f5fb0",
+          "prospecting": "941e358badcfaeea25ef608b6373b025d927e776df878e456b92efc824c81fdb",
+          "push-to-crm": "c3feea8500886c8bdac313f694698da3d239d789dff07aabf3053bd27ace1bc2"
+        }
+      }
+    }
+  }
+}

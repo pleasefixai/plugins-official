@@ -1,0 +1,35 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "lark",
+  "version": "1.0.0",
+  "description": "Docs, messages and groups in your Lark workspace.",
+  "author": {
+    "name": "Cursor"
+  },
+  "homepage": "https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/mcp_integration/mcp_introduction",
+  "license": "MIT",
+  "keywords": [
+    "lark",
+    "lark suite",
+    "docs",
+    "im",
+    "messages",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/lark.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "lark",
+        "commit": "1ba91fc25c0977741dd0e267849e6234b037ed0a",
+        "skills": {},
+        "guessed": {
+          "lark.name": "a2183114203200bf"
+        }
+      }
+    }
+  }
+}

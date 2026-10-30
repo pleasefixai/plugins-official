@@ -1,0 +1,35 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "greenhouse",
+  "version": "1.0.0",
+  "description": "Candidates, jobs, applications and scorecards in Greenhouse Recruiting.",
+  "author": {
+    "name": "Cursor"
+  },
+  "homepage": "https://support.greenhouse.io/hc/en-us/articles/52090956642075-Greenhouse-MCP",
+  "license": "MIT",
+  "keywords": [
+    "greenhouse",
+    "ats",
+    "recruiting",
+    "hiring",
+    "candidates",
+    "interviews",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "greenhouse",
+        "commit": "1ba91fc25c0977741dd0e267849e6234b037ed0a",
+        "skills": {},
+        "guessed": {
+          "greenhouse.name": "d5150bb6c5de17cb"
+        }
+      }
+    }
+  }
+}

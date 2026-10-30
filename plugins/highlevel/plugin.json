@@ -1,0 +1,40 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "highlevel",
+  "version": "1.0.0",
+  "description": "Contacts, conversations, opportunities, calendars and payments in HighLevel.",
+  "author": {
+    "name": "Cursor"
+  },
+  "homepage": "https://help.leadconnectorhq.com/support/solutions/articles/155000008185",
+  "license": "MIT",
+  "keywords": [
+    "highlevel",
+    "gohighlevel",
+    "leadconnector",
+    "crm",
+    "contacts",
+    "conversations",
+    "opportunities",
+    "pipelines",
+    "calendars",
+    "appointments",
+    "marketing",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "highlevel",
+        "commit": "1ba91fc25c0977741dd0e267849e6234b037ed0a",
+        "skills": {},
+        "guessed": {
+          "highlevel.name": "abfc6272b5ad0692"
+        }
+      }
+    }
+  }
+}

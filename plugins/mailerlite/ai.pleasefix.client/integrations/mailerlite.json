@@ -1,0 +1,16 @@
+{
+  "id": "mailerlite",
+  "name": "MailerLite",
+  "description": "Subscribers, groups, campaigns and automations in your MailerLite account.",
+  "group": "marketing",
+  "url": "https://mcp.mailerlite.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

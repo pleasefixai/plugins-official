@@ -1,0 +1,35 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "harmonic",
+  "version": "1.0.0",
+  "description": "Company and people data from Harmonic, to find, research and enrich startups.",
+  "author": {
+    "name": "Harmonic"
+  },
+  "homepage": "https://harmonic.ai",
+  "license": "MIT",
+  "keywords": [
+    "harmonic",
+    "mcp",
+    "startups",
+    "companies",
+    "investors",
+    "research"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/harmonic.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "harmonic",
+        "commit": "4742a4e792bf04b00fb1b2f6091c9bce2f53c480",
+        "skills": {},
+        "guessed": {
+          "harmonic.name": "eb348135c0c1e00c"
+        }
+      }
+    }
+  }
+}

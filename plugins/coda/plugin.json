@@ -1,12 +1,12 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "coda",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Docs, pages and tables from your Coda workspace.",
   "author": {
     "name": "Cursor"
   },
-  "homepage": "https://cursor.com/",
+  "homepage": "https://help.superhuman.com/hc/en-us/articles/46210076980365-Connect-to-the-Coda-MCP",
   "license": "MIT",
   "keywords": [
     "coda",
@@ -19,6 +19,7 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "mark": "integrations/coda.png",
       "upstream": {
         "kind": "imported",
         "marketplace": "cursor",

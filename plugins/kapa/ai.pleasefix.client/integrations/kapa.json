@@ -1,0 +1,16 @@
+{
+  "id": "kapa",
+  "name": "Kapa",
+  "description": "Answers from your company's knowledge sources connected to Kapa: docs, tickets and wikis.",
+  "group": "knowledge",
+  "url": "https://mcp.kapa.ai/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

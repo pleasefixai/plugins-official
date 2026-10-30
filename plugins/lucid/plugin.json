@@ -1,0 +1,52 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "lucid",
+  "version": "1.0.0",
+  "description": "Diagrams, whiteboards and documents in Lucidchart, Lucidspark and Lucidscale.",
+  "author": {
+    "name": "Lucid Software"
+  },
+  "homepage": "https://lucid.co/",
+  "license": "Apache-2.0",
+  "keywords": [
+    "lucid",
+    "lucidchart",
+    "lucidspark",
+    "lucidscale",
+    "diagrams",
+    "documents",
+    "boards",
+    "whiteboard",
+    "mcp",
+    "visual-collaboration",
+    "collaboration",
+    "flowchart",
+    "org-chart",
+    "mind-map",
+    "sequence-diagram",
+    "erd",
+    "uml",
+    "plantuml",
+    "export",
+    "sharing",
+    "comments"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/lucid.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "lucid",
+        "commit": "45874c5081a6113b64e8269ecde8458362642dd1",
+        "skills": {
+          "lucid": "fe06cedb3e9de8b30096d08193cf1d69287040fd7126b3589082c4dba309bf9d"
+        },
+        "guessed": {
+          "lucid.name": "1d467f785a0b0e19"
+        }
+      }
+    }
+  }
+}

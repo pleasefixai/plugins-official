@@ -1,0 +1,44 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "incident-io",
+  "version": "1.0.0",
+  "description": "Incidents, on-call schedules, escalations and the service catalog in incident.io.",
+  "author": {
+    "name": "incident.io"
+  },
+  "homepage": "https://incident.io",
+  "license": "MIT",
+  "keywords": [
+    "incident-response",
+    "on-call",
+    "investigations",
+    "runbooks",
+    "sre",
+    "devops"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/incident_io.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "incident-io",
+        "commit": "00f7d1dc80892deb1656f1cf577dd073a4a2de10",
+        "skills": {
+          "architecture": "0c1b452be2ade8caf42e2e2a65e54a0672663da5590ab4ba57e6a98e4acffae8",
+          "architecture-author": "6ceaacfe9616f064baffea0fca89a865b1140265e8580e845f7d43e20e3730c5",
+          "catalog": "cb173edf338ad3402f0f73050333b2714a9e5b828d5b6da427338890c91c9f0b",
+          "doctor": "cd2097f560924bc172ed895393a4e55d4cc0bf94bb8e1c1fd0e6fd6961786187",
+          "extensions": "586392d68f7c3c909e16956f026c022a4fc3dc250d6cb41f773f299b0ca9aefa",
+          "incidents": "d796b67a2b408702ea14bdf458f966b36bdba65ab596ec08893501966f7db63c",
+          "on-call": "c7d4a692d2d31ff8ecd9706766633a7354b661eb0c922939a2163cfac94bdf80",
+          "postmortem": "f03cd57d93c05427ad0cbf5a2ba0153b6ef6932f48d3836e862469c4a88af6f3",
+          "skill-authoring": "55c58e7e2b930eb222ddc8b09ecb6ab65eb01fece93d5fa7767c29195e4f710d",
+          "talking-to-the-user": "415585b97cc65cac4648a2208264d6e60f0dc8ca63bf5db87626e8769b45c8e4",
+          "telemetry": "9b1c226997ca7b804d234048b5fe01909d310e2b66773644a1b2bec6ce50e69c"
+        }
+      }
+    }
+  }
+}

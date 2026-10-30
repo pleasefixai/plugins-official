@@ -1,0 +1,16 @@
+{
+  "id": "infobip_email",
+  "name": "Infobip (email)",
+  "description": "Email sending, scheduling and address validation through Infobip.",
+  "group": "communication",
+  "url": "https://mcp.infobip.com/email",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

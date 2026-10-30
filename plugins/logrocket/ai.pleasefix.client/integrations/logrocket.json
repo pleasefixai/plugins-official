@@ -1,0 +1,16 @@
+{
+  "id": "logrocket",
+  "name": "LogRocket",
+  "description": "Session replays, metrics, issues and user behavior in your LogRocket apps.",
+  "group": "product_analytics",
+  "url": "https://mcp.logrocket.com/mcp?toolsets=all",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

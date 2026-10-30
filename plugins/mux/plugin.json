@@ -1,0 +1,46 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "mux",
+  "version": "1.0.0",
+  "description": "Videos, live streams and playback data in your Mux account.",
+  "author": {
+    "name": "Mux"
+  },
+  "homepage": "https://mux.com",
+  "license": "MIT",
+  "keywords": [
+    "mux",
+    "video",
+    "live-streaming",
+    "mux-data",
+    "mcp",
+    "uploads",
+    "playback",
+    "robots"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/mux.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "mux",
+        "commit": "79ccdbad546e76e23ab9bdca61caf6aad4ec9b7f",
+        "skills": {
+          "mux": "06b306a4878f1de0f0b925a5d29e1c2cb4dcded8fa7c2e25ddc722e38515917c",
+          "mux-analyze-any-video": "c5f9f7a97ee8ae5ec87735db287cb6ff19aa71d59631839be63ca6480b24298e",
+          "mux-data": "6907161449d78e583772ca0833bfcb13f6f8a48cdfaa6893b76faa0f355ee813",
+          "mux-docs": "55d6c4b0a5a3f0bef3857fc4154b1614ef41e6ac6c44c8c15c5acd692af10164",
+          "mux-live": "e7795e221d230b6d9306411b4ab94dcba89b1c4c954bf5a6ade84c82cb24f1f3",
+          "mux-robots": "67b33cb6684e708e7ad6ed38fd3df3662661dd984e45e03ccdb5b52139067810",
+          "mux-robots-directives": "b6f080e85e11a86f4abef73c87864e338bc49973eba04d01c05d404bf6347f50",
+          "mux-video": "f52c458ee78db03557f10561130876be64fc0d4fc6e12e416c6639642a7d9c7e"
+        },
+        "guessed": {
+          "mux.name": "6260d1e38a28518a"
+        }
+      }
+    }
+  }
+}

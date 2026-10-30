@@ -1,0 +1,38 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "orthogonal",
+  "version": "1.0.0",
+  "description": "Web search, scraping and enrichment APIs of many providers, through Orthogonal.",
+  "author": {
+    "name": "Orthogonal"
+  },
+  "homepage": "https://orthogonal.com",
+  "license": "MIT",
+  "keywords": [
+    "api",
+    "data",
+    "mcp",
+    "orthogonal",
+    "tools"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "orthogonal",
+        "commit": "23ceeee6532dfdc90b3242152ec4154146c20a48",
+        "skills": {
+          "orthogonal": "e0fb96ce8004500bf841475e3affa1fdfc07f5cd5c2b26ac9a3a9b8fadf07fd6",
+          "orthogonal-cli": "c836de13616e1eab3017222230a7f69aba0ba1738f8fe32fb1277a40d116b000",
+          "orthogonal-mcp": "2c8010dd876b7fd5f9ea7b7f70adf57c29edd76053937e9d72265c36640f4a50",
+          "orthogonal-sdk": "914f2a90d2ece747d2cc572a2023ee7769520ff727590150b4da06446fd1c7bd"
+        },
+        "guessed": {
+          "orthogonal.name": "25a9fd0249f906f4"
+        }
+      }
+    }
+  }
+}

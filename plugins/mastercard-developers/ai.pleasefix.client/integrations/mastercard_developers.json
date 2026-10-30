@@ -1,0 +1,8 @@
+{
+  "id": "mastercard_developers",
+  "name": "Mastercard Developers",
+  "description": "Mastercard's API documentation, specifications and integration guides.",
+  "group": "developer_tools",
+  "url": "https://developer.mcp.mastercard.com",
+  "auth": null
+}

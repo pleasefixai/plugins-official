@@ -1,0 +1,42 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "planetscale",
+  "version": "1.0.0",
+  "description": "Organizations, databases, branches, schemas and query insights in PlanetScale.",
+  "author": {
+    "name": "PlanetScale"
+  },
+  "homepage": "https://planetscale.com/",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "planetscale",
+        "commit": "95c80f9f391be9b1b6172bf82d4191e1ec11b637",
+        "skills": {
+          "00-safe-orchestrator": "6f606fa3dae5bcb88a0fbe499a6e3a4d71d21f1de707a65332ba0d7e9495b502",
+          "01-readonly-inventory": "3f37369c88bbbe69343190b2d45ab3b79b700a9294ada14e32747262e5740525",
+          "02-vitess-safety-review": "b5f1b7e80ff853abb4a617cea58268ac07331a7113f734dc063bc3e7a598df51",
+          "03-postgres-safety-review": "8cc38d35c60cc6974f937d1ecdfa4688454327ee42cfe7b5b39b309e85d0d187",
+          "04-query-insights-and-tags": "e4aab1c3c21a31b0aad2fb37cd292518162cbbd286c3acec9f1722008905b1d2",
+          "05-traffic-control-recommendations": "47b1a25a966b13176c0b5adfcb4315468f06334ef5e02334ab5a9b887d518d7b",
+          "06-webhook-automation-recommendations": "f6a10fbf0d6a9a352a2a1ae33c9ebff594db4a8b0ffb5a5c7cb77d32606863ca",
+          "07-schema-recommendations-agent-loop": "6936fbd7035a72dbae68c84dd608b128e878c58b7b6290d7dea6bba5e9191184",
+          "08-codebase-sqlcommenter-instrumentation": "35eae7728f82a6f7fdf012d2b4bad012135cc9ec110ff3c63b1196f25024daaa",
+          "09-mcp-agent-operating-model": "1658b00b7c532182c847711d2961293d73fa5f62c2ab05abfaf183e835c75134",
+          "10-customer-report-template": "b23816b2cecdccb7ce5b7aea92d6baf836be19f199dd54263ceb360f317b8296",
+          "11-change-gates-and-approval-contract": "9306b89ee2a9e71ea66bdc098eb01d854d32ae03faefeda0a302e88440ca3489",
+          "12-best-practices-matrix": "20ccdf764a6b2ba831f021be942d8db34894ec3552e5dc203783d5f538d45c0d",
+          "13-autonomous-execution-mode": "487e0e43c108758c86b251a7f05ef6e3a19dee4d75302236667e2e7f3e6a140a",
+          "14-pscale-cli-automation": "07c6410677449743ad048c20846e9beab61db40bdeeb4bb79696fe90f52bc8ba",
+          "mysql": "556dc003ffb73c3d8e9d5a27731c7f0146fb201901ae773dfe719530a5eb1f13",
+          "neki": "395ffb75df7824b35827645de202b256132a07a759f5f619f6eab88cf8acc81e",
+          "postgres": "1eb1433d714d0ad181480d904eca0288da5f8375e8c330ce32755cf2ec030a5b",
+          "vitess": "3cf4580edb874e4841030bd14a8d3d083e9dbd731195b222d60656dc18cb2ee9"
+        }
+      }
+    }
+  }
+}

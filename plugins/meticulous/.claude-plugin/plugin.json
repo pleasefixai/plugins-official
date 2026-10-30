@@ -1,0 +1,5 @@
+{
+  "name": "meticulous",
+  "version": "1.0.0",
+  "description": "Visual regression test runs, replays and screenshot diffs in Meticulous."
+}

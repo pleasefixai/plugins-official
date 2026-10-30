@@ -1,0 +1,45 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "knock",
+  "version": "1.0.0",
+  "description": "Notification workflows, templates and channels in your Knock account.",
+  "author": {
+    "name": "Knock"
+  },
+  "homepage": "https://knock.app/",
+  "license": "MIT",
+  "keywords": [
+    "knock",
+    "notifications",
+    "email",
+    "sms",
+    "push",
+    "in-app",
+    "marketing",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/knock.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "knock",
+        "commit": "a88582f130ec08a932e68d68de8b174a4a3b6a05",
+        "skills": {
+          "knock-cli": "5c11abb5addfe84e825a0cfa2256de33d3bf49cfeb3ca6ae6967acb22654e288",
+          "knock-in-app-ui": "7851bfb2e7f88b0e29493c8b2ef6756c0e55d6074ef5fc167b04a04d83929dc1",
+          "knock-lifecycle-opportunities": "529c42997876f0285f7c963954934a73d552e5951b9dd25e223f31e6a39d2590",
+          "knock-migrate-to-knock": "4308373b5265fb31cde902eb1b520d8907029028ee030e919f1047ea93ad58ea",
+          "knock-notification-best-practices": "d53c88043955da6546474dea47c1784c92f629590c0a523fb237fd6b59a986e6",
+          "knock-product-messaging-strategy": "460ca864512c3a2c3966f9ddf10f63adaed0da0578a41146f6c260feb3f2c09d",
+          "knock-setup": "187dab32b8af4c6527d27744405678da924bcdbee518befaa700be6cbf86fcf2"
+        },
+        "guessed": {
+          "knock.name": "61622162cdb3f208"
+        }
+      }
+    }
+  }
+}

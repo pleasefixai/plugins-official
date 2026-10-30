@@ -1,0 +1,40 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "infobip-mcp",
+  "version": "1.0.0",
+  "description": "Messages, calls, verification codes, senders and account data on Infobip.",
+  "author": {
+    "name": "Infobip"
+  },
+  "homepage": "https://www.infobip.com/",
+  "license": "MIT",
+  "keywords": [
+    "infobip",
+    "mcp",
+    "sms",
+    "whatsapp",
+    "viber",
+    "rcs",
+    "email",
+    "voice",
+    "cpaas",
+    "messaging",
+    "provisioning",
+    "troubleshooting",
+    "2fa",
+    "communication"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/infobip_2fa.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "infobip-mcp",
+        "commit": "1185316bdc12aa1ba7dedd848e56e0305cf8db65",
+        "skills": {}
+      }
+    }
+  }
+}

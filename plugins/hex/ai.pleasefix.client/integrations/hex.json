@@ -1,0 +1,16 @@
+{
+  "id": "hex",
+  "name": "Hex",
+  "description": "Projects, data and analyses in your Hex workspace.",
+  "group": "product_analytics",
+  "url": "https://app.hex.tech/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

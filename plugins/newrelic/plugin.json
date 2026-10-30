@@ -1,0 +1,31 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "newrelic",
+  "version": "1.0.0",
+  "description": "Applications, alerts, logs and metrics in your New Relic account.",
+  "author": {
+    "name": "New Relic"
+  },
+  "homepage": "https://newrelic.com",
+  "license": "Apache-2.0",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/newrelic.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "newrelic",
+        "commit": "f8e5f8b62139072a22153ec92de1c0cc1af2f56a",
+        "skills": {
+          "apm": "bf6b3f9b955dc7f78a21190520fbb0264ace3311305acf90cb217d7f20d03d76",
+          "finops": "221ed41ea40abeb910e1642971a24f37994e0ea0fdce839a268c8b4fc55dab65",
+          "kubernetes": "d19e45324f2e722f6ee37cf91474c75a183f8bf9fab08cd12008b73ee155a2f0"
+        },
+        "guessed": {
+          "newrelic.name": "44a78e99f964abe1"
+        }
+      }
+    }
+  }
+}

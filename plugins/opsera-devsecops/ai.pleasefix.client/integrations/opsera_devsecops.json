@@ -1,0 +1,16 @@
+{
+  "id": "opsera_devsecops",
+  "name": "Opsera",
+  "description": "Security scans, compliance audits and architecture analysis of your code by Opsera.",
+  "group": "developer_tools",
+  "url": "https://agent.opsera.ai/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

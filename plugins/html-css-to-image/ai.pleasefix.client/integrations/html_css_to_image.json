@@ -1,0 +1,16 @@
+{
+  "id": "html_css_to_image",
+  "name": "HTML/CSS to Image",
+  "description": "Images and PDFs rendered from HTML, CSS, templates or live web pages.",
+  "group": "design",
+  "url": "https://mcp.hcti.io",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

@@ -1,12 +1,12 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "framer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Sites, pages and CMS content in your Framer projects.",
   "author": {
     "name": "Cursor"
   },
-  "homepage": "https://cursor.com/",
+  "homepage": "https://www.framer.com",
   "license": "MIT",
   "keywords": [
     "framer",

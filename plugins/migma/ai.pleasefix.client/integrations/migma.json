@@ -1,0 +1,16 @@
+{
+  "id": "migma",
+  "name": "Migma",
+  "description": "Email campaigns, designs, audiences and sends in your Migma account.",
+  "group": "marketing",
+  "url": "https://migma.ai/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

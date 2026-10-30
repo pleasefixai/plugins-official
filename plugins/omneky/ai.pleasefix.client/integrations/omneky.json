@@ -1,0 +1,16 @@
+{
+  "id": "omneky",
+  "name": "Omneky",
+  "description": "Ad campaigns, creatives, brand catalogue and results on Meta, Google, TikTok and more.",
+  "group": "marketing",
+  "url": "https://mcp.omneky.com/grok",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

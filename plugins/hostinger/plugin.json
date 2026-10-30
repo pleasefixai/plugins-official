@@ -1,0 +1,35 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "hostinger",
+  "version": "1.0.0",
+  "description": "Websites, WordPress installs, domains and servers in your Hostinger account.",
+  "author": {
+    "name": "Hostinger"
+  },
+  "homepage": "https://www.hostinger.com",
+  "license": "MIT",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/hostinger.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "hostinger",
+        "commit": "569880c60681a7068b3ca8ca84e2fe7ab6cfa7ff",
+        "skills": {
+          "agency-hosting-deploy-php-site": "731a8c22169a43a3aff95b960f9369945a1183185935ff8311c2e1f3be9cf8a4",
+          "agency-hosting-deploy-static-site": "950f0432c7aa43292ebaf0c7d09ae5005a3ba860c86399fb646f331bea844069",
+          "hosting-deploy-nodejs-app": "e9af0da89681af8176c51539da67f46ee1314f5d4c80fc01fde569dc6126c20d",
+          "hosting-deploy-static-site": "1b22052e1a86d11684f2112160a3cdb6e5b64fad5a09125adb2bf0a15578ab06",
+          "hosting-deploy-wordpress-plugin": "7c78c9ba129f0455e0674d2c8bb1d51bedd68ac086ff649edcf4c1270d6e3dc2",
+          "hosting-deploy-wordpress-site": "e613106378e0bd4f9203677ebdf8228368b847d246b4862dffabab44d76231f6",
+          "hosting-deploy-wordpress-theme": "071cbeb0b2f39095a0626f473ec9c03642d3e8de97f262c438296dc46ab503e2"
+        },
+        "guessed": {
+          "hostinger.name": "b00b86143a0a2b84"
+        }
+      }
+    }
+  }
+}

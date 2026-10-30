@@ -1,0 +1,71 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "omneky",
+  "version": "1.0.0",
+  "description": "Ad campaigns, creatives, brand catalogue and results on Meta, Google, TikTok and more.",
+  "author": {
+    "name": "Omneky"
+  },
+  "homepage": "https://www.omneky.com/",
+  "license": "MIT",
+  "keywords": [
+    "omneky",
+    "paid media",
+    "performance ads",
+    "meta ads",
+    "facebook ads",
+    "google ads",
+    "tiktok ads",
+    "linkedin ads",
+    "reddit ads",
+    "roas",
+    "ctr",
+    "cpc",
+    "campaigns",
+    "creative generation",
+    "brand catalogue",
+    "product catalogue",
+    "mcp",
+    "analytics",
+    "ads",
+    "meta",
+    "facebook",
+    "google",
+    "tiktok",
+    "linkedin",
+    "reddit",
+    "pmax",
+    "demand gen"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/omneky.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "omneky",
+        "commit": "b58d64bd5b0d0e325961b482bad83b72086118c6",
+        "skills": {
+          "omneky-ab-tests": "0a1230ce01febed2a412d4e7451c9d59a2cbc32708302e2f9fb6dee323e89b42",
+          "omneky-agency": "e354c695031c5dd6b687929dd66e7049c79ee25e082cd94f33993f0a9abeb92c",
+          "omneky-analytics-and-catalogue": "e6c88d35b6b117a0105eb6d9f87c9b60bd052120dd71ef2cb9a86d5ce45759fc",
+          "omneky-avatar-ugc": "20000fcabd3c917ae6d9b1a3608570d7f7ef10c13731b065257f0a419da446d7",
+          "omneky-billing": "6d4834f231e7c70ac46c4dd6566188db26c2f2ffb5f48ab9785a878c67b87e91",
+          "omneky-competitor-analysis": "66f463bc3e0ab37a2e1defe767188753de36873ceb10fc8f8a5e3408e7db775f",
+          "omneky-edit-and-resize": "18337e144de43798ba59b215b41a70222799f17d051121310d992e79a1006c5c",
+          "omneky-getting-started-and-failures": "6f5494418588bd950d8efa9b2e21aa28107cf4f39360358d944c3c2ee671daff",
+          "omneky-image-ads": "8bd175d2b6af72b9e2aa73670a2c118d185fcf6a9fd6dd26202fccf0c4aaaa64",
+          "omneky-launch-and-connect": "975fbc9700720bc7e208d6cdf60e488211388c6aee284eb82816cae406a9d1e9",
+          "omneky-marketing-plan": "cdbaaa6ac702e414e96db632208ed6873c9af1637d7e1a9472179259581af623",
+          "omneky-onboarding": "ec0dd6e9482b093e6785d3f86e423470f53cfb501fbb281298abe31b243013de",
+          "omneky-product-video": "dfe21441dd3c8a27902d1e4c325cd5ddb267fd14844615bc42735fe802cb4a80",
+          "omneky-voice-and-video-clone": "0288782da24dde0aaa263206e328be01922f2eae42f41200867cd3a720740400"
+        },
+        "guessed": {
+          "omneky.name": "02828eb71e8a2bcb"
+        }
+      }
+    }
+  }
+}

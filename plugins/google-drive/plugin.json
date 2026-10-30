@@ -1,0 +1,43 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "google-drive",
+  "version": "1.0.0",
+  "description": "Files, folders, Docs, Sheets and Slides in your Google Drive.",
+  "author": {
+    "name": "OpenAI"
+  },
+  "homepage": "https://workspace.google.com/products/drive/",
+  "license": "MIT",
+  "keywords": [
+    "google-drive",
+    "google",
+    "google workspace",
+    "drive",
+    "docs",
+    "sheets",
+    "slides",
+    "files",
+    "google-docs",
+    "google-sheets",
+    "google-slides",
+    "productivity"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "codex",
+        "plugin": "google-drive",
+        "commit": "0722921d5542fc593105c27bd52630babd8b8c2a",
+        "skills": {
+          "google-docs": "4ec79d350cdc338e9e690e6b2c02f8c25c4741b0ab9d133ecb14e43ba585aa40",
+          "google-drive": "8030c58868a501d0ab961c340cb387c4511e0fba1d419ccc44e041a31e17742e",
+          "google-drive-comments": "a1a912deaec69df6b9cb85d675ae445571e2733f653e7180f35bc9fdaac75186",
+          "google-sheets": "9dd6ed508c05f93fd10df306e7533fbf640bc8c6ce22238be5aa30f5fc680773",
+          "google-slides": "84de5865e5b875eb5e51d5e5566f46f03bf10aefb9c58fa10d165c24ddd0e7fb"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "mobbin",
+  "version": "1.0.0",
+  "description": "Screens and flows of real mobile and web apps from Mobbin's design library.",
+  "author": {
+    "name": "Mobbin"
+  },
+  "homepage": "https://mobbin.com/",
+  "license": "MIT",
+  "keywords": [
+    "cursor",
+    "plugin",
+    "mobbin",
+    "design",
+    "ui",
+    "ux",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/mobbin.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "mobbin",
+        "commit": "d24b602b051fbae7e030e88a78fe099ee69c6741",
+        "skills": {},
+        "guessed": {
+          "mobbin.name": "571d1338458517fb"
+        }
+      }
+    }
+  }
+}

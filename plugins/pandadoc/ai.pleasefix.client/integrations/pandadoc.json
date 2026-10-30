@@ -1,0 +1,16 @@
+{
+  "id": "pandadoc",
+  "name": "PandaDoc",
+  "description": "Documents, quotes, contracts and their signing status in your PandaDoc workspace.",
+  "group": "finance_ops",
+  "url": "https://mcp.pandadoc.com/v1/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

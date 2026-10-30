@@ -1,0 +1,22 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "mintlify",
+  "version": "1.0.0",
+  "description": "Mintlify's own documentation, to build and configure documentation sites.",
+  "homepage": "https://www.mintlify.com/",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/mintlify.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "mintlify",
+        "commit": "acd6d2e0128c4f235d55cfb8d8c91ecbdd5df8cc",
+        "skills": {
+          "mintlify": "2938abd0445c1da73ca2f5cc22a6fd8f9fd14c3812851bdfbac7d51c9b15a768"
+        }
+      }
+    }
+  }
+}

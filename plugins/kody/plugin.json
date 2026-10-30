@@ -1,0 +1,32 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "kody",
+  "version": "1.0.0",
+  "description": "Your Kody workspace: saved credentials, packages, jobs and integrations for your agents.",
+  "author": {
+    "name": "Kody"
+  },
+  "homepage": "https://heykody.dev",
+  "keywords": [
+    "kody",
+    "mcp",
+    "assistant",
+    "automation"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/kody.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "kody",
+        "commit": "dcee10be269da1784821f51be97f2393168f0866",
+        "skills": {},
+        "guessed": {
+          "kody.name": "bea38de1a24cda23"
+        }
+      }
+    }
+  }
+}

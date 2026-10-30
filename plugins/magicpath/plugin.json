@@ -1,0 +1,37 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "magicpath",
+  "version": "1.0.0",
+  "description": "Interactive UI designs and components on your MagicPath canvas.",
+  "author": {
+    "name": "MagicPath"
+  },
+  "homepage": "https://www.magicpath.ai/",
+  "license": "MIT",
+  "keywords": [
+    "magicpath",
+    "design",
+    "ui-components",
+    "design-system",
+    "design-to-code",
+    "mcp",
+    "canvas"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "magicpath",
+        "commit": "3cc4aeb0ff327877fa31fe3e7dd02193eb6a9e3f",
+        "skills": {
+          "magicpath": "5fdf47e18e71cfdd2858bdc7f2a5126062f549987156106748b5dc2cf81eeeac"
+        },
+        "guessed": {
+          "magicpath.name": "fbf5dbdacb6eba10"
+        }
+      }
+    }
+  }
+}

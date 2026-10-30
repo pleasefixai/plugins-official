@@ -1,0 +1,16 @@
+{
+  "id": "honeycomb",
+  "name": "Honeycomb",
+  "description": "Traces, queries, boards, SLOs and triggers in your Honeycomb environments.",
+  "group": "developer_tools",
+  "url": "https://mcp.honeycomb.io/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

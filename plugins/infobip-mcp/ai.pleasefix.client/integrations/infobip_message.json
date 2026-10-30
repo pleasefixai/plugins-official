@@ -1,0 +1,16 @@
+{
+  "id": "infobip_message",
+  "name": "Infobip (messages)",
+  "description": "One message sent over SMS, RCS, MMS or Viber through Infobip.",
+  "group": "communication",
+  "url": "https://mcp.infobip.com/message",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

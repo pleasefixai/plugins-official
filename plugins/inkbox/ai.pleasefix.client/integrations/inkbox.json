@@ -1,0 +1,16 @@
+{
+  "id": "inkbox",
+  "name": "Inkbox",
+  "description": "An Inkbox identity for your agent, with its own email, phone number, contacts and notes.",
+  "group": "communication",
+  "url": "https://inkbox.ai/mcp/cursor",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

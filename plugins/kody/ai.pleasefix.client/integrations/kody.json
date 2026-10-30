@@ -1,0 +1,16 @@
+{
+  "id": "kody",
+  "name": "Kody",
+  "description": "Your Kody workspace: saved credentials, packages, jobs and integrations for your agents.",
+  "group": "automation",
+  "url": "https://kody.codes/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

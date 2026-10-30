@@ -1,0 +1,31 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "lovable",
+  "version": "1.0.0",
+  "description": "Your Lovable apps, to build, change, deploy and manage them.",
+  "author": {
+    "name": "Lovable"
+  },
+  "homepage": "https://lovable.dev",
+  "license": "Apache-2.0",
+  "keywords": [
+    "lovable",
+    "app-builder",
+    "deploy",
+    "full-stack",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/lovable.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "lovable",
+        "commit": "0336e6db8026b0f02cb89d1451cc48ea3f469791",
+        "skills": {}
+      }
+    }
+  }
+}

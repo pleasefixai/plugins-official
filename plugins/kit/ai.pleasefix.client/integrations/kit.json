@@ -1,0 +1,16 @@
+{
+  "id": "kit",
+  "name": "Kit",
+  "description": "Subscribers, tags, broadcasts and audience growth in your Kit account.",
+  "group": "marketing",
+  "url": "https://app.kit.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

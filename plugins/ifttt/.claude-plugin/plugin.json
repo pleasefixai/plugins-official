@@ -1,0 +1,5 @@
+{
+  "name": "ifttt",
+  "version": "1.0.0",
+  "description": "IFTTT Applets, and the actions and queries of the services they connect."
+}

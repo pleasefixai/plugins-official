@@ -1,0 +1,16 @@
+{
+  "id": "neon",
+  "name": "Neon",
+  "description": "Projects, branches, databases and queries in your Neon Postgres account.",
+  "group": "developer_tools",
+  "url": "https://mcp.neon.tech/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

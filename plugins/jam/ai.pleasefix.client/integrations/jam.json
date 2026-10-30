@@ -1,0 +1,16 @@
+{
+  "id": "jam",
+  "name": "Jam",
+  "description": "Jam bug reports with their screen recordings, console logs and network requests.",
+  "group": "developer_tools",
+  "url": "https://mcp.jam.dev/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

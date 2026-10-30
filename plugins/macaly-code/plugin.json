@@ -1,0 +1,39 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "macaly-code",
+  "version": "1.0.0",
+  "description": "Web apps built and hosted on Macaly.",
+  "author": {
+    "name": "Macaly"
+  },
+  "homepage": "https://www.macaly.com",
+  "license": "MIT",
+  "keywords": [
+    "cursor",
+    "plugin",
+    "mcp",
+    "macaly",
+    "app-builder",
+    "hosting",
+    "tanstack",
+    "convex"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/macaly_code.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "macaly-code",
+        "commit": "fc6afe2a6648de1e645d079851b75a6d49a775dc",
+        "skills": {
+          "build-app-on-macaly": "f77bd920f0e8f2f53593f08e119d350fab78acc319e3e5988f64224b99a6abe6"
+        },
+        "guessed": {
+          "macaly_code.name": "cccb8fb79894fa7d"
+        }
+      }
+    }
+  }
+}

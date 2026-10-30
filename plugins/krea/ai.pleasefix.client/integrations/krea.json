@@ -1,0 +1,16 @@
+{
+  "id": "krea",
+  "name": "Krea",
+  "description": "Images and videos generated, edited and enhanced with Krea.",
+  "group": "design",
+  "url": "https://api.krea.ai/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "name": "incident-io",
+  "version": "1.0.0",
+  "description": "Incidents, on-call schedules, escalations and the service catalog in incident.io."
+}

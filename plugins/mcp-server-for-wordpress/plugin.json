@@ -1,0 +1,36 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "mcp-server-for-wordpress",
+  "version": "1.0.0",
+  "description": "Posts, pages, media and users of your WordPress site, through miniOrange.",
+  "author": {
+    "name": "miniOrange"
+  },
+  "homepage": "https://miniorange.com",
+  "license": "MIT",
+  "keywords": [
+    "wordpress",
+    "mcp",
+    "mcp-server",
+    "wordpress-plugin",
+    "abilities-api",
+    "ai-agent",
+    "oauth",
+    "miniorange"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "mcp-server-for-wordpress",
+        "commit": "91c1fec6fc6f8e6cd60b29b3de15d03ac336e8e5",
+        "skills": {},
+        "guessed": {
+          "mcp_server_for_wordpress.name": "712297890c221ff0"
+        }
+      }
+    }
+  }
+}

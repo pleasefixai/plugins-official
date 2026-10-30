@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "github",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Repositories, pull requests, issues and Actions runs on GitHub.",
   "author": {
     "name": "OpenAI"
@@ -26,6 +26,7 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "mark": "integrations/github.svg",
       "upstream": {
         "kind": "imported",
         "marketplace": "codex",

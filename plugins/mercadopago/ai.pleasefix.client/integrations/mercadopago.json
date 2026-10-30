@@ -1,0 +1,20 @@
+{
+  "id": "mercadopago",
+  "name": "Mercado Pago",
+  "description": "Mercado Pago's payment APIs, documentation and integration checks.",
+  "group": "developer_tools",
+  "url": "https://mcp.mercadopago.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  },
+  "headers": {
+    "X-Plugin-Version": "4.3.2",
+    "X-Invocation-Context": "router"
+  }
+}

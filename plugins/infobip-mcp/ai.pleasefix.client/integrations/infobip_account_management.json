@@ -1,0 +1,16 @@
+{
+  "id": "infobip_account_management",
+  "name": "Infobip (account management)",
+  "description": "Balance, account details and audit logs of your Infobip account.",
+  "group": "communication",
+  "url": "https://mcp.infobip.com/account-management",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

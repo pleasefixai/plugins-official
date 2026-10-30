@@ -1,0 +1,38 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "motion",
+  "version": "1.0.0",
+  "description": "Motion's animation documentation, CSS springs and, with Motion+, performance audits.",
+  "author": {
+    "name": "Motion"
+  },
+  "homepage": "https://motion.dev",
+  "license": "MIT",
+  "keywords": [
+    "motion",
+    "animation",
+    "framer-motion",
+    "css",
+    "transitions",
+    "springs",
+    "performance",
+    "react",
+    "vue",
+    "javascript"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/motion.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "motion",
+        "commit": "d1c5c26f424adfd47c112d894e9d424b57338c7e",
+        "skills": {
+          "motion": "f1055c3531501633c24eb437881f002756682e8185680c8beb9a34521910ba6c"
+        }
+      }
+    }
+  }
+}

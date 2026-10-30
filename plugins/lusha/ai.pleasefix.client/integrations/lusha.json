@@ -1,0 +1,20 @@
+{
+  "id": "lusha",
+  "name": "Lusha",
+  "description": "Verified contacts, phone numbers, company signals and lookalike prospects from Lusha.",
+  "group": "crm",
+  "url": "https://mcp.lusha.com/mcp/claude",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  },
+  "headers": {
+    "X-Lusha-Plugin": "claude",
+    "X-Lusha-Plugin-Version": "0.1.3"
+  }
+}

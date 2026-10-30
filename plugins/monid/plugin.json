@@ -1,0 +1,39 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "monid",
+  "version": "1.0.0",
+  "description": "Web scraping, enrichment, social media and search tools, paid per call through Monid.",
+  "author": {
+    "name": "Monid"
+  },
+  "homepage": "https://monid.ai",
+  "license": "MIT",
+  "keywords": [
+    "monid",
+    "data",
+    "scraping",
+    "enrichment",
+    "search",
+    "api",
+    "mcp",
+    "endpoints"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/monid.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "monid",
+        "commit": "c316f50749735416d2d4665e4a7cf13623e5ddab",
+        "skills": {
+          "monid": "bbba5c1cb75ac734e6e3e7bafb22c98f4b731c13d1f296a822897f8c26d0b597"
+        },
+        "guessed": {
+          "monid.name": "01069a90f7449ddd"
+        }
+      }
+    }
+  }
+}

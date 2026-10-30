@@ -1,0 +1,16 @@
+{
+  "id": "google_drive",
+  "name": "Google Drive",
+  "description": "Files, folders, Docs, Sheets and Slides in your Google Drive.",
+  "group": "storage",
+  "url": "https://drivemcp.googleapis.com/mcp/v1",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "outreach",
+  "name": "Outreach",
+  "description": "Sequences, prospects and Kaia meetings in your Outreach account.",
+  "group": "crm",
+  "url": "https://api.outreach.io/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

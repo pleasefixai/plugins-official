@@ -1,0 +1,16 @@
+{
+  "id": "meticulous",
+  "name": "Meticulous",
+  "description": "Visual regression test runs, replays and screenshot diffs in Meticulous.",
+  "group": "developer_tools",
+  "url": "https://app.meticulous.ai/api/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

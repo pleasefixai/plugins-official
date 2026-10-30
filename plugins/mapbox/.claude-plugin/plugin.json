@@ -1,0 +1,5 @@
+{
+  "name": "mapbox",
+  "version": "1.0.0",
+  "description": "Maps, geocoding, directions and places from Mapbox, with its styles, tokens and docs."
+}

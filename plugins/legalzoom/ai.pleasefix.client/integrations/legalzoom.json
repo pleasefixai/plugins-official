@@ -1,0 +1,16 @@
+{
+  "id": "legalzoom",
+  "name": "LegalZoom",
+  "description": "Legal guidance from LegalZoom attorneys, and LegalZoom's legal tools for your business.",
+  "group": "finance_ops",
+  "url": "https://www.legalzoom.com/mcp/claude/v1",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

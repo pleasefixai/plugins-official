@@ -1,0 +1,16 @@
+{
+  "id": "gumloop",
+  "name": "Gumloop",
+  "description": "Your Gumloop agents and workflows, and the tools you connect to them.",
+  "group": "automation",
+  "url": "https://mcp.gumloop.com/gumloop/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

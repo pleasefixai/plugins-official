@@ -51,3 +51,17 @@ condition = "AND"
 paths = ['''^plugins/gitbook/skills/configure-site/references/example-site/''']
 regexTarget = "line"
 regexes = ['''7b8f2c4a-91d2-4fe1-9b6a-2c8e5f1a9b0c''', '''files\.gitbook\.io/~/files/v0/b/gitbook-x-prod\.appspot\.com/o/[^"]*[?&]alt=media&token=[0-9a-f-]{36}"''']
+
+[[allowlists]]
+description = "The made-up key of the 'Hardcoded credentials' example in Miro's code review patterns."
+condition = "AND"
+paths = ['''^plugins/miro/skills/miro-code-review/references/''']
+regexTarget = "secret"
+regexes = ['''^sk_live_abc123$''']
+
+[[allowlists]]
+description = "Plain prose in GovTribe's pricing references that the generic rule reads as a key: 'credentialing time, malpractice/professional liability'."
+condition = "AND"
+paths = ['''^plugins/govtribe/skills/govtribe-pricing-data/references/''']
+regexTarget = "line"
+regexes = ['''credentialing time, malpractice/professional liability''']

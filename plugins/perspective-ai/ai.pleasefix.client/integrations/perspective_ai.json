@@ -1,0 +1,16 @@
+{
+  "id": "perspective_ai",
+  "name": "Perspective AI",
+  "description": "AI interviews that replace your forms, and the answers they collect, in Perspective AI.",
+  "group": "forms_data",
+  "url": "https://getperspective.ai/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

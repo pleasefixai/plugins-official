@@ -1,0 +1,16 @@
+{
+  "id": "infobip_whatsapp",
+  "name": "Infobip (WhatsApp)",
+  "description": "WhatsApp messages, templates and delivery reports through Infobip.",
+  "group": "communication",
+  "url": "https://mcp.infobip.com/whatsapp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

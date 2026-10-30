@@ -1,0 +1,16 @@
+{
+  "id": "ifttt",
+  "name": "IFTTT",
+  "description": "IFTTT Applets, and the actions and queries of the services they connect.",
+  "group": "automation",
+  "url": "https://ifttt.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

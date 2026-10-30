@@ -1,0 +1,47 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "inkbox",
+  "version": "1.0.0",
+  "description": "An Inkbox identity for your agent, with its own email, phone number, contacts and notes.",
+  "author": {
+    "name": "Inkbox"
+  },
+  "homepage": "https://inkbox.ai",
+  "license": "MIT",
+  "keywords": [
+    "communications",
+    "email",
+    "sms",
+    "imessage",
+    "voice",
+    "calls",
+    "agent2agent",
+    "a2a",
+    "mcp",
+    "ai-agent"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/inkbox.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "inkbox",
+        "commit": "5491084d321c3482c42da5b10ae6bac0d55de92d",
+        "skills": {
+          "inkbox-agent-self-signup": "e5647c2759a14cf3129a64c5fa720737c98eac1f06bca48c6df88e2e643d16e7",
+          "inkbox-all": "1c4adc9f93a0d6fb9ef377beb87e63e7ba3158a6f5bce1624a0e11e1e0fbd2e1",
+          "inkbox-cli": "6da9489908ad7bbd39d589f31a6cd9eb1b1cc4f9cb9a9b62c0ef73e92870b6fd",
+          "inkbox-onboarding": "57f0784c571e9a549bd6044b72123fd8e48c2d4692b0b81443d1f5963ebd92d4",
+          "inkbox-python": "3f858ad72bb2160b10a270f23884c7acef7b5a5cde2e39352dd2e38ad290b89a",
+          "inkbox-ts": "683523db0fcfe7ff57e903a2f467f3a564bb2fd5e46a633a7522e7042febe2cd",
+          "inkbox-tunnels": "fab6f8ae22aa9427fc9ab467c83e5ebc2f46185dd9309fab8807bfb2e20266be"
+        },
+        "guessed": {
+          "inkbox.name": "b85bf8c22cadb33f"
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,5 @@
 {
   "name": "clerk",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Applications, users, domains and instance settings from your Clerk workspace."
 }

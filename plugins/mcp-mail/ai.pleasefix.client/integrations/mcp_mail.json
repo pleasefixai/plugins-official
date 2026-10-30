@@ -1,0 +1,16 @@
+{
+  "id": "mcp_mail",
+  "name": "Superhuman Mail",
+  "description": "Email, drafts and calendar in your Superhuman Mail account.",
+  "group": "communication",
+  "url": "https://mcp.mail.superhuman.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

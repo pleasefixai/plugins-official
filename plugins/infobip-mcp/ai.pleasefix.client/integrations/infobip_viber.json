@@ -1,0 +1,16 @@
+{
+  "id": "infobip_viber",
+  "name": "Infobip (Viber)",
+  "description": "Viber messages with images, videos and files through Infobip.",
+  "group": "communication",
+  "url": "https://mcp.infobip.com/viber",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

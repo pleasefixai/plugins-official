@@ -1,0 +1,33 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "gumloop",
+  "version": "1.0.0",
+  "description": "Your Gumloop agents and workflows, and the tools you connect to them.",
+  "author": {
+    "name": "Gumloop"
+  },
+  "homepage": "https://www.gumloop.com/",
+  "license": "MIT",
+  "keywords": [
+    "gumloop",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/gumloop.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "gumloop",
+        "commit": "b25e1838c5ab10f77b8f7b63909fcaf7d9a2b106",
+        "skills": {
+          "gumloop": "b0ed81efe40803697ea19bdcdf584dd388692ab7e5fb5f033790d6349c100fc9"
+        },
+        "guessed": {
+          "gumloop.name": "c238f3c223718396"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "legalzoom",
+  "version": "1.0.0",
+  "description": "Legal guidance from LegalZoom attorneys, and LegalZoom's legal tools for your business.",
+  "author": {
+    "name": "LegalZoom"
+  },
+  "homepage": "https://www.legalzoom.com/",
+  "license": "PROPRIETARY",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "legalzoom",
+        "commit": "f9fd8a0ca6e1421bc1aacb113a109663a7a6f6d8",
+        "skills": {}
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "onepay",
+  "name": "OnePay",
+  "description": "Balances, transactions, investments and crypto holdings in your OnePay account.",
+  "group": "finance_ops",
+  "url": "https://mcp.onepay.com",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

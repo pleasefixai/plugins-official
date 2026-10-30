@@ -1,0 +1,45 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "opsera-devsecops",
+  "version": "1.0.0",
+  "description": "Security scans, compliance audits and architecture analysis of your code by Opsera.",
+  "author": {
+    "name": "Opsera"
+  },
+  "homepage": "https://opsera.ai/",
+  "license": "Apache-2.0",
+  "keywords": [
+    "devsecops",
+    "security",
+    "compliance",
+    "architecture",
+    "sql-security",
+    "soc2",
+    "hipaa",
+    "pci-dss",
+    "vulnerability-scanning",
+    "opsera"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/opsera_devsecops.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "opsera-devsecops",
+        "commit": "2c078dedda4244d9e799d072618d1184d5939ca0",
+        "skills": {
+          "architecture-analyze": "9437103eba90bcbd199261540699ee3db3b501a4cbc9b663735643d39114007d",
+          "compliance-audit": "4def329b889a53552930da3dc7e600e15f434702eea65dc7fc322581a70d4dad",
+          "pre-commit-scan": "904862e34d827bdb9756a37c0022564721311cd5e6695d2a37536233b825e9e3",
+          "security-scan": "85a991c8137f12f78336b9141fdec44d4c10d1feab83d9c99704298c097faf0f",
+          "sql-security": "a3d94f095eaa461ccdb142788ebd8b1675799bd47267a6e85dd7377dd895fb7f"
+        },
+        "guessed": {
+          "opsera_devsecops.name": "dcac205edf8e52e1"
+        }
+      }
+    }
+  }
+}

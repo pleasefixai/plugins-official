@@ -1,0 +1,45 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "honeycomb",
+  "version": "1.0.0",
+  "description": "Traces, queries, boards, SLOs and triggers in your Honeycomb environments.",
+  "author": {
+    "name": "Honeycomb"
+  },
+  "homepage": "https://www.honeycomb.io",
+  "license": "MIT",
+  "keywords": [
+    "honeycomb",
+    "observability",
+    "opentelemetry",
+    "tracing",
+    "slo",
+    "mcp",
+    "debugging",
+    "instrumentation"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "honeycomb",
+        "commit": "6bb09279fc3fb69abf113228be939dbb929e34f1",
+        "skills": {
+          "beeline-migration": "2795e2c848d7f36d5dd4576db198c65b3e03ace07227d2ce316aebfc0adaf2c2",
+          "create-honeycomb-board": "2a883ed11340f84521807e52aedfb2995c5b2cffd5850cb2822acfc2ea6b04c3",
+          "metrics-queries": "a29a71026b81b84d31711186b9834ee8972573f52de370d586ab42609032c605",
+          "observability-fundamentals": "16a3b939b1ede8a564697a5c62132e993a8e5433de9fba8cf508a23ab8a8293f",
+          "otel-genai-instrumentation": "e0b066283c1a4e5ae8a421c8d074a05e1754b3ad0035e5be69a9951ab5e51812",
+          "otel-instrumentation": "32e147982d048286c7a63bb5f1b291da4f504f378b5c29ec89542944f136e0f7",
+          "otel-migration": "29b4ac131b3905ae1824c20ff7b679078443692f4a693c5518eed288918c934a",
+          "production-investigation": "f8f8cdfdd7de717dd54050d6e13aa785518a55f11e7d45fca6e26e1e0f698086",
+          "query-patterns": "719c7fbeedc10188042ba907225e06cd22a1b1351319ef79d551950f303e6b43",
+          "slos-and-triggers": "efccdbfaeeb2d82e76cd66b58a5445e995b18d0001964d8f1ef15c078d2b7fcd",
+          "verify-recent-trace": "d9f7c3c11f72c46c7342eff43ca5046741036f5278c09e329113f2ab85711584"
+        }
+      }
+    }
+  }
+}

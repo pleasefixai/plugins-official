@@ -1,12 +1,12 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "gamma",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Presentations, documents and webpages generated with Gamma.",
   "author": {
     "name": "Cursor"
   },
-  "homepage": "https://cursor.com/",
+  "homepage": "https://developers.gamma.app/mcp/gamma-mcp-server.md",
   "license": "MIT",
   "keywords": [
     "gamma",

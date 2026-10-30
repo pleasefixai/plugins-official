@@ -1,0 +1,16 @@
+{
+  "id": "natural",
+  "name": "Natural",
+  "description": "Balances, payments and payment requests of your agents on Natural.",
+  "group": "finance_ops",
+  "url": "https://mcp.natural.com",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

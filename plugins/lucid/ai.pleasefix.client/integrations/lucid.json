@@ -1,0 +1,16 @@
+{
+  "id": "lucid",
+  "name": "Lucid",
+  "description": "Diagrams, whiteboards and documents in Lucidchart, Lucidspark and Lucidscale.",
+  "group": "design",
+  "url": "https://mcp.lucid.app/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

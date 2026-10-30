@@ -1,0 +1,16 @@
+{
+  "id": "macaly_code",
+  "name": "Macaly Cloud",
+  "description": "Web apps built and hosted on Macaly.",
+  "group": "developer_tools",
+  "url": "https://www.macaly.com/api/cloud/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

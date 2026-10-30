@@ -1,0 +1,65 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "kapa",
+  "version": "1.0.0",
+  "description": "Answers from your company's knowledge sources connected to Kapa: docs, tickets and wikis.",
+  "author": {
+    "name": "Kapa"
+  },
+  "homepage": "https://kapa.ai",
+  "license": "MIT",
+  "keywords": [
+    "knowledge base",
+    "retrieval",
+    "rag",
+    "ai agent",
+    "support agent",
+    "ai chatbot",
+    "customer support",
+    "support tickets",
+    "documentation",
+    "web crawl",
+    "mcp",
+    "kapa",
+    "ingestion"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/kapa.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "kapa",
+        "commit": "79e0532e5362a93fbb49ca429ab09cbedb623c77",
+        "skills": {
+          "kapa-check": "5467100a1fa21e4404befd91e334e1298c2fe1c1f85380d377dfe278a258fb90",
+          "kapa-gaps": "f8ba01c628f55a19e01ef55707faaedbff239ab08a1209d5c3acf73002e483c6",
+          "kapa-setup": "5aede127a7b0f4b5c798e6fefee2fe5b3dca09a4174471caf7baee5b035eeacf",
+          "kapa-setup-confluence": "0183ebc573c98b420e702ae864fb1cbeb40ee5f04ae13527fa67b4a6cea8e577",
+          "kapa-setup-custom-qa": "3e0f8bd18cf503d6dede73db12823542cd23051cf2a2d818854f377f94995a59",
+          "kapa-setup-discord": "85af1d361874aa4045cfbe37b074095f65118a9861a50879e6aa68ce98228f48",
+          "kapa-setup-discourse": "14370658eecc3f7afa4b449129d55fb58f36aff95735539e35bc2d5cf4a2bd32",
+          "kapa-setup-github-discussions": "f2bd74e156d45ef2bc07ae88f4ec42d003e93cef70aecd2197618dd1f816c576",
+          "kapa-setup-github-files": "7a09e299d39daece8223f6e7fc7354b59d93be6326d1fba3c6d046f00f47093b",
+          "kapa-setup-github-issues": "beca9a2aa403a29ed55852b3bbe4c7a9d55de216b3dddef77a41e05bb5e8a4bf",
+          "kapa-setup-github-pull-requests": "a970b0b391c97330ec19eafbb0a5d647b03b21d2bc281b63b911a5a32f03a6eb",
+          "kapa-setup-google-drive": "84aea5d301d32b0aa264c2006d8698d35388ad1c781a4d7de039f858c6635a4b",
+          "kapa-setup-jira": "a6b3084e1e8b6eab4f29abac10b9aa6150f4b325fca32add5325ee51ade4752b",
+          "kapa-setup-jira-service-management": "64ba663c96ac086b509c27392ad0ce15374925ca092a134c7fd5d07508822f28",
+          "kapa-setup-notion": "0bcfe351382b5684be1c90e58e8b2eb63331ead135d2cdfceb408f39454a285a",
+          "kapa-setup-openapi": "da3090a2c3d65408b1e7f249323400aab7733d3fbf61c95053da10234c8dc010",
+          "kapa-setup-s3": "936c919f212aa8fc00dde094a8b939bb93ad11f7692e55deb48c916b1e0650a9",
+          "kapa-setup-slack": "fcdcc16f69d9247d509d3dcbf38effd526da4b71ec349a860183707278616510",
+          "kapa-setup-web-crawl": "4ef6ded8b6d9ac023b3a3afcdea1ee2cb59c35c286e24097ff6d72aeb1e7e460",
+          "kapa-setup-youtube": "524671e50a391d2730ccd3ea3b0d16970931660b9a96afecaa64c380d6ebfe11",
+          "kapa-setup-zendesk-helpcenter": "e79f5ea10cbbd6aa5547c1895a5e9d79ff4431d286c2d3f8cbdbde36478ab6c2",
+          "kapa-setup-zendesk-tickets": "9833eca11734975e9f8f5ea9c27385805cb327e4559bb507eb5e1430b60b120b"
+        },
+        "guessed": {
+          "kapa.name": "01cad4cd6fabb8e3"
+        }
+      }
+    }
+  }
+}

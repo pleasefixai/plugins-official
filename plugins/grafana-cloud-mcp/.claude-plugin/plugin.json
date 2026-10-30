@@ -1,0 +1,5 @@
+{
+  "name": "grafana-cloud-mcp",
+  "version": "1.0.0",
+  "description": "Dashboards, metrics, logs, traces and alerts in your Grafana Cloud stack."
+}

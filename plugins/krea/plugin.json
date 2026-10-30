@@ -1,0 +1,47 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "krea",
+  "version": "1.0.0",
+  "description": "Images and videos generated, edited and enhanced with Krea.",
+  "author": {
+    "name": "Krea"
+  },
+  "homepage": "https://www.krea.ai",
+  "license": "MIT",
+  "keywords": [
+    "krea",
+    "image-generation",
+    "video-generation",
+    "motion",
+    "packaging-design",
+    "storyboard",
+    "mcp",
+    "archviz",
+    "marketing",
+    "meta-ads",
+    "marketplace",
+    "ai-art",
+    "lora",
+    "product-photography"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/krea.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "krea",
+        "commit": "ea45cca6b347cfa175b3a83a4b9abbf072e0af3f",
+        "skills": {
+          "krea-generate": "571d1a8f94ff23b04535c8e4e2b09253a0d7a4fd341fc7ef48f0af824b700501",
+          "krea-marketing": "4513979e48bfb4b3a104aa39af0351de73f4b2881353e61ce8d3983874527936",
+          "krea-motion": "7283f3903dc780fc1ca91f6e3b653e6b2ccef2dab93dafdcb986a6f321fdc4fc"
+        },
+        "guessed": {
+          "krea.name": "2d8d3f651787a6d4"
+        }
+      }
+    }
+  }
+}

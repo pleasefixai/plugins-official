@@ -1,0 +1,16 @@
+{
+  "id": "mobbin",
+  "name": "Mobbin",
+  "description": "Screens and flows of real mobile and web apps from Mobbin's design library.",
+  "group": "design",
+  "url": "https://api.mobbin.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

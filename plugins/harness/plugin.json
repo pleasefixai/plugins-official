@@ -1,0 +1,70 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "harness",
+  "version": "1.0.0",
+  "description": "Pipelines, services, environments, feature flags and costs in your Harness account.",
+  "author": {
+    "name": "Harness"
+  },
+  "homepage": "https://www.harness.io/",
+  "license": "Apache-2.0",
+  "keywords": [
+    "harness",
+    "ci-cd",
+    "devops",
+    "pipelines",
+    "kubernetes",
+    "mcp",
+    "gitops",
+    "feature-flags",
+    "cloud-cost",
+    "chaos-engineering"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/harness.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "harness",
+        "commit": "494bf8c826e9fc21a82262b133cd9906afec68b3",
+        "skills": {
+          "analyze-costs": "10fece875888ad69f854dfff251b05d35d35b95f18df11576fc7e7df2ec416e1",
+          "audit-report": "49571040e2bb6b8ead647d54487f7c08644f2cc444e9b78c31baf10ddc43f574",
+          "chaos-experiment": "0e279ac288e7202b340448ee48a73ec2c6a29314b66f8b4beec0aad55d5b178a",
+          "create-agent": "eaff7b7a7126270ee389f8d1a042674975c0e2f221f3c8bc5c21de2dd438342d",
+          "create-agent-template": "5c03cebb88a2269cb8e797326d070df0d7b154ed50ffb31fac68a6f29612db45",
+          "create-connector": "34da02028331e66920980a29e0a822955c9cf6414a1b56c9200ca02b6139a7c3",
+          "create-environment": "ab133a00ae5b4963ab2a2c0883c3d1cc546dedb7a90ca6dbb61fc4b180e13575",
+          "create-infrastructure": "e6ee46f23b8731276d8a9aedc5f82875e1624d8bceef2691e96c561dce302d6d",
+          "create-pipeline": "87b301951692be2fb43d8967889ab5f3fe663fe430f585f57adb9466b4e1c9b1",
+          "create-pipeline-v1": "287cddb4441b417d14c9722d82fddc3b7325b0ae549dcdb6b8854a4089d2fb5b",
+          "create-policy": "7dc73d3723ccaaf8d812a73fcd16a4890ddd8a2d621034ff3e85422efb6fe787",
+          "create-secret": "45a944776f6d01386559d09b416f349900c7b49ebfced0829d1f193273d1a18f",
+          "create-service": "4f64c4fccc1274b560a0066dfedc7f3109969295fc39132798c17c4f9d776882",
+          "create-template": "c2643be44641495e61c593b199e2c03d0993e129e846b59e11ec8b2f0ee6d85a",
+          "create-trigger": "b643e25605b54acc2d005ab31a9be95d9d45db79c15ea1dc312f1c2bc2593357",
+          "debug-pipeline": "c1110e9e60b339a061f18f379281e33408a822ef133ec1ca5432a15a8ee3bec1",
+          "dora-metrics": "791752b6c6a1014083c4291899380136ae010f8f46ff6debf90badf95b38c2a6",
+          "gitops-status": "31d334869d49a22356d900989d6f1c40b67f827eeee907d15f87de862afd4fd5",
+          "manage-delegates": "985bbb2d92a3636c04fd14ee61d20f0bd3cc19a6499ed530103a35257cd128f1",
+          "manage-feature-flags": "6a198c00a673ca9ee1da652a9e88dc2d4ea1f431e59ccfa4482750a019a1d3c0",
+          "manage-freeze-windows": "36fe87640f3c57915e09e617304967db159b7612aaddb772fd958b6c64fc7f1f",
+          "manage-pull-requests": "786a77563e8786ab589f957666f0e7b56c70a1833383b3f76f0961cf8aece023",
+          "manage-roles": "29cf2fc21cd69efadf2afca37ed5ea32c4b1c109b00f375433ff8f7087e8d708",
+          "manage-slos": "1850fb3423b088c5628c84fbbb1e513ed13f841f4b71eed326d9bed53d868483",
+          "manage-users": "fddf3602ed6b18b6414488835f34df6db112e4d45e3926458cf77863d94a63f5",
+          "migrate-pipeline": "072850923a9b5e182e7eb0234dcfd0b4801f0500c8fe11428ec920cf62f31ffc",
+          "run-pipeline": "79b4c38e6f5d42abf171a6bd3ac31321aaba47b4d2c5e2cbca3d02c2eb6f813a",
+          "scorecard-review": "ba49220089ff3f1a968fba51a4a2b7d8f29d96c5d9a0f766f1150834c2d3919e",
+          "security-report": "8ffacc450e31e5f8f2bb0930d04fed26569bc2b023bf6e57552e865f43f04f89",
+          "template-usage": "5d69027b9180f1a9a5213d56304d0d681a127875981727f2253d24465f10c680"
+        },
+        "guessed": {
+          "harness.name": "e3b5b45953d79a15"
+        }
+      }
+    }
+  }
+}

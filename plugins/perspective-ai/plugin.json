@@ -1,0 +1,41 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "perspective-ai",
+  "version": "1.0.0",
+  "description": "AI interviews that replace your forms, and the answers they collect, in Perspective AI.",
+  "author": {
+    "name": "Perspective AI"
+  },
+  "homepage": "https://getperspective.ai/",
+  "license": "MIT",
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "perspective-ai",
+    "ai-concierge",
+    "conversational-ai",
+    "forms",
+    "lead-qualification",
+    "customer-feedback",
+    "surveys",
+    "interviews"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/perspective_ai.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "perspective-ai",
+        "commit": "98225a0046dcb5fa97aab758eeecf6c4b9df7295",
+        "skills": {
+          "perspective-mcp": "3ff6acaee96e469c68a65048700c5a7bd082694b558ce601e1d0b57957737dac"
+        },
+        "guessed": {
+          "perspective_ai.name": "9118845fbde99a54"
+        }
+      }
+    }
+  }
+}

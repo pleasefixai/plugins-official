@@ -1,0 +1,16 @@
+{
+  "id": "greptile",
+  "name": "Greptile",
+  "description": "Code reviews and codebase answers from Greptile for your GitHub and GitLab repositories.",
+  "group": "developer_tools",
+  "url": "https://api.greptile.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}
