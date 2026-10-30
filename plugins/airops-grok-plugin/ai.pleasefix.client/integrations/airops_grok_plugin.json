@@ -1,0 +1,16 @@
+{
+  "id": "airops_grok_plugin",
+  "name": "AirOps",
+  "description": "Brand kits, content opportunities, AI search visibility and knowledge bases from AirOps.",
+  "group": "marketing",
+  "url": "https://app.airops.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

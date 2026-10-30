@@ -1,0 +1,44 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "algolia-productivity",
+  "version": "1.0.0",
+  "description": "Search indices, recommendations and search analytics from your Algolia account.",
+  "author": {
+    "name": "Algolia"
+  },
+  "homepage": "https://algolia.com",
+  "license": "MIT",
+  "keywords": [
+    "developer tools",
+    "search",
+    "analytics",
+    "productivity",
+    "ai",
+    "rag",
+    "database",
+    "api",
+    "data",
+    "knowledge-base",
+    "enterprise",
+    "indexing",
+    "recommendations",
+    "relevance",
+    "search-analytics"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/algolia_productivity.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "algolia-productivity",
+        "commit": "cd17b285d813561bfd43a6beb2488ebb0eb80d1d",
+        "skills": {},
+        "guessed": {
+          "algolia_productivity.name": "d5c4f882278940e1"
+        }
+      }
+    }
+  }
+}

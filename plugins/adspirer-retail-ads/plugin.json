@@ -1,0 +1,54 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "adspirer-retail-ads",
+  "version": "1.0.0",
+  "description": "Amazon Ads and Walmart Connect campaigns, keywords and results, through Adspirer.",
+  "author": {
+    "name": "Adspirer"
+  },
+  "homepage": "https://www.adspirer.com/",
+  "license": "MIT",
+  "keywords": [
+    "retail ads",
+    "retail advertising",
+    "Amazon Ads",
+    "Amazon PPC",
+    "Walmart Connect",
+    "Walmart Ads",
+    "retail media",
+    "ecommerce advertising",
+    "Sponsored Products",
+    "Sponsored Brands",
+    "Sponsored Display",
+    "ACoS",
+    "ROAS"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/adspirer_retail_ads.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "adspirer-retail-ads",
+        "commit": "392a9648906826b87c60f99b3576848b19c08c99",
+        "skills": {
+          "adspirer-retail-ads-ad-creative": "98daa2786ce3465a6d9c1382570f41bca0de97bbc3fb0a6fac1d3e7b9a2b6a98",
+          "adspirer-retail-ads-amazon": "1220111f3d347978c8958fbb3128d1d41da2d2a489a584d1f8586d249b760ee6",
+          "adspirer-retail-ads-campaign-launch": "f2b7c2bfa5d5361bc171f6ce6bf2f7c32afd08801784774746e8d68af0b7fd0e",
+          "adspirer-retail-ads-keyword-research": "ff7a056fe314ed07f17cb335ddc079e4b8b2f8a8d865ce721d09d4a3e6c911c2",
+          "adspirer-retail-ads-optimization": "f811d2dbadd26821ed929b50e89c0db47606da13e957205357218db68921b831",
+          "adspirer-retail-ads-performance": "2fca81100cbf390130523f99933d5fa49e31838766bb6a33967f4a5954fc27e7",
+          "adspirer-retail-ads-product-help": "6c28b4b173681064209615413cd7bc1c68781c68b0000669fbbbc54b51e94a1e",
+          "adspirer-retail-ads-setup": "ca9c5904f49324f2252b66ce70de9cc0ec3ce9eace9280ff50262c9f68c1269a",
+          "adspirer-retail-ads-strategy": "87d3d16f8b58289b740c964e96882bee052d8433d6a0c5df5a9de36f4bd0454c",
+          "adspirer-retail-ads-tools": "291a01f4b9d404445f81e03f3e9812d92b6f2c90f9cc46acb1d9d55df6808cc3",
+          "adspirer-retail-ads-walmart": "aedb963d002c2223efaf27a91cf13d18ba9178597a553b6847c0f11b6c40ecee"
+        },
+        "guessed": {
+          "adspirer_retail_ads.name": "8412de6b4774bb53"
+        }
+      }
+    }
+  }
+}

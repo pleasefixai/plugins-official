@@ -1,0 +1,16 @@
+{
+  "id": "airwallex_agentos",
+  "name": "Airwallex (airwallex-agentos)",
+  "description": "Payouts, cards, billing and treasury from your Airwallex account.",
+  "group": "finance_ops",
+  "url": "https://mcp.airwallex.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

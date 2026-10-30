@@ -1,12 +1,34 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "ramp",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Card transactions, bills and reimbursements from your Ramp account.",
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
-      "mark": "mark.png"
+      "mark": "mark.png",
+      "upstream": {
+        "kind": "skills",
+        "marketplace": "cursor",
+        "plugin": "ramp",
+        "commit": "d3f9e168889cbd540602c66a958e97c0d4514052",
+        "skills": {
+          "agentic-purchase": "2f7a3c5178da249385a4b4a22532734cb71e993e130eb9d1ab7d99d95485ce8d",
+          "apply-to-ramp": "05740288fa9470fa1e0cd3fa6b5c1cd7fdc439b7393bf0ac0da758581149709d",
+          "approval-dashboard": "a4d7e750041ca82087c277303bc343617e617cd6e16a15510129e73f50521bf3",
+          "book-flight": "01a46d4c93bf32d42ca3e07888a1e5ab859d6fe0efc83316ea1d480f085a2f3b",
+          "browser-automation": "9369261faebec9891b3d5190cdf2530a8e138c20aadc3ad85984f314d35fb2ba",
+          "card-management": "916aa563b0dc3a70cd8e927935c292ac30b7a384340c7971a5d0a73043487343",
+          "manage-bills": "e758d71624a2bd4c726b25822aee7ed2fc28503524dc7b03aa0263760b7c206f",
+          "manage-procurement": "c7e41263bbc53775a31ec4b5ffb2c87034e2b7b0688e6a784aee095896c4f189",
+          "payment-lookup": "6783e5d67c46018c62e5fa0fd5c5c625da1a608fa566c0547ae952ad30dd542e",
+          "receipt-compliance": "c39688e21a70007cd3fd1513faacc2374213cc04c89d7d21ac5d83854c5ecfaf",
+          "spend-analysis": "48bb9919304fe2c0b8328c11e433d639ed2fbc08e3418a95cb0e86b4c65ce3e5",
+          "submit-reimbursement": "1086d1b3875fb71bbbcc63b584a71d592a4ec6f503b17c85e347dd3d6cd3d8e3",
+          "transaction-cleanup": "653aa2e7a52dbf4515b017ae69876963017e0f03bd915746e323a56fcd08f12b",
+          "vendor-document-upload": "02e7901fb070cdb265f92e5f11ae243c50c1e1732cc5ac9254e6138e64e4ec87"
+        }
+      }
     }
   }
 }

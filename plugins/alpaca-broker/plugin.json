@@ -1,0 +1,33 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "alpaca-broker",
+  "version": "1.0.0",
+  "description": "End-customer accounts, funding, orders and positions on Alpaca's Broker API.",
+  "author": {
+    "name": "Alpaca"
+  },
+  "homepage": "https://alpaca.markets",
+  "license": "MIT",
+  "keywords": [
+    "trading"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/alpaca_broker.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "alpaca-broker",
+        "commit": "6fb47e3294349e0bf3dfd9f811ae59f512f27d00",
+        "skills": {},
+        "guessed": {
+          "alpaca_broker.group": "803d24c20a24339f",
+          "alpaca_broker.name": "a69977495046a43e",
+          "alpaca_broker_sandbox.group": "803d24c20a24339f",
+          "alpaca_broker_sandbox.name": "cf9c909d9f661359"
+        }
+      }
+    }
+  }
+}

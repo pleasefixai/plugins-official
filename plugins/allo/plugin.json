@@ -1,0 +1,43 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "allo",
+  "version": "1.0.0",
+  "description": "Calls, texts, transcripts and contacts from your Allo business phone system.",
+  "author": {
+    "name": "Allo"
+  },
+  "homepage": "https://www.themobilefirstcompany.com/",
+  "license": "Proprietary",
+  "keywords": [
+    "allo",
+    "withallo",
+    "phone",
+    "sales",
+    "cold calling",
+    "outbound",
+    "ai",
+    "receptionist",
+    "ai receptionist",
+    "business phone",
+    "sms",
+    "call tracking",
+    "sales calls",
+    "phone system",
+    "power dialer"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "allo",
+        "commit": "5006e5cad3e8307cd19099ccf97602294fb3a504",
+        "skills": {},
+        "guessed": {
+          "allo.name": "9c2900782a2afc7c"
+        }
+      }
+    }
+  }
+}

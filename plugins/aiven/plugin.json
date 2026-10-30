@@ -1,0 +1,43 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "aiven",
+  "version": "1.0.0",
+  "description": "Managed PostgreSQL, Kafka, OpenSearch and other services in your Aiven projects.",
+  "author": {
+    "name": "Aiven"
+  },
+  "homepage": "https://aiven.io",
+  "license": "Apache-2.0",
+  "keywords": [
+    "aiven",
+    "postgres",
+    "pg",
+    "kafka",
+    "database",
+    "streaming",
+    "cloud",
+    "opensearch",
+    "clickhouse",
+    "valkey",
+    "kafka-connect",
+    "apps"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/aiven.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "aiven",
+        "commit": "634f41d6852957cb9280e9245f2ea6f74645b4f1",
+        "skills": {
+          "aiven-getting-started": "c5e3038143f5d2809b93b788f1a28925b19c49b0e160615316c339320c2475bf"
+        },
+        "guessed": {
+          "aiven.group": "ee36932598bedfed"
+        }
+      }
+    }
+  }
+}

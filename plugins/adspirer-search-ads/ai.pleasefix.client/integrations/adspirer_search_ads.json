@@ -1,0 +1,16 @@
+{
+  "id": "adspirer_search_ads",
+  "name": "Adspirer Search Ads",
+  "description": "Google Ads and Microsoft Advertising search campaigns and keywords, through Adspirer.",
+  "group": "marketing",
+  "url": "https://mcp.adspirer.com/search-ads",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "airwallex-agentos",
+  "version": "1.0.0",
+  "description": "Payouts, cards, billing and treasury from your Airwallex account.",
+  "author": {
+    "name": "Airwallex"
+  },
+  "homepage": "https://www.airwallex.com/docs",
+  "license": "Apache-2.0",
+  "keywords": [
+    "airwallex",
+    "business accounts",
+    "billing",
+    "invoices",
+    "payments",
+    "issuing",
+    "treasury",
+    "cli",
+    "mcp",
+    "finance",
+    "codex"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "airwallex-agentos",
+        "commit": "877551077786664d1cbeb32013443291c66e69e6",
+        "skills": {
+          "awx-best-practices": "6f436a9d9da388bef4df4e7edf49a92fa7834c6567ab0b559a5e350bd2347f64",
+          "beneficiary-creation": "588c74c83a16e2a7545a8d5310f24dd595846a3f240aa49b5a45fad01924c32c",
+          "card-provisioning": "d05f50d93e66150d783809e20c26a73f10b6f1c23f2a8ddaa4d174020b11bf8f",
+          "contract-to-billing": "61ea136677085226a07bbc9c5af3b3a9144da20f44525d403741ba20ff458712",
+          "manage-cashflow": "755149e912dc262880a4da8cceaf6f4d877f78600e0fcba82d4426e6a4fc5fd2"
+        },
+        "guessed": {
+          "airwallex_agentos.name": "14df8aee88db4456",
+          "airwallex_dev.name": "d5b3f3dec631f502"
+        }
+      }
+    }
+  }
+}

@@ -3,7 +3,7 @@
   "name": "Fathom",
   "description": "Meeting recordings, transcripts and summaries from your Fathom account.",
   "group": "meetings",
-  "url": "https://fathom.video/mcp",
+  "url": "https://api.fathom.ai/mcp",
   "auth": {
     "scopes": [
       "mcp"

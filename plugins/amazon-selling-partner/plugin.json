@@ -1,0 +1,49 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "amazon-selling-partner",
+  "version": "1.0.0",
+  "description": "Listings, inventory, sales and support cases from your Amazon Seller Central account.",
+  "author": {
+    "name": "Amazon"
+  },
+  "homepage": "https://github.com/amzn/selling-partner-agentic-toolkit",
+  "license": "Apache-2.0",
+  "keywords": [
+    "amazon",
+    "seller",
+    "selling-partner",
+    "sp-api",
+    "fba",
+    "listings",
+    "inventory",
+    "analytics",
+    "compliance"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "amazon-selling-partner",
+        "commit": "10573bac239b7062a476667eaa574d400335c70e",
+        "skills": {
+          "fba-inbound-management": "9c7094d8a172542970e501c70d7a990ecc2314de9d0b8370ce269b16c36c8c78",
+          "invite-secondary-users": "5ac6ba98ecb441a5213a4ee1c20c3057d57698d3e6f2e9bab9df7ecb2885f51c",
+          "listing-buyability": "ff99358e72b0e9202cae5c13c1941573ce2e9124775370cba0132677acf5dae1",
+          "listing-compliance": "4321a86dc505b89d894659334d49239f30b74a7a0062af89f4338147e825762b",
+          "listing-issues": "1c9870aa259b97de7ec82e3b0c38e00adf4d5d7520338d77deb1e393094690b1",
+          "listing-searchability": "9be7beb4bf33f5c48b7252286d47eba28e91d7d57af8bdaaca62bd78a83e3b99",
+          "listing-troubleshooter": "8a13c5030df41409d1b5fdafaba47e9c9c1557e224ef3b4857743dc20d16a3bf",
+          "seller-analytics": "f4e3ca6f74fafb1d50dbba2e3e0bde152c8661fd79af876e0f2c0b51c6644985",
+          "sp-api-knowledge": "42a66b116f88055cee42c14b91bde953d38364239e9a324fb62e54feb7f53a14",
+          "stockout-prevention": "e34fafb678f365a9693f3ea98ccabb7341ab0b26491e4d2bcfc53533da0e0e5c",
+          "support-case-helper": "44e1a5dd048434e1a98ccf9fad85c160714a1099d99c8b898c382c536df913da"
+        },
+        "guessed": {
+          "amazon_selling_partner.name": "4af92756ee8f5210"
+        }
+      }
+    }
+  }
+}

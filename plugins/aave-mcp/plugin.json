@@ -1,0 +1,40 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "aave-mcp",
+  "version": "1.0.0",
+  "description": "Aave lending markets, wallet positions and governance, with transactions for you to sign.",
+  "author": {
+    "name": "Aave"
+  },
+  "homepage": "https://aave.com",
+  "license": "MIT",
+  "keywords": [
+    "aave",
+    "defi",
+    "lending",
+    "mcp",
+    "governance"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "aave-mcp",
+        "commit": "5453a05cac9d26b5dbcaeda0272e5bbba8a1e1a9",
+        "skills": {
+          "account-activity": "efc1ea47823ddad89ff632910a9979c67d7351d71f9c778fa1839a0f626fe266",
+          "deleverage": "e904e713c5822301794c9ec4c00e8259ef9b5e381e464e9fb2145c6bc401d061",
+          "safe-transactions": "1fbe084d6d3fd8a7d8a4960f168565d855c2dc050ce0a92a6afb99cb73eb9083",
+          "tx-confirmation": "50695b936324bb581e18b64c07cef5bcba3c35e46c0f996524ca6b5b6a20a3c0",
+          "yield-analysis": "d52c8b800bd81768b906d5d0641349051fcd0cef150bff6f7917021d8aea51e6"
+        },
+        "guessed": {
+          "aave_mcp.group": "803d24c20a24339f",
+          "aave_mcp.name": "0bc98152ae5ee073"
+        }
+      }
+    }
+  }
+}

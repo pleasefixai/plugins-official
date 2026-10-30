@@ -1,0 +1,55 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "adspirer-search-ads",
+  "version": "1.0.0",
+  "description": "Google Ads and Microsoft Advertising search campaigns and keywords, through Adspirer.",
+  "author": {
+    "name": "Adspirer"
+  },
+  "homepage": "https://www.adspirer.com/",
+  "license": "MIT",
+  "keywords": [
+    "search ads",
+    "keyword research",
+    "competitor ads",
+    "PPC",
+    "paid search",
+    "Google Ads",
+    "Microsoft Advertising",
+    "Bing Ads",
+    "conversion tracking"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/adspirer_search_ads.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "adspirer-search-ads",
+        "commit": "d540ade8b506ac3996cf1911ab038fb4533f31fb",
+        "skills": {
+          "adspirer-search-agent": "6e9ef3f1e3479517e3749b28d38012a33cab940193c8e8a1c3a8de97c049b76d",
+          "adspirer-search-campaigns": "e8bd1a44aed47bbbb7e7a60c00e0119c1d385c98fdc3ea483c3007430a0a2c0e",
+          "adspirer-search-competitors": "753c3120e58d82fc2227f91b6e09ca8b4edd669539b9f84fc113dfaa594642b9",
+          "adspirer-search-creative": "783078e00c395dd948331c67f1a15ec787a6cfd473f6aa71e9e69c5bdc5a1e92",
+          "adspirer-search-docs": "94dac72446aad0d770342bf09fe46f2a2f44f697b79136cb23e3c2c8b8af9810",
+          "adspirer-search-google-ads": "3a01da197927016cedc7496f52a879227a3fef17b6c8e70d50c3027b725252cd",
+          "adspirer-search-google-analytics": "bebae33165c727392f518a6bb37eab9cdddc411526d6656b0a40bd9e06d8b80d",
+          "adspirer-search-google-search-console": "1df717fd5df0b95ea924d9f329e1126804c1b5ef5a2d49212495a398066bb866",
+          "adspirer-search-google-tag-manager": "72f7439fa387cbdb0f3f6376215edf85d73775ee1146e370d12ed0d4cf7f47d8",
+          "adspirer-search-keywords": "9ec63c6c0573d621629b934ed250a3f47765b594b60f741070f03e59d23dbf18",
+          "adspirer-search-mcp": "eb9ecdcbb57bcb69f8c85dca29f89ccd76ccf8c0466eb15841682d8849ac0bff",
+          "adspirer-search-measurement": "d01a8edfe6f7e9545f5ca190e5aab42652f5cb82e237a097d948e09bf86aae2d",
+          "adspirer-search-microsoft-ads": "408290f69f63a4da0f449bbeef20e0c3e1bff9dd9e74fd245af041d1dd980a66",
+          "adspirer-search-optimize": "24cfef1dc00d805276e54aff8324369fa6e8e883f379a52ccf3107851e633b4f",
+          "adspirer-search-performance-review": "18b751dd41e3577b0694f550bf9ec51a40dbfa8c957e881768a6f72b3ffe3ce7",
+          "adspirer-search-setup": "c7d7d0fc2db87b33286bf96f4f0effb468bca02a43e77257f148055592462b6a"
+        },
+        "guessed": {
+          "adspirer_search_ads.name": "c68f77bc0603c1c7"
+        }
+      }
+    }
+  }
+}

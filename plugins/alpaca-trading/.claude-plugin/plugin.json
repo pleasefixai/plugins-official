@@ -1,0 +1,5 @@
+{
+  "name": "alpaca-trading",
+  "version": "1.0.0",
+  "description": "Orders, positions, portfolio and market data from your Alpaca trading account."
+}

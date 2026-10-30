@@ -1,0 +1,16 @@
+{
+  "id": "adspirer",
+  "name": "Adspirer",
+  "description": "Ad campaigns on Google, Meta, TikTok, LinkedIn, Amazon and ChatGPT, through Adspirer.",
+  "group": "marketing",
+  "url": "https://mcp.adspirer.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

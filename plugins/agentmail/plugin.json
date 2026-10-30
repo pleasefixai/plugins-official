@@ -1,0 +1,46 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "agentmail",
+  "version": "1.0.0",
+  "description": "Email inboxes for your agent, with the messages and threads it sends and reads.",
+  "author": {
+    "name": "AgentMail"
+  },
+  "homepage": "https://www.agentmail.to/",
+  "license": "MIT",
+  "keywords": [
+    "email",
+    "inbox",
+    "mcp",
+    "ai-agent",
+    "email-api",
+    "agentid"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/agentmail.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "agentmail",
+        "commit": "aebd7653dcb868c624330a05cc1717327fa8f271",
+        "skills": {
+          "agent-email-patterns": "c356a39571af191f23e2e3cd12bf100c3f23e2e42d312aa5fe8041873d274231",
+          "agentid": "b9094654aa08574d722653cb98a4812fabf03feb20b33fb3b798cddb4e3c2fe6",
+          "agentmail": "90122d5274f9715bf1ee7b88c7bce45aa47768d8951de958eea150dfcbed0261",
+          "agentmail-cli": "cd6e3f95113323c0be6bd03fe92090b68e6870beeeb74a48e34c2de89be08737",
+          "agentmail-mcp": "7685b900d0890cd64cdf078b2d621f7503df7187392521aa05c903ff3dd52827",
+          "agentmail-toolkit": "25995bb9aead1b2d33d33f47d61aaeb11611c5b14124413f163c24d05c100bdb",
+          "check-email": "3bdfe085fabd3fbf2f0a29998b8d8b2817552eb0d567fa7553bf1a324b69e0ed",
+          "manage-inboxes": "b73fa1b5a30d8887931f501e4f2ea4e32c38e7dd241b6d08577a17661001f631",
+          "send-email": "86350b82bf8dbc71787062c850f88e369596f995b0a86a6c5e4eb4308970ab8f"
+        },
+        "guessed": {
+          "agentmail.group": "d4e16994df9002e5",
+          "agentmail.name": "d5b06fb0a58c9a5d"
+        }
+      }
+    }
+  }
+}

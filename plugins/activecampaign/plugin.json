@@ -1,0 +1,43 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "activecampaign",
+  "version": "1.0.0",
+  "description": "Contacts, deals, email campaigns and automations from your ActiveCampaign account.",
+  "author": {
+    "name": "ActiveCampaign"
+  },
+  "homepage": "https://activecampaign.com",
+  "license": "MIT",
+  "keywords": [
+    "marketing",
+    "automation",
+    "crm",
+    "email",
+    "campaigns",
+    "deals",
+    "contacts"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/activecampaign.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "activecampaign",
+        "commit": "c00f8f724fc4cd8a1f8aeb00951f9b3b95834991",
+        "skills": {
+          "automation-builder": "87ac4c78d067b8c1a1d617d5a0a69064086ec74a63e6ff84d4c01d24e1bc911e",
+          "campaign-strategist": "16ef91a496c0434602f0cc5de0c9c1f94a6dac8c547a737da8dd4392bdaad07d",
+          "contact-operations": "67381f4ecd7b8fb35cc7d35b652cdc5e3e887a0dd412f15f1b34a7499d59512e",
+          "deals-crm": "a83efddc75584e9ef4262b08eb30dbcba38653c7a0214fa7a4a22d6be7dd904a",
+          "deliverability-advisor": "a8c39707bd61bcdd096bc6ed46f5ea0af0a394c5d00a94eecfc7b110993d83e5",
+          "reporting-analyst": "765cbb684a744b39fc94fe67a4a538e4a2df8034fbb34938106a45845abfe5e5"
+        },
+        "guessed": {
+          "activecampaign.name": "497b9f8d7afa9412"
+        }
+      }
+    }
+  }
+}

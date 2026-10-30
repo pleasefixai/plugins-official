@@ -1,0 +1,16 @@
+{
+  "id": "aleph",
+  "name": "Aleph",
+  "description": "Financial plans, forecasts and consolidated finance data from your Aleph account.",
+  "group": "finance_ops",
+  "url": "https://mcp.getaleph.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

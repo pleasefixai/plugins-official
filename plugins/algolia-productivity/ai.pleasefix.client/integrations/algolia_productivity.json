@@ -1,0 +1,8 @@
+{
+  "id": "algolia_productivity",
+  "name": "Algolia Productivity",
+  "description": "Search indices, recommendations and search analytics from your Algolia account.",
+  "group": "product_analytics",
+  "url": "https://mcp.algolia.com/mcp",
+  "auth": null
+}

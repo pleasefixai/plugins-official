@@ -1,0 +1,16 @@
+{
+  "id": "agent_plugins",
+  "name": "Monaco",
+  "description": "Contacts, accounts, opportunities, sequences and meetings from your Monaco workspace.",
+  "group": "crm",
+  "url": "https://mcp.monaco.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

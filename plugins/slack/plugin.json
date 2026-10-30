@@ -1,12 +1,29 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "slack",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Messages, threads and search from your Slack workspace.",
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
-      "mark": "mark.png"
+      "mark": "mark.png",
+      "upstream": {
+        "kind": "skills",
+        "marketplace": "claude",
+        "plugin": "slack",
+        "commit": "ad6be88096678812c448b0279390b4d25bce0164",
+        "skills": {
+          "block-kit": "d78d131cd7a9fa529cad40268a8a757e071374302b4cb2db3b936454dcda8d97",
+          "create-slack-app": "be29c6b46b30422df01216b7eaee97e913011eec2b35e80867283561a10926c1",
+          "deploy-slack-app": "5cc7ad72cda25de890a6ec51cc46b3ab3f42cec97c2ebaf512471fdce8b00b0b",
+          "slack-api": "648dc7c7475267685ca1f29f155710b59c36e6670a1615fb98159b283eae91dc",
+          "slack-cli": "8c5213a137488e2208fa542285c16dc6999751051022f3401f6ca279d745ded3",
+          "slack-docs": "22cd6d02a3b678ebff4420721b4d4134eb8059b8879c3eaaf8aefaf4f54ef324",
+          "slack-messaging": "ff9fcd6d339b5500aac1089aaefa0098349d4871d24a566a0f7b9af71b985e11",
+          "slack-search": "206815fef7f27e487ae49def1944599d3351de0e9c7974ca7cbc5a642c868f4c",
+          "test-slack-app": "5e1ba3cb113b340cbb1e890bb08aa15806cf277830e647d0cf21c9d63b06ff29"
+        }
+      }
     }
   }
 }

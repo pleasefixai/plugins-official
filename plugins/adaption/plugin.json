@@ -1,0 +1,38 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "adaption",
+  "version": "1.0.0",
+  "description": "Datasets, synthetic data and fine-tuning runs from your Adaption account.",
+  "author": {
+    "name": "Adaption"
+  },
+  "homepage": "https://adaptionlabs.ai",
+  "license": "MIT",
+  "keywords": [
+    "adaption",
+    "datasets",
+    "fine-tuning",
+    "autoscientist",
+    "mcp",
+    "ai-training"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "adaption",
+        "commit": "35d428d548c8d28513489e9254b6985ec1c9f614",
+        "skills": {
+          "adaption-dataset": "0adbef303606673edd56bb5f726cdf4a182fdecdd5eacc385e1d0fb5f4fa07dc",
+          "adaption-invent": "dc3d9515399c44dddfc145fa239913a64eccd280f41e43ceb11e722f53f9a3ba",
+          "adaption-training": "e6149cd4c704cd6612a9603b58f7c4c9789775fb606f3183fdb79805d3deff8a"
+        },
+        "guessed": {
+          "adaption.name": "ac2fc0420e04e418"
+        }
+      }
+    }
+  }
+}
