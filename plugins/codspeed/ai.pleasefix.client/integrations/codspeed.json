@@ -1,0 +1,16 @@
+{
+  "id": "codspeed",
+  "name": "CodSpeed",
+  "description": "Benchmark results, performance reports and flame graphs from your CodSpeed projects.",
+  "group": "developer_tools",
+  "url": "https://mcp.codspeed.io/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

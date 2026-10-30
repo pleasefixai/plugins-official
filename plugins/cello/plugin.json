@@ -1,0 +1,31 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "cello",
+  "version": "1.0.0",
+  "description": "Referral and partner programmes, referrals and rewards from your Cello account.",
+  "author": {
+    "name": "Cello"
+  },
+  "homepage": "https://cello.so/",
+  "keywords": [
+    "cello",
+    "referrals",
+    "mcp",
+    "partners",
+    "affiliates",
+    "growth"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/cello.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "cello",
+        "commit": "cf7ec7589dd0f5a03b0897c0d638f35182cb6794",
+        "skills": {}
+      }
+    }
+  }
+}

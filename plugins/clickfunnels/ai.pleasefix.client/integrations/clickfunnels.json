@@ -1,0 +1,16 @@
+{
+  "id": "clickfunnels",
+  "name": "ClickFunnels",
+  "description": "Funnels, pages, contacts, orders and emails from your ClickFunnels workspace.",
+  "group": "marketing",
+  "url": "https://agents.myclickfunnels.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "box",
+  "name": "Box",
+  "description": "Files, folders, hubs and Box AI answers from your Box account.",
+  "group": "storage",
+  "url": "https://mcp.box.com",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "beehiiv",
+  "name": "beehiiv",
+  "description": "Newsletter posts, subscribers, segments and automations from your beehiiv publication.",
+  "group": "marketing",
+  "url": "https://mcp.beehiiv.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

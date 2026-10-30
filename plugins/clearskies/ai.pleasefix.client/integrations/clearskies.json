@@ -1,0 +1,16 @@
+{
+  "id": "clearskies",
+  "name": "Clearskies",
+  "description": "CRM records, meetings, call transcripts and email connected to your Clearskies workspace.",
+  "group": "crm",
+  "url": "https://mcp.clearskies.cc/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

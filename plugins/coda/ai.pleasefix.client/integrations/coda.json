@@ -1,0 +1,16 @@
+{
+  "id": "coda",
+  "name": "Coda",
+  "description": "Docs, pages and tables from your Coda workspace.",
+  "group": "projects_time",
+  "url": "https://docs.superhuman.com/apis/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

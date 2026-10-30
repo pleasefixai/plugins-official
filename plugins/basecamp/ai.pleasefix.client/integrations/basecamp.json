@@ -1,0 +1,16 @@
+{
+  "id": "basecamp",
+  "name": "Basecamp",
+  "description": "Projects, to-dos, cards, messages, docs and schedules from your Basecamp account.",
+  "group": "projects_time",
+  "url": "https://mcp.basecamp.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

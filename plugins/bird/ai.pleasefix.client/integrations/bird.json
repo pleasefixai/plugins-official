@@ -1,0 +1,16 @@
+{
+  "id": "bird",
+  "name": "Bird",
+  "description": "Email, SMS and WhatsApp messaging, contacts and channels from your Bird workspace.",
+  "group": "communication",
+  "url": "https://mcp.bird.com",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

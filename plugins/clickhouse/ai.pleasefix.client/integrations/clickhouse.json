@@ -1,0 +1,16 @@
+{
+  "id": "clickhouse",
+  "name": "ClickHouse",
+  "description": "Databases, tables and SQL queries in your ClickHouse Cloud services.",
+  "group": "developer_tools",
+  "url": "https://mcp.clickhouse.cloud/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

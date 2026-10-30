@@ -1,0 +1,8 @@
+{
+  "id": "aws_agents",
+  "name": "AI Agents on AWS",
+  "description": "AWS documentation and regional availability, to build and run AI agents on AWS.",
+  "group": "developer_tools",
+  "url": "https://knowledge-mcp.global.api.aws",
+  "auth": null
+}

@@ -1,0 +1,16 @@
+{
+  "id": "athenahq",
+  "name": "AthenaHQ",
+  "description": "How AI assistants mention, cite and rank your brand and its competitors, from AthenaHQ.",
+  "group": "marketing",
+  "url": "https://api.athenahq.ai/api/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

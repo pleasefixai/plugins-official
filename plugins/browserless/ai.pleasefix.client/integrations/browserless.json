@@ -1,0 +1,16 @@
+{
+  "id": "browserless",
+  "name": "Browserless",
+  "description": "Headless browsers in the Browserless cloud, to scrape, crawl and search the web.",
+  "group": "developer_tools",
+  "url": "https://mcp.browserless.io/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

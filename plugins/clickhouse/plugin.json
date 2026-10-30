@@ -1,0 +1,33 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "clickhouse",
+  "version": "1.0.0",
+  "description": "Databases, tables and SQL queries in your ClickHouse Cloud services.",
+  "author": {
+    "name": "ClickHouse"
+  },
+  "homepage": "https://github.com/ClickHouse/clickhouse-claude-code-plugin",
+  "license": "Apache-2.0",
+  "keywords": [
+    "database",
+    "clickhouse",
+    "skills",
+    "mcp",
+    "analytics"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "clickhouse",
+        "commit": "652664c8924c5a9454d9a7a5f6191944b4adfb11",
+        "skills": {
+          "clickhouse-best-practices": "ec367e05e434c86df872cad00f8e693ca4defbf05daf0d3a31277f9b3b136ade",
+          "setup": "114831de2509a2f494b9c6c915dfe14974e1503189324a19d912e46b9eb24569"
+        }
+      }
+    }
+  }
+}

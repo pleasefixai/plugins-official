@@ -1,0 +1,16 @@
+{
+  "id": "amplitude",
+  "name": "Amplitude",
+  "description": "Charts, dashboards, experiments and user behaviour from your Amplitude projects.",
+  "group": "product_analytics",
+  "url": "https://mcp.amplitude.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

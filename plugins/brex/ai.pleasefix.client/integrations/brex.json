@@ -1,0 +1,16 @@
+{
+  "id": "brex",
+  "name": "Brex",
+  "description": "Expenses, receipts, bills, cards and travel from your Brex account.",
+  "group": "finance_ops",
+  "url": "https://api.brex.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "bulkpublish",
+  "name": "BulkPublish",
+  "description": "Social media posts, schedules, channels and analytics on 15 networks, from BulkPublish.",
+  "group": "marketing",
+  "url": "https://mcp.bulkpublish.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

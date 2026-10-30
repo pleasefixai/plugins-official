@@ -1,0 +1,27 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "artie",
+  "version": "1.0.0",
+  "description": "Data pipelines, connectors and replication status from your Artie account.",
+  "author": {
+    "name": "Artie"
+  },
+  "homepage": "https://artie.com",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/artie.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "artie",
+        "commit": "44b01e9c4958200e2930c7ed0a327305d39d1d3b",
+        "skills": {
+          "connector-compatibility": "249fe1b2890afedceb60d27e6062c94d3d319e4c1a8db76eb767c200eafdf012",
+          "monitoring": "53ec7d22bbed8d99ae1435463e851224d279574e27ffd47f68d0b3ac77e485af",
+          "pipeline-setup": "6518412249fd76ef3e5f5092c6f12ab4bfdee4439a7366b677a831ba8d95f9d9"
+        }
+      }
+    }
+  }
+}

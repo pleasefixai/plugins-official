@@ -1,0 +1,41 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "atlassian",
+  "version": "1.0.0",
+  "description": "Jira issues and Confluence pages from your Atlassian sites.",
+  "author": {
+    "name": "Atlassian"
+  },
+  "homepage": "https://github.com/atlassian/atlassian-mcp-server",
+  "license": "Apache-2.0",
+  "keywords": [
+    "atlassian",
+    "mcp",
+    "rovo",
+    "jira",
+    "confluence",
+    "skills",
+    "jira-service-management",
+    "bitbucket",
+    "compass"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "atlassian",
+        "commit": "b74220d41142fae52b4f680c805b2ab81050991a",
+        "skills": {
+          "capture-tasks-from-meeting-notes": "610642f7ea0b12d1bd830271b14c93c6a2b1239d71968ba7beedb78267dc8978",
+          "generate-status-report": "f889540832d6b659667b5420d50c8becf89c5757d0ff32a9cd544bd421e36a46",
+          "jira-sprint-dashboard": "8757fb6610a81b152021b3bc5e3bf8b0b9bda5964bbce8ecfe3f00af37ce8386",
+          "search-company-knowledge": "216aaf8d2c2822614fcefe06218088e23b55feb6e5fbd8cdfecb5ddb2e5453c8",
+          "spec-to-backlog": "61d263ff2eddb16ca50ce00745a1290cf989e231798f933885cff9b75a623036",
+          "triage-issue": "25fdf8451ea7470c7842d0e47e94a7e04a70a0ab8ee454ffd9e078b1aab233ef"
+        }
+      }
+    }
+  }
+}

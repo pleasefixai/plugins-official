@@ -1,0 +1,16 @@
+{
+  "id": "co_invest",
+  "name": "Liquid Co-Invest",
+  "description": "Market research, your Liquid portfolio and the trades you authorise in stocks and crypto.",
+  "group": "market_data",
+  "url": "https://coinvest-computer.liquid.trade/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

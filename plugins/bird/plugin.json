@@ -1,0 +1,41 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "bird",
+  "version": "1.0.0",
+  "description": "Email, SMS and WhatsApp messaging, contacts and channels from your Bird workspace.",
+  "author": {
+    "name": "Bird"
+  },
+  "homepage": "https://bird.com",
+  "license": "MIT",
+  "keywords": [
+    "cursor",
+    "bird",
+    "api",
+    "cli",
+    "agent",
+    "messaging",
+    "email",
+    "sms",
+    "whatsapp",
+    "verify",
+    "realtime",
+    "webhooks"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/bird.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "bird",
+        "commit": "e692728c6cdc3834124b09e2e9610c164e510509",
+        "skills": {
+          "bird-cli": "ba0fbc2a2004ca59d3a2de2cd5c6477de3728510672a924fae21b592184b4f47",
+          "email-audit": "1d39610188b19afc9b6dc947d8fcecb8c96e7dd5d0247a8eb2c7e4f66dad70f1"
+        }
+      }
+    }
+  }
+}

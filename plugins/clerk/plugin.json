@@ -1,0 +1,67 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "clerk",
+  "version": "1.0.0",
+  "description": "Applications, users, domains and instance settings from your Clerk workspace.",
+  "author": {
+    "name": "Clerk"
+  },
+  "homepage": "https://clerk.com/",
+  "license": "MIT",
+  "keywords": [
+    "clerk",
+    "auth",
+    "authentication",
+    "nextjs",
+    "react",
+    "vue",
+    "nuxt",
+    "astro",
+    "expo",
+    "android",
+    "ios",
+    "organizations",
+    "billing",
+    "webhooks",
+    "b2b",
+    "saas",
+    "rbac",
+    "middleware",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "clerk",
+        "commit": "8a9f0fb7eef06bd3ce36e8f23d0e2096384386d7",
+        "archive": "https://github.com/clerk/cursor-plugin/releases/download/v0.2.0/clerk-cursor-plugin.tar.gz",
+        "sha256": "972e4989d474d0eb49c09cd4f33e47bb6fef915e0d9b00fc726e21db2fe7ff2e",
+        "skills": {
+          "clerk": "a7375173aa22dab7a7ef120a8c95dc4c63476254825772701589e26d71102764",
+          "clerk-android": "ac4b151eec353df38abf1e08427e0c51d182c095fe86f12f8717062279daa5c4",
+          "clerk-astro-patterns": "9a3c808fff40b2cd08c4e0ab1e81691e8a10a88ed9ce39c383259e0845eb485c",
+          "clerk-backend-api": "e991f391b52dbb175c4c0edf9b409fc11e2b13f92929a35af4bc661778e85174",
+          "clerk-billing": "8578aedda9fc1564020755be6693418e585bc5f2866ab4a0c8e65c70db68e41f",
+          "clerk-chrome-extension-patterns": "7c63a233dd02ba578125803d86213386f67840e7ec738cb0b0eadc551cba1bca",
+          "clerk-custom-ui": "2278db8d76535cd5bf298d9f313cc909f22b04f9971bdf319204a92c0009f218",
+          "clerk-expo": "42106037ac9155497f0a97bab5e4d49553bbddd3c1fdd288282c7a6a2f15d279",
+          "clerk-expo-patterns": "18a498d6d9cea31c221c8abd1a5f7c592ed203503320f08861cf3ff66298072c",
+          "clerk-nextjs-patterns": "2199c8ecef031f762f0dd9ee63f3bece2c2a60c87750be5917064c3c330ca64f",
+          "clerk-nuxt-patterns": "2ef6c7ae51cd9e1ccb3ea843fe51dfcd7a1aa67c18ad9b549550f34dbff3a3fa",
+          "clerk-orgs": "cc30122cd4acc5e394f000e348e40b7c6507030d630a1e443f3b26499158656c",
+          "clerk-react-patterns": "a053613281f16ede05779e527d01146fecea027cacf6a40805204671e91d9a22",
+          "clerk-react-router-patterns": "95653ab567267b5dcc119484aca914877619de3ef9c5ea68c2a1461be76c9476",
+          "clerk-setup": "38d530b59fd7374c016728511ccd24423795166ace5429b574a2ba53aee9b8c4",
+          "clerk-swift": "46e613304f9b9c3618a9f54701b2fe0c8aeb16b727508cd63300afc465443c27",
+          "clerk-tanstack-patterns": "c9049456ecd87360362db579fb6217a82c923469cc56534d678f6f4f3483acda",
+          "clerk-testing": "ebf7094193d21a3c075f5c2cb5d7d27836259076b47d10e97908db99088680ac",
+          "clerk-vue-patterns": "8f2d6f3e4158fbb181ae832e902609c421a4732f09d2316cac72fea6d1cd2179",
+          "clerk-webhooks": "46f3a727941d3664b3915c1eff08a57db02af7f4d1f8b3c2800538573cd7c4d0"
+        }
+      }
+    }
+  }
+}

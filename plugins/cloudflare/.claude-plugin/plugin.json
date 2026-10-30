@@ -1,0 +1,5 @@
+{
+  "name": "cloudflare",
+  "version": "1.0.0",
+  "description": "Workers, storage, DNS and the other resources of your Cloudflare account."
+}

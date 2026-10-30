@@ -1,0 +1,16 @@
+{
+  "id": "cello",
+  "name": "Cello",
+  "description": "Referral and partner programmes, referrals and rewards from your Cello account.",
+  "group": "marketing",
+  "url": "https://mcp.cello.so/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

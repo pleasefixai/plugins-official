@@ -1,0 +1,16 @@
+{
+  "id": "cloudinary_analysis",
+  "name": "Cloudinary (analysis)",
+  "description": "AI analysis of your Cloudinary images and videos, such as tags and captions.",
+  "group": "design",
+  "url": "https://analysis.mcp.cloudinary.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

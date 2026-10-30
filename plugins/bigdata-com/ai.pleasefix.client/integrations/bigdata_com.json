@@ -1,0 +1,16 @@
+{
+  "id": "bigdata_com",
+  "name": "Bigdata.com",
+  "description": "Financial news, filings, transcripts and company research from Bigdata.com.",
+  "group": "market_data",
+  "url": "https://mcp.bigdata.com",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

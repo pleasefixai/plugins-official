@@ -1,0 +1,16 @@
+{
+  "id": "antom_integration",
+  "name": "Antom",
+  "description": "Payments, refunds, reports and subscriptions from your Antom merchant account.",
+  "group": "finance_ops",
+  "url": "https://mcp.antom.com",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

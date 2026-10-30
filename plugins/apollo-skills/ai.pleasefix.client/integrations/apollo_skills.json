@@ -1,0 +1,16 @@
+{
+  "id": "apollo_skills",
+  "name": "Apollo GraphQL",
+  "description": "Apollo GraphQL documentation and the Apollo Connectors specification.",
+  "group": "developer_tools",
+  "url": "https://mcp.apollographql.com",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

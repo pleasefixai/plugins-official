@@ -1,0 +1,5 @@
+{
+  "name": "aws-agents",
+  "version": "1.0.0",
+  "description": "AWS documentation and regional availability, to build and run AI agents on AWS."
+}

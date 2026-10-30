@@ -1,0 +1,35 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "blackbird-concierge",
+  "version": "1.0.0",
+  "description": "Restaurant search and reservations on OpenTable, Resy and SevenRooms, through Blackbird.",
+  "author": {
+    "name": "Blackbird"
+  },
+  "homepage": "https://www.blackbird.xyz/",
+  "license": "MIT",
+  "keywords": [
+    "blackbird",
+    "restaurants",
+    "reservations",
+    "opentable",
+    "resy",
+    "sevenrooms",
+    "mcp",
+    "flynet"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "blackbird-concierge",
+        "commit": "3f47bd1e33addeff053843ea925729c85efbe2df",
+        "skills": {
+          "blackbird-concierge": "326c6ceb279735bb7a401c12f466ba16079d85613ed0ac3721c4ab443e07c5e3"
+        }
+      }
+    }
+  }
+}

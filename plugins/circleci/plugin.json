@@ -1,0 +1,33 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "circleci",
+  "version": "1.0.0",
+  "description": "Pipelines, workflows, jobs and test results from your CircleCI organisation.",
+  "author": {
+    "name": "CircleCI"
+  },
+  "homepage": "https://circleci.com/",
+  "keywords": [
+    "circleci",
+    "mcp",
+    "ci/cd",
+    "continuous integration",
+    "build failures",
+    "pipelines",
+    "flaky tests",
+    "devops"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/circleci.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "circleci",
+        "commit": "51411dbc62f6e07509846d5b08c0659b1471853a",
+        "skills": {}
+      }
+    }
+  }
+}

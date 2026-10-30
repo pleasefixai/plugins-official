@@ -1,0 +1,78 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "amplitude",
+  "version": "1.0.0",
+  "description": "Charts, dashboards, experiments and user behaviour from your Amplitude projects.",
+  "author": {
+    "name": "Amplitude"
+  },
+  "homepage": "https://github.com/amplitude/mcp-marketplace",
+  "license": "MIT",
+  "keywords": [
+    "analytics",
+    "amplitude",
+    "charts",
+    "dashboards",
+    "feedback",
+    "analysis",
+    "instrumentation",
+    "tracking",
+    "account-health",
+    "customer-success",
+    "daily-brief",
+    "weekly-brief",
+    "monitor-experiments",
+    "discover-opportunities"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/amplitude.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "amplitude",
+        "commit": "c4bcb5feff54cf3332290ee0071a2def2b1f149d",
+        "skills": {
+          "add-analytics-instrumentation": "95db8d379702495b6dec3e055d632c4f692954a67010b4499e372ab38cab6419",
+          "analyze-account-health": "c47331e8890f3da67a1ef2e8ec97f42e3373225686f3e8ec01bb9fa613975fe1",
+          "analyze-ai-topics": "bd678bc91d070c69841984fdaac7a0c5fdd3b2136ea9b070dad6b1a5ae0904de",
+          "analyze-chart": "471a6eb9cb19a1a5c0f9d937f19d27048b830fd2f78e9b14da3c43e082f36dfa",
+          "analyze-dashboard": "752d9167ad2f0fcabf9cd4a03938bc30afd65cd25eab63d2fa293b23c834073f",
+          "analyze-experiment": "75681e7a9e77afaa2f7d21693e1743c105b94d6b010f17edb8b4e749282a493b",
+          "analyze-experiment-consolidated": "e1de1fd52c04c1d7f3d02bb1843a2bcd91e9ae84b83c7aa159d366cbbc085333",
+          "analyze-feedback": "7b09bf6a59080cbfeda784ceecaeead823c2023dab4a43e9e87d878839f3b579",
+          "build-charts-with-typed-params": "1eba8a3cdce28d5a6e54155c902d3801d0da5656071554d32770242d80aba47a",
+          "chart-link-analysis": "e7e7adea6e0c9ab804968fbd5a232cb504b3d44e3e170b6903923798dc24020e",
+          "compare-user-journeys": "b02566c14ec5e4048e0d3ce0bed3ede54eeacb593c3b90be2baf34bb45f9a996",
+          "create-chart": "999b4d7c1eba339907bdb67fbc2c2f9b045e806a9c41c3768378b8f16437a347",
+          "create-dashboard": "a8cebe7516a37b420ea1f27777c73ca16a023192f8cb87e3e46786891e5f50a0",
+          "daily-brief": "10a25ba9983bd9cfe28655543f324d6fae2efd02e5ee87ef56b2d167a8c85379",
+          "debug-replay": "1b39dbdbf53e6dc514a3831d9ebf5629621aaec31cb147e306a58bf2037c60c0",
+          "diagnose-errors": "e7bc01a84aeca4d429d00bf8cdce21a6494ca22bff611abc65b431302347e981",
+          "diff-intake": "6818c9dc20e052180a788d0f116e8a2895664f20d3087dcd15580ba712fe2859",
+          "discover-analytics-patterns": "45b8234ebed4ff2306f134bbf293d6d2f149d40e65840de5c8825eb7528f7382",
+          "discover-event-surfaces": "16fb10487536067ca3387605781c5c019b51037c493aa2f6de81f524bf85926a",
+          "discover-opportunities": "93c4a12cdaa0842e2936630139f56a9528da0b52643bbb3e2968912548d6db86",
+          "instrument-events": "9f98fd824c95e473a75c2c7cd36985fa07370ae8a85e84579803ba5513441bc5",
+          "investigate-ai-session": "e3be86732ac2fb1e1b8cfebce924241ba82bf5bc794778ed43f2fe01f1531a50",
+          "live-data-forensics": "6f19d00f866a77ee54e9f2715a2210866be532beb3fd64061d509821378a42a3",
+          "manage-amp-context": "137a808303d424662a094b5ace0e70120127eaed4b26cfb9356955f957325288",
+          "monitor-ai-quality": "c6952703f4036a1d3941e61cffe2aa322c19e58e5d366f74570568001ad95302",
+          "monitor-experiments": "5508618366f76899221479670e81c88fc6cd032e824a649aeebbf6731a8e5b4c",
+          "monitor-experiments-consolidated": "28ec980a8a3532a74a0fa3f984caa283935cf03e266a4b0194ea9195059651f0",
+          "monitor-reliability": "0a448ce297b2f5d0c7a804a5f2f53ab3ede79353af1b9ab20b301e6463826d40",
+          "replay-ux-audit": "b7c87ac0429298a3ff7b5040f1952ae34033a0a56ce63dd6e360cc6ec1d50c4f",
+          "review-agent-insights": "7922027afb6ac68bfaea8c0b2a1ee6c0678126d00b622688e264fcd0278a4610",
+          "scheduled-report-refresh": "f607ac26b92aa10743adb19c8703d977f12f0f97ac2613e91f2d4c99c83d99a8",
+          "taxonomy": "f8726973eacc9e9337f7f5de400d685c39f7b85212f689977f1c78c7a5dda50c",
+          "tracking-plan-audit": "72f7abd36e3b002281434010b1060e46d3bd7e0836b820b707e67f7c8ac612d8",
+          "use-amp-guides-surveys": "3b87db1a3b0e91e14e6abd0c9c8998fa7e2dfad944d3325e628306076db938e3",
+          "user-cohort-forensics": "fc2bc4f013db3ca94a0979417912a9cb05b08d7513355ef19129538b39e9d57f",
+          "weekly-brief": "208a31a000811b8602360970827d4ff41ff7e6b0a4caa300d6db5a5c8c1da725",
+          "what-would-lenny-do": "39ed0c4f759a377d67c6cf2d055661f68420c22fdb28fd6d93f0b480b761a78b"
+        }
+      }
+    }
+  }
+}

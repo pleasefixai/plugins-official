@@ -1,0 +1,16 @@
+{
+  "id": "chainguard_cg_versions",
+  "name": "Chainguard (cg-versions)",
+  "description": "Version history and changelogs of Chainguard images.",
+  "group": "developer_tools",
+  "url": "https://versions.cgr.dev/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

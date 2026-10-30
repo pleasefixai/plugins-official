@@ -1,0 +1,5 @@
+{
+  "name": "cloudinary",
+  "version": "1.0.0",
+  "description": "Images, videos and their metadata from your Cloudinary account."
+}

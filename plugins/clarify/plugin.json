@@ -1,0 +1,33 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "clarify",
+  "version": "1.0.0",
+  "description": "Records, lists, campaigns and meetings from your Clarify CRM.",
+  "author": {
+    "name": "Clarify"
+  },
+  "homepage": "https://clarify.ai",
+  "license": "MIT",
+  "keywords": [
+    "clarify",
+    "crm",
+    "mcp",
+    "sales",
+    "records",
+    "lists",
+    "campaigns"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/clarify.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "clarify",
+        "commit": "d1b63c07ae78ed449f7125e78d5098cd4bc550d6",
+        "skills": {}
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "apollo",
+  "version": "1.0.0",
+  "description": "Prospects, contacts, accounts and outreach sequences from your Apollo.io account.",
+  "author": {
+    "name": "Apollo.io"
+  },
+  "homepage": "https://www.apollo.io/",
+  "license": "MIT",
+  "keywords": [
+    "apollo",
+    "sales",
+    "prospecting",
+    "icp",
+    "enrichment",
+    "sequences",
+    "analytics",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/apollo.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "apollo",
+        "commit": "bd0513c961f02105492fcff0d7d29c9cccf1ed23",
+        "skills": {
+          "gtm-strategist": "2a05e1479a5717f2ce6d1875beeba151871ae556d09c660217da4c3edce9d4f7"
+        }
+      }
+    }
+  }
+}

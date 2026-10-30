@@ -1,0 +1,16 @@
+{
+  "id": "atlan",
+  "name": "Atlan",
+  "description": "Data assets, lineage, glossary terms and owners from your Atlan data catalog.",
+  "group": "knowledge",
+  "url": "https://mcp.atlan.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

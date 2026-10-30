@@ -1,0 +1,16 @@
+{
+  "id": "ando",
+  "name": "Ando",
+  "description": "Conversations, messages, documents, calls and tasks from your Ando workspace.",
+  "group": "communication",
+  "url": "https://mcp.ando.so/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

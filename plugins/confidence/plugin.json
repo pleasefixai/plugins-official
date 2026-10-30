@@ -1,0 +1,31 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "confidence",
+  "version": "1.0.0",
+  "description": "Confidence documentation and SDK guides for feature flags and experiments.",
+  "author": {
+    "name": "Spotify Confidence"
+  },
+  "homepage": "https://confidence.spotify.com",
+  "license": "Apache-2.0",
+  "keywords": [
+    "feature-flags",
+    "experiments",
+    "a/b-testing",
+    "migration",
+    "openfeature"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/confidence.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "confidence",
+        "commit": "f416826fde819978ab90f1d7ae27513667aa5d0f",
+        "skills": {}
+      }
+    }
+  }
+}

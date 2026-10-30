@@ -81,9 +81,11 @@ requestable=$(
   done
 )
 
+# The plugins and the requestable entries go in as files, not as arguments: one
+# argument holds at most 128 KiB on Linux, and the catalog outgrew that.
 jq -n --slurpfile facts "$facts" --slurpfile previous "$previous" \
-  --argjson plugins "$(jq -s . <<<"$plugins")" \
-  --argjson requestable "$(jq -s . <<<"$requestable")" '
+  --slurpfile plugins <(printf '%s' "$plugins") \
+  --slurpfile requestable <(printf '%s' "$requestable") '
   ($facts[0]) as $facts
   | ($previous[0].plugins | map({key: .name, value: .versions}) | from_entries) as $older
   | {

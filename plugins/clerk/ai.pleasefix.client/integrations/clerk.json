@@ -1,0 +1,16 @@
+{
+  "id": "clerk",
+  "name": "Clerk",
+  "description": "Applications, users, domains and instance settings from your Clerk workspace.",
+  "group": "developer_tools",
+  "url": "https://mcp.clerk.dev/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

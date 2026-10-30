@@ -1,0 +1,16 @@
+{
+  "id": "chatprd",
+  "name": "ChatPRD",
+  "description": "Product requirement documents, templates and projects from your ChatPRD account.",
+  "group": "projects_time",
+  "url": "https://app.chatprd.ai/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

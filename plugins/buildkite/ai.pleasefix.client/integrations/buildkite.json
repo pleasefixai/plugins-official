@@ -1,0 +1,16 @@
+{
+  "id": "buildkite",
+  "name": "Buildkite",
+  "description": "Pipelines, builds, jobs and test results from your Buildkite organisation.",
+  "group": "developer_tools",
+  "url": "https://mcp.buildkite.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

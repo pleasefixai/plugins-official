@@ -1,0 +1,52 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "catalyst-by-zoho",
+  "version": "1.0.0",
+  "description": "Tables, data, cache and storage buckets of your Catalyst by Zoho projects.",
+  "author": {
+    "name": "Catalyst by Zoho"
+  },
+  "homepage": "https://catalyst.zoho.com/",
+  "license": "Apache-2.0",
+  "keywords": [
+    "catalyst",
+    "zoho",
+    "mcp",
+    "serverless",
+    "cloud",
+    "datastore",
+    "zcql",
+    "appsail",
+    "stratus",
+    "functions"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "catalyst-by-zoho",
+        "commit": "9670b79d72fe4923cc845ca0414d009ef3684ccb",
+        "skills": {
+          "catalyst-appsail": "b4bc016ea3b18954ebb60ed5f597d9d575a71215c492ae3d6ddba9b78de03fba",
+          "catalyst-authentication": "b7e67d86488354fc02a76c1f369fc4c50da71ac6e1587758bbcfe26b3d76892c",
+          "catalyst-basics": "f48757c185cec1db380387f875cf9c98e4d57142f492757391b21e1069708b64",
+          "catalyst-by-zoho": "64adf39ece53b1baacc04722ddc954ad3a0eff74a9a2eaea6db2fced9971401a",
+          "catalyst-cache": "7b47e9531237b92f970585fd198fe32f48ccc36b9374eb8190ece7a07447987e",
+          "catalyst-datastore": "72b4440e537e411a3f59190c91d95562a737c21b876dec0a3c1728b3d4ac9df7",
+          "catalyst-functions": "96317056be77d640b223c26614cddd052cee720b5580eb1dcf602e234032f71b",
+          "catalyst-nosql": "1a2ef479631808a5407531393380d3972bf4a2c3b3f2df90a1084bcb2855c9d4",
+          "catalyst-pricing": "c931a7c8643d9dfa5f3279b30caf1886c9f8a964075d4819ce409b5f99171ca0",
+          "catalyst-sdk": "661ebec3056d338f60e9557d73eeff151499e956b007624b937e92d566cbb346",
+          "catalyst-signals": "5ee1fabae121b3c65048bb8b3c01fed3f84dc84dc9861122cce3ce3b70f0803c",
+          "catalyst-slate": "4fa824d08eeb4baf6bef6223a75e0008265e539ead194aeaf57b0dac33b7b32a",
+          "catalyst-smartbrowz": "eeeb27e3a944106953c2af7c0a98ea850654d6294c4119e69c2d2e872f37b3be",
+          "catalyst-stratus": "7eaa9ab807fdb2c6316081f2561eb59b181fbb8db72eebe793c37e90699fc288",
+          "catalyst-zia": "7010dc7a97b06932d4e5457317e883ac71ca6463d1a902b19c7b03afe12b15f2",
+          "catalyst-zoho-mcp": "64f91ce2806856171b584a38e986ebdbfeebf824ca747815fce9a6bee79648e7"
+        }
+      }
+    }
+  }
+}

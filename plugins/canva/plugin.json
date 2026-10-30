@@ -1,0 +1,41 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "canva",
+  "version": "1.0.0",
+  "description": "Designs, brand kits and templates from your Canva account.",
+  "author": {
+    "name": "Canva"
+  },
+  "homepage": "https://www.canva.com",
+  "keywords": [
+    "canva",
+    "design",
+    "presentation",
+    "social media",
+    "brand kit",
+    "ai generation",
+    "flyer",
+    "poster",
+    "graphic design",
+    "marketing"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "canva",
+        "commit": "bfcbc681560f6031e9949ea52f81e20beb87e39e",
+        "skills": {
+          "brand-check": "9582d9349cfc6bcb29cce086a4034e4c4bce7033902e3c2e0f5e149403b4f841",
+          "bulk-create": "ee0d4c5d1db82a0697efb813dbbd62f5b8be8b2ddde749bf571d413eea7c082b",
+          "edit-design": "0183256731389e3b6a228884c71191d74f35052fd067c69df770d3a2a0945d5e",
+          "get-design-feedback": "4e7f5b9a94a76c130709a5bff1f70f599efac59d348763ef0286f1e792409b7e",
+          "implement-feedback": "b76a24db5f8f03bc01f1f5d1b3c66bb9e11701f855ddbace86a6f822cb3cbbd5",
+          "resize-for-social-media": "a59eb5b28db7f57151c99603e1ec45d934eb6b7dcecfecb6d70c89ea862aa18f"
+        }
+      }
+    }
+  }
+}

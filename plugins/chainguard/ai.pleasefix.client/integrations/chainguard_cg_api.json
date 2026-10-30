@@ -1,0 +1,16 @@
+{
+  "id": "chainguard_cg_api",
+  "name": "Chainguard (cg-api)",
+  "description": "Policies, security advisories and organisation data from your Chainguard console.",
+  "group": "developer_tools",
+  "url": "https://console-api.enforce.dev/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "apollo-skills",
+  "version": "1.0.0",
+  "description": "Apollo GraphQL documentation and the Apollo Connectors specification.",
+  "author": {
+    "name": "Apollo GraphQL"
+  },
+  "homepage": "https://www.apollographql.com",
+  "license": "MIT",
+  "keywords": [
+    "graphql",
+    "apollo",
+    "apollo-client",
+    "apollo-connectors",
+    "apollo-federation",
+    "apollo-ios",
+    "apollo-kotlin",
+    "apollo-mcp-server",
+    "apollo-router",
+    "apollo-server",
+    "graphql-operations",
+    "graphql-schema",
+    "graphql-lsp",
+    "rover",
+    "rust-best-practices"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/apollo_skills.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "apollo-skills",
+        "commit": "c288eb80629dd2309eed81f23d693f66a452d043",
+        "skills": {
+          "apollo-client": "860e174da3a43178f722127fecf04d20d5c8a5df04d5763d03e821c9e3a11472",
+          "apollo-connectors": "c62628ae283b0d7c7dbf2eff6480949a9bc2c6f44ce49dd89e6ec5b26e499281",
+          "apollo-federation": "4c2112f7a09420347cc2ad0f06f6f53b63fdcd81810b68d5487f1d9fec1cf72d",
+          "apollo-ios": "56f757ed2310dad048bc8f7d28e37abde71f5f371a6e741e6715bad3a561a7bb",
+          "apollo-kotlin": "ef707c4fee434d359759326c0174c4b2929c3e2ca3817301e5e001a1b79a36ae",
+          "apollo-mcp-server": "8ecd0850856f234aa64795abf27563cfbd467e7ec7093c2f60e970569bd271f9",
+          "apollo-router": "dacace4a353b81b4bf9e01fdce044ab2c30cbf43e0b493541978be1b24937bcf",
+          "apollo-router-plugin-creator": "c985ecef4484ca450d40f52476bbab90571b92dfa49fdf6a36a1565067354258",
+          "apollo-server": "99fd761df170f4f7569953feabc8cc2bd0d7df82f3f4df687311afc7c289d188",
+          "graphql-operations": "88f2934270669ff24ce68f99ec3ef077d6595391c3979d10eba4d79ef62d57ff",
+          "graphql-schema": "ae44e288b12f96975a2879680dd7c2534637bffe1ade9e4a95ce009420a2329b",
+          "rover": "1106d49d28f9abef4223266d5412e1a113c54e84e02b8e66264db6ff7c744b85",
+          "rust-best-practices": "b5b059b980e1bfbc6e8c23041b2503da303a718b6d9a254b170d65bd7549ddbf",
+          "skill-creator": "8082b7e6bf21e806e88425673fd29eb84c13ee1827d5bd00cc9bc76a72dc0020"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "bitrise",
+  "name": "Bitrise",
+  "description": "Mobile app builds, workflows, tests and releases from your Bitrise workspace.",
+  "group": "developer_tools",
+  "url": "https://mcp.bitrise.io",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

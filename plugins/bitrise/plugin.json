@@ -1,0 +1,36 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "bitrise",
+  "version": "1.0.0",
+  "description": "Mobile app builds, workflows, tests and releases from your Bitrise workspace.",
+  "author": {
+    "name": "Bitrise"
+  },
+  "homepage": "https://bitrise.io",
+  "license": "MIT",
+  "keywords": [
+    "bitrise",
+    "ci",
+    "cd",
+    "mobile",
+    "ios",
+    "android",
+    "flutter",
+    "react-native",
+    "devops",
+    "release-management"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/bitrise.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "bitrise",
+        "commit": "de28ba4e73754dc1d37792e5a5cdaf7dbe2898a2",
+        "skills": {}
+      }
+    }
+  }
+}

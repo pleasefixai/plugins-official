@@ -1,0 +1,42 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "buildkite",
+  "version": "1.0.0",
+  "description": "Pipelines, builds, jobs and test results from your Buildkite organisation.",
+  "author": {
+    "name": "Buildkite"
+  },
+  "homepage": "https://buildkite.com",
+  "license": "MIT",
+  "keywords": [
+    "ci/cd",
+    "buildkite",
+    "buildkite pipelines",
+    "continuous integration",
+    "build automation",
+    "test-engine",
+    "secure-delivery",
+    "continuous delivery"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/buildkite.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "buildkite",
+        "commit": "d29b846ecbb64817642fd3bd62c3cf53c703423e",
+        "skills": {
+          "buildkite-agent-runtime": "5fbaf83b4c18f5650cab96ef5d9d767bf40d8245d9c51e1e87ac511c54a8090f",
+          "buildkite-api": "d48680d6ea5c3ad8ecbe98eac32d472c54716d8a9fe467e7ddfda85e841791bc",
+          "buildkite-cache": "11a3ca88c415dc01c19bfeebf30f43d4d9f8f2aff2a088762ff884738bb41b80",
+          "buildkite-cli": "1e6a7e250b1b154f9e4d2c8376cab38a6369d359c5fd45c38bfb444ad48788c7",
+          "buildkite-migration": "99634b016cdf86da6d0d941129eb95b29ea3996f66bbf3b0041dcf8dfa7501c7",
+          "buildkite-pipelines": "fe05640146884195f2c457e2f3f76daf7629458c3342c38f55e3577bbd5a0d98",
+          "buildkite-preflight": "f3363c218692066e8b4780719890dbb1c35e84b74306bf76f1141ecc330b8499"
+        }
+      }
+    }
+  }
+}

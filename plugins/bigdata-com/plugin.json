@@ -1,0 +1,49 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "bigdata-com",
+  "version": "1.0.0",
+  "description": "Financial news, filings, transcripts and company research from Bigdata.com.",
+  "author": {
+    "name": "RavenPack"
+  },
+  "homepage": "https://docs.bigdata.com",
+  "keywords": [
+    "Bigdata",
+    "finance",
+    "RavenPack",
+    "stocks",
+    "companies",
+    "sectors",
+    "economies",
+    "valuation",
+    "peers",
+    "investment memos",
+    "earnings",
+    "risk",
+    "catalysts",
+    "moats",
+    "governance",
+    "thematic research",
+    "sector research",
+    "cross-sector comparisons",
+    "regional comparisons",
+    "country analysis",
+    "macro analysis",
+    "G7 benchmarking",
+    "scenario analysis",
+    "company briefs"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/bigdata_com.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "bigdata-com",
+        "commit": "43777fbdb9298ea8f5cbc001d18144e95346df93",
+        "skills": {}
+      }
+    }
+  }
+}
