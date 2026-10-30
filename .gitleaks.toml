@@ -65,3 +65,31 @@ condition = "AND"
 paths = ['''^plugins/govtribe/skills/govtribe-pricing-data/references/''']
 regexTarget = "line"
 regexes = ['''credentialing time, malpractice/professional liability''']
+
+[[allowlists]]
+description = "Sample payloads in Port's integration examples: a SonarQube issue key and PagerDuty incident keys."
+condition = "AND"
+paths = ['''^plugins/port/skills/port-integrations/port-install-integration/references/examples/''']
+regexTarget = "secret"
+regexes = ['''^AZwuDv7ZacZtUu_jLZSO$''', '''^e20af41f10af47f89468db4e9ac0c618$''', '''^aa3ce5d67016411c98f10ec372c5b921$''', '''^3d137d075f94496e94f6185223cbeba6$''']
+
+[[allowlists]]
+description = "The public default token of QStash's local development server: base64 of {\"UserID\":\"defaultUser\",\"Password\":\"defaultPassword\"}."
+condition = "AND"
+paths = ['''^plugins/upstash/skills/''']
+regexTarget = "secret"
+regexes = ['''^eyJVc2VySUQiOiJkZWZhdWx0VXNlciIsIlBhc3N3b3JkIjoiZGVmYXVsdFBhc3N3b3JkIn0=$''']
+
+[[allowlists]]
+description = "The page id of the 'Secrets Manager' dashboard page in Wix's list of dashboard page ids."
+condition = "AND"
+paths = ['''^plugins/wix/skills/wix-app/references/dashboard-page/''']
+regexTarget = "secret"
+regexes = ['''^f94ac43e-52c4-4564-b1da-68df51b9e614$''']
+
+[[allowlists]]
+description = "The CLIENT_ID:CLIENT_SECRET placeholder of Zoom's OAuth curl examples."
+condition = "AND"
+paths = ['''^plugins/zoom/skills/''']
+regexTarget = "secret"
+regexes = ['''^"CLIENT_ID:CLIENT_SECRET"$''']
