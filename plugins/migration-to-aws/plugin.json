@@ -73,7 +73,6 @@
           "agent-advisor": "00c4745f38efb6076dfeb23f62e795e2abe41f471cd671eefee8d81a65e97ea9",
           "gcp-to-aws": "2b58c8dec04a9ae74451048c4f29649aef5d700fcd7b93d1a16266dc3f00deb7",
           "heroku-to-aws": "9172a4a5b9384acda21e3511a7c8cb0eb1b569795dd97ab383efaa1b886aa1f2",
-          "llm-to-bedrock": "fa854df1934c1babd7c62d5f6b6d5abfa63a17030892070bed428022e0cbc11a",
           "tf-best-practices": "acec89cd89d112462ca7d1a79a7e4220cd6b44610dae2813a1e166501a11cf94"
         }
       }
