@@ -1,0 +1,16 @@
+{
+  "id": "tiktok_for_business",
+  "name": "TikTok for Business",
+  "description": "Ad campaigns, ad groups, ads, audiences and reports in your TikTok Ads Manager.",
+  "group": "marketing",
+  "url": "https://business-api.tiktok.com/open_mcp/tt-ads-mcp-layer",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

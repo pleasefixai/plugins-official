@@ -1,0 +1,36 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "streamline-icons",
+  "version": "1.0.0",
+  "description": "Icons, illustrations and emojis from Streamline and open sets like Lucide and Heroicons.",
+  "author": {
+    "name": "Streamline Design"
+  },
+  "homepage": "https://home.streamlinehq.com",
+  "license": "Apache-2.0",
+  "keywords": [
+    "streamline",
+    "icons",
+    "illustrations",
+    "svg",
+    "png",
+    "design system",
+    "ui design",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/streamline_icons.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "streamline-icons",
+        "commit": "68f86f4d2b03dcdfe30f57428816354f6867d9b9",
+        "skills": {
+          "streamline-expert": "b79473df5300ab6268b9e0c694b053ac0e2fb0acf41bf994b95e4f7df331eb5f"
+        }
+      }
+    }
+  }
+}

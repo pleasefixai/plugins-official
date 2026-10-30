@@ -1,0 +1,16 @@
+{
+  "id": "senselab",
+  "name": "SenseLab",
+  "description": "Memories, shared rooms and decision traces that help your agents learn in SenseLab.",
+  "group": "knowledge",
+  "url": "https://mcp.sense-lab.ai/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

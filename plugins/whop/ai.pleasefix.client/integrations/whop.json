@@ -1,0 +1,16 @@
+{
+  "id": "whop",
+  "name": "Whop",
+  "description": "Products, memberships, payments and promo codes in your Whop business.",
+  "group": "finance_ops",
+  "url": "https://mcp.whop.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

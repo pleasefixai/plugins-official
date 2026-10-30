@@ -1,0 +1,16 @@
+{
+  "id": "quiverai",
+  "name": "QuiverAI",
+  "description": "SVG graphics generated, vectorized, animated and edited with QuiverAI.",
+  "group": "design",
+  "url": "https://app.quiver.ai/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

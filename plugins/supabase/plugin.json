@@ -1,0 +1,40 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "supabase",
+  "version": "1.0.0",
+  "description": "Projects, Postgres databases, auth, storage and edge functions in your Supabase account.",
+  "author": {
+    "name": "Supabase"
+  },
+  "homepage": "https://github.com/supabase-community/supabase-plugin",
+  "license": "MIT",
+  "keywords": [
+    "supabase",
+    "postgres",
+    "database",
+    "backend",
+    "mcp",
+    "auth",
+    "storage",
+    "realtime",
+    "edge-functions",
+    "migrations",
+    "rls"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/supabase.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "supabase",
+        "commit": "2c6d02d4565babe784103ee4d446a93ae9b24151",
+        "skills": {
+          "supabase": "31e2c840e1de8b2efb057a36dee3159bfc4b62d60f4d11f20d28a2ab68f3c74e",
+          "supabase-postgres-best-practices": "a714d433362542f2d52e8b7958d1691c49fa4f43c9645c9a647895fb3ca85f92"
+        }
+      }
+    }
+  }
+}

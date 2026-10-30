@@ -1,0 +1,16 @@
+{
+  "id": "vantage",
+  "name": "Vantage",
+  "description": "Cloud costs, cost reports, budgets and savings recommendations from Vantage.",
+  "group": "developer_tools",
+  "url": "https://mcp.vantage.sh/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

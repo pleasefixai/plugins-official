@@ -1,0 +1,22 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "qt-development-skills",
+  "version": "1.0.0",
+  "description": "Qt documentation and guides to write, review and document Qt C++ and QML code.",
+  "author": {
+    "name": "Qt Group"
+  },
+  "homepage": "https://www.qt.io/",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "qt-development-skills",
+        "commit": "a784c48445e34f126760f17ba0600a25f2d19968",
+        "skills": {}
+      }
+    }
+  }
+}

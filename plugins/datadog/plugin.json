@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "datadog",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Logs, metrics, traces, monitors and incidents from your Datadog account (US1 site).",
   "author": {
     "name": "Datadog"
@@ -16,7 +16,17 @@
         "marketplace": "codex",
         "plugin": "datadog",
         "commit": "0722921d5542fc593105c27bd52630babd8b8c2a",
-        "skills": {}
+        "skills": {},
+        "also": [
+          {
+            "marketplace": "claude",
+            "plugin": "datadog",
+            "commit": "195f570c002beab3d7bd342739034d0019aa4863",
+            "skills": {
+              "datadog-app": "d426cafca85c10cb4a8768e84827387c4decda63e8c50f901281a6ce55e69110"
+            }
+          }
+        ]
       }
     }
   }

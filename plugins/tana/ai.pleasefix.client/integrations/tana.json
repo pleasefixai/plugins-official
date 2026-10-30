@@ -1,0 +1,16 @@
+{
+  "id": "tana",
+  "name": "Tana",
+  "description": "Meetings, transcripts, nodes, tasks and calendar events from your Tana workspace.",
+  "group": "meetings",
+  "url": "https://home.tana.inc/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

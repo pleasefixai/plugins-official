@@ -1,0 +1,16 @@
+{
+  "id": "upwork",
+  "name": "Upwork",
+  "description": "Freelance talent, job posts, proposals and contracts in your Upwork account.",
+  "group": "other",
+  "url": "https://mcp.upwork.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

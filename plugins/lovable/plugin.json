@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "lovable",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Your Lovable apps, to build, change, deploy and manage them.",
   "author": {
     "name": "Lovable"
@@ -24,7 +24,20 @@
         "marketplace": "claude",
         "plugin": "lovable",
         "commit": "0336e6db8026b0f02cb89d1451cc48ea3f469791",
-        "skills": {}
+        "skills": {},
+        "also": [
+          {
+            "marketplace": "cursor",
+            "plugin": "lovable",
+            "commit": "ee83a76fdfd3cc057dd39e51caf726dfe69faf03",
+            "skills": {
+              "cloud-database": "8f30e3226c973c897baf9cae3a4bbad67ee29fe2d3accef607ddb283c1c363ad",
+              "deploy-project": "7156c1f6479f9e6070d161a8d563b849153e9970aa876d4997a8253f57a6f09f",
+              "iterate-with-agent": "8f69d8ddd3f08e0494dced98c79af5ae537f62d2926bcd012ebceeb0d75abb43",
+              "scaffold-project": "85fd3850a4354d20ea4dffd8026123c985f34611e224a0e7177435d950ecf064"
+            }
+          }
+        ]
       }
     }
   }

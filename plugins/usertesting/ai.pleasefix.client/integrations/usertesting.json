@@ -1,0 +1,16 @@
+{
+  "id": "usertesting",
+  "name": "UserTesting",
+  "description": "Tests, sessions and customer feedback from your UserTesting account.",
+  "group": "knowledge",
+  "url": "https://ai.usertesting.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

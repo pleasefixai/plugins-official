@@ -1,0 +1,8 @@
+{
+  "id": "qt_development_skills",
+  "name": "Qt Development Skills",
+  "description": "Qt documentation and guides to write, review and document Qt C++ and QML code.",
+  "group": "developer_tools",
+  "url": "https://qt-docs-mcp.qt.io/mcp",
+  "auth": null
+}

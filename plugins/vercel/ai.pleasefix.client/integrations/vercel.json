@@ -1,0 +1,16 @@
+{
+  "id": "vercel",
+  "name": "Vercel",
+  "description": "Projects, deployments, domains and logs on Vercel, with guides for Next.js and AI SDK.",
+  "group": "developer_tools",
+  "url": "https://mcp.vercel.com",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "vanta_aus",
+  "name": "Vanta (Australia)",
+  "description": "Tests, controls, documents and frameworks in your Vanta account hosted in Australia.",
+  "group": "developer_tools",
+  "url": "https://mcp.aus.vanta.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "restream",
+  "name": "Restream",
+  "description": "Live streams to social platforms, recordings and AI clips with Restream.",
+  "group": "marketing",
+  "url": "https://mcp.restream.io/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

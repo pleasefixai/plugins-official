@@ -1,0 +1,5 @@
+{
+  "name": "speko",
+  "version": "1.0.0",
+  "description": "Speech-to-text, text-to-speech and phone calls across many voice models, through Speko."
+}

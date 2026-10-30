@@ -1,0 +1,5 @@
+{
+  "name": "tuist",
+  "version": "1.0.0",
+  "description": "Builds, test runs, bundles and cache runs from your Tuist dashboard."
+}

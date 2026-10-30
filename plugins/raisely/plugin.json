@@ -1,0 +1,23 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "raisely",
+  "version": "1.0.0",
+  "description": "Campaigns, donations, supporters and fundraisers in your Raisely account.",
+  "author": {
+    "name": "Raisely"
+  },
+  "homepage": "https://www.raisely.com/",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/raisely.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "raisely",
+        "commit": "71e271c309a43b17d96c8de2f16d75b2f1f4f47e",
+        "skills": {}
+      }
+    }
+  }
+}

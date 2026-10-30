@@ -1,0 +1,45 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "shippo",
+  "version": "1.0.0",
+  "description": "Shipping rates, labels, tracking and address checks for 40+ carriers, through Shippo.",
+  "author": {
+    "name": "Shippo"
+  },
+  "homepage": "https://docs.goshippo.com",
+  "license": "MIT",
+  "keywords": [
+    "shipping",
+    "labels",
+    "tracking",
+    "rates",
+    "shippo",
+    "logistics",
+    "customs",
+    "batch",
+    "address-validation"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/shippo.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "shippo",
+        "commit": "cf8e96532f243883ff84f6d4035e72884b46d132",
+        "skills": {
+          "address-validation": "7c515786b7bbaedadb9aa0cce6bbcb12226b515dc4da51c836b3abe70612a3c1",
+          "batch-shipping": "9e3f5d6b9ef17cd217f9908a865c87a983ca622e93d2838ce1f008d064b8a412",
+          "label-purchase": "d612b648dcecfb5136bc38ae5c367b86212ae21d8b6e662f06dac21fe2cd1757",
+          "rate-shopping": "b39717c3e44c334cdbfd24bc8462bc66809bc240f18356e05b66685ed3cf0500",
+          "shipping-analysis": "4789559d74826ffbe91a5f027381971c7234cb3df650b878f1c55aeb0f9f9757",
+          "shippo-best-practices": "fc5cdd5d9f5ec8b0bf254c5a26e99d2f30661743c052b1e81132cc75c0c4af6b",
+          "shippo-support-ticket": "53a838f623655c0ee9002bb37d855972e1eae5e554931a60e19b0284acc5a772",
+          "tracking": "5d516b1271b09415823712256d9e8464f0a603540572fbaacd489f75ae8743f9",
+          "upgrade-shippo": "775e71a292ba6482af9176976a8ca8f11f168ca63c9f424ffd077fa22d0da79f"
+        }
+      }
+    }
+  }
+}

@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "posthog",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Insights, dashboards and product analytics from your PostHog project.",
   "extensions": {
     "ai.pleasefix.client": {
@@ -174,7 +174,30 @@
           "working-with-task-comments": "bd2a87582ad9b4611c8f81c005c174e22e48602f3da9ed5267edfab26dc5c3bc",
           "writing-simplified-technical-english": "5d735ee48a4a9a9ab569b5944b90ad79740c5039010bde9c710e3a48739cabb2",
           "writing-streamlit-apps": "b7b85388ebb4fe4002ef5b491326b3559beaca08fc070bf7ccd1a1f9f34730c8"
-        }
+        },
+        "also": [
+          {
+            "marketplace": "codex",
+            "plugin": "posthog",
+            "commit": "0722921d5542fc593105c27bd52630babd8b8c2a",
+            "skills": {
+              "posthog": "ff30dc8c926b5f374cebed93aa1ef76a44a99e7dcbbee6ec4077c4c75365d9b0"
+            }
+          },
+          {
+            "marketplace": "cursor",
+            "plugin": "posthog",
+            "commit": "db4a86632293ca66eec9a6d278786ddb22c1787e",
+            "skills": {
+              "auditing-warehouse-data-health": "2ab13fadcac1f3b94d09260f8aad109f8d85c2e8c12f4a8edfd9570189cbe3b5",
+              "authoring-signals-scouts": "59419ec360c425104d3a1dd460f6d7536d2782c0003d4a321549f7fff569bf42",
+              "debugging-local-replay": "a4058ce86f31ca0ea02808573e4e643ea8ab05b7bc6098520a56961119a69161",
+              "debugging-signals-pipeline": "6d7cffb53f02f5459f567a9e27b994e80a57dd023bd6d9c4e0869ffe6f023a88",
+              "exploring-signals-scouts": "8d43194f81477d74ee869ddceea71f6b9a0c5745d51eb2664f15ee20188c1edb",
+              "planning-user-interviews": "c66d4050a8ab0a5aef3a2666f0e483ab46e672fa5beba15d5f666a9b454fda91"
+            }
+          }
+        ]
       }
     }
   }

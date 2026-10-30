@@ -1,0 +1,47 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "postiz",
+  "version": "1.0.0",
+  "description": "Scheduled posts, media and analytics for your social channels in Postiz.",
+  "author": {
+    "name": "Nevo David"
+  },
+  "homepage": "https://postiz.com/agent",
+  "license": "AGPL-3.0",
+  "keywords": [
+    "postiz",
+    "social-media",
+    "scheduling",
+    "automation",
+    "ai-agent",
+    "twitter",
+    "linkedin",
+    "facebook",
+    "instagram",
+    "tiktok",
+    "youtube",
+    "reddit",
+    "marketing",
+    "content",
+    "x",
+    "threads",
+    "bluesky",
+    "mastodon",
+    "pinterest",
+    "discord",
+    "slack",
+    "telegram"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "postiz",
+        "commit": "86e02524377cc60a6cd6ef67fd10a3caeade8d2c",
+        "skills": {}
+      }
+    }
+  }
+}

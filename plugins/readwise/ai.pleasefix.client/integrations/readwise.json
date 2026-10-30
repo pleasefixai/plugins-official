@@ -1,0 +1,16 @@
+{
+  "id": "readwise",
+  "name": "Readwise",
+  "description": "Highlights and saved documents from your Readwise and Reader library.",
+  "group": "knowledge",
+  "url": "https://mcp2.readwise.io/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

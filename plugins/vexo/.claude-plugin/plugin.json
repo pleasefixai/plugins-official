@@ -1,0 +1,5 @@
+{
+  "name": "vexo",
+  "version": "1.0.0",
+  "description": "Spoken requests from your Vexo Band, run as tasks with the results sent back to Vexo."
+}

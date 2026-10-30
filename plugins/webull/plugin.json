@@ -1,0 +1,33 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "webull",
+  "version": "1.0.0",
+  "description": "Accounts, positions, orders, watchlists and market data from your Webull account.",
+  "author": {
+    "name": "Cursor"
+  },
+  "homepage": "https://developer.webull.com/apis/docs/AI-friendly-Resources/mcp/",
+  "license": "MIT",
+  "keywords": [
+    "webull",
+    "brokerage",
+    "trading",
+    "portfolio",
+    "quotes",
+    "watchlists",
+    "market data",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "webull",
+        "commit": "1ba91fc25c0977741dd0e267849e6234b037ed0a",
+        "skills": {}
+      }
+    }
+  }
+}

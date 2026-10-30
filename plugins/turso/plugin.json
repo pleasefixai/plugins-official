@@ -1,0 +1,34 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "turso",
+  "version": "1.0.0",
+  "description": "Organizations, databases and groups in Turso Cloud, and SQL queries on them.",
+  "author": {
+    "name": "Turso"
+  },
+  "homepage": "https://turso.tech",
+  "license": "MIT",
+  "keywords": [
+    "turso",
+    "database",
+    "sqlite",
+    "sql",
+    "mcp",
+    "libsql"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/turso.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "turso",
+        "commit": "a5060cb8d9d2682eb67dd33f12f83f5f6249747c",
+        "skills": {
+          "turso": "66652dee7a785260a34f795f1e95138c533742adcada78013ddd6543d2c724a8"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "webull",
+  "name": "Webull",
+  "description": "Accounts, positions, orders, watchlists and market data from your Webull account.",
+  "group": "market_data",
+  "url": "https://api.webull.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

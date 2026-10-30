@@ -1,0 +1,16 @@
+{
+  "id": "videogen",
+  "name": "VideoGen",
+  "description": "Videos made in VideoGen from text, images or scripts, and exported as MP4.",
+  "group": "design",
+  "url": "https://mcp.videogen.io/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

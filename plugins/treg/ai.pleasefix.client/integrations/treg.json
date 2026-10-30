@@ -1,0 +1,16 @@
+{
+  "id": "treg",
+  "name": "Treg",
+  "description": "SEO, social, ad and company enrichment data from 4,000+ provider endpoints, through Treg.",
+  "group": "marketing",
+  "url": "https://treg.to/mcp/",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

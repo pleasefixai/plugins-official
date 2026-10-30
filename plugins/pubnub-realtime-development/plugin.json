@@ -1,0 +1,35 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "pubnub-realtime-development",
+  "version": "1.0.0",
+  "description": "Guides and tools for building realtime chat, presence and live events with PubNub.",
+  "author": {
+    "name": "PubNub"
+  },
+  "homepage": "https://pubnub.com",
+  "keywords": [
+    "pubnub",
+    "realtime",
+    "mcp",
+    "skills",
+    "chat",
+    "presence",
+    "multiplayer",
+    "live-auctions",
+    "live-events",
+    "event-driven-apps"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/pubnub_realtime_development.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "pubnub-realtime-development",
+        "commit": "f09e803f70a316dbcc6f08ac91ddb0c3c1a28238",
+        "skills": {}
+      }
+    }
+  }
+}

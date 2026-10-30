@@ -1,0 +1,16 @@
+{
+  "id": "tierzero",
+  "name": "TierZero",
+  "description": "Production incidents, alerts and root-cause investigations from TierZero.",
+  "group": "developer_tools",
+  "url": "https://api.tierzero.ai/mcp/",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

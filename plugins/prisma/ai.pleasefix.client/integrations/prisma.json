@@ -1,0 +1,16 @@
+{
+  "id": "prisma",
+  "name": "Prisma",
+  "description": "Prisma Postgres databases, schema migrations and SQL queries.",
+  "group": "developer_tools",
+  "url": "https://mcp.prisma.io/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

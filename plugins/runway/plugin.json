@@ -1,0 +1,37 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "runway",
+  "version": "1.0.0",
+  "description": "Images, videos, music and speech generated with Runway and its partner models.",
+  "author": {
+    "name": "Runway"
+  },
+  "homepage": "https://runway.com/mcp",
+  "license": "MIT",
+  "keywords": [
+    "runway",
+    "runwayml",
+    "runway mcp",
+    "gen-4.5",
+    "aleph",
+    "image-generation",
+    "video-generation",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/runway.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "runway",
+        "commit": "f56e77a713796c0667f266aa4b183f1e226230ea",
+        "skills": {
+          "runway-media": "bacd19a025bcbae1b5f9b8542027d698a4e4f538325bc1194dac8ea18f777d27",
+          "runway-workflows": "0b9f5a97f28330c112c190119f10ecc768ec013d0a7f7b9c482122c1038fda20"
+        }
+      }
+    }
+  }
+}

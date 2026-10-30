@@ -1,0 +1,16 @@
+{
+  "id": "quo",
+  "name": "Quo",
+  "description": "Calls, texts, contacts and tasks from your Quo business phone.",
+  "group": "communication",
+  "url": "https://mcp.quo.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

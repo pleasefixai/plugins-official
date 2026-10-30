@@ -1,0 +1,16 @@
+{
+  "id": "pubnub_realtime_development",
+  "name": "PubNub",
+  "description": "Guides and tools for building realtime chat, presence and live events with PubNub.",
+  "group": "developer_tools",
+  "url": "https://mcp.pubnub.com",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

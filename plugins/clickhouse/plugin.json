@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "clickhouse",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Databases, tables and SQL queries in your ClickHouse Cloud services.",
   "author": {
     "name": "ClickHouse"
@@ -26,7 +26,24 @@
         "skills": {
           "clickhouse-best-practices": "ec367e05e434c86df872cad00f8e693ca4defbf05daf0d3a31277f9b3b136ade",
           "setup": "114831de2509a2f494b9c6c915dfe14974e1503189324a19d912e46b9eb24569"
-        }
+        },
+        "also": [
+          {
+            "marketplace": "cursor",
+            "plugin": "clickhouse-cursor-plugin",
+            "commit": "1e62c0c5d151b327202c2749fe6e67c51cae16cb",
+            "archive": "https://github.com/ClickHouse/clickhouse-cursor-plugin/releases/download/v1.0.6/clickhouse-cursor-plugin-1.0.6.tar.gz",
+            "sha256": "6820dc8634480d8d492a65595ca2c86d49a4e05ae1a9bc3c01b375abb5cb08f0",
+            "skills": {
+              "chdb-datastore": "6d5840589db1bd48c08c00c60224088b1d51cb8e8d5350d24e8ccff663746c31",
+              "chdb-sql": "b2466e345d22eadf3516356498667f463ea844241f52c56dc28a6e07e8f7d350",
+              "clickhouse-architecture-advisor": "90dd2521148a89f2e90f338d84ae7c97b6814d48fb245569bc0d0d664a195abc",
+              "clickhouse-js-node-troubleshooting": "22e8cb64154255fc9b1cad4a646e1bd794ce614be16eb6fc58c1743a7cca4ae7",
+              "clickhousectl-cloud-deploy": "dd2a9dbc52b516c6f5af7a15fc39ac9a5af268164c77a5e18ac7662ad0ffc6a1",
+              "clickhousectl-local-dev": "d1b70967c426edd18accf4051b7d7c5ab1e1aef73e2c10917d4f36bf99fda401"
+            }
+          }
+        ]
       }
     }
   }

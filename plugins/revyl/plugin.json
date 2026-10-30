@@ -1,0 +1,42 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "revyl",
+  "version": "1.0.0",
+  "description": "Mobile app tests on Revyl cloud devices, run and verified by your agent.",
+  "author": {
+    "name": "Revyl"
+  },
+  "homepage": "https://revyl.ai",
+  "license": "MIT",
+  "keywords": [
+    "mobile",
+    "testing",
+    "e2e",
+    "ios",
+    "android",
+    "cli",
+    "react-native",
+    "expo",
+    "flutter"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/revyl.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "revyl",
+        "commit": "cd658476678e1f8bfbf23379455b57d3bbb6c383",
+        "skills": {
+          "revyl-ci-sync": "0f6f24692237da1d82e57a3581bf41587fbc36b4cad019b0becea23a7cb42ce4",
+          "revyl-cli-auth-bypass": "0301c23eb4532ec0965bdb2c6d3ee28110660b32fba869ed59cded8f70b882fe",
+          "revyl-cli-dev-loop": "8a4397af79afe654aee279fedb341abb82a23bcb29a3504341876a4ada45b2db",
+          "revyl-cloud-agent": "952dfef5936e25e311469d55e718614e6e7dad1979fb9f4272b55d450452326b",
+          "revyl-proof-automation": "9324ad7c28fe3bbcd2a09cef849cc610a768eb0d36fc24c56efeabca1dac5d16",
+          "revyl-proof-ci": "c69b06204d444355da459b43dddf29217f43c527ffc41be135f07a814fb9d89d"
+        }
+      }
+    }
+  }
+}

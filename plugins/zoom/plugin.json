@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "zoom",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Meetings, recordings, transcripts and Docs from your Zoom account.",
   "author": {
     "name": "Zoom"
@@ -60,7 +60,22 @@
           "webhooks": "5caee610e7da92bad8e1226e0b3dda312759b275027af22ee1ab8d16cb24c8a6",
           "websockets": "51e085a56c28f7b9051268d1c7e7eb1fa9be77afdf91557f8a82254523de0427",
           "zoom-apps-sdk": "70b8fb5b896e1ec176f96ee33051624c5a6f4b80c10fcd89f2a659e31d0f7db9"
-        }
+        },
+        "also": [
+          {
+            "marketplace": "claude",
+            "plugin": "zoom-plugin",
+            "commit": "86e2592334f5fb563ed273e26035844004e66165",
+            "skills": {
+              "design-mcp-workflow": "4efcafdbe2852fe58b853ea57fb71b0b1885f678ba72923c690698b4460aa440",
+              "setup-zoom-marketplace-app": "6b79e703f1e67b880fa9aa6af8e71a05d495e7dd1a6743b7e6f8d6f60f9672b4",
+              "setup-zoom-mcp": "76a4e7ee846425bc2236e763fa87fd76ab374e941ae529c783d6bf4cd35ec39e",
+              "summarizer": "f3f8d80bb820e60db846547f798232618e6f8d5c4c1d2409a3b867ac6e277f2c",
+              "translator": "4e727d0dff6ad562a5b24f911973c040d92c8f24d84de0f2c4c52220b9f70dbf",
+              "zoom-mcp": "6aa3b7608119f06d3f7f7120334e7d1345b9a381fbc1b2400bc6bebd2f40c782"
+            }
+          }
+        ]
       }
     }
   }

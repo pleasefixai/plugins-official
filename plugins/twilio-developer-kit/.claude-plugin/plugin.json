@@ -1,0 +1,5 @@
+{
+  "name": "twilio-developer-kit",
+  "version": "1.0.0",
+  "description": "Guides and docs for building with Twilio messaging, voice, Verify and SendGrid email."
+}

@@ -1,0 +1,16 @@
+{
+  "id": "refero",
+  "name": "Refero",
+  "description": "Screens and user flows from real products, collected by Refero for design research.",
+  "group": "design",
+  "url": "https://api.refero.design/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

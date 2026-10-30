@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "basecamp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Projects, to-dos, cards, messages, docs and schedules from your Basecamp account.",
   "author": {
     "name": "Basecamp"
@@ -24,6 +24,7 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "mark": "integrations/basecamp.svg",
       "upstream": {
         "kind": "imported",
         "marketplace": "cursor",

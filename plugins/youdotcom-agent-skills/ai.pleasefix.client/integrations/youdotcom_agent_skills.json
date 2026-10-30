@@ -1,0 +1,16 @@
+{
+  "id": "youdotcom_agent_skills",
+  "name": "You.com",
+  "description": "Web search, research with citations and page content from You.com.",
+  "group": "knowledge",
+  "url": "https://api.you.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

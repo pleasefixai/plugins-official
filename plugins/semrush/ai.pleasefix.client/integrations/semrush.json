@@ -1,0 +1,16 @@
+{
+  "id": "semrush",
+  "name": "Semrush",
+  "description": "Keywords, backlinks, traffic and competitor data from your Semrush account.",
+  "group": "marketing",
+  "url": "https://mcp.semrush.com/v2/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

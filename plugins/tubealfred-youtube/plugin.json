@@ -1,0 +1,42 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "tubealfred-youtube",
+  "version": "1.0.0",
+  "description": "YouTube video transcripts, comments and channel data, through TubeAlfred.",
+  "author": {
+    "name": "TubeAlfred"
+  },
+  "homepage": "https://tubealfred.com/",
+  "license": "MIT",
+  "keywords": [
+    "youtube",
+    "mcp",
+    "transcripts",
+    "youtube-transcript",
+    "youtube-comments",
+    "channel-data",
+    "research",
+    "agents",
+    "claude",
+    "chatgpt",
+    "cursor",
+    "comments"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/tubealfred_youtube.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "tubealfred-youtube",
+        "commit": "d20e6357e7b89af837f13f7e7444ec2e9b3712a4",
+        "skills": {
+          "youtube-audience-research": "fa1d700967a2fb3ae47795c796f510784cabb1dbd5de25a098d2c9e734326b1a",
+          "youtube-discovery-research": "ab9cc5e86fd59b4662987d6cbfe7455673bb7674d6781d264736108307b7417a",
+          "youtube-video-research": "56a9dd48c6c13b56dae80d011355232db64587844a3cdd843dcfed44140d99b6"
+        }
+      }
+    }
+  }
+}

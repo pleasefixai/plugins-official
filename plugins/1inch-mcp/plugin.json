@@ -1,0 +1,47 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "1inch-mcp",
+  "version": "1.0.0",
+  "description": "Guides for token swaps, limit orders, wallet data and market prices with 1inch.",
+  "author": {
+    "name": "1inch"
+  },
+  "homepage": "https://business.1inch.com/",
+  "license": "MIT",
+  "keywords": [
+    "1inch",
+    "defi",
+    "blockchain",
+    "swap",
+    "api",
+    "mcp",
+    "web3",
+    "orderbook",
+    "ethereum",
+    "cross-chain",
+    "intent-based",
+    "agent-skills"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "1inch-mcp",
+        "commit": "e60a741a50c7f0b61881c7551b8caaf48a7e0b68",
+        "skills": {
+          "1inch-aqua": "83d03871a813dd0290dd38a1252182e38ab4c680766c10d44b83f0c62817dea0",
+          "1inch-debug": "474f235746a1a766af65ed77b0365392fda4c0e5af2c2c599b36f5c050991bd4",
+          "1inch-infrastructure": "fc33c0614514a2195e7f66d2db2bb21b0616699773a907dfc447af99b249de48",
+          "1inch-market-data": "2bcd95bddbb919a1654f537a6e560e08f4ee8b4dceee7ee843e6176dc0423e3c",
+          "1inch-mcp-server": "4de064e436691022e1261aea22d51b41ea619aa1ccdced2cf912c3ebcdc2fc92",
+          "1inch-orderbook": "bfbbf810e0dcf00af9e69e172f002917fd0a824e940a7e0dfc4f4e8d8f2e02cf",
+          "1inch-swap": "15bde0f57075888dfe560c98a3378166e3019575eb6677baccddd69609f01f08",
+          "1inch-wallet-data": "d5417ac35c96f93bc96634cdda476816f594c587e2353449d4a76c90c5afa997",
+          "1inch-walletconnect": "927166c38a4315ba1c3f7b3935779e6e43866fd81beef9de46f747e2521d5145"
+        }
+      }
+    }
+  }
+}

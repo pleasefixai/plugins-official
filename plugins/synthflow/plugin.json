@@ -1,0 +1,35 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "synthflow",
+  "version": "1.0.0",
+  "description": "Voice agents and their calls in Synthflow, with reviews of calls and agent prompts.",
+  "author": {
+    "name": "Synthflow"
+  },
+  "homepage": "https://synthflow.ai",
+  "license": "MIT",
+  "keywords": [
+    "synthflow",
+    "mcp",
+    "voice",
+    "ai-agents",
+    "telephony",
+    "integration"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/synthflow.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "synthflow",
+        "commit": "205871ee83508502d2c982ee1bb7e65a2a29190b",
+        "skills": {
+          "call-review": "39117227847a4ba6dc75a448ce8b0943eb28d91854b25fe899e56ab0720e1c64",
+          "prompt-review": "6eef23cd4821365490e9f0ccd405783c6c29285fd0ac8c0b7947222f3b2f759c"
+        }
+      }
+    }
+  }
+}

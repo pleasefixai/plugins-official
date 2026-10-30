@@ -1,0 +1,35 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "workos",
+  "version": "1.0.0",
+  "description": "Users, organizations, SSO connections and directories in your WorkOS account.",
+  "author": {
+    "name": "WorkOS"
+  },
+  "homepage": "https://workos.com",
+  "license": "MIT",
+  "keywords": [
+    "workos",
+    "authkit",
+    "sso",
+    "directory-sync",
+    "rbac",
+    "widgets"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/workos.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "workos",
+        "commit": "e25141bae047a7c837d93817347f95977598720f",
+        "skills": {
+          "workos": "b61dd0fa1ad26a72c6b9c7a227fccc988f9b47e701e73ac767cd5053f5fcee6c",
+          "workos-widgets": "8f7e9275306878255acdcb35c417c787ac34580aa448cd1d369f23456c7ef3da"
+        }
+      }
+    }
+  }
+}

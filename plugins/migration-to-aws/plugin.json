@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "migration-to-aws",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Plans to move apps and AI workloads from Google Cloud or Heroku to AWS.",
   "author": {
     "name": "Amazon Web Services"

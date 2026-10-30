@@ -1,0 +1,16 @@
+{
+  "id": "wingspan",
+  "name": "Wingspan",
+  "description": "Contractors, payables and contractor payments in your Wingspan account.",
+  "group": "finance_ops",
+  "url": "https://api.wingspan.app/v3/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

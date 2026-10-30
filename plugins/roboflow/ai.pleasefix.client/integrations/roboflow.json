@@ -1,0 +1,16 @@
+{
+  "id": "roboflow",
+  "name": "Roboflow",
+  "description": "Datasets, annotations, model training and vision workflows in your Roboflow workspace.",
+  "group": "developer_tools",
+  "url": "https://mcp.roboflow.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

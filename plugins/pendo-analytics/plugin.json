@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "pendo-analytics",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Feature adoption, account health, session replays and feedback from Pendo.",
   "author": {
     "name": "Pendo"
@@ -30,7 +30,33 @@
           "feature-adoption": "15565eccb5be7397513ae4bbc285f4358e51208489923b8e13dcb5a6cfaace3e",
           "feedback-analysis": "cb8df02037c48d993a4e0710497923a8828fa3102e85bed61f1b158f04c294d6",
           "replay-triage": "7b85c702cd97305875a4f24364242afe7ff14cf52da0ffffb0187b3e2a1e665e"
-        }
+        },
+        "also": [
+          {
+            "marketplace": "claude",
+            "plugin": "pendo-guides",
+            "commit": "340d503c23eed487be83693aa4c1837df4a7dcd4",
+            "skills": {
+              "pendo-guide-creator": "4e2562abec873d9073b62d29ae3e4034a2712ea705c71692a3372a25e3f8a6f5"
+            }
+          },
+          {
+            "marketplace": "claude",
+            "plugin": "pendo-orchestrate",
+            "commit": "a0f85260c61b93c4511f59545612323a41c3f845",
+            "skills": {
+              "orchestrate-journeys": "f364dfced3ac3513867f2663b1184485e9f2d93ce4b54d374568e1394e79d419"
+            }
+          },
+          {
+            "marketplace": "cursor",
+            "plugin": "pendo-analytics",
+            "commit": "9a2d58da475fec70560a3686ead84b58a5a70110",
+            "skills": {
+              "session-replay": "38001b9793d173393a9a8a344597cdb69e60fb2f10135662e48618e7ca68277f"
+            }
+          }
+        ]
       }
     }
   }

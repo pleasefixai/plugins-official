@@ -1,0 +1,16 @@
+{
+  "id": "streak",
+  "name": "Streak",
+  "description": "Pipelines, boxes, contacts, organizations and tasks in your Streak CRM for Gmail.",
+  "group": "crm",
+  "url": "https://api.streak.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

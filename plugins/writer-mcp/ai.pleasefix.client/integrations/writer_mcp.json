@@ -1,0 +1,16 @@
+{
+  "id": "writer_mcp",
+  "name": "Writer",
+  "description": "Writer playbooks, their runs and the deliverables that they produce.",
+  "group": "automation",
+  "url": "https://api.writer.com/v1/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

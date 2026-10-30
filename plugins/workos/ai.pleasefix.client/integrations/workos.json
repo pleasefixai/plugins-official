@@ -1,0 +1,16 @@
+{
+  "id": "workos",
+  "name": "WorkOS",
+  "description": "Users, organizations, SSO connections and directories in your WorkOS account.",
+  "group": "developer_tools",
+  "url": "https://mcp.workos.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

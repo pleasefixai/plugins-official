@@ -59,7 +59,7 @@ when a cheaper candidate satisfies it.
 Three of these are **separate capabilities, not text-model swaps** — they become their own
 target contracts (`additional_targets` / a separate workload) instead of changing the text
 model: `image_generation` (image model/service), `speech` (STT/TTS services), `embedding`
-(a Bedrock embedding model). Detailed pricing/TCO → migration-to-aws (llm-to-bedrock skill).
+(a Bedrock embedding model). Detailed pricing/TCO → the Migration Plan stage (the gcp-to-aws engine).
 
 The selectable model pool is drift-guarded against the sibling skill's lifecycle registry at
 `skills/gcp-to-aws/references/shared/ai-model-lifecycle.md` (a Legacy/EOL model entering the

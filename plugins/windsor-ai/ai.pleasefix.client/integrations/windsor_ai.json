@@ -1,0 +1,16 @@
+{
+  "id": "windsor_ai",
+  "name": "Windsor.ai",
+  "description": "Marketing, sales and finance data from 325+ sources, like Google Ads, through Windsor.ai.",
+  "group": "marketing",
+  "url": "https://mcp.windsor.ai",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

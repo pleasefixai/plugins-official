@@ -1,0 +1,49 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "tuist",
+  "version": "1.0.0",
+  "description": "Builds, test runs, bundles and cache runs from your Tuist dashboard.",
+  "author": {
+    "name": "Tuist"
+  },
+  "homepage": "https://tuist.dev",
+  "license": "MIT",
+  "keywords": [
+    "tuist",
+    "xcode",
+    "swift",
+    "ios",
+    "macos",
+    "android",
+    "gradle",
+    "build",
+    "testing",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/tuist.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "tuist",
+        "commit": "03261ab253dbcae47ff56f947a2d9dfca2de7624",
+        "skills": {
+          "analyze-selective-testing": "7aa52fda8e19082e4dd9eb6a6d7df0ebb6cae61be6949e74b1d4789e118eefaf",
+          "compare-builds": "4e70aeac3d999a699a28fc59de9de794fc34b73891cdc9d64794a6e59a939eb7",
+          "compare-bundles": "3a898f96aea7be877d150f923780236cbf3c5455376733ff7c16ef3c267daa3b",
+          "compare-cache-runs": "abe0c2231050e940835e89c2f77e3f4973722a00b4fc9e19a6cca352b3818c6a",
+          "compare-generations": "635cfe32a74778e2d983604e57a427f74731dbe5f9b6c48c7c92949337e26df2",
+          "compare-gradle-builds": "f6b569d849ca49cbed5f7bb2f09b37a196c48aafc6b34e178b50e20011576ab7",
+          "compare-test-case": "5908d43a3e5c77cac9bfe142d768775ac4b7c1e18199c5a6c2aeeb0499cdd5e0",
+          "compare-test-runs": "c6b4e61622c0bb1b1c07b1f9f4b0cb8efec94b1213e022ecbbde7fe688ac070c",
+          "debug-generated-project": "3f611f57263d5e29aa60cff212938bbdc284be9d2ac6e7fbfa7b907290f0212a",
+          "fix-flaky-tests": "e237c74414d139a3f09a12c4a83544a737ce789bc78900c6e4726b9e06bcd825",
+          "generated-projects": "d3de81b268bca7c75978c05cc87c8d392ba1682f0051f3c5cbb352ce3a097112",
+          "migrate": "f790afdd0f51cfbbc5d2bde13a98c0c666cf73a0888e9a3b3362ee57e3ab135b"
+        }
+      }
+    }
+  }
+}

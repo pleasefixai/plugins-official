@@ -1,0 +1,16 @@
+{
+  "id": "synthflow",
+  "name": "Synthflow",
+  "description": "Voice agents, calls and phone numbers in your Synthflow account.",
+  "group": "communication",
+  "url": "https://mcp.synthflow.ai/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

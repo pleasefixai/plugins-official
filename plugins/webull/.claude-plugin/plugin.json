@@ -1,0 +1,5 @@
+{
+  "name": "webull",
+  "version": "1.0.0",
+  "description": "Accounts, positions, orders, watchlists and market data from your Webull account."
+}

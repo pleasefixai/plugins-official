@@ -1,0 +1,20 @@
+{
+  "id": "supabase",
+  "name": "Supabase",
+  "description": "Projects, Postgres databases, auth, storage and edge functions in your Supabase account.",
+  "group": "developer_tools",
+  "url": "https://mcp.supabase.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  },
+  "headers": {
+    "X-Source-Name": "claude-code-plugin",
+    "X-Source-Version": "0.1.16"
+  }
+}

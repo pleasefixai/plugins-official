@@ -1,0 +1,16 @@
+{
+  "id": "shop",
+  "name": "Shop",
+  "description": "Products from millions of stores, with carts, checkout and orders in Shop.",
+  "group": "other",
+  "url": "https://mcp.shop.com",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

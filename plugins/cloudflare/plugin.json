@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "cloudflare",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Workers, storage, DNS and the other resources of your Cloudflare account.",
   "author": {
     "name": "Cloudflare"
@@ -44,7 +44,28 @@
           "web-perf": "8f96cf1dd7d77f844c8547f0c0932e423d470a937911bedd291d7d7dff13be45",
           "workers-best-practices": "5ea906efdbc430bb0d26b1f1dde3a975335246be2a7d550222dad347e48745f2",
           "wrangler": "78cfa92a43921d26687b812399bbb90c50181bc77f162a1cb737c55404630c01"
-        }
+        },
+        "also": [
+          {
+            "marketplace": "codex",
+            "plugin": "cloudflare",
+            "commit": "0722921d5542fc593105c27bd52630babd8b8c2a",
+            "skills": {
+              "building-ai-agent-on-cloudflare": "354ae5a361def6799e111b62f7632a88d1faedf2930b9dff2ce7666316490721",
+              "building-mcp-server-on-cloudflare": "3d7d92490cb1b16badfa02bb8f77ca0ecf7b3cf0955c9faf6516bcb29baf85d8",
+              "sandbox-sdk": "46afad7a0880f60680bce864bb98278da6352784650fab73edea741b83a9f182"
+            }
+          },
+          {
+            "marketplace": "cursor",
+            "plugin": "cloudflare",
+            "commit": "41e0d19858946d18af9ee2c2feebbe2e11d829ff",
+            "skills": {
+              "basin": "7b5549d380b9a5ea262bf1465eec5b34f31505ebefae76fbfa889d0ddf26889d",
+              "k2": "5a11f9af590b5a41db8aaad1187bf8244ff75ce8ab046ca6f56c4074451cebf3"
+            }
+          }
+        ]
       }
     }
   }

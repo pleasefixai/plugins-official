@@ -1,0 +1,16 @@
+{
+  "id": "replit",
+  "name": "Replit",
+  "description": "Apps in your Replit account, to build, change and publish.",
+  "group": "developer_tools",
+  "url": "https://mcp.replit.com/server/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

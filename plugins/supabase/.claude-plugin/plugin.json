@@ -1,0 +1,5 @@
+{
+  "name": "supabase",
+  "version": "1.0.0",
+  "description": "Projects, Postgres databases, auth, storage and edge functions in your Supabase account."
+}

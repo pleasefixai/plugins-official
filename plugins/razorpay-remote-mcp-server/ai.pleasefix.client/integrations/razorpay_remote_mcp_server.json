@@ -1,0 +1,16 @@
+{
+  "id": "razorpay_remote_mcp_server",
+  "name": "Razorpay",
+  "description": "Payments, payment links, refunds, orders and settlements in your Razorpay account.",
+  "group": "finance_ops",
+  "url": "https://mcp.razorpay.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

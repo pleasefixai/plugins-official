@@ -1,0 +1,16 @@
+{
+  "id": "ringcentral_chat",
+  "name": "RingCentral Chat",
+  "description": "Team chats, posts, tasks and notes in your RingCentral workspace.",
+  "group": "communication",
+  "url": "https://mcp.labs.ringcentral.com/ringex/v1.1.0/team-chat",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

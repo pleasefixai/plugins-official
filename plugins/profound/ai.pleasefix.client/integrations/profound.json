@@ -1,0 +1,16 @@
+{
+  "id": "profound",
+  "name": "Profound",
+  "description": "How AI answer engines see your brand: visibility, sentiment and citations in Profound.",
+  "group": "marketing",
+  "url": "https://mcp.tryprofound.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

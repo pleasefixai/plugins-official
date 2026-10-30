@@ -1,0 +1,32 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "quo",
+  "version": "1.0.0",
+  "description": "Calls, texts, contacts and tasks from your Quo business phone.",
+  "author": {
+    "name": "Quo"
+  },
+  "homepage": "https://quo.com",
+  "license": "Apache-2.0",
+  "keywords": [
+    "quo",
+    "quo-mcp",
+    "business-phone",
+    "sms",
+    "contacts",
+    "tasks"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/quo.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "quo",
+        "commit": "36aa4681d1642bca432a322c93eb07dbf0e3c7aa",
+        "skills": {}
+      }
+    }
+  }
+}

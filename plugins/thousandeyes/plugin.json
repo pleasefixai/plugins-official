@@ -1,0 +1,31 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "thousandeyes",
+  "version": "1.0.0",
+  "description": "Network tests, alerts, outages and path views from your Cisco ThousandEyes account.",
+  "author": {
+    "name": "Cisco ThousandEyes"
+  },
+  "homepage": "https://cisco.com",
+  "keywords": [
+    "cursor",
+    "plugin",
+    "mcp",
+    "thousandeyes",
+    "networking",
+    "observability",
+    "claude-code"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "thousandeyes",
+        "commit": "3f638e4b7d42459646cb2a4fe626addff0f0811a",
+        "skills": {}
+      }
+    }
+  }
+}

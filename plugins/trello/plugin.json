@@ -1,0 +1,36 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "trello",
+  "version": "1.0.0",
+  "description": "Boards, lists, cards and checklists in your Trello workspace.",
+  "author": {
+    "name": "Cursor"
+  },
+  "homepage": "https://github.com/atlassian/trello-mcp-server",
+  "license": "MIT",
+  "keywords": [
+    "trello",
+    "atlassian",
+    "kanban",
+    "boards",
+    "cards",
+    "checklists",
+    "project management",
+    "task management",
+    "planner",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/trello.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "trello",
+        "commit": "1ba91fc25c0977741dd0e267849e6234b037ed0a",
+        "skills": {}
+      }
+    }
+  }
+}

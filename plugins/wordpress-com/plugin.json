@@ -1,0 +1,32 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "wordpress-com",
+  "version": "1.0.0",
+  "description": "Sites, posts, pages and media in your WordPress.com account.",
+  "author": {
+    "name": "WordPress.com"
+  },
+  "homepage": "https://wordpress.com/",
+  "license": "GPL-2.0-or-later",
+  "keywords": [
+    "wordpress.com",
+    "wordpress",
+    "content-management",
+    "site-management",
+    "website",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/wordpress_com.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "wordpress-com",
+        "commit": "94122574e6c53ca2609768605244c600d947a70a",
+        "skills": {}
+      }
+    }
+  }
+}

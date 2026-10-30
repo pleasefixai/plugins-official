@@ -1,0 +1,34 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "refero",
+  "version": "1.0.0",
+  "description": "Screens and user flows from real products, collected by Refero for design research.",
+  "author": {
+    "name": "Refero"
+  },
+  "homepage": "https://refero.design/mcp",
+  "license": "MIT",
+  "keywords": [
+    "design",
+    "ui",
+    "ux",
+    "product-design",
+    "design-research",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/refero.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "refero",
+        "commit": "a9b54a3e62a6391f5f5ab7a20e4ddb32fb79a27d",
+        "skills": {
+          "refero-design": "e2692c123b923d7494ed5d6ed6a3771d7c4515376befce734d9cb17e7f6e1bb9"
+        }
+      }
+    }
+  }
+}

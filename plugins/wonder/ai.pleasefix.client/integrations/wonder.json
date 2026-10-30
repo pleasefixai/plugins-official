@@ -1,0 +1,16 @@
+{
+  "id": "wonder",
+  "name": "Wonder",
+  "description": "Designs on a Wonder canvas, where each design is real code.",
+  "group": "design",
+  "url": "https://mcp.wonder.so/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

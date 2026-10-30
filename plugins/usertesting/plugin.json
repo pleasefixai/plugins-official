@@ -1,0 +1,30 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "usertesting",
+  "version": "1.0.0",
+  "description": "Tests, sessions and customer feedback from your UserTesting account.",
+  "author": {
+    "name": "UserTesting"
+  },
+  "homepage": "https://www.usertesting.com/",
+  "keywords": [
+    "usertesting",
+    "user-research",
+    "testing",
+    "ux-research",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/usertesting.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "usertesting",
+        "commit": "94e171c09ae9b9e13e16abcd1cde6f76e97217e4",
+        "skills": {}
+      }
+    }
+  }
+}

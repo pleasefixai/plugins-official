@@ -1,0 +1,23 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "tldraw",
+  "version": "1.0.0",
+  "description": "Diagrams and sketches that your agent draws on a tldraw canvas.",
+  "author": {
+    "name": "tldraw"
+  },
+  "homepage": "https://www.tldraw.dev/",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/tldraw.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "tldraw",
+        "commit": "5e2eb65a491a188a16b7c52c4eac70e39181bdb2",
+        "skills": {}
+      }
+    }
+  }
+}

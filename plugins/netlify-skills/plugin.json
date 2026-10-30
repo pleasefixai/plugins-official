@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "netlify-skills",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Sites, deploys, functions, forms and settings of your Netlify projects.",
   "author": {
     "name": "Netlify"
@@ -42,7 +42,17 @@
           "netlify-identity": "6d5922f8674d4b45e24435af954b6d719d76ba829b1f632c5237ef9e680a569e",
           "netlify-image-cdn": "3f2de7e618785af6df83857134e828619cc5d4bdb893853bcdacbe007e813b4d",
           "netlify-mcp-servers": "8d4c7dc02937218eef202376010ec4aa527e7ceba0edaf0da0498e214998fd1b"
-        }
+        },
+        "also": [
+          {
+            "marketplace": "cursor",
+            "plugin": "netlify-skills",
+            "commit": "22025ef6c9dc9ef88d0c9c047980c10cacb178ee",
+            "skills": {
+              "netlify-cli-and-deploy": "008efaca816f1a83061219d96eda2c676be27c41c3613f3df27463cf6546837b"
+            }
+          }
+        ]
       }
     }
   }

@@ -1,0 +1,37 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "resend",
+  "version": "1.0.0",
+  "description": "Emails, domains, audiences and broadcasts in your Resend account.",
+  "author": {
+    "name": "Resend"
+  },
+  "homepage": "https://resend.com",
+  "license": "MIT",
+  "keywords": [
+    "email",
+    "resend",
+    "smtp",
+    "notifications",
+    "agent-inbox"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/resend.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "resend",
+        "commit": "fd14937dba5a99de5dba902808f70fa575513cc5",
+        "skills": {
+          "agent-email-inbox": "8c517ff5bb9561fdc34cd40736d1014fda5a930363aa3c76ba863ad240932c4b",
+          "email-best-practices": "a22fbdb0dfc6f643058ed39fd4a403541dba9ab170b4f3110932d3577ba5d9c5",
+          "react-email": "f857793903675772e02dcbdc58380a0cfb7de166075f443c7c4bee7060c8ad4e",
+          "resend": "d5df2fb490ebee7aa6e9669a322bff98f3ca534cb216818e1705b32f8c9c9540",
+          "resend-cli": "556eb01113dfffdced6893e6f43c344ae9d8a86f2b788e1c04a4a51db21171c0"
+        }
+      }
+    }
+  }
+}

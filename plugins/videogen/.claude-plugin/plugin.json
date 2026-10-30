@@ -1,0 +1,5 @@
+{
+  "name": "videogen",
+  "version": "1.0.0",
+  "description": "Videos made in VideoGen from text, images or scripts, and exported as MP4."
+}

@@ -1,0 +1,16 @@
+{
+  "id": "rootly",
+  "name": "Rootly",
+  "description": "Incidents, alerts, on-call schedules and retrospectives in your Rootly account.",
+  "group": "developer_tools",
+  "url": "https://mcp.rootly.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

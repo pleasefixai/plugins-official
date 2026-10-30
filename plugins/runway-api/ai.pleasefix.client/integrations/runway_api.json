@@ -1,0 +1,16 @@
+{
+  "id": "runway_api",
+  "name": "Runway API",
+  "description": "Guides and docs for adding Runway video, image and audio generation to your apps.",
+  "group": "developer_tools",
+  "url": "https://dev.runwayml.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

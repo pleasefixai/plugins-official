@@ -1,0 +1,16 @@
+{
+  "id": "raisely",
+  "name": "Raisely",
+  "description": "Campaigns, donations, supporters and fundraisers in your Raisely account.",
+  "group": "crm",
+  "url": "https://mcp.raisely.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

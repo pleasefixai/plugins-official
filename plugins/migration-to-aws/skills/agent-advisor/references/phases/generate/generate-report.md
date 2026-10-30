@@ -498,7 +498,7 @@ All figures assume {{ REGION }} on-demand pricing (cached {{ VOLATILE_FACTS.pric
   </tbody>
 </table>
 <p class="note">Not included: one-time engineering effort (policy: never presented as dollar
-figures). For migration entry points, precise TCO comparison and current-spend delta are produced by the migration plugins (see the llm-to-bedrock or gcp-to-aws run for model-by-model
+figures). For migration entry points, precise TCO comparison and current-spend delta are produced by the migration plugins (see the gcp-to-aws run for model-by-model
 pricing deltas); this estimate shows target-state run cost only. {{ IF ESTIMATE === null }}Estimate may be absent if the phase failed, or for add_capabilities which bypasses Estimate.{{ END IF }}</p>
 
 <!-- ═══ NEXT STEPS ═══ -->

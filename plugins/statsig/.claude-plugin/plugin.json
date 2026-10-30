@@ -1,0 +1,5 @@
+{
+  "name": "statsig",
+  "version": "1.0.0",
+  "description": "Feature gates, experiments, dynamic configs and metrics in your Statsig project."
+}

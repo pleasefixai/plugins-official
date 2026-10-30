@@ -1,0 +1,34 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "statsig",
+  "version": "1.0.0",
+  "description": "Feature gates, experiments, dynamic configs and metrics in your Statsig project.",
+  "author": {
+    "name": "Cursor"
+  },
+  "homepage": "https://docs.statsig.com/integrations/mcp/cursor",
+  "license": "MIT",
+  "keywords": [
+    "statsig",
+    "feature flags",
+    "feature gates",
+    "experiments",
+    "a/b testing",
+    "dynamic configs",
+    "metrics",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/statsig.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "statsig",
+        "commit": "1ba91fc25c0977741dd0e267849e6234b037ed0a",
+        "skills": {}
+      }
+    }
+  }
+}

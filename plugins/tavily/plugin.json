@@ -1,0 +1,56 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "tavily",
+  "version": "1.0.0",
+  "description": "Web search, page extraction, site crawls and cited research from Tavily.",
+  "author": {
+    "name": "Tavily"
+  },
+  "homepage": "https://tavily.com",
+  "license": "MIT",
+  "keywords": [
+    "search",
+    "web-search",
+    "rag",
+    "agents",
+    "llm",
+    "research",
+    "crawl",
+    "extract",
+    "map",
+    "tavily",
+    "tavily-cli",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/tavily.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "tavily",
+        "commit": "79c8c7356fcb9f5da450dd60c6727881cc4434fd",
+        "skills": {
+          "tavily-best-practices": "d3aeac571ab45adee2ee8cf07687f3ff8fa6b88e1ed0340593326aef609c5048",
+          "tavily-cli": "dde4ce9699ea942b0a3ff423aca0884440251e6aa943ee1b0f673bd28caffaa2",
+          "tavily-crawl": "627f52f37feb8b17aedf760dfec7823e7126367718f1c96ff1036d4ec2f22009",
+          "tavily-extract": "506be13d079f072b0b8814db3be7f02856636246b3f7c0fdd7f044d0917ac391",
+          "tavily-map": "5799b73651242e2fbab031eae0a548c9fc0bebe6c41004d267f868d6487e2985",
+          "tavily-research": "999f216bab4e4b6830a37ba53fc467f814d7edf6c5ed78fbddb356d537475644",
+          "tavily-search": "52b6cd9507413481f55cf2a590c83280551e725dae935b45e966a4974644294b"
+        },
+        "also": [
+          {
+            "marketplace": "claude",
+            "plugin": "tavily",
+            "commit": "778122e5f9c680f541eeceda5a5b36405eb7980c",
+            "skills": {
+              "tavily-dynamic-search": "20613b48b29a8c86926eca8f3dc950bfd2dc900dc7a710e5c681b6d09a0e4b26"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "vertiso-memory",
+  "version": "1.0.0",
+  "description": "Memories, decisions, projects and session handoffs that your agents share in Vertiso.",
+  "author": {
+    "name": "Vertiso Memory"
+  },
+  "homepage": "https://memory.vertiso.ai",
+  "license": "MIT",
+  "keywords": [
+    "memory",
+    "mcp",
+    "oauth",
+    "cursor",
+    "agents"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "vertiso-memory",
+        "commit": "2887aaf90493c5b13049e1d2ec7616f1dc5494bb",
+        "skills": {
+          "checkpoint": "cfa078875b9fba9c1f46ea4e05437a96ef8531591490889f52c52c4c367f96d8",
+          "handoff": "88037eeec547964fca3e1329268dd357a69dfb33e303aa37fb38eeffdc2a367f",
+          "handoff-resume": "07902fa6c89506c7aa6803b65ca70e341e84503a7ca73a8506b1ce56ab4d0976",
+          "wrap-up": "0689e9c778382fde09555a37bc39ba0a7ff561b981ae5042bc4ff5ed01ab7bb6"
+        }
+      }
+    }
+  }
+}

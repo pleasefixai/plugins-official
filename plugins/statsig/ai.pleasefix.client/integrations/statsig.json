@@ -1,0 +1,16 @@
+{
+  "id": "statsig",
+  "name": "Statsig",
+  "description": "Feature gates, experiments, dynamic configs and metrics in your Statsig project.",
+  "group": "product_analytics",
+  "url": "https://api.statsig.com/v3/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

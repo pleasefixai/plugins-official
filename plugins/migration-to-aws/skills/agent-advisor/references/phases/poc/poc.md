@@ -437,9 +437,9 @@ compile is a defect — this step is not optional. **Clean up compile byproducts
   `agent.py`) and any build step the manifest requires.
 - `README.md`: per 3e, PLUS, prominently: (a) "This is the migrated version of YOUR app
   (from `<repo>`), generated as a disposable deployment-proof — your original repo was not
-  modified"; (b) the list of applied changes and any deferred/drifted ones; (c) "For the
+  modified"; (b) the list of applied changes and any deferred/drifted ones; (c) "The
   authoritative in-repo migration (git branch, generated tests, behavior-delta review,
-  quality eval), run `/migration-to-aws:llm-to-bedrock`" — the POC does not replace it;
+  quality eval) is a separate step" — the POC does not replace it;
   (d) the local-dev note for the original UI.
 
 Then skip 3a–3d and continue at Step 4 (Mode B) or Step 5.

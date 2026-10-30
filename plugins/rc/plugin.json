@@ -1,0 +1,57 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "rc",
+  "version": "1.0.0",
+  "description": "Projects, products, entitlements, offerings and paywalls in your RevenueCat account.",
+  "author": {
+    "name": "RevenueCat"
+  },
+  "homepage": "https://www.revenuecat.com",
+  "license": "MIT",
+  "keywords": [
+    "revenuecat",
+    "in-app-purchases",
+    "subscriptions",
+    "monetization",
+    "iap",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/rc.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "rc",
+        "commit": "ccfc038185ec457b2ac9077f3bbf1ba947a44dbb",
+        "skills": {
+          "create-revenuecat-project": "d165c8bae9a3a686c9ed70017ed98f94126f1802b51bc7764f7d5bb275f2c92e",
+          "integrate-revenuecat": "44355975cfa4eecd5bad1790933fe9a0c672fc60e1fd64f18b02e726e9742776",
+          "revenuecat": "698e252d832d436a7ed07b4c32f60e2ed9ef1c635dc17eab576d9b5d26e23e6d",
+          "revenuecat-app-valuation": "86df78c3e66532931fae8d5e1fe28126780f0081d8a5f76161e823151c7f2102",
+          "revenuecat-audiences": "4dad13622054e1dea13bdafd56096607ad39f40609af754ce6c1a3339c22b295",
+          "revenuecat-billing": "f04c1cb7d29d7ac3987ab0f3356a6d80c4910b4b1b00bddec92eb6a865f64bd8",
+          "revenuecat-charts": "a4e6bacb54af1a1e456db41d6c5cc25c38fd0104c1c0f70190bd421d17a791bc",
+          "revenuecat-cli": "50fe0227c54c53c016aea206d820092bac342864c93d230b42f2868ba2c1d612",
+          "revenuecat-customer-center": "7e4411c05bed1c5dcac77bd787e64d29c909a1695cc7b28bd03065c6789e3a3a",
+          "revenuecat-dashboard-links": "e3f9f211919c772aa642283b03e7a36b42e781dc7c2c907e27a86a5be0c3767d",
+          "revenuecat-entitlements-gate": "8019b7ff13f0cfa42e762754a01b5a0d5188220b11c884fa9436e619f4cb5099",
+          "revenuecat-experiment-analysis": "7b7ca3e7a1a1c706a17063aed0711b12320e60959bc222e6a1a5610091ae2dee",
+          "revenuecat-experiments": "4aab1a711d43d7f2a825c128e8b549502ae045c819170b5db884a4c1700474a0",
+          "revenuecat-forecasting": "c23fd65b7e4edda916ec0bbf362af1b6cd7b320b8e373dd173818f914f2f505d",
+          "revenuecat-identify-user": "9a48bcbd3829060acf704e3d9c9cfd679b93fdc0b7c7a3638b998a8c5736b09e",
+          "revenuecat-migrate": "52cd2fd1516a01a3b5b0f1ac323a9161e8b069b976f986e6838e5efb17d18462",
+          "revenuecat-paywall": "8aa16b6f84cd93a5bf00512b408dd5da04d43aaca203efc72493e1409f3a7296",
+          "revenuecat-paywall-design": "43e126cde451a69b08e56f560f81628bb9d7d8150f9452c878286b77baa2420d",
+          "revenuecat-purchase-flow": "c4690113ba24ab217d912d7fbe1ffd268618f2e8bd7e7068ffbda15824fedf5d",
+          "revenuecat-sdk-compatibility": "daf3f55a8829ff0b2473c666238e368709385b3aa4107fc03c4a1a2e6a700036",
+          "revenuecat-status": "84ac37f521114f2fd2e570ad268f0ca5ac60d2413a467aae4c740668719d873a",
+          "revenuecat-store-state": "119154e3e95bb7c14fa88aab04dba8347dba0dec800c2a406b6384c36ceaf0d3",
+          "revenuecat-testing-setup": "0954b84b9249fda7f54bbb0e348201b0b1eb9b3fa3f5b92bd0fd230d75157df1",
+          "revenuecat-troubleshoot": "656c83b3fd5a762307f87bdff2d0d201f456fd0530879ab22b102e8d1fe790cb"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "whop",
+  "version": "1.0.0",
+  "description": "Products, memberships, payments and promo codes in your Whop business.",
+  "author": {
+    "name": "Whop"
+  },
+  "homepage": "https://whop.com",
+  "license": "Apache-2.0",
+  "keywords": [
+    "whop",
+    "mcp",
+    "commerce",
+    "payments",
+    "creators"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/whop.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "whop",
+        "commit": "51259f45c30fce8ab53bd1d765cae50d0775d27c",
+        "skills": {}
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "name": "upstash",
+  "version": "1.0.0",
+  "description": "Redis, QStash, Vector and Search in your Upstash account, with guides for its SDKs."
+}

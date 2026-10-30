@@ -1,0 +1,34 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "profound",
+  "version": "1.0.0",
+  "description": "How AI answer engines see your brand: visibility, sentiment and citations in Profound.",
+  "author": {
+    "name": "Cursor"
+  },
+  "homepage": "https://docs.tryprofound.com/mcp/overview",
+  "license": "MIT",
+  "keywords": [
+    "profound",
+    "mcp",
+    "aeo",
+    "visibility",
+    "citations",
+    "sentiment",
+    "agents",
+    "analytics"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/profound.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "profound",
+        "commit": "1ba91fc25c0977741dd0e267849e6234b037ed0a",
+        "skills": {}
+      }
+    }
+  }
+}

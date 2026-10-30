@@ -1,0 +1,16 @@
+{
+  "id": "rc",
+  "name": "RevenueCat",
+  "description": "Projects, products, entitlements, offerings and paywalls in your RevenueCat account.",
+  "group": "developer_tools",
+  "url": "https://mcp.revenuecat.ai/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

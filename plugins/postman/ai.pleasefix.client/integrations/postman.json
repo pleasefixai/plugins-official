@@ -1,0 +1,21 @@
+{
+  "id": "postman",
+  "name": "Postman",
+  "description": "Workspaces, collections, mocks, monitors and API tests in your Postman account.",
+  "group": "developer_tools",
+  "url": "https://mcp.postman.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  },
+  "headers": {
+    "X-Source": "postman-claude-code-plugin",
+    "X-Plugin-Version": "2.0.1",
+    "User-Agent": "postman-claude-code-plugin/2.0.1"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "x",
+  "name": "X",
+  "description": "Posts, timelines, trends, Spaces, communities, lists and bookmarks on X.",
+  "group": "marketing",
+  "url": "https://api.x.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

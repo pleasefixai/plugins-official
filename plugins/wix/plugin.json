@@ -1,0 +1,53 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "wix",
+  "version": "1.0.0",
+  "description": "Sites, stores, CMS collections and apps in your Wix account.",
+  "author": {
+    "name": "Wix"
+  },
+  "homepage": "https://dev.wix.com/docs/wix-cli/guides/development/about-wix-skills",
+  "license": "MIT",
+  "keywords": [
+    "wix",
+    "wix-cli",
+    "wix-mcp",
+    "ecommerce",
+    "cms",
+    "wix-apps",
+    "wix-headless",
+    "headless",
+    "mcp",
+    "backend-api"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/wix.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "wix",
+        "commit": "8fc544d319c4a4dfc7ccf3ba4adf328e1fa9866f",
+        "skills": {
+          "wix-app": "41b9b440fa5381a47b5572b472f5ab9794cf5ae14577e1e1b2b48c1a4f8afdb2",
+          "wix-design-system": "fb451b3f7d1df7157fd4456e1c1bbecb7c192ac551d7e025dcf44c7cd714c5c9",
+          "wix-docs": "42b53264ba8b6c07c014af0ac88186d527a2ebab026b952cde2ff6648199cc69",
+          "wix-headless": "3bbdfe0238581c5ad4ab2615d740d828c0932b64bb42d2c090c01ef2219b0193",
+          "wix-manage": "f08fe52248f12c2301197367318906268b870741dcfc729be094b1303981ed7a",
+          "wix-vibe-headless": "660118a4ed803353b162442915d98c370511f06f01b182a28a196f54b4a1ffb0"
+        },
+        "also": [
+          {
+            "marketplace": "cursor",
+            "plugin": "wix",
+            "commit": "b844f6f57d34d50958e469623a597c326c41f14e",
+            "skills": {
+              "wix-headless-kit": "1be1e499708eb6e3b1c403e58156530e152b31cf2c0d0e5f781a77124294f93f"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

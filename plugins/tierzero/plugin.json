@@ -1,0 +1,37 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "tierzero",
+  "version": "1.0.0",
+  "description": "Production incidents, alerts and root-cause investigations from TierZero.",
+  "author": {
+    "name": "TierZero"
+  },
+  "homepage": "https://www.tierzero.ai/",
+  "license": "MIT",
+  "keywords": [
+    "observability",
+    "debugging",
+    "incident-response",
+    "telemetry",
+    "mcp",
+    "datadog",
+    "sentry",
+    "github"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/tierzero.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "tierzero",
+        "commit": "30580371a68fa6275dd38f1c0a520d86f58efe94",
+        "skills": {
+          "tierzero-fetch": "6f110af5c15668d00312081904abbb5a638dd200cbb13a87c4f7bae60cb46060",
+          "tierzero-investigate": "d6d7eb217c644c8d72637e5b941fc64f7e7b0763aa39bb3e09091d0070bc9224"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "riverside",
+  "version": "1.0.0",
+  "description": "Recordings, transcripts, video edits and social clips in your Riverside account.",
+  "author": {
+    "name": "RiversideFM"
+  },
+  "homepage": "https://riverside.com",
+  "license": "MIT",
+  "keywords": [
+    "riverside",
+    "mcp",
+    "video",
+    "podcast",
+    "editing",
+    "publishing",
+    "recording",
+    "transcript"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/riverside.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "riverside",
+        "commit": "a4c86820761d6d77ad0f6fb7d5ab22fafcfb4862",
+        "skills": {
+          "content-discovery": "81cec469654d66963a400226e9defe54edbd9a82d32538e653591ba26c62c6bb",
+          "setup": "9b30a66c4cb3ab95def8c9d8c9b2341d92d1412af00d82af0b4c7d9d32454a98",
+          "social-publishing": "2a43d4f9c94aeb8e1acc89b2d4efb0c1d5b24cd622c27a6b3fd57ae854b9bc52",
+          "video-editing": "85fff053b5577f7210fd45ead5f340c1c87de67552a50d4ffe2775f2e6b1088a"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "vexo",
+  "name": "Vexo",
+  "description": "Spoken requests from your Vexo Band, run as tasks with the results sent back to Vexo.",
+  "group": "automation",
+  "url": "https://vexo-backend-uj6z.onrender.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

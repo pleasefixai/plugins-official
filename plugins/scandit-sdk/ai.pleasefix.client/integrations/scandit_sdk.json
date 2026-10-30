@@ -1,0 +1,16 @@
+{
+  "id": "scandit_sdk",
+  "name": "Scandit",
+  "description": "Guides and docs to add Scandit barcode scanning and ID capture to your apps.",
+  "group": "developer_tools",
+  "url": "https://ssl.scandit.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

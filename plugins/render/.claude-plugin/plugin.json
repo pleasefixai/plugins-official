@@ -1,0 +1,5 @@
+{
+  "name": "render",
+  "version": "1.0.0",
+  "description": "Services, deploys, logs and metrics of your apps on Render."
+}

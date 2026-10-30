@@ -1,0 +1,16 @@
+{
+  "id": "tavily",
+  "name": "Tavily",
+  "description": "Web search, page extraction, site crawls and cited research from Tavily.",
+  "group": "knowledge",
+  "url": "https://mcp.tavily.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

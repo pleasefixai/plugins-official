@@ -1,0 +1,32 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "readwise",
+  "version": "1.0.0",
+  "description": "Highlights and saved documents from your Readwise and Reader library.",
+  "author": {
+    "name": "Cursor"
+  },
+  "homepage": "https://docs.readwise.io/tools/mcp",
+  "license": "MIT",
+  "keywords": [
+    "readwise",
+    "reader",
+    "highlights",
+    "reading",
+    "notes",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/readwise.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "readwise",
+        "commit": "1ba91fc25c0977741dd0e267849e6234b037ed0a",
+        "skills": {}
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "postman",
+  "version": "1.0.0",
+  "description": "Workspaces, collections, mocks, monitors and API tests in your Postman account.",
+  "author": {
+    "name": "Postman"
+  },
+  "homepage": "https://github.com/postmanlabs/postman-plugin",
+  "license": "Apache-2.0",
+  "keywords": [
+    "postman",
+    "api",
+    "mocking",
+    "monitoring",
+    "ci",
+    "documentation",
+    "ai-readiness",
+    "flows"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/postman.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "postman",
+        "commit": "c6352ef5605cd46d3f817e15c601eeb9a56c08f7",
+        "skills": {
+          "ai-readiness": "bd4f582f27cba0deff78d90ee97a99c328ab784a274fc163d6f7e54f709123da",
+          "api-discovery": "00abd469d706ed0ae82e1575a221c20c089bbfda6ec8ff26e2ca30f9a77d1dd2",
+          "api-documentation": "78fe7f66ea7977a156e413c9c2b89b606968b2b9df8d19e8fa5b9cab261412ea",
+          "api-engineer": "1d09d93feea45518762fdf1f3ccd6ab2b1c215ae63e94c356a48324d1b329694",
+          "api-mocking": "746fde98ce13dd2c6723b9f35c6996bedc730c3b4f06dc5b852454da2b07e032",
+          "api-monitoring": "e0209e6593660a2c8cacc1ae66e6612eee16de43c6d0b015c952ffa6e7db2fcd",
+          "api-simulation": "b683f6f97465b59e0e559c111ff5a5506129b38643e6fd7c0f94101ab908cd74",
+          "api-testing": "f1c507088c273de8150c6bb5d84f40a3325b1d8496f7e8625c3d6da82a697150",
+          "bootstrap": "ddfb606e2463537abc4bf6f5c00fcd468b84f1c09710ed9978b1e0ea12604405",
+          "ci-integration": "2244f41c1c1a722f5517f9c23d26d665e8553e42699489137ba1499de506acc5",
+          "collection-schema-v3": "6cbe2abfbbf5b2a5facbd3b37a32b5d5813d5f37cd98187bfdb6656b66f3d01b",
+          "datasets": "82b6eeb3518ca032027bf32f906b89c7ebcbf02605f616117bc2c09d10bff100",
+          "flows": "b49c0436ce7c24d0011ac35d7c34c67279270072dfe7138c935d8d7af8294302",
+          "performance-testing": "24858f2183289f5e4391b03f48801a519619b9e90a1f0ece27dcda86596ce064",
+          "postman-mcp-server": "a21bc7c7a4433f23fec1cbc6d0769180a3c06106d6baf0a14d93b6fe5633290d",
+          "variables": "efda2c517e128a14a07f6ba6f9137854e496f78bd2b87a1a03afff33194d9597",
+          "webhook-testing": "37363e82a160421411dd6579282a939637530bb8eed367c9f9df633c625d9f59"
+        },
+        "also": [
+          {
+            "marketplace": "cursor",
+            "plugin": "postman",
+            "commit": "e94d308f9603e168c814e9377257f82758daf550",
+            "skills": {
+              "application-testing": "162e829ec1b003197f7c6d31b6fc654d696c9c93c7a7871cc0cf7da2b79b9f94"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

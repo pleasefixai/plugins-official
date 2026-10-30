@@ -1,0 +1,31 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "slides",
+  "version": "1.0.0",
+  "description": "Presentations in your Slides.com account, to create, edit and share.",
+  "author": {
+    "name": "Slides.com"
+  },
+  "homepage": "https://slides.com",
+  "license": "MIT",
+  "keywords": [
+    "presentations",
+    "slides",
+    "authoring"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/slides.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "slides",
+        "commit": "b2d3966a696ef20fe6924582393c6c3860cd3ff6",
+        "skills": {
+          "slides-authoring": "19b4ab7167986f518e630fcacc5049389a08116ca4f68dd86995b59bed2d1924"
+        }
+      }
+    }
+  }
+}
