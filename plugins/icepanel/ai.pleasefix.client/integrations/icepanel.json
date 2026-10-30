@@ -1,0 +1,16 @@
+{
+  "id": "icepanel",
+  "name": "IcePanel",
+  "description": "Software architecture diagrams, systems and flows in your IcePanel landscape.",
+  "group": "design",
+  "url": "https://mcp.icepanel.io/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

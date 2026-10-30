@@ -1,0 +1,16 @@
+{
+  "id": "opusclip",
+  "name": "OpusClip",
+  "description": "Short clips cut from your long videos with OpusClip, captioned and ready to publish.",
+  "group": "design",
+  "url": "https://mcp.opus.pro/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

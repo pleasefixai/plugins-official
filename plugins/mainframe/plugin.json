@@ -1,0 +1,34 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "mainframe",
+  "version": "1.0.0",
+  "description": "Short video updates about your agent's work, made and shared with Mainframe.",
+  "author": {
+    "name": "Mainframe"
+  },
+  "homepage": "https://mainframe.app/",
+  "license": "UNLICENSED",
+  "keywords": [
+    "mainframe",
+    "agent-skills",
+    "mcp",
+    "hooks",
+    "video"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/mainframe.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "mainframe",
+        "commit": "53e63d488f12ec11cafaa88d16a0e7ba96e28aad",
+        "skills": {},
+        "guessed": {
+          "mainframe.name": "5174d6d43d4f08c2"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "monday-crm",
+  "version": "1.0.0",
+  "description": "Contacts, accounts, deals and activities in your monday CRM boards.",
+  "author": {
+    "name": "monday.com"
+  },
+  "homepage": "https://monday.com",
+  "license": "MIT",
+  "keywords": [
+    "monday",
+    "monday-crm",
+    "crm",
+    "sales",
+    "pipeline",
+    "forecast",
+    "daily-briefing",
+    "meeting-to-deal",
+    "data-cleanup",
+    "workspace-builder",
+    "sequence",
+    "automation",
+    "activity",
+    "timeline",
+    "activity-insights"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/monday_crm.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "monday-crm",
+        "commit": "8fdc0b4af07a4b7e1059ca3f8320d64968737b8e",
+        "skills": {
+          "activity-insights": "41acf960edb71f5b8fbe157e72d1b5992f5e9d08edb0f0c7629e07c7870b73df",
+          "automate-crm": "297e0ccc98b54c2bc708c489b5a7b81c9a077d90412cfc8a25aad2e27ad699b1",
+          "daily-briefing": "b9f5cb08e0e718763fb04a79500bb6d319efe7728326f674c284ad674623b24b",
+          "data-cleanup": "81e3c2f58c4421d361e9eb599516e9e6eae574bb01ef8105e1d3d6479b84f9bd",
+          "forecast": "d7b54b922bf08c385d02c53e3e6f0472ce2edcb943986e02316bb8a7e536e7c5",
+          "log-activity": "068ef8ff203f4a9857836f9c6870967a1759d83101c47d4183fa2e2e569b0b39",
+          "meeting-to-deal": "5b06ff3b446c22867ef0ca4905511621691d7c09f42b5d804b4242c27729f56d",
+          "run-sequence": "291784f0c8b879edec0e062f370a1b200c81f9c912d0e0330f2b4cd939b961d7",
+          "workspace-builder": "922c2fa1b9aca66fe9e303c4737ec7c8f584b23b5a21108a081fcadd8e9a1155"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "invideo",
+  "name": "invideo AI",
+  "description": "Videos made with invideo AI: generated media, edited timelines and exports.",
+  "group": "design",
+  "url": "https://mcp.invideo.io/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

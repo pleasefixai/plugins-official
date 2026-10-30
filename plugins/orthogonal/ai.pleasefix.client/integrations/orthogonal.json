@@ -1,0 +1,16 @@
+{
+  "id": "orthogonal",
+  "name": "Orthogonal",
+  "description": "Web search, scraping and enrichment APIs of many providers, through Orthogonal.",
+  "group": "knowledge",
+  "url": "https://mcp.orthogonal.com",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

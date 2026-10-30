@@ -1,0 +1,16 @@
+{
+  "id": "mongodb_atlas",
+  "name": "MongoDB Atlas",
+  "description": "Clusters, databases, collections and queries in your MongoDB Atlas projects.",
+  "group": "developer_tools",
+  "url": "https://mcp.mongodb.com/",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

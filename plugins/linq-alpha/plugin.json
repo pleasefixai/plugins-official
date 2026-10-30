@@ -1,0 +1,28 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "linq-alpha",
+  "version": "1.0.0",
+  "description": "Fundamentals, estimates, transcripts, filings and market data from LinqAlpha.",
+  "author": {
+    "name": "LinqAlpha"
+  },
+  "homepage": "https://www.linqalpha.com",
+  "license": "Apache-2.0",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/linq_alpha.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "linq-alpha",
+        "commit": "bfb594b7ccca28dfdcbdb0a64673dfe2e819fd87",
+        "skills": {
+          "remove": "5f1b0a92538e61b55e1304157c23904fed6527b1d8bc6358b5c4ce22640ab651",
+          "research": "f2c8b34222bf0d6502746d334f0cc2daa1bc43d4beb57c0462c4746faa1e4eb8",
+          "setup": "5619f08b9a67428ed0dc503cc911313b580e16ac0bec3eb2ba9ab5cff11ba792"
+        }
+      }
+    }
+  }
+}

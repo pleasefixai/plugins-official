@@ -1,0 +1,30 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "paybox-plugin",
+  "version": "1.0.0",
+  "description": "Token swaps and transfers, x402 payments and virtual cards from MoonPay's PayBox wallets.",
+  "author": {
+    "name": "MoonPay"
+  },
+  "homepage": "https://www.moonpay.com/",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/paybox_plugin.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "paybox-plugin",
+        "commit": "7c532e25a54743dd9ba2bf12d38a1a664b6287f7",
+        "skills": {
+          "paybox-get-started": "28d8cb560c45e43c66d48f8044754c1ee4b07d611a6092eedf743f1ff0462dda",
+          "paybox-pay-and-swap": "325c2e082388a6f865ab164dee05014f348234077a95378d81881f0769f76baa",
+          "paybox-x402-services": "f1a0b17f0abb0a5c79e689f57f2c312c2781d9e7ece0706096581f00452fe2aa"
+        },
+        "guessed": {
+          "paybox_plugin.name": "45b967cc1ce399ab"
+        }
+      }
+    }
+  }
+}

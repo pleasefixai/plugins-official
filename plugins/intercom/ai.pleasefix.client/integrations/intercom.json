@@ -1,0 +1,16 @@
+{
+  "id": "intercom",
+  "name": "Intercom",
+  "description": "Conversations, contacts, companies and help center articles in your Intercom workspace.",
+  "group": "support",
+  "url": "https://mcp.intercom.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

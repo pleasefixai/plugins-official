@@ -1,0 +1,39 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "onesignal",
+  "version": "1.0.0",
+  "description": "Push notifications, in-app messages, emails and audiences in your OneSignal apps.",
+  "author": {
+    "name": "OneSignal"
+  },
+  "homepage": "https://onesignal.com",
+  "license": "MIT",
+  "keywords": [
+    "onesignal",
+    "mcp",
+    "push-notifications",
+    "email",
+    "sms",
+    "in-app-messages",
+    "journeys",
+    "segments"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/onesignal.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "onesignal",
+        "commit": "491d5626d39311021fc9fbb3353fbe2dead02641",
+        "skills": {
+          "onesignal-setup": "776c0950cf7eff81eb2b4310218ddd54c062fa617aef1d0023e4b63094c30e41"
+        },
+        "guessed": {
+          "onesignal.name": "e842cc3aea01b214"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "govtribe",
+  "version": "1.0.0",
+  "description": "Federal contract opportunities, awards, agencies and competitors from GovTribe.",
+  "author": {
+    "name": "GovTribe"
+  },
+  "homepage": "https://govtribe.com",
+  "license": "Apache-2.0",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "govtribe",
+        "commit": "41cb943db7f96e33f0255f46c882742cb92cb909",
+        "skills": {
+          "govtribe-capture-workflows": "220117b3db65220eb5f02b7257affd173bb30edf240089e87a3722a199f68403",
+          "govtribe-deep-dive": "b4ac1d82234791e5a57b247c6f01dd3155ad0c8afde2e5581c6fb79037b4bb8e",
+          "govtribe-document-editing": "650e5aa9ead7b5242dcc51a9e09cdd39a6e0c68154bbc30694b03e495f6756c8",
+          "govtribe-file-templates": "a305b24be95350230f58a106bbd7aba018e1d1d04ebe9bd2946027c253d5a72d",
+          "govtribe-govcon-writing": "8eebbf5bd1f8861ae4bb02f9e3df65a32826582165c2591ef56b5fca3506443d",
+          "govtribe-market-intelligence": "de2edc08cc2e71e51df14f18a13677c9579a2bb3edd83a97aa8dcf7eb72874cf",
+          "govtribe-pricing-data": "7d49301ab6b650515cff200945260dd0dfbc97f0fcbd0f08b2c0f12156b44ebd",
+          "govtribe-proposal-workflows": "2858e09c60d23719286dc2c3963b6a61a4f63cc701fc8188bdcde1fe125587d9"
+        }
+      }
+    }
+  }
+}

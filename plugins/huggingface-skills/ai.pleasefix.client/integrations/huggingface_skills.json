@@ -1,0 +1,16 @@
+{
+  "id": "huggingface_skills",
+  "name": "Hugging Face",
+  "description": "Models, datasets, Spaces and papers on the Hugging Face Hub.",
+  "group": "developer_tools",
+  "url": "https://huggingface.co/mcp?login=",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "name": "mongodb-atlas",
+  "version": "1.0.0",
+  "description": "Clusters, databases, collections and queries in your MongoDB Atlas projects."
+}

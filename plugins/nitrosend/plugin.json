@@ -1,0 +1,37 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "nitrosend",
+  "version": "1.0.0",
+  "description": "Campaigns, automated flows and transactional email in your Nitrosend account.",
+  "author": {
+    "name": "Nitrosend"
+  },
+  "homepage": "https://nitrosend.com",
+  "license": "MIT",
+  "keywords": [
+    "email",
+    "newsletter",
+    "marketing",
+    "automation",
+    "campaigns",
+    "transactional",
+    "mcp",
+    "esp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/nitrosend.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "nitrosend",
+        "commit": "8f437e5ea9aa15654a4acc8455ce65593e0352c3",
+        "skills": {},
+        "guessed": {
+          "nitrosend.name": "ec218fc19627e1b9"
+        }
+      }
+    }
+  }
+}

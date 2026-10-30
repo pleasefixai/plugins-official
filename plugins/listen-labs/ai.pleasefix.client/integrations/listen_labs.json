@@ -1,0 +1,16 @@
+{
+  "id": "listen_labs",
+  "name": "Listen Labs",
+  "description": "Customer research studies, interviews and their findings in Listen Labs.",
+  "group": "knowledge",
+  "url": "https://mcp.listenlabs.ai/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

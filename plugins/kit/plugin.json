@@ -1,0 +1,40 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "kit",
+  "version": "1.0.0",
+  "description": "Subscribers, tags, broadcasts and audience growth in your Kit account.",
+  "author": {
+    "name": "Kit"
+  },
+  "homepage": "https://kit.com",
+  "license": "MIT",
+  "keywords": [
+    "kit",
+    "email",
+    "subscribers",
+    "broadcasts",
+    "creator",
+    "mcp",
+    "newsletter",
+    "email-marketing",
+    "automation",
+    "tags",
+    "sequences"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/kit.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "kit",
+        "commit": "54f6acbdf3a9e77371b647ae9e478df83c58dda3",
+        "skills": {},
+        "guessed": {
+          "kit.name": "875d60ed20f4b98f"
+        }
+      }
+    }
+  }
+}

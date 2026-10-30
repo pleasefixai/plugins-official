@@ -1,12 +1,12 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "customer-io",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Campaigns, segments and people in your Customer.io workspace.",
   "author": {
     "name": "Cursor"
   },
-  "homepage": "https://cursor.com/",
+  "homepage": "https://docs.customer.io/ai/mcp/",
   "license": "MIT",
   "keywords": [
     "customer.io",

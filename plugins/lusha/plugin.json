@@ -1,0 +1,46 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "lusha",
+  "version": "1.0.0",
+  "description": "Verified contacts, phone numbers, company signals and lookalike prospects from Lusha.",
+  "author": {
+    "name": "Lusha"
+  },
+  "homepage": "https://www.lusha.com",
+  "license": "MIT",
+  "keywords": [
+    "lusha",
+    "b2b",
+    "sales-intelligence",
+    "prospecting",
+    "data-enrichment",
+    "lead-enrichment",
+    "verified-emails",
+    "phone-numbers",
+    "buying-signals",
+    "contacts",
+    "companies",
+    "revops",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/lusha.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "lusha",
+        "commit": "c3017a3d6831e444b781044337f0394e76b12d89",
+        "skills": {
+          "enrich-contact": "c4864a4e089bb33e1cb574242a961bd0f8a796fd533c8dcd6a0385415a19c1ac",
+          "lookalike-prospect": "7f175d1f693c82a8e7b594a38833d14a4d821231994909d03c4b7b7512cae4c9",
+          "outreach-research": "8e7107f9498c244e3db09a9930298f098c6d6fbb0b852d088df5f98969783a95",
+          "outreach-sequence": "f5f54a7bfc405d7659d3b793d230d45f9218b8807c51b0151c6af23a466e6b91",
+          "prospect": "a176e94b2cef6c64ff561cf05e8b00e43a55c9832dd28d7bbd7f62e2beb49344",
+          "signal-prospect": "c7caf34173a3a4817daf2fbdf117bd1460f6737a68c63655f488dc4ab0268f01"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "infobip_2fa",
+  "name": "Infobip (2FA)",
+  "description": "Two-factor authentication applications, PIN templates and verifications on Infobip.",
+  "group": "communication",
+  "url": "https://mcp.infobip.com/2fa",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

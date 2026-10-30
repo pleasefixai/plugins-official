@@ -1,0 +1,16 @@
+{
+  "id": "harmonic",
+  "name": "Harmonic",
+  "description": "Company and people data from Harmonic, to find, research and enrich startups.",
+  "group": "private_markets",
+  "url": "https://mcp.api.harmonic.ai",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

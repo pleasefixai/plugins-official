@@ -1,0 +1,16 @@
+{
+  "id": "infobip_voice",
+  "name": "Infobip (voice)",
+  "description": "Voice calls, text-to-speech, conference calls and call logs through Infobip.",
+  "group": "communication",
+  "url": "https://mcp.infobip.com/voice",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

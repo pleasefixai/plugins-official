@@ -1,0 +1,42 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "make",
+  "version": "1.0.0",
+  "description": "Scenarios, AI agents and their runs in your Make organization.",
+  "author": {
+    "name": "Make"
+  },
+  "homepage": "https://make.com",
+  "license": "MIT",
+  "keywords": [
+    "make",
+    "mcp",
+    "automation",
+    "scenarios",
+    "integration",
+    "workflow",
+    "blueprint",
+    "no-code"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/make.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "make",
+        "commit": "c65bcccb07d1a28284734d718099d36b250a792a",
+        "skills": {
+          "make-scenario-building": "91033a33d2eb3d23ade55a2a16ba153e4a7c8303c53d92249a73475d1be4e83e",
+          "make-scenario-explore": "0c7ac677e7395fb2a023bca3e4ffeb17f5cd78a4392aa50278f182ed7ddba670",
+          "make-scenario-operations": "c4a10eb67464c10ed9cc0d25fb91a16c2ee5f291e8bba59e9f8dfbc45d399f38",
+          "make-scenario-reference": "fded0c0cde180c503bf7284047c2781a73b7054c0d9527798b837fd3784cd76c"
+        },
+        "guessed": {
+          "make.name": "ccdd25d4230fb997"
+        }
+      }
+    }
+  }
+}

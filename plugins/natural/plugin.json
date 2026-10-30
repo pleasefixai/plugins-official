@@ -1,0 +1,34 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "natural",
+  "version": "1.0.0",
+  "description": "Balances, payments and payment requests of your agents on Natural.",
+  "author": {
+    "name": "Natural"
+  },
+  "homepage": "https://www.natural.com/",
+  "license": "MIT",
+  "keywords": [
+    "payments",
+    "money",
+    "fintech",
+    "mcp",
+    "natural"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/natural.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "natural",
+        "commit": "344417f3461313a7154f924da96f8f659040234b",
+        "skills": {},
+        "guessed": {
+          "natural.name": "d6acb6d51cfc5749"
+        }
+      }
+    }
+  }
+}

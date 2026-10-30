@@ -1,12 +1,12 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "etoro-trading",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Your eToro portfolio, positions and watchlists, market research and trades.",
   "author": {
     "name": "Cursor"
   },
-  "homepage": "https://cursor.com/",
+  "homepage": "https://api-portal.etoro.com/core/vibe-code/cursor",
   "license": "MIT",
   "keywords": [
     "etoro",

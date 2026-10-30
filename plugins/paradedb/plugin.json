@@ -1,0 +1,26 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "paradedb",
+  "version": "1.0.0",
+  "description": "ParadeDB documentation: full-text search, vector search and analytics in Postgres.",
+  "author": {
+    "name": "ParadeDB"
+  },
+  "homepage": "https://www.paradedb.com/",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/paradedb.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "paradedb",
+        "commit": "5709201f1a9335ec20ed5307961cc452fd00205f",
+        "skills": {},
+        "guessed": {
+          "paradedb.name": "8b949b6ed25db05b"
+        }
+      }
+    }
+  }
+}

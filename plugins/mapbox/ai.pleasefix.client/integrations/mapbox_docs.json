@@ -1,0 +1,8 @@
+{
+  "id": "mapbox_docs",
+  "name": "Mapbox (docs)",
+  "description": "Mapbox documentation and API references.",
+  "group": "developer_tools",
+  "url": "https://mcp-docs.mapbox.com/mcp",
+  "auth": null
+}

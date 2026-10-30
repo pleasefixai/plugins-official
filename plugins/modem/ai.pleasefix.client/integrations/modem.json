@@ -1,0 +1,16 @@
+{
+  "id": "modem",
+  "name": "Modem",
+  "description": "What your customers said, what you are building and what shipped, in Modem.",
+  "group": "support",
+  "url": "https://mcp.modem.dev/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

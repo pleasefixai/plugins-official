@@ -1,0 +1,16 @@
+{
+  "id": "hostinger",
+  "name": "Hostinger",
+  "description": "Websites, WordPress installs, domains and servers in your Hostinger account.",
+  "group": "developer_tools",
+  "url": "https://mcp.hostinger.com",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

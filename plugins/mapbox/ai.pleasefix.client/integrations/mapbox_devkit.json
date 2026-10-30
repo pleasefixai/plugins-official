@@ -1,0 +1,16 @@
+{
+  "id": "mapbox_devkit",
+  "name": "Mapbox (DevKit)",
+  "description": "Map styles, tokens and data previews in your Mapbox account.",
+  "group": "developer_tools",
+  "url": "https://mcp-devkit.mapbox.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

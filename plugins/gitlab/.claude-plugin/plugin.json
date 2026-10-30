@@ -1,5 +1,5 @@
 {
   "name": "gitlab",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Projects, issues, merge requests and CI/CD pipelines on GitLab."
 }

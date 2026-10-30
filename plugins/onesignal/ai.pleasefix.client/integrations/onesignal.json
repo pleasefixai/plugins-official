@@ -1,0 +1,16 @@
+{
+  "id": "onesignal",
+  "name": "OneSignal",
+  "description": "Push notifications, in-app messages, emails and audiences in your OneSignal apps.",
+  "group": "marketing",
+  "url": "https://api.onesignal.com/mcp/oauth",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

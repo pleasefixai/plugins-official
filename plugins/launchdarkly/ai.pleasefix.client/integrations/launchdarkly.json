@@ -1,0 +1,16 @@
+{
+  "id": "launchdarkly",
+  "name": "LaunchDarkly",
+  "description": "Feature flags, AI Configs, targeting and metrics in your LaunchDarkly projects.",
+  "group": "product_analytics",
+  "url": "https://mcp.launchdarkly.com/mcp/fm",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

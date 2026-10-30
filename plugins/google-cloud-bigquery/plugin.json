@@ -1,12 +1,12 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "google-cloud-bigquery",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Datasets, tables and SQL queries in Google Cloud BigQuery.",
   "author": {
     "name": "Cursor"
   },
-  "homepage": "https://cursor.com/",
+  "homepage": "https://docs.cloud.google.com/bigquery/docs/use-bigquery-mcp",
   "license": "MIT",
   "keywords": [
     "google cloud bigquery",
@@ -21,6 +21,7 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "mark": "integrations/google_cloud_bigquery.svg",
       "upstream": {
         "kind": "imported",
         "marketplace": "cursor",

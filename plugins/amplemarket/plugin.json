@@ -1,12 +1,12 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "amplemarket",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "People and company search, lead enrichment and sequences from your Amplemarket account.",
   "author": {
     "name": "Cursor"
   },
-  "homepage": "https://cursor.com/",
+  "homepage": "https://knowledge.amplemarket.com/articles/8022685319-connecting-to-the-amplemarket-mcp-server",
   "license": "MIT",
   "keywords": [
     "amplemarket",

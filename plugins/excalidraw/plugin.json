@@ -1,12 +1,12 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "excalidraw",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Hand-drawn style diagrams drawn and exported with Excalidraw.",
   "author": {
     "name": "Cursor"
   },
-  "homepage": "https://cursor.com/",
+  "homepage": "https://github.com/excalidraw/excalidraw-mcp",
   "license": "MIT",
   "keywords": [
     "excalidraw",

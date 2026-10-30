@@ -1,0 +1,52 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "launchdarkly",
+  "version": "1.0.0",
+  "description": "Feature flags, AI Configs, targeting and metrics in your LaunchDarkly projects.",
+  "author": {
+    "name": "LaunchDarkly"
+  },
+  "homepage": "https://launchdarkly.com",
+  "license": "Apache-2.0",
+  "keywords": [
+    "launchdarkly",
+    "feature-flags",
+    "feature-management",
+    "ai-config",
+    "targeting",
+    "rollout",
+    "cleanup",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/launchdarkly.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "launchdarkly",
+        "commit": "be588594d653c725f9eef69d1f08dbc39c06809f",
+        "skills": {
+          "aiconfig-create": "f75b08a89e2697cfe5b88deeab0ea33858395adb16dd9aae47abbd999f06ba39",
+          "aiconfig-online-evals": "2ae1d9d9220642dbce622d3906d489727be080a90f75b003e2b2845181a158a4",
+          "aiconfig-projects": "0a8a45956fb37b380450ef74e16529c572f49d6002af64dd3333d4133c6c97f3",
+          "aiconfig-targeting": "7be980cdc7bb225922ae3804d205994f16eb8d76b9bb20b4f2b5ed1f8e2eb58c",
+          "aiconfig-tools": "1f9e4cdb8c3cbbe4ff58b807189b37545c35a8aee206ddc5439d86fbe4c09225",
+          "aiconfig-update": "89abf309f503cfe7b91d991185487d20089fb7e12aa99b9748bbf833296a2d26",
+          "aiconfig-variations": "a755c2cc300e22137c41e802fcb382f07c7a5c58f4f362f94401c239081733a9",
+          "launchdarkly-flag-cleanup": "e6cdca2368766c2699ceb0bce287e5aeede4d327411903017e2a57857fb7da5f",
+          "launchdarkly-flag-create": "381e4d2768cf0a10b711a1695865c75158d2e9e50af95192ec7c97d6f5062330",
+          "launchdarkly-flag-discovery": "e9e87af8922d7bb9dd8c3a2594581559990fd4df1f011a97b38ca2666c039a95",
+          "launchdarkly-flag-targeting": "19e01f8bba066c2c2e3acdf3eb2aa174e1aba51282f76630a7b4e3e0e97136fa",
+          "launchdarkly-metric-choose": "7ec01320683b2a7c6c39a8a58f5d4bfb07090dd956b6371ab78f2b56b8679a27",
+          "launchdarkly-metric-create": "23e6b03ab38927c29ccde3cd87eb9c3ff2821381ecb3d4cbd2f1fa44c14bc1f5",
+          "launchdarkly-metric-instrument": "a05bcaff6868cf44d79bae39e351df3b472adc3616fe2d4444e2fa300338427c"
+        },
+        "guessed": {
+          "launchdarkly.name": "0b9f45a2ecdc4217"
+        }
+      }
+    }
+  }
+}

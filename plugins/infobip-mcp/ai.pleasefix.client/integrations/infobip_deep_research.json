@@ -1,0 +1,8 @@
+{
+  "id": "infobip_deep_research",
+  "name": "Infobip (deep research)",
+  "description": "In-depth search of Infobip's API documentation and product guides.",
+  "group": "communication",
+  "url": "https://mcp.infobip.com/deep-research",
+  "auth": null
+}

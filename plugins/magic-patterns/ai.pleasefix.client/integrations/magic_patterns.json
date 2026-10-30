@@ -1,0 +1,16 @@
+{
+  "id": "magic_patterns",
+  "name": "Magic Patterns",
+  "description": "UI prototypes, designs and inspiration in your Magic Patterns account.",
+  "group": "design",
+  "url": "https://mcp.magicpatterns.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

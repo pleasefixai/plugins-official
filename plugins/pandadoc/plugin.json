@@ -1,0 +1,52 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "pandadoc",
+  "version": "1.0.0",
+  "description": "Documents, quotes, contracts and their signing status in your PandaDoc workspace.",
+  "author": {
+    "name": "PandaDoc"
+  },
+  "homepage": "https://github.com/pandadoc/mcp-server-guide",
+  "license": "MIT",
+  "keywords": [
+    "pandadoc",
+    "documents",
+    "mcp",
+    "ui",
+    "code-connect",
+    "proposals",
+    "quotes",
+    "contracts",
+    "e-signature",
+    "sales",
+    "legal",
+    "workflow"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/pandadoc.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "pandadoc",
+        "commit": "81c9c7c2c9afbe6f886a35c1ad57847341693933",
+        "skills": {
+          "pandadoc-approval-send": "4ae9f12108b8c541db79110bf43796071544ad3a06b591c731530715b14992c6",
+          "pandadoc-contract-register": "127355d140a6f5659633dde255ef1ad8ba5259f8030bac25963564f3894d3043",
+          "pandadoc-engagement-tracker": "d72bc03db5c80803ee83b21d1b4f6a42863199b7d6889ae7ef71cfeee17d5afe",
+          "pandadoc-followup-list": "bdcb4fa3f61b0f10410589d4d7ec4e5f8a123f4c9ab42136f59603f4ebdf2763",
+          "pandadoc-invoice-handoff": "d3bbca3b3eddeaeb762511bf1ac2b53f0445eb24a4e5fa95173c6984c71d7929",
+          "pandadoc-nda-fast-send": "fdff53ff020fd036da9ae90ca254b6f8d6867448c16d40879bc56fafdded507d",
+          "pandadoc-onboarding-agreement": "030d5ec664ebdd53058b9c4cbb1a85081ed8f4e090f34088c7b4d7c8c40a2c2c",
+          "pandadoc-quote-builder": "f1aba1187dc145f76925109f4f1fbc2763fd3c73078ccdd8158a7ab12ca44115",
+          "pandadoc-renewal-radar": "b9bd8f8b3ab9fa43b23fbe62a20fe7fd63bbb2ff95b176c2effdf0e6c337ee3a",
+          "pandadoc-signing-velocity": "8fc2fb6b3e6c5766484e046c902e01d92b7fb7a8bed1f0417726c3092e5b0085"
+        },
+        "guessed": {
+          "pandadoc.name": "ae97e6ce4417bafe"
+        }
+      }
+    }
+  }
+}

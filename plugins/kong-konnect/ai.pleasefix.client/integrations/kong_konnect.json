@@ -1,0 +1,16 @@
+{
+  "id": "kong_konnect",
+  "name": "Kong Konnect",
+  "description": "API and AI gateways, control planes, services and developer portals in Kong Konnect.",
+  "group": "developer_tools",
+  "url": "https://global.mcp.konghq.com/",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

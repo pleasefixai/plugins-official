@@ -1,0 +1,34 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "modem",
+  "version": "1.0.0",
+  "description": "What your customers said, what you are building and what shipped, in Modem.",
+  "author": {
+    "name": "Modem"
+  },
+  "homepage": "https://modem.dev",
+  "license": "MIT",
+  "keywords": [
+    "crm",
+    "customer-feedback",
+    "topics",
+    "sales",
+    "support"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/modem.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "modem",
+        "commit": "ca197a55275617459504479246570bebe4129aef",
+        "skills": {},
+        "guessed": {
+          "modem.name": "9e5b909af171c1e4"
+        }
+      }
+    }
+  }
+}

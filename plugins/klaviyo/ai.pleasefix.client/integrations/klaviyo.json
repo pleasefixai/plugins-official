@@ -1,0 +1,16 @@
+{
+  "id": "klaviyo",
+  "name": "Klaviyo",
+  "description": "Profiles, segments, campaigns and flows in your Klaviyo account.",
+  "group": "marketing",
+  "url": "https://mcp.klaviyo.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

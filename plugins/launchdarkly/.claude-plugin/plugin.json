@@ -1,0 +1,5 @@
+{
+  "name": "launchdarkly",
+  "version": "1.0.0",
+  "description": "Feature flags, AI Configs, targeting and metrics in your LaunchDarkly projects."
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "html-css-to-image",
+  "version": "1.0.0",
+  "description": "Images and PDFs rendered from HTML, CSS, templates or live web pages.",
+  "author": {
+    "name": "HTML/CSS to Image"
+  },
+  "homepage": "https://htmlcsstoimage.com",
+  "license": "MIT",
+  "keywords": [
+    "image-generation",
+    "screenshots",
+    "html",
+    "css",
+    "pdf",
+    "mcp",
+    "hcti",
+    "html-css-to-image"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/html_css_to_image.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "html-css-to-image",
+        "commit": "51699e1b7677247f0af6d874ceda5915ecc65405",
+        "skills": {
+          "hcti-image-generation": "69b923d34fba374b7d106aab8eaf14f22e64fb354f893633e3929f9e4a0918a9",
+          "hcti-open-graph-images": "18fb5990e6ae6fe3c5859ffc6dab3dc460c22026a6de2be1067788b945c29d31"
+        },
+        "guessed": {
+          "html_css_to_image.name": "a47cb89b1ce5cdce"
+        }
+      }
+    }
+  }
+}

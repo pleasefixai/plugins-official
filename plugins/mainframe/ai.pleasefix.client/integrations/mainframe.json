@@ -1,0 +1,16 @@
+{
+  "id": "mainframe",
+  "name": "Mainframe",
+  "description": "Short video updates about your agent's work, made and shared with Mainframe.",
+  "group": "communication",
+  "url": "https://mcp.mainframe.app/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

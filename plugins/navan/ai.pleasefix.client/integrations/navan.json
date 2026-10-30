@@ -1,0 +1,16 @@
+{
+  "id": "navan",
+  "name": "Navan",
+  "description": "Expenses, travel bookings, policies and cards in your Navan account.",
+  "group": "finance_ops",
+  "url": "https://mcp.navan.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

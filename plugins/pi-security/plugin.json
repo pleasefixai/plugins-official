@@ -1,0 +1,43 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "pi-security",
+  "version": "1.0.0",
+  "description": "Security findings, posture and remediation guidance from Pi Security.",
+  "author": {
+    "name": "Pi Security"
+  },
+  "homepage": "https://pi.security",
+  "license": "MIT",
+  "keywords": [
+    "security",
+    "appsec",
+    "findings",
+    "remediation",
+    "threat-modeling",
+    "design-review",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/pi_security.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "pi-security",
+        "commit": "595a659bab78844c83cd5febf8d0107bb21a7c5d",
+        "skills": {
+          "ingest-markdown-report": "84bb503337786d1e9b29e49dde4b3fe3f2e82ab48e420b55adc9549dd9d8091b",
+          "investigate-finding": "3e317fbe2533d4795cdf4532f8cceb3145407d945936a22775209a112e23c46a",
+          "remediation-guidance": "07d4e84df60deddaacd48b79f85db89b5c3cee0d4aa835ff63faca309ec4a782",
+          "review-security-posture": "704e127acc5d0271d8c344a0b8273aabb6752f4f34006799ac2956580c7aa70a",
+          "secure-development-playbook": "29aa501773023e1f0a05d25dac1ec1db3faa83c6c5b13e5610533f250c8d0968",
+          "security-design-review": "c45a957ca08337a160175c878a378f3f6a05709c0d5dd509da3e08d3f832bd71"
+        },
+        "guessed": {
+          "pi_security.name": "2129d0ae48aa68a4"
+        }
+      }
+    }
+  }
+}

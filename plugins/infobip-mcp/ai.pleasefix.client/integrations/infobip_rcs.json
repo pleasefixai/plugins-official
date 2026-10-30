@@ -1,0 +1,16 @@
+{
+  "id": "infobip_rcs",
+  "name": "Infobip (RCS)",
+  "description": "Rich RCS messages with media, suggested replies and carousels through Infobip.",
+  "group": "communication",
+  "url": "https://mcp.infobip.com/rcs",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

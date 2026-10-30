@@ -1,0 +1,16 @@
+{
+  "id": "linq_alpha",
+  "name": "LinqAlpha",
+  "description": "Fundamentals, estimates, transcripts, filings and market data from LinqAlpha.",
+  "group": "market_data",
+  "url": "https://api.linqalpha.com/v1/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

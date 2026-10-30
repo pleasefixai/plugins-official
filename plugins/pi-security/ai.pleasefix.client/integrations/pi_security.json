@@ -1,0 +1,16 @@
+{
+  "id": "pi_security",
+  "name": "Pi Security",
+  "description": "Security findings, posture and remediation guidance from Pi Security.",
+  "group": "developer_tools",
+  "url": "https://mcp.pi.security/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

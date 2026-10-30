@@ -1,0 +1,16 @@
+{
+  "id": "highlevel",
+  "name": "HighLevel",
+  "description": "Contacts, conversations, opportunities, calendars and payments in HighLevel.",
+  "group": "crm",
+  "url": "https://services.leadconnectorhq.com/mcp/cursor/v2",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

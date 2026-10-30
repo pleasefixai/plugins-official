@@ -1,0 +1,39 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "jam",
+  "version": "1.0.0",
+  "description": "Jam bug reports with their screen recordings, console logs and network requests.",
+  "author": {
+    "name": "Jam"
+  },
+  "homepage": "https://jam.dev",
+  "license": "MIT",
+  "keywords": [
+    "jam",
+    "bug-reports",
+    "debugging",
+    "mcp",
+    "browser-extension",
+    "session-replay",
+    "observability"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/jam.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "jam",
+        "commit": "11bc7072c221b156c3cad4f0d5d948d5d426bd7c",
+        "skills": {
+          "investigate-bug": "8dcc252f664296bbb98693af3629b0cba200dd8f9b11cfac5166e754f7a10e5e",
+          "jam-cli": "d6f9c00384c01cd8b952b3cbc0322a1281c2ddd33c6975bb8fcd1cf36de0f3e7"
+        },
+        "guessed": {
+          "jam.name": "69023ec476beb208"
+        }
+      }
+    }
+  }
+}

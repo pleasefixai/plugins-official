@@ -1,0 +1,33 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "invideo",
+  "version": "1.0.0",
+  "description": "Videos made with invideo AI: generated media, edited timelines and exports.",
+  "author": {
+    "name": "invideo AI"
+  },
+  "homepage": "https://invideo.io",
+  "license": "MIT",
+  "keywords": [
+    "invideo",
+    "video",
+    "video-editing",
+    "generation",
+    "timeline",
+    "export",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/invideo.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "invideo",
+        "commit": "aaa14c2674b238d296225bd9afa7297cce8a48bb",
+        "skills": {}
+      }
+    }
+  }
+}

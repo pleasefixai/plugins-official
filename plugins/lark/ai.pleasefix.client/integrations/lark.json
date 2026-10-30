@@ -1,0 +1,16 @@
+{
+  "id": "lark",
+  "name": "Lark",
+  "description": "Docs, messages and groups in your Lark workspace.",
+  "group": "projects_time",
+  "url": "https://mcp.larksuite.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

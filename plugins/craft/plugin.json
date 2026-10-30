@@ -1,12 +1,12 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "craft",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Documents and daily notes in your Craft space.",
   "author": {
     "name": "Cursor"
   },
-  "homepage": "https://cursor.com/",
+  "homepage": "https://www.craft.do/imagine/guide/mcp",
   "license": "MIT",
   "keywords": [
     "craft",

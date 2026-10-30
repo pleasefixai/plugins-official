@@ -1,0 +1,16 @@
+{
+  "id": "lovable",
+  "name": "Lovable",
+  "description": "Your Lovable apps, to build, change, deploy and manage them.",
+  "group": "developer_tools",
+  "url": "https://mcp.lovable.dev/",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

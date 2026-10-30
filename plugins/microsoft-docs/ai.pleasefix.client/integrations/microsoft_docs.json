@@ -1,0 +1,8 @@
+{
+  "id": "microsoft_docs",
+  "name": "Microsoft Learn",
+  "description": "Microsoft Learn documentation, API references and code samples.",
+  "group": "knowledge",
+  "url": "https://learn.microsoft.com/api/mcp",
+  "auth": null
+}

@@ -1,0 +1,16 @@
+{
+  "id": "incident_io",
+  "name": "incident.io",
+  "description": "Incidents, on-call schedules, escalations and the service catalog in incident.io.",
+  "group": "developer_tools",
+  "url": "https://mcp.incident.io/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "nimble",
+  "name": "Nimble",
+  "description": "Web search, page extraction, crawls and structured web data from Nimble.",
+  "group": "knowledge",
+  "url": "https://mcp.nimbleway.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

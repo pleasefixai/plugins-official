@@ -1,0 +1,8 @@
+{
+  "id": "manufact_mcp_use_docs",
+  "name": "Manufact (mcp-use docs)",
+  "description": "The documentation of mcp-use, the framework for MCP servers and apps.",
+  "group": "developer_tools",
+  "url": "https://docs.mcp-use.com/mcp",
+  "auth": null
+}

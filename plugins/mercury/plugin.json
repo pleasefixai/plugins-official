@@ -1,0 +1,41 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "mercury",
+  "version": "1.0.0",
+  "description": "Accounts, balances, transactions and recipients in your Mercury bank account.",
+  "author": {
+    "name": "Mercury"
+  },
+  "homepage": "https://mercury.com/",
+  "license": "MIT",
+  "keywords": [
+    "mercury",
+    "banking",
+    "finance",
+    "accounting",
+    "transactions",
+    "bookkeeping",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/mercury.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "mercury",
+        "commit": "d2ea9193cfbf8e32ceb3eb27847157be408e15e5",
+        "skills": {
+          "mercury-analyze-spend": "44f5293809be5f642b539c6efe61e615681d6da9b06e1f22edd35f5912987a92",
+          "mercury-cash-reconciliation": "01ffb77640de91de1661159669e98be1a712e7a73053cf03f22e6f3365af578e",
+          "mercury-detect-anomaly": "28c4ef0feec07474a4fb44f9476a26f3ae7bf1593ff263012a091e3fc6f102ef",
+          "mercury-mcp": "dc23866acf341f1f5cde87e2f30ea58c7a4f11432ac05c21afe16f225ee55c3f"
+        },
+        "guessed": {
+          "mercury.name": "6a7367ef7970d165"
+        }
+      }
+    }
+  }
+}

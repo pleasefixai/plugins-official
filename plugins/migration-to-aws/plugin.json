@@ -1,0 +1,82 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "migration-to-aws",
+  "version": "1.0.0",
+  "description": "Plans to move apps and AI workloads from Google Cloud or Heroku to AWS.",
+  "author": {
+    "name": "Amazon Web Services"
+  },
+  "homepage": "https://github.com/awslabs/startups",
+  "license": "Apache-2.0",
+  "keywords": [
+    "aws",
+    "gcp",
+    "google-cloud",
+    "cloud-run",
+    "cloud-sql",
+    "vertex-ai",
+    "gemini",
+    "migration",
+    "cloud-migration",
+    "move-to-aws",
+    "switch-to-aws",
+    "terraform",
+    "fargate",
+    "rds",
+    "aurora",
+    "eks",
+    "bedrock",
+    "ai-migration",
+    "openai",
+    "openai-to-bedrock",
+    "langchain",
+    "langgraph",
+    "crewai",
+    "autogen",
+    "agentic",
+    "agents",
+    "llm-migration",
+    "cost-estimation",
+    "cost-comparison",
+    "pricing-comparison",
+    "agent-runtime",
+    "agentcore",
+    "lambda-microvms",
+    "deploy-ai-agent",
+    "agent-architecture",
+    "choose-agent-runtime",
+    "agentcore-vs-lambda",
+    "where-to-run-my-agent",
+    "add-agentcore-services",
+    "bedrock-migration",
+    "openai-to-bedrock-execute",
+    "llm-to-bedrock",
+    "rewrite-sdk-calls",
+    "bedrock-code-rewrite",
+    "ai-migration-execute",
+    "temporal",
+    "temporal-cloud",
+    "temporal-workers",
+    "temporal-to-aws",
+    "durable-execution"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/migration_to_aws.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "migration-to-aws",
+        "commit": "ec681ba5d49b039dbf1ef9d87d3304205b824f3d",
+        "skills": {
+          "agent-advisor": "00c4745f38efb6076dfeb23f62e795e2abe41f471cd671eefee8d81a65e97ea9",
+          "gcp-to-aws": "2b58c8dec04a9ae74451048c4f29649aef5d700fcd7b93d1a16266dc3f00deb7",
+          "heroku-to-aws": "9172a4a5b9384acda21e3511a7c8cb0eb1b569795dd97ab383efaa1b886aa1f2",
+          "llm-to-bedrock": "fa854df1934c1babd7c62d5f6b6d5abfa63a17030892070bed428022e0cbc11a",
+          "tf-best-practices": "acec89cd89d112462ca7d1a79a7e4220cd6b44610dae2813a1e166501a11cf94"
+        }
+      }
+    }
+  }
+}

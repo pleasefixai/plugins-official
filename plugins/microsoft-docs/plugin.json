@@ -1,0 +1,41 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "microsoft-docs",
+  "version": "1.0.0",
+  "description": "Microsoft Learn documentation, API references and code samples.",
+  "author": {
+    "name": "Microsoft"
+  },
+  "homepage": "https://github.com/microsoftdocs/mcp",
+  "license": "MIT",
+  "keywords": [
+    "microsoft",
+    "docs",
+    "azure",
+    ".net",
+    "windows",
+    "api",
+    "documentation",
+    "rag",
+    "dynamics",
+    "powerbi",
+    "office"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/microsoft_docs.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "microsoft-docs",
+        "commit": "f8ffde185dfd232dbf5d187c22ce299eadc3d583",
+        "skills": {
+          "microsoft-code-reference": "4de8db6231466b233b780325ce37530ac1ddca734a3eb1f01b4a9a3c982c7b7b",
+          "microsoft-docs": "585b6cde026858cc5b256de67bd8ed8284030ff1aa8fc04bbf554e359570e182",
+          "microsoft-skill-creator": "174d46655c918429dc40fe1937be584b23913f740e5e3919aa771a74a476753c"
+        }
+      }
+    }
+  }
+}

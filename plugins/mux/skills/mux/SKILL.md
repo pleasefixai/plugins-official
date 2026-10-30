@@ -1,0 +1,68 @@
+---
+name: mux
+description: >
+  Mux MCP bootstrap. Use for Mux, mux.com, video infrastructure, @mux/ts,
+  mcp.mux.com, Code Mode, search_docs, execute, Robots jobs, signing keys,
+  webhooks, whoami, environment auth, and any Mux API task when no more
+  specific skill fits. Trigger even when the user does not name MCP or Mux.
+---
+
+# Mux
+
+Connect your agent to Mux through this plugin’s MCP server (`mux` at `https://mcp.mux.com`), then drive the account with **Code Mode**.
+
+## Connect
+
+1. Connect the `mux` MCP server in your host (Cursor: **Settings → Tools & MCP**; ChatGPT/Codex/Claude: connect the plugin’s Mux connector when prompted).
+2. Complete Mux OAuth: log in at dashboard.mux.com and choose an environment.
+3. Do not add a second Mux MCP server. Do not paste a personal MCP URL.
+4. Do not put Access Token ID/Secret in the plugin. Marketplace path is OAuth.
+
+Token fallback (non-OAuth clients / local `@mux/mcp`): `MUX_TOKEN_ID` + `MUX_TOKEN_SECRET`, or Basic `base64(TOKEN_ID:TOKEN_SECRET)` against the hosted URL. Prefer a **Read-only** token when exploring.
+
+## First calls (Code Mode)
+
+The hosted Mux MCP exposes **two** tools — not one tool per API endpoint:
+
+1. **`search_docs`** — look up Mux API / SDK docs before writing code.
+2. **`execute`** — run TypeScript against the full `@mux/ts` SDK in an isolated sandbox. Return values and logs come back as the tool result.
+
+Workflow:
+
+1. Confirm the `mux` MCP server is connected.
+2. Call `search_docs` for the resource or method you need.
+3. Call `execute` with focused TypeScript using `@mux/ts` (Video, Data, Robots, System).
+4. Prefer MCP `execute` over shelling to the [Mux CLI](https://github.com/muxinc/cli) unless the user explicitly asks for CLI commands.
+
+## Routing
+
+| Need | Skill |
+| --- | --- |
+| API shapes, SDK/CLI docs, guides, webhooks specs, “what does Mux docs say” | **`mux-docs`** (prefer over memory / web search; fetch live docs) |
+| Assets, uploads, playback IDs, tracks, signing / secure playback, delivery usage, DRM, vocabularies | `mux-video` |
+| Robots jobs on an existing Mux asset (summarize, chapters, captions, …) | `mux-robots` |
+| Directives pipelines (compose workflows, resources, attach on ingest) | `mux-robots-directives` |
+| Analyze / Robots on a URL, local file, or non-Mux video (ingest first when needed) | `mux-analyze-any-video` |
+| Live streams, stream keys, simulcast, reconnect, live → asset | `mux-live` |
+| Metrics, dimensions, views, real-time, exports, errors, engagement | `mux-data` |
+| Webhooks verify, whoami, account utils | stay on this skill → `search_docs` + `execute` |
+
+For **account actions** (create asset, list streams, run Robots), use the domain skill + MCP `search_docs` / `execute`. For **documentation / API reference** questions, prefer `mux-docs` first.
+
+## Capability surface (mirrors CLI areas)
+
+Agents should cover the same ground as Mux CLI via SDK in `execute`:
+
+- Assets, Live Streams, Uploads, Playback ID lookup, Playback Restrictions
+- Signing Keys & Secure Playback
+- Transcription Vocabularies, Delivery Usage, DRM Configurations
+- Robots, Mux Data
+- Auth & environment (OAuth environment picker; or token-scoped environment)
+- Webhook verify / unwrap (forwarding is a local CLI concern — do not assume MCP can open local ports)
+
+## Safety
+
+- Destructive operations are **not** specially gated. Deletes, asset removal, and live-stream teardown require explicit user confirmation.
+- When exploring an unfamiliar account, recommend or assume a read-only access token.
+- Do not dump raw secrets, signing private keys, or stream keys unless the user asked for them.
+- Do not invent API fields — use `search_docs` first.

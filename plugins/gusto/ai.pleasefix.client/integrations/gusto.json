@@ -1,0 +1,16 @@
+{
+  "id": "gusto",
+  "name": "Gusto",
+  "description": "Payroll, employees, contractors, time off and reports in your Gusto account.",
+  "group": "finance_ops",
+  "url": "https://mcp.api.gusto.com/",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

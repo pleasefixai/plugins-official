@@ -1,0 +1,8 @@
+{
+  "id": "mintlify",
+  "name": "Mintlify",
+  "description": "Mintlify's own documentation, to build and configure documentation sites.",
+  "group": "developer_tools",
+  "url": "https://mintlify.com/docs/mcp",
+  "auth": null
+}

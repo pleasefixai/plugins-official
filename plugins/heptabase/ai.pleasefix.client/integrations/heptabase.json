@@ -1,0 +1,16 @@
+{
+  "id": "heptabase",
+  "name": "Heptabase",
+  "description": "Whiteboards, cards and journals in your Heptabase knowledge base.",
+  "group": "knowledge",
+  "url": "https://api.heptabase.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

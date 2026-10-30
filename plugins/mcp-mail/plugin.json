@@ -1,0 +1,44 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "mcp-mail",
+  "version": "1.0.0",
+  "description": "Email, drafts and calendar in your Superhuman Mail account.",
+  "author": {
+    "name": "Superhuman Mail"
+  },
+  "homepage": "https://superhuman.com/products/mail",
+  "license": "MIT",
+  "keywords": [
+    "superhuman",
+    "mail",
+    "email",
+    "calendar",
+    "mcp",
+    "productivity",
+    "inbox"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/mcp_mail.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "mcp-mail",
+        "commit": "a83580e994604edca1cd5661a4a1865f3f39abc9",
+        "skills": {
+          "batch-draft-writer": "efdfb3cbbe81270fb1613836b410797d349c90053ce8a054312b6788d3c3f1c0",
+          "deal-tracker": "7df3c5c504b2cddfcdad762e53ae5a2f493fa94c18f39018cf218481fbd190ee",
+          "eod-wrapup": "6fbbbf5923dae55d4f31aa7e82fcdf15fe3bee33d3cbd2582e95344efaf6f2d1",
+          "meeting-scheduler": "e9a58d5a48273db18a84e24a62a0198d5b53f2b68f4d2b6c856954894064b7ae",
+          "morning-briefing": "242e91950548f11a6f86759ab6adb11451a758c4341f5f0eb69030f6f7ad4a05",
+          "superhuman-mail": "6247653a66fb217b1fc3fd312a4354095f0aa6e89ce0ca9977d888f24e10d833",
+          "welcome-to-superhuman-mail": "11cfefd85b7b779a03457e1dddbebbac4a7906405fee3270773ad3179c567d20"
+        },
+        "guessed": {
+          "mcp_mail.name": "839c90794b77543b"
+        }
+      }
+    }
+  }
+}

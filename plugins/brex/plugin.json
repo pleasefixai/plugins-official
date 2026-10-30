@@ -1,12 +1,12 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "brex",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Expenses, receipts, bills, cards and travel from your Brex account.",
   "author": {
     "name": "Cursor"
   },
-  "homepage": "https://cursor.com/",
+  "homepage": "https://developer.brex.com/docs/mcp",
   "license": "MIT",
   "keywords": [
     "brex",
@@ -20,6 +20,7 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "mark": "integrations/brex.png",
       "upstream": {
         "kind": "imported",
         "marketplace": "cursor",

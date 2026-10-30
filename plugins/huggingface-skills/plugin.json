@@ -1,0 +1,59 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "huggingface-skills",
+  "version": "1.0.0",
+  "description": "Models, datasets, Spaces and papers on the Hugging Face Hub.",
+  "author": {
+    "name": "Hugging Face"
+  },
+  "homepage": "https://github.com/huggingface/skills.git",
+  "license": "Apache-2.0",
+  "keywords": [
+    "huggingface",
+    "machine-learning",
+    "hub",
+    "cli",
+    "skills",
+    "jobs",
+    "llm"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/huggingface_skills.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "huggingface-skills",
+        "commit": "c3ff942be3e07116b475253f0a8fc4f54682c1a8",
+        "skills": {
+          "hf-cli": "ec736c5103a4f09e3a6c12a7a1c69dfbd184b7a074ba5553f59a2861ed3e893e",
+          "hf-cloud-aws-context-discovery": "9bdde665f2671fda65aa0b19deec79ce44068c86e098048cf9ea65ffc0a43ae8",
+          "hf-cloud-python-env-setup": "6fd9a0c8d73c24e0029d173a3dc7a1f6290deb3406f86ff90dd55c5509a80b6e",
+          "hf-cloud-sagemaker-deployment-planner": "bac0f6366f18cd0476ba4eb3c21bf1f4134149a95fbe5932142a13c4ec58379b",
+          "hf-cloud-sagemaker-iam-preflight": "b5fa1471e90c20dfbdfee35793be14b864bfc6317cbf9978fdb7723b87d6d789",
+          "hf-cloud-sagemaker-production-defaults": "0df05c27c5cf346cabacc895838b92a66038096ec4956edf4045da97015ecf8f",
+          "hf-cloud-serving-image-selection": "031795e616f0a191e7b411723249c9d725640e169383b0139afe810852564729",
+          "hf-mem": "3aff722cc14f7e96bd4ee560c604ef6878e7e1274053339e0ca5592b04126e8f",
+          "huggingface-best": "e3298a2659600c9759eedc0b25427d9c3496d03473a12c2ebf908d989d88ec79",
+          "huggingface-community-evals": "bae75cff5774c2c8dcaef0fb4c0c0a5e939d4980cfa5e5905f9ecfac3d4fc191",
+          "huggingface-datasets": "a4c7a02a81f5e19e03636c9616c574cb87dc6ec5ba5dbbe66decc1320a27e162",
+          "huggingface-gradio": "4a61841a5d979b80f10ef83161fcb2c7cba2737b75ba5737f9dafcbbff652c8d",
+          "huggingface-llm-trainer": "7d89e01764b250a76627695df2adcf87997680643ebc4b31a5b47a445e6ee32d",
+          "huggingface-local-models": "5266228fb59c2b729a77acc788a0b7de6393cbd1f5ad82aac7fa7bc5c1763b2e",
+          "huggingface-lora-space-builder": "d0e32d306d231e926653b16127641e0b832d2d0112c14e45ed76799b7d8a3a1d",
+          "huggingface-paper-publisher": "50d1b50a60449863e55f824fd6f4eb0f75852336d0b7ad013be086859611a5ec",
+          "huggingface-papers": "4a49169c04447a7eec73af9557987381f6016723acf46715dfee77d5c811add5",
+          "huggingface-spaces": "71483e710c9e39c5c2686ef126e8e7d301d670d1401c7a8165658b20f3f6fbe5",
+          "huggingface-tool-builder": "4f6ed880aca2e6ed03d8ab6727534be4756d049b56024c11fb8e7941f331b6c4",
+          "huggingface-trackio": "e6ec0b3b514ad83e062ec5ef77b2be542aa2c12ce4f280b9079aa11a3382de9a",
+          "huggingface-vision-trainer": "d0fd46f727d2376aed8ea5633ea6edc628ae6326ce29a38d8e2d9b9c1665a98a",
+          "huggingface-zerogpu": "ebd3fcb4dd14feaf878780031c0656dfc328fe49f2d922c02e0df13d3c498682",
+          "train-sentence-transformers": "1f6733162377fcae58401dbfaf64cd0f10721712ed14fa8ab11841ab660933d5",
+          "transformers-js": "6dd75a09bf111379baf3be7d4c6c56da61a1dcf5d1c06f8ee1f3063d5b232d5b",
+          "trl-training": "4d2fb48b9e7c153a60adc2c9213c01cc43a85839b2e641ebfef3dc3300590f2d"
+        }
+      }
+    }
+  }
+}

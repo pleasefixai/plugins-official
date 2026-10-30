@@ -1,0 +1,16 @@
+{
+  "id": "lightrun_ai",
+  "name": "Lightrun",
+  "description": "Live logs, snapshots and metrics from your running services, added through Lightrun.",
+  "group": "developer_tools",
+  "url": "https://app.lightrun.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

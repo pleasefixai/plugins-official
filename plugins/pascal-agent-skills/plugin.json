@@ -1,0 +1,38 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "pascal-agent-skills",
+  "version": "1.0.0",
+  "description": "Floor plans and furniture layouts in the Pascal editor.",
+  "author": {
+    "name": "Pascal"
+  },
+  "homepage": "https://editor.pascal.app/docs/developers/mcp",
+  "license": "MIT",
+  "keywords": [
+    "pascal",
+    "3d",
+    "architecture",
+    "mcp",
+    "furniture",
+    "spatial"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/pascal_agent_skills.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "pascal-agent-skills",
+        "commit": "67f8041034e8d3f84c7dfce8e524356fd764cf7a",
+        "skills": {
+          "furniture-fit": "cc4d56072fd581008d2250b9c23004fe69c59fc1f7ee2f896c4490e5af1de9e6",
+          "pascal-3d": "b541e72003371fe720e7450d19d8464baf0d10965fda581477bed3de2e57cced"
+        },
+        "guessed": {
+          "pascal_agent_skills.name": "44c550b0e0f3380f"
+        }
+      }
+    }
+  }
+}

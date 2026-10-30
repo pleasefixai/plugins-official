@@ -1,0 +1,16 @@
+{
+  "id": "mapbox",
+  "name": "Mapbox",
+  "description": "Geocoding, directions, travel times, places and static maps from Mapbox.",
+  "group": "developer_tools",
+  "url": "https://mcp.mapbox.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

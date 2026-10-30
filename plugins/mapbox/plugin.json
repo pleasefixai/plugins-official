@@ -1,0 +1,53 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "mapbox",
+  "version": "1.0.0",
+  "description": "Maps, geocoding, directions and places from Mapbox, with its styles, tokens and docs.",
+  "author": {
+    "name": "Mapbox"
+  },
+  "homepage": "https://www.mapbox.com",
+  "license": "MIT",
+  "keywords": [
+    "mapbox",
+    "maps",
+    "geospatial",
+    "location",
+    "mcp",
+    "gis"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/mapbox.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "mapbox",
+        "commit": "f71cd72b8d8937b06db440538bd65559eb792c49",
+        "skills": {
+          "mapbox-android-patterns": "377eb270f8e2a447230445dc42fd553afaa14e7e4b65fde07849546b492761a6",
+          "mapbox-cartography": "6090d757e0280a83155891b823724c4bec8fda97ed879625465be63e917d113f",
+          "mapbox-data-visualization-patterns": "6b6ea5c3916e149dfc6c92ef166165f18fa878af42e0c616fbbad066e6ec7732",
+          "mapbox-flutter-patterns": "f1fee389500b577d8008bc5661e5646f326dd9c6273372733d5d045c30a42d6d",
+          "mapbox-geospatial-operations": "7d3f01b9d13763d044b1c92703b4a3512c15ea63105414666a36f8fc075e655f",
+          "mapbox-google-maps-migration": "ef3847a2a19aaa9e8684a23f22e4fed46bc646c3dea712592f0282860826cf21",
+          "mapbox-ios-patterns": "43dd4c599c3d78915d859650b0c2953a3cf3040ce87029547442ed36fd3370ac",
+          "mapbox-location-grounding": "4ba4a9c1ec44c24376c28f3c5c6632f091f464e67b37fb651a88199e9bdd3671",
+          "mapbox-maplibre-migration": "34dbf2e86699fb10fc6346b20b468b1752327dc74ed32dd8a3b6055f11790dff",
+          "mapbox-mcp-devkit-patterns": "7ed88aa6ecc6444f4359a27f1699f50a2287ecbcbef43b339801857519cea61f",
+          "mapbox-mcp-runtime-patterns": "cca8f5e50609bdee7145ae1354d018018a76f4b92c4dddc2598bad1883b300a1",
+          "mapbox-navigation-patterns": "c0710ba2a4e02d4f606cfa56633e41c918b608e7b97dea253948b9f366c95204",
+          "mapbox-search-integration": "c66074c7a601c1f5bad45ac4752f3fc3584128e2dba107804605656c365725d1",
+          "mapbox-search-patterns": "1e8b99ed4da6e558fe615fc7d9d1e8e90addb39a5f7217079497748e54378963",
+          "mapbox-store-locator-patterns": "7b7f6a1a99a48922736d9edc63b13536a66bfa43b393fe3feeb599b931694ca2",
+          "mapbox-style-patterns": "941113cea320153c030e20e81b72ffb9c5878edbfaf921afb9f9b39c0027a2ab",
+          "mapbox-style-quality": "fda958a56fff2b21e2eb9ae2e9d42649b06086ad68589de37b1975c26f9509b7",
+          "mapbox-token-security": "1c9bc98f90e5282226e185f5b5862916042796d1e34707c7a5b42b389d401422",
+          "mapbox-web-integration-patterns": "6ed3a56802ca9ec595215daefeac93e79923a875f82fcd31a8515074efcbfb77",
+          "mapbox-web-performance-patterns": "b9a7ec8089ced53fe6664aa90bc21a845ceb209f48b8b13408a184a248fa8b1b"
+        }
+      }
+    }
+  }
+}

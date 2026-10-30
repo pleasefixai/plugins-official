@@ -1,0 +1,36 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "padlet",
+  "version": "1.0.0",
+  "description": "Padlet boards and their posts.",
+  "author": {
+    "name": "Padlet"
+  },
+  "homepage": "https://padlet.com",
+  "license": "MIT",
+  "keywords": [
+    "padlet",
+    "boards",
+    "collaboration",
+    "education",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/padlet.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "padlet",
+        "commit": "ec9475071765d903ef645907df9fd98226dba5ce",
+        "skills": {
+          "padlet-toolsets": "821626f5779306f3200403593c8396d4e37c138fc22c6279f1d5f87260517829"
+        },
+        "guessed": {
+          "padlet.name": "5f4fee75159d47d4"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "jotform",
+  "name": "Jotform",
+  "description": "Forms and their submissions in your Jotform account.",
+  "group": "forms_data",
+  "url": "https://mcp.jotform.com",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "infobip_observe",
+  "name": "Infobip (observe)",
+  "description": "Traffic, delivery, error codes and costs of your Infobip messages, read-only.",
+  "group": "communication",
+  "url": "https://mcp.infobip.com/observe",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

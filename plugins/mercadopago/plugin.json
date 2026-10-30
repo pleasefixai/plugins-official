@@ -1,0 +1,46 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "mercadopago",
+  "version": "1.0.0",
+  "description": "Mercado Pago's payment APIs, documentation and integration checks.",
+  "author": {
+    "name": "Mercado Pago Developer Experience"
+  },
+  "homepage": "https://github.com/mercadopago/mercadopago-claude-marketplace/tree/main/plugins/mercadopago",
+  "license": "Apache-2.0",
+  "keywords": [
+    "mercadopago",
+    "payments",
+    "checkout",
+    "webhooks",
+    "ipn",
+    "qr",
+    "point",
+    "subscriptions",
+    "marketplace",
+    "payouts",
+    "smartapps",
+    "wallet",
+    "3ds",
+    "fintech",
+    "meli"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/mercadopago.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "mercadopago",
+        "commit": "755d33740af23351b4ca7043c51077ce67ebf4d1",
+        "skills": {
+          "mp-integrate": "7b498248152e71977ce48934d538dd9ea5986fdf988ce802dfe5c124fb09a83d",
+          "mp-review": "f05cfe1f195877ffe5d52248c7cbb2a5c277c7311413fe0a9dbde93ea8dd7067",
+          "mp-test-setup": "c7f05244ebd0d6ca6f89e2a1566f348b49781559b7d768860797313f28a29bed",
+          "mp-webhooks": "0feb3ebd6f2c597ce5260c27ffd959675136bbebddb05fa6a15a5064a918c234"
+        }
+      }
+    }
+  }
+}

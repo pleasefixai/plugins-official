@@ -1,0 +1,16 @@
+{
+  "id": "planetscale",
+  "name": "PlanetScale",
+  "description": "Organizations, databases, branches, schemas and query insights in PlanetScale.",
+  "group": "developer_tools",
+  "url": "https://mcp.pscale.dev/mcp/planetscale",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

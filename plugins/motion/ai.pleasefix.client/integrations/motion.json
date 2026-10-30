@@ -1,0 +1,16 @@
+{
+  "id": "motion",
+  "name": "Motion",
+  "description": "Motion's animation documentation and CSS spring generation.",
+  "group": "developer_tools",
+  "url": "https://mcp.motion.dev",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "name": "paradedb",
+  "version": "1.0.0",
+  "description": "ParadeDB documentation: full-text search, vector search and analytics in Postgres."
+}

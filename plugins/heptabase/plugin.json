@@ -1,0 +1,36 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "heptabase",
+  "version": "1.0.0",
+  "description": "Whiteboards, cards and journals in your Heptabase knowledge base.",
+  "author": {
+    "name": "Heptabase"
+  },
+  "homepage": "https://heptabase.com",
+  "license": "MIT",
+  "keywords": [
+    "heptabase",
+    "knowledge management",
+    "notes",
+    "whiteboards",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/heptabase.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "heptabase",
+        "commit": "7cae4b5988bb4a2875e7ba9ea3f9eec12c644826",
+        "skills": {
+          "explainer-studio": "2194afb197958687487f6e65c3b87c6a56990552a32334953b199fe6e7d5c369"
+        },
+        "guessed": {
+          "heptabase.name": "db149579671e8b14"
+        }
+      }
+    }
+  }
+}

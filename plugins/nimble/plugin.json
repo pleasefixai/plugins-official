@@ -1,0 +1,43 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "nimble",
+  "version": "1.0.0",
+  "description": "Web search, page extraction, crawls and structured web data from Nimble.",
+  "author": {
+    "name": "Nimble"
+  },
+  "homepage": "https://docs.nimbleway.com/integrations/agent-skills/plugin-installation",
+  "license": "MIT",
+  "keywords": [
+    "nimble",
+    "web-extraction",
+    "web-search",
+    "web-crawl",
+    "web-map",
+    "agents",
+    "mcp",
+    "cli",
+    "data-extraction",
+    "structured-data",
+    "competitor-intelligence",
+    "meeting-prep",
+    "company-research",
+    "business-intelligence"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/nimble.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "nimble",
+        "commit": "fdb077c7220ae19bddfc2a35cf6eb70cbf4577ef",
+        "skills": {
+          "nimble-databricks-data-products": "5cfb564aa96f0338a81467a170a51e08ee900ac4e54a375610aa7d9aa63c33de",
+          "nimble-web-expert": "f639e62b586ff44d2b0690e6deb6d9ba338aad49f522347303e6e382c6cf8ae5"
+        }
+      }
+    }
+  }
+}

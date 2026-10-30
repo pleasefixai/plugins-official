@@ -1,0 +1,16 @@
+{
+  "id": "motion_2",
+  "name": "Motion (Motion+)",
+  "description": "Motion+ examples, UI component source and MotionScore performance audits.",
+  "group": "developer_tools",
+  "url": "https://mcp.motion.dev/plus",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

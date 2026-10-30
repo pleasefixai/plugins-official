@@ -1,0 +1,40 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "migma",
+  "version": "1.0.0",
+  "description": "Email campaigns, designs, audiences and sends in your Migma account.",
+  "author": {
+    "name": "Migma AI"
+  },
+  "homepage": "https://migma.ai",
+  "license": "MIT",
+  "keywords": [
+    "migma",
+    "email",
+    "transactional-email",
+    "campaigns",
+    "deliverability",
+    "mcp",
+    "cli"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/migma.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "migma",
+        "commit": "3b8767fc68782c6d85c7dc0507e66fe38a3a300c",
+        "skills": {
+          "migma": "2a76593a8ab57945a9ff62e75ee87a807c9fabaf5a72870fbd1182e87bc58798",
+          "migma-public-api": "0fa742c8656a2ffb309aea6283a840b7fcd04200f1e71aa4b51c23a442c11921",
+          "setup": "35bacc6e16c4e1c9474888529a8a7ba7f2a1b34d3dde11986200362cc205f474"
+        },
+        "guessed": {
+          "migma.name": "3b2ff1403f13a7b3"
+        }
+      }
+    }
+  }
+}

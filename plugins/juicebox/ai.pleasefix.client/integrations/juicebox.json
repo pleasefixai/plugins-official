@@ -1,0 +1,16 @@
+{
+  "id": "juicebox",
+  "name": "Juicebox",
+  "description": "Candidate searches, shortlists and sourcing agents in Juicebox.",
+  "group": "other",
+  "url": "https://mcp.juicebox.ai/v1",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

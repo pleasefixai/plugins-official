@@ -1,0 +1,16 @@
+{
+  "id": "hunter",
+  "name": "Hunter",
+  "description": "Professional email addresses, their verification, and company data from Hunter.",
+  "group": "crm",
+  "url": "https://mcp.hunter.io/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

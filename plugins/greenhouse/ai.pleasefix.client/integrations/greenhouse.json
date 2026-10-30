@@ -1,0 +1,16 @@
+{
+  "id": "greenhouse",
+  "name": "Greenhouse",
+  "description": "Candidates, jobs, applications and scorecards in Greenhouse Recruiting.",
+  "group": "other",
+  "url": "https://mcp.us.greenhouse.io/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

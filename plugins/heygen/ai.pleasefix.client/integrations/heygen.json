@@ -1,0 +1,16 @@
+{
+  "id": "heygen",
+  "name": "HeyGen",
+  "description": "Avatar videos, personalized video messages and translated videos made with HeyGen.",
+  "group": "design",
+  "url": "https://mcp.heygen.com/mcp/v1/",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

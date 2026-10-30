@@ -1,0 +1,35 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "manufact",
+  "version": "1.0.0",
+  "description": "Your MCP servers and apps on Manufact, and the mcp-use documentation.",
+  "author": {
+    "name": "Manufact"
+  },
+  "homepage": "https://manufact.com",
+  "license": "MIT",
+  "keywords": [
+    "mcp",
+    "mcp-use",
+    "manufact",
+    "mcp-server",
+    "mcp-apps",
+    "deploy",
+    "skills"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/manufact.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "manufact",
+        "commit": "197efac28f64e8a2cadd9f04c592e335af48e4a5",
+        "skills": {
+          "mcp-apps-builder": "438c54dcdfa3a38676d6d0aacf30bfe9ccdbf0dd46f7b5f03438e3dfb48d5bc6"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "name": "paybox-plugin",
+  "version": "1.0.0",
+  "description": "Token swaps and transfers, x402 payments and virtual cards from MoonPay's PayBox wallets."
+}

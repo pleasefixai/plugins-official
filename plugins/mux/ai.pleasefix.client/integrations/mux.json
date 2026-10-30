@@ -1,0 +1,16 @@
+{
+  "id": "mux",
+  "name": "Mux",
+  "description": "Videos, live streams and playback data in your Mux account.",
+  "group": "developer_tools",
+  "url": "https://mcp.mux.com",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

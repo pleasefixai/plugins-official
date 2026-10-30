@@ -1,0 +1,16 @@
+{
+  "id": "mural",
+  "name": "Mural",
+  "description": "Murals, sticky notes and canvases in your Mural workspace.",
+  "group": "design",
+  "url": "https://mcp-canvas.mural.co/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

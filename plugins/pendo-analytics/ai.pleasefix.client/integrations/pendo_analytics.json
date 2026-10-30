@@ -1,0 +1,16 @@
+{
+  "id": "pendo_analytics",
+  "name": "Pendo",
+  "description": "Feature adoption, account health, session replays and feedback from Pendo.",
+  "group": "product_analytics",
+  "url": "https://novus-api.pendo.io/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "opusclip",
+  "version": "1.0.0",
+  "description": "Short clips cut from your long videos with OpusClip, captioned and ready to publish.",
+  "author": {
+    "name": "OpusClip"
+  },
+  "homepage": "https://opus.pro",
+  "license": "MIT",
+  "keywords": [
+    "mcp",
+    "opusclip",
+    "video",
+    "clips",
+    "captions",
+    "social",
+    "shorts"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/opusclip.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "opusclip",
+        "commit": "50440cec136362c162836e4a35468456c2ebd15d",
+        "skills": {},
+        "guessed": {
+          "opusclip.name": "89070b6e56e47943"
+        }
+      }
+    }
+  }
+}

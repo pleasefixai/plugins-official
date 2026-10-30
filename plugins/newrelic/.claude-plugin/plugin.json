@@ -1,0 +1,5 @@
+{
+  "name": "newrelic",
+  "version": "1.0.0",
+  "description": "Applications, alerts, logs and metrics in your New Relic account."
+}

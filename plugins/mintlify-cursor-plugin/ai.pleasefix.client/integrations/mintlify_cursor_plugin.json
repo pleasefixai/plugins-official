@@ -1,0 +1,16 @@
+{
+  "id": "mintlify_cursor_plugin",
+  "name": "Mintlify",
+  "description": "Your Mintlify documentation sites, their pages and settings.",
+  "group": "knowledge",
+  "url": "https://mcp.mintlify.com",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

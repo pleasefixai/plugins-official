@@ -1,0 +1,16 @@
+{
+  "id": "infobip_whatsapp_flow",
+  "name": "Infobip (WhatsApp Flows)",
+  "description": "WhatsApp Flows and their interactive components on Infobip.",
+  "group": "communication",
+  "url": "https://mcp.infobip.com/whatsapp-flow",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

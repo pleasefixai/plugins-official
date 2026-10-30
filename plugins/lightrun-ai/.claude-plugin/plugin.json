@@ -1,0 +1,5 @@
+{
+  "name": "lightrun-ai",
+  "version": "1.0.0",
+  "description": "Live logs, snapshots and metrics from your running services, added through Lightrun."
+}

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "listen-labs",
+  "version": "1.0.0",
+  "description": "Customer research studies, interviews and their findings in Listen Labs.",
+  "author": {
+    "name": "Listen Labs"
+  },
+  "homepage": "https://listenlabs.ai",
+  "keywords": [
+    "listen-labs",
+    "mcp",
+    "user-interviews",
+    "customer-research",
+    "insights"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/listen_labs.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "listen-labs",
+        "commit": "d0ee49fe9670391ebd568c36b73b2e8c675c7f56",
+        "skills": {},
+        "guessed": {
+          "listen_labs.name": "50d7a766d0043ac0"
+        }
+      }
+    }
+  }
+}

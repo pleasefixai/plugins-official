@@ -1,0 +1,39 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "mongodb-atlas",
+  "version": "1.0.0",
+  "description": "Clusters, databases, collections and queries in your MongoDB Atlas projects.",
+  "author": {
+    "name": "MongoDB"
+  },
+  "homepage": "https://www.mongodb.com/docs/mcp-server/get-started/",
+  "license": "Apache-2.0",
+  "keywords": [
+    "mongodb",
+    "atlas",
+    "database",
+    "mcp",
+    "vector-search"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/mongodb_atlas.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "mongodb-atlas",
+        "commit": "c370a63b27075008a92134686b24af3817edeb00",
+        "skills": {
+          "mongodb-atlas-stream-processing": "e1f165b8108b0f2ec7a3339748dcc69f3deb6437a58a07150f130bf4a7a58b21",
+          "mongodb-connection": "b953bb28f0c8912525c31a4f5e2dbdb5fabb93f736fb0574a3c0842a447d79f4",
+          "mongodb-natural-language-querying": "bc5bc53d022a23d2a79941494b7ba6f56f55e8f6182176c2bfbfad9f7173d4fd",
+          "mongodb-qe-size-estimation": "6407967a2c4f070b2170b220130c527bf04fa7246f4740b6bda79a32c444406e",
+          "mongodb-query-optimizer": "fe6962ec2f5d553cebe9031d8e24a0461c39f433e6a62c61991d2cf935ed19d8",
+          "mongodb-schema-design": "d5317a34567626a8109b86647ab1c2cf2f89f1151e859111664ff1aec85f73d8",
+          "mongodb-search-and-ai": "80ac78872acde70becb169a7b409fd5ae80a57ecc1e3ae5c777628b60a1fd058"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "icepanel",
+  "version": "1.0.0",
+  "description": "Software architecture diagrams, systems and flows in your IcePanel landscape.",
+  "author": {
+    "name": "IcePanel"
+  },
+  "homepage": "https://icepanel.io/",
+  "keywords": [
+    "icepanel",
+    "mcp",
+    "models",
+    "connections",
+    "diagrams",
+    "flows"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/icepanel.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "icepanel",
+        "commit": "a49effb63a4f3e74c1c5f361c8fc9552fb62be3e",
+        "skills": {},
+        "guessed": {
+          "icepanel.name": "6fade62bcb78be38"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "ifttt",
+  "version": "1.0.0",
+  "description": "IFTTT Applets, and the actions and queries of the services they connect.",
+  "author": {
+    "name": "IFTTT"
+  },
+  "homepage": "https://ifttt.com/",
+  "license": "MIT",
+  "keywords": [
+    "ifttt",
+    "mcp",
+    "model-context-protocol",
+    "automation",
+    "applets",
+    "integrations",
+    "workflow",
+    "smart-home",
+    "notifications",
+    "webhooks",
+    "no-code"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/ifttt.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "ifttt",
+        "commit": "311ec27cdfb48287ac36ab7906d597c9eb46f399",
+        "skills": {
+          "ifttt-build-applet": "a1799d5a9e31f2402eb486ac296381d1de1dc741e9e45739728bb8a189277201",
+          "ifttt-setup": "48d4ca4f7c97ae0d6a0f05ba6695460e707ce3efb07ea8fd8e0039cd38927aa5"
+        },
+        "guessed": {
+          "ifttt.name": "0fe8e0c0e294e5e5"
+        }
+      }
+    }
+  }
+}

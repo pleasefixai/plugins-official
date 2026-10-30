@@ -1,0 +1,42 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "meticulous",
+  "version": "1.0.0",
+  "description": "Visual regression test runs, replays and screenshot diffs in Meticulous.",
+  "author": {
+    "name": "Meticulous"
+  },
+  "homepage": "https://meticulous.ai",
+  "license": "ISC",
+  "keywords": [
+    "meticulous",
+    "visual-regression",
+    "testing",
+    "skills",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/meticulous.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "meticulous",
+        "commit": "59788561ed2b53f0fc56c54048c09f47f35b61af",
+        "skills": {
+          "meticulous-cli": "128897a175bd31fa3921352363974832fefc2a27c8358b3f475e9dcb89bd35b9",
+          "meticulous-cli-update": "aba029e283036740aafbbe122e281305c422a3ed547a2bc83810a3910557d9ad",
+          "meticulous-iterative-dev": "50017fd1b881c38b75581a1db3ab17dbdb13fbda710c08d331ff89d35de7009d",
+          "meticulous-review": "4c412a9a9893c36369a5a18ba39317eb7f94d95fba783d057387fff4c7de8378",
+          "meticulous-simulate-and-diff": "62768b16339ce3aec1a3ebb420fac009e53ec0ed2dfae3ca5c64cd9fc874af4e",
+          "meticulous-test": "02f0d728c8dac1ac40f0aaa74e0c89acb854b87bfa6d643a0a3baf856a80b87e",
+          "meticulous-use-session-data": "fc2833b1b652d91b68e9ad2c7e4087c92e46a7a05d39c929cab2e456a02b2917"
+        },
+        "guessed": {
+          "meticulous.name": "f82238a7c7218b22"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "id": "infobip_search",
+  "name": "Infobip (documentation)",
+  "description": "Infobip's documentation, API reference and product guides.",
+  "group": "communication",
+  "url": "https://mcp.infobip.com/search",
+  "auth": null
+}

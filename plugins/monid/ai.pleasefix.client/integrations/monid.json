@@ -1,0 +1,16 @@
+{
+  "id": "monid",
+  "name": "Monid",
+  "description": "Web scraping, enrichment, social media and search tools, paid per call through Monid.",
+  "group": "knowledge",
+  "url": "https://mcp.monid.ai/v1",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

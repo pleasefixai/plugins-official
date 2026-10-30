@@ -1,0 +1,41 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "mastercard-developers",
+  "version": "1.0.0",
+  "description": "Mastercard's API documentation, specifications and integration guides.",
+  "author": {
+    "name": "Mastercard Developers"
+  },
+  "homepage": "https://developer.mastercard.com",
+  "license": "MIT",
+  "keywords": [
+    "mastercard",
+    "mastercard-developers",
+    "payments",
+    "api",
+    "open-banking",
+    "open-finance",
+    "integration",
+    "mcp",
+    "modelcontextprotocol",
+    "agent-toolkit"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/mastercard_developers.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "mastercard-developers",
+        "commit": "2c6781ce476a222faf93862a735ced7777aa02ae",
+        "skills": {
+          "mastercard-best-practices": "2c2b39be4f7fa6746c7e440db45659ab29d7fefb0605db9bf1e127694f4c9adf"
+        },
+        "guessed": {
+          "mastercard_developers.name": "d36ac7a4fd6c1820"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "navan",
+  "version": "1.0.0",
+  "description": "Expenses, travel bookings, policies and cards in your Navan account.",
+  "author": {
+    "name": "Cursor"
+  },
+  "homepage": "https://developer.navan.com/mcp/",
+  "license": "MIT",
+  "keywords": [
+    "navan",
+    "mcp",
+    "travel",
+    "expenses",
+    "spend",
+    "corporate-cards",
+    "bookings"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "navan",
+        "commit": "1ba91fc25c0977741dd0e267849e6234b037ed0a",
+        "skills": {},
+        "guessed": {
+          "navan.name": "c128ba78c6a236ae"
+        }
+      }
+    }
+  }
+}

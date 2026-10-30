@@ -1,0 +1,5 @@
+{
+  "name": "greptile",
+  "version": "1.0.0",
+  "description": "Code reviews and codebase answers from Greptile for your GitHub and GitLab repositories."
+}

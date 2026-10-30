@@ -1,0 +1,16 @@
+{
+  "id": "mercury",
+  "name": "Mercury",
+  "description": "Accounts, balances, transactions and recipients in your Mercury bank account.",
+  "group": "finance_ops",
+  "url": "https://mcp.mercury.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}
