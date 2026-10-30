@@ -1,0 +1,16 @@
+{
+  "id": "customer_io",
+  "name": "Customer.io",
+  "description": "Campaigns, segments and people in your Customer.io workspace.",
+  "group": "marketing",
+  "url": "https://mcp.customer.io/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "floot",
+  "version": "1.0.0",
+  "description": "Full-stack apps you build and host with Floot.",
+  "author": {
+    "name": "Floot"
+  },
+  "homepage": "https://floot.com",
+  "keywords": [
+    "floot",
+    "mcp",
+    "full-stack",
+    "app-builder",
+    "ai",
+    "hosting"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "floot",
+        "commit": "4152a20c3d9e1825f65ed34fa637574a12af5c71",
+        "skills": {},
+        "guessed": {
+          "floot.name": "aab7f683f303c2e3"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "figma",
+  "version": "1.0.0",
+  "description": "Designs, components, variables and design context from your Figma files.",
+  "author": {
+    "name": "Figma"
+  },
+  "homepage": "https://github.com/figma/mcp-server-guide",
+  "keywords": [
+    "figma",
+    "design",
+    "mcp",
+    "ui",
+    "code-connect"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/figma.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "figma",
+        "commit": "f2789420e7e8b4e2465dfeb1e12e1fc6a31397e5",
+        "skills": {}
+      }
+    }
+  }
+}

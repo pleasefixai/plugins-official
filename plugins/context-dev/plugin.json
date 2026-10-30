@@ -1,0 +1,54 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "context-dev",
+  "version": "1.0.0",
+  "description": "Live web pages, searches, crawls and structured data extracted with Context.dev.",
+  "author": {
+    "name": "Context.dev"
+  },
+  "homepage": "https://www.context.dev/",
+  "license": "MIT",
+  "keywords": [
+    "context-dev",
+    "brand",
+    "brand-dev",
+    "context.dev",
+    "scraping",
+    "web-search",
+    "structured-extraction",
+    "document-parsing",
+    "monitoring",
+    "batches",
+    "classification",
+    "mcp",
+    "web-data"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/context_dev.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "context-dev",
+        "commit": "2e294f97892bd24ea2dbcd41fbfc7434c993ec3e",
+        "skills": {
+          "connect-context-dev": "aed1ef6f7c33b2b203b0b21321281e51ead2ba99e514c47734a4995a192d5584",
+          "context-batches": "77af935332c0e6e16b62cb5deda367b7646cb895a0d87125dbbc2b766b15b0db",
+          "context-brand": "9b2ec954b1823438c25f79baf058a1717d76e30e190d1f923cb48e82e7f40fa2",
+          "context-crawl": "e267dae171cab7f0cea149d5a761f31c21621094656d542fc5180c807c077317",
+          "context-dev": "ff54efb00071818850128c3150b8ae747bf3708c7ea1f336c5f819d139ffea99",
+          "context-extract": "c72d2b14b1f9a4981546759386bee0a874be5f6a0c2dde1e6d32a3ac4fd80ce9",
+          "context-monitor": "49abe01269faf5cb40a0ae212ad000522beb3baf799656652baf723677a2337b",
+          "context-parse": "d42f67f7978acf9ecb890a33b035df320c44cd4c5fee4f6ab83f44bd02c2bd2a",
+          "context-scrape": "c0d8512761f85ba9cd683c194ab14127eda16ae1f0065771e647f4208814b549",
+          "context-search": "c6f4f446ab30c8ee8a3a3552ddbf4200eb5c40078c49972ed6f99c1c14b0d57b",
+          "logolink": "c4209413974df3a3a930fc8955f997ab5d877a093f211b09807974c07a4e27ad"
+        },
+        "guessed": {
+          "context_dev.name": "da3d8ae0b2310bed"
+        }
+      }
+    }
+  }
+}

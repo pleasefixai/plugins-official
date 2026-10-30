@@ -1,0 +1,37 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "exa",
+  "version": "1.0.0",
+  "description": "Web search, page contents and deep research results from Exa.",
+  "author": {
+    "name": "Exa"
+  },
+  "homepage": "https://exa.ai/docs/reference/exa-mcp",
+  "license": "MIT",
+  "keywords": [
+    "mcp",
+    "search",
+    "web-search",
+    "code-search",
+    "exa",
+    "research",
+    "company-research",
+    "linkedin",
+    "crawling"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "exa",
+        "commit": "15ffb50519e719dc791cdc750ce5ed1934c0a1ed",
+        "skills": {
+          "exa-agent": "38080bb6623743a5f046f05a51769cbd1bc13cd547202472a680d6f6737fef0a",
+          "search": "af1bc9d949387b500acaf9303696b0b22eedc8c4b1ee8269838c4dd5d44e5aac"
+        }
+      }
+    }
+  }
+}

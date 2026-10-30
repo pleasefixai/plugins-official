@@ -1,0 +1,47 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "digitalocean",
+  "version": "1.0.0",
+  "description": "Droplets, App Platform apps, Kubernetes, databases and networking on DigitalOcean.",
+  "author": {
+    "name": "DigitalOcean"
+  },
+  "homepage": "https://www.digitalocean.com",
+  "license": "MIT",
+  "keywords": [
+    "digitalocean",
+    "mcp",
+    "cloud",
+    "droplets",
+    "databases",
+    "dns"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/digitalocean.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "digitalocean",
+        "commit": "3d6855ee382566b4e654fa1e1116ef0a282103be",
+        "skills": {
+          "digitalocean": "83de010fe24f90ca3b930651d25d955e4e3cb1a41e3da9e59838650da1614063",
+          "digitalocean-app-platform": "aea5a6d3e6fc6cc84281f187e1d3d49d4b6cc65124321a0b04f430ce2c7246a8",
+          "digitalocean-connect": "78569d2d4c3fde7ec17f064cc3373a81e14092838f2941d8303ecccfc5a9e33e",
+          "digitalocean-costs": "c3abd770d894bb64ee72cef42c58a8d744a861ee51140906a95e01963fca6650",
+          "digitalocean-databases": "85dfdf4f845f3087668c80239476b8794dc8560b5422ead0a0c00c024ea6d181",
+          "digitalocean-droplets": "dc207123b197192d720b578ab4ee8f925188929da4eafef42416dfa8ba2a1662",
+          "digitalocean-inventory": "a1d5388a3320532336c0c6f48a4b8794f4fa60116d9e0991e00ce3e01c1aa572",
+          "digitalocean-monitoring": "d4c2bb9d56775162349dab88b5f81356ced93d77c5190b0c11a1ab902dc1e89e",
+          "digitalocean-networking": "2a79a9819f8869b5420652bf90e89e678e11d89b5b393f6e5f6a20874fde2016",
+          "digitalocean-safety": "fc4deeb595ae96f75b06df876f1e5622e6386509a45cb6ca8da8cfa13d085cf2",
+          "digitalocean-troubleshoot": "11e0d902af5cb96684fb8866728d112955c14f93de86d44de4fc13b482aadbcc"
+        },
+        "guessed": {
+          "digitalocean.name": "8db02fc979fdbbb6"
+        }
+      }
+    }
+  }
+}

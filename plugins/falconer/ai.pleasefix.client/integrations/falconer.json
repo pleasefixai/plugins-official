@@ -1,0 +1,16 @@
+{
+  "id": "falconer",
+  "name": "Falconer",
+  "description": "Documents in your Falconer knowledge base, to read, search and update.",
+  "group": "knowledge",
+  "url": "https://falconer.com/api/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "gitlab",
+  "version": "1.0.0",
+  "description": "Projects, issues, merge requests and CI/CD pipelines on GitLab.",
+  "author": {
+    "name": "GitLab"
+  },
+  "homepage": "https://about.gitlab.com/",
+  "license": "MIT",
+  "keywords": [
+    "gitlab",
+    "devops",
+    "ci-cd",
+    "merge-request",
+    "pipeline",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "gitlab",
+        "commit": "e89ebfc384db30e3d06c840853ad67d22f5f9c94",
+        "skills": {
+          "gitlab-ci-author": "54c826d1a723251775798a57a21dfd7224c600d30bd7ba445dd681ec7db380de"
+        },
+        "guessed": {
+          "gitlab.name": "9151a836f996c25e"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "datagrout",
+  "version": "1.0.0",
+  "description": "The systems you connect in DataGrout, to discover, plan and run integrations.",
+  "author": {
+    "name": "DataGrout"
+  },
+  "homepage": "https://datagrout.ai",
+  "license": "MIT",
+  "keywords": [
+    "datagrout",
+    "mcp",
+    "integrations",
+    "agents",
+    "workflow"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/datagrout.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "datagrout",
+        "commit": "a551f699999f1aa107f56bc27e41c033761b8e9f",
+        "skills": {
+          "datagrout-mcp": "71677f85198314d5c4508e02fcee12fd4231cd4a586da7b09c44655b61956780"
+        },
+        "guessed": {
+          "datagrout.name": "dfabb3b4449a8505"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "githits",
+  "name": "GitHits",
+  "description": "Open-source code, documentation and package data indexed by GitHits.",
+  "group": "developer_tools",
+  "url": "https://mcp.githits.com",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

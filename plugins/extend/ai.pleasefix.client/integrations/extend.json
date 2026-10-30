@@ -1,0 +1,16 @@
+{
+  "id": "extend",
+  "name": "Extend",
+  "description": "Documents parsed, extracted, classified and split by Extend, and filled PDF forms.",
+  "group": "developer_tools",
+  "url": "https://mcp.extend.ai/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

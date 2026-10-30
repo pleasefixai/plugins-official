@@ -1,0 +1,37 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "gamma",
+  "version": "1.0.0",
+  "description": "Presentations, documents and webpages generated with Gamma.",
+  "author": {
+    "name": "Cursor"
+  },
+  "homepage": "https://cursor.com/",
+  "license": "MIT",
+  "keywords": [
+    "gamma",
+    "presentations",
+    "slides",
+    "documents",
+    "webpages",
+    "design",
+    "export",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/gamma.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "gamma",
+        "commit": "1ba91fc25c0977741dd0e267849e6234b037ed0a",
+        "skills": {},
+        "guessed": {
+          "gamma.name": "a8ab3d5805c9214b"
+        }
+      }
+    }
+  }
+}

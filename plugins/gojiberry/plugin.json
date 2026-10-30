@@ -1,0 +1,39 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "gojiberry",
+  "version": "1.0.0",
+  "description": "Warm leads, buying signals and outreach campaigns in your Gojiberry workspace.",
+  "author": {
+    "name": "Gojiberry AI"
+  },
+  "homepage": "https://gojiberry.ai",
+  "license": "MIT",
+  "keywords": [
+    "mcp",
+    "sales",
+    "outbound",
+    "linkedin",
+    "leads",
+    "crm",
+    "gtm",
+    "prospecting",
+    "pipeline",
+    "gojiberry"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/gojiberry.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "gojiberry",
+        "commit": "ded0e77aad0567a516dda2eb682c088f69ef87c1",
+        "skills": {},
+        "guessed": {
+          "gojiberry.name": "db997164881fc75c"
+        }
+      }
+    }
+  }
+}

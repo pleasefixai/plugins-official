@@ -1,0 +1,47 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "githits",
+  "version": "1.0.0",
+  "description": "Open-source code, documentation and package data indexed by GitHits.",
+  "author": {
+    "name": "GitHits"
+  },
+  "homepage": "https://githits.com/",
+  "license": "Apache-2.0",
+  "keywords": [
+    "githits",
+    "context layer",
+    "public open-source",
+    "open-source code",
+    "code search",
+    "package documentation",
+    "documentation search",
+    "package metadata",
+    "vulnerabilities",
+    "changelogs",
+    "dependency graphs",
+    "upgrade evidence",
+    "implementation examples"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/githits.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "githits",
+        "commit": "e23d8442809ca29f4ac72fcfc936067ceea6984f",
+        "skills": {
+          "githits-code": "36e9953f2d17635939656fa8aa3cbe1617d4d43eba34d955f749345c798b3a23",
+          "githits-mcp": "942704d3fbd0ef9350b195842328d2d05597e901ff3a572b58423da6776e53c2",
+          "githits-onboarding": "84f41a862d7db9b4b1a40cb611f73f523f35bfceb513c95542939d2ec87e038d",
+          "githits-package": "e3ae42eebff0f40b19abeaaf3559eabff3ebaed8e896d46b49d551adcfaad00a"
+        },
+        "guessed": {
+          "githits.name": "b77701a24ab7b0ad"
+        }
+      }
+    }
+  }
+}

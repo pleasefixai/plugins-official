@@ -1,0 +1,16 @@
+{
+  "id": "crustdata",
+  "name": "Crustdata",
+  "description": "People and company search and enrichment from Crustdata's B2B data.",
+  "group": "crm",
+  "url": "https://install.crustdata.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "dnb-risk-analytics",
+  "version": "1.0.0",
+  "description": "Portfolios, risk alerts, screening and KYB checks in D&B Risk Analytics.",
+  "author": {
+    "name": "Dun & Bradstreet"
+  },
+  "homepage": "https://dnb.com",
+  "license": "MIT",
+  "keywords": [
+    "dnb",
+    "risk",
+    "entity-resolution",
+    "compliance",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/dnb_risk_analytics.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "dnb-risk-analytics",
+        "commit": "a44a2f084717c1da59da555ac75e2c3d5dad4a06",
+        "skills": {
+          "complete-workflow": "d126769efca38028124d7c9eced4c8cf106bc536d40790959e83c52259d21a11"
+        },
+        "guessed": {
+          "dnb_risk_analytics.name": "89c4c9d87c4f692f"
+        }
+      }
+    }
+  }
+}

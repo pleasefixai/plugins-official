@@ -1,0 +1,16 @@
+{
+  "id": "framer",
+  "name": "Framer",
+  "description": "Sites, pages and CMS content in your Framer projects.",
+  "group": "design",
+  "url": "https://mcp.framer.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

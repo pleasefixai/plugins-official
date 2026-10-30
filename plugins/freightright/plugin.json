@@ -1,0 +1,49 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "freightright",
+  "version": "1.0.0",
+  "description": "Freight rates, quote requests, bookings and shipment tracking from Freight Right.",
+  "author": {
+    "name": "Freight Right"
+  },
+  "homepage": "https://developers.freightright.com",
+  "license": "MIT",
+  "keywords": [
+    "freight",
+    "freight rates",
+    "shipping",
+    "logistics",
+    "LTL",
+    "ocean freight",
+    "FCL",
+    "LCL",
+    "air freight",
+    "freight quote",
+    "shipment tracking",
+    "container tracking",
+    "supply chain",
+    "ecommerce shipping"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/freightright.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "freightright",
+        "commit": "31ffc2f5cedcf866b8a7cd7dc46cd42a7a0c599a",
+        "skills": {
+          "booking-handoff": "5a6f15ba0d4db70ddf4c967c1afba3113f69991d8e3746dfe3d9d82c673b8e08",
+          "connection-and-billing": "15e599df0b4bdd512c8e21d9971be7dd6d0f9d9310f5f363b95b182341aa05e0",
+          "instant-pricing": "206e4ba95741569082bba348fbbb6380afd85f44db8b741dee802153716e7f58",
+          "quote-requests": "625510026935710931a884f5a6d8033eb1e6db5559900cd58b319a734d584cde",
+          "shipment-tracking": "93ec00f43b3a919d4580f5c09cf80d4e0f8b66c74a39863b85a6ac06e9bcc369"
+        },
+        "guessed": {
+          "freightright.name": "de4c01981174c237"
+        }
+      }
+    }
+  }
+}

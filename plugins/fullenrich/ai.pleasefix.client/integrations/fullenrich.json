@@ -1,0 +1,16 @@
+{
+  "id": "fullenrich",
+  "name": "Fullenrich",
+  "description": "Prospects, verified emails and phone numbers found by FullEnrich's waterfall enrichment.",
+  "group": "crm",
+  "url": "https://mcp.fullenrich.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

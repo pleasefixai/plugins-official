@@ -1,0 +1,16 @@
+{
+  "id": "flexport",
+  "name": "Flexport",
+  "description": "Shipments, freight rates and bookings in your Flexport account.",
+  "group": "other",
+  "url": "https://mcp.flexport.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

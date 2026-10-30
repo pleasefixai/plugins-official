@@ -1,0 +1,16 @@
+{
+  "id": "elevenlabs",
+  "name": "ElevenLabs",
+  "description": "Speech, voices, sound effects, music and voice agents from your ElevenLabs account.",
+  "group": "design",
+  "url": "https://api.us.elevenlabs.io/v1/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

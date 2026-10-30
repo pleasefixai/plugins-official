@@ -1,0 +1,39 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "forge-skills",
+  "version": "1.0.0",
+  "description": "Atlassian Forge app development: guides, docs search and design system components.",
+  "author": {
+    "name": "Atlassian"
+  },
+  "homepage": "https://developer.atlassian.com/platform/forge/",
+  "license": "Apache-2.0",
+  "keywords": [
+    "forge",
+    "atlassian",
+    "jira",
+    "confluence",
+    "mcp",
+    "skills"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/forge_skills_ads_mcp.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "forge-skills",
+        "commit": "4f04ae02879435f23808a4798da28f75d3ab74c3",
+        "skills": {
+          "forge-app-builder": "3d997269a4e3f7846389b4ed672ca4dc860c01f616c1b6164bc067882c2226b4",
+          "forge-app-review": "554cda3a9a2b243652dd1f643a0322900c7239ed76df3967a435d65ed1abb78e",
+          "forge-connector": "6bf84bf2351166eabae8cc9d966b774edf381c468957e430838ac97cdf328371",
+          "forge-cost-optimizer": "d29ba8f9aed44fdc4edb5e5732d514366f4f8ac96519f2a4e9fe46a31944d7ec",
+          "forge-debugger": "5cd3d5b414c0bcb32a2244ea833f479abc1e341aa371aca9f348760159ec7e2e",
+          "forge-security-review": "3784dad39cf5a77aca6b0edf78d665ba4979694db1330c769451385468968640"
+        }
+      }
+    }
+  }
+}

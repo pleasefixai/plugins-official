@@ -1,0 +1,80 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "elevenlabs",
+  "version": "1.0.0",
+  "description": "Speech, voices, sound effects, music and voice agents from your ElevenLabs account.",
+  "author": {
+    "name": "ElevenLabs"
+  },
+  "homepage": "https://elevenlabs.io/",
+  "license": "MIT",
+  "keywords": [
+    "elevenlabs",
+    "text-to-speech",
+    "voice",
+    "audio",
+    "ai",
+    "tts",
+    "voice-agents",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/elevenlabs.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "elevenlabs",
+        "commit": "1c5f1de18e1d28a3c84a9aa2146a6a5e9484488c",
+        "skills": {
+          "agent-simplification": "7eb91b425bce82308d48c99fb8ff187ff194fa1915a0331292cb8610c640ab15",
+          "agents": "6c4177ba62a1b43e1b8970e098ddd7108c7954d57bcdd26cf79844bcae79f8e6",
+          "agents-platform": "e4cd2dbd14f84f4a36a8cda6f55ba7e39a8c2ee72aa19f7689a4acce07d050c6",
+          "architect-agent-memory": "2f93675d2dac0ab98449d40a68e8d30df25e3a7cc8c0119a9748f5edf227d29e",
+          "architect-branches-versions-merge": "28f930db0df4ad3aebec4ee1eb963ff90363bd48445addec0d67f27cef4b2b6d",
+          "architect-create-client-tool": "a7625ca9b4a0e3a307f82bff100b4ec62c9e9dc6d578546e17919bc68f418714",
+          "architect-create-llm-test": "47ffee990771485df38c20bb21ada8afbb8c4225dc25fa1e91f5421faf5cec5e",
+          "architect-create-simulation-test": "748584260691c48dbc363f0e09f6005780897d6d73a4a23a3e411adf78a4364f",
+          "architect-create-tool-test": "5b2d986b7296e252634daf0e201f266900720d27af3a5537528ec5400de572e1",
+          "architect-create-webhook-tool": "c4958fe375a4af229819ad43c3658cf36dbdd14e1fddf04f1a179973dfe173a7",
+          "architect-edit-existing-tool": "54cfc4a8956be7d6533f7cd43cafa57e388652ac730aaabb6c08d33c466cc8f7",
+          "architect-edit-string-fields": "169973667a7391fbb7f891e5817849290898fc4055c35707e237bce8399f6780",
+          "architect-edit-workflows": "c3ec7b79edeb7f2c5ab5f0e7e49d8be8d09e22bfa5f3633768218eb25120faf8",
+          "architect-explain-test-runs": "cf551c732eed22c207b32e7b1b21fd62c6ab30be5c536d8adda1bae395dede11",
+          "architect-explore-agent": "09d4526f9c90dfdebc01008b95f52590dfeef3474905d29b7379c866797c3883",
+          "architect-generate-agent": "89d6cffc3e9b3a30589b3b7cf6963834513aa75d9de4207e148edc3b9e76b587",
+          "architect-get-agent-ci-green": "a0f81389ae7b8d8c85c89f2d4f037173b94f4ab9d1932cdc639ad9fdca50fc87",
+          "architect-llm-selection": "b7ec5a0fab2522512335868bcb6ea906fe06389e503ffdcb6656fdec9d7a9a38",
+          "architect-manage-procedures": "fb9d431718b7b1786b258bdbb34222792bbb5a59efea63dbb03707b8fb04c398",
+          "architect-migrate-from-competitor": "7317666f451ed26fa26461cf175bdc8ca7534bd9cbba27322c3ebd5701cffbc7",
+          "architect-migrate-to-procedures": "e3f8effd198116ccd022cbdf841c891d6362c518b041bcd6d812a25876252834",
+          "architect-mock-all-tools": "3815f9650dc36504d96cc5badaca88c82fc3f13e82e8b1b42d4a51c485523258",
+          "architect-post-call-data": "e1903bc07d951e6db678a7a6c8a345e5d1ce7aeca18aecb114447816013fbfa5",
+          "architect-review-live-calls": "2b52f4dd54ed738374515b688cfaad96ea563a08dfa482194fecfc28669ba4ab",
+          "architect-schedule-launch": "ef0fb14bab44bf4dfc6d980db5309bd478068e3f1d51f1b62510be2cfb1b92f6",
+          "architect-secure-for-production": "c12cea2b6cf62311b51097c5c776463d216273e8392d7b67a4dc2d180bd6cc6c",
+          "architect-structured-procedures": "a1eba68164863bbd919cc77d8e0e7b3b8051c98ae988acdba137fae974468598",
+          "architect-troubleshoot-tool-errors": "8e02ab0544350ba4e4a135074bce591b7f1d68806e69ac462601bbd95301228a",
+          "architect-turn-taking-latency": "0b61c34798d46559ce5036bf08cb5d5b3e2357ff9c1724457f616d2e27822144",
+          "architect-update-config-safely": "23f6fd8323697d625d8134e65875cefe23558fd48698ed3634817a412a2089e2",
+          "code-tools": "4fd253c3cdd98781a2295d9e74a8c4f059b8adcaf6deef9183346751c2e6ced2",
+          "creative-studio": "9f9e93905de39e21e379baab60c17a1f68088c38b7268a8790c33d707e09372c",
+          "dubbing": "4e74bdc8a488ad968e751f7d2865cf26b1daeb9fc2c0978ad41d1b5d5085028f",
+          "fix-agent-qa-ticket": "5158a767183783e80b13344405d973783fb12bb5f0a304eb59db96b2456578c2",
+          "music": "a3fb1f5572ae215d75a484dfd97f62be20cdc75e2cb48d07a09eba0573009c91",
+          "setup-api-key": "b928e824d66d74b12fbfb18c904181c86b047517d7d7601c9c9cde5a287d18d0",
+          "sound-effects": "b39c46a44848ac6026818471bb286642f97bfb520395de2517a50f15de96bbd9",
+          "speech-engine": "08475157e48c27120af6c86b0809c44a5d499d80f5bc9ea0215fb648ee2fe8e4",
+          "speech-to-text": "4464e0334f4750021a74d42b37c93f856e5b6a9d85e2df8fd7363cadb3fbb177",
+          "text-to-speech": "807bb32d0aa21364c260deb3f78823244dfeb48f90db1b72dec1bda8344d1d83",
+          "voice-changer": "f55d96f5dd0bcb4e794ba21bf3182bf0319de988a02cf30a7e6ea8402fd8bfe6",
+          "voice-isolator": "5b42db157589f4225982b07acd3682e454db3a452d9dbd55c31dfaef098b0103"
+        },
+        "guessed": {
+          "elevenlabs.name": "91268016fe6765ef"
+        }
+      }
+    }
+  }
+}

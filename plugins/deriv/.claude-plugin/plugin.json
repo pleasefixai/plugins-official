@@ -1,0 +1,5 @@
+{
+  "name": "deriv",
+  "version": "1.0.0",
+  "description": "Deriv API schemas, payload checks and guides for building trading apps."
+}

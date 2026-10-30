@@ -1,0 +1,16 @@
+{
+  "id": "datagrout",
+  "name": "DataGrout",
+  "description": "The systems you connect in DataGrout, to discover, plan and run integrations.",
+  "group": "automation",
+  "url": "https://gateway.datagrout.ai/connect",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "id": "exa",
+  "name": "Exa",
+  "description": "Web search, page contents and deep research results from Exa.",
+  "group": "knowledge",
+  "url": "https://mcp.exa.ai/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  },
+  "headers": {
+    "x-exa-source": "claude-code-plugin"
+  }
+}

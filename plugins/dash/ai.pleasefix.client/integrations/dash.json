@@ -1,0 +1,16 @@
+{
+  "id": "dash",
+  "name": "Dash Security",
+  "description": "AI agents, agent sessions, shadow AI and supply-chain risk, and AI spend in Dash Security.",
+  "group": "developer_tools",
+  "url": "https://mcp.dash.security/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

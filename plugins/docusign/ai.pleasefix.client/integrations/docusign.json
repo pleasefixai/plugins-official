@@ -1,0 +1,16 @@
+{
+  "id": "docusign",
+  "name": "Docusign",
+  "description": "Envelopes, templates, workflows and agreements in your Docusign account.",
+  "group": "finance_ops",
+  "url": "https://mcp.docusign.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "id": "elastic",
+  "name": "Elastic",
+  "description": "Elastic documentation for Elasticsearch, Kibana, Observability and Security.",
+  "group": "developer_tools",
+  "url": "https://www.elastic.co/docs/_mcp/",
+  "auth": null
+}

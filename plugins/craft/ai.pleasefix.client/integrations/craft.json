@@ -1,0 +1,16 @@
+{
+  "id": "craft",
+  "name": "Craft",
+  "description": "Documents and daily notes in your Craft space.",
+  "group": "projects_time",
+  "url": "https://mcp.craft.do/my/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

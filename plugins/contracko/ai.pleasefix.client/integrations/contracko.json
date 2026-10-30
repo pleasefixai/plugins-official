@@ -1,0 +1,16 @@
+{
+  "id": "contracko",
+  "name": "Contracko",
+  "description": "Contracts, key terms, obligations and renewal deadlines from your Contracko account.",
+  "group": "finance_ops",
+  "url": "https://app.contracko.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

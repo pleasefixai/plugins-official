@@ -1,0 +1,8 @@
+{
+  "id": "godaddy",
+  "name": "GoDaddy",
+  "description": "Domain name ideas and availability checks from GoDaddy.",
+  "group": "developer_tools",
+  "url": "https://api.godaddy.com/v1/domains/mcp",
+  "auth": null
+}

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "descript",
+  "version": "1.0.0",
+  "description": "Video and audio projects in Descript, to create, edit by text and publish.",
+  "author": {
+    "name": "Descript"
+  },
+  "homepage": "https://www.descript.com",
+  "license": "Apache-2.0",
+  "keywords": [
+    "descript",
+    "video",
+    "audio",
+    "media",
+    "editing",
+    "transcription",
+    "ai",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/descript.svg",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "descript",
+        "commit": "dd1a10c1dc45b0eac49f933e81831bf160479fa1",
+        "skills": {
+          "create-video": "cf7a64647e4364dce521621fff0dcde5622f98f52bb6b882be7544647ae410a8",
+          "edit-project": "c4896749686c5dfd76ce530513b4144f580bdf70f83dc2911f9df1d249166ccb",
+          "publish-project": "4ebe1809905b1e8c8320174476a8d2f10b98820cd987016f9b3e1b8b5a972062"
+        },
+        "guessed": {
+          "descript.name": "92f21d8106182341"
+        }
+      }
+    }
+  }
+}

@@ -3,7 +3,7 @@
   "name": "Clerk",
   "description": "Applications, users, domains and instance settings from your Clerk workspace.",
   "group": "developer_tools",
-  "url": "https://mcp.clerk.dev/mcp",
+  "url": "https://mcp.clerk.com/mcp",
   "auth": {
     "scopes": [],
     "discovery": {

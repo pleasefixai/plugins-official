@@ -20,6 +20,8 @@ regexes = [
   '''^xoxb-YOUR-TOKEN$''',
   '''^eyJ[A-Za-z0-9_-]*\.\.\.$''',
   '''^sk-live-abc123\.\.\.$''',
+  '''^sk_YOUR_API_KEY$''',
+  '''^your-api-key$''',
 ]
 
 [[allowlists]]
@@ -35,3 +37,17 @@ condition = "AND"
 paths = ['''^plugins/zoom/skills/''']
 regexTarget = "secret"
 regexes = ['''^qgg8vlvZRS6UYooatFL8Aw$''', '''^23a89b634c017e5364a1c8d9c8ea909b60dd5599e2bb04bb1558d9c3a121faa5$''']
+
+[[allowlists]]
+description = "The made-up keys of the 'VULNERABLE' examples in Atlassian's Forge security rules."
+condition = "AND"
+paths = ['''^plugins/forge-skills/skills/forge-security-review/''']
+regexTarget = "secret"
+regexes = ['''^sk-1234567890abcdef1234567890abcdef$''', '''^sk_live_abcdefghijklmnop$''']
+
+[[allowlists]]
+description = "GitBook's fictional Evolve demo site: a sample idempotency key, and the download tokens of its public logo and icon images."
+condition = "AND"
+paths = ['''^plugins/gitbook/skills/configure-site/references/example-site/''']
+regexTarget = "line"
+regexes = ['''7b8f2c4a-91d2-4fe1-9b6a-2c8e5f1a9b0c''', '''files\.gitbook\.io/~/files/v0/b/gitbook-x-prod\.appspot\.com/o/[^"]*[?&]alt=media&token=[0-9a-f-]{36}"''']

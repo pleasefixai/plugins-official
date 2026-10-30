@@ -1,0 +1,37 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "context7",
+  "version": "1.0.0",
+  "description": "Current, version-specific documentation and code examples for software libraries.",
+  "author": {
+    "name": "Upstash"
+  },
+  "homepage": "https://upstash.com/",
+  "license": "MIT",
+  "keywords": [
+    "documentation",
+    "mcp",
+    "context7",
+    "libraries",
+    "frameworks",
+    "library-docs"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/context7.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "context7",
+        "commit": "33414e6e3fc157c936348ca8ddba25e50dacaeee",
+        "skills": {
+          "context7-mcp": "47070338ffc8d697a5d4d0b278df9a0c3a9a0118182896e0e58720f11cbd5711"
+        },
+        "guessed": {
+          "context7.name": "466f6a2bd6f744bb"
+        }
+      }
+    }
+  }
+}

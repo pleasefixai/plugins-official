@@ -1,0 +1,16 @@
+{
+  "id": "envoy",
+  "name": "Envoy",
+  "description": "Visitors, employees, desks and rooms in your Envoy workplace.",
+  "group": "other",
+  "url": "https://mcp.envoy.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

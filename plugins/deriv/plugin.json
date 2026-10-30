@@ -1,0 +1,46 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "deriv",
+  "version": "1.0.0",
+  "description": "Deriv API schemas, payload checks and guides for building trading apps.",
+  "author": {
+    "name": "Deriv"
+  },
+  "homepage": "https://deriv.com",
+  "license": "MIT",
+  "keywords": [
+    "deriv",
+    "trading",
+    "api",
+    "websocket",
+    "rest",
+    "options",
+    "finance",
+    "fintech"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/deriv.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "deriv",
+        "commit": "fe8c977688e16be6704cee17430d87640e248314",
+        "skills": {
+          "deriv-auth": "da35186b66647e359355273774971149911672b8a640826057ff8f0a07b3df33",
+          "deriv-lightweight-charts": "1019c4944f9e49fec0d2869592cc5e2a86d2a6e8b723caa93667b836e9df7049",
+          "deriv-llms": "f2516014c0c1791c03e8703971f1803fc760fcb6cf32f33431d3c57f3ad43b05",
+          "deriv-market-data": "24fe83cee4c458149d20b2fc80f9f945514135fe3e589938a2d67bbc7af618ec",
+          "deriv-smartcharts": "a4de8471bf5c97945a3f8cdef090ebbb62751177715cb2d79f016af39638d527",
+          "deriv-trade-lifecycle": "55519f30dbc748562b35b3bf3a380d7e6006867fa3fcc0016907b3ef77898364",
+          "deriv-trade-types": "82449a03f2be5d8309c1bad8699282e4e607bf61c6de831c592b3e97422aba17",
+          "deriv-trading-app": "98e8112ad417363e773f76db42ff5e065553419747fd6ec931b9693bbe659c9c"
+        },
+        "guessed": {
+          "deriv.name": "4cf7b2d45b1036c5"
+        }
+      }
+    }
+  }
+}

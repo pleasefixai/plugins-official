@@ -1,0 +1,16 @@
+{
+  "id": "gitlab",
+  "name": "GitLab",
+  "description": "Projects, issues, merge requests and CI/CD pipelines on GitLab.",
+  "group": "developer_tools",
+  "url": "https://gitlab.com/api/v4/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

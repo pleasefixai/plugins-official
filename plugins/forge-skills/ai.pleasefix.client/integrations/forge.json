@@ -1,0 +1,8 @@
+{
+  "id": "forge",
+  "name": "Atlassian Forge (developer guide)",
+  "description": "Forge developer guides and documentation search.",
+  "group": "developer_tools",
+  "url": "https://mcp.atlassian.com/v1/forge/mcp",
+  "auth": null
+}

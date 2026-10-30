@@ -1,0 +1,16 @@
+{
+  "id": "descript",
+  "name": "Descript",
+  "description": "Video and audio projects in Descript, to create, edit by text and publish.",
+  "group": "design",
+  "url": "https://api.descript.com/v2/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "google-calendar",
+  "version": "1.0.0",
+  "description": "Events, availability and schedules in your Google Calendar.",
+  "author": {
+    "name": "OpenAI"
+  },
+  "homepage": "https://workspace.google.com/products/calendar/",
+  "license": "MIT",
+  "keywords": [
+    "google-calendar",
+    "google",
+    "google workspace",
+    "calendar",
+    "events",
+    "meetings",
+    "availability",
+    "agenda",
+    "daily-brief",
+    "scheduling",
+    "productivity"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "codex",
+        "plugin": "google-calendar",
+        "commit": "0722921d5542fc593105c27bd52630babd8b8c2a",
+        "skills": {}
+      }
+    }
+  }
+}

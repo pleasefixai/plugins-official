@@ -1,0 +1,66 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "expo",
+  "version": "1.0.0",
+  "description": "Expo and EAS builds, updates, app store submissions and docs for React Native apps.",
+  "author": {
+    "name": "Expo Team"
+  },
+  "homepage": "https://github.com/expo/skills/blob/main/plugins/expo/README.md",
+  "license": "MIT",
+  "keywords": [
+    "expo",
+    "react-native",
+    "expo-router",
+    "codex-run-actions",
+    "eas",
+    "mobile",
+    "ios",
+    "android",
+    "deployment",
+    "upgrades",
+    "native-modules",
+    "app-clips",
+    "brownfield",
+    "eas-update",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/expo.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "expo",
+        "commit": "d4f484024fec15196bfd3c272e953e3f983972cf",
+        "skills": {
+          "eas-app-stores": "04067d7891e2a920a9484e703b92e22082214fdd2f0c4754e96ed19597159c6a",
+          "eas-hosting": "be65a464f1b03ebecd2299b232923201abee4ee9df3fdb1d9f0c8bd2a47dbf92",
+          "eas-observe": "4935b29773b32cdec391cc428098a9cce832642ab4f21de74f18cb9a646cc478",
+          "eas-simulator": "9ab589aee743ec2a270198456a7384a9f3541e3bd7687c12a9734da79db599f3",
+          "eas-update": "21b11c7bc69fe17ad175f0c9422fd5edeaaa47210cf6a9fdaa2e0f22df805b3b",
+          "eas-update-insights": "13f05a6cedf46e2d985d177be61c43b10bc58149cfca70d894d004eab92f6e7f",
+          "eas-workflows": "cad2145f399d8f25ffe44ace3ccab8de6412a4f22dc1c6102b2a847204f779e5",
+          "expo-animation": "bf32ba4a22a0c7a9622f6fe7e22d9ccc2c7d86f938ca64ffe033eb1c1bb4a220",
+          "expo-app-clip": "c57e5e47a8a97e3bdfaa652ef56d0e4b4b6daa650deebed493b614d0febd8194",
+          "expo-brownfield": "cb2a2eb0af5531ebf8a00665a138c6c1cc8d4a78c138f2d897f7fb504eb55671",
+          "expo-data-fetching": "543dbe493b2ee06fa0251775d1285307f35d2ba3c782fd21adb39fc44c048519",
+          "expo-design-system": "3b79b2a207c3ffa28517a333c39b3da9d1046f0757b69744cb850389de57c2f9",
+          "expo-dev-client": "c86a9d82941097705465b163e1a513f1aa77ce6644cf9b5492354e6a7713ac9a",
+          "expo-dom": "3b126fa1b558d5f09742d68962c68460f714439e8fdce5d7ac8043dcf925f2cb",
+          "expo-examples": "b8d1f2cbd4e2a41e897331a4bb7570dc1992406051c3b2fe7bc5ab0577037f4e",
+          "expo-module": "025956ffa7dd45604c35ef8b08370f4f4856f2c74d4f19cf04917dbf23b1a1c8",
+          "expo-native-ui": "430118d9b74cbefb35e313b1035f9a140fd68fa1a0e51c1da5dd7841a4adbf97",
+          "expo-overview": "0f76ab46fe768a3797105ce61031d30f72703647f774bf35b7a6bea85b741362",
+          "expo-project-structure": "42534c40c8325d10bb918ce916d46a66ddb498da6a5831511cae5477860426e4",
+          "expo-router": "fb2980175c299046675eb95c82a2a397719b7f458782b0ca11a53e37acf97cd2",
+          "expo-skill-feedback": "e6623f13b445e476e8601c1b1578f40d33e6b00d97ab26ea32a1b625d482d8e1",
+          "expo-ui": "b19782198d7495895374f25686aa7da349955a7834ffe130e2133a20b65930bd",
+          "expo-upgrade": "9952d662c5addc0592a038723f43d43f9b02447831a8c1d9fc28884f6a4f3aaf",
+          "expo-web-to-native": "94f6913fecdf10a9782e28fb673eb2dc386ce9680f6ae1b73f52b4ac36ad2ca0"
+        }
+      }
+    }
+  }
+}

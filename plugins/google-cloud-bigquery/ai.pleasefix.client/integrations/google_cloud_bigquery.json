@@ -1,0 +1,16 @@
+{
+  "id": "google_cloud_bigquery",
+  "name": "Google Cloud BigQuery",
+  "description": "Datasets, tables and SQL queries in Google Cloud BigQuery.",
+  "group": "developer_tools",
+  "url": "https://bigquery.googleapis.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "executor",
+  "version": "1.0.0",
+  "description": "The tools you connect in Executor, plus the custom tools and automations you build.",
+  "author": {
+    "name": "Executor"
+  },
+  "homepage": "https://executor.sh",
+  "license": "MIT",
+  "keywords": [
+    "executor",
+    "mcp",
+    "integrations",
+    "api",
+    "tools"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "mark": "integrations/executor.png",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "executor",
+        "commit": "d9cc4f799d989c93d71f7ce02c16a7c8e4ccf1cb",
+        "skills": {
+          "using-executor": "9b590eb24dd16bcacf970daeffac06e845533b0a3550a68a3e26c5df1ccaa0a4"
+        },
+        "guessed": {
+          "executor.name": "bb186757b4bf06e9"
+        }
+      }
+    }
+  }
+}

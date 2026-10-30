@@ -1,0 +1,71 @@
+# GitHits Code And Docs CLI Reference
+
+Package target syntax requires an explicit registry: `registry:name@version`, for example `npm:express@5.2.1`; omit `@version` for the latest release. Package targets scope to the package subpath, including within monorepos. Swift package targets use `swift:github.com/<owner>/<repo>` and Zig package targets use `zig:gh/<owner>/<repo>`. Use public repository targets for full repositories or sibling packages. Repository compact targets use `github:org/repo@ref`, `codeberg:owner/repo@ref`, `gitlab:group/subgroup/project@ref`, `github.com/org/repo@ref`, or `https://github.com/org/repo@ref`; omit `@ref` for the backend default branch. Exact standalone documentation sites use `site:<host[/path]>`. Output uses canonical `provider:path@ref` formatting so refs can contain `@` safely. `code` commands also support `--repo-url <url>` with optional `--git-ref <ref>`.
+
+## Search
+
+`githits search "<query>" --in <target>` searches indexed dependency code, docs, symbols, and exact standalone documentation sites. Repeat `--in` for multiple targets. Use `--source code`, `--source docs`, or `--source symbol` to force a source; omit it for auto-routing. For a standalone site, pass `--source docs --in site:<host[/path]>`.
+
+Search text shows producer-proven matched source and structural documentation previews. Path-only matches render as compact file headers; they do not prove a source-content match. Follow the emitted read locator when source context is needed. JSON preserves compatibility evidence and adds indexed-field provenance, matched source, and documentation previews.
+
+Useful filters: `--kind`, `--category`, `--path-prefix`, `--intent`, `--public`, `--name`, `--lang`, `--limit`, `--offset`, `--wait`, `--allow-partial`, `--json`.
+
+`--path-prefix` filters code results only. Omit it for `--source docs`, `--source symbol`, and standalone site searches. Use it with `--source code` on a package/repository, or with automatic source selection that includes a package/repository.
+
+If search returns a `searchRef`, continue with `githits search-status <searchRef> [--wait <seconds>]` only when the output explicitly supplies that follow-up, including for active `PENDING`, `INDEXING`, or `SEARCHING` progress or a completed result with an evidence notice. Use the wait in the rendered continuation; `--wait <seconds>` accepts an integer, and `githits search-status --help` gives the installed version's default and limit. Terminal `DEFERRED`, `TIMEOUT`, or `FAILED` progress, and unrecognized statuses, do not advance: keep any disclosed evidence, do not poll the same reference, and follow the rendered new-search action.
+
+Stale or provisional evidence remains queryable while refresh or indexing
+continues. Treat the displayed served target as exact provenance and follow a
+`searchRef` only when the output renders the continuation.
+
+If discovery returns no useful hits, follow its rendered pivots instead of
+repeating it unchanged. Once the query is an exact identifier or string, use
+`code grep` and then read the focused match; symbol discovery may not include
+re-exports or generated aliases.
+
+If a missing or ambiguous site returns suggested site targets, retry one of those exact labels explicitly. They are advisory, not aliases, and GitHits does not select or retry one automatically. A truncation notice means more valid candidates were omitted.
+
+## Code Files
+
+`githits code files <spec> [path-prefix]` lists paths. Use this before `githits read` when you do not know the exact file path.
+
+Useful filters: `--path`, repeatable `--glob`, repeatable `--ext`, repeatable `--file-type`, repeatable `--language`, repeatable `--file-intent`, repeatable `--exclude-intent`, `--exclude-docs`, `--exclude-tests`, `--hidden`, `--limit`, `--wait`, `--verbose`, `--json`.
+
+## Code Read
+
+`githits read <target> <path>` reads one exact target-relative file. Use `--lines 10-80`, `--start`, or `--end` for focused windows. You can also append a range to the path: `src/index.js:10-80`. `githits code read` remains a compatibility alias.
+
+`githits read <target> --selector <name>` reads a known indexed code symbol; add an exact `<path>` to narrow resolution to one file. Ambiguous, missing, or unsupported snapshots return recovery guidance. For repository addressing, prefer a compact repository target; `githits read --repo-url <url> [--git-ref <ref>] <path>` remains a compatibility path.
+
+## Code Grep
+
+`githits code grep <spec> <pattern> [path-prefix]` runs deterministic text grep. Use `--regex` for RE2 regex, `--case-sensitive`, `-C`, `-A`, `-B`, `--path`, repeatable `--glob`, repeatable `--ext`, `--exclude-docs`, `--exclude-tests`, `--limit`, `--per-file-limit`, `--cursor`, `--symbol-field`, `--wait`, `--verbose`, `--json`.
+
+Use `search` for discovery and `code grep` only when you know the pattern.
+When grep returns no matches, do not repeat it unchanged. Change or shorten the pattern, broaden the path/filter scope, or switch to `search` for conceptual intent.
+
+## Docs
+
+`githits docs list <spec>` browses available documentation pages. It is not topic search.
+
+For `githits read <target>`, use the search snippet when sufficient; otherwise run its generated `followUp`. From text, pass the displayed `[docs page]` target unchanged; from `docs list`, pass `docsReadTarget`. Hosted/crawled HTTP(S) targets address mutable current content, so automatic follow-ups forward the exact URL or fragment without search bounds. A fragment returns its heading and full subtree through the next equal-or-higher heading. Use `--selector <heading-id>` for a known logical heading ID without a URL fragment. Repository docs remain snapshot-addressed and keep returned ranges. Add `--lines` only when intentionally selecting a current page range; either bound replaces heading selection. Historical `pageId` values remain supported. `githits docs read` remains a compatibility alias. Use `--json` only for required range/source metadata.
+
+For topic search, use `githits search "<topic>" --source docs --in <target>`, then run its generated follow-up or pass the displayed text target.
+
+Partial and capped documentation coverage are usable published evidence. Report the disclosed limit, but infer neither indexing progress nor retryability from coverage; follow only `searchRef` and the evidence notice.
+
+## Command Name Mapping
+
+- `githits example` maps to MCP `get_example`.
+- `githits search` maps to MCP `search`.
+- `githits search-status` maps to MCP `search_status`.
+- `githits code files` maps to MCP `code_files`.
+- `githits code grep` maps to MCP `code_grep`.
+- `githits read <target> <path>` maps to MCP `read` with `target` and `path`.
+- `githits read <target> --selector <name>` maps to MCP `read` with `target` and `selector`, optionally with `path` for code.
+- `githits docs list` maps to MCP `docs_list`.
+- `githits read <docs-target>` maps to MCP `read` with `target` alone.
+
+Direct repository targets accept approved full HTTPS URLs on github.com, codeberg.org, and gitlab.com. Codeberg requires exactly owner/repo; GitLab allows nested namespaces. Only GitHub supports host shorthand and HTTP compatibility. Never infer a provider from bare owner/repo. Repository refs use an @ suffix and may themselves contain / and @; # is reserved for semantic fragments. Empty refs and mixed suffixes are invalid. Credentials, queries, provider web subpaths, and unsupported/self-hosted hosts are rejected. Package targets keep registry-native coordinates, including `zig:cb/owner/repo` and `swift:gitlab.com/group/project`. Changelog repo URL fields remain full HTTPS URLs.
+
+GitLab web paths with `/-/` or reserved routes such as `tree`, `blob`, and `raw` are rejected. Unreserved names such as `issues` can be repository path components; without a web-route marker, the client treats the complete nested path as repository identity.

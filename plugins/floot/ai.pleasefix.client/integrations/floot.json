@@ -1,0 +1,16 @@
+{
+  "id": "floot",
+  "name": "Floot",
+  "description": "Full-stack apps you build and host with Floot.",
+  "group": "developer_tools",
+  "url": "https://mcp.floot.com/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

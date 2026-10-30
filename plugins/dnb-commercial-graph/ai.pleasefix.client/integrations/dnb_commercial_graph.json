@@ -1,0 +1,16 @@
+{
+  "id": "dnb_commercial_graph",
+  "name": "D&B Commercial Graph",
+  "description": "Business entities, corporate linkage and firmographic data from the D&B Commercial Graph.",
+  "group": "market_data",
+  "url": "https://plus.dnb.com/v2/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}
