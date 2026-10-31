@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "spottercode",
   "version": "1.0.0",
-  "description": "ThoughtSpot developer documentation — search Visual Embed SDK, REST API v2, and developer guides through MCP-compatible clients.",
+  "description": "Guides to search ThoughtSpot developer docs for the Visual Embed SDK and REST API v2.",
   "author": {
     "name": "ThoughtSpot"
   },
@@ -20,9 +20,6 @@
           "get-developer-docs-reference": "cb1b718a98c886eb8dc0e9cc7042d985227ac6f6c35e2a639835d436cc6f4443",
           "get-rest-api-reference": "bc3f4384ed5086895994433699c4cc94a9adfa0671f09948253cef54ac44bff6",
           "get-visual-embed-sdk-reference": "3e2677f3f32f77982e06acc4155399670003a56565b58b0f477811b97a062300"
-        },
-        "guessed": {
-          "description": "1824c338ad31a0e0"
         }
       }
     }
