@@ -1,0 +1,21 @@
+Distributed:
+  type: object
+  description: Authentication settings for distributed (real-time listener) exports.
+  x-celigo-ai-guidance:
+    - Configuration object for distributed exports that require authentication.
+    - This object contains authentication credentials needed for distributed processing.
+  properties:
+    bearerToken:
+      type: string
+      description: |-
+        Bearer token that a system pushing data into this export sends as
+        `Authorization: Bearer <token>`. Optional — most distributed listeners (NetSuite,
+        Salesforce real-time) use no token. Write-only and stored encrypted; treat it as a
+        sensitive credential.
+      format: password
+      examples: ["eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...", "sk-1234567890abcdef"]
+  examples: [
+    {
+      "bearerToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.EXAMPLEpayload.EXAMPLEsignature"
+    }
+    ]

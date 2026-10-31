@@ -1,0 +1,174 @@
+Connection:
+  type: object
+  required:
+    - _id
+    - name
+    - type
+    - createdAt
+    - lastModified
+  description: Connection object as returned by the API.
+  allOf:
+    - $ref: './response-base.yml#/ResponseBase'
+    - type: object
+      properties:
+        netsuite:
+          description: Present when `type` is `netsuite`.
+          allOf:
+            - $ref: './netsuite.yml#/NetSuite'
+            - type: object
+              properties:
+                suiteAppInstalled:
+                  type: boolean
+                  readOnly: true
+                  description: |-
+                    When true, the Celigo integrator.io SuiteApp (SuiteScript 2.x) was detected in
+                    the connected NetSuite account the last time the connection authenticated. It
+                    says nothing about the legacy Celigo bundle; for a live check of both, use
+                    `GET /v1/connections/{_id}/distributedApps`.
+        salesforce:
+          description: Present when `type` is `salesforce`.
+          allOf:
+            - $ref: './salesforce.yml#/Salesforce'
+            - type: object
+              properties:
+                info:
+                  type: object
+                  readOnly: true
+                  description: |-
+                    Salesforce org and user metadata populated by the server after a successful
+                    authentication (the OpenID Connect userinfo of the authorizing user). Read-only.
+                  properties:
+                    user_id:
+                      type: string
+                      readOnly: true
+                      description: Salesforce user ID of the authorizing user.
+                      examples:
+                        - 00536000000vNR3AAM
+                    organization_id:
+                      type: string
+                      readOnly: true
+                      description: Salesforce organization (org) ID this connection authenticates to.
+                      examples:
+                        - 00D36000000ZtDMEA0
+                    email:
+                      type: string
+                      format: email
+                      readOnly: true
+                      description: Email address of the authorizing Salesforce user.
+                      examples:
+                        - integration-user@example.com
+                    preferred_username:
+                      type: string
+                      readOnly: true
+                      description: Salesforce login username of the authorizing user.
+                      examples:
+                        - integration-user@example.com
+                    name:
+                      type: string
+                      readOnly: true
+                      description: Full display name of the authorizing user.
+                      examples:
+                        - Integration User
+                    is_salesforce_integration_user:
+                      type: boolean
+                      readOnly: true
+                      description: When true, the authorizing user is a Salesforce Integration User license.
+        ftp:
+          description: Present when `type` is `ftp`.
+          allOf:
+            - $ref: './ftp.yml#/FTP'
+        s3:
+          description: Present when `type` is `s3`.
+          allOf:
+            - $ref: './s3.yml#/S3'
+        http:
+          description: Present when `type` is `http`.
+          allOf:
+            - $ref: './http.yml#/HTTP'
+        rdbms:
+          description: Present when `type` is `rdbms`.
+          allOf:
+            - $ref: './rdbms.yml#/RDBMS'
+        mongodb:
+          description: Present when `type` is `mongodb`.
+          allOf:
+            - $ref: './mongodb.yml#/MongoDB'
+        as2:
+          description: Present when `type` is `as2`.
+          allOf:
+            - $ref: './as2.yml#/AS2'
+        filesystem:
+          description: Present when `type` is `filesystem`.
+          allOf:
+            - $ref: './filesystem.yml#/Filesystem'
+        mcp:
+          description: Present when `type` is `mcp`.
+          allOf:
+            - $ref: './mcp.yml#/MCP'
+        dynamodb:
+          description: Present when `type` is `dynamodb`.
+          allOf:
+            - $ref: './dynamodb.yml#/DynamoDB'
+        jdbc:
+          description: Present when `type` is `jdbc`.
+          allOf:
+            - $ref: './jdbc.yml#/JDBC'
+        van:
+          description: Present when `type` is `van`.
+          allOf:
+            - $ref: './van.yml#/VAN'
+        wrapper:
+          description: Present when `type` is `wrapper`.
+          allOf:
+            - $ref: './wrapper.yml#/Wrapper'
+        rest:
+          deprecated: true
+          description: Present when `type` is `rest`. Deprecated — superseded by `http` with a pre-built HTTP Connector template.
+          allOf:
+            - $ref: './rest.yml#/REST'
+  # The active type's config object is present and required for that type. Nested if/else-if
+  # (no allOf), sibling of the composition allOf above — stack-style.
+  if: { properties: { type: { const: netsuite } }, required: [type] }
+  then: { required: [netsuite] }
+  else:
+    if: { properties: { type: { const: salesforce } }, required: [type] }
+    then: { required: [salesforce] }
+    else:
+      if: { properties: { type: { const: ftp } }, required: [type] }
+      then: { required: [ftp] }
+      else:
+        if: { properties: { type: { const: s3 } }, required: [type] }
+        then: { required: [s3] }
+        else:
+          if: { properties: { type: { const: http } }, required: [type] }
+          then: { required: [http] }
+          else:
+            if: { properties: { type: { const: rdbms } }, required: [type] }
+            then: { required: [rdbms] }
+            else:
+              if: { properties: { type: { const: mongodb } }, required: [type] }
+              then: { required: [mongodb] }
+              else:
+                if: { properties: { type: { const: as2 } }, required: [type] }
+                then: { required: [as2] }
+                else:
+                  if: { properties: { type: { const: filesystem } }, required: [type] }
+                  then: { required: [filesystem] }
+                  else:
+                    if: { properties: { type: { const: mcp } }, required: [type] }
+                    then: { required: [mcp] }
+                    else:
+                      if: { properties: { type: { const: dynamodb } }, required: [type] }
+                      then: { required: [dynamodb] }
+                      else:
+                        if: { properties: { type: { const: jdbc } }, required: [type] }
+                        then: { required: [jdbc] }
+                        else:
+                          if: { properties: { type: { const: van } }, required: [type] }
+                          then: { required: [van] }
+                          else:
+                            if: { properties: { type: { const: wrapper } }, required: [type] }
+                            then: { required: [wrapper] }
+                            else:
+                              if: { properties: { type: { const: rest } }, required: [type] }
+                              then: { required: [rest] }

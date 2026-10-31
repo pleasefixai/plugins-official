@@ -1,0 +1,75 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "aws-agents-for-devsecops",
+  "version": "1.0.0",
+  "description": "Incident analysis, code scans and pen tests with AWS DevOps Agent and AWS Security Agent.",
+  "author": {
+    "name": "Amazon Web Services"
+  },
+  "homepage": "https://github.com/aws/agent-toolkit-for-aws",
+  "license": "Apache-2.0",
+  "keywords": [
+    "Amazon Web Services",
+    "agentspace",
+    "api-testing",
+    "appsec",
+    "architecture-review",
+    "aws",
+    "cloudwatch",
+    "code-review",
+    "cost-optimization",
+    "devops",
+    "devsecops",
+    "incident",
+    "investigation",
+    "is-my-code-secure",
+    "mcp",
+    "observability",
+    "operations",
+    "penetration-test",
+    "pentest",
+    "pre-merge",
+    "qa",
+    "release",
+    "release-analysis",
+    "release-readiness",
+    "release-testing",
+    "reliability",
+    "remediation",
+    "risk-analysis",
+    "security",
+    "security-scan",
+    "security-vulnerabilities",
+    "testing",
+    "threat-model",
+    "topology",
+    "uat",
+    "ui-testing"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "aws-agents-for-devsecops",
+        "commit": "7bde20faede49dd5764c02b54f5e306849f7e3ca",
+        "skills": {
+          "analyzing-release-readiness": "b95ade5a230e8e33533a7e845b006ef0e5f69906c5fad23eb47c449278ce517a",
+          "chatting-with-aws-devops-agent": "2090c26f0ce0a26a5556d4a875f0f022094e12e659ef4f05f8136924deeb9d20",
+          "coordinating-multi-space-devops-agent": "8421c030b5b039618417139aadcf764e30221bb60c043c4abf2eee31b04cb8aa",
+          "diff-scanning-with-aws-security-agent": "42bd3e137d13be7b7c70e534e1dbb3af2ca46dcc067fdd20eeb09819f36ea19e",
+          "investigating-incidents-with-aws-devops-agent": "e3d7022a87c95485c88eb3c153b861e888ab0810eb2f184e7d12f22d085af121",
+          "pentesting-with-aws-security-agent": "03b59e8ecfab0e2751267b3c43acdd2bbb1544870b19963420219c4c9edf8018",
+          "remediating-with-aws-security-agent": "2a48b10568e2aaa11c22ce57a132e0441b856159dc549dd23def060d96ff61be",
+          "running-release-tests": "551a2ba36d83b3c9b43f83c1e7a8f6ca1842b762230008a8eaee9f140210907c",
+          "scanning-with-aws-security-agent": "14017d5608d15850a51b0bd0a15598bbd4bcd00d89f1a46646bdc8a81ce6c1d2",
+          "setup": "b90b3fb7b3fd91366663db9f3f8dda362824345629537928321f367c55ce6a6c",
+          "setup-devops-agent": "b872ac080f7591e46253c97410b0560397cb6aa1d1783864feb33bdb9fbe8a6c",
+          "setup-security-agent": "dcd2d569b42caa8af6f7b337fa2e663ab2abb68f6cf86f449b67b6c70ba9a965",
+          "threat-modeling-with-aws-security-agent": "5bfc0b6db0aef529fc82a49d5a49c8b090308164d2295518d44db824fcf8fe75"
+        }
+      }
+    }
+  }
+}

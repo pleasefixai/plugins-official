@@ -1,0 +1,5 @@
+{
+  "name": "atomic-agents",
+  "version": "1.0.0",
+  "description": "Guides to build, test and fix Python agents with the Atomic Agents framework."
+}

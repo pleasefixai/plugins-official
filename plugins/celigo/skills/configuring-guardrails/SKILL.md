@@ -1,0 +1,319 @@
+---
+name: configuring-guardrails
+description: Configure Celigo guardrail resources -- safety and compliance checks that validate data flowing through integrations. Use when creating or editing guardrails for PII detection, content moderation, or AI-based evaluation rules.
+---
+
+<!-- TIER:1 -->
+
+# Configuring Guardrails
+
+A guardrail is a **safety and compliance check** applied to data flowing through a Celigo integration. Guardrails are stored as imports with `adaptorType: "GuardrailImport"` and accessed via the `/v1/imports` API, but they have a dedicated page in the Celigo UI.
+
+Guardrails handle three concerns:
+
+- **Data validation** -- check records against rules before they reach downstream systems (PII detection, content moderation, or custom AI-based evaluation)
+- **Confidence tuning** -- control sensitivity via `confidenceThreshold` (0 to 1, default 0.7). Lower values catch more issues but increase false positives
+- **PII masking** -- optionally return a redacted copy of the record (`pii.mask: true`) under a `masked` response field. Masking is NOT automatic -- see [PII: mask vs flag](#pii-mask-vs-flag)
+
+No `_connectionId` is required unless using BYOK credentials for the `ai_agent` type. Platform-managed credentials cover most use cases.
+
+Guardrails are used across flows, APIs, and tools.
+
+**Guardrail or AI agent step?** Pick by what the LLM produces. A guardrail renders a **verdict** (`flagged: true|false`) that the parent's routing branches on -- reach for it when the user says "verify / check / validate / flag / screen". An AI agent step does **work** whose output flows onward as data -- reach for it when the user says "classify / extract / generate / summarize / decide"; build that in [configuring-ai-agents](../configuring-ai-agents/SKILL.md).
+
+## Guardrails Flag, They Don't Enforce
+
+The most important runtime semantic to internalize before designing a guardrail: **a guardrail produces a verdict; it does not act on the record.** Whether a flagged record gets blocked, routed to a review queue, dropped, retried, or forwarded with the verdict attached is decided by the **parent's** routing, branching, or filter structure -- the parent being a flow, an API endpoint, or a Tool -- not by the guardrail itself. The guardrail's job ends at "here is the structured JSON verdict"; everything downstream is the parent's responsibility.
+
+This split is deliberate. It keeps every guardrail composable across many parents (the same `Customer PII Scanner` can flag for review in one flow, block writes in an API endpoint, and gate a Tool's output in a third place), keeps each guardrail's contract narrow and testable, and keeps audit trails clean. A requirement like "block any records with PII" or "route flagged tickets to a Slack channel" is really two decisions: the guardrail's narrow check, and the parent's routing. Build the guardrail with its check; design the routing in the parent.
+
+Nothing the guardrail returns reaches downstream steps unless the parent authors a response mapping that extracts it.
+
+## Three Types of Guardrail
+
+### PII Detection
+
+Detect personally identifiable information in records. Configure which entity types to scan for (email addresses, SSNs, credit card numbers, phone numbers, etc.) and whether to mask detected values. Requires at least one entity type in `guardrail.pii.entities[]`.
+
+### Content Moderation
+
+Check content against harmful categories (hate speech, violence, harassment, sexual content, self-harm, illicit activity). Requires at least one category in `guardrail.moderation.categories[]`.
+
+### AI Agent Evaluation
+
+Use an AI model to evaluate data against custom instructions. Configured via `guardrail.aiAgent`, with the same providers and config blocks as `AiAgentImport` (the `provider` enum in [aiagent.yml](references/schemas/aiagent.yml)) minus tools: a non-empty `tools` array fails the save with 422 `guardrail_tools_not_allowed`. Supports model selection, temperature, and reasoning settings; leave its output format unset (see [AI Agent: natural-language rules](#ai-agent-natural-language-rules)). Unlike an agent, it gets no output cap unless you set one. Without a BYOK connection, built-in providers run only the models the platform hosts, and catalog providers can't be used at all.
+
+## Quick Reference
+
+### Type Decision Matrix
+
+| You need to... | Use `guardrail.type` | Configure | Read schema |
+|---|---|---|---|
+| Detect/mask PII (emails, SSNs, credit cards) | `pii` | `guardrail.pii.entities[]`, `guardrail.pii.mask` | [guardrail.yml](references/schemas/guardrail.yml) |
+| Block harmful content (hate, violence) | `moderation` | `guardrail.moderation.categories[]` | [guardrail.yml](references/schemas/guardrail.yml) |
+| Custom AI-based validation rules | `ai_agent` | `guardrail.aiAgent` (provider, model, instructions) | [guardrail.yml](references/schemas/guardrail.yml) + [aiagent.yml](references/schemas/aiagent.yml) |
+
+### Minimum Required Fields
+
+Every guardrail needs:
+
+- `name` -- human-readable label
+- `adaptorType` -- always `"GuardrailImport"`
+- `guardrail.type` -- `"pii"`, `"moderation"`, or `"ai_agent"`
+- Type-specific config -- `guardrail.pii{}`, `guardrail.moderation{}`, or `guardrail.aiAgent{}`
+
+No `_connectionId` required unless using BYOK for `ai_agent`.
+
+### Schema Index
+
+All schemas are in [references/schemas/](references/schemas/):
+
+- **Base fields (all imports):** [request.yml](references/schemas/request.yml)
+- **Response shape:** [response.yml](references/schemas/response.yml)
+- **Guardrail config:** [guardrail.yml](references/schemas/guardrail.yml) -- type, confidenceThreshold, pii, moderation
+- **AI agent config:** [aiagent.yml](references/schemas/aiagent.yml) -- provider, model, instructions, tools, structured output (shared with AiAgentImport)
+
+## Related Skills
+
+- [configuring-imports > AI Imports](../configuring-imports/SKILL.md#ai-imports) -- guardrails are a category of import; see imports for the broader context
+- [configuring-connections > Quick Reference](../configuring-connections/SKILL.md#quick-reference) -- BYOK connection setup for ai_agent guardrails
+- [building-flows > How to Build a Flow](../building-flows/SKILL.md#how-to-build-a-flow) -- wiring guardrails into flow pipelines as page processors
+- [troubleshooting-flows > Diagnostic Workflow](../troubleshooting-flows/SKILL.md#diagnostic-workflow) -- diagnosing guardrail-related failures
+- [configuring-ai-agents > Quick Reference](../configuring-ai-agents/SKILL.md#quick-reference) -- AI agent imports share the same LLM plumbing; guardrails add safety constraints
+
+<!-- TIER:2 -->
+
+## How to Build a Guardrail
+
+### 1. Determine the compliance requirement
+
+What kind of check do you need? PII detection (scan for sensitive data), content moderation (block harmful content), or custom AI evaluation (apply business-specific rules)?
+
+### 2. Check for existing guardrails
+
+Before building from scratch, see what already exists in the account:
+
+```bash
+# List all guardrails
+celigo guardrails list
+
+# Search the account for guardrail-related resources
+celigo account search "guardrail"
+celigo account search "pii"
+celigo account search "moderation"
+```
+
+### 3. Choose the guardrail type
+
+Refer to the [Type Decision Matrix](#type-decision-matrix). Each type has a distinct configuration shape.
+
+### 4. Configure type-specific settings
+
+- **PII:** Choose entity types to detect. Start with the most common: `email_address`, `phone_number`, `credit_card_number`, `persons_name`, `us_social_security_number`. Enable `mask: true` if downstream steps should see redacted data -- and plan the response-mapping write-back it requires (see [PII: mask vs flag](#pii-mask-vs-flag)).
+- **Moderation:** Choose categories. The core three are `hate`, `violence`, `harassment`. Add others as needed.
+- **AI agent:** Write clear instructions for the model. Any provider in the `aiAgent.provider` enum works, configured as on an AI agent import -- see [configuring-ai-agents > Provider Decision Matrix](../configuring-ai-agents/SKILL.md#provider-decision-matrix) -- but with no `tools`. Without a BYOK connection, the model must be one the platform hosts for that provider, and the save refuses any other with 422 `Model "<model>" is not supported...`, whose message doesn't list the hosted models.
+
+### 5. Set the confidence threshold
+
+Default is 0.7. For stricter compliance, raise to 0.8-0.9. For broader detection with more false positives, lower to 0.4-0.5. Read the `confidenceThreshold` field in [guardrail.yml](references/schemas/guardrail.yml).
+
+### 6. Build the guardrail JSON
+
+Reference the [Schema Index](#schema-index). Always read [request.yml](references/schemas/request.yml) for base fields, [guardrail.yml](references/schemas/guardrail.yml) for the guardrail config, and [aiagent.yml](references/schemas/aiagent.yml) if using `ai_agent` type.
+
+### 7. Hand it over
+
+When you report the guardrail, name the field its parent routes on: `flagged`, true when a detection or rule fired. A guardrail only flags, so the record goes on unchanged unless a branch on `flagged` sends it elsewhere ([Guardrails Flag, They Don't Enforce](#guardrails-flag-they-dont-enforce)).
+
+## CLI Commands
+
+```bash
+# CRUD
+celigo guardrails list
+celigo guardrails get <id>
+celigo guardrails create < guardrail.json
+celigo guardrails update <id> < guardrail.json
+celigo guardrails set <id> key=value [key2=value2 ...]
+celigo guardrails delete <id> [-y]
+
+# Invoke against sample data: no job, but a real run (an ai_agent guardrail calls the model and is billed)
+echo '[{"name":"John","email":"john@example.com"}]' | celigo guardrails invoke <id>
+
+# Preview an unsaved document, {"import": <guardrail>, "data": [records]}: evaluates only the first record
+celigo guardrails invoke --file preview.json
+
+# Clone and connection management
+celigo guardrails clone <id>
+celigo guardrails replace-connection <id> <newConnectionId>
+
+# Discovery
+celigo guardrails list
+celigo account search "guardrail"
+
+# Debug
+celigo guardrails enable-debug <id> [--duration <minutes>]
+celigo guardrails disable-debug <id>
+```
+
+## Configuring Each Type in Depth
+
+`pii` and `moderation` are **local deterministic classifiers** -- the same input always produces the same output, with no LLM call, no token cost, and no model latency. `ai_agent` is a **real LLM call per record**, with the cost and variance that implies. Prefer the cheaper type whenever the requirement fits; `ai_agent` is the catch-all, not the default:
+
+```
+pii  >  moderation  >  ai_agent
+```
+
+The three types are mutually exclusive -- a single guardrail cannot be both PII detection and moderation. When two orthogonal checks are needed, that is two guardrail steps in series, not one guardrail (see [Placement in the Parent Pipeline](#placement-in-the-parent-pipeline)). The choice is about *what* is being detected, not how the requirement is worded: a natural-language description still resolves to `pii` when it is about PII.
+
+### PII: mask vs flag
+
+After the entity list, the most-tuned knob on a PII guardrail is `mask`:
+
+- **`mask: false`** (default) -- detections are flagged in the verdict; the data passes through unchanged, and downstream routing decides what to do.
+- **`mask: true`** -- detections are flagged AND a redacted payload is returned under a **`masked`** field on the guardrail's response. This is **not** automatic in-place replacement -- the guardrail does not rewrite the in-flight record. For the downstream system to receive the redacted values, the parent must author a response mapping on the guardrail step that extracts `masked` back onto the record. With whole-record input, `masked` is the entire record as one JSON string, so writing it back also takes a `postResponseMap` hook that parses it and overwrites the original PII fields. A `mask: true` guardrail without that parent-side write-back still ships raw PII downstream.
+
+Masking one field before an AI agent sees it takes three pieces: the guardrail reads that field as its `text` input, its step sits before the agent's step, and the step's response mapping writes `masked` back over the field. The guardrail:
+
+```json
+{
+  "name": "Mask PII in ticket descriptions",
+  "adaptorType": "GuardrailImport",
+  "guardrail": {
+    "type": "pii",
+    "confidenceThreshold": 0.7,
+    "pii": {"entities": ["email_address", "phone_number", "credit_card_number"], "mask": true}
+  },
+  "mapping": {"fields": [{"extract": "description", "generate": "text"}]}
+}
+```
+
+Its flow step, listed in `pageProcessors[]` ahead of the agent's:
+
+```json
+{
+  "type": "import",
+  "_importId": "<guardrail id>",
+  "responseMapping": {"fields": [
+    {"extract": "masked", "generate": "description"},
+    {"extract": "flagged", "generate": "piiFound"}
+  ]}
+}
+```
+
+The result's fields are top-level: for each record a saved guardrail returns `statusCode`, an empty `_json`, `flagged`, `masked` (such as `"Call me back or email ****************"`) and `usage`, so extract `masked` and `flagged` themselves, not `_json.masked`. Fields the mapping doesn't select (a separate `email` field, say) aren't scanned or masked.
+
+Default to flag-only for review-style use cases where a reviewer needs to see the actual data. Default to `mask: true` for trust-boundary use cases -- third-party analytics, AI vendors, partner integrations, public reports -- where the destination should not see raw values even when the record passes. When in doubt and the destination is external, mask.
+
+The `pii.entities[]` enum is broad and fixed by the platform: universal entity types (email, phone, credit card, SSN, name, location, IP address, URL, and more) plus country-specific identifiers across the US, UK, EU, India, Australia, Korea, Singapore, and others -- passport numbers only for the US, Italy and India. Map the requirement to the closest enum value (an "address" is `location`) rather than switching to `ai_agent` when a named entity is not a perfect match.
+
+### Moderation: categories
+
+The `moderation.categories[]` enum is fixed. Top-level categories are `sexual`, `hate`, `harassment`, `self_harm`, `violence`, and `illicit`, each with finer sub-categories (for example `hate_threatening`, `violence_graphic`, `self_harm_intent`). Requirements are usually described in everyday vocabulary rather than enum values, so map liberally:
+
+- "explicit", "obscene", "vulgar", "NSFW" -> `sexual` and/or `harassment`
+- "abusive", "insulting", "bullying", "toxic" -> `harassment`
+- "hateful", "discriminatory", "racist", "sexist" -> `hate`
+- "threatening", "intimidating" -> `harassment_threatening` or `violence`
+- "suicide", "self-injury" -> `self_harm`
+- "drugs", "weapons", "illegal activity" -> `illicit`
+
+Do not invent category strings; the enum is fixed. When a requirement spans multiple categories, list all of them. Switch to `ai_agent` only when the policy is genuinely domain-specific (for example flagging content that mentions a competitor by name) -- that is a business rule, not a content-safety category.
+
+### AI Agent: natural-language rules
+
+Pick `ai_agent` only when the check needs judgment that does not fit `pii` or `moderation`: domain-specific compliance (HIPAA, SOX, GDPR), business-policy validation (price bounds, approval thresholds, discount rules), data-quality assertions, or any "evaluate against these custom rules" framing with no `pii.entities` or `moderation.categories` analogue.
+
+An `ai_agent` guardrail returns a fixed verdict: top-level `flagged` and `reasoning` (the platform asks the model for `flagged`, `reasoning` and `confidence`, whatever the guardrail says), which the parent maps onto the record and its routers and filters branch on. Don't give it an output schema: leave its output format unset (`openai.output`, `litellm.responseFormat`, or a catalog provider's `output`), and don't describe one in the instructions. A custom output format saves and reads back but isn't used at run time, so a field of your own (`approved`, `reason`) never comes back, and a response mapping that reads one (`_json.approved`) writes nothing. Map `{"extract": "flagged", "generate": "<field>"}` and branch on that. What decides the verdict is the instructions, so before a router or filter branches on `flagged`, invoke the saved guardrail by id on one record that should be flagged and one that shouldn't, and confirm each verdict is the one you expect (a preview, `invoke` with no id, evaluates only the first record):
+
+```bash
+echo '[{"discount": 45, "accountAgeDays": 30}, {"discount": 5, "accountAgeDays": 400}]' | celigo guardrails invoke <id>
+```
+
+The instructions are the heart of an `ai_agent` guardrail. Good instructions:
+
+- **State the rule clearly.** For example, "flag orders where discount > 30% AND customer account age < 90 days." Do not bury the rule in prose.
+- **Define both outcomes.** Say what `flagged: true` and `flagged: false` each mean, including what belongs in `reasoning` for each.
+- **Show, don't just tell.** A handful of input-to-output examples -- a clear pass, a clear fail, a borderline case -- do more than a paragraph of description.
+- **Handle malformed input.** For example, "if the `discount` field is missing, return `flagged: true` with reasoning 'discount field missing -- cannot evaluate.'"
+
+Some AI-agent capabilities deliberately do not apply to guardrails: no tools (no web search, MCP tools, Celigo Tools, or image generation) and no image or blob output -- the result is a verdict with `flagged`. Wanting any of those is a sign the design is really an AI agent step followed by a guardrail, not one `ai_agent` guardrail doing both. A guardrail does save MCP `prompts` and `resources`, but its run never uses them: the model gets only the instructions and the input, whether the MCP server can be reached or not. Write the policy the check must follow into the instructions.
+
+## Confidence Threshold
+
+Every guardrail has a `confidenceThreshold` (0.0 to 1.0, default 0.7), the single most-tuned knob across all three types. Detections at or above the threshold are flagged; below it, they are ignored.
+
+- **Lower threshold** (for example 0.5) -- catches more potential issues but raises the false-positive rate. Use when missing a real issue is more expensive than reviewing a false flag (compliance or safety where human review is cheap).
+- **Higher threshold** (for example 0.9) -- catches fewer issues, only high-confidence ones. Use when false positives are expensive, so auto-blocking does not trip on borderline cases.
+- **Default 0.7** -- the sensible middle. Most production guardrails start here and tune from data.
+
+For `pii` and `moderation`, the threshold is interpreted by the local classifier directly. For `ai_agent`, the model is instructed to include a confidence in its verdict and the same threshold applies.
+
+## Input Modes -- What the Guardrail Evaluates
+
+A guardrail evaluates structured records, in one of two ways:
+
+- **`text`** -- map the content to check into the `text` input with the guardrail's `mapping`, a Mapper 1.0 object: `"mapping": {"fields": [{"extract": "description", "generate": "text"}]}`. It's `mapping`, singular, not Mapper 2.0 `mappings` rows. Only the mapped field is evaluated. Use it when the check is over one body of text (most `moderation` cases, and content screening before or after an AI agent).
+- **The whole record** -- leave the mapping off and the guardrail evaluates the in-flight record, serialized as JSON. Use it when the check spans the structured fields together (most `pii` cases scanning multiple fields, most business-rule `ai_agent` checks). One exception: a record with its own top-level `text` field has only that field evaluated, so map explicitly when records carry one.
+
+Plan on those two only. A guardrail keeps no conversation history: a `conversationHistoryId` mapping saves, but each call sees only its own input. A value mapped to `blob` is checked as plain text (a blob key isn't fetched), and the import-level `blob` and `blobKeyPath` fields fail the save with 422 `not_supported`. Files aren't a documented input, and they behave inconsistently: an unsaved preview refuses a `files` mapping (422 `Only text messages are supported for ai_agent guardrails`), while a saved `ai_agent` guardrail invoked by id read the file as inlined text. Don't count on file input in a flow: to screen a document, have an AI agent step extract its text first, and check that text.
+
+## Placement in the Parent Pipeline
+
+Guardrails are steps in flows, API endpoints, and Tools. They run per-record, return a verdict, and the parent's downstream structure (router, filter, next-step wiring) decides what happens next. Recurring placement patterns:
+
+- **Right after the source, before expensive processing.** Run source records through a guardrail before routing clean records onward and flagged records to a review queue -- catching bad content early avoids wasting AI agent spend on records that should not be processed.
+- **Right before an AI agent step.** Protect the model from unsafe inputs before it sees them: PII scrubbing keeps customer data out of inference, moderation catches toxic prompts, and an `ai_agent` guardrail can catch prompt-injection signals.
+- **Right before the destination, gating what gets written.** Run records through a PII guardrail before pushing to a third-party warehouse or partner system so nothing leaks across the trust boundary.
+- **Right after an AI agent step, validating model output.** A moderation guardrail after a content-generating agent verifies the output meets safety standards before it ships.
+
+### Running Two Guardrails in Series
+
+When a requirement names more than one orthogonal check (for example "flag PII OR explicit content"), build two guardrails in series -- a `pii` guardrail followed by a `moderation` guardrail -- with a router that branches on either being flagged. Run cheap deterministic classifiers first (`pii` then `moderation`) and the expensive `ai_agent` last, each guardrail short-circuiting the chain by routing flagged records elsewhere. The chained pattern (`pii -> moderation -> custom policy`) is common for layered defense.
+
+Prefer chained simple guardrails over one `ai_agent` doing everything: chaining is cheaper (zero LLM calls for the deterministic steps), more predictable, easier to debug (you know which check flagged the record), and easier to evolve. Reach for a single `ai_agent` guardrail only when the rules genuinely inter-relate -- "reject orders where discount AND customer-age trigger together" is one rule, not two.
+
+A guardrail is one layer in a defense-in-depth approach, never the only defense for high-stakes compliance or safety -- even deterministic classifiers have false negatives. Combine guardrails with downstream filters, review queues, and platform controls such as encryption, access control, and audit logs.
+
+<!-- TIER:3 -->
+
+## Pre-Submit Checklist
+
+Before creating or updating a guardrail, verify:
+
+- [ ] `adaptorType` is exactly `GuardrailImport` (case-sensitive)
+- [ ] `guardrail.type` is set (`"pii"`, `"moderation"`, or `"ai_agent"`)
+- [ ] The type's config is present: at least one entry in `guardrail.pii.entities[]` for PII or in `guardrail.moderation.categories[]` for moderation, or `guardrail.aiAgent{}` for AI evaluation (no `tools`, no output format)
+- [ ] If using BYOK (`ai_agent` only): `_connectionId` references a valid HTTP connection with the provider's API key
+- [ ] The input is chosen on purpose: `mapping` (Mapper 1.0) maps the field to check to `text`, or is left off to evaluate the whole record ([Input Modes](#input-modes----what-the-guardrail-evaluates))
+- [ ] The parent step response-maps the top-level `flagged` (and `masked` for a `mask: true` PII guardrail), and its routing decides what flagged records do
+
+## Gotchas
+
+1. **Guardrails are imports.** They use `adaptorType: "GuardrailImport"` and live at `/v1/imports`. The CLI `guardrails` command is a virtual view that filters by adaptor type, but the underlying API is the imports endpoint.
+2. **PUT erases omitted fields.** Always GET first, modify, then PUT. The `set` command handles this.
+3. **BYOK model restrictions.** Without a BYOK connection, `ai_agent` guardrails are limited to the models the platform hosts, and catalog providers aren't available. The save refuses an unhosted model (422 `Model "<model>" is not supported...`). Add a connection first if you need a model off the hosted list.
+4. **At least one entity or category required.** PII guardrails need at least one entry in `pii.entities[]`; moderation guardrails need at least one in `moderation.categories[]`. Empty arrays fail validation.
+5. **Platform-managed credentials cover most cases.** BYOK connections are rare for guardrails. Don't add a `_connectionId` unless the user specifically needs a custom API key.
+6. **Masking is off by default.** PII guardrails default to `mask: false` (flag-only mode). Set `mask: true` explicitly if detected PII should be redacted in the output.
+7. **`mask: true` does not rewrite the record in place.** It returns a redacted payload under a `masked` field; the parent must author a response mapping (and a `postResponseMap` hook for record-mode masking) to write those values back onto the record. Without that parent-side write-back, raw PII still ships downstream.
+8. **The verdict only propagates if the parent maps it.** Nothing the guardrail returns (`flagged`, `masked`, `reasoning`) reaches downstream steps unless the parent authors a response mapping that extracts it -- guardrails flag, the parent enforces. Those fields are top-level on the result, so extract `flagged`, not `_json.flagged`.
+9. **The verdict's shape is fixed; test the verdicts.** An `ai_agent` guardrail always returns top-level `flagged` and `reasoning`: the platform gives the model its own verdict schema, and an output format set on the guardrail is saved but ignored, so leave it unset (and don't describe one in the instructions). Don't expect tools or image/blob output on the guardrail side. Before a router or filter branches on `flagged`, invoke the saved guardrail by id on a record that should be flagged and one that shouldn't, and check each verdict -- a preview evaluates only the first record.
+10. **A guardrail is one layer, not the whole defense.** Even deterministic `pii` and `moderation` classifiers produce false negatives. Pair guardrails with downstream filters, review queues, and platform controls for high-stakes compliance or safety.
+11. **Guardrail vs filter.** A filter gates on record **structure** (`status == "draft"`) -- cheap and deterministic. A guardrail gates on record **content** (contains PII, violates policy). Don't imitate moderation with keyword filters, and don't use a guardrail rule for a field comparison -- put an input filter on the guardrail step instead, which is also the cheapest cost knob for an `ai_agent` guardrail. Records that filter skips go on downstream without a verdict, so branch on `flagged == true` for the flagged path and decide on purpose where skipped records go -- never treat a missing `flagged` as clean.
+
+## Common Errors
+
+| Error | Cause | Fix |
+|-------|-------|-----|
+| 422 `guardrail.type required` | Missing `guardrail.type` field | Set `guardrail.type` to `"pii"`, `"moderation"`, or `"ai_agent"` |
+| 422 `entities required` | PII guardrail with empty entities array | Add at least one entity to `guardrail.pii.entities[]` |
+| 422 `categories required` | Moderation guardrail with empty categories | Add at least one category to `guardrail.moderation.categories[]` |
+| 422 `Model "<model>" is not supported...` on save | Model the platform doesn't host, without BYOK | Use a hosted model (an example in [aiagent.yml](references/schemas/aiagent.yml) or a working guardrail's), or add a BYOK connection |
+| 422 `Expected field: aiAgent to be present.` | An `ai_agent` guardrail without `guardrail.aiAgent` -- for example the model block put at the top level, where an AI agent import keeps it | Nest it under `guardrail.aiAgent` |
+| 422 `Tools aren't supported on a guardrail AI agent configuration...` | A non-empty `tools` array under `guardrail.aiAgent` -- often entries an older guardrail still returns, sent back on an update | Empty the arrays in the body you write (the `openai.tools: []` the server echoes is fine) |
+| 422 `Only text messages are supported for ai_agent guardrails` in a preview | A `files` mapping | Have an AI agent step extract the document's text, and map that to `text` |
+| 422 `adaptorType invalid` | Wrong case on adaptor type | Use exact case: `GuardrailImport` |
+| Guardrail flags everything | `confidenceThreshold` too low | Increase threshold (e.g., 0.7 to 0.9) |
+| Guardrail misses obvious PII | Missing entity types, or the PII sits in a field the guardrail's `mapping` doesn't select | Add all relevant entity types to `guardrail.pii.entities[]`; to scan several fields, leave `mapping` off so the whole record is evaluated ([Input Modes](#input-modes----what-the-guardrail-evaluates)) |
+| The next step still receives raw PII | The guardrail doesn't read the field as its `text` input, its step comes after that step, or its response mapping doesn't write `masked` back | Map the field to `text` in `mapping`, put the guardrail step first, and response-map `masked` onto the field |
+| A branch on the guardrail's result never matches, so every record takes the other path | The response mapping reads a field the verdict doesn't have: `_json.<field>`, or a field from a custom output schema | Map the top-level `flagged` and branch on it |

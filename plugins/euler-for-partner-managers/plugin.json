@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "euler-for-partner-managers",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "Partners, referrals, deal registrations and partner performance in EULER.",
   "author": {
     "name": "Euler"
@@ -31,8 +31,7 @@
         "skills": {
           "generate-qbr": "dd6fba5a81b86d66df96afcf861c45ed7075a748179fa9479037efa5bd6bb65a",
           "partner-briefing": "477d1de78163dfc5a60c49e11de7869d4a38e88e234e248d5d3bd98e0f58c5f0",
-          "pending-approvals-triage": "66f4c2a0e9a9a6ebee793ec0d8a9b51f379fa3dcf7825b6b16186175cc86d192",
-          "portfolio-pulse": "a606cae4e2fd7856bfb141a2b6e89f9a316dd31a10a48f7fa7d6d1258a38da88"
+          "pending-approvals-triage": "66f4c2a0e9a9a6ebee793ec0d8a9b51f379fa3dcf7825b6b16186175cc86d192"
         },
         "guessed": {
           "euler_for_partner_managers.name": "88292de0f6f86732"

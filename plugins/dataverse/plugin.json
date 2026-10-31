@@ -1,0 +1,40 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "dataverse",
+  "version": "1.0.0",
+  "description": "Guides for Microsoft Dataverse data and solutions, and X++ for Finance and Operations.",
+  "author": {
+    "name": "Microsoft"
+  },
+  "homepage": "https://github.com/microsoft/Dataverse-skills",
+  "license": "MIT",
+  "keywords": [
+    "dataverse",
+    "mcp",
+    "power-platform",
+    "dynamics-365",
+    "microsoft"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "dataverse",
+        "commit": "669e71519886d4602753c34bff3db787d616d761",
+        "skills": {
+          "dv-admin": "4f1bdae744f4887d5b794d8c6e5f04fe85c40a686882068fd00781e697222353",
+          "dv-connect": "5641dab8d933170ff69e88cadaf031f5596ac7a124f2c632eae2190f21245a8b",
+          "dv-data": "bee33cbe70485701acab7c24ae0b5b6ab86d5579846d7167ab3aef9d03722437",
+          "dv-metadata": "2c751960a48a4885f93ac1ddddd6f1199ccf3ef1958196cf248f1610dc12e48b",
+          "dv-overview": "df1aa3204ad9ed855fad68b4a4bd81c5301884411b6f0802895e78c0e3302953",
+          "dv-query": "270e5625dc423060e26801d94c379d110443e7345d42d1b27c016624390e38d3",
+          "dv-security": "8cc08f12f58aaf74d8c0f97ead5e610988b264b8bd10d7e419e5fae8570718a7",
+          "dv-solution": "f2d0056f5d055d9244da2c6f980b276f0926f6ec4596c57601ec08d7a9157216",
+          "erp-xpp": "1d3ab18c7ab98c0c7b90a52ee0b09037d1f23d21d282507add1f736fa0f8449a"
+        }
+      }
+    }
+  }
+}

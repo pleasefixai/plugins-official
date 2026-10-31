@@ -131,7 +131,7 @@ readability before walking into a call.
 ### Euler design system (modern report treatment)
 
 Output follows the **Euler design system** in the same modern layout as
-`generate-qbr`, `portfolio-pulse`, and `pending-approvals-triage`: sticky **topbar**
+`generate-qbr` and `pending-approvals-triage`: sticky **topbar**
 with the Euler **text wordmark** → **hero** (eyebrow chip + headline with a gradient
 `.accent` span + `.quick-facts` headline stats) → **spotlight** gradient panel (the
 30-second read) → two short `.attention` sections → a compact `.table-wrap` of recent

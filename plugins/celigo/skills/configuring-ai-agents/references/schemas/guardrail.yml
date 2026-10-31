@@ -1,0 +1,379 @@
+GuardrailConfig:
+  type: object
+  description: |-
+    Configuration for GuardrailImport adaptor type.
+
+    Guardrails evaluate data flowing through integrations for safety and
+    compliance. The `type` field selects which check to apply, and the
+    corresponding sub-object (`aiAgent`, `pii`, or `moderation`) provides
+    the configuration.
+
+    A `_connectionId` on the parent import is only needed for BYOK
+    `ai_agent` guardrails. In responses the server echoes the active type's
+    sub-object and applies the `confidenceThreshold` default; it also
+    returns inactive sibling sub-objects (e.g. `moderation: {categories: []}`
+    on a `pii` guardrail, or a populated `pii` left over from a type switch),
+    but only the active type's sub-object is meaningful. Legacy documents
+    may carry a server-written default `aiAgent` stub on `pii`/`moderation`
+    guardrails; current servers strip the inactive `aiAgent` on write.
+  x-celigo-ai-guidance:
+    - |-
+      Guardrails are safety and compliance checks that can be applied
+      to data flowing through integrations.  Three mutually-exclusive
+      types are supported — see `type` below for the full decision
+      rule on which to pick:
+
+      - **pii**: Detect (and optionally mask) personally identifiable
+        information.  Local deterministic classifier; fixed enum of
+        entity types (`pii.entities`).
+      - **moderation**: Detect harmful / inappropriate / policy-
+        violating CONTENT.  Local deterministic classifier; fixed enum
+        of categories (`moderation.categories` — `sexual`, `hate`,
+        `harassment`, `self_harm`, `violence`, `illicit`, etc.).  Use
+        category names exactly as listed in the enum — e.g. `hate`
+        (not "hate speech"), `violence` (not "violent content").  Map
+        natural-language synonyms ("explicit" → `sexual`, "toxic" →
+        `harassment`, etc.) to the closest enum value rather than
+        falling back to `ai_agent`.
+      - **ai_agent**: LLM-evaluated judgement against custom
+        instructions.  Catch-all for intents that don't fit `pii` or
+        `moderation` — domain-specific compliance, business-policy
+        checks, data-quality assertions, etc.  Pick this LAST, not as
+        the default.
+    - |-
+      Prefer the cheaper / more deterministic types (`pii` > `moderation` >
+      `ai_agent`) whenever the brief's intent fits.
+    - Guardrail imports do not require a `_connectionId` (unless using BYOK for `ai_agent` type).
+    - |-
+      Never send `tools` anywhere under `aiAgent` on an `ai_agent` guardrail (`aiAgent.tools`,
+      `aiAgent.openai.tools`, `aiAgent.litellm._overrides.gemini.tools`, `….anthropic.tools`) —
+      any non-empty array fails the save with 422 `guardrail_tools_not_allowed` ("Tools aren't
+      supported on a guardrail AI agent configuration…"), on create and on update. `prompts` and
+      `resources` are accepted on save but never used at run time, so put the policy in the
+      instructions. The server still echoes
+      `openai.tools: []` on OpenAI guardrails.
+  properties:
+    type:
+      type: string
+      enum: ["ai_agent", "pii", "moderation"]
+      x-enumDescriptions:
+        ai_agent: Evaluate data using an AI model with custom instructions.
+        pii: Detect personally identifiable information in data fields.
+        moderation: Check content for harmful or inappropriate categories.
+      description: |-
+        The type of guardrail to apply. Each type requires its corresponding
+        sub-configuration object (`aiAgent`, `pii`, or `moderation`).
+      x-celigo-ai-guidance:
+        - |-
+          The type of guardrail to apply.
+          Pick exactly one — `pii` / `moderation` / `ai_agent` are mutually exclusive at
+          the type level (a brief that wants both runs as two guardrails in sequence,
+          not one).
+        - |-
+          ## How to choose
+
+          Apply these rules **in order** and pick the first match.  Do
+          NOT skip ahead to `ai_agent` just because the brief is in
+          natural language — `pii` and `moderation` are also expressed
+          as natural-language briefs.  The decision is about WHAT the
+          brief asks the guardrail to detect, not how the brief is
+          worded.
+
+          1. **`pii`** — pick this when the brief names ANY personally
+             identifiable information, OR when the brief names entity
+             categories (SSN, email, phone, credit card, address, name,
+             passport, license, account number, etc.) that match
+             `pii.entities`.  Examples that route here:
+             "detect SSN and credit card numbers", "mask customer
+             emails and phone numbers", "scan for PII".
+
+          2. **`moderation`** — pick this when the brief asks the
+             guardrail to detect harmful, inappropriate, unsafe, or
+             policy-violating CONTENT (as opposed to PII data fields)
+             AND the intent maps to any value in `moderation.categories`
+             (`sexual`, `hate`, `harassment`, `self_harm`, `violence`,
+             `illicit`, etc.) — including via close synonyms.  Apply
+             the synonym mapping liberally:
+             - "explicit", "obscene", "vulgar", "profane",
+               "inappropriate language", "swearing", "NSFW" → typically
+               maps to `sexual` and/or `harassment`
+             - "abusive", "insulting", "bullying", "toxic" → `harassment`
+             - "hateful", "discriminatory", "racist", "sexist" → `hate`
+             - "threatening", "intimidating" → `harassment_threatening`
+               or `violence`
+             - "graphic violence", "gore" → `violence_graphic`
+             - "suicide", "self-injury" → `self_harm`
+             - "drugs", "weapons", "illegal activity" → `illicit`
+             Briefs like "screen email body for explicit language",
+             "block toxic chat messages", "flag harassment in support
+             tickets", "moderate user-generated content for unsafe
+             material" all route to `moderation`.  When the brief uses
+             a synonym, populate `moderation.categories` with the
+             closest enum value(s) — do NOT invent new category
+             strings; the enum is fixed.
+
+          3. **`ai_agent`** — pick this ONLY when the brief asks for
+             judgement that doesn't fit `pii` or `moderation`.  Typical
+             triggers: domain-specific compliance checks (HIPAA / SOX
+             rule evaluation), business-policy validation (price
+             bounds, approval thresholds), data-quality assertions
+             (required fields populated, values plausible), or any
+             "evaluate against these custom rules" framing where the
+             rules are domain-specific and have no `pii.entities` /
+             `moderation.categories` analogue.  If you can map the
+             brief's intent to a moderation category (even via a
+             synonym above), use `moderation` instead — `ai_agent` is
+             the catch-all, not the default.
+
+          Tie-breaker for borderline cases: prefer the more specific
+          type (`pii` > `moderation` > `ai_agent`).  `pii` and
+          `moderation` are local deterministic classifiers with fixed
+          enums — they're cheaper, faster, and more predictable than
+          `ai_agent` (which calls a real LLM per record).  Default to
+          the cheaper path whenever the intent fits.
+        - |-
+          ## Sub-configuration requirements (one per type)
+
+          - **ai_agent** requires the `aiAgent` sub-configuration.
+          - **pii** requires the `pii` sub-configuration with at least
+            one entity from `pii.entities`.
+          - **moderation** requires the `moderation` sub-configuration
+            with at least one category from `moderation.categories`.
+    confidenceThreshold:
+      type: number
+      minimum: 0
+      maximum: 1
+      default: 0.7
+      x-celigo-ui-override: >-
+        Required by the guardrail form (confidenceThreshold is required:true once a type is
+        selected, default 0.7). Encoded to mirror the form so builders produce connectable
+        configurations.
+      description: |-
+        Confidence threshold (0 to 1). Detections below this threshold are
+        ignored. Lower values catch more issues but increase false positives.
+      x-celigo-ai-guidance:
+        - Confidence threshold for guardrail detection (0 to 1).
+        - |-
+          Only detections with confidence at or above this threshold will be flagged.
+          Lower values catch more potential issues but may increase false positives.
+      examples: [0.7, 0.5, 0.9]
+    aiAgent:
+      type: object
+      description: |-
+        AI agent check configuration; set when `type` is `ai_agent`. On
+        `pii`/`moderation` guardrails a legacy server-written stub may
+        appear here — it is inert, and current servers strip it on write.
+    pii:
+      type: object
+      required: [entities]
+      description: |-
+        PII detection configuration. Required when `type` is `pii`.
+      x-celigo-ai-guidance:
+        - Configuration for PII (Personally Identifiable Information) detection.
+        - |-
+          Required when `guardrail.type` is "pii".
+          At least one entity type must be specified.
+      properties:
+        entities:
+          type: array
+          description: |-
+            PII entity types to detect. When `type` is `pii`, at least one
+            entry is required; the inactive sibling on other guardrail types
+            may be served with an empty list.
+          x-celigo-ai-guidance:
+            - PII entity types to detect in the data.
+            - At least one entity must be specified when using PII guardrails.
+          items:
+            type: string
+            enum:
+              - credit_card_number
+              - card_security_code_cvv_cvc
+              - cryptocurrency_wallet_address
+              - date_and_time
+              - email_address
+              - iban_code
+              - bic_swift_bank_identifier_code
+              - ip_address
+              - location
+              - medical_license_number
+              - national_registration_number
+              - persons_name
+              - phone_number
+              - url
+              - us_bank_account_number
+              - us_drivers_license
+              - us_itin
+              - us_passport_number
+              - us_social_security_number
+              - uk_nhs_number
+              - uk_national_insurance_number
+              - spanish_nif
+              - spanish_nie
+              - italian_fiscal_code
+              - italian_drivers_license
+              - italian_vat_code
+              - italian_passport
+              - italian_identity_card
+              - polish_pesel
+              - finnish_personal_identity_code
+              - singapore_nric_fin
+              - singapore_uen
+              - australian_abn
+              - australian_acn
+              - australian_tfn
+              - australian_medicare
+              - indian_pan
+              - indian_aadhaar
+              - indian_vehicle_registration
+              - indian_voter_id
+              - indian_passport
+              - korean_resident_registration_number
+            x-enumDescriptions:
+              credit_card_number: Credit or debit card number (e.g., Visa, Mastercard, Amex).
+              card_security_code_cvv_cvc: Card security code printed on credit or debit cards (CVV/CVC).
+              cryptocurrency_wallet_address: Cryptocurrency wallet address (e.g., Bitcoin, Ethereum).
+              date_and_time: Date and/or time values that could identify an individual.
+              email_address: Email address in standard format.
+              iban_code: International Bank Account Number used for cross-border payments.
+              bic_swift_bank_identifier_code: BIC/SWIFT code identifying a specific bank for international transfers.
+              ip_address: IPv4 or IPv6 network address.
+              location: Physical location or geographic coordinates.
+              medical_license_number: Medical professional license or registration number.
+              national_registration_number: National identification or registration number.
+              persons_name: Full or partial name of a person.
+              phone_number: Telephone number in any format.
+              url: Web URL or URI.
+              us_bank_account_number: United States bank account number.
+              us_drivers_license: United States driver's license number.
+              us_itin: United States Individual Taxpayer Identification Number.
+              us_passport_number: United States passport number.
+              us_social_security_number: United States Social Security Number (SSN).
+              uk_nhs_number: United Kingdom National Health Service number.
+              uk_national_insurance_number: United Kingdom National Insurance number.
+              spanish_nif: Spanish tax identification number (NIF).
+              spanish_nie: Spanish foreigner identification number (NIE).
+              italian_fiscal_code: Italian fiscal code (Codice Fiscale).
+              italian_drivers_license: Italian driver's license number.
+              italian_vat_code: Italian VAT identification number (Partita IVA).
+              italian_passport: Italian passport number.
+              italian_identity_card: Italian national identity card number.
+              polish_pesel: Polish national identification number (PESEL).
+              finnish_personal_identity_code: Finnish personal identity code (henkilotunnus).
+              singapore_nric_fin: Singapore National Registration Identity Card or Foreign Identification Number.
+              singapore_uen: Singapore Unique Entity Number for business registration.
+              australian_abn: Australian Business Number.
+              australian_acn: Australian Company Number.
+              australian_tfn: Australian Tax File Number.
+              australian_medicare: Australian Medicare card number.
+              indian_pan: Indian Permanent Account Number for tax purposes.
+              indian_aadhaar: Indian Aadhaar unique identity number.
+              indian_vehicle_registration: Indian vehicle registration number.
+              indian_voter_id: Indian voter identification card number.
+              indian_passport: Indian passport number.
+              korean_resident_registration_number: South Korean resident registration number.
+          examples:
+            - ["email_address", "phone_number", "persons_name"]
+            - ["us_social_security_number", "credit_card_number"]
+        mask:
+          type: boolean
+          default: false
+          description: |-
+            When true, the result also carries `masked`: the evaluated input with each detected
+            value replaced by asterisks. The record itself is unchanged. With whole-record input
+            (no `mapping`, and no top-level `text` field on the record), `masked` is the record
+            serialized as one JSON string. When false, PII is flagged only.
+          x-celigo-ai-guidance:
+            - |-
+              Masking doesn't rewrite the record. To pass masked text on, select the field as the
+              `text` input (`mapping`) and response-map `masked` back onto that field on the
+              guardrail's flow step (`{"extract": "masked", "generate": "<field>"}`).
+    moderation:
+      type: object
+      required: [categories]
+      description: |-
+        Content moderation configuration. Required when `type` is `moderation`.
+      x-celigo-ai-guidance:
+        - |-
+          Required when `guardrail.type` is "moderation".
+          At least one category must be specified.
+      properties:
+        categories:
+          type: array
+          description: |-
+            Content moderation categories to check. When `type` is
+            `moderation`, at least one entry is required; the inactive
+            sibling on other guardrail types may be served with an empty
+            list.
+          x-celigo-ai-guidance:
+            - At least one category must be specified when using moderation guardrails.
+          items:
+            type: string
+            enum:
+              - sexual
+              - sexual_minors
+              - hate
+              - hate_threatening
+              - harassment
+              - harassment_threatening
+              - self_harm
+              - self_harm_intent
+              - self_harm_instructions
+              - violence
+              - violence_graphic
+              - illicit
+              - illicit_violent
+            x-enumDescriptions:
+              sexual: Content depicting sexual activity or explicit sexual material.
+              sexual_minors: Sexual content involving minors.
+              hate: Content expressing hatred toward a group based on protected characteristics.
+              hate_threatening: Hateful content that includes threats of violence or serious harm.
+              harassment: Content that targets, intimidates, or bullies an individual.
+              harassment_threatening: Harassment content that includes threats of violence or serious harm.
+              self_harm: Content that promotes or depicts self-harm behaviors.
+              self_harm_intent: Content expressing intent to engage in self-harm.
+              self_harm_instructions: Content providing instructions for self-harm methods.
+              violence: Content depicting or promoting physical violence.
+              violence_graphic: Graphic or gory depictions of violence or injury.
+              illicit: Content promoting illegal activities or unlawful behavior.
+              illicit_violent: Content promoting illegal activities that involve violence.
+          examples:
+            - ["hate", "violence", "harassment"]
+            - ["sexual", "self_harm", "illicit"]
+  required:
+    - type
+    - confidenceThreshold
+  if:
+    required: [type]
+    properties:
+      type:
+        const: pii
+  then:
+    required: [pii]
+    properties:
+      pii:
+        required: [entities]
+        properties:
+          entities:
+            minItems: 1
+  else:
+    if:
+      required: [type]
+      properties:
+        type:
+          const: moderation
+    then:
+      required: [moderation]
+      properties:
+        moderation:
+          required: [categories]
+          properties:
+            categories:
+              minItems: 1
+    else:
+      required: [aiAgent]
+      properties:
+        aiAgent:
+          # Guardrails reject every `tools` array (422 guardrail_tools_not_allowed), so the
+          # ai_agent branch uses the guardrail spec's tools-free copy of the provider blocks
+          # rather than the tool-bearing AiAgentConfig used by AiAgentImport.
+          $ref: "../guardrail-schemas/guardrail-config.yml#/GuardrailAiAgentConfig"

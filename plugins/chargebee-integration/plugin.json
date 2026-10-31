@@ -1,0 +1,32 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "chargebee-integration",
+  "version": "1.0.0",
+  "description": "Guides for Chargebee billing APIs, webhooks, SDKs and schemas.",
+  "author": {
+    "name": "Chargebee"
+  },
+  "homepage": "https://www.chargebee.com/",
+  "license": "MIT",
+  "keywords": [
+    "chargebee",
+    "billing",
+    "subscription",
+    "webhooks",
+    "api"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "chargebee-integration",
+        "commit": "4fc2a5651e24973a63300e29ab0ada482d3cba12",
+        "skills": {
+          "chargebee-integration": "374496388d9f1a7ddb6b18113a1c93f405dcef1245bc886be0cb8f731bea3846"
+        }
+      }
+    }
+  }
+}

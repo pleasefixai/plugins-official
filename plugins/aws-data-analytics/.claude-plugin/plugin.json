@@ -1,0 +1,5 @@
+{
+  "name": "aws-data-analytics",
+  "version": "1.0.0",
+  "description": "Guides for data lakes, ETL and queries with S3 Tables, Glue, Athena, Redshift and MWAA."
+}

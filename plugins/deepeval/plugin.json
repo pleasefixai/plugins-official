@@ -1,0 +1,35 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "deepeval",
+  "version": "1.0.0",
+  "description": "Guides to add DeepEval evaluations, tracing and datasets to AI apps, with Confident AI.",
+  "author": {
+    "name": "Confident AI"
+  },
+  "homepage": "https://github.com/confident-ai/deepeval",
+  "license": "Apache-2.0",
+  "keywords": [
+    "deepeval",
+    "llm",
+    "evaluation",
+    "tracing",
+    "datasets",
+    "confident-ai"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "deepeval",
+        "commit": "da9b2c969f8a15e8aa4ef67c372157ce060cd63e",
+        "skills": {
+          "deepeval": "3e0a5756bab16d86d56df82baf20deca0a0a9b7343a6de17978ed89c72413513",
+          "deepeval-otel": "5054830800a400f153cc1fea2df4f47cf33e8f0cf29c55db4569b2d10e7a1ba4",
+          "deepeval-tracing": "8d4d0946af33e7c96364ed97e5184ec4372b2c36dde075c3bf217ff97ad5b1c1"
+        }
+      }
+    }
+  }
+}

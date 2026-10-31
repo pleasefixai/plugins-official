@@ -1,0 +1,5 @@
+{
+  "name": "build-web-apps",
+  "version": "1.0.0",
+  "description": "Guides for frontend testing, React performance, Stripe payments and Supabase Postgres."
+}

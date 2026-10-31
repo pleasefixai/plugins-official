@@ -1,0 +1,5 @@
+{
+  "name": "dynatrace",
+  "version": "1.0.0",
+  "description": "Guides for DQL queries, dashboards, alerts, logs, traces and security data in Dynatrace."
+}

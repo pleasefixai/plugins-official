@@ -1,0 +1,5 @@
+{
+  "name": "crowdstrike-falcon-fusion",
+  "version": "1.0.0",
+  "description": "Guides to author, deploy, run and debug CrowdStrike Falcon Fusion workflows."
+}

@@ -1,0 +1,39 @@
+Builder:
+  type: object
+  description: Builder-mode configuration defining request structure, routing, and response mapping.
+  properties:
+    request:
+      $ref: "./api-request.yml#/ApiRequest"
+    routers:
+      type: array
+      description: Optional routers for conditional processing before the response stage.
+      items:
+        $ref: "./router.yml#/Router"
+      x-celigo-ai-guidance:
+        - |-
+          Routers allow you to direct requests to different processing branches
+          based on criteria. This enables complex business logic within the API.
+    responseRouter:
+      $ref: "./response-router.yml#/ResponseRouter"
+    responses:
+      type: array
+      description: |-
+        Response configurations. Must include exactly one `success` and one `fail`
+        response; additional `custom` responses are optional. Order matters: the response
+        router returns the first response whose `inputFilter` matches, and a response without
+        one matches every request.
+      items:
+        $ref: "./api-response.yml#/ApiResponse"
+
+      x-celigo-ai-guidance:
+        - |-
+          Must include exactly one 'success' response and one 'fail' response.
+          Additional custom responses can be added for specific scenarios; list them before
+          'success', which otherwise answers the requests their filters match.
+  x-celigo-ai-guidance:
+    - |-
+      The builder mode allows you to define your API using visual configuration:
+      - Define the request structure (method, path, parameters)
+      - Transform incoming requests
+      - Route requests through processing logic
+      - Map and transform responses

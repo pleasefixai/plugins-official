@@ -1,0 +1,5 @@
+{
+  "name": "clickhouse-best-practices",
+  "version": "1.0.0",
+  "description": "Guides for ClickHouse schemas, queries, ingestion and Cloud services, chDB and ClickStack."
+}

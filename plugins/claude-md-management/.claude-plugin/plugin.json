@@ -1,0 +1,5 @@
+{
+  "name": "claude-md-management",
+  "version": "1.0.0",
+  "description": "Guides to audit the project memory files of a repository and keep them current."
+}

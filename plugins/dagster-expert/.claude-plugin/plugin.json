@@ -1,0 +1,5 @@
+{
+  "name": "dagster-expert",
+  "version": "1.0.0",
+  "description": "Guides to build, run and debug Dagster data pipelines and their assets."
+}

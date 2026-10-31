@@ -1,0 +1,5 @@
+{
+  "name": "aws-agents-for-devsecops",
+  "version": "1.0.0",
+  "description": "Incident analysis, code scans and pen tests with AWS DevOps Agent and AWS Security Agent."
+}

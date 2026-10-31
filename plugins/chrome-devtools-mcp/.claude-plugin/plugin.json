@@ -1,0 +1,5 @@
+{
+  "name": "chrome-devtools-mcp",
+  "version": "1.0.0",
+  "description": "Guides to debug web page accessibility, cookies, speed and memory with Chrome DevTools."
+}

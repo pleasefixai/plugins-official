@@ -1,0 +1,29 @@
+InviteRequest:
+  description: |-
+    Request body for inviting users to the account. Extends the base
+    user request with email fields. Access settings apply uniformly
+    to all emails in a batch invite.
+  allOf:
+    - $ref: ./request.yml#/Request
+    - type: object
+      properties:
+        email:
+          type: string
+          format: email
+          examples:
+            - newuser@example.com
+          description: Single email address to invite (use with `POST /v1/invite`).
+        emails:
+          type: array
+          minItems: 1
+          maxItems: 5
+          uniqueItems: true
+          description: |-
+            Email addresses to invite (use with `POST /v1/invite/multiple`): one to five
+            distinct addresses. An empty list, more than five, or a repeated address refuses
+            the whole request with 403 (`no_emails`, `limit_exceeded`, `duplicate_emails`).
+          items:
+            type: string
+            format: email
+            examples:
+              - user1@example.com

@@ -1,0 +1,491 @@
+Rule:
+  type: object
+  additionalProperties: true
+  description: |
+    A single node in the recursive rules tree.
+
+    A rule may carry any combination of the following — none are
+    required individually, but every rule needs at least one of
+    `elements` (to extract fields) or `children` (to nest deeper
+    rules) to do anything useful.
+
+    **Node roles**
+
+    - **Leaf rule** — has `elements` (and usually no `children`).
+      Describes a single row / segment by enumerating its fields.
+    - **Branch rule** — has `children` (and optionally `elements`).
+      Used to nest loops / sub-segments.  EDI envelopes always nest
+      their inner segments under `children`.
+    - **Container rule** — sets `container: true`.  A loop wrapper
+      that produces no row of its own: a group `name`, a
+      `maxOccurrence` above `1` and no `elements`, with the repeated
+      row's rule under `children`.  It is the only shape that repeats
+      rows (see `container`).
+
+    **Envelopes and `closeRule`**
+
+    EDI envelopes (ISA/IEA, GS/GE, ST/SE, UNB/UNZ, UNG/UNE, UNH/UNT)
+    pair an opening rule with a trailing rule:
+
+    - The opening rule lives in `Rules` / `children`.
+    - The matching trailer lives on the opening rule's `closeRule`.
+
+    `closeRule` accepts both an object (single trailer rule) and a
+    one-element array of trailer rules; the parser treats them
+    equivalently.  In practice the **root** envelope (e.g. IEA / UNZ)
+    is written as an object, and **inner** envelopes (e.g. GE / SE /
+    UNE) are written as a one-element array — both shapes are valid
+    against this schema.
+
+    **Additional properties**
+
+    Vendor / runtime extensions (`description`, Celigo-internal
+    flags) flow through unchanged.  Consumers should pass unknown
+    keys back on round-trip rather than dropping them.
+  properties:
+    name:
+      type: string
+      description: |
+        Optional human-readable identifier for the node.  EDI rules use
+        the segment name (`ST`, `GS`); delimited rules typically
+        omit `name` on the root rule.
+      examples: ["ST", "ISA", "OrderHeader"]
+    elements:
+      type: array
+      description: |
+        Field-level definitions extracted from this rule's row /
+        segment.  See `Element` for the per-field shape.
+
+        EDI segment rules conventionally include a "self" element with
+        `name` and `value` set to the segment id (e.g.
+        `{"name": "ISA", "value": "ISA"}`) followed by one element
+        per segment-element (`ISA01`, `ISA02`, ...).  Delimited
+        rules use one element per column.  Omit the key on a rule
+        with no elements of its own, such as a container wrapper: an
+        empty `elements` array saves, but fails the parse.
+      items:
+        $ref: '#/Element'
+    children:
+      type: array
+      description: |
+        Nested rules.  Used to build EDI envelope → group →
+        transaction → segment trees, or to model repeating
+        sub-segments / loops on any format.
+
+        Recursive: every child is itself a `Rule` (with the same
+        `elements` / `children` / `closeRule` capabilities).
+      items:
+        $ref: '#/Rule'
+    closeRule:
+      description: |
+        Trailer rule that closes the loop / envelope this rule opens.
+
+        Accepts either:
+        - A single `Rule` object (typical at the file root, e.g.
+          IEA / UNZ).
+        - A one-element array of `Rule` objects (typical for inner
+          envelopes, e.g. GE / SE / UNE).
+
+        Both shapes are accepted by the parser; tooling that
+        round-trips file definitions should preserve whichever shape
+        the source document uses.
+
+        Put it on the rule that opens the envelope (ISA, GS, ST, UNB,
+        UNH), never on a `container` wrapper.  A container's close rule
+        saves and parses without an error, but it consumes the row it
+        names, so the rule meant to read that row comes back empty.
+
+        For non-EDI / non-loop rules `closeRule` is omitted.
+      oneOf:
+        - title: rule
+          $ref: '#/Rule'
+        - title: array
+          type: array
+          items:
+            $ref: '#/Rule'
+    container:
+      type: boolean
+      description: |
+        Marks this rule as a pure loop wrapper that does not emit a
+        row of its own, and is the only way rows repeat: give the
+        wrapper a group `name`, a `maxOccurrence` above `1` and no
+        `elements`, and put the repeated row's rule under its
+        `children` (for EDI, the `ST` or `UNH` rule with its elements,
+        children and `closeRule`).  Parsed rows come back as an array
+        under the wrapper's `name`; `container: true` on a rule with
+        its own `elements` isn't honored as a loop.
+
+        A container repeats up to its `maxOccurrence`, which defaults
+        to `1`.  A container with `1`, or without the key, saves and
+        parses but matches a single row: in fixed-width and delimited
+        files the rows after it are dropped without an error, and an
+        X12 parse fails at the next row it can't place, naming a
+        mandatory segment as missing (for example `Mandatory segment
+        "SE" is missing on line: 6`).  A rule outside any container
+        matches one row the same way.  Give the wrapper the most rows
+        the file can hold, such as `1000`.
+      default: false
+      examples: [true, false]
+    maxOccurrence:
+      type: integer
+      minimum: 1
+      description: |
+        Upper bound on how many times this rule may repeat at its
+        current position.  Rows repeat only under a `container`
+        wrapper, so larger values such as `1000` go on the wrapper of
+        an `ST` transaction set or a line-item loop; EDI envelopes use
+        `1` (one ISA per file, one GS per group).
+
+        Defaults to `1`, so a container needs a larger value to repeat
+        (see `container`).  A value above `1` on any other rule saves,
+        but the parse refuses it with `Max no. of occurrences for
+        segment "<name>" is applicable only if it is a
+        container/loop.`  `0` is refused on save and on parse (`if
+        present, maxOccurrence must be greater than or equal to 1`).
+      examples: [1, 1000]
+    required:
+      type: boolean
+      description: |
+        Whether this rule must be present in the parsed file.  When
+        true and the rule does not match, the parser raises a
+        validation error.  EDI envelope segments (ISA/GS/ST) are
+        always required; optional summary segments are not.
+      examples: [true, false]
+    skipRowSuffix:
+      type: boolean
+      description: |
+        Suppresses emission of `delimited.rowSuffix` after this
+        rule's row during generation.  Used on EDI envelope segments
+        (ISA / GS / ST) where the segment terminator is part of the
+        following row's prefix rather than this row's suffix.
+      default: false
+    description:
+      type: string
+      description: |
+        Free-text annotation surfaced in the file-definition editor.
+        No functional impact on parsing.
+    relativeDataPath:
+      type: string
+      description: |
+        JSON path (relative to the parent rule's record context) that
+        this rule's loop iterates over during generation, or that
+        parsed rows are written to during parsing.  Set on repeating
+        rules — line-item loops, N1 address loops, ST transaction
+        containers (e.g. `"Items"`, `"N1"`, `"ST"`).  Omitted on
+        single-occurrence rules.
+      examples: ["Items", "N1", "ST"]
+    relationship:
+      type: array
+      items:
+        type: string
+      description: |
+        X12 / EDIFACT syntax-note (element relationship) codes for
+        this rule's segment.  Each entry is a condition code followed
+        by the element positions it binds, comma-separated:
+
+        - `C` — conditional: if the first listed element is present,
+          the rest are required (`"C,06,07"`).
+        - `P` — paired: all listed elements must appear together or
+          not at all (`"P,04,05"`).
+        - `R` — required: at least one of the listed elements must be
+          present (`"R,02,03"`).
+        - `E` — exclusion: at most one of the listed elements may be
+          present (`"E,02,07"`).
+        - `L` — list conditional: if the first element is present, at
+          least one of the rest is required (`"L,03,04,05"`).
+
+        Always an array of these code strings (never a plain string).
+        Pass through unchanged when round-tripping; the parser applies
+        the conditions during EDI validation.
+      examples:
+        - ["C,06,07", "P,04,05"]
+        - ["L,03,04,05,13", "R,02,03"]
+    ignoreIdentifier:
+      type: boolean
+      description: |
+        Fixed-width: the rule matches rows without looking for a
+        row-type marker.  Set it on the row rule of a file whose rows
+        carry no marker, inside a `container` so every row is read.
+        Without it such rows parse to one empty record (`{}`) with no
+        error, wrapped or not.
+      examples: [true]
+
+Element:
+  type: object
+  additionalProperties: true
+  description: |
+    A single field / segment-element entry inside a `Rule.elements`
+    list.
+
+    **Format-specific usage**
+
+    - **Delimited (CSV / TSV)** — one element per column.  `name` is
+      the human label; `value` is the column id used to address the
+      field downstream (e.g. `orderId`, `customerName`).
+    - **Fixed-width** — one element per column, gaps included, each
+      with a `length`.  Columns are read in element order;
+      `startPosition` doesn't move a column.
+    - **EDI X12 / EDIFACT** — element values follow the segmentNN
+      convention (`ISA01`, `BEG03`, `UNB02`).  Segment-element
+      definitions whose value comes from the trading-partner profile
+      use `referenceValue` to bind a Handlebars template such as
+      `{{{ediProfile.isa01}}}` — the runtime fills the value from
+      the profile at parse / generate time.
+
+    **Required fields**
+
+    `name` is required on every element.  `value` is optional: in
+    the canonical delimited row pattern, only the first element of a
+    rule (the row-type marker) carries `value`; subsequent data
+    columns use `name` only and are read by position.  When
+    `value` is set it must be non-empty — the parser uses it as a
+    literal match requirement (`ISA01`, `BEG03`, or the marker
+    string).
+  required:
+    - name
+  properties:
+    name:
+      type: string
+      description: |
+        Human-readable label or segment-element identifier.  For EDI,
+        descriptive text such as `Authorization Information
+        Qualifier`; for delimited data columns, the output key (the
+        parser uses `name` as the field key in each parsed
+        record); for the row-type marker, equals `value` (in a
+        container's child rule, a marker whose `name` differs from
+        its `value` parses to an empty record without an error).
+        Names must be unique within a rule's `elements`: a save or a
+        parse with two of the same name is refused (`Sibling element
+        names need to be unique. Duplicate "<name>" found in
+        elements: [<i>, <j>]`).
+      examples: ["Order ID", "Authorization Information Qualifier", "orderId"]
+    value:
+      description: |
+        Machine identifier, row-type matcher, or composite-element
+        definition.  Accepts either:
+
+        - A **string** — EDI elements use it as the segment-element
+          identifier (`ISA01`, `BEG03`).  In the canonical
+          delimited row pattern, only the first element of the row's
+          rule carries `value` — acting as the literal row-type
+          marker the parser matches against column 0 of every row
+          (e.g. `A`, `HDR`, `02`).  Subsequent data columns omit
+          `value` entirely.  When present must be non-empty.
+        - A **composite object** — EDI composite elements (an element
+          whose value is itself a delimited list of sub-elements,
+          e.g. EDIFACT `UNH02` = `S009` or X12 composites split by
+          the component separator) set `value` to an object with a
+          `delimiter` and nested `elements`.  See `CompositeValue`.
+      oneOf:
+        - title: literal
+          type: string
+        - title: composite
+          $ref: '#/CompositeValue'
+      examples: ["ISA01", "BEG03", "A", "HDR"]
+    type:
+      type: string
+      enum:
+        - string
+        - number
+        - decimal
+        - boolean
+      x-enumDescriptions:
+        string: Keeps the parsed value as text; the default when type is omitted.
+        number: Coerces the parsed value to a number, used for EDI control numbers, dates, and numeric fields.
+        decimal: Coerces the parsed value to a decimal number; written for EDI R-type (decimal) elements such as monetary amounts and quantities.
+        boolean: Coerces the parsed value to a boolean.
+      description: |
+        Type coercion applied to the parsed value before it reaches
+        downstream mapping / output.  Defaults to string when omitted.
+        EDI numeric segments (control numbers, dates) typically set
+        `type: number`; decimal-valued EDI elements (monetary
+        amounts, quantities) use `type: decimal`.
+      examples: ["string", "number", "decimal", "boolean"]
+    required:
+      type: boolean
+      default: false
+      description: |
+        Whether the parser should fail when this element is missing
+        or blank.  Defaults to false.  EDI envelope qualifiers and
+        transaction header fields (ISA/GS/ST elements) are
+        conventionally marked required.
+      examples: [true, false]
+    minLength:
+      type: integer
+      minimum: 0
+      description: |
+        Inclusive minimum string length.  Used heavily on EDI
+        elements where the X12 / EDIFACT standard fixes the length
+        of envelope qualifiers (e.g. `ISA05` is exactly 2 chars,
+        `ISA13` is exactly 9 chars).  A parse refuses a shorter value
+        (`Min. length not met for the field "ISA06"`).  Generation
+        doesn't pad to it; see `maxLength`.
+    maxLength:
+      type: integer
+      minimum: 0
+      description: |
+        Inclusive maximum string length.  See `minLength` for
+        usage notes.
+
+        Generation pads a shorter non-empty value with spaces up to
+        `maxLength` (`minLength` doesn't pad).  An empty value stays
+        empty, except on ISA02/ISA04 elements that keep their
+        standard names (`Authorization Information`, `Security
+        Information`), which are written as `maxLength` spaces.  So a
+        generate definition keeps the fixed-width X12 ISA at full
+        width (ISA02/ISA04 10 characters, ISA06/ISA08 15, 106
+        characters with the terminator) only with `maxLength` on
+        those elements.  Without it, a blank `isa02` comes out empty
+        and an unpadded interchange id short, and Celigo's own parser
+        refuses that ISA (`Mandatory element "ISA02" is not present`,
+        `Min. length not met for the field "ISA06"`).  A value longer
+        than `maxLength` fails the generation (`Max. length not met
+        for the field "<name>"`).
+    referenceValue:
+      type: string
+      description: |
+        Handlebars template that resolves to the element's value at
+        runtime instead of being read from the file.  Most common use
+        is binding EDI envelope fields to the trading-partner
+        profile, e.g. `{{{ediProfile.isa01}}}` or
+        `{{{ediProfile.tpInterchangeId}}}`.
+
+        The linked EDI profile's fields resolve under
+        `ediProfile.*`.  X12 profiles: `isa01`, `isa02`, `isa03`,
+        `isa04`, `tpIdQualifier`, `tpInterchangeId`, `myIdQualifier`,
+        `myInterchangeId`, `isa11`, `isa12`, `isa14`, `isa15`,
+        `isa16`, `tpGroupId`, `myGroupId`, `gs07`, `gs08`.  EDIFACT
+        profiles: `unb010_0001`, `unb010_0002`, `tpIdQualifier`,
+        `myIdQualifier`, `tpInterchangeId`, `myInterchangeId`,
+        `versionNumber`, `releaseNumber`, `controllingAgency`.  Both
+        standards also expose the profile's `name`, `description`,
+        `fileType`, and `controlNumber` (the rolling interchange
+        control number — for generate-direction control-number
+        positions such as ISA13).  There are no `isa05`–`isa08`
+        keys: the sender/receiver qualifier and ID positions bind to
+        `tpIdQualifier` / `tpInterchangeId` / `myIdQualifier` /
+        `myInterchangeId` (`tp*` is the trading partner's identity,
+        `my*` is yours — which pair lands in ISA05/06 vs ISA07/08
+        depends on who sends the document).  Field meanings are
+        documented in the EDI Profiles spec.
+
+        Use triple-stash (`{{{...}}}`) to avoid HTML escaping for
+        EDI control characters.
+      x-celigo-ai-guidance:
+        - |-
+          Never extrapolate positional profile keys: ISA05-ISA08 have no
+          isaNN key — bind them to tpIdQualifier, tpInterchangeId,
+          myIdQualifier, myInterchangeId, choosing the tp*/my* pair by
+          document direction (tp* = trading partner's identity).
+        - |-
+          A referenceValue naming a key outside the profile's field set
+          saves without error but fails at parse/preview time with
+          "Handlebar expression pattern is incorrect. Please correct it
+          to an appropriate pattern for : <key>".
+      examples:
+        - "{{{ediProfile.isa01}}}"
+        - "{{{ediProfile.tpInterchangeId}}}"
+    enum:
+      type: array
+      items:
+        type: string
+      description: |
+        Enumerated set of allowed values.  Used to enforce EDI code
+        lists (e.g. BEG01 purpose codes `["00", "06", "22"]`,
+        BEG02 type codes `["PR", "RL", "SA", "ZZ"]`).  When set,
+        the parser rejects values outside the list.
+      examples:
+        - ["00", "06", "22"]
+        - ["PR", "RL", "SA", "ZZ"]
+    description:
+      type: string
+      description: |
+        Free-text annotation surfaced in the file-definition editor.
+        No functional impact on parsing.
+    tally:
+      type: boolean
+      description: |
+        Marks this element's parsed value as a running tally that the
+        generator accumulates across loop iterations.  The
+        accumulated total is referenced from trailer segments via the
+        `{{_tally.[Element Name]}}` Handlebars helper (e.g. W04
+        "Number of Units Shipped" tallied into the W03 total).
+      examples: [true]
+    counter:
+      type: boolean
+      description: |
+        Marks this element as an auto-incrementing counter the
+        generator fills per emitted row / iteration (e.g. LX
+        assigned numbers, HL hierarchical ids).
+      examples: [true]
+    ignore:
+      type: boolean
+      description: |
+        When true, the parser reads the element (on a fixed-width row
+        it still takes its `length`) but leaves it out of the parsed
+        record.
+      examples: [true]
+    startPosition:
+      type: integer
+      minimum: 1
+      description: |
+        Doesn't place the column: fixed-width columns are read in
+        element order, each `length` characters wide, so a definition
+        that skips columns misreads them without an error.  Describe a
+        gap with a placeholder element of the gap's width instead.
+    length:
+      type: integer
+      minimum: 1
+      description: |
+        Fixed-width: column width in characters.  Every fixed-width
+        element needs one; the parser refuses an element without it
+        (`Every fixed width element must provide a "length" property
+        between 1 and 512.`).
+    start:
+      type: integer
+      description: |
+        Legacy fixed-width start offset, paired with `end`.  It doesn't
+        replace `length`: an element with `start`/`end` and no
+        `length` is refused.
+    end:
+      type: integer
+      description: |
+        Legacy fixed-width end offset, paired with `start`.  It doesn't
+        replace `length`: an element with `start`/`end` and no
+        `length` is refused.
+
+CompositeValue:
+  type: object
+  additionalProperties: true
+  required:
+    - elements
+  description: |
+    Composite-element value: an EDI element whose value is itself a
+    delimited list of sub-elements.  Used for EDIFACT composites
+    (e.g. `UNH02` = message identifier `S009`, `DTM01` =
+    date/time/period `C507`) and X12 composites split by the
+    component element separator.
+
+    The parser joins / splits the nested `elements` using
+    `delimiter` (falling back to the file-level
+    `delimited.compositeDelimiter` when omitted).  Sub-elements
+    follow the same `Element` shape as top-level segment elements —
+    typically just `name` + `value` pairs.
+  properties:
+    delimiter:
+      type: string
+      description: |
+        Component separator used between the composite's
+        sub-elements, e.g. `":"` (EDIFACT default) or `">"` /
+        `"="` (X12 component separators).  Optional; when omitted
+        the file-level composite delimiter applies.
+      examples: [":", ">", "="]
+    elements:
+      type: array
+      description: |
+        Ordered sub-elements of the composite.  Each entry is an
+        `Element` (recursively — composites may nest), though in
+        practice sub-elements carry only `name` and a literal or
+        Handlebars `value`.
+      items:
+        $ref: '#/Element'

@@ -1,0 +1,47 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "aws-serverless",
+  "version": "1.0.0",
+  "description": "Guides to build and run serverless apps with AWS Lambda, API Gateway and Step Functions.",
+  "author": {
+    "name": "Amazon Web Services"
+  },
+  "homepage": "https://github.com/awslabs/agent-plugins",
+  "license": "Apache-2.0",
+  "keywords": [
+    "aws",
+    "lambda",
+    "durable functions",
+    "managed-instances",
+    "lmi",
+    "serverless",
+    "development",
+    "sam",
+    "api-gateway",
+    "eventbridge",
+    "step-functions",
+    "microvms",
+    "firecracker",
+    "capacity-provider"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "aws-serverless",
+        "commit": "097fe8ad56d8a1d5e2c81d7880adf145553cf244",
+        "skills": {
+          "api-gateway": "2ed69dcf7aa73089275f40f03cab95a468b5737b82a5e06352ea87f72d6d1317",
+          "aws-lambda": "f4779dc20bcfb862c6cd62682c536d7b0f809ac88fa341d8c86aadf2383b528c",
+          "aws-lambda-durable-functions": "7bc1bc566470a13758985ca1859985384a9dc32b360ffe9f6a81ac13b8b61d04",
+          "aws-lambda-managed-instances": "5db0bf267940a78b4b7913e6dec60790a5f9505804ce863b818c32b3f2e06d35",
+          "aws-lambda-microvms": "db93b254ce89292c7f0ff529151255c05f2acc92efbb6efc9ab8f6c6de47007e",
+          "aws-serverless-deployment": "1cb051b1245b1632bcc8251966b3725739e30c5ff8f084c2e8d83a22cec0fb06",
+          "aws-step-functions": "13d04286cf27a993cb689824adfaf3e2c8b2b26e9c7d233193d9405339718ded"
+        }
+      }
+    }
+  }
+}

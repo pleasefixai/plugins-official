@@ -1,0 +1,69 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "cockroachdb",
+  "version": "1.0.0",
+  "description": "Guides to design, secure, migrate and operate CockroachDB clusters and their SQL.",
+  "author": {
+    "name": "Cockroach Labs"
+  },
+  "homepage": "https://github.com/cockroachdb/claude-plugin",
+  "license": "Apache-2.0",
+  "keywords": [
+    "cockroachdb",
+    "database",
+    "sql",
+    "distributed-sql",
+    "postgres-compatible",
+    "mcp",
+    "schema",
+    "migration",
+    "multi-region"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "cockroachdb",
+        "commit": "6c96c6394a61f366e8ec1b7cec2281e97507cbff",
+        "skills": {
+          "analyzing-range-distribution": "26274fe1f9f67047822d85d0703daa13ad22d6fa8433927eb21555b5d15f249e",
+          "analyzing-schema-change-storage-risk": "31334d534f73125c3b8a71cda653ce67fa450319cba2c797cdfc8f6a91d75dde",
+          "auditing-cis-benchmark": "814a5942522cf01c3b53eb672278f56223a7e01f4a7482f1654016c444ad182c",
+          "auditing-cloud-cluster-security": "1fb2913d8372d21989bb3a42fa93f09c41f1966d86d9c7c7a55d592e717c51cf",
+          "auditing-table-statistics": "894d9c7b10a8411560b1167eba1b72802c3fa6726c6ae037b119b82ddf076a4d",
+          "benchmarking-transaction-patterns": "e96d21c13e95df3ec37f40626fa4ae034fc6162d7aaca8f7f8a75f8d2ec355a6",
+          "cockroachdb-sql": "c7a437b27a1d9ad9f2ec1eee675efcb4701c3b17d959e3a4a00d64f75ecd3905",
+          "configuring-audit-logging": "9ca4281bfcf7eec00e7d6d6b5b1418da0693867300fc1d1683be20cc2b49cbc8",
+          "configuring-ip-allowlists": "a78fc80da7dc0894504bd7ae96cd2216f54fec7fa77b3c136122efbfebbbc87a",
+          "configuring-log-export": "302796f74ad6b7807aea9203f63366393d4e15d9e427cfe66a379a306dcea0e1",
+          "configuring-private-connectivity": "9dc4de359ec0d13888dc60f5b0769132ea28ce9b75022f43d3443b789b8567b9",
+          "configuring-sso-and-scim": "66bc6733590aefe5f42e3a35680bb881459d6ed1a80550292a64b7cc1158f064",
+          "designing-application-transactions": "f7615bd05cb07ff9fc97252ba76e30f95462156305ec2b0028db3aa5d7fb116a",
+          "designing-multi-region-applications": "5ac1241e6dfb46924e0ee5e553125c0ea1eee16b058bd8a178c7be6810feb948",
+          "enabling-cmek-encryption": "e510368fafa0072132f9ecd280bad9650fa69a25ed7c24c8161f47e385722839",
+          "enforcing-password-policies": "e2dd03edda539f9fe267cb26fd04b16b23fc8a038d4a53f64d6f1db44f975f99",
+          "hardening-user-privileges": "333de5168df76c4edd3da21f5c4313683482192c2aea431aa98903e287ef6be4",
+          "managing-certificates-and-encryption": "dc30ed80dfd1835e2518cefe32217447fb0aedaf071a09b9c6a0e14bbb5c5f61",
+          "managing-cluster-capacity": "47e6660c76f2eebfef03bfa0fa566bb5251098382d7ca91184b4772f3f35f7bc",
+          "managing-cluster-settings": "0a74cafb3c29265e762b7da8b1731e28ad49ab83ab8e701435cd4c7e07c957da",
+          "managing-tls-certificates": "b60e0c55517483488332e4409598b26ea1554148f66006795fa021e9333c5bab",
+          "molt-fetch": "7fe38687b43f0e428751bde237fa1139cfbd00bb8363cb98bd57ca769a8504ee",
+          "molt-replicator": "b79d1755e0d90712e81dd3adc6a5025f179898834dab9823cea4f279900f1a98",
+          "molt-verify": "2fee0835bec2cdce2369750cc8f394c8da2fb15966601ca09a6c37be5fa39129",
+          "monitoring-background-jobs": "b08aee8942404f26334fbf0c35b2bbabca6f55db5459146ed2b0981c845a494b",
+          "performing-cluster-maintenance": "6a11f9be952bd8ffcb154a81cba0950573094902094f006c1f1d559c67425020",
+          "preparing-compliance-documentation": "94e93e4022896e812cdb82a5584360a0c73e4a6bade03f23b69f862d46f65f33",
+          "profiling-statement-fingerprints": "2a01412b1d8eac06a82fb611165ab059c3af7122004b96b63c3fd0c9da081aa1",
+          "profiling-transaction-fingerprints": "b913b6bef95047dfb53d2a293e595b7c801b7a9f69dbe1c180075482e6fd5332",
+          "provisioning-cluster-for-production": "fcf4c235862231907fdd2f7009ab851c74754aa39ede138fa8725599c4af2b97",
+          "reviewing-cluster-health": "e7c99b32ed786ef42e3d7dec2819442fd637448e363d3a3d510526778d5dc19b",
+          "setting-up-local-cluster": "83c2dcead0b891643e8b8e1010e5dc2b44f42854f1547cfbc2306b87bb6b8f9e",
+          "triaging-live-sql-activity": "808171e5c295243706dc14b71aa23be76db500c84a238203c65e87b3ecc58889",
+          "upgrading-cluster-version": "55ce86ff19517f94b74bb32916f881817b9f331435dcbe5b2e42f5e0213c8b6a"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+Hook:
+  type: object
+  description: |-
+    A single lifecycle hook — a JavaScript function invoked from a script (or hosted on a
+    stack) at a fixed point in an import or AI-agent run. Shared by every hook slot; the
+    slot's own description says when in the lifecycle it fires.
+  properties:
+    function:
+      type: string
+      description: |-
+        Function to invoke: one in the script named by `_scriptId`, or one the code deployed on
+        the stack named by `_stackId` exposes.
+      examples: ["transformRecords"]
+    _scriptId:
+      type: string
+      format: objectId
+      x-celigo-refModel: scripts
+      description: |-
+        Script containing the hook function named in `function`. Send this or `_stackId`, not both.
+        Must be a script in this account: any other id fails the save with 422, naming the hook,
+        such as "Only a script owned by the user or a script shared by the Integration App can
+        be used at hooks.preMap._scriptId." on an import's `preMap`.
+    _stackId:
+      type: string
+      format: objectId
+      x-celigo-refModel: stacks
+      description: |-
+        Stack that hosts the hook logic, used instead of a script for stack-based deployments.
+        The API doesn't enforce the either/or: a save carrying both `_scriptId` and `_stackId`
+        answers 200 and stores both, and the script and the stack then each list the step as a
+        dependent.
+      x-celigo-ai-guidance:
+        - When moving a hook onto a stack, remove `_scriptId` and set `function` to the stack's function in the same update.
+    configuration:
+      type: [object, 'null']
+      description: |-
+        Static parameters passed to the hook function at runtime, letting one script be
+        reused with different settings. Null when the hook carries no static parameters.

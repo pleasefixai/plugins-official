@@ -1,0 +1,5 @@
+{
+  "name": "alloydb-omni",
+  "version": "1.0.0",
+  "description": "Guides to run and manage AlloyDB Omni databases in containers and on Kubernetes."
+}

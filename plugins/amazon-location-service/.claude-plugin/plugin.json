@@ -1,0 +1,5 @@
+{
+  "name": "amazon-location-service",
+  "version": "1.0.0",
+  "description": "Guides to add maps, places search, geocoding and routes with Amazon Location Service."
+}

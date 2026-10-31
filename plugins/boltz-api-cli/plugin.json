@@ -1,0 +1,46 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "boltz-api-cli",
+  "version": "1.0.0",
+  "description": "Protein and small-molecule binder design, screens and ADME predictions with Boltz.",
+  "author": {
+    "name": "Boltz"
+  },
+  "homepage": "https://boltz.bio",
+  "license": "MIT",
+  "keywords": [
+    "boltz",
+    "boltz-api",
+    "go-cli",
+    "computational-biology",
+    "protein-design",
+    "protein-screening",
+    "small-molecule-design",
+    "virtual-screening",
+    "structure-prediction",
+    "molecular-modeling",
+    "drug-discovery",
+    "biotech"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "codex",
+        "plugin": "boltz-api-cli",
+        "commit": "0722921d5542fc593105c27bd52630babd8b8c2a",
+        "skills": {
+          "boltz-check-status": "18656ec496e4fb950a824604127c0d71429df1a816eb4ed5368313ea34d6bd8c",
+          "boltz-cli-setup": "c51ad9e40522486df72c0bc9a907efca76cce4a35c36e6748e95d0c7bfba3624",
+          "boltz-protein-design": "249f00d32391753ac88ce8854e79a3db5183be873ba22741f05ebefcf6e6bfea",
+          "boltz-protein-screen": "035f14b73f858dd310ed34f3cb6fe3088ae688324a3ad28f3d3f669618e975dd",
+          "boltz-small-molecule-adme": "a7e5fdf4a96c06c7e7faa73e55f0e30272cd5cbc126d1efe29df4b3dd15b3d0d",
+          "boltz-small-molecule-design": "875bd872579abee9c08a90c86f98d5b5e6c229df03fbadac31edab62b0c49457",
+          "boltz-small-molecule-screen": "ad19f04dc3837c919f87567ce86b6c04cce60dda498bc207d9430b66846b2d9b",
+          "boltz-structure-and-binding": "33b2f22b4c46c552a170d2c415cfcff231a7970f006ec55e586be6d74c096ca7"
+        }
+      }
+    }
+  }
+}

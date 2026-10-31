@@ -1,0 +1,5 @@
+{
+  "name": "firebase",
+  "version": "1.0.0",
+  "description": "Guides for Firebase Authentication, Firestore, App Hosting, Crashlytics and Remote Config."
+}

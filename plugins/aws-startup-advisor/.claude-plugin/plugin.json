@@ -1,0 +1,5 @@
+{
+  "name": "aws-startup-advisor",
+  "version": "1.0.0",
+  "description": "AWS architecture advice, credits, programs and Terraform checks for startups, by stage."
+}

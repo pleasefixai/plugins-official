@@ -1,0 +1,44 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "docker-skills",
+  "version": "1.0.0",
+  "description": "Guides for Dockerfiles, Compose, Docker Agent and Docker Sandboxes, with safe Docker use.",
+  "author": {
+    "name": "Docker"
+  },
+  "homepage": "https://docker.com",
+  "license": "Apache-2.0",
+  "keywords": [
+    "docker",
+    "dockerfile",
+    "compose",
+    "containers",
+    "devops",
+    "docker-agent",
+    "sandboxes"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "docker-skills",
+        "commit": "3e1cbd179989c2c193f3e4e6553a655907c2003b",
+        "skills": {
+          "docker-agent-config": "df620f79ac0804636ab662cda061887c2ffc3baab63fa1b05e918e236c02d0ba",
+          "docker-agent-deploy": "16efeac993555496b75376006e1ad82f92f8b7d4ef84412bc22fe019599d9682",
+          "docker-agent-run": "acfb146c482ae26d7a81057cce541cec61f54da9f1f4983c8713f7f024040f44",
+          "docker-build-strategies": "dab45495fa59bca55ce854c223b2bec93f6886674da9e8607083f16c530fe987",
+          "docker-compose-patterns": "bacad63d2ec0e95aff238505a9a75c85830c9376137f182ec1dadb3aa6283ad6",
+          "docker-destructive-guardrails": "e389fb7322147f95bc0b465168e22cec8939f4589d2f6685d095d2294cd56e03",
+          "docker-project-foundations": "4aec41554fe9230d9365034f951fcfe6cb28f9fe6b92025f5e1d35b38467f285",
+          "docker-sandboxes-env": "f39d19e7d84301bd508b6c18480c81dd78746646e27858d78b29f64f149ed6b3",
+          "docker-sandboxes-kits": "7c6b13e26900dfff3e8773809c8146a6b4460a0abbe9eaf74038a7f0e71c90d7",
+          "docker-sandboxes-lifecycle": "5f08980ab0aa5b7528a227dd91a703d0c764f5591ce0d401866d9a647497bd58",
+          "docker-sandboxes-network-credentials": "1b5c5bc297b89bacdf01a414fd29a04560b75237bd2e600327668a76e0409430"
+        }
+      }
+    }
+  }
+}

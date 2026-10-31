@@ -1,0 +1,179 @@
+RDBMS:
+  type: object
+  description: |-
+    Configuration object for Relational Database Management System (RDBMS) data integration exports.
+
+    This object defines how data is read from a relational database and must not be included
+    for other connection types. For query-type exports (standard, delta, once) it is REQUIRED
+    when the _connectionId field references an RDBMS database connection and holds the SQL
+    query. For real-time stream listeners (`type: "stream"`) it holds the CDC watch list
+    (`tables`) instead — and a PostgreSQL listener scoped by a publication
+    (`cdc.publicationName`) may omit this object entirely.
+
+    **Rdbms export capabilities**
+    - Execute custom SQL SELECT statements
+    - Support for joins, aggregations, and functions
+    - Flexible data retrieval from any accessible tables or views
+    - Compatible with all major database systems
+
+    **Critical:** WHAT BELONGS IN THIS OBJECT
+    - `query` - The SQL SELECT statement - required for every query-type export (standard, delta, once)
+    - `once` - **REQUIRED** when the export's Object Type is `"once"` (set _include_once: true)
+    - `tables` - the CDC listener watch list - real-time stream listeners (`type: "stream"`) only
+    - **DO NOT** put `delta` inside this object - delta is handled via the query
+    - **DO NOT** author `query` on a stream listener - real-time CDC exports have no SQL query
+
+    **Delta exports (type: "delta")**
+    For delta/incremental exports, do NOT populate a `delta` object inside `rdbms`.
+    Instead, use `{{lastExportDateTime}}` or `{{currentExportDateTime}}` directly in the query, and
+    set the export's top-level `delta.startDate`: without it the first run's window is empty.
+    ```json
+    {
+      "type": "delta",
+      "delta": { "startDate": "2026-01-01T00:00:00.000Z" },
+      "rdbms": {
+        "query": "SELECT * FROM customers WHERE updatedAt > {{lastExportDateTime}}"
+      }
+    }
+    ```
+
+    **Once exports (type: "once")**
+    For once exports (mark records as processed), populate `rdbms.once.query`:
+    ```json
+    {
+      "type": "once",
+      "rdbms": {
+        "query": "SELECT * FROM customers WHERE exported = false",
+        "once": {
+          "query": "UPDATE customers SET exported = true WHERE id = {{record.id}}"
+        }
+      }
+    }
+    ```
+
+    **Standard exports (type: null or not specified)**
+    Just provide the query:
+    ```json
+    {
+      "rdbms": {
+        "query": "SELECT * FROM customers WHERE status = 'ACTIVE'"
+      }
+    }
+    ```
+
+    **Real-time CDC listener exports (type: "stream")**
+    SQL Server and PostgreSQL connections support change-data-capture listeners that stream row
+    changes continuously (the `cdc` object holds the listener settings). A stream export has NO
+    `query` — it watches `tables`:
+    ```json
+    {
+      "type": "stream",
+      "rdbms": { "tables": "public.orders,public.customers" },
+      "cdc": { "properties": [{ "name": "snapshot.mode", "value": "no_data" }] }
+    }
+    ```
+    A PostgreSQL listener can instead scope tables through a publication
+    (`cdc.publicationName`), in which case `tables` stays unset and the `rdbms` object may be
+    omitted entirely.
+  properties:
+    tables:
+      type: string
+      description: |-
+        Comma-separated list of tables the CDC listener watches for changes. Used only by real-time
+        listener exports (`type` is `stream`); standard SQL exports use `query` instead. SQL Server
+        listeners use fully-qualified three-part names (`database.schema.table`); PostgreSQL
+        listeners use two-part names (`schema.table`).
+      x-celigo-ai-guidance:
+        - |-
+          For a PostgreSQL listener, author EITHER this field OR `cdc.publicationName`, never both —
+          when a publication is set it is the sole table filter and the listener form clears this
+          field (the API stores both if sent, so nothing catches the conflict at save time).
+      examples: ["UKGODS.dbo.UKG_MetadataStaging", "dbo.WorkOrderT,dbo.OrderLineT", "public.orders,public.customers"]
+    query:
+      type: string
+      x-celigo-agent:
+        - sql
+      x-celigo-ui-override: >-
+        Required by the standard RDBMS export form (rdbms.query is required:true) for query-type
+        exports. Deliberately NOT encoded as a schema-level required[] entry: stream listener
+        exports (type: "stream") save without a query — they watch `tables` or a PostgreSQL
+        publication — and a publication-based PostgreSQL listener persists with no rdbms object at
+        all, so any required[] here would reject valid listener configs. Do not re-add it.
+      description: |-
+        SQL SELECT statement executed to retrieve data, from simple table selections to joins,
+        aggregations, and parameterized queries with Handlebars expressions. Query-type exports
+        only — real-time stream listeners (`type` is `stream`) have no SQL query. For delta exports,
+        reference {{lastExportDateTime}}/{{currentExportDateTime}} directly in the query rather
+        than configuring a separate delta object.
+
+        Double braces render a string as a quoted SQL literal with its apostrophes escaped, and
+        triple braces insert a value raw. Observed in Snowflake queries:
+
+        - String helper output (`dateFormat`, `jsonSerialize`) and both delta variables are
+          quoted the same way; a number or boolean renders bare, whether it is a JSON value or a
+          numeric helper's result (`{{add 2 3}}` renders `5`).
+        - In a run, {{lastExportDateTime}} and {{currentExportDateTime}} arrive as quoted ISO 8601
+          UTC literals with milliseconds (`'2026-01-15T00:00:00.000Z'`), or in `delta.dateFormat`
+          when it is set: add no quotes of your own, and don't parse them with a format mask
+          written for another format.
+        - A preview of an unsaved export document renders both as empty, unquoted text, so a
+          delta query fails to compile there unless the document carries both in `postData`.
+        - The quoting leaves backslashes, which Snowflake reads as escape sequences, so a
+          double-brace value holding a backslash arrives changed. Pass such a value in a
+          dollar-quoted constant with triple braces (`$${{{record.field}}}$$`), which Snowflake
+          reads as is, but only when it can't contain `$$`: a `$$` ends the constant, and the rest
+          is read as SQL.
+      x-celigo-ai-guidance:
+        - |-
+          This field contains the SQL SELECT statement that will be executed to fetch data
+          from the database.
+          The query can range from simple table selections to complex joins and aggregations.
+        - |-
+          Examples:
+          - Basic: `SELECT id, name, email FROM customers WHERE status = 'ACTIVE'`
+          - Join: `SELECT o.id, c.name, o.amount FROM orders o JOIN customers c ON o.customer_id = c.id`
+          - Aggregate: `SELECT category, COUNT(*) as count FROM orders GROUP BY category`
+          - Parameterized: `SELECT * FROM orders WHERE customer_id = {{record.customer_id}}`
+        - |-
+          This field contains the SQL SELECT statement that will be executed to fetch data
+          from the database.
+          The query can range from simple table selections to complex joins and aggregations.
+      examples: ["SELECT * FROM customers WHERE updatedAt > {{lastExportDateTime}}", "SELECT * FROM orders WHERE exported = false", "SELECT * FROM customers WHERE region = 'Northeast'", "SELECT o.id, c.name, o.total FROM orders o JOIN customers c ON o.customer_id = c.id WHERE o.status = 'SHIPPED'", "SELECT department, AVG(salary) as avg_salary FROM employees GROUP BY department", "SELECT * FROM customer_orders WHERE customer_id = {{record.id}}"]
+    once:
+      type: object
+      description: |
+        **CRITICAL: REQUIRED when the export's Object Type is "once".**
+
+        If Object Type is "once", you MUST set _include_once to true (or include this object).
+
+        This object has ONLY ONE property: "query" (a SQL UPDATE string).
+        DO NOT create any other properties like "update", "table", "set", "where", etc.
+
+        CORRECT format:
+        ```json
+        {"query": "UPDATE customers SET exported=true WHERE id={{record.id}}"}
+        ```
+
+        WRONG format (DO NOT DO THIS):
+        ```json
+        {"update": {"table": "customers", "set": {...}}}
+        ```
+      properties:
+        query:
+          type: string
+          x-celigo-agent:
+            - sql
+          description: |
+            **REQUIRED** - A SQL UPDATE statement string to mark records as processed.
+
+            This is a plain SQL UPDATE query string, NOT a structured object.
+
+            The query runs AFTER each record is successfully exported, setting a flag
+            to indicate the record has been processed.
+
+            Format: "UPDATE <table> SET <column>=<value> WHERE <id_column>={{record.<id_field>}}"
+
+            Example: "UPDATE customers SET exported=true WHERE id={{record.id}}"
+
+            The {{record.id}} placeholder is replaced with the actual record ID from each exported row.
+          examples: ["UPDATE orders SET exported=true WHERE id={{record.id}}", "UPDATE customers SET exported=true WHERE customer_id={{record.customer_id}}", "UPDATE inventory SET is_exported=1 WHERE sku={{record.sku}}"]

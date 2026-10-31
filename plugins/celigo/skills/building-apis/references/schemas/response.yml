@@ -1,0 +1,76 @@
+API:
+  required:
+    - _id
+    - name
+    - createdAt
+    - lastModified
+  description: |-
+    API resource. Shape varies by mode: builder-mode APIs carry `type`, `version`,
+    `disabled`, and `builder`; script-mode APIs additionally carry `script` plus
+    top-level `_scriptId` / `function` copies. Legacy script APIs (pre-builder era)
+    omit `type`, `version`, `disabled`, and `builder` entirely.
+  allOf:
+    - $ref: './base.yml#/APIBase'
+    - type: object
+      properties:
+        _id:
+          type: string
+          format: objectId
+          readOnly: true
+          x-celigo-refModel: apis
+          description: Unique identifier for the API.
+          examples: ["68ae4264b5f755d2dd3796b4"]
+        _scriptId:
+          type: string
+          format: objectId
+          readOnly: true
+          x-celigo-refModel: scripts
+          description: |-
+            Top-level copy of `script._scriptId`. Present on script-mode and legacy
+            script APIs for backward compatibility.
+          examples: ["689212a2c42d988978e27a11"]
+        function:
+          type: string
+          readOnly: true
+          description: |-
+            Top-level copy of `script.function`. Present on script-mode and legacy
+            script APIs for backward compatibility.
+          examples: ["handleRequest"]
+        createdAt:
+          type: string
+          format: date-time
+          readOnly: true
+          description: Timestamp when the API was created.
+          examples: ["2025-08-26T23:25:24.107Z"]
+        lastModified:
+          type: string
+          format: date-time
+          readOnly: true
+          description: Timestamp when the API was last modified.
+          examples: ["2026-04-07T03:48:20.795Z"]
+        _templateId:
+          type: string
+          format: objectId
+          readOnly: true
+          x-celigo-refModel: templates
+          description: Template this API was created from. Present only on template-installed APIs.
+          examples: ["60a2c4e6f321d800129a1a3c"]
+        sandbox:
+          type: boolean
+          deprecated: true
+          readOnly: true
+          description: Environment flag. Present on older accounts.
+        draftExpiresAt:
+          type: string
+          format: date-time
+          readOnly: true
+          description: |-
+            Timestamp when a draft API auto-deletes. Server-computed when `draft` is set at
+            creation.
+          examples: ["2026-01-15T09:30:00.000Z"]
+        apim:
+          $ref: "./apim.yml#/Apim"
+  x-celigo-ai-guidance:
+    - |-
+      Contains the complete API configuration including metadata, script/builder settings,
+      and integration-specific configurations.

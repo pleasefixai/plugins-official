@@ -1,0 +1,5 @@
+{
+  "name": "crowdstrike-falcon-foundry",
+  "version": "1.0.0",
+  "description": "Guides to build, audit and upgrade CrowdStrike Falcon Foundry apps and their functions."
+}

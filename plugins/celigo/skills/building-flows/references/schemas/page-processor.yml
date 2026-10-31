@@ -1,0 +1,128 @@
+PageProcessor:
+  type: object
+  description: |-
+    A processing step that operates on pages of records within a flow. Processors are
+    either lookups (`type: export`) that enrich records or imports (`type: import`) that
+    write records to a destination, and execute sequentially unless routed into branches.
+  properties:
+    type:
+      type: string
+      description: Selects whether this step runs a lookup export or an import, and which reference field applies.
+      enum: ["export", "import"]
+      x-enumDescriptions:
+        export: Uses an export resource (configured as a lookup) for data lookup or enrichment.
+        import: Uses an import resource to send data to a destination system.
+      examples: ["export", "import"]
+    _exportId:
+      type: string
+      format: objectId
+      x-celigo-refModel: exports
+      description: |-
+        Lookup export that enriches incoming records. Required when `type` is `export`;
+        the referenced export must be configured as a lookup (`isLookup: true`).
+      examples: ["60a2c4e6f321d800129a1a3c"]
+      x-celigo-ai-guidance:
+        - |-
+          Required when type="export". The export must be configured as a lookup
+          (isLookup=true) to receive and process incoming records.
+
+          Common uses:
+          - Retrieve additional details from a system
+          - Validate data against a reference source
+          - Enrich records with related information
+    _importId:
+      type: string
+      format: objectId
+      x-celigo-refModel: imports
+      description: |-
+        Import that writes records to the destination system. Required when `type` is `import`.
+      examples: ["60a2c4e6f321d800129a1a3c"]
+      x-celigo-ai-guidance:
+        - |-
+          Required when type="import". The import defines:
+          - Target system connection
+          - Data mapping and transformation
+          - Error handling and validation rules
+          - Create/update logic
+    proceedOnFailure:
+      type: boolean
+      description: |-
+        When true, records that fail in this processor continue to subsequent steps and the
+        error is logged. When false, failed records stop at this step.
+      examples: [true, false]
+      x-celigo-ai-guidance:
+        - |-
+          When true:
+          - Errors are logged but don't stop the flow
+          - Subsequent processors continue execution
+          - Failed records may be skipped
+    responseMapping:
+      $ref: "./response-mapping.yml#/ResponseMapping"
+    hooks:
+      type: object
+      description: Custom code hooks extending this processor's behavior.
+      properties:
+        postResponseMap:
+          type: object
+          description: |-
+            Hook that runs after the step's response mapping completes. The function receives
+            `options.postResponseMapData` (the records, with response mapping applied) and
+            `options.responseData` (the step's per-record results, in the same order) and returns
+            `postResponseMapData`, same length. A record an import step failed is in neither array
+            unless `proceedOnFailure` is true. Then it is included, without the fields response
+            mapping would have added, and its `responseData` entry has `statusCode` 422 and
+            `errors` as an object keyed by index (`"0"`, `"1"`, ...) rather than an array. A
+            successful entry has no `errors`.
+          x-celigo-ai-guidance:
+            - |-
+              Verified live 2026-10-22 in flow runs of an HTTP import, three records with one
+              answered 404: with `proceedOnFailure` unset, both arrays held the two written
+              records; with `proceedOnFailure: true` they held all three, and a hook that called
+              `.map` on each entry's `errors` threw on the failed one, failing the page. Read
+              errors with `Object.values(entry.errors || {})`.
+          properties:
+            function:
+              type: string
+              description: Function to invoke within the referenced script.
+              examples: ["enrichResponseData"]
+            _scriptId:
+              type: string
+              format: objectId
+              x-celigo-refModel: scripts
+              description: Script containing the hook function named in `function`.
+              examples: ["60a2c4e6f321d800129a1a3c"]
+    setupInProgress:
+      type: boolean
+      description: When true, the processor's configuration is still being set up in the UI and the step is not yet runnable.
+  # Placeholder steps: the flow builder saves un-configured steps as
+  # {setupInProgress: true} (optionally with a stub responseMapping) carrying no type
+  # or resource reference yet — the server accepts and round-trips these.
+  # All requireds are gated on the step not being a placeholder.
+  if:
+    properties:
+      setupInProgress:
+        const: true
+    required: [setupInProgress]
+  then: {}
+  else:
+    required: [type]
+    # Conditional requireds by type — nested if/else-if (no allOf), stack-style.
+    if:
+      properties:
+        type:
+          const: export
+      required: [type]
+    then:
+      required: [_exportId]
+    else:
+      if:
+        properties:
+          type:
+            const: import
+        required: [type]
+      then:
+        required: [_importId]
+  x-celigo-ai-guidance:
+    - |-
+      Page processors can be exports (for lookups), imports (for data loading), or references
+      to routers for conditional processing. They execute sequentially unless part of a router branch.

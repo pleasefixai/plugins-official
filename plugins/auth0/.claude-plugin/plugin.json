@@ -1,0 +1,5 @@
+{
+  "name": "auth0",
+  "version": "1.0.0",
+  "description": "Guides to add sign-in, MFA, SSO and API protection to your apps with Auth0."
+}

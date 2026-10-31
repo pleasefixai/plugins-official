@@ -1,0 +1,425 @@
+Overrides:
+  type: object
+  description: |
+    Configuration overrides for flows that inherit from abstract flows.
+
+    When a flow inherits from an abstract flow template, this object allows selective
+    overriding of inherited configuration while maintaining the base structure.
+  properties:
+    name:
+      type: string
+      description: Override for the flow's display name
+      examples: ["Production Customer Sync", "Test Environment Flow"]
+    description:
+      type: string
+      description: Override for the flow's description
+      examples: ["Production version of the customer sync template"]
+    settings:
+      type: object
+      description: |
+        Override for custom flow settings.
+
+        Allows modifying specific settings while inheriting others from
+        the abstract flow template.
+      additionalProperties: true
+    timezone:
+      type: string
+      description: Override for the flow's schedule timezone
+      examples: ["America/Chicago", "Europe/Paris"]
+    _runNextFlowIds:
+      type: array
+      description: Override list of flows to trigger after completion
+      items:
+        type: string
+    _runNextExportIds:
+      type: array
+      description: Override list of exports to trigger after completion
+      items:
+        type: object
+        properties:
+          _flowId:
+            type: string
+            x-celigo-refModel: flows
+            description: The flow containing the export
+            examples: ["5f8d43a1b9e5a80011a35f2d"]
+          _exportId:
+            type: string
+            x-celigo-refModel: exports
+            description: The specific export to trigger
+            examples: ["60a2c4e6f321d800129a1a3c"]
+    __listenerIdsToIndex:
+      type: array
+      readOnly: true
+      description: |-
+        Server-managed listener index auto-populated by the platform on instance
+        flows. Never send it as part of a request.
+      items:
+        type: string
+    connections:
+      type: array
+      description: |
+        Override connection configurations for abstract flow connections.
+
+        Maps abstract connection placeholders to concrete connection instances.
+      items:
+        type: object
+        properties:
+          _abstractId:
+            type: string
+            description: ID of the abstract connection being overridden
+            examples: ["abstract_salesforce_conn"]
+          _id:
+            type: string
+            x-celigo-refModel: connections
+            description: Concrete connection ID to use instead
+            examples: ["60a2c4e6f321d800129a1a3c"]
+          _borrowConcurrencyFromConnectionId:
+            type: string
+            x-celigo-refModel: connections
+            description: |
+              Optional connection to share concurrency limits with.
+
+              Useful when multiple connections access the same system
+              and need to share rate limiting.
+            examples: ["60a2c4e6f321d800129a1a3d"]
+    exports:
+      type: array
+      description: |
+        Override configurations for exports in the abstract flow.
+
+        Allows customizing export behavior while maintaining the flow structure. Each entry needs
+        at least one field besides `_abstractId`; an entry with only `_abstractId` fails with 422
+        ("Export override must include at least one field in addition to _abstractId").
+      items:
+        type: object
+        properties:
+          _abstractId:
+            type: string
+            description: ID of the abstract export being overridden
+            examples: ["abstract_customer_export"]
+          _id:
+            type: string
+            x-celigo-refModel: exports
+            description: |-
+              Existing export that replaces the abstract flow's export on this instance. This is
+              how an instance gets its own webhook URL: instances that keep the abstract flow's
+              listener share its URL, and one request to it runs every enabled instance.
+            examples: ["60a2c4e6f321d800129a1a3c"]
+          _connectionId:
+            type: string
+            x-celigo-refModel: connections
+            description: Override the connection used by this export
+            examples: ["60a2c4e6f321d800129a1a3c"]
+          _keepDeltaBehindFlowId:
+            type: string
+            x-celigo-refModel: flows
+            description: Override delta synchronization settings
+            examples: ["5f8d43a1b9e5a80011a35f2d"]
+          _keepDeltaBehindExportId:
+            type: string
+            x-celigo-refModel: exports
+            description: Override delta synchronization settings
+            examples: ["66a1f2c3b4d5e6f7a8b9c0d1"]
+          schedule:
+            type: string
+            description: |-
+              Replaces the page generator's schedule for this instance, in the same
+              Celigo 6-field cron format as the flow-level `schedule`. Parsed on every
+              write regardless of `disabled`; an unparseable expression fails with
+              `422 invalid_value` at `overrides.exports[i].schedule`.
+            examples: ["? 5 0,4,8,12,16,20 ? * *"]
+          skipRetries:
+            type: boolean
+            description: Override retry behavior
+          mappings:
+            type: array
+            items:
+              type: object
+            description: Overrides the Mapper 2.0 field mappings on the abstract flow's export (lookup step), which reshape records the lookup returns.
+          proceedOnFailure:
+            type: boolean
+            description: Override error handling behavior
+          responseMapping:
+            $ref: "./response-mapping.yml#/ResponseMapping"
+          pageSize:
+            type: integer
+            description: Override page size for this export
+            examples: [100, 500]
+          dataURITemplate:
+            type: string
+            description: Override URI template for error tracking
+          traceKeyTemplate:
+            type: string
+            description: Override trace key generation
+          pathToMany:
+            type: string
+            description: Override one-to-many path configuration
+          inputFilter:
+            type: object
+            description: Override input filtering rules
+            properties:
+              version:
+                type: string
+                description: Version of the filter expression format used by the rules; currently only "1" is supported.
+              rules:
+                type: object
+                additionalProperties: true
+                description: Filter expression defining the matching criteria, in prefix notation — the operator first, followed by its operands, which may be nested expressions.
+          groupByFields:
+            type: array
+            description: Override grouping fields
+            items:
+              type: string
+          test:
+            type: object
+            description: Override test mode settings
+            properties:
+              limit:
+                type: integer
+                description: Overrides the test-mode record cap on the abstract flow's export — the total number of records a test run processes.
+          delta:
+            type: object
+            description: Override delta configuration
+            properties:
+              dateField:
+                type: string
+                description: Overrides the delta date field on the abstract flow's export — the record timestamp field(s) compared against the last successful run time to identify changed records. Accepts a single field or multiple comma-separated fields.
+              dateFormat:
+                type: string
+                description: Overrides the moment.js format string applied to the delta cutoff timestamp; ISO 8601 is used when unset.
+              startDate:
+                type: string
+                description: Overrides the fixed start timestamp used for the delta window on the abstract flow's export, in place of the last successful run time.
+              lagOffset:
+                type: integer
+                description: Overrides the buffer in milliseconds subtracted from the last successful run timestamp, creating an overlapping window that catches late-propagating records.
+              endDateField:
+                type: string
+                description: Overrides the record timestamp field used as the upper bound of the delta window on the abstract flow's export.
+          once:
+            type: object
+            description: Override once export settings
+            properties:
+              booleanField:
+                type: string
+                description: Overrides the once-mode tracking field on the abstract flow's export — the boolean field in the source system that is false for unprocessed records and set to true after successful processing.
+          valueDelta:
+            type: object
+            description: Override value delta settings
+            properties:
+              exportedField:
+                type: string
+                description: Overrides the field that tracks the last exported value on the abstract flow's export.
+              pendingField:
+                type: string
+                description: Overrides the field that tracks the pending (not yet exported) value on the abstract flow's export.
+          webhook:
+            type: object
+            description: Override webhook configuration
+            properties:
+              token_crypt:
+                type: string
+                description: Encrypted form of the webhook verification token, stored at rest.
+              token_salt:
+                type: string
+                description: Salt used to encrypt the corresponding webhook token.
+              path:
+                type: string
+                description: Overrides the location of the verification token on the abstract flow's webhook export — a JSON path into the request body or a query parameter name.
+              key_crypt:
+                type: string
+                description: Encrypted form of the webhook HMAC or public key, stored at rest.
+              key_salt:
+                type: string
+                description: Salt used to encrypt the corresponding webhook key.
+              header:
+                type: string
+                description: Overrides the name of the request header that carries the HMAC signature on the abstract flow's webhook export.
+              username:
+                type: string
+                description: Overrides the username used for basic-auth webhook verification on the abstract flow's export.
+              password_crypt:
+                type: string
+                description: Encrypted form of the basic-auth webhook password, stored at rest.
+              password_salt:
+                type: string
+                description: Salt used to encrypt the corresponding webhook password.
+              successStatusCode:
+                type: integer
+                description: Overrides the HTTP status code returned to the webhook caller after successful processing.
+              successBody:
+                type: string
+                description: Overrides the response body returned to the webhook caller after successful processing; ignored when the status code is 204.
+              successMediaType:
+                type: string
+                description: Overrides the Content-Type of successful webhook responses; must match the format of the success body.
+          distributed:
+            type: object
+            description: Override distributed processing settings
+            properties:
+              bearerToken_crypt:
+                type: string
+                description: Encrypted form of the distributed export's bearer token, stored at rest.
+              bearerToken_salt:
+                type: string
+                description: Salt used to encrypt the corresponding bearer token.
+          hooks:
+            type: object
+            description: Override hook configurations
+          transform:
+            type: object
+            description: Override transformation settings
+          parsers:
+            type: array
+            description: Override parser configurations
+            items:
+              type: object
+          filters:
+            type: object
+            description: Override filter configurations
+          formSchema:
+            type: object
+            description: Override form schema
+          preSaveSchema:
+            type: object
+            description: Override pre-save configuration
+          settings:
+            type: object
+            description: Override export-specific settings
+            additionalProperties: true
+          idLockTemplate:
+            type: string
+            description: Override ID lock template
+    imports:
+      type: array
+      description: |
+        Override configurations for imports in the abstract flow.
+
+        Similar structure to export overrides but for import resources.
+      items:
+        type: object
+        properties:
+          _abstractId:
+            type: string
+            description: ID of the abstract import being overridden
+          _connectionId:
+            type: string
+            x-celigo-refModel: connections
+            description: Override the connection used by this import
+            examples: ["5f7c579b6411271af4e7cefb"]
+          proceedOnFailure:
+            type: boolean
+            description: Override error handling behavior
+          responseMapping:
+            $ref: "./response-mapping.yml#/ResponseMapping"
+          idLockTemplate:
+            type: string
+            description: Overrides the ID lock template on the abstract flow's import — a handlebars template that generates a lock key so records resolving to the same key are not submitted concurrently.
+          dataURITemplate:
+            type: string
+            description: Overrides the data URI template on the abstract flow's import — a handlebars template that builds a link back to each record in the destination application's UI for error tracking.
+          pathToMany:
+            type: string
+            description: Overrides the one-to-many path on the abstract flow's import — the JSON path to child records within each parent record.
+          blobKeyPath:
+            type: string
+            description: Overrides the blob key path on the abstract flow's import — the path in the input record that holds the blob key identifying file content to import.
+          filter:
+            type: object
+            additionalProperties: true
+            description: Overrides the filter on the abstract flow's import, which selects which incoming records are sent to the destination system.
+          traceKeyTemplate:
+            type: string
+            description: Overrides the trace key template on the abstract flow's import — a handlebars template controlling how each record's unique trace key is generated.
+          parsers:
+            type: array
+            items:
+              type: object
+            description: Overrides the parser configurations on the abstract flow's import.
+          hooks:
+            type: object
+            additionalProperties: true
+            description: Overrides the hook configurations on the abstract flow's import — custom JavaScript hooks that run at fixed points in the import lifecycle.
+          responseTransform:
+            type: object
+            additionalProperties: true
+            description: Overrides the response transform on the abstract flow's import, which reshapes the destination system's response after records are imported.
+          mapping:
+            type: object
+            additionalProperties: true
+            description: Overrides the Mapper 1.0 mapping configuration on the abstract flow's import.
+          mappings:
+            type: array
+            items:
+              type: object
+            description: Overrides the Mapper 2.0 field mappings on the abstract flow's import, which transform incoming records into the destination system's field structure.
+          lookups:
+            type: array
+            items:
+              type: object
+            description: Overrides the lookup definitions on the abstract flow's import, referenced by its field mappings.
+          settingsForm:
+            type: object
+            additionalProperties: true
+            description: Overrides the settings form definition on the abstract flow's import, which prompts users for values stored in `settings`.
+          preSave:
+            type: object
+            additionalProperties: true
+            description: Overrides the preSave hook on the abstract flow's import — a JavaScript hook that executes before the resource is saved.
+          settings:
+            type: object
+            additionalProperties: true
+            description: Overrides the custom settings on the abstract flow's import, accessible to hooks, filters, mappings, and handlebars templates at runtime.
+    routers:
+      type: array
+      description: |
+        Override configurations for routers in the abstract flow.
+
+        Allows customizing router behavior and branch configurations.
+      items:
+        type: object
+        properties:
+          _abstractId:
+            type: string
+            description: ID of the abstract router being overridden
+          name:
+            type: string
+            description: Override router name
+          script:
+            type: object
+            description: Override routing script
+            properties:
+              _scriptId:
+                type: string
+                x-celigo-refModel: scripts
+                description: Reference to the script resource containing the routing logic used in place of the abstract router's script.
+                examples: ["66a1f2c3b4d5e6f7a8b9c0d1"]
+              function:
+                type: string
+                description: Function name within the script that returns the branch name for each record.
+          branches:
+            type: array
+            description: Override branch configurations
+            items:
+              type: object
+              properties:
+                _abstractId:
+                  type: string
+                  description: ID of the abstract branch being overridden
+                name:
+                  type: string
+                  description: Overrides the branch's display name within the router.
+                description:
+                  type: string
+                  description: Overrides the branch's description explaining its purpose and criteria.
+                inputFilter:
+                  type: object
+                  description: Overrides the branch's input filter — the criteria that determine which records are routed to this branch.
+                  properties:
+                    version:
+                      type: string
+                      description: Version of the filter expression format used by the rules; currently only "1" is supported.
+                    rules:
+                      type: object
+                      additionalProperties: true
+                      description: Filter expression defining the branch's matching criteria, in prefix notation — the operator first, followed by its operands.

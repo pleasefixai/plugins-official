@@ -1,0 +1,5 @@
+{
+  "name": "data-engineering",
+  "version": "1.0.0",
+  "description": "Guides to explore warehouses, trace data lineage and run Airflow pipelines on Astro."
+}

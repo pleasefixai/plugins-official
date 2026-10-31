@@ -1,0 +1,37 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "antimetal",
+  "version": "1.0.0",
+  "description": "Investigations and fixes of deploy failures, errors and slowdowns with Antimetal.",
+  "author": {
+    "name": "Antimetal"
+  },
+  "homepage": "https://antimetal.com",
+  "keywords": [
+    "debugging",
+    "cloud",
+    "incidents",
+    "observability",
+    "infrastructure",
+    "investigation",
+    "remediation",
+    "mcp",
+    "devops"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "antimetal",
+        "commit": "c0363e85bc89a689ce5604de6b36cf8850db6b46",
+        "skills": {
+          "antimetal-mcp-setup": "7fc6936ff2166ba7e437e254ed01b1e572e5774cfc6c6717d33476b955987fb9",
+          "fix": "a50596162cdbb0353d62fb94de282e542b023ca0f6287863d7f6dbf027e01ba9",
+          "investigate": "aa109a9c70f8ff725c6a39a7644053aa0ffb362597f2455725964f038791cc6b"
+        }
+      }
+    }
+  }
+}

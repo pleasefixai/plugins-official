@@ -1,0 +1,31 @@
+LookupCacheBase:
+  type: object
+  description: Writable fields shared by the request and response schemas.
+  properties:
+    name:
+      type: string
+      maxLength: 200
+      description: Display name.
+      examples: ["Customer ID Cache", "Product SKU Lookup"]
+    description:
+      type: string
+      maxLength: 5120
+      description: Purpose or contents of the cache.
+      examples: ["Maps external customer IDs to internal Salesforce IDs for deduplication"]
+    includeDataInTemplatesAndCloning:
+      type: boolean
+      default: false
+      description: |-
+        Whether to include the cached key-value data when this cache is
+        used in templates or cloned. When `false` (default), only
+        metadata transfers. Set to `true` for static reference tables.
+      examples: [false, true]
+      x-celigo-ai-guidance:
+        - |-
+          When false (default), only the cache metadata is included — the actual
+          key-value data is not transferred. Set to true if the cached data is
+          part of the integration's configuration (e.g., static reference tables).
+    externalId:
+      type: string
+      description: Caller-supplied identifier for cross-system correlation.
+      examples: ["ext-cache-12345"]

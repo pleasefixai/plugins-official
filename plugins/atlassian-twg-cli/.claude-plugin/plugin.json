@@ -1,0 +1,5 @@
+{
+  "name": "atlassian-twg-cli",
+  "version": "1.0.0",
+  "description": "Setup of Atlassian Teamwork Graph for work context from Jira, Confluence and Bitbucket."
+}

@@ -1,0 +1,36 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "ai-plugins",
+  "version": "1.0.0",
+  "description": "Guides to set up Endor Labs for security scans of your software supply chain.",
+  "author": {
+    "name": "Endor Labs"
+  },
+  "homepage": "https://www.endorlabs.com",
+  "keywords": [
+    "endor-labs",
+    "security",
+    "sca",
+    "sast",
+    "claude-code",
+    "agentic remediation",
+    "SAST remediation",
+    "agentic AppSec",
+    "AppSec",
+    "OSS Upgrade Investigator"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "ai-plugins",
+        "commit": "2de00883bd2be8b8578b46ab09baf2c8731376de",
+        "skills": {
+          "endor-agent-kit-setup": "92c9be49bba653c548cd4d89fa0320b8e52a52254fd6992511884dcb32b0c2a4"
+        }
+      }
+    }
+  }
+}

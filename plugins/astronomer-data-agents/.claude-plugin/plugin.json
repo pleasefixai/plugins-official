@@ -1,0 +1,5 @@
+{
+  "name": "astronomer-data-agents",
+  "version": "1.0.0",
+  "description": "Guides to write, test and deploy Apache Airflow DAGs and to manage Astro deployments."
+}

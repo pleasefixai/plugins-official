@@ -1,0 +1,32 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "dagster-expert",
+  "version": "1.0.0",
+  "description": "Guides to build, run and debug Dagster data pipelines and their assets.",
+  "author": {
+    "name": "Dagster"
+  },
+  "homepage": "https://github.com/dagster-io/skills",
+  "license": "Apache-2.0",
+  "keywords": [
+    "dagster",
+    "data-pipelines",
+    "assets",
+    "orchestration",
+    "dg-cli"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "dagster-expert",
+        "commit": "2e3aa41d8408a6c9fa1efaf0f67856657c1b2230",
+        "skills": {
+          "dagster-expert": "d8dc487b8900f11539b986779bb1bbc1ca51e565a4f5c54c7bfc12831f5b36fb"
+        }
+      }
+    }
+  }
+}

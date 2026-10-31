@@ -1,0 +1,47 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "arize-skills",
+  "version": "1.0.0",
+  "description": "Tracing, datasets, experiments, evaluators and prompt tuning for LLM apps with Arize AX.",
+  "author": {
+    "name": "Arize AI"
+  },
+  "homepage": "https://arize.com/",
+  "license": "MIT",
+  "keywords": [
+    "arize",
+    "observability",
+    "tracing",
+    "opentelemetry",
+    "llm",
+    "evals",
+    "datasets",
+    "experiments",
+    "instrumentation"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "arize-skills",
+        "commit": "2e1911737a0d0662b74533741bee8b0acbe79f05",
+        "skills": {
+          "arize-admin": "0ada08f8afb2391bb936f28c2f8544f150292e5c64aceaaf1df52bd8e373bb89",
+          "arize-ai-provider-integration": "81eb62083a345452edae61edaff57bb26f0ecbb0e789ebbc84a56f267b65745f",
+          "arize-annotation": "dddf63835436e0f28747d09102c9cdebb6cf60f246ada591d1c08c04fdfea70b",
+          "arize-compliance-audit": "4055743fd709d84f6bf9fe54aab89bb6c110569c7ddabc2d5b31fe3ff80f47a4",
+          "arize-dataset": "d010997a7dedbd60b511b220f0026bce0fcf3ba33ae2347a57ee099b8e5e0df2",
+          "arize-evaluator": "1f8be42f11e748a59fdddc3c938d333f617c85f683ab48fa9e1655b9eb55bd9f",
+          "arize-experiment": "f3efa5dd1f3ef55b74e805dc247e5eb7e8bdec700ced26358c237cfdbd8f654d",
+          "arize-instrumentation": "ba16ea55fad8b462a50ee1fbc2651e16637212e233b8fe3faf8fb61d2d95fe1b",
+          "arize-link": "e3ce1a10215852d43f8ba947a0b0b70ddf2ade4d082a34bf8dfa85f1ba74f19d",
+          "arize-prompt-optimization": "5b12f32cad882142e1e73a83a50f24e9c0a69b57ac93ccbe0378a774beedf17d",
+          "arize-prompts": "684819e77772a525634a52c92e8a8102dd667739f2ac7c40bd42d114fdc0e5f6",
+          "arize-trace": "e424125ab543a0cbabed8124aae26295d4dee5c8f256a8fbe374e07a296dc1ef"
+        }
+      }
+    }
+  }
+}

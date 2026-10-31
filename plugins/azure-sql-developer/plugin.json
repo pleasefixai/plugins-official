@@ -1,0 +1,51 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "azure-sql-developer",
+  "version": "1.0.0",
+  "description": "Guides to build and test apps on Azure SQL Database in a local container, then in Azure.",
+  "author": {
+    "name": "Microsoft"
+  },
+  "homepage": "https://github.com/microsoft/azure-sql-database-container",
+  "license": "MIT",
+  "keywords": [
+    "azure-sql",
+    "sql-server",
+    "database",
+    "container",
+    "docker",
+    "local-development",
+    "rag",
+    "vector-search"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "azure-sql-developer",
+        "commit": "c1e8167e4c1d5979d7fc4a6ea11a6ce885a9398b",
+        "skills": {
+          "azuresql-db-auth": "f479119df6209bff1b107f74307a34f56fd40398e958694fe3cf40737948f414",
+          "azuresql-db-ci": "a76c3eb17735a699fe368cbd367e3aadd3843f087443c180f729a7f559306487",
+          "azuresql-db-connections": "37f8336988b15b61084ce2fc26403d6c563974ceeeac83794beeade11d6bd600",
+          "azuresql-db-container": "a065d4e72065c006ad4743379e6359915abf10ac0623dbdb5704e4726c0c47b7",
+          "azuresql-db-dab": "8d064c425d491f088faac5b4739f2dfa163f560cd25865fcd1ff9f294ba0e4a3",
+          "azuresql-db-faq": "93bfd4822d277935fe2239e3c268c20e038825a96ac4e85e4db5f70a469e0136",
+          "azuresql-db-feedback": "e5e3509c62b03ed9a408ad2bd49d58cbc1427d480d80b6d90e3dc5c480bdb49a",
+          "azuresql-db-from-sql-server": "bd5b2ee7cd00a683ac4f6c4b489fe6312ef15278fc57d3c25935da937e020b6a",
+          "azuresql-db-functions": "c4f138b472f142b6e0c40c0700b48d78ef42739762fee5a77e5f196cc1017d0d",
+          "azuresql-db-import": "823a4eac108b01de1c932ae53416405375576cb5875d33c729e31532dbea8f13",
+          "azuresql-db-local-to-cloud": "2912667fa577da12ac924eaad91703b9d7de451c3b80cd92757b83c2e358f6fd",
+          "azuresql-db-rag": "b414f7ca261b6d4e26cd30e580205a6cf2296c65eec061491d35a9c40c4a864d",
+          "azuresql-db-scaffold": "6132afcaba348b88af29eeaf58a952c1189ae78de7ae76d6fdde6b130ee9ae0d",
+          "azuresql-db-schema-migration": "d56af42587d6ac928a2a81593ecbf2bfaad2a066cccade2fe4524e8c2c42ac7f",
+          "azuresql-db-seed": "fdf7d123f32121206a968513faaa171294a0393d8e8a207972256147405aa5da",
+          "azuresql-db-sidecar": "1e8ad49a20fe7e8a1c827c4e398a8185cb1782a727ef35f913878311eb6d45c5",
+          "azuresql-db-testing": "6e14eacd66c32e0e023f3b92181ce4978aff1f86b68ae976847b56b6e4f1d0ff"
+        }
+      }
+    }
+  }
+}

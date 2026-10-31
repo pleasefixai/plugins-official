@@ -1,0 +1,46 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "endorlabs",
+  "version": "1.0.0",
+  "description": "Guides to triage, explain and fix Endor Labs findings in dependencies, code and CI/CD.",
+  "author": {
+    "name": "Endor Labs"
+  },
+  "homepage": "https://www.endorlabs.com",
+  "license": "MIT",
+  "keywords": [
+    "endor-labs",
+    "security",
+    "dependencies",
+    "endorctl",
+    "sca",
+    "sast",
+    "agentic remediation",
+    "AppSec"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "endorlabs",
+        "commit": "adc5aa4a357cbfdc666fd3771e799ec58cae1871",
+        "skills": {
+          "ai-sast-remediation": "418177c1618e26140f900e530eb1cbc07a127533b545faf3c67f71373b29d5f9",
+          "cicd-posture": "f2a2f623e8c15c00023f02fbcb43c4b764d13694e7a3218694be88442ea9c84a",
+          "configuration-automation": "516ee08ed800d88096c631b63d1f0b036efc579e20524c1715d5ade423e303fc",
+          "dependency-reviewer": "435bf6f43f31beae42f25da5cb3cebf6951eb812c104aa8a9d00a73486f95aeb",
+          "endor-agent-kit-setup": "35ec9d788091674975eb8399027d8e1ab646209a0e623bed88cdb7ebd3287cec",
+          "findings-browser": "37444761100d950647f704f31b8bb69c98bbc7229aafc2499af953bc7fcb47d9",
+          "malware-responder": "c6ec8eb2d7e86b5dab9d77b1781f55b9d4b2fc722476dc290d476c05e4f278f2",
+          "oss-upgrade-investigator": "e1c861757747d0e5f7b8e247ac2a243d4def5215028a896135230dfe8fcea819",
+          "remediation-planning": "a7069fac5a5ca19a9ccae0fb6d2d57848f23cc7cad4960b958f7d1f1fef48770",
+          "sca-remediation": "d33f20528a69c9ca6569c7fdcf357d7c07372eb5ef1f0944c28bd9470c8e55ef",
+          "troubleshooting": "c6dff58ac017296e2245af45092544b06d65c8efb50c478c4615efe20daa2e3f",
+          "vulnerability-explainer": "7bc7f39c4a80cb0f8083e1355002e824ff5cd5a83c3d306e802b393365efcdcc"
+        }
+      }
+    }
+  }
+}

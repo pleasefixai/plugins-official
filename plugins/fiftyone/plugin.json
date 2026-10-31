@@ -1,0 +1,49 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "fiftyone",
+  "version": "1.0.0",
+  "description": "Guides to curate, export and run models on FiftyOne datasets, and to evaluate the results.",
+  "author": {
+    "name": "Voxel51"
+  },
+  "homepage": "https://docs.voxel51.com/",
+  "license": "Apache-2.0",
+  "keywords": [
+    "fiftyone",
+    "computer-vision",
+    "machine-learning",
+    "datasets",
+    "model-evaluation"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "fiftyone",
+        "commit": "8b87befcce6cfb86e73b4ccc1f692a0a2b6a4218",
+        "skills": {
+          "fiftyone-app-playwright": "d2d436cb0cd6cbf1775bc19f14e39558b135c2df8a14a5773d59015d2ef8e45b",
+          "fiftyone-code-style": "91237972259c53f1f17fe1638558c4c6935a9a97fe4c75ddea72ba9657d393f8",
+          "fiftyone-create-notebook": "7580f586e133891501e3f6361712e4b399c6731cdba1d7b31b25fdafa6b0509e",
+          "fiftyone-dataset-curation": "7104aaa02ebfc22c40f217b490140b0b6db548e4c9c7d7ae3993210db5a55071",
+          "fiftyone-dataset-export": "8b8673fa09f336a38b397c623c8534210b128e41855dbb0812619000f2264c2a",
+          "fiftyone-dataset-import": "a4cbdcf4b319a09965f703f7cde9187aec0a39e7054e32f178cc6428aad18a81",
+          "fiftyone-dataset-inference": "c56a2cf751c1ac0f9d04297404361c07182a8e321864171a1129ebd6c299777b",
+          "fiftyone-develop-plugin": "abee25e39d8e5ee4d77519259aed8877cac4637f209224860ca7aa5390db99a1",
+          "fiftyone-embeddings-visualization": "2bfdde66f75da630c6045eaa2145838dffa5893b33d3485e7f8135785db4be6b",
+          "fiftyone-eval-plugin": "93ff4e89aa5c3c9214209fa768eaf9e3dcbc92edd37732b0411b9e602ba52dda",
+          "fiftyone-find-duplicates": "3b2b9ed5c2aa16a1f07ef9715839ddbae5de70909497aa8f76386d8e43eebc28",
+          "fiftyone-generate-data-lens-connector": "824d72949d246eff3a1a1c6731078ebea3f32c7b28acaa677ee3821545fd7fb2",
+          "fiftyone-issue-triage": "8726fe42288414c80e5e747350043085ed85c8850f4aac07f7be3b5a4a0e6fad",
+          "fiftyone-model-evaluation": "f34737bb312c9f8b8b940f66209ec131e276fd53819a42ed38c13ce3f4e71273",
+          "fiftyone-sdk-guidance": "57adbaea45e4280a0e3e0465adc2ee8ae88465601a704dcef9830ca119b17c02",
+          "fiftyone-troubleshoot": "572376e738e17b609f765b918d83aacbb52aea24e33d6855a7ea499d82a4a13f",
+          "fiftyone-voodo-design": "97a6c31d93bb8229f76f1a64b5e9b2a459f5bfdeff407ccdb7b580c115a5a43b",
+          "fiftyone-zoo-remote-model": "a3da91238a6efe2be5d35afecf403f6d92c0b0957d5625bfbb543443a617e6f7"
+        }
+      }
+    }
+  }
+}

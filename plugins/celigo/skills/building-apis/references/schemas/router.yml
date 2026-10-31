@@ -1,0 +1,166 @@
+Router:
+  type: object
+  description: |-
+    Conditional routing within a builder-mode API. Unlike flows, APIs only
+    support `first_matching_branch` routing.
+
+    A router comes in two shapes, told apart by whether `routeRecordsTo` and
+    `routeRecordsUsing` are set: a **branching router** sets both and has two or
+    more branches, each taking the requests its `inputFilter` (or the router's
+    `script`) matches — the node you see in the API builder; a **pass-through
+    router** sets neither and has exactly one branch that every request goes
+    straight through — not drawn, it holds the steps before the first branching
+    router and merges branches back into shared steps (branches rejoin only by
+    pointing `nextRouterId` at the same router).
+  properties:
+    id:
+      type: string
+      maxLength: 36
+      pattern: '^[A-Za-z0-9_-]+$'
+      description: |-
+        Unique identifier for this router within the API. Use at most 36 letters, digits,
+        underscores and hyphens: a longer id fails the save with 422 ("Router id is missing or
+        contains more than 36 characters or invalid characters. Please correct the router
+        id."), as on flow routers.
+      examples: ["router_001", "validation_router"]
+    name:
+      type: string
+      description: Display name.
+      examples: ["Customer Type Router", "Validation Router"]
+    routeRecordsTo:
+      type: string
+      enum: ["first_matching_branch"]
+      x-enumDescriptions:
+        first_matching_branch: Routes the request to the first branch whose criteria match.
+      description: |-
+        Routing strategy; APIs only support `first_matching_branch`. Set together with
+        `routeRecordsUsing` on a branching router; leave both unset on a one-branch
+        pass-through router.
+      examples: ["first_matching_branch"]
+      x-celigo-ai-guidance:
+        - Set this and `routeRecordsUsing` together on every router that decides between branches; setting only one of the two is rejected with 422 `invalid_flow_router_config`.
+        - Leave both unset on a one-branch pass-through router (the steps before the first branching router, or a merge point). Setting them there still runs, but the builder shows a router node with one branch and no rules. A router with neither field and more than one branch is rejected with 422 `invalid_flow_router_branch`.
+    routeRecordsUsing:
+      type: string
+      enum: ["input_filters", "script"]
+      x-enumDescriptions:
+        input_filters: Evaluate routing criteria using declarative filter expressions.
+        script: Evaluate routing criteria using a custom JavaScript function.
+      description: |-
+        How a branching router decides which branch a request matches. Set together with
+        `routeRecordsTo`; leave both unset on a one-branch pass-through router.
+      examples: ["input_filters"]
+      x-celigo-ai-guidance:
+        - Set this and `routeRecordsTo` together on every router that decides between branches, and leave both unset on a one-branch pass-through router; the rejections for a half-set pair or a multi-branch pass-through are listed on `routeRecordsTo`.
+    script:
+      type: object
+      description: |
+        Script configuration when routeRecordsUsing="script".
+      properties:
+        _scriptId:
+          type: string
+          format: objectId
+          x-celigo-refModel: scripts
+          description: Reference to the script resource.
+          examples: ["60a2c4e6f321d800129a1a3c"]
+        function:
+          type: string
+          description: Function name that returns the branch name.
+          examples: ["routeRequest", "determineBranch"]
+    branches:
+      type: array
+      description: Processing branches, evaluated in order.
+      items:
+        type: object
+        properties:
+          name:
+            type: string
+            description: Branch name
+            examples: ["Premium customers"]
+          inputFilter:
+            type: object
+            description: |-
+              Filter criteria for branch selection. Send `version` and `rules` directly on
+              `inputFilter` — not inside the `{type: "expression", expression: {...}}` wrapper
+              that export and import filters use. A wrapped filter is saved without an error,
+              but the branch is stored with no `inputFilter` and takes every request.
+            x-celigo-ai-guidance:
+              - Read the API back after saving a branching router and check that each filtered branch still has its `inputFilter`; a filter sent in the export-filter wrapper is dropped on save without an error.
+            properties:
+              version:
+                type: string
+                enum: ["1"]
+                x-enumDescriptions:
+                  "1": Version 1 of the Celigo expression-based filter format.
+                description: Version of the filter format used by `rules`.
+              rules:
+                type: array
+                description: Celigo expression-based filter rules.
+                items: {}
+                examples:
+                  - ["equals", ["string", ["extract", "customerType"]], "premium"]
+                  - ["and", ["notempty", ["string", ["extract", "orderId"]]], ["greaterthan", ["number", ["extract", "amount"]], 1000]]
+                x-celigo-ai-guidance:
+                  - |-
+                    Array-based DSL where the first element is an operator (e.g., "equals", "and", "or"),
+                    followed by operands which can be nested expressions.
+          nextRouterId:
+            type: string
+            description: |-
+              Next router to chain to, or "apiRouter" for the response router. Every branch needs
+              one: a branch without it is saved, but every test run of the API is then refused
+              with 400 "One or more branches are not merged back. Review the setup to ensure all
+              branches converge.", whichever branch the request takes. An id that names no router
+              fails the save with 422 "Invalid nextRouterId is defined on the branch. Please
+              correct the branch configuration."
+            examples: ["apiRouter"]
+          pageProcessors:
+            type: array
+            description: |-
+              Processing steps to execute in this branch. An export is a step at most once in an
+              API: using it again, on another branch or in the same one, fails the save with 422
+              "The export <id> is already included as a lookup in your API and cannot be added
+              again."
+            items:
+              type: object
+              properties:
+                type:
+                  type: string
+                  enum: ["export", "import"]
+                  x-enumDescriptions:
+                    export: Uses an export resource for data lookup or enrichment.
+                    import: Uses an import resource to send data to a destination system.
+                  description: Type of processor
+                _exportId:
+                  type: string
+                  format: objectId
+                  x-celigo-refModel: exports
+                  description: Export resource reference (when type="export").
+                  examples: ["6878f4a43bc01652c09cdccc"]
+                _importId:
+                  type: string
+                  format: objectId
+                  x-celigo-refModel: imports
+                  description: Import resource reference (when type="import").
+                  examples: ["6878f4a43bc01652c09cddee"]
+                hooks:
+                  type: object
+                  description: Custom scripts for processing
+                proceedOnFailure:
+                  type: boolean
+                  description: |-
+                    When true, the next step still runs after this step fails, and the request
+                    can still end in the `success` response (`context.success` stays true).
+                    When false, a failure stops the branch and the API returns its `fail`
+                    response.
+      x-celigo-ai-guidance:
+        - |-
+          Each branch has its own criteria and processing steps. Requests are
+          evaluated against branch criteria in the order defined.
+  required:
+    - branches
+
+  x-celigo-ai-guidance:
+    - |-
+      Routers evaluate the request and route it to different processing branches.
+      This enables complex business logic and conditional processing within your API.

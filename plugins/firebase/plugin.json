@@ -1,0 +1,53 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "firebase",
+  "version": "1.0.0",
+  "description": "Guides for Firebase Authentication, Firestore, App Hosting, Crashlytics and Remote Config.",
+  "author": {
+    "name": "Firebase"
+  },
+  "homepage": "https://firebase.com",
+  "license": "Apache-2.0",
+  "keywords": [
+    "firebase",
+    "cursor",
+    "skills",
+    "mcp",
+    "firestore",
+    "hosting",
+    "auth",
+    "storage",
+    "ailogic",
+    "backend",
+    "cloud-services",
+    "cloud",
+    "database",
+    "functions",
+    "cli",
+    "codex"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "firebase",
+        "commit": "1d7a55fbecfd3c37516e0ee53b6c1ee9ac206db8",
+        "skills": {
+          "firebase-ai-logic-basics": "12d764ae104d340988de77bac7bd2190d6b8264a40c25535c201962c70f198d3",
+          "firebase-app-hosting-basics": "7e72bbe67417263256d1ddc8e46ad86e0d761006f915453bfaea1c7e4dbf4401",
+          "firebase-auth-basics": "7534092e99388f534d5d47f88ca0571676daa56ca44386537d9a13dcc24ddbf7",
+          "firebase-basics": "0b53dcd3edb115a9f9ac8ad24b2c9ecea760f7c1825a4752c3896990c54959df",
+          "firebase-crashlytics": "9db779e9260765a9b705fd4dc32ed01f6e1ac88c3f3112ebef38a970b2cb2d52",
+          "firebase-data-connect-basics": "27ad55d29df03678d9547a437301120f6b663e0ad3234b43847356fecab96844",
+          "firebase-firestore": "26d9f8925f892e08d743dc422e480f49db8428011cc399c341ab4ed2ff9fe111",
+          "firebase-hosting-basics": "10906d57d772cdad4bbe602b930c2a454b80c4a091110b12a1e1ce21b5d94ecb",
+          "firebase-remote-config-basics": "743f410a88e2c879251dbf17fc3fa0a6da12957122130eb172519b047096049d",
+          "firebase-security-rules-auditor": "cd5fcfc7ad2ebc418ad23f36233204bcf1c3a52569b2ad0242988a13be44ff58",
+          "xcode-project-setup": "498dc322f70fe3c6fee3ab33420942a3bebbbdcaa57ce2f73e1cf5ced3b3c15f"
+        }
+      }
+    }
+  }
+}

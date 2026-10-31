@@ -1,0 +1,44 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "coderabbit",
+  "version": "1.0.0",
+  "description": "Guides to run CodeRabbit code reviews and fix the issues they find.",
+  "author": {
+    "name": "CodeRabbit AI"
+  },
+  "homepage": "https://github.com/coderabbitai/skills",
+  "license": "MIT",
+  "keywords": [
+    "code-review",
+    "ai",
+    "coderabbit",
+    "claude-code",
+    "security",
+    "github",
+    "cursor"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "coderabbit",
+        "commit": "3e8763d24d543b48615b82535d02288de3ddae40",
+        "skills": {
+          "code-review": "cb253cad175a6b25f0945aac0e8f4afef9e9f7f762ccad1d4ee242202ce47152"
+        },
+        "also": [
+          {
+            "marketplace": "codex",
+            "plugin": "coderabbit",
+            "commit": "0722921d5542fc593105c27bd52630babd8b8c2a",
+            "skills": {
+              "coderabbit-review": "5ddeed79bb9df2cc2935f66efb26afd1a9caf05f44a25514caddf84604f69cfb"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

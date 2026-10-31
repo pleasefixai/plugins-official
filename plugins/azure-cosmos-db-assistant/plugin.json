@@ -1,0 +1,34 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "azure-cosmos-db-assistant",
+  "version": "1.0.0",
+  "description": "Guides for data models, partitions, queries and performance in Azure Cosmos DB.",
+  "author": {
+    "name": "Azure Cosmos DB"
+  },
+  "homepage": "https://github.com/AzureCosmosDB/cosmosdb-claude-code-plugin",
+  "license": "MIT",
+  "keywords": [
+    "azure",
+    "cosmos-db",
+    "cosmosdb",
+    "nosql",
+    "database",
+    "vector-search",
+    "best-practices"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "azure-cosmos-db-assistant",
+        "commit": "f1e0498579a9251e5f3179b92d25d6ce3409bae5",
+        "skills": {
+          "cosmosdb-best-practices": "87b652b597627703b749e1d855f2505cb9e23fb742300677cd3368c18fdd35be"
+        }
+      }
+    }
+  }
+}

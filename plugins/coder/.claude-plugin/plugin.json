@@ -1,0 +1,5 @@
+{
+  "name": "coder",
+  "version": "1.0.0",
+  "description": "Guides to manage workspaces, templates and modules in a self-hosted Coder deployment."
+}

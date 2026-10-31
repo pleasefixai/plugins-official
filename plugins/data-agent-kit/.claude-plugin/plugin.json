@@ -1,0 +1,5 @@
+{
+  "name": "data-agent-kit",
+  "version": "1.0.0",
+  "description": "Guides for BigQuery, Dataflow, Spark, managed Airflow and Cloud Storage on Google Cloud."
+}

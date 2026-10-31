@@ -1,0 +1,35 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "21st",
+  "version": "1.0.0",
+  "description": "Guides to find, install and generate React UI components and brand logos with 21st.dev.",
+  "author": {
+    "name": "21st.dev"
+  },
+  "homepage": "https://21st.dev",
+  "license": "ISC",
+  "keywords": [
+    "21st",
+    "21st.dev",
+    "magic-mcp",
+    "ui-components",
+    "react",
+    "tailwind",
+    "shadcn",
+    "ui-generation"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "21st",
+        "commit": "6b5299e8a83ceffa73d4fc4e148905bb3eeeeb55",
+        "skills": {
+          "21st-ui": "ad9b39f93064fd801fb7e795b1286264a590d422de4e4e994e044e851cd0a46d"
+        }
+      }
+    }
+  }
+}

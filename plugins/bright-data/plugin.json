@@ -1,0 +1,40 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "bright-data",
+  "version": "1.0.0",
+  "description": "Guides to search the web, scrape pages, drive browsers and write code with Bright Data.",
+  "author": {
+    "name": "Bright Data"
+  },
+  "homepage": "https://www.brightdata.com",
+  "license": "MIT",
+  "keywords": [
+    "web-scraping",
+    "serp",
+    "proxy",
+    "browser-automation",
+    "web-unlocker",
+    "mcp",
+    "data-extraction",
+    "bright-data"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "bright-data",
+        "commit": "88ce57774a1397dd5347916f8fc7d48083cfa898",
+        "skills": {
+          "bd-batch-scrape": "8ce921a23c96ffc1a46d2f6429028ae7ceadcef4245c9f7905651df1a3206762",
+          "bd-browser": "17917c9db768dc990a8cd8b80b0e6c2bff46ff1e0309f40825993c3bbe14ad1a",
+          "bd-code": "12316876cbd03f613251fa67e81f208bc8a4c33f2bf6766870cc297798a9ab99",
+          "bd-scrape": "f65a7f1bcd16dbbac8e9d9ed873cc771ad11a24710cc20de03e4dc7063c4a4fc",
+          "bd-search": "05d55a49c8f01f478ef2e5f9ec5938e1d20771b49e63433c994ad3110137eebc",
+          "bd-structured-data": "bdee5440b5a0b301965de78f7a77ab118c4c4644166e6f3a7bdefe339bfc16e5"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "data-engineering",
+  "version": "1.0.0",
+  "description": "Guides to explore warehouses, trace data lineage and run Airflow pipelines on Astro.",
+  "author": {
+    "name": "Astronomer"
+  },
+  "homepage": "https://github.com/astronomer/agents",
+  "license": "Apache-2.0",
+  "keywords": [
+    "data-engineering",
+    "airflow",
+    "snowflake",
+    "bigquery",
+    "jupyter",
+    "astronomer",
+    "dbt",
+    "cosmos",
+    "openlineage"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "data-engineering",
+        "commit": "486ee63d01f8126c52fbc92c36cd36ec31708dcd",
+        "skills": {
+          "airflow": "4fc1795affcb9b5973135861ab853391b976090240f2338bc3af9140d0d95a4c",
+          "airflow-hitl": "741430e93b27f6527be07054c95393608b9ec7dfa7043bfe5fe9fadab5f9c380",
+          "airflow-plugins": "d8ab507289d7c05304bd0603fd2115352d1067e62393a735f2119dfa40e07055",
+          "airflow-state-store": "b6b1f94f2cd0fe36bec7c15c482274cf1085b3b47da7ff7f3aaf8d636903e81f",
+          "analyzing-data": "008537cde5031b852864583e2ba4c586640b521c18598ec181a328b3f4dadbff",
+          "annotating-task-lineage": "6da024dbd648b8175224987a3ac037d2382cba741ba3356aa2057c412729b499",
+          "authoring-dags": "e2f36fffd269ec91a14b0eb33d03d0431933e44cca893b8e328f4c76cd93b1a6",
+          "authoring-go-sdk-tasks": "76ef395836b7b446d314819865eb943acd8bb1e64fa0adb74ae5ce4d2f1bb689",
+          "authoring-java-sdk-tasks": "a9a07a899c18b3e1f0f3bf088506a75bc953948bc8fe0537de801f1bbc1bc141",
+          "authoring-language-sdk-tasks": "2ddc3a1a2947197f35b739d4b7e02496325ad9ac2165a4281377e1813936241f",
+          "blueprint": "60bd5ce2cde57cb9dca851447b1b0c4336d39a54a300713681fe175db9bead61",
+          "checking-freshness": "5b1d29a7d199dd8118498ad097cf1898fa9ff493e4598d45ef5ec214792672d1",
+          "configuring-airflow-language-sdks": "eae52a42ad0f37ae25fd9fbbfb86cfee022baf9d95c26831c1b5d863324dc4d5",
+          "cosmos-dbt-core": "dcc23fc79bc444063d0f7dcd8afd2d6847dca49b8c45cc8233e4611f370a74ba",
+          "cosmos-dbt-fusion": "66d870328dba87bcff2685be4e0ab10207d4eb164f83d9f0ff2da695b31aeee1",
+          "creating-openlineage-extractors": "5cf67d01177a4a12fbc97b59080addd655a5b7f859cd94bcb2cdfe27f06b8c51",
+          "dag-factory": "213c90d90b15f8fbc9f0c0060508c72310d7cd60bb908acfae4fd59a9be7dbf0",
+          "debugging-dags": "e449e812c197c7225bae229f5288546a42c48ca9caffa9fbb015d653338f0d33",
+          "delegating-to-otto": "d6fa06dd6377cbac40901e4dd8d91ad0e56dbb2089c0403e35a30fecd340e699",
+          "deploying-airflow": "19ca779bde7dce853f523b9c4df1cbe0b4511a59c21df348f287c0ba2b838a8c",
+          "deploying-go-sdk-bundles": "7c6b9da77e977e3df1f24f2ab9eeeb70f7f6e54c70ddb8a6989c9c0f5efb22c1",
+          "deploying-java-sdk-bundles": "47410ab6c93ded9317e69980c455a8268dae08b1f70fad1b8c8445f6936239f9",
+          "managing-astro-deployments": "d76c034ce14e381509a7a18da087d7065a61e4282674e287ef0a17462c3ad367",
+          "managing-astro-local-env": "c829067eefcbc3851ca3fc3b12d642f8b7759065965368c5d068cda08652ef6a",
+          "migrating-ai-sdk-to-common-ai": "a4a2d69b18379d3cb0c267da165a2a3a6830e6589335b29dd88b1870491d6fe4",
+          "migrating-airflow-2-to-3": "0078b32ff90fd4aee36c08ab0fe29249f6769980b91ae961b2bbf0fe87e262b7",
+          "migrating-dagster-to-airflow": "4bb9c6dca03e185441b2df7d52794e6076aa192a5744ae4886312fa48916e658",
+          "profiling-tables": "f4801ffe4570480e89d86f498f3766fe49c71442be85c4100c41a3218f8c6982",
+          "setting-up-astro-project": "9de787ec30e56ae083b28daee9064af941454e476b612c53ef5954d95cfa6af4",
+          "testing-dags": "820a468dd5970df7f72f361233e2f019722339f07e48bf36e9965a5394e5a8c2",
+          "tracing-downstream-lineage": "5afb57f82e1268ad12bed2191fac887fb80b08a047163d0a7a3fddb634d1a965",
+          "tracing-upstream-lineage": "63940433dad24afdd260e73b8e76dd85dfae6eb0fc596bc26024136f8d8eac1b",
+          "troubleshooting-astro-deployments": "bf6dcfb0a41b2dfc92daf9f82c59107714a462050a100c072da4e2419501a897",
+          "warehouse-init": "246c2c211135e95f7122e5ac70b171a204e0d1c47c55f898401ae2e7833e2a44"
+        }
+      }
+    }
+  }
+}

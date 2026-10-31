@@ -1,0 +1,128 @@
+Branch:
+  type: object
+  description: |
+    Configuration for a single branch within a router that defines criteria and processing steps.
+
+    Each branch represents a conditional path that records can take based on matching criteria.
+    Branches are evaluated in order, and records are routed based on the router's strategy.
+  properties:
+    name:
+      type: string
+      description: |
+        Label for the branch, unique within the router. On a branching router it is shown on
+        the Flow Builder canvas, appears in logs, and is the value a routing script returns to
+        pick the branch — make it describe the branch's purpose. The single branch of a
+        pass-through router has no visible label; the server stores an empty string when the
+        name is omitted.
+      examples: ["enterprise_customers", "high_priority", "needs_approval"]
+    description:
+      type: string
+      description: |
+        Optional description explaining the branch's purpose and criteria.
+
+        Helps document:
+        - What types of records this branch handles
+        - Business logic or rules applied
+        - Why this branch exists
+      examples:
+        [
+          "Handles enterprise customers with annual revenue > $1M",
+          "Routes orders requiring manual approval",
+        ]
+    inputFilter:
+      type: object
+      description: |
+        Filter criteria that determines which records match this branch.
+
+        Only used when the router's `routeRecordsUsing` is `input_filters`.
+        Records matching these criteria will be routed to this branch. A branch
+        without an `inputFilter` matches every record, so under
+        `first_matching_branch` the catch-all branch goes last.
+
+        Send `version` and `rules` directly on `inputFilter` — not inside the
+        `{type: "expression", expression: {...}}` wrapper that export and import
+        filters use. A wrapped filter is saved without an error, but the branch is
+        stored with no `inputFilter` and takes every record.
+      x-celigo-ai-guidance:
+        - Read the flow back after saving a branching router and check that each filtered branch still has its `inputFilter`; a filter sent in the export-filter wrapper is dropped on save without an error.
+      properties:
+        version:
+          type: string
+          enum: ["1"]
+          x-enumDescriptions:
+            "1": Version 1 of the Celigo expression-based filter format.
+          description: Version of the filter format used by `rules`, the same version export and import filters use.
+          examples: ["1"]
+        rules:
+          type: array
+          description: |
+            Filter expression array defining the matching criteria, in the platform's
+            prefix-notation filter DSL: the first element is an operator name and the
+            remaining elements are its operands, which may themselves be nested
+            expression arrays.
+
+            ```
+            [operator, operand1, operand2, ...]
+            ```
+
+            Uses the same expression language as export/import filters
+            (`Filter.expression.rules`): comparison operators (`equals`, `notequals`,
+            `greaterthan`, `lessthan`, `startswith`, `contains`, `empty`, `matches`, ...),
+            logical operators (`and`, `or`, `not`), field access (`extract`, `settings`)
+            and type conversions (`string`, `number`, `boolean`, `epochtime`).
+
+            Every `extract` must be wrapped in a type conversion. A bare
+            `["extract", "<field>"]` is refused when the flow is saved, with 422 "Field
+            operation extract must be called by a Type Conversion Operation but was called
+            by equals." (the message names the operator that held it).
+
+            Example — route records whose `isDeleted` field is the string "false":
+            ```json
+            ["equals", ["string", ["extract", "isDeleted"]], "false"]
+            ```
+          items:
+            oneOf:
+              - title: String
+                type: string
+              - title: Number
+                type: number
+              - title: Boolean
+                type: boolean
+              - title: "Null"
+                type: "null"
+              - title: Object
+                type: object
+              - title: Array
+                type: array
+          examples:
+            - ["equals", ["string", ["extract", "source"]], "web"]
+    pageProcessors:
+      type: array
+      description: |
+        List of processors that execute for records routed to this branch.
+
+        These processors:
+        - Execute in sequence for records matching this branch
+        - Can include exports, imports, or nested routers
+        - Have the same structure as flow-level page processors
+        - Continue until completion or error (unless proceedOnFailure is set)
+      items:
+        $ref: "./page-processor.yml#/PageProcessor"
+    nextRouterId:
+      type: string
+      description: |
+        Chains this branch to another router: after the branch's pageProcessors
+        complete, records continue to the router whose `id` matches this value.
+
+        Enables sequential routing decisions where records pass through multiple
+        routers for complex branching logic. The server validates the reference —
+        a value that does not match any router `id` in the flow is rejected with
+        a 422 ("Invalid nextRouterId is defined on the branch").
+      examples: ["router_002"]
+    branchId:
+      type: string
+      description: |
+        Stable identifier for this branch, used to correlate branch-level state
+        (for example dashboards and error reporting) across saves. Generated by
+        the server when omitted; a client-supplied value is kept as-is.
+      examples: ["El8lWTezixy"]

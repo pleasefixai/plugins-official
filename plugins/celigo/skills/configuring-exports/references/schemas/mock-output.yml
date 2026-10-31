@@ -1,0 +1,119 @@
+MockOutput:
+  # Nullable: the UI clears mock output by writing null.
+  type: [object, 'null']
+  description: |
+    Sample data that simulates the output from an export for testing and configuration purposes.
+
+    Mock output allows you to configure and test flows without executing the actual export or
+    waiting for real-time data to arrive. This is particularly useful for:
+    - Initial flow configuration and testing
+    - Mapping development without requiring live data
+    - Generating metadata for downstream flow steps
+    - Creating realistic test scenarios
+    - Documenting expected data structures
+
+    **Structure**
+
+    The mock output must follow the integrator.io canonical format, which consists of a
+    `page_of_records` array containing record objects. Each record object has a `record`
+    property that contains the actual data fields.
+
+    ```json
+    {
+      "page_of_records": [
+        {
+          "record": {
+            "field1": "value1",
+            "field2": "value2",
+            ...
+          }
+        },
+        ...
+      ]
+    }
+    ```
+
+    **Usage**
+
+    In a flow test run, and for an upstream lookup during a page-processor preview
+    (`previewPageProcessor`), integrator.io substitutes this mock output for the export's live
+    response instead of calling the source. A saved mock is not read anywhere else: a target
+    lookup in that preview runs its live query, invoking the export
+    (`POST /v1/exports/{_id}/invoke`) reads the source, and real runs ignore it. This allows you
+    to:
+    - Test mappings with representative data
+    - Configure downstream flow steps without waiting for real data
+    - Simulate various data scenarios
+
+    Where it is substituted, the records stand in for the RAW parsed response: the export's own
+    `transform` and output `filter` still run on top of them, so downstream steps — and a
+    lookup's results mapping — see the transformed, filtered records, not the shape stored here.
+
+    In a flow test run of an HTTP export with a saved mock (live probe, 2026-10-21), the export
+    still listed `request` and `response` stages: `request` held the request the export composes,
+    and `response` held the mock under the source's URL, as did the test run's request log, which
+    recorded it as a 200. Read those stages as the substituted mock, not as a live call.
+
+    `POST /v1/exports/preview` reads the `mockOutput` in its request body, not the saved one. For
+    an export the preview supports (an HTTP export, for example), a body that carries it (as an
+    export read back with GET does) returns that snapshot as a lone `parse` stage without calling
+    the source; remove `mockOutput` from the body to preview live records.
+
+    **Limitations**
+
+    - Maximum of 10 records
+    - Maximum size of 1 MB
+    - Must follow the canonical format shown above
+
+    Mock output can be populated automatically from preview data (which is the parsed response,
+    before `transform` / `filter`) or entered manually.
+  x-celigo-ai-guidance:
+    - |-
+      Store the RAW parsed response records here, never transformed ones — the platform runs
+      the export's `transform` and `filter` on the mock exactly as on live data, and a
+      pre-transformed mock would be transformed twice. When you read `mockOutput` to learn
+      what a lookup returns, apply the transform first; a results mapping authored against
+      the stored shape walks paths that do not exist at runtime.
+    - |-
+      A saved mockOutput is read in exactly two places — a flow test run, and an upstream lookup
+      during a page-processor preview. A target lookup's preview, `POST /v1/exports/{_id}/invoke`
+      and every real run call the source and never read it.
+  properties:
+    page_of_records:
+      type: array
+      description: |
+        Array of record objects in the integrator.io canonical format.
+
+        Each item in this array represents one record that would be processed
+        by the flow during execution.
+      items:
+        type: object
+        properties:
+          record:
+            type: object
+            description: |
+              Container for the actual record data fields.
+
+              The structure of this object will vary depending on the specific
+              export configuration and the source system's data structure.
+            additionalProperties: true
+            example:
+              id: "12345"
+              name: "Sample Product"
+              price: 99.99
+              inStock: true
+              categories: ["Electronics", "Accessories"]
+  example:
+    page_of_records:
+      - record:
+          id: "12345"
+          name: "Sample Product"
+          price: 99.99
+          inStock: true
+          categories: ["Electronics", "Accessories"]
+      - record:
+          id: "67890"
+          name: "Another Product"
+          price: 49.99
+          inStock: false
+          categories: ["Home", "Kitchen"]

@@ -1,0 +1,42 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "forge",
+  "version": "1.0.0",
+  "description": "Work orders, journey stages, artifacts and ForgeScore code health from Opsera Forge.",
+  "author": {
+    "name": "Opsera"
+  },
+  "homepage": "https://opsera.ai/",
+  "license": "Apache-2.0",
+  "keywords": [
+    "forge",
+    "work-orders",
+    "developer-workflow",
+    "project-context",
+    "dev-activity",
+    "journey",
+    "forge-score",
+    "artifacts",
+    "softwareforge",
+    "automation"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "forge",
+        "commit": "e943f314a30e591a4a086676cb0453c03bc074eb",
+        "skills": {
+          "artifact-collaboration": "6519e382379ae49dcd5fd16559ff0c8107d21a56f089ecb03bbfc05469e4403f",
+          "dev-activity": "44f236a8a25bd0db0f6847a3d55cafb07e7990640c1689241c1881c7b406f76c",
+          "forge-score": "236fc13f86b70bfe42ab88d96c2626a0b03fe440be32a5a7a41864d372c99208",
+          "journey": "c832f2a94e077e31b0ef0e0ef79bf7affd6973d6b20cee5a045db6d015ee79df",
+          "project-context": "27609e2d831b2e8a4bdd15d31d110212a5c0c5e32e64a342ee8958d21fdc978e",
+          "work-orders": "72a76ad931d69250ea1560d7bfdf9656963eb9d0fb5b213b602e0d56ba84c34e"
+        }
+      }
+    }
+  }
+}

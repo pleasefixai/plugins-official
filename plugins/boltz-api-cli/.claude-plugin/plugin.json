@@ -1,0 +1,5 @@
+{
+  "name": "boltz-api-cli",
+  "version": "1.0.0",
+  "description": "Protein and small-molecule binder design, screens and ADME predictions with Boltz."
+}

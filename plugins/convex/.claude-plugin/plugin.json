@@ -1,0 +1,5 @@
+{
+  "name": "convex",
+  "version": "1.0.0",
+  "description": "Guides to build Convex backends: schemas, functions, auth, crons, billing and tests."
+}

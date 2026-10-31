@@ -1,0 +1,40 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "clickhouse-best-practices",
+  "version": "1.0.0",
+  "description": "Guides for ClickHouse schemas, queries, ingestion and Cloud services, chDB and ClickStack.",
+  "author": {
+    "name": "ClickHouse Inc"
+  },
+  "homepage": "https://clickhouse.com",
+  "license": "Apache-2.0",
+  "keywords": [
+    "clickhouse",
+    "database",
+    "query-optimization",
+    "schema-design",
+    "best-practices",
+    "data-ingestion"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "clickhouse-best-practices",
+        "commit": "356a8c1b9a7392adb389a132f5ad3fec38532a03",
+        "skills": {
+          "chdb-datastore": "366169048dda3d38a0600dc77fa022e701055c6949e997afd58fa100de37d6d7",
+          "chdb-sql": "52b75c1b5125c27c8a89d3442baa6f9727e52fe56a27d883579c0f2068183d46",
+          "clickhouse-architecture-advisor": "3fd41cec51309c1a302f2366c968787be31d41d5f7e23d9af2a05a0fd6cbb21b",
+          "clickhouse-best-practices": "4b156baa6a611e15e38a44a068e56d5499893933684541f02ac125edad621a39",
+          "clickhouse-js-node-troubleshooting": "111a2d61366d2d78237512dce6e030d66079b7c61f53b06ed6817d376281aae1",
+          "clickstack-otel-collector": "b2271cb562af309c4249f348139ed0a050e8e82f24889714c43da831323a8a80",
+          "infra-clickhouse": "eae76aa2fb34bb1aab511d2953f88be3b9b4eef593ab1824832aeb15a2f1d810",
+          "infra-postgres": "01745f69445f475b37117c5020abd73364c19c6a6c20d2fa7c5d9660ed75532d"
+        }
+      }
+    }
+  }
+}

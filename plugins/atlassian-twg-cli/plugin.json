@@ -1,0 +1,46 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "atlassian-twg-cli",
+  "version": "1.0.0",
+  "description": "Setup of Atlassian Teamwork Graph for work context from Jira, Confluence and Bitbucket.",
+  "author": {
+    "name": "Atlassian"
+  },
+  "homepage": "https://developer.atlassian.com/cloud/twg-cli/",
+  "license": "Apache-2.0",
+  "keywords": [
+    "atlassian",
+    "twg",
+    "teamwork graph",
+    "teamwork graph cli",
+    "jira",
+    "confluence",
+    "bitbucket",
+    "jsm",
+    "jira service management",
+    "assets",
+    "teams",
+    "goals",
+    "projects",
+    "loom",
+    "trello",
+    "rovo",
+    "cli",
+    "atlassian context",
+    "atlas"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "atlassian-twg-cli",
+        "commit": "b3336ef63d45e2636ff411a922ed602244e0f3db",
+        "skills": {
+          "twg-setup": "9d993bf442065d33687944dd8b7fb8643d7c7c0a3fbe2bf40be143b03f21379c"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "name": "arize-skills",
+  "version": "1.0.0",
+  "description": "Tracing, datasets, experiments, evaluators and prompt tuning for LLM apps with Arize AX."
+}

@@ -1,0 +1,61 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "dominodatalab",
+  "version": "1.0.0",
+  "description": "Guides for Domino Data Lab projects, jobs, datasets, apps, experiments and model serving.",
+  "author": {
+    "name": "Domino Data Lab"
+  },
+  "homepage": "https://www.domino.ai",
+  "license": "MIT",
+  "keywords": [
+    "domino",
+    "mlops",
+    "data-science",
+    "machine-learning",
+    "experiment-tracking",
+    "genai-tracing",
+    "spark",
+    "ray",
+    "dask",
+    "app-deployment"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "dominodatalab",
+        "commit": "7949e3ac470cf2f3b1c97a790c571032c844a5a3",
+        "skills": {
+          "ai-gateway": "671056f21b5d9ed7284b18b1aba8de5fa6d4ed71562eb13494b571130092b81b",
+          "apps": "a16daa23f93749f18637aa5561cb16b31be21ad3af39c88203a8ae788d2eded9",
+          "data-connectivity": "4571427ce23651ca76896babd2c4e437fe8a86fa45dd3ce2443723c29f3e65e8",
+          "datasets": "88722bb97bc230b8c52398fc916b72ae1fb4c424243f7af0e6f7312a173ce6ce",
+          "distributed-computing": "c91a99d3d318d6fe122a11d436d77a85b087f956baa8acdc6ea495b1df9f356c",
+          "domino-api-intro": "cdd077e596b9da4c5cfaf9fefe02fe7a185d18d0d74a7346665ae2bee1568641",
+          "domino-data-sdk": "8935cd4baa5cbc0fba757a188f3aa12332a59a024a3c0e4f357c0c18740bd993",
+          "domino-extensions": "fff7eb5f2d46b39eb3262024e3d58c0f8804ae27cf8036c86ac8c4d819b25b8c",
+          "domino-governance": "1761ead7e58de7b65c35b96bf5b321897a5aed1fabcb71abd0fdb15858e3ee1e",
+          "domino-model-serving": "fea69c122ca6b66628fe208d906505042d1e3b4818a0c1c07a545acadebee71d",
+          "domino-ui-design": "2f13c9d96ca42ff1f158ce959b46728263a14a51c74bcadf85c26c52659c98f1",
+          "environments": "929b13dcf237a16b4e5a07a99eaec2858e7ccdcb0dfcb71f2e182eefca98a041",
+          "experiment-tracking": "bca1421dd60e2d20374ac3fc7e4f4895a0d0b32a5d7165a7a08c6a52e78c9b8e",
+          "flows": "82c6662144c17915f8f872750c29e4ae97ff49200dbbf6c8c9c40c4ce337f68d",
+          "genai-tracing": "d0a14f79a4d8a4efc9754a7ffc0ed6f79a304acbfdd172cd6224016492e228e5",
+          "jobs": "48c5c03020e08d8b9f3d053cd1b256dc7c260a3ac504f10e6db5d6e931650f97",
+          "launchers": "8b146680ef84e7e2e36a7ebbbe1a46ee995bb850be72aec1e2d7596c5987c68d",
+          "model-endpoints": "7090f5ecc600be10db0208724f8840670796602afb054ea16663842959ea7c35",
+          "model-monitoring": "d358bf3252c1252cc306268bd6649253ed3a3b03c98fb137552c86be03a241b3",
+          "modeling-assistant": "758bfb9c7a2c86550f446c4bc5c3f3689d46b8d5c2080dd5ec9a9a0ee7f5b7a1",
+          "netapp-volumes": "e53121be713403693539c3f27ddb5fd1aef776434946e6e2bcc83b5d5c753afa",
+          "projects": "85a68d99af867f842fc8bb03b665834e1c446e667aeaf05ce75fb3c272fac002",
+          "python-sdk": "3dc4c9f1fbf77a7956788ee35d36b02bee912aec3f49960c7477481693c95fcc",
+          "tags-and-properties": "ca3a25c0bcff1f180905547651663fcb751618eddb9b72247aaa53f787a003f1",
+          "workspaces": "bd12a1c357102e950110c8797e637b329d1ea5521284cb8aa549d2f7489426d5"
+        }
+      }
+    }
+  }
+}

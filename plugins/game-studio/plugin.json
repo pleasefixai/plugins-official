@@ -1,0 +1,44 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "game-studio",
+  "version": "1.0.0",
+  "description": "Guides to design, build and playtest 2D and 3D browser games with Phaser and Three.js.",
+  "author": {
+    "name": "OpenAI"
+  },
+  "homepage": "https://github.com/openai/plugins",
+  "license": "MIT",
+  "keywords": [
+    "games",
+    "phaser",
+    "threejs",
+    "react-three-fiber",
+    "gltf",
+    "rapier",
+    "webgl",
+    "sprites",
+    "playtest"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "codex",
+        "plugin": "game-studio",
+        "commit": "0722921d5542fc593105c27bd52630babd8b8c2a",
+        "skills": {
+          "game-playtest": "31e09a51e8a583db577681a9afb75f3aa94cb4cfe5dbdfa7aa20b05c8e84a853",
+          "game-studio": "f64e40f9c61c912119fe9aa72696986e74a91b958c99b3bf84f8db953cfc8ea5",
+          "game-ui-frontend": "e1f87fc5bc22c016b4b94b0ad9a4effd0ef10b0678a0c724d21919326ba5d4e2",
+          "phaser-2d-game": "950d98d183567fe64b97e69fcd37337b74f01d1bc7886ce11ad22cfb622ea7c1",
+          "react-three-fiber-game": "af63498d291189a075a99d74b513e0f0a821710b048b4487559e8efc37ffcf9c",
+          "sprite-pipeline": "c98c52fc9afde8ebbdcfe03500f2cf4029ef8d8155e1abf9aa8f599a99bc49f0",
+          "three-webgl-game": "a5cdc86ed35e645833c7831bbf645126a5089798431c97e282425ad577dfc449",
+          "web-3d-asset-pipeline": "3e3c9fd04fd5cd2106ac8b1272338fc4503767779774dce3f8ce7c0b6aaa07a3",
+          "web-game-foundations": "9eea66c45169af1e1c54629132fb93cdb37806f7f0d8f69c240af5de08a1fb29"
+        }
+      }
+    }
+  }
+}

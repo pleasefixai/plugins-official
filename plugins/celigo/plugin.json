@@ -1,0 +1,64 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "celigo",
+  "version": "1.0.0",
+  "description": "Guides to build Celigo integrations: flows, exports, imports, mappings and EDI.",
+  "author": {
+    "name": "Celigo"
+  },
+  "homepage": "https://www.celigo.com",
+  "license": "MIT",
+  "keywords": [
+    "celigo",
+    "integration",
+    "ipaas",
+    "etl",
+    "edi",
+    "b2b",
+    "mcp",
+    "skills"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "celigo",
+        "commit": "a91291691ecd659c48a978011be5f6e4cebde8a4",
+        "skills": {
+          "building-apis": "cdfa32fc2e38753dd6058301ce916a400880d592d2b1d0d68ffd6fca28bd4cf7",
+          "building-b2b": "b3f1207b29278259896dbf240e1f29e778967ca03b192e92835b963460c36e57",
+          "building-flows": "8c00dc76dcdcc876c507690bf470c7f8db3cade3f56db6aba87c5a0806c37eb3",
+          "building-mcp-servers": "0497755c50a6334e4b242586e654548711bf4b217797f91d15c1274093b8b5eb",
+          "building-syncs": "788e2ba5a819e61b35c2380ff092be96ce3a0456a3575140f26f3e59147036e4",
+          "building-tools": "7543cd6809c9d59db6496d6c099a1dc54f3100c099ee26fd3f5b14725563de3d",
+          "configuring-ai-agents": "89da6590cadd0284b5f07b890e0b4fc4dad9a21393517914c380c7211337ee1e",
+          "configuring-connections": "fba50ca7d33ed115084057c939e5d5a37e6adb9097fe810af0e431edafdb4c1e",
+          "configuring-exports": "2165b2d37d01f860db5982d5b470451671e82908ebb0ef6d1a8f018733f65ae6",
+          "configuring-filters": "215a73d30db86c3714b42a0f657d1371ea8f2bf7e843b56ae128001f35dc3b02",
+          "configuring-guardrails": "b5993818ba877076e422cfcd11c9ec8aaa9614387879f5b182e942fcf50812d3",
+          "configuring-imports": "5f36d6f0fc3749226a54d74aa738c8407f2ca35ce532658ea6af9e4108e2d620",
+          "configuring-lookup-caches": "cbd021d4c26ea130a5e646809326e733c1f6e0a3d608696ba6d7d3a7d701419c",
+          "configuring-topics": "841f9fabfd21d4ab5f40b7f8d7ff1b770fc3f775d3ba1196363239ab5ca9dd45",
+          "getting-started": "4ba6aae23eb14717daa22421df65da379a194d66aec578a12ba8b870bef02e3b",
+          "managing-api-tokens": "42a39cf033014b8e0ca887bc6d5eb1b3ec6cc2b449e0045303c0a6d74728ffff",
+          "managing-end-users": "e534d931257a23d480b9de0d6135d19e077cd06121e5d69c9592b0845a5c469a",
+          "managing-file-storage": "29116a09057c77c762bc1ebd29e1fbf4dc799a89c51fe429a5338a47d08e11fc",
+          "managing-integrations": "437ee1b6ed52c75dba2855fbdbad2a120b66f5ecfe8bbc1b84028c2d6cd32142",
+          "managing-network-policies": "87aa8b9dcd4fa7aaff869db1bb3266675ecd705ccc1d98dbba872f5a585cba21",
+          "managing-on-premise-agents": "18c4c75cc767352d6dc1f7d83dcdbb6b61e6fe9345f5c6afaaad05ab5c9e09a1",
+          "managing-stacks": "d5f2a7c5f660913365cad7d317c7c2c12b598ea470b67685d0740f698d2e1aeb",
+          "managing-users": "1a220b8505335d7df1a875f4a779d8f32e5505f0d1e958d10982e22a23a049d9",
+          "troubleshooting-flows": "661e6f6fb039e5a918deb1b732e2b2fcb58643fbdb2951361c888596db6a0cf0",
+          "using-marketplace-templates": "37101a4dd8e412623b8e7d57c90a14b82b04c5ef3aa377ca6186cd185743e9ca",
+          "writing-handlebars": "f3037fdab1b2cf9c9f8a42065e40be28adc850989c59a71ebad257b0a6ef1f90",
+          "writing-mappings": "6b8d89b9ae5ca8688dcc281a6438fc8680ecabafa07fadd0e23dcb4deec706b6",
+          "writing-scripts": "fa2c7897b75058d762ef7ac17c47dfb379e292c0c5980ea61f25030b3fdb7aae",
+          "writing-settings-forms": "81cbee723a5cba0ea24ba5458ab9fb7be4d34c7bcf0266d423c8cd786bd44a3e",
+          "writing-sql": "9c9a37ffaa14da2b29931d6d060c01a143502449743de2c8eda1e6a31f0f909c"
+        }
+      }
+    }
+  }
+}

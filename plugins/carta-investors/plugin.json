@@ -1,0 +1,39 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "carta-investors",
+  "version": "1.0.0",
+  "description": "A Carta Workhub view of requests, capital calls and reporting with your fund admin team.",
+  "author": {
+    "name": "Carta Engineering"
+  },
+  "homepage": "https://carta.com",
+  "keywords": [
+    "investors",
+    "mcp",
+    "carta",
+    "write",
+    "write-capable",
+    "agm",
+    "annual-general-meeting",
+    "deck",
+    "presentation",
+    "brand",
+    "brand-board",
+    "pdf",
+    "pptx"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "carta-investors",
+        "commit": "ea7fe1d4db0f0f273799ec4b40070c3c6b00fdcc",
+        "skills": {
+          "carta-workhub-build": "baa23e89717205f598073f92bbad19bee615e710af4a3f3428624ad269a587f9"
+        }
+      }
+    }
+  }
+}

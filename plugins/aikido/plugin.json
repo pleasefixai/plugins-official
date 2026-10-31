@@ -1,0 +1,38 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "aikido",
+  "version": "1.0.0",
+  "description": "Aikido security issues and code scans for vulnerabilities and leaked secrets.",
+  "author": {
+    "name": "Aikido Security"
+  },
+  "homepage": "https://github.com/AikidoSec/aikido-claude-plugin",
+  "license": "MIT",
+  "keywords": [
+    "aikido",
+    "security",
+    "sast",
+    "secrets",
+    "iac",
+    "sca",
+    "scanning",
+    "vulnerability"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "aikido",
+        "commit": "8fdc995a44102a30ad54164e0bdd249d158c725c",
+        "skills": {
+          "issues": "1e2590fab05ea2570040d36b4dd670617c37eea425e13234887e61e390d354ff",
+          "pr-comments": "62eb05c498f000223ab59b38607f8f1dd67a1aca1f9de531efbe4ca83ac8edf5",
+          "scan": "af92ee435751c9fb6b5fc2bc64b54a60bde1e43e290b63e5f54441aedb1768d5",
+          "setup": "66c90584ba904bb79110e79fccae34902ac2fbf6d72ddcff4649759f72276195"
+        }
+      }
+    }
+  }
+}

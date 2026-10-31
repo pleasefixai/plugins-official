@@ -1,0 +1,24 @@
+Test:
+  type: object
+  description: |-
+    Configures test exports that cap the number of records retrieved, for safely developing and
+    validating against small data samples. Required when the export's type is "test"; omit for
+    other export types. A test export behaves like a standard export in every other way (filters,
+    pagination, processing) and stores no state between runs.
+  properties:
+    limit:
+      type: integer
+      default: 1
+      x-celigo-ui-override: >-
+        Required by the export form when the export type is "test" (test.limit is required:true,
+        default 1, visibleWhen type=test). Encoded to mirror the form so builders produce
+        connectable configurations.
+      description: |-
+        Caps the total records a test run processes, counted on top-level records before
+        oneToMany processing; the maximum exists to prevent accidentally processing large
+        datasets during development. The cap applies across pages — processing stops once the
+        limit is reached regardless of pageSize. When transitioning to production, leave this in
+        place and change the export's type field; the limit then no longer applies.
+      minimum: 1
+      maximum: 100
+      examples: [10, 25, 50]

@@ -1,0 +1,1338 @@
+AiAgentConfig:
+  type: object
+  description: |
+    AI agent configuration for an AiAgentImport. An `ai_agent` guardrail is configured by
+    the guardrail spec's `GuardrailAiAgentConfig` instead, which has no `tools` arrays.
+
+    Configures which AI provider and model to use, along with instructions, parameter
+    tuning, output format, and available tools. Providers come in two families with
+    two configuration formats:
+
+    - **Built-in providers** — each has its own configuration block.
+      - **openai**: OpenAI models (GPT-4.1, GPT-5, etc.). Configure via the `openai` object.
+      - **gemini**: Google Gemini models via the LiteLLM proxy. Configure via `litellm` with overrides in `litellm._overrides.gemini`.
+      - **anthropic**: Anthropic Claude models via the LiteLLM proxy. Configure via `litellm` with overrides in `litellm._overrides.anthropic`.
+    - **Catalog providers** — `mistral`, `xai`, `huggingface`, `deepseek`, `cohere`, `groq`. Added
+      as catalog data rather than platform code, they share one generic flat format:
+      `model`, `modelOptions`, `instructions`, `output`, and the `tools` / `prompts` /
+      `resources` arrays directly on this object.
+
+    A `_connectionId` on the parent import selects bring-your-own-key (BYOK)
+    credentials. Without one, built-in providers run on platform-managed
+    credentials; catalog providers have no platform-managed credentials, so the
+    save requires one — without it the agent fails to save with 422
+    `connection_required` on `_connectionId`.
+  required: [provider]
+  properties:
+    provider:
+      type: string
+      enum: ["openai", "gemini", "anthropic", "mistral", "xai", "huggingface", "deepseek", "cohere", "groq"]
+      x-enumDescriptions:
+        openai: Use OpenAI models via the OpenAI Responses API (built-in; `openai` block).
+        gemini: Use Google Gemini models via the LiteLLM proxy (built-in; `litellm` block).
+        anthropic: Use Anthropic Claude models via the LiteLLM proxy (built-in; `litellm` block).
+        mistral: Use Mistral models (catalog provider; generic flat format, BYOK).
+        xai: Use xAI Grok models (catalog provider; generic flat format, BYOK).
+        huggingface: Use Hugging Face inference endpoint models (catalog provider; generic flat format, BYOK).
+        deepseek: Use DeepSeek models (catalog provider; generic flat format, BYOK).
+        cohere: Use Cohere models (catalog provider; generic flat format, BYOK).
+        groq: Use Groq-hosted models (catalog provider; generic flat format, BYOK).
+      description: AI provider to use.
+      x-celigo-ai-guidance:
+        - |-
+          The provider decides the configuration format, and the server rejects a
+          mismatch with 422 `invalid_provider_config_format`: `openai` needs the
+          `openai` block, `gemini` and `anthropic` need the `litellm` block (Gemini- or
+          Claude-specific settings under `litellm._overrides`), and the catalog
+          providers (`mistral`, `xai`, `huggingface`, `deepseek`, `cohere`, `groq`) need the
+          generic flat format — `model` and `modelOptions` directly on this object,
+          never an `openai` or `litellm` block.
+        - |-
+          Catalog providers are BYOK-only, and the save enforces it: without a `_connectionId`
+          the agent fails to save with 422 `connection_required` on `_connectionId` ("No API
+          key is available for provider 'xai'. Add a connection for this provider with your
+          API key and select it on this agent."). Attach an HTTP connection to the vendor's
+          API (token auth) before saving a catalog-provider agent.
+    model:
+      type: string
+      description: |-
+        Model identifier for a catalog provider (generic flat format) — for example
+        `grok-4.6`. Built-in providers set the model inside their own block
+        (`openai.model`, `litellm.model`) instead.
+      x-celigo-ai-guidance:
+        - |-
+          Required for every catalog provider — omitting it or sending an empty string
+          fails the save with 422 `missing_required_field`.
+        - |-
+          The connection is checked before the model: without a `_connectionId` on the
+          parent import a catalog-provider agent fails to save with 422
+          `connection_required` whatever the model string (an unknown id included).
+          With a `_connectionId` (BYOK) any model string saves — the server does not
+          check it against the catalog or the vendor.
+    modelOptions:
+      type: object
+      description: |-
+        Model tuning for a catalog provider (generic flat format). Which keys, values, and
+        ranges are accepted is defined per catalog model and validated on save when the
+        model is a catalog entry.
+      properties:
+        maxOutputTokens:
+          type: number
+          description: Maximum number of tokens the model may generate.
+        temperature:
+          type: number
+          description: Sampling temperature.
+        topP:
+          type: number
+          description: Nucleus sampling threshold.
+        reasoning_effort:
+          type: string
+          enum: ["low", "medium", "high", "xhigh"]
+          x-enumDescriptions:
+            low: Minimal reasoning before answering.
+            medium: Moderate reasoning.
+            high: Extensive reasoning.
+            xhigh: Maximum reasoning.
+          description: Reasoning depth for models that expose it.
+      x-celigo-ai-guidance:
+        - |-
+          When the model is a catalog entry, the server validates this object against
+          that model's schema and fails the save with 422 `invalid_model_options`
+          naming the key: unknown keys are rejected, `reasoning_effort` must be one of
+          the enum values where the model accepts it at all (xAI's `grok-4.6` does;
+          DeepSeek's `deepseek-chat` rejects the key), and numeric bounds apply —
+          on `grok-4.6`, `temperature` ≤ 2, `topP` ≤ 1, `maxOutputTokens` ≥ 100.
+        - |-
+          With a `_connectionId` and a model the catalog does not list, the object is
+          passed through unvalidated — send only options the vendor's API accepts.
+    instructions:
+      type: string
+      description: |-
+        System prompt for a catalog provider (generic flat format). Built-in providers
+        set it inside their own block (`openai.instructions`,
+        `litellm._overrides.anthropic.systemInstruction`).
+    output:
+      type: object
+      description: |-
+        Output format for a catalog provider (generic flat format). Built-in providers
+        configure it inside their own block (`openai.output`, `litellm.responseFormat`).
+      properties:
+        format:
+          type: object
+          description: Controls the structure of the model's output.
+          properties:
+            type:
+              type: string
+              enum: ["text", "json_schema"]
+              x-enumDescriptions:
+                text: Free-form text.
+                json_schema: Structured JSON conforming to `jsonSchema`.
+              description: Output type.
+              x-celigo-ai-guidance:
+                - |-
+                  `blob` is not accepted here — the save fails with 422
+                  `unsupported_output_format` naming the model (verified on `grok-4.6`).
+            name:
+              type: string
+              description: Name of the JSON schema, for `json_schema` output.
+            strict:
+              type: boolean
+              description: When true, the model must conform exactly to `jsonSchema`.
+            jsonSchema:
+              type: object
+              additionalProperties: true
+              description: JSON Schema the structured output must conform to, for `json_schema` output.
+        verbose:
+          type: string
+          description: Level of detail in the model's response, for models that expose it.
+    tools:
+      type: array
+      description: |-
+        Tools available to a catalog-provider agent (generic flat format). Entries mirror
+        the built-in providers' tool entries: a Celigo Tool by `_toolId`, an MCP server by
+        `_mcpConnectionId`, or a vendor web-search tool.
+      items:
+        type: object
+        properties:
+          type:
+            type: string
+            enum: ["tool", "mcp", "web_search"]
+            x-enumDescriptions:
+              tool: Reference a reusable Celigo Tool resource.
+              mcp: Connect to an MCP server for additional external tools.
+              web_search: Search the web for real-time information, where the vendor's model supports it.
+            description: Type of tool entry.
+          tool:
+            type: object
+            description: Reference to a Celigo Tool resource, used when type is "tool".
+            properties:
+              _toolId:
+                type: string
+                format: objectId
+                x-celigo-refModel: tools
+                description: The Celigo Tool to call.
+          mcp:
+            type: object
+            description: MCP server connection, used when type is "mcp".
+            properties:
+              _mcpConnectionId:
+                type: string
+                format: objectId
+                x-celigo-refModel: connections
+                description: Connection to the MCP server.
+              allowedTools:
+                type: array
+                description: |-
+                  Specific tools to allow from the MCP server (all if omitted). Each entry
+                  is either a plain tool name or an object carrying display metadata.
+                items:
+                  type: [string, object]
+          config:
+            type: object
+            additionalProperties: true
+            description: Tool-specific options for vendor-native tools (for example web-search settings).
+      x-celigo-ai-guidance:
+        - |-
+          References are checked on save: an unknown `_toolId` or `_mcpConnectionId`
+          fails with 422 `invalid_ref` naming the array index.
+    prompts:
+      type: array
+      description: |-
+        MCP prompt entries available to a catalog-provider agent (generic flat format).
+        Each entry references one MCP connection and the prompt names allowed from it.
+      items:
+        type: object
+        properties:
+          type:
+            type: string
+            enum: ["mcp"]
+            x-enumDescriptions:
+              mcp: Reference prompts exposed by an MCP server.
+            description: Type of prompt entry. Always "mcp".
+          mcp:
+            type: object
+            properties:
+              _mcpConnectionId:
+                type: string
+                format: objectId
+                x-celigo-refModel: connections
+                description: Connection to the MCP server that exposes the prompts.
+              allowedPrompts:
+                type: array
+                description: Prompt names the agent may fetch from the server.
+                items:
+                  type: string
+      x-celigo-ai-guidance:
+        - |-
+          An unknown `_mcpConnectionId` fails the save with 422 `invalid_ref` naming
+          the array index.
+    resources:
+      $ref: '#/McpResources'
+    openai:
+      type: object
+      description: |
+        OpenAI-specific configuration. Used when `provider` is "openai".
+      required: [model, instructions]
+      properties:
+        instructions:
+          type: string
+          maxLength: 1000000
+          description: |
+            System prompt that defines the AI agent's behavior, goals, and constraints.
+          examples: ["You are a data validation agent. Check each record for completeness."]
+          x-celigo-ui-override: >-
+            Required by the AI agent configuration form (the model's system prompt). Encoded
+            here to mirror the form so builders produce connectable configurations.
+        model:
+          type: string
+          description: |-
+            OpenAI model identifier. Open string (not an enum) — model names change frequently.
+          examples: ["gpt-5.4", "gpt-5.4-pro", "gpt-5-mini", "gpt-5-nano", "gpt-4.1-mini"]
+          x-celigo-ui-override: >-
+            Required by the AI agent configuration form. Encoded here to mirror the form so
+            builders produce connectable configurations.
+          x-celigo-ai-guidance:
+            - |-
+              With platform-managed credentials (no `_connectionId` on the parent
+              import), the model must be one the platform hosts. The save does not
+              check this — an unlisted model saves, and the agent's first run fails
+              with 422 `invalid_model`, whose message lists the hosted models. A
+              BYOK connection bypasses the hosted list and the model string is
+              passed through to the provider as-is.
+        reasoning:
+          type: object
+          description: |-
+            Controls depth of reasoning for complex tasks.
+          x-celigo-ai-guidance:
+            - |-
+              Supported on reasoning-capable OpenAI models only (currently the GPT-5 family and the o-series).
+              Setting `reasoning` on a non-reasoning model (e.g.
+              `gpt-4.1-mini`) is rejected by the provider at runtime — omit the field on those models.
+          properties:
+            effort:
+              type: string
+              enum: ["none", "minimal", "low", "medium", "high", "xhigh", "max"]
+              x-enumDescriptions:
+                none: No additional reasoning effort.
+                minimal: Least reasoning effort for simple, straightforward tasks.
+                low: Light reasoning for moderately simple tasks.
+                medium: Balanced reasoning effort for typical tasks.
+                high: Heavy reasoning effort for complex, multi-step tasks.
+                xhigh: Very high reasoning effort for the most demanding, multi-step tasks.
+                max: Highest available reasoning effort, above xhigh.
+              description: How much reasoning effort the model should invest
+              x-celigo-ai-guidance:
+                - |-
+                  How much reasoning effort the model should invest.
+                  Reasoning- capable models only — see `reasoning` for the gating rule.
+                - |-
+                  Any other value fails the save with 422 `enum` on `aiAgent.openai.reasoning.effort`.
+            summary:
+              type: string
+              enum: ["concise", "auto", "detailed"]
+              x-enumDescriptions:
+                concise: Brief, high-level reasoning summary.
+                auto: Let the model decide the appropriate level of detail.
+                detailed: Comprehensive reasoning summary with full explanations.
+              description: Level of detail in reasoning summaries
+              x-celigo-ai-guidance:
+                - |-
+                  Level of detail in reasoning summaries.
+                  Reasoning-capable models only — see `reasoning` for the gating rule.
+        temperature:
+          type: number
+          minimum: 0
+          maximum: 2
+          description: |
+            Sampling temperature. Higher values (e.g. 1.5) produce more creative output,
+            lower values (e.g. 0.2) produce more focused and deterministic output.
+        topP:
+          type: number
+          minimum: 0.1
+          maximum: 1
+          description: Nucleus sampling parameter
+        topLogprobs:
+          type: number
+          minimum: 0
+          maximum: 20
+          description: Number of most likely tokens to return log probabilities for at each output position.
+        maxOutputTokens:
+          type: number
+          minimum: 100
+          maximum: 128000
+          default: 5000
+          description: |-
+            Caps the length of the model's response, in tokens. An agent created without it is
+            saved with 5000; raise it for long outputs such as large extractions.
+        serviceTier:
+          type: string
+          enum: ["auto", "default", "priority"]
+          x-enumDescriptions:
+            auto: Let OpenAI automatically select the appropriate service tier.
+            default: Standard service tier with normal rate limits and latency.
+            priority: Premium tier with higher rate limits and lower latency at increased cost.
+          default: "default"
+          description: |-
+            OpenAI service tier. "priority" provides higher rate limits and
+            lower latency at increased cost.
+          x-celigo-ai-guidance:
+            - |-
+              BYOK only.
+              Platform-managed credentials (no `_connectionId` on the parent import) always
+              run at `default` regardless of what's set here.
+        output:
+          type: object
+          description: Output format configuration
+          properties:
+            format:
+              type: object
+              description: |
+                Controls the structure of the model's output.
+              properties:
+                type:
+                  type: string
+                  enum: ["text", "json_schema", "blob"]
+                  x-enumDescriptions:
+                    text: Free-form text response from the model.
+                    json_schema: Structured JSON output conforming to a defined schema.
+                    blob: Image generation — the run calls the image generation tool and returns the stored image's `blobKey`, not `_text` or `_json`.
+                  default: "text"
+                  description: Output format type.
+                schemaMode:
+                  type: string
+                  enum: ["manual", "json"]
+                  x-enumDescriptions:
+                    manual: The UI opens `jsonSchema` in the visual field-by-field editor
+                    json: The UI opens `jsonSchema` in the raw JSON editor
+                  description: |-
+                    Which editor the UI opens `jsonSchema` in; the schema sent to the provider
+                    is the same either way, and the field is only meaningful when `type` is
+                    "json_schema". Unset opens the visual editor, and an edit there rebuilds
+                    `jsonSchema` from the field list, keeping only `type`, `properties`,
+                    `required`, `items`, `description`, `enum`, `pattern`, length and numeric
+                    bounds, `multipleOf`, `minItems`/`maxItems` and a `"null"` type — other
+                    keywords are dropped without a prompt, and `integer` becomes `number`.
+                  x-celigo-ai-guidance:
+                    - |-
+                      Set `json` on a schema written as raw JSON; keep a user's `manual` and stay
+                      inside the keywords the visual editor keeps. A full PUT that omits the field
+                      clears it, and a value outside the enum fails the save with 422 `enum` on
+                      `aiAgent.openai.output.format.schemaMode`.
+                name:
+                  type: string
+                  description: Name for the output format (used with json_schema)
+                  x-celigo-ui-override: >-
+                    Required by the AI agent form when output format type is json_schema. Encoded
+                    here to mirror the form so builders produce connectable configurations.
+                strict:
+                  type: boolean
+                  default: false
+                  description: When true, enforces strict schema validation on output.
+                  x-celigo-ai-guidance:
+                    - Whether to enforce strict schema validation on output
+                jsonSchema:
+                  type: object
+                  description: |
+                    JSON Schema for structured output. Required when `format.type` is "json_schema".
+                  x-celigo-ui-override: >-
+                    Required by the AI agent form when output format type is json_schema. Encoded
+                    here to mirror the form so builders produce connectable configurations.
+                  properties:
+                    type:
+                      type: string
+                      description: Root JSON Schema type of the structured output; use "object" for record-shaped results.
+                      enum: ["object", "array", "string", "number", "integer", "boolean"]
+                      x-enumDescriptions:
+                        object: JSON object with named properties.
+                        array: Ordered list of values.
+                        string: Text string value.
+                        number: Numeric value including decimals.
+                        integer: Whole number value without decimals.
+                        boolean: True or false value.
+                    properties:
+                      type: object
+                      additionalProperties: true
+                      description: JSON Schema definitions for each field the structured output may contain.
+                    required:
+                      type: array
+                      description: Property names the model must include in the structured output.
+                      items:
+                        type: string
+                    additionalProperties:
+                      type: boolean
+                      description: When true, the structured output may include properties beyond those defined in `properties`.
+                schema:
+                  type: object
+                  readOnly: true
+                  additionalProperties: true
+                  description: |-
+                    Server-written copy of `jsonSchema`, returned whenever `jsonSchema` is set — on
+                    AI agent imports and on guardrail agents alike. Send `jsonSchema`, not this field.
+              if:
+                properties:
+                  type:
+                    const: json_schema
+                required: [type]
+              then:
+                required: [name, jsonSchema]
+            verbose:
+              type: string
+              enum: ["low", "medium", "high"]
+              x-enumDescriptions:
+                low: Minimal detail in the model's response.
+                medium: Moderate detail in the model's response, the default level.
+                high: Maximum detail and verbosity in the model's response.
+              default: "medium"
+              description: Level of detail in the model's response
+              x-celigo-ai-guidance:
+                - |-
+                  Supported on the GPT-5 family only. Other OpenAI models (e.g.
+                  `gpt-4.1`, `gpt-4.1-mini`,
+                  `gpt-4.1-nano`) accept only `medium` (the no-op default) — `low` and `high` are
+                  rejected by the provider at runtime.
+                  Omit the field entirely on non-GPT-5 models rather than relying on the default.
+        tools:
+          type: array
+          description: |
+            Tools available to the AI agent during processing.
+          items:
+            type: object
+            properties:
+              type:
+                type: string
+                enum: ["web_search", "mcp", "image_generation", "code_execution", "tool"]
+                x-enumDescriptions:
+                  web_search: Search the web for real-time information.
+                  mcp: Connect to an MCP server for additional external tools.
+                  image_generation: Generate images using an AI image model.
+                  code_execution: "Enable OpenAI's built-in code-execution tool; carries no configuration block, send `{type: code_execution}` only"
+                  tool: Reference a reusable Celigo Tool resource.
+                description: |-
+                  Type of tool. Every type except `code_execution` is configured through the
+                  sibling object of the same name; OpenAI spells this one `code_execution`, while
+                  the Gemini and Anthropic overrides spell theirs `codeExecution` — the other spelling
+                  fails with 422 `enum`.
+              webSearch:
+                type: object
+                description: Web search configuration (empty object to enable)
+              imageGeneration:
+                type: object
+                description: Image generation configuration
+                properties:
+                  background:
+                    type: string
+                    description: Controls whether generated images have a transparent or opaque background; use transparent only with output formats that support it (png, webp).
+                    enum: ["transparent", "opaque"]
+                    x-enumDescriptions:
+                      transparent: Generate an image with a transparent background.
+                      opaque: Generate an image with a solid, non-transparent background.
+                  quality:
+                    type: string
+                    description: Rendering quality of generated images, trading detail for generation speed and file size.
+                    enum: ["low", "medium", "high"]
+                    x-enumDescriptions:
+                      low: Lower quality for faster generation and smaller file size.
+                      medium: Balanced quality and generation speed.
+                      high: Highest quality output with more detail.
+                  size:
+                    type: string
+                    description: Pixel dimensions of generated images; choose square, portrait, or landscape to match the intended use.
+                    enum: ["1024x1024", "1024x1536", "1536x1024"]
+                    x-enumDescriptions:
+                      1024x1024: Square image at 1024 by 1024 pixels.
+                      1024x1536: Portrait image at 1024 by 1536 pixels.
+                      1536x1024: Landscape image at 1536 by 1024 pixels.
+                  outputFormat:
+                    type: string
+                    description: File format of generated images; use png or webp when transparency is needed.
+                    enum: ["png", "webp", "jpeg"]
+                    x-enumDescriptions:
+                      png: PNG format with lossless compression, supports transparency.
+                      webp: WebP format with efficient compression for web use.
+                      jpeg: JPEG format with lossy compression for smaller file sizes.
+              mcp:
+                type: object
+                description: MCP server tool configuration
+                properties:
+                  _mcpConnectionId:
+                    type: string
+                    format: objectId
+                    x-celigo-refModel: connections
+                    description: Connection to the MCP server
+                  allowedTools:
+                    type: array
+                    description: |-
+                      Specific tools to allow from the MCP server (all if
+                      omitted). Each entry is either a plain tool name (legacy
+                      form) or an object carrying display metadata.
+                    items:
+                      type: [string, object]
+                      properties:
+                        name:
+                          type: string
+                          maxLength: 256
+                          description: Tool name as exposed by the MCP server.
+                        title:
+                          type: string
+                          maxLength: 300
+                          description: Display title shown for the tool.
+                        description:
+                          type: string
+                          maxLength: 1000
+                          description: Display description shown for the tool.
+                      required: [name]
+                      x-celigo-ai-guidance:
+                        - |-
+                          Object entries accept only name/title/description — any
+                          other key fails validation with "unknown field(s)", and
+                          an object without a non-empty name fails with a
+                          missing-required-field error. String entries are the
+                          legacy form and stay valid.
+                  allowedPrompts:
+                    type: array
+                    deprecated: true
+                    description: Not stored on a tool entry — a save drops it. Prompt names go in a `prompts[]` entry's own `mcp.allowedPrompts`.
+                    items:
+                      type: string
+              tool:
+                type: object
+                description: |
+                  Reference to a Celigo Tool resource.
+                properties:
+                  _toolId:
+                    type: string
+                    format: objectId
+                    x-celigo-refModel: tools
+                    description: Reference to the Tool resource
+                  overrides:
+                    type: object
+                    description: Per-agent overrides for the tool's internal resources
+                    properties:
+                      connections:
+                        type: array
+                        description: |
+                          Remaps the tool's abstract connections for this agent. Each entry pairs
+                          the tool's abstract connection placeholder (`_abstractId`) with the
+                          concrete connection (`_id`) to use for this agent; entries without
+                          `_id` keep the tool's own default connection.
+                        items:
+                          type: [object, 'null']
+                          required: [_abstractId]
+                          properties:
+                            _abstractId:
+                              type: string
+                              format: objectId
+                              description: The tool's abstract connection placeholder being overridden.
+                            _id:
+                              type: string
+                              format: objectId
+                              x-celigo-refModel: connections
+                              description: Concrete connection to use in place of the abstract placeholder.
+        prompts:
+          type: array
+          description: |
+            MCP prompt entries available to the agent. Each item references one MCP connection
+            and the prompt names allowed from it. Configured alongside `tools` in the form but
+            stored separately; an entry's `allowedPrompts` is what distinguishes a prompt entry
+            from an MCP tool entry (which carries `allowedTools`).
+          items:
+            type: object
+            properties:
+              type:
+                type: string
+                enum: ["mcp"]
+                x-enumDescriptions:
+                  mcp: Connect to an MCP server to use its exposed prompts.
+                description: Type of prompt entry. Always "mcp".
+              mcp:
+                type: object
+                description: MCP server prompt configuration.
+                properties:
+                  _mcpConnectionId:
+                    type: string
+                    format: objectId
+                    x-celigo-refModel: connections
+                    description: Connection to the MCP server.
+                  allowedPrompts:
+                    type: array
+                    description: Prompt names to allow from the MCP server.
+                    items:
+                      type: string
+        resources:
+          $ref: '#/McpResources'
+    litellm:
+      type: object
+      description: |
+        LiteLLM proxy configuration. Used when `provider` is "gemini" or "anthropic".
+
+        LiteLLM provides a unified interface to multiple AI providers. Gemini-specific
+        settings are in `_overrides.gemini`; Claude-specific settings are in
+        `_overrides.anthropic`.
+
+        `model` is required when litellm is the active provider path.
+      properties:
+        model:
+          type: string
+          description: |-
+            LiteLLM model identifier. For Gemini, models are stored without the `gemini/`
+            prefix; for Anthropic, use the Claude model id (e.g. `claude-sonnet-4-6`).
+          examples: ["gemini-2.5-flash", "gemini-2.5-pro", "gemini-2.5-flash-lite", "claude-sonnet-4-6", "claude-opus-4-7"]
+          x-celigo-ui-override: >-
+            Required by the AI agent configuration form. Encoded here to mirror the form so
+            builders produce connectable configurations.
+          x-celigo-ai-guidance:
+            - |-
+              With platform-managed credentials (no `_connectionId` on the parent
+              import), the model must be one the platform hosts for the provider —
+              Gemini and Anthropic Claude both have a hosted list. The save does not
+              check this — an unlisted model saves, and the agent's first run fails
+              with 422 `invalid_model`, whose message lists the hosted models.
+        temperature:
+          type: number
+          minimum: 0
+          maximum: 2
+          description: Sampling temperature
+          x-celigo-ai-guidance:
+            - |-
+              When `provider` is "anthropic", the value must be between 0 and 1 — a higher value
+              fails the save with 422 `invalid_field_value`. Gemini accepts the full 0-2 range.
+        maxCompletionTokens:
+          type: number
+          minimum: 100
+          maximum: 128000
+          default: 5000
+          description: Maximum number of tokens in the response
+        topP:
+          type: number
+          minimum: 0.1
+          maximum: 1
+          description: Nucleus sampling parameter
+        seed:
+          type: number
+          description: Random seed for reproducible outputs
+        responseFormat:
+          type: object
+          description: Output format configuration
+          x-celigo-ai-guidance:
+            - |-
+              When `provider` is "anthropic", `type` must be "text" or "json_schema" — "blob" is
+              rejected with 422 `invalid_response_format`. As with the other providers, "json_schema"
+              requires `name` and `jsonSchema`.
+          properties:
+            type:
+              type: string
+              description: Output format type.
+              enum: ["text", "json_schema", "blob"]
+              x-enumDescriptions:
+                text: Free-form text response from the model.
+                json_schema: Structured JSON output conforming to a defined schema.
+                blob: Image generation — the run returns the stored image's `blobKey`, not `_text` or `_json`.
+              default: "text"
+            schemaMode:
+              type: string
+              enum: ["manual", "json"]
+              x-enumDescriptions:
+                manual: The UI opens `jsonSchema` in the visual field-by-field editor
+                json: The UI opens `jsonSchema` in the raw JSON editor
+              description: |-
+                Which editor the UI opens `jsonSchema` in; the schema sent to the provider is
+                the same either way, and the field is only meaningful when `type` is
+                "json_schema". Unset opens the visual editor, and an edit there rebuilds
+                `jsonSchema` from the field list, keeping only `type`, `properties`, `required`,
+                `items`, `description`, `enum`, `pattern`, length and numeric bounds,
+                `multipleOf`, `minItems`/`maxItems` and a `"null"` type — other keywords are
+                dropped without a prompt, and `integer` becomes `number`.
+              x-celigo-ai-guidance:
+                - |-
+                  Set `json` on a schema written as raw JSON; keep a user's `manual` and stay inside
+                  the keywords the visual editor keeps. A full PUT that omits the field clears it,
+                  and a value outside the enum fails the save with 422 `enum` on
+                  `aiAgent.litellm.responseFormat.schemaMode`.
+            name:
+              type: string
+              description: Name for the output format (used with json_schema).
+              x-celigo-ui-override: >-
+                Required by the AI agent form when output format type is json_schema. Encoded
+                here to mirror the form so builders produce connectable configurations.
+            strict:
+              type: boolean
+              description: When true, enforces strict schema validation on output.
+              default: false
+            jsonSchema:
+              type: object
+              description: JSON Schema for structured output. Required when `responseFormat.type` is "json_schema".
+              x-celigo-ui-override: >-
+                Required by the AI agent form when output format type is json_schema. Encoded
+                here to mirror the form so builders produce connectable configurations.
+              properties:
+                type:
+                  type: string
+                  description: Root JSON Schema type of the structured output; use "object" for record-shaped results.
+                  enum: ["object", "array", "string", "number", "integer", "boolean"]
+                  x-enumDescriptions:
+                    object: JSON object with named properties.
+                    array: Ordered list of values.
+                    string: Text string value.
+                    number: Numeric value including decimals.
+                    integer: Whole number value without decimals.
+                    boolean: True or false value.
+                properties:
+                  type: object
+                  additionalProperties: true
+                  description: JSON Schema definitions for each field the structured output may contain.
+                required:
+                  type: array
+                  description: Property names the model must include in the structured output.
+                  items:
+                    type: string
+                additionalProperties:
+                  type: boolean
+                  description: When true, the structured output may include properties beyond those defined in `properties`.
+          if:
+            properties:
+              type:
+                const: json_schema
+            required: [type]
+          then:
+            required: [name, jsonSchema]
+        _overrides:
+          type: object
+          description: Provider-specific overrides
+          properties:
+            gemini:
+              type: object
+              description: |
+                Gemini-specific configuration overrides.
+              required: [systemInstruction]
+              properties:
+                systemInstruction:
+                  type: string
+                  maxLength: 1000000
+                  description: |
+                    System instruction for Gemini models. Equivalent to OpenAI's `instructions`.
+                    Maximum 1,000,000 characters.
+                  x-celigo-ui-override: >-
+                    Required by the AI agent configuration form (the model's system prompt, the
+                    Gemini equivalent of `instructions`). Encoded here to mirror the form so
+                    builders produce connectable configurations.
+                tools:
+                  type: array
+                  description: Gemini-specific tools
+                  items:
+                    type: object
+                    properties:
+                      type:
+                        type: string
+                        enum: ["googleSearch", "urlContext", "fileSearch", "codeExecution", "mcp", "tool"]
+                        x-enumDescriptions:
+                          googleSearch: Use Google Search for real-time information grounding.
+                          urlContext: Retrieve and use content from specified URLs.
+                          fileSearch: Search through previously uploaded files.
+                          codeExecution: "Enable Gemini's built-in code-execution tool; carries no configuration block, send `{type: codeExecution}` only"
+                          mcp: Connect to an MCP server for additional external tools.
+                          tool: Reference a reusable Celigo Tool resource.
+                        description: |-
+                          Type of Gemini tool. `codeExecution` is the Gemini spelling — `code_execution`
+                          fails with 422 `enum`.
+                      googleSearch:
+                        type: object
+                        description: Google Search configuration (empty object to enable)
+                      urlContext:
+                        type: object
+                        description: URL context configuration (empty object to enable)
+                      fileSearch:
+                        type: object
+                        description: File search configuration, used when type is "fileSearch".
+                        properties:
+                          fileSearchStoreNames:
+                            type: array
+                            description: Names of the file search stores the model can query.
+                            items:
+                              type: string
+                      mcp:
+                        type: object
+                        description: MCP server tool configuration, used when type is "mcp".
+                        properties:
+                          _mcpConnectionId:
+                            type: string
+                            format: objectId
+                            x-celigo-refModel: connections
+                            description: Connection to the MCP server.
+                          allowedTools:
+                            type: array
+                            description: |-
+                              Specific tools to allow from the MCP server (all if
+                              omitted). Each entry is either a plain tool name
+                              (legacy form) or an object carrying display metadata
+                              — same contract as the OpenAI `allowedTools`.
+                            items:
+                              type: [string, object]
+                              properties:
+                                name:
+                                  type: string
+                                  maxLength: 256
+                                  description: Tool name as exposed by the MCP server.
+                                title:
+                                  type: string
+                                  maxLength: 300
+                                  description: Display title shown for the tool.
+                                description:
+                                  type: string
+                                  maxLength: 1000
+                                  description: Display description shown for the tool.
+                              required: [name]
+                          allowedPrompts:
+                            type: array
+                            deprecated: true
+                            description: Not stored on a tool entry — a save drops it. Prompt names go in a `prompts[]` entry's own `mcp.allowedPrompts`.
+                            items:
+                              type: string
+                      tool:
+                        type: object
+                        description: Reference to a Celigo Tool resource, used when type is "tool".
+                        properties:
+                          _toolId:
+                            type: string
+                            format: objectId
+                            x-celigo-refModel: tools
+                            description: Reference to the Tool resource.
+                          overrides:
+                            type: object
+                            description: Per-agent overrides for the tool's internal resources.
+                            properties:
+                              connections:
+                                type: array
+                                description: |
+                                  Remaps the tool's abstract connections for this agent. Each entry
+                                  pairs the tool's abstract connection placeholder (`_abstractId`)
+                                  with the concrete connection (`_id`) to use for this agent;
+                                  entries without `_id` keep the tool's own default connection.
+                                items:
+                                  type: [object, 'null']
+                                  required: [_abstractId]
+                                  properties:
+                                    _abstractId:
+                                      type: string
+                                      format: objectId
+                                      description: The tool's abstract connection placeholder being overridden.
+                                    _id:
+                                      type: string
+                                      format: objectId
+                                      x-celigo-refModel: connections
+                                      description: Concrete connection to use in place of the abstract placeholder.
+                prompts:
+                  type: array
+                  description: |
+                    MCP prompt entries available to the Gemini agent. Each item references one
+                    MCP connection and the prompt names allowed from it. The presence of
+                    `allowedPrompts` distinguishes a prompt entry from an MCP tool entry.
+                  items:
+                    type: object
+                    properties:
+                      type:
+                        type: string
+                        enum: ["mcp"]
+                        x-enumDescriptions:
+                          mcp: Connect to an MCP server to use its exposed prompts.
+                        description: Type of prompt entry. Always "mcp".
+                      mcp:
+                        type: object
+                        description: MCP server prompt configuration.
+                        properties:
+                          _mcpConnectionId:
+                            type: string
+                            format: objectId
+                            x-celigo-refModel: connections
+                            description: Connection to the MCP server.
+                          allowedPrompts:
+                            type: array
+                            description: Prompt names to allow from the MCP server.
+                            items:
+                              type: string
+                resources:
+                  $ref: '#/McpResources'
+                responseModalities:
+                  type: array
+                  description: Response output modalities
+                  x-celigo-ai-guidance:
+                    - |-
+                      `["image"]` requires an image-capable Gemini model (currently `gemini-2.5-flash-image`).
+                      Selecting it on a text-only model is rejected by the provider — pair image
+                      output with the right model or omit.
+                  items:
+                    type: string
+                    enum: ["text", "image"]
+                    x-enumDescriptions:
+                      text: Generate text content in the response.
+                      image: Generate image content in the response.
+                  default: ["text"]
+                topK:
+                  type: number
+                  description: Top-K sampling parameter for Gemini
+                thinkingConfig:
+                  type: object
+                  description: Controls Gemini's extended thinking capabilities
+                  x-celigo-ai-guidance:
+                    - |-
+                      Supported on reasoning-capable Gemini models only (currently `gemini-2.5-pro`
+                      and `gemini-2.5-flash`).
+                      Setting `thinkingConfig` on a non-thinking model (e.g.
+                      `gemini-2.5-flash-lite`,
+                      `gemini-2.5-flash-image`) is rejected by the provider at runtime — omit the
+                      field on those models.
+                  properties:
+                    includeThoughts:
+                      type: boolean
+                      description: When true, includes the model's thinking steps in the response.
+                      x-celigo-ai-guidance:
+                        - Whether to include thinking steps in the response
+                    thinkingBudget:
+                      type: number
+                      minimum: 100
+                      maximum: 4000
+                      description: Maximum tokens allocated for thinking
+                    thinkingLevel:
+                      type: string
+                      description: Controls how much thinking effort the model applies; use higher levels for complex, multi-step tasks at the cost of latency and tokens.
+                      enum: ["minimal", "low", "medium", "high"]
+                      x-enumDescriptions:
+                        minimal: Least thinking effort for simple tasks.
+                        low: Light thinking for moderately simple tasks.
+                        medium: Balanced thinking effort for typical tasks.
+                        high: Maximum thinking effort for complex, multi-step tasks.
+                imageConfig:
+                  type: object
+                  description: Gemini image generation configuration
+                  properties:
+                    aspectRatio:
+                      type: string
+                      description: Aspect ratio of generated images; choose a ratio matching the intended display format.
+                      enum: ["1:1", "2:3", "3:2", "3:4", "4:3", "4:5", "5:4", "9:16", "16:9", "21:9"]
+                      x-enumDescriptions:
+                        "1:1": Square aspect ratio.
+                        "2:3": Portrait aspect ratio (2 wide by 3 tall).
+                        "3:2": Landscape aspect ratio (3 wide by 2 tall).
+                        "3:4": Portrait aspect ratio (3 wide by 4 tall).
+                        "4:3": Standard landscape aspect ratio (4 wide by 3 tall).
+                        "4:5": Portrait aspect ratio (4 wide by 5 tall).
+                        "5:4": Landscape aspect ratio (5 wide by 4 tall).
+                        "9:16": Tall portrait aspect ratio for mobile screens.
+                        "16:9": Widescreen landscape aspect ratio.
+                        "21:9": Ultra-widescreen cinematic aspect ratio.
+                    imageSize:
+                      type: string
+                      description: Output resolution of generated images; higher resolutions increase detail and file size.
+                      enum: ["1K", "2K", "4K"]
+                      x-enumDescriptions:
+                        "1K": Standard resolution output around 1024 pixels.
+                        "2K": High resolution output around 2048 pixels.
+                        "4K": Ultra-high resolution output around 4096 pixels.
+                mediaResolution:
+                  type: string
+                  enum: ["low", "medium", "high"]
+                  x-enumDescriptions:
+                    low: Low resolution for faster processing and reduced token usage.
+                    medium: Balanced resolution for typical media processing.
+                    high: High resolution for maximum detail in media inputs.
+                  description: Resolution for media inputs (images, video)
+            anthropic:
+              type: object
+              description: |
+                Claude-specific configuration overrides. Used when `provider` is "anthropic".
+              required: [systemInstruction]
+              properties:
+                systemInstruction:
+                  type: string
+                  maxLength: 1000000
+                  description: |
+                    System instruction for Claude models. Equivalent to OpenAI's `instructions`.
+                    Maximum 1,000,000 characters.
+                  x-celigo-ui-override: >-
+                    Required by the AI agent configuration form (the model's system prompt, the
+                    Claude equivalent of `instructions`). Encoded here to mirror the form so
+                    builders produce connectable configurations.
+                topK:
+                  type: number
+                  minimum: 0
+                  description: |-
+                    Top-K sampling parameter. Deprecated on Claude models released after Claude Opus
+                    4.6, which reject any value at runtime; set it only on older models.
+                thinkingConfig:
+                  type: object
+                  description: Controls Claude's extended thinking capabilities.
+                  properties:
+                    type:
+                      type: string
+                      enum: ["enabled", "disabled", "adaptive"]
+                      x-enumDescriptions:
+                        enabled: Turn on extended thinking with an explicit token budget.
+                        disabled: Turn off extended thinking.
+                        adaptive: Let the model decide how much to think based on task complexity.
+                      default: "disabled"
+                      description: Extended thinking mode.
+                    budgetTokens:
+                      type: number
+                      minimum: 1024
+                      description: |-
+                        Maximum tokens allocated for thinking. Required when `type` is "enabled" —
+                        omitting it fails the save with 422 `invalid_thinking_config`.
+                      x-celigo-ui-override: >-
+                        Required by the AI agent form when thinkingConfig.type is "enabled". Encoded
+                        here to mirror the form so builders produce connectable configurations.
+                    display:
+                      type: string
+                      enum: ["summarized", "omitted"]
+                      x-enumDescriptions:
+                        summarized: Include a summarized view of the model's thinking in the response.
+                        omitted: Exclude the model's thinking from the response.
+                      default: "summarized"
+                      description: How thinking output is surfaced in the response.
+                    effort:
+                      type: string
+                      enum: ["low", "medium", "high", "xhigh", "max"]
+                      x-enumDescriptions:
+                        low: Light thinking effort for moderately simple tasks.
+                        medium: Balanced thinking effort for typical tasks.
+                        high: Maximum standard thinking effort for complex tasks.
+                        xhigh: Extended thinking effort beyond high for demanding tasks.
+                        max: Highest available thinking effort.
+                      description: |-
+                        How much thinking effort the model applies; use with `type` "adaptive". Higher
+                        values (`xhigh`, `max`) may be gated to specific Claude models by the provider.
+                  if:
+                    properties:
+                      type:
+                        const: enabled
+                    required: [type]
+                  then:
+                    required: [budgetTokens]
+                serviceTier:
+                  type: string
+                  enum: ["auto", "standard_only"]
+                  x-enumDescriptions:
+                    auto: Let Anthropic select the appropriate service tier.
+                    standard_only: Restrict processing to the standard service tier.
+                  default: "auto"
+                  description: Anthropic service tier for the request.
+                tools:
+                  type: array
+                  description: Claude-specific tools.
+                  items:
+                    type: object
+                    properties:
+                      type:
+                        type: string
+                        enum: ["tool", "mcp", "webSearch", "codeExecution"]
+                        x-enumDescriptions:
+                          tool: Reference a reusable Celigo Tool resource.
+                          mcp: Connect to an MCP server for additional external tools.
+                          webSearch: Search the web for real-time information.
+                          codeExecution: "Enable Anthropic's built-in code-execution tool; carries no configuration block, send `{type: codeExecution}` only"
+                        description: |-
+                          Type of Claude tool. `codeExecution` is the Anthropic spelling — `code_execution`
+                          fails with 422 `enum`.
+                      tool:
+                        type: object
+                        description: Reference to a Celigo Tool resource, used when type is "tool".
+                        properties:
+                          _toolId:
+                            type: string
+                            format: objectId
+                            x-celigo-refModel: tools
+                            description: Reference to the Tool resource.
+                          overrides:
+                            type: object
+                            description: Per-agent overrides for the tool's internal resources.
+                            properties:
+                              connections:
+                                type: array
+                                description: |
+                                  Remaps the tool's abstract connections for this agent. Each entry
+                                  pairs the tool's abstract connection placeholder (`_abstractId`)
+                                  with the concrete connection (`_id`) to use for this agent;
+                                  entries without `_id` keep the tool's own default connection.
+                                items:
+                                  type: [object, 'null']
+                                  required: [_abstractId]
+                                  properties:
+                                    _abstractId:
+                                      type: string
+                                      format: objectId
+                                      description: The tool's abstract connection placeholder being overridden.
+                                    _id:
+                                      type: string
+                                      format: objectId
+                                      x-celigo-refModel: connections
+                                      description: Concrete connection to use in place of the abstract placeholder.
+                      mcp:
+                        type: object
+                        description: MCP server tool configuration, used when type is "mcp".
+                        properties:
+                          _mcpConnectionId:
+                            type: string
+                            format: objectId
+                            x-celigo-refModel: connections
+                            description: Connection to the MCP server.
+                          allowedTools:
+                            type: array
+                            description: |-
+                              Specific tools to allow from the MCP server (all if omitted). Each
+                              entry is either a plain tool name or an object carrying display
+                              metadata — same contract as the OpenAI and Gemini `allowedTools`.
+                            items:
+                              oneOf:
+                                - title: name
+                                  type: string
+                                  description: Tool name as exposed by the MCP server.
+                                - title: tool
+                                  type: object
+                                  required: [name]
+                                  properties:
+                                    name:
+                                      type: string
+                                      maxLength: 256
+                                      description: Tool name as exposed by the MCP server.
+                                    title:
+                                      type: string
+                                      maxLength: 300
+                                      description: Display title shown for the tool.
+                                    description:
+                                      type: string
+                                      maxLength: 1000
+                                      description: Display description shown for the tool.
+                            x-celigo-ai-guidance:
+                              - |-
+                                Object entries accept only name/title/description — any other key
+                                fails the save with 422 `invalid_field_value` ("unknown field(s): …"),
+                                and an object without `name` fails with 422 `missing_required_field`
+                                ("Expected field: name to be present.").
+                            examples: [["hub_repo_search", {"name": "hub_repo_info", "title": "Repository info", "description": "Look up a repository by name"}]]
+                      webSearch:
+                        type: object
+                        description: Web search configuration, used when type is "webSearch".
+                        x-celigo-ai-guidance:
+                          - |-
+                            `allowedDomains` and `blockedDomains` are mutually exclusive — set at most
+                            one. Sending both fails with 422 `invalid_hosted_tool`.
+                          - |-
+                            When `userLocation` is present, set at least one of `city`, `country`,
+                            `region`, or `timezone`; an empty `userLocation` fails with 422
+                            `missing_required_field`.
+                        properties:
+                          version:
+                            type: string
+                            pattern: "^\\d{8}$"
+                            description: |-
+                              Anthropic web search tool version (YYYYMMDD). Selects the tool version sent
+                              on the wire; unsupported versions surface as an Anthropic 400.
+                            examples: ["20250305"]
+                          allowedDomains:
+                            type: array
+                            description: Domains the search may return results from. Mutually exclusive with `blockedDomains`.
+                            items:
+                              type: string
+                          blockedDomains:
+                            type: array
+                            description: Domains to exclude from search results. Mutually exclusive with `allowedDomains`.
+                            items:
+                              type: string
+                          userLocation:
+                            type: object
+                            description: |-
+                              Approximate user location used to localize search results. When present, at
+                              least one of `city`, `country`, `region`, or `timezone` must be set.
+                            properties:
+                              type:
+                                type: string
+                                enum: ["approximate"]
+                                x-enumDescriptions:
+                                  approximate: Localize results to an approximate user location.
+                                description: Location type. Always "approximate".
+                              city:
+                                type: string
+                                maxLength: 256
+                                description: City name for localizing search results.
+                              country:
+                                type: string
+                                maxLength: 8
+                                description: ISO 3166-1 alpha-2 country code for localizing search results.
+                              region:
+                                type: string
+                                maxLength: 256
+                                description: Region or state for localizing search results.
+                              timezone:
+                                type: string
+                                maxLength: 64
+                                description: IANA timezone for localizing search results.
+                prompts:
+                  type: array
+                  description: |
+                    MCP prompt entries available to the Claude agent. Each item references one MCP
+                    connection and the prompt names allowed from it. The presence of `allowedPrompts`
+                    distinguishes a prompt entry from an MCP tool entry.
+                  items:
+                    type: object
+                    properties:
+                      type:
+                        type: string
+                        enum: ["mcp"]
+                        x-enumDescriptions:
+                          mcp: Connect to an MCP server to use its exposed prompts.
+                        description: Type of prompt entry. Always "mcp".
+                      mcp:
+                        type: object
+                        description: MCP server prompt configuration.
+                        properties:
+                          _mcpConnectionId:
+                            type: string
+                            format: objectId
+                            x-celigo-refModel: connections
+                            description: Connection to the MCP server.
+                          allowedPrompts:
+                            type: array
+                            description: Prompt names to allow from the MCP server.
+                            items:
+                              type: string
+                resources:
+                  $ref: '#/McpResources'
+  # Instance-level `required: [openai|litellm|model]` is what actually forces the
+  # provider's format to exist — nesting requireds under `properties` alone does not (a
+  # bare `{provider: openai}` would validate). The server 422s
+  # ("`model` is required for AI Agent import") when the block — or, for a catalog
+  # provider, the top-level `model` — is missing. `model` is server-required;
+  # `instructions` is a form-mirror (server accepts its omission — see the
+  # x-celigo-ui-override on that field).
+  if:
+    properties:
+      provider:
+        const: openai
+    required: [provider]
+  then:
+    required: [openai]
+    properties:
+      openai:
+        required: [model, instructions]
+  else:
+    if:
+      properties:
+        provider:
+          enum: [gemini, anthropic]
+      required: [provider]
+    then:
+      required: [litellm]
+      properties:
+        litellm:
+          required: [model]
+    else:
+      if:
+        properties:
+          provider:
+            enum: [mistral, xai, huggingface, deepseek, cohere, groq]
+        required: [provider]
+      then:
+        required: [model]
+
+McpResources:
+  type: array
+  description: |-
+    Governed MCP resources — read-only reference content (policies, schemas, documentation)
+    pulled from connected MCP servers and made available to the agent as a consistent source
+    of truth. Each entry references one MCP connection and the specific resources allowed from it.
+  items:
+    type: object
+    required: [type, mcp]
+    properties:
+      type:
+        type: string
+        enum: ["mcp"]
+        x-enumDescriptions:
+          mcp: Reference read-only resources exposed by an MCP server.
+        description: Type of resource entry. Always "mcp".
+      mcp:
+        type: object
+        required: [_mcpConnectionId, allowedResources]
+        description: MCP server resource configuration.
+        properties:
+          _mcpConnectionId:
+            type: string
+            format: objectId
+            x-celigo-refModel: connections
+            description: Connection to the MCP server that exposes the resources.
+          allowedResources:
+            type: array
+            minItems: 1
+            description: |-
+              Resources to expose to the agent from the MCP server. Must contain at least one
+              entry; each entry identifies one resource by name and URI.
+            items:
+              type: object
+              required: [name, uri]
+              properties:
+                name:
+                  type: string
+                  description: Display name of the MCP resource.
+                  examples: ["Data Retention Policy"]
+                uri:
+                  type: string
+                  description: URI that identifies the resource on the MCP server.
+                  examples: ["resource://policies/data-retention"]

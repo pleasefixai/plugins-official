@@ -199,7 +199,7 @@ This replaces the old green/amber/red heuristic — score + `band` are the singl
 ### Euler design system (modern report treatment)
 
 Output follows the **Euler design system** in a modern, landing-page-style layout
-(identical to `portfolio-pulse` and `pending-approvals-triage`): sticky **topbar**
+(identical to `partner-briefing` and `pending-approvals-triage`): sticky **topbar**
 with the Euler **text wordmark** → **hero** (eyebrow chip + headline with a gradient
 `.accent` span + `.quick-facts` headline metrics) → **spotlight** gradient panel for
 the TL;DR → numbered sections (`.section-eyebrow` "01 · …") with `.table-wrap` tables,

@@ -1,0 +1,5 @@
+{
+  "name": "chargebee-integration",
+  "version": "1.0.0",
+  "description": "Guides for Chargebee billing APIs, webhooks, SDKs and schemas."
+}

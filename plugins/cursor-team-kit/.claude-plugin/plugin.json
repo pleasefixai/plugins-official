@@ -1,0 +1,5 @@
+{
+  "name": "cursor-team-kit",
+  "version": "1.0.0",
+  "description": "Workflows to fix CI, review and ship pull requests, test UIs and clean up code."
+}

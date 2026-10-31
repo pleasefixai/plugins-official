@@ -1,0 +1,52 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "glean",
+  "version": "1.0.0",
+  "description": "Guides to search, catch up, prepare meetings and find code, owners and experts with Glean.",
+  "author": {
+    "name": "Glean"
+  },
+  "homepage": "https://docs.glean.com/administration/platform/mcp/about",
+  "license": "MIT",
+  "keywords": [
+    "glean",
+    "enterprise-search",
+    "knowledge-management",
+    "productivity",
+    "workplace",
+    "code-search",
+    "people-search",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "glean",
+        "commit": "e3bbedb9eeb6df932e798c4a145b635ec0ae253e",
+        "skills": {
+          "catch-up": "64a966a9f7c919ac2bb553d3207f24aa6534011798dfc3728a46d4fe4a6db798",
+          "code-owners": "0c2a034113016c1ed63871cdde37622962f93873e616affd7e7d381ae185fbbe",
+          "codebase-context": "1801589c3346a5265ed272ec62f32e848114c3d7678fa527c218d9931b1ca97c",
+          "find-examples": "927ca97db76cfad21e4ef86fe603de7d39ed09513978934da643076e2c83a734",
+          "find-expert": "f6bae54c5dcf6fe8fb89b6dedb4550d58a94fbe0e82ff64fea2c0d3770d63643",
+          "meeting-prep": "ad967a97a3ccde4e938599ba96483faba8123937ab3a18493df9e454afc4fdd5",
+          "onboarding": "0f4ec8832ee0dbd6a0451fea6373732c3fc5d552d2f9185c11ba1bf9d85f594c",
+          "plan-prep": "d98d388f8215de959c764e78ed36c770ff383720f454af7eab9826e4546e8af6",
+          "project-awareness": "4509d111cb34412de118d50d6627f1c6b9ff4140d5c672a22d16a9130ecf2ae0",
+          "project-handoff": "2be3dfcada34e3e6c38db3154ded6070c560d6217b9834821739378a4095c691",
+          "search": "89ecfeb318c8ca4e28c98c8414973c370b968e02637b657d80375275fc6a45b6",
+          "similar-code": "8c4d78e6125d230516e25d6b8b32f1ebb8a1bef0fbeff5971840c92156dfeb2e",
+          "skill-creation-guide": "47a81aed0222dbbbd3f1d59ad6a3cc268a21e3760e32e585dc95b1a1017b7dd3",
+          "stakeholders": "7a93d04ae17e210050f25f84582f552ad0f752746fd3e226947d33804ea921a2",
+          "using-glean": "25780102127c168821b47bcb60977b3f5e9c8ad7b935deb332857cca327b11d6",
+          "using-glean-code": "1e5e13ee17d10d2e559f6bca4b4191f756c46ad6e7ef2a2772fdea9ea67dae09",
+          "using-glean-productivity": "eb400cbe2c410be313ce6960601e75aa8db7854bdf54862cfbe3cfef65dec5ba",
+          "verify-rfc": "f15ad723c12885ec177862c1fa5695d78067c073e681ffc62d1868fc03687a90"
+        }
+      }
+    }
+  }
+}

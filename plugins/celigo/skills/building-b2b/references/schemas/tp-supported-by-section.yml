@@ -1,0 +1,276 @@
+SupportedBySection:
+  type: object
+  description: |-
+    Conditions, pre-configured field values, and fields the user must set
+    for a resource type (export, import, or EDI profile) during trading
+    partner onboarding.
+  x-celigo-ai-guidance:
+    - |-
+      A section within `supportedBy` that defines conditions,
+      pre-configured field values,
+      and fields the user must set when creating a trading partner resource (connection,
+      export, import, or EDI profile).
+    - |-
+      Conditions use expression-based filters to control which field configurations
+      apply based on resource attributes.
+      Pre-configured fields are automatically set,
+      while fields the user must set require input during trading partner onboarding.
+  properties:
+    conditions:
+      type: array
+      description: |-
+        Expression-based filters referenced by `_conditionIds` in
+        `preConfiguredFields` and `fieldsUserMustSet`.
+      x-celigo-ai-guidance:
+        - |-
+          Array of condition objects.
+          Each condition contains an expression-based filter that can be referenced by
+          `_conditionIds` in `preConfiguredFields` and `fieldsUserMustSet` to
+          conditionally apply those field configurations.
+      items:
+        type: object
+        properties:
+          _id:
+            type: string
+            format: objectId
+            description: Referenced by `_conditionIds` in field entries.
+            x-celigo-ai-guidance:
+              - |-
+                Unique identifier for this condition,
+                referenced by `_conditionIds` in field entries
+            examples: ["5f8d43a1b9e5a80011a35f2c"]
+          condition:
+            $ref: "../common-schemas/filter.yml#/Filter"
+    preConfiguredFields:
+      type: array
+      description: |-
+        Fields set to predefined values during onboarding. In an EDI profile section, a value for
+        your own identity (`myInterchangeId`, `myGroupId`) or a placeholder partner ID such as
+        `XXXXXXXXXXXXXXX` is a template stand-in, not a real value; the real IDs are among the
+        fields the user must set.
+      x-celigo-ai-guidance:
+        - |-
+          Fields set to predefined values when a trading partner resource is created from this
+          connector. In an EDI profile section, never apply an own-identity value
+          (`myInterchangeId`, `myGroupId`) or a placeholder partner ID such as `XXXXXXXXXXXXXXX`:
+          they are template stand-ins, and the real IDs come from the user and the partner.
+      items:
+        $ref: "#/PreConfiguredField"
+    fieldsUserMustSet:
+      type: array
+      description: Fields the user must provide values for during onboarding.
+      x-celigo-ai-guidance:
+        - |-
+          Array of fields that the user must provide values for during trading partner onboarding.
+          These fields may have suggested values or constraints.
+      items:
+        $ref: "#/FieldUserMustSet"
+
+ConnectionSupportedBySection:
+  type: object
+  description: |-
+    Connection-specific section. Same as other `supportedBy` sections but
+    `fieldsUserMustSet` entries may include `inputType` to control the UI
+    input widget.
+  properties:
+    conditions:
+      type: array
+      description: Expression-based filters for the connection section.
+      items:
+        type: object
+        properties:
+          _id:
+            type: string
+            format: objectId
+            description: Referenced by `_conditionIds` in field entries.
+            x-celigo-ai-guidance:
+              - Unique identifier for this condition
+            examples: ["5f8d43a1b9e5a80011a35f2c"]
+          condition:
+            $ref: "../common-schemas/filter.yml#/Filter"
+    preConfiguredFields:
+      type: array
+      description: |-
+        Fields automatically set on the connection during onboarding. Apart from the transport
+        `type`, treat them as template stand-ins (published connectors carry values such as a
+        placeholder AS2 partner ID and a staging AS2 URI), not the partner's real settings; the
+        partner's host and identity are in `fieldsUserMustSet`.
+      items:
+        $ref: "#/PreConfiguredField"
+    fieldsUserMustSet:
+      type: array
+      description: Fields the user must provide for the connection.
+      x-celigo-ai-guidance:
+        - |-
+          Fields the user must provide for the connection.
+          May include `inputType` to control the UI input widget.
+      items:
+        $ref: "#/ConnectionFieldUserMustSet"
+
+PreConfiguredField:
+  type: object
+  description: A field automatically set to a predefined value during onboarding.
+  x-celigo-ai-guidance:
+    - |-
+      A field that is automatically set to a predefined value during trading partner onboarding.
+      The `path` identifies which field on the target resource to set,
+      and `values` provides the value(s) to assign, except the template stand-ins named on the
+      section's `preConfiguredFields` and `supportedBy.connection.preConfiguredFields`.
+  properties:
+    _id:
+      type: string
+      format: objectId
+      description: |-
+        Server-assigned subdocument ID, present on every stored entry.
+        Include it on updates to preserve entry identity.
+      examples: ["6a2a623c715132b80ae5d066"]
+    path:
+      type: string
+      description: Dot-notation path of the field on the target resource.
+      examples: ["type", "ftp.type", "file.type", "as2.partnerId"]
+    values:
+      type: array
+      description: Value(s) to assign. Typically a single-element array.
+      items:
+        oneOf:
+          - title: String
+            type: string
+          - title: Number
+            type: number
+          - title: Boolean
+            type: boolean
+          - title: Object
+            type: object
+    _conditionIds:
+      type: array
+      description: Condition IDs that must be satisfied for this field to apply. If absent, always applies.
+      items:
+        type: string
+        format: objectId
+        examples: ["5f8d43a1b9e5a80011a35f2c"]
+
+FieldUserMustSet:
+  type: object
+  description: A field the user must provide during onboarding.
+  x-celigo-ai-guidance:
+    - A field that the user must provide a value for during trading partner onboarding.
+  properties:
+    _id:
+      type: string
+      format: objectId
+      description: |-
+        Server-assigned subdocument ID, present on every stored entry.
+        Include it on updates to preserve entry identity.
+      examples: ["6a2a623c715132b80ae5d06c"]
+    path:
+      type: string
+      description: |-
+        Dot-notation path of the field on the target resource, or the field's form label: EDI
+        profile sections commonly name fields by label (for example the trading partner
+        interchange ID), so map a label to its profile field before checking it.
+      x-celigo-ai-guidance:
+        - |-
+          The field the user must set, as a dot-notation path on the target resource or as the
+          field's form label (common in EDI profile sections). Map a label to its profile field,
+          such as the trading partner interchange ID to `tpInterchangeId`, before checking it.
+      examples: ["name", "ftp.username", "ftp.hostURI", "ftp.directoryPath"]
+    values:
+      type: array
+      description: Optional suggested or constrained values.
+      items:
+        oneOf:
+          - title: String
+            type: string
+          - title: Number
+            type: number
+          - title: Boolean
+            type: boolean
+          - title: Object
+            type: object
+    _conditionIds:
+      type: array
+      description: Condition IDs that must be satisfied for this field to apply.
+      items:
+        type: string
+        format: objectId
+        examples: ["5f8d43a1b9e5a80011a35f2c"]
+    helpURL:
+      type: string
+      format: uri
+      description: URL to documentation for this field.
+      examples: ["https://docs.celigo.com/hc/en-us"]
+    labelOverride:
+      type: string
+      description: Custom label to display in the UI instead of the default.
+      x-celigo-ai-guidance:
+        - Custom label to display for this field in the UI instead of the default
+      examples: ["SFTP Host"]
+
+ConnectionFieldUserMustSet:
+  type: object
+  description: |-
+    Connection field the user must provide during onboarding. Adds
+    `inputType` to control the UI input widget.
+  x-celigo-ai-guidance:
+    - |-
+      A field that the user must provide a value for on the connection during trading
+      partner onboarding.
+      Extends the base field with an `inputType` property to control the UI input widget.
+  properties:
+    _id:
+      type: string
+      format: objectId
+      description: |-
+        Server-assigned subdocument ID, present on every stored entry.
+        Include it on updates to preserve entry identity.
+      examples: ["6a2a623c715132b80ae5d06c"]
+    inputType:
+      type: string
+      enum: ["number", "password", "uri"]
+      x-enumDescriptions:
+        number: Renders a numeric input field.
+        password: Renders a masked password input field.
+        uri: Renders a URI input field with URL validation.
+      description: UI input widget type for this field.
+      x-celigo-ai-guidance:
+        - |-
+          The type of input widget to render in the UI for this field.
+          Only applicable to connection fields.
+      examples: ["password", "uri"]
+    path:
+      type: string
+      description: Dot-notation path of the field on the connection.
+      x-celigo-ai-guidance:
+        - Dot-notation path of the field on the connection that the user must set.
+      examples: ["name", "ftp.username", "ftp.hostURI", "ftp.password"]
+    values:
+      type: array
+      description: Optional suggested or constrained values.
+      items:
+        oneOf:
+          - title: String
+            type: string
+          - title: Number
+            type: number
+          - title: Boolean
+            type: boolean
+          - title: Object
+            type: object
+    _conditionIds:
+      type: array
+      description: Condition IDs that must be satisfied for this field to apply.
+      items:
+        type: string
+        format: objectId
+        examples: ["5f8d43a1b9e5a80011a35f2c"]
+    helpURL:
+      type: string
+      format: uri
+      description: URL to documentation for this field.
+      examples: ["https://docs.celigo.com/hc/en-us"]
+    labelOverride:
+      type: string
+      description: Custom label to display in the UI.
+      x-celigo-ai-guidance:
+        - Custom label to display for this field in the UI
+      examples: ["SFTP Password"]

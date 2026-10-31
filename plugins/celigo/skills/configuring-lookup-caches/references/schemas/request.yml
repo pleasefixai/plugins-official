@@ -1,0 +1,5 @@
+Request:
+  type: object
+  description: Writable fields for creating or updating a lookup cache.
+  allOf:
+    - $ref: "./base.yml#/LookupCacheBase"

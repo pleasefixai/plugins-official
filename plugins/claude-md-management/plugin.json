@@ -1,0 +1,24 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "claude-md-management",
+  "version": "1.0.0",
+  "description": "Guides to audit the project memory files of a repository and keep them current.",
+  "author": {
+    "name": "Anthropic"
+  },
+  "homepage": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/claude-md-management",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "claude-md-management",
+        "commit": "a7ba5b93db0c7c8d17f3f1d25853adca79598a1a",
+        "skills": {
+          "claude-md-improver": "9ee8331ef4af7313c64ac916ce5b7ce1fa12417a659542d5809729afc5a6b7ef"
+        }
+      }
+    }
+  }
+}

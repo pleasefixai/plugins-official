@@ -1,0 +1,5 @@
+{
+  "name": "amd-skills",
+  "version": "1.0.0",
+  "description": "Guides to serve, tune and profile LLMs on AMD Instinct GPUs and add local AI to apps."
+}

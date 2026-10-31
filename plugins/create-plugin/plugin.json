@@ -1,0 +1,31 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "create-plugin",
+  "version": "1.0.0",
+  "description": "Checks of manifests, skills, rules and commands in a package before you publish it.",
+  "author": {
+    "name": "Cursor"
+  },
+  "homepage": "https://github.com/cursor/plugins",
+  "license": "MIT",
+  "keywords": [
+    "create-plugin",
+    "cursor-plugin",
+    "marketplace",
+    "plugin-authoring"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "create-plugin",
+        "commit": "1ba91fc25c0977741dd0e267849e6234b037ed0a",
+        "skills": {
+          "review-plugin-submission": "ceb1b9297d51fc44b8fbd91a91bfef8f6354f6372c9cde13e9ad6a3744e443f0"
+        }
+      }
+    }
+  }
+}

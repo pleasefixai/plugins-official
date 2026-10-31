@@ -1,0 +1,57 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "dart-flutter",
+  "version": "1.0.0",
+  "description": "Guides to build, test and document Dart and Flutter apps for mobile, web and desktop.",
+  "author": {
+    "name": "Flutter"
+  },
+  "homepage": "https://flutter.dev/",
+  "license": "BSD-3-Clause",
+  "keywords": [
+    "flutter",
+    "dart",
+    "mobile",
+    "codex",
+    "skills",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "dart-flutter",
+        "commit": "90fa51dc9d1bd6694cee226397e08ec8193e9e69",
+        "skills": {
+          "dart-add-unit-test": "c6ecc0c8aac99f5dd8f57369b6b3440c4a36724eee4e8f367cd45209eacf22c2",
+          "dart-build-cli-app": "97d1fa15c0d843492ec6148afd2fa7221d172ab212090d69972cfc78a1474a79",
+          "dart-collect-coverage": "6262627137da3ff2234848d91626d8e16e69bf47593310ab9bc7d7ba73cd5643",
+          "dart-fix-runtime-errors": "adee03688ff8b29d91bc6abbadc9be9e77a1b2cf5d5290a5ea8a93fa8f64d7ca",
+          "dart-generate-test-mocks": "6b3394142d344c3c084a5f97f0f6c5a90242fb9ca7542bd27970851a29a40c4c",
+          "dart-migrate-to-checks-package": "82ba52e813cb0cf65c323601711a352b735919294bd5cbee449a310a853f8183",
+          "dart-resolve-package-conflicts": "7baaeec51b9f1ff8bde9f26226253189423638aa4461548bd797d9df8f19384c",
+          "dart-run-static-analysis": "e9497569b72175a476a34eab36bf48cc107a691302d087ddad1293bc9b077084",
+          "dart-setup-ffi-assets": "0a0fb654d14ca6bda61a63d5ed16c67490fc4c318d813597d903349dc83e0925",
+          "dart-use-doc-examples": "89078b365d4599c1572de23dd89ee174183d5fdb0668753bb8398d713990bea2",
+          "dart-use-ffigen": "63c1e599798067f08868cddaa0be041689b82d8277363e7e6f31ff95e7ad270d",
+          "dart-use-path-package": "d42e33073574c3df2b84bfdede43cfaf1d38ea45fd6b59597bd99b78604c663a",
+          "dart-use-pattern-matching": "ddfe45dde9347188dd76482bb11327341c3446d34297060505ef3314dd623db6",
+          "dart-use-primary-constructors": "a9f4a21abc980e764346434d27161b640678e87f20316529780f22a61b3b3fbe",
+          "dart-write-documentation": "bf31d2138aedaf540c6fd6294ff18860affe3387365b18a139530ed07b3f0ecb",
+          "flutter-add-integration-test": "ceebe4eda8efb029ee8bf043a98723b25734cd45bdd5a44c4f34f05b46b7d66a",
+          "flutter-add-widget-preview": "3f57d0e498ef054ac25b5af2b389c7e16d6d6acd63f840bc1e9180d09f2738d5",
+          "flutter-add-widget-test": "954022776634b3cb809c352c1cddb22e17baa84ffe296240a0a234c1fef61dac",
+          "flutter-apply-architecture-best-practices": "b6d8d86d8f8498ee6693cd96bd0691e124fb5b1abd6145c19a392c17f9c15ae1",
+          "flutter-build-responsive-layout": "824f83740081e0871ec5a88bbef75189a7367bd6ded8de0b495370b40216c0b4",
+          "flutter-fix-layout-issues": "7ba9b0afa9035be6113a2f7ebc8f7d7fe637c0351545e4df06ab49632573e39d",
+          "flutter-implement-json-serialization": "d2b7287d0d79f6eb20b86f86ee4287308502e551341c92b5d38255680a840909",
+          "flutter-setup-declarative-routing": "0d4067ab624b112993fb9177296ad85586239465432fc5e62f9f1cd62be3fb0f",
+          "flutter-setup-localization": "cd7aaff50fb6db365c7565aee39cd31d2586869037e0f729fa15a7a72274656f",
+          "flutter-use-http-package": "f42566c736fa5e46682cf39facde3a7e55d1f4c7bf2c1938325f908b25f1b736"
+        }
+      }
+    }
+  }
+}

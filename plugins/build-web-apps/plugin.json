@@ -1,0 +1,44 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "build-web-apps",
+  "version": "1.0.0",
+  "description": "Guides for frontend testing, React performance, Stripe payments and Supabase Postgres.",
+  "author": {
+    "name": "OpenAI"
+  },
+  "homepage": "https://github.com/openai/plugins",
+  "license": "MIT",
+  "keywords": [
+    "build-web-apps",
+    "build",
+    "product-apps",
+    "frontend",
+    "image-generation",
+    "browser-testing",
+    "frontend-debugging",
+    "stripe",
+    "supabase",
+    "shadcn",
+    "full-stack",
+    "frontend-qa"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "codex",
+        "plugin": "build-web-apps",
+        "commit": "0722921d5542fc593105c27bd52630babd8b8c2a",
+        "skills": {
+          "frontend-app-builder": "f7a6fdf7ed301c27c412a3befa8931d3fdc410e7e260e209f0989b6385724d37",
+          "frontend-testing-debugging": "f054244a17a78268b4d7410bb27dd31948fadf2fc3cbede006d0deb39516ccf0",
+          "react-best-practices": "3426ea8b831c6ec97fb5fb10c11c1575ca3f4240174c6010040f3f52b6dd4321",
+          "shadcn-best-practices": "3bdc5e44f71e744a8ef3a6b637797329f415e6a932f6f9a339775c43b5be46dc",
+          "stripe-best-practices": "05a68e3a80999c4ac404f7986ff6c9a2fd0d43f86ec8e547e29b3d5eb2f83b8e",
+          "supabase-best-practices": "3d201827cabf74784918fe2fbd4d9195346051b6ae68b5c3a61e6e1a623ba145"
+        }
+      }
+    }
+  }
+}

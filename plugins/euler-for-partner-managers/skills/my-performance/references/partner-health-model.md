@@ -1,7 +1,7 @@
 # Partner Health Model (shared)
 
 > Single source of truth for the EULER partner-health score. `generate-qbr` and
-> `portfolio-pulse` both follow this model verbatim. Update the model = edit this file.
+> `my-performance` both follow this model verbatim. Update the model = edit this file.
 > Client-side (computed by the skill from EULER MCP data); v1 constants are tunable.
 
 ## Score

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "frontend-design",
+  "version": "1.0.0",
+  "description": "Guides to give web interfaces a clear visual direction, typography and layout.",
+  "author": {
+    "name": "Anthropic"
+  },
+  "homepage": "https://github.com/anthropics/claude-plugins-public/tree/main/plugins/frontend-design",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "frontend-design",
+        "commit": "a7ba5b93db0c7c8d17f3f1d25853adca79598a1a",
+        "skills": {
+          "frontend-design": "7e9c2af00fd5b3144f49ce6fb1b16037b392ab9c2f049423b0b6114d99381ba2"
+        }
+      }
+    }
+  }
+}

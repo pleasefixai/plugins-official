@@ -1,0 +1,5 @@
+{
+  "name": "docker-skills",
+  "version": "1.0.0",
+  "description": "Guides for Dockerfiles, Compose, Docker Agent and Docker Sandboxes, with safe Docker use."
+}

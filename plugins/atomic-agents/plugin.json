@@ -1,0 +1,31 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "atomic-agents",
+  "version": "1.0.0",
+  "description": "Guides to build, test and fix Python agents with the Atomic Agents framework.",
+  "author": {
+    "name": "Kenny Vaneetvelde"
+  },
+  "homepage": "https://github.com/BrainBlend-AI/atomic-agents",
+  "license": "MIT",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "atomic-agents",
+        "commit": "33d2ec94f42d4a65393a336e35edf21ee5700303",
+        "skills": {
+          "create-atomic-agent": "765daa7e8e8b42cbb88f6ce50484d5ce92ed8da28d13a11bdac46e1c1ac78361",
+          "create-atomic-context-provider": "b7ed735276cc54cd694723b421142cbf45aaa3096c9c22595a5c4ffcfca6acca",
+          "create-atomic-schema": "1f82b97c833993684af6896bff52d02498278b78a41921c643bba9c240108074",
+          "create-atomic-tool": "a52d81477c3d054adb492129d0c6c04633d04fa4f9fc31ce858b40007bf75a14",
+          "framework": "bfc7def3dc199253cde20920c30c276c5bec3ef780690ab4524f57cfa6eb2be4",
+          "new-app": "b7fab663cf871397784586d598fa291ec7947ec1bdb6d623a5cbb9beca1b95b9",
+          "troubleshoot": "eaae80d831dd6385271c6c9e8e6ada371cf9ab0d4084bef139707a63d32f366b"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "convex",
+  "version": "1.0.0",
+  "description": "Guides to build Convex backends: schemas, functions, auth, crons, billing and tests.",
+  "author": {
+    "name": "Convex"
+  },
+  "homepage": "https://github.com/get-convex/convex-backend-skill",
+  "license": "Apache-2.0",
+  "keywords": [
+    "convex",
+    "backend",
+    "database",
+    "realtime",
+    "reactive",
+    "websocket",
+    "auth",
+    "storage",
+    "scheduler",
+    "cron",
+    "agent",
+    "rag",
+    "mobile",
+    "typescript",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "convex",
+        "commit": "6ca54f6e2e7582812187b8a5a4783fb4dff52692",
+        "skills": {
+          "add": "45347fcd5d5cb0c9e992fe08ed39cfc5178a1c06c5cabb1699b141c88e823230",
+          "agent": "56ade7cf75ea1231d6962eff5f8035c6852b3c14e3cbf9c0dfee38abf0e2542a",
+          "auth": "b961d701c0cabfd82c6f66ad5747b8507005789138b6abf0a42b2b72f3c1f5b2",
+          "billing": "0c0868f4fdee5db2f3e99979d9276d3f9842aeafda5b4fd04be69be523f1d4cc",
+          "convex-authz": "f28f9ec9942c73e41b4c21da7c9e8a2d01cd09c1e4799da846e7297b8684d764",
+          "crons": "398866d5e9a935fe4c960519c86a3610d199039dc85960d376acb74432c55abd",
+          "design": "75c26715eb876ae486c323363478ee6c7f801162ff80ce5e63a99ef92f568e32",
+          "domains": "17e5e24a9b4ba538397041f03ced49f834f77935e3327dc2b14603cd4552760d",
+          "env": "1ca7e4d47cf168745d39ace13406f392cca90b694d26354785ce8a6c2c9f8a3c",
+          "improve-convex-plugin": "77dcb0fc7d36e4692e94bcd0edd9612a03557a49c0cb1a4f1b5c52d40ba32fa7",
+          "migrate": "42683209313c3ca52cff2ac17d625f1a89acf0bd494f0a4b4a9ff683b5a5bdad",
+          "seed": "24cf9319d6bf576390e5b2f72a97739a594f76d6fe47ba88d1c6367e69808512",
+          "suggest": "32b48e14560f4770432de0d121dc12a319a2e7c9f901cba3a971d4493f4fd9e9",
+          "test": "cae909d9365e7bd26200bc050491765e0e771e8d6e211818869ea9cd081fa3be",
+          "workflow": "bedfac719ca07df312e65478a9152a16edc86ede901fb5b80bc557b8d2ad5c97"
+        }
+      }
+    }
+  }
+}
