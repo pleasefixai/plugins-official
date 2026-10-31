@@ -1,0 +1,70 @@
+LookupCache:
+  type: object
+  required:
+    - _id
+    - _userId
+    - createdAt
+    - lastModified
+  description: Lookup cache object as returned by the API.
+  allOf:
+    - $ref: './base.yml#/LookupCacheBase'
+    - $ref: '../common-schemas/resource-response.yml#/ResourceResponse'
+    - type: object
+      properties:
+        _userId:
+          type: string
+          format: objectId
+          readOnly: true
+          x-celigo-refModel: users
+          description: User who owns this lookup cache.
+          examples: ["624cb0346309dc3a543733a2"]
+        _templateId:
+          type: string
+          format: objectId
+          readOnly: true
+          x-celigo-refModel: templates
+          description: Template this lookup cache was installed from, when it originated from a template.
+          examples: ["6a27a36f9cea1a85192e72cd"]
+        _sourceId:
+          type: string
+          format: objectId
+          readOnly: true
+          description: Origin resource ID when this cache was created by cloning or installing a template.
+          examples: ["5f8d43a1b9e5a80011a35f2c"]
+        size:
+          type: integer
+          minimum: 0
+          readOnly: true
+          description: Current size of the cached data in bytes. Maximum 50 MB per cache; 1 GB aggregate per environment.
+          examples: [0, 1887, 5242880]
+        sizeInMB:
+          type: string
+          readOnly: true
+          description: |-
+            Human-readable size rounded up to the nearest 5 MB increment.
+            `"0 MB"` for empty caches, `"<5 MB"` through `"<50 MB"` for
+            non-empty caches, `"50 MB"` at the per-cache cap.
+          examples: ["0 MB", "<5 MB", "<25 MB", "50 MB"]
+          x-celigo-ai-guidance:
+            - |-
+              Human-readable representation of the cache size, rounded up to
+              the nearest 5 MB increment. Returns "0 MB" for empty caches,
+              "<N MB" for caches under 50 MB, and "50 MB" for caches at or
+              over the limit.
+        draft:
+          type: boolean
+          readOnly: true
+          description: When true, this cache was created as a draft by the AI-assisted builder and has not yet been confirmed.
+          examples: [true]
+        draftExpiresAt:
+          type: string
+          format: date-time
+          readOnly: true
+          description: When the draft cache expires and will be automatically deleted. Only present when `draft` is `true`.
+          examples: ["2026-05-08T17:29:30.726Z"]
+        sandbox:
+          type: boolean
+          readOnly: true
+          deprecated: true
+          description: Legacy sandbox flag. No longer returned by the API.
+          examples: [false]

@@ -1,0 +1,5 @@
+{
+  "name": "azure-sql-developer",
+  "version": "1.0.0",
+  "description": "Guides to build and test apps on Azure SQL Database in a local container, then in Azure."
+}

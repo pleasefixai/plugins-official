@@ -1,0 +1,34 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "browse",
+  "version": "1.0.0",
+  "description": "Browser automation with Browserbase: open, read, screenshot and use real web pages.",
+  "author": {
+    "name": "Browserbase"
+  },
+  "homepage": "https://www.browserbase.com/",
+  "license": "MIT",
+  "keywords": [
+    "browser",
+    "automation",
+    "web-scraping",
+    "browserbase",
+    "stagehand"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "browse",
+        "commit": "059df09affb2db9d13276758beef731c4400f04e",
+        "archive": "https://github.com/browserbase/browse-plugin/releases/download/v0.3.0/release.tar.gz",
+        "sha256": "a2e1da309f4d0cf8b1838bf468a270ab4d68e6921b2ca8f933ae7106143b0b9f",
+        "skills": {
+          "browse": "13d536397c22aed0eb14ca787123c044b1dfde590fdc97e17239a729df26572c"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "devtools-for-agents",
+  "version": "1.0.0",
+  "description": "Guides to debug web page accessibility, speed and memory leaks with Chrome DevTools.",
+  "author": {
+    "name": "Google Chrome"
+  },
+  "homepage": "https://developer.chrome.com/docs/modern-web-guidance",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "devtools-for-agents",
+        "commit": "702d3734f276a18efd67561ae00b88ce954cc515",
+        "skills": {
+          "a11y-debugging": "a96f496d3153c4dc0e444e4f93ef110f839ea430f4ef7ab469862acb64e792e1",
+          "chrome-devtools": "88f94e25e0182222bd39c2ac531742c485af90e86b6579c6ac323188e30e0546",
+          "chrome-devtools-cli": "a25cc1795eb5d3afc93328bd46ef04b38dd43e93e353f36c5748160d7aee7914",
+          "debug-optimize-lcp": "5be20b4055042c161d815d6b31a4819408c7ce8c934724807ea26d0b65ef5e69",
+          "memory-leak-debugging": "8c7957e2063aaa5b56bb4d287698af79e65c2c7b1039531d7595328e259ca822",
+          "troubleshooting": "c184a6242bba2427c17ac1d9f23aa76c99f408788894250ad8cf40a33898a010"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,79 @@
+Request:
+  type: object
+  description: |-
+    Fields that can be sent when creating or updating an import. Set the adaptor-specific
+    configuration object matching `adaptorType` (e.g. `netsuite_da` for `NetSuiteDistributedImport`).
+    `_connectionId` is required except for the connection-less flavors (`ToolImport`,
+    `AiAgentImport`, `GuardrailImport`, `TopicImport`): a `ToolImport` binds connections through
+    the referenced tool's `overrides`, AI agent / guardrail imports only use a connection for
+    BYOK, and an Event Streams publisher (`TopicImport`) is delivered by the platform itself.
+  required:
+    - name
+  allOf:
+    - $ref: './base.yml#/ImportBase'
+  # _connectionId is waived for the connection-less flavors, recognized either by an explicit
+  # adaptorType or by the presence of the flavor's config subdoc (the server infers the
+  # adaptorType from that subdoc when it is omitted). Every other import still requires it.
+  if:
+    anyOf:
+      - required: [adaptorType]
+        properties:
+          adaptorType:
+            enum: [ToolImport, AiAgentImport, GuardrailImport, TopicImport]
+      - required: [tool]
+      - required: [aiAgent]
+      - required: [guardrail]
+      - required: [topic]
+  then:
+    # Event Streams publisher: the API saves a TopicImport with an empty `topic` (batchSize
+    # default only); the topic binding is the form's rule.
+    if: { properties: { adaptorType: { const: TopicImport } }, required: [adaptorType] }
+    then:
+      x-celigo-ui-override: >-
+        Required by the Event Streams publisher form (fieldDefinitions/resources/imports/import.js:
+        'topic._topicId' is required:true). Encoded to mirror the form so builders produce
+        publishers that are bound to a topic.
+      required: [topic]
+      properties:
+        topic:
+          required: [_topicId]
+  else:
+    required: [_connectionId]
+    # NetSuite REST APIs reuse the `http` object on a netsuite connection; `nsDomainType` picks
+    # the host and is 422-required ("Path `nsDomainType` is required.").
+    if: { properties: { adaptorType: { const: NetSuiteHTTPImport } }, required: [adaptorType] }
+    then: { required: [http, nsDomainType] }
+    else:
+      # Cloud file providers add a location rule keyed on `assistant` (the import-level field
+      # the provider forms set). Form-derived: the API saves either shape without a directory.
+      if: { properties: { assistant: { const: azuredatalakestoragegen2 } }, required: [assistant] }
+      then:
+        x-celigo-ui-override: >-
+          Required by the Azure Data Lake Storage Gen2 import form
+          (fieldDefinitions/resources/imports/azuredatalakestoragegen2.js: container
+          'file.directory.storageRootId_adls' is required:true and preSave persists it as
+          file.directory.name; the full file path is required:true and preSave splits it into
+          http.relativeURI (directory prefix) and file.fileName (basename)). Encoded to mirror
+          the form so builders produce connectable configurations.
+        required: [file]
+        properties:
+          file:
+            required: [directory, fileName]
+            properties:
+              directory:
+                required: [name]
+      else:
+        if: { properties: { assistant: { const: googlecloudstorage } }, required: [assistant] }
+        then:
+          x-celigo-ui-override: >-
+            Required by the Google Cloud Storage import form
+            (fieldDefinitions/resources/imports/googlecloudstorage.js: bucket
+            'file.directory.storageRootId_gcs' is required:true). Encoded to mirror the form so
+            builders produce connectable configurations.
+          required: [file]
+          properties:
+            file:
+              required: [directory]
+              properties:
+                directory:
+                  required: [storageRootId]

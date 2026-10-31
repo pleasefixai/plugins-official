@@ -1,0 +1,148 @@
+JWT:
+  type: object
+  description: |-
+    JWT Bearer authentication configuration. Used when auth.type is "jwtbearer" on HTTP
+    connections. The connection builds a JWT from payload and headers, signs it using
+    signatureMethod, and sends it as the bearer token. HMAC methods sign with secret;
+    RSA/ECDSA/PSS methods sign with privateKey.
+  properties:
+    signatureMethod:
+      type: string
+      enum:
+        - hmac-sha256
+        - hmac-sha384
+        - hmac-sha512
+        - rsa-sha256
+        - rsa-sha384
+        - rsa-sha512
+        - es256
+        - es384
+        - es512
+        - ps256
+        - ps384
+        - ps512
+      x-enumDescriptions:
+        hmac-sha256: HMAC with SHA-256 (symmetric); signs with secret.
+        hmac-sha384: HMAC with SHA-384 (symmetric); signs with secret.
+        hmac-sha512: HMAC with SHA-512 (symmetric); signs with secret.
+        rsa-sha256: RSA with SHA-256 (asymmetric); signs with privateKey.
+        rsa-sha384: RSA with SHA-384 (asymmetric); signs with privateKey.
+        rsa-sha512: RSA with SHA-512 (asymmetric); signs with privateKey.
+        es256: ECDSA with P-256 and SHA-256 (asymmetric); signs with privateKey.
+        es384: ECDSA with P-384 and SHA-384 (asymmetric); signs with privateKey.
+        es512: ECDSA with P-521 and SHA-512 (asymmetric); signs with privateKey.
+        ps256: RSASSA-PSS with SHA-256 (asymmetric); signs with privateKey.
+        ps384: RSASSA-PSS with SHA-384 (asymmetric); signs with privateKey.
+        ps512: RSASSA-PSS with SHA-512 (asymmetric); signs with privateKey.
+      description: |-
+        JWT signing method. Required when auth.type is "jwtbearer". HMAC methods require
+        the secret field; RSA/ECDSA/PSS methods require the privateKey field.
+      x-lowercase: true
+      examples:
+        - rsa-sha256
+    payload:
+      type: object
+      additionalProperties: true
+      x-celigo-agent:
+        - handlebars
+      description: |-
+        JWT claims payload (the token body). Required and must be non-empty when auth.type
+        is "jwtbearer". Keys are JWT claim names (e.g. iss, sub, aud, exp).
+      examples:
+        - {iss: my-service-account, sub: "{sub}", aud: https://api.example.com, exp: 3600}
+    headers:
+      type: object
+      additionalProperties: true
+      x-celigo-agent:
+        - handlebars
+      description: JWT header parameters merged into the generated token header (e.g. kid).
+      examples:
+        - {kid: my-key-id}
+    secret:
+      type: string
+      writeOnly: true
+      description: |-
+        Shared secret for HMAC signature methods (hmac-sha256/hmac-sha512), encrypted at rest.
+        Required when signatureMethod is an HMAC method.
+      examples:
+        - hmac-shared-s3cr3t-EXAMPLE
+    isSecretBase64Encoded:
+      type: boolean
+      description: When true, the secret is base64-decoded before being used to sign.
+    privateKey:
+      type: string
+      writeOnly: true
+      description: |-
+        PEM-encoded private key for RSA/ECDSA/PSS signature methods, encrypted at rest.
+        Required for any rsa-*, es*, or ps* signature method.
+      x-celigo-ai-guidance:
+        - |-
+          Private key in PEM format for RSA or ECDSA signing (encrypted at rest).
+          REQUIRED when using an RSA (RS*) or ECDSA (ES*) algorithm.
+          Not used with HMAC algorithms.
+    token:
+      type: string
+      writeOnly: true
+      description: |-
+        Pre-generated static JWT to use instead of building one from payload (encrypted at rest).
+        Use only when the API issues a long-lived JWT that does not need regeneration.
+      examples:
+        - eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.EXAMPLEpayload.EXAMPLEsignature
+  # hmac-* signature methods require secret; rsa-*/es*/ps* require privateKey
+  # (422 missing_required_field on POST). payload is always required
+  # (empty {} is rejected) — noted in prose rather than `required` so vestigial jwt stubs
+  # on non-jwtbearer connections still validate as responses.
+  # Conditional requireds by signatureMethod — nested if/else-if (no allOf), stack-style.
+      x-celigo-ai-guidance:
+        - |-
+          Pre-generated JWT token value (encrypted at rest).
+          When set, this static token is used instead of generating one dynamically.
+          Use only when the API provides a long-lived JWT that does not need to be regenerated.
+  if:
+    properties:
+      signatureMethod:
+        enum:
+          - hmac-sha256
+          - hmac-sha384
+          - hmac-sha512
+    required:
+      - signatureMethod
+  then:
+    required:
+      - secret
+  else:
+    if:
+      properties:
+        signatureMethod:
+          enum:
+            - rsa-sha256
+            - rsa-sha384
+            - rsa-sha512
+            - es256
+            - es384
+            - es512
+            - ps256
+            - ps384
+            - ps512
+      required:
+        - signatureMethod
+    then:
+      required:
+        - privateKey
+  x-celigo-ai-guidance:
+    - |-
+      Used when auth.type is "jwtbearer" on HTTP connections. The system generates
+      a signed JWT and uses it as a bearer token for API authentication.
+
+      ## SIGNING METHODS
+      - HMAC (HS256/HS384/HS512): Symmetric signing using a shared secret.
+        Requires the secret field.
+      - RSA (RS256/RS384/RS512): Asymmetric signing using an RSA private key.
+        Requires the privateKey field.
+      - ECDSA (ES256/ES384/ES512): Asymmetric signing using an elliptic curve private key.
+        Requires the privateKey field.
+
+      ## REQUIRED FIELDS
+      - algorithm (signing algorithm)
+      - secret (for HMAC algorithms) OR privateKey (for RSA/ECDSA algorithms)
+      - At least one claim (issuer, subject, audience, or customClaims)

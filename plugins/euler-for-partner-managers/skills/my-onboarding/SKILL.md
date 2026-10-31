@@ -1,6 +1,6 @@
 ---
 name: my-onboarding
-description: Generate a partner's own onboarding and certification progress report — what's done, what's left, and what's overdue across the flows assigned to them by one customer, using EULER MCP tools. Use this skill whenever a partner wants their personal onboarding status — phrases like "where am I in my onboarding", "my certification progress", "what onboarding steps do I have left", "am I done with onboarding", "show my training progress". Partner-facing (a partner viewing their OWN progress), NOT a customer admin reviewing partners — that distinction selects this skill over portfolio-pulse / generate-qbr.
+description: Generate a partner's own onboarding and certification progress report — what's done, what's left, and what's overdue across the flows assigned to them by one customer, using EULER MCP tools. Use this skill whenever a partner wants their personal onboarding status — phrases like "where am I in my onboarding", "my certification progress", "what onboarding steps do I have left", "am I done with onboarding", "show my training progress". Partner-facing (a partner viewing their OWN progress), NOT a customer admin reviewing partners — that distinction selects this skill over generate-qbr.
 ---
 
 # my-onboarding — your onboarding & certification progress
@@ -17,12 +17,11 @@ progress with one customer — what's done, what's left, what's overdue:
 
 DO NOT invoke for:
 
-- **A customer admin reviewing partners** — portfolio-wide is `portfolio-pulse`; a
-  single-partner deep review is `generate-qbr`. Those are customer-scope and look
-  *at* partners; this skill is the partner looking at *themselves*.
+- **A customer admin reviewing partners** — a single-partner deep review is
+  `generate-qbr`. That is customer-scope and looks *at* partners; this skill is the
+  partner looking at *themselves*.
 - **A customer admin asking "who's stuck in onboarding?"** — not feasible today (the
-  customer surface exposes no per-partner progress). Route to `portfolio-pulse` for the
-  roster-level read.
+  customer surface exposes no per-partner progress). Say so.
 
 The distinction that selects this skill: **the connected account is the partner, and
 the subject is that same partner's own flows.** Per-flow progress (`percent_complete`,

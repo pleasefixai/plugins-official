@@ -1,0 +1,80 @@
+Export:
+  type: object
+  required:
+    - _id
+    - name
+    - adaptorType
+    - createdAt
+    - lastModified
+  description: Export object as returned by the API.
+  allOf:
+    - $ref: './base.yml#/ExportBase'
+    - $ref: '../common-schemas/resource-response.yml#/ResourceResponse'
+    - $ref: '../common-schemas/ia-resource-response.yml#/IAResourceResponse'
+    - type: object
+      properties:
+        aiDescription:
+          $ref: '../common-schemas/ai-description.yml#/AIDescription'
+        apim:
+          $ref: '../common-schemas/apim.yml#/APIM'
+        apiIdentifier:
+          type: string
+          readOnly: true
+          description: API identifier assigned to this export.
+        asynchronous:
+          type: boolean
+          readOnly: true
+          description: Server-managed execution-mode flag set on creation.
+        __linkedLookupCacheIds:
+          type: array
+          readOnly: true
+          description: Lookup caches linked to this export, managed by the platform.
+          items:
+            type: string
+            format: objectId
+        sandbox:
+          type: boolean
+          deprecated: true
+          readOnly: true
+          description: When true, this export belongs to a sandbox account.
+        rest:
+          type: object
+          deprecated: true
+          readOnly: true
+          additionalProperties: true
+          description: |-
+            Legacy REST adaptor configuration, still returned on exports created before
+            the REST-to-HTTP migration (`adaptorType: RESTExport`). Mirrors the shape of
+            `http` (method, relativeURI, paging and response-path settings). On write the
+            platform maintains the equivalent `http` configuration — configure new
+            exports through `http` instead.
+        _sourceId:
+          type: string
+          format: objectId
+          readOnly: true
+          description: Reference to the source resource this export was created from.
+        _templateId:
+          type: string
+          format: objectId
+          readOnly: true
+          x-celigo-refModel: templates
+          description: Template this export was created from.
+        draft:
+          type: boolean
+          readOnly: true
+          description: When true, this export is in draft state and has not been confirmed.
+        draftExpiresAt:
+          type: string
+          format: date-time
+          readOnly: true
+          description: Timestamp when the draft version of this export expires.
+        debugUntil:
+          type: string
+          format: date-time
+          readOnly: true
+          description: |-
+            Turns on step debug capture until this time: while it lies in the future, every
+            request this export sends is recorded in the step's debug log
+            (`GET /v1/{flows|apis|tools}/{containerId}/{_id}/requests`). Read-only on PUT —
+            written only by `PATCH /v1/exports/{_id}` on `/debugUntil`, at most 3600 seconds
+            ahead (`422` `update_not_allowed` beyond that); `remove` stops capture.

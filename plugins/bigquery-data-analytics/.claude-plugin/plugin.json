@@ -1,0 +1,5 @@
+{
+  "name": "bigquery-data-analytics",
+  "version": "1.0.0",
+  "description": "Guides for BigQuery AI and machine learning queries in standard SQL."
+}

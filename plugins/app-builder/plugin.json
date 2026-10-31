@@ -1,0 +1,46 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "app-builder",
+  "version": "1.0.0",
+  "description": "Guides to build, test and deploy Adobe App Builder projects, actions and UIs.",
+  "author": {
+    "name": "Adobe Developer App Builder"
+  },
+  "homepage": "https://developer.adobe.com/app-builder/",
+  "license": "Apache-2.0",
+  "keywords": [
+    "adobe",
+    "app-builder",
+    "aio",
+    "adobe-io-runtime",
+    "react-spectrum",
+    "playwright",
+    "jest",
+    "github-actions",
+    "aem",
+    "experience-cloud",
+    "development",
+    "customization",
+    "testing",
+    "deployment"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "app-builder",
+        "commit": "253f56901e058800ccb97ffd5bf1e3329d5f2e00",
+        "skills": {
+          "appbuilder-action-scaffolder": "3db0eeb858382b5bfd37dea54ae22d2068ffacd19fb0e49c3d0861f01a04910b",
+          "appbuilder-cicd-pipeline": "d030dc5db2714e376432a462ead8adaa8eaa24264f34cfb9a176d629624f1547",
+          "appbuilder-e2e-testing": "731d2749568891d1442627d8549286e65fd3f9545ec109c6b7682a241134027e",
+          "appbuilder-project-init": "5308abc8cefc213be4fcd28c5cce5406ea8eeb4fc0e21a24322f273ed573dd6f",
+          "appbuilder-testing": "1e069c6b56427b24e5d6c5441dc0cf38dd2b1ccf40284d6f0f66912147a2647f",
+          "appbuilder-ui-scaffolder": "e4a27f6f0b262bef1a4d0e15e2b3b7349d9fcd7094ce7330e2eb8d2859a091d1"
+        }
+      }
+    }
+  }
+}

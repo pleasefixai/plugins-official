@@ -1,0 +1,24 @@
+Shipworks:
+  type: object
+  description: ShipWorks shipping-management credentials. Legacy feature.
+  properties:
+    username:
+      type: string
+      description: ShipWorks username.
+      examples: ["shipworks_user"]
+    password:
+      type: string
+      description: ShipWorks password. Masked as `"******"` in GET responses.
+      examples: ["******"]
+      x-celigo-ai-guidance:
+        - |-
+          When retrieving, this will be masked as "******" if a password is set.
+          When creating/updating, provide the actual password value.
+  required:
+    - username
+    - password
+
+  x-celigo-ai-guidance:
+    - |-
+      ShipWorks is a shipping management platform. This configuration stores
+      authentication credentials for ShipWorks-specific API integrations.

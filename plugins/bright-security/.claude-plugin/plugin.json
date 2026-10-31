@@ -1,0 +1,5 @@
+{
+  "name": "bright-security",
+  "version": "1.0.0",
+  "description": "Bright DAST scans of your app's endpoints, with each fix checked by a new scan."
+}

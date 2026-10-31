@@ -1,0 +1,67 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "dynatrace",
+  "version": "1.0.0",
+  "description": "Guides for DQL queries, dashboards, alerts, logs, traces and security data in Dynatrace.",
+  "author": {
+    "name": "Dynatrace"
+  },
+  "homepage": "https://www.dynatrace.com/hub/detail/claude-code-cli/",
+  "license": "Apache-2.0",
+  "keywords": [
+    "dynatrace",
+    "observability",
+    "monitoring",
+    "dql",
+    "apm",
+    "logs",
+    "tracing"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "dynatrace",
+        "commit": "4f9aa71f9802aa6db0a4069ae5619eb3392ff411",
+        "skills": {
+          "dt-alerting": "8c3367f384d6847420f5b2c4fb60499702e30a8cec4c481fd6fcc49ca8be9722",
+          "dt-app-dashboards": "9e71e94ea273a35aab2c866ac8d2b00e189d8647fccb21d50d89c1e0cb8ff0f3",
+          "dt-app-notebooks": "cf339281ebe4de0b52c51064851aa6c3f4e68c620c0a58536a1de9b27b1fb87f",
+          "dt-dql-essentials": "35c01cff61868030538244af28af20ea50de163d75d86ada55389e9e4d8e8288",
+          "dt-js-runtime": "62c3fe33bab7c637bcc2d035a1a27a9978f796a9f6df76404ed921194c5a592f",
+          "dt-migration": "8a2a09b95b5a1981d6d9418dc65a15d865cc7613613723bf32bc9ce412c71637",
+          "dt-obs-analytics": "ec19c9cf28f99b1f38826df376db3f1be9b7cc3d8d8c314dbfd2388b173eb876",
+          "dt-obs-aws": "a0abe1957d4b0ce51de1893a6762e55f03debe64d6378ce43bbe05c4b28222d3",
+          "dt-obs-azure": "f4fe676773b95652f43a44be3660d07b267b9e6da31f640f79240a5ae4b21329",
+          "dt-obs-compliance-assistant": "eff6256be7c54a200dcaa81d4db725e8904aeacd7c325c17726709c1129c0fa1",
+          "dt-obs-ext-monitors": "6f04e71d6aa94d4a9c5a3092e0a5d01e2ca29c9b4a9a80c682c66a6ee263a0ff",
+          "dt-obs-frontends": "562f9d18384a50f72d1e5d4a34c96d779160f6b642be6eced76d71d0449ddc15",
+          "dt-obs-gcp": "2b19c154db237eba292ca7ba7b6bf200c3b6bb502d1268bc65a65fe28e3569b1",
+          "dt-obs-genai": "6d347e53f04f8783ec2a1b6583c3f7cd697904c84e5a621333a97cae3a9a16a5",
+          "dt-obs-hosts": "bc78f8e2db53543efee09a26ddb3ea9a07e545b74d2e4d7d3deac863d249fd8a",
+          "dt-obs-kubernetes": "786eecb2d1f0e32cef7d3b34492bef010df85b7eee847e5fb6715f5cb031b5d1",
+          "dt-obs-log-semantic-mapping": "79ccb7af1eb43e2a04e72971eb4d9d96216be98f1ce17f0ab3fc28d80195a83e",
+          "dt-obs-logs": "8ef62cf87c802c071102274cf10835c066b53513755ae0b408f274e860317949",
+          "dt-obs-network-devices": "c4adebead36184832711cdf1e1784d3ad25308de88e7851041440cf3b7dc2a02",
+          "dt-obs-network-flows": "7de21eddfabf267d54185e21fd8d50e34fe4b475bb94c9806b4113d7ba8b0595",
+          "dt-obs-predictive-analytics": "3655d6f6808ee8587ebec7b3d9274afb9dcf0dd6251b83ea774a444b6db4d68a",
+          "dt-obs-problems": "866354ee25b1ab9bf998dcc9c988ebdfd960f10c028a1eb3be0fb4045c2c205e",
+          "dt-obs-services": "cf005fbb2425b23d3a0f0c91373d8a03214a481c176fc1f4a533a772691ac05f",
+          "dt-obs-tracing": "e67effbfd5c107e4c23ff9e03f1b45b038e068508c1c6bc9d9906c866d50b4ed",
+          "dt-platform-costs": "f9ba7104c3c7e278342d9020300201d311664c7de06f5e4ac7b34d987f349437",
+          "dt-sec-contextualization": "f574ad13e597405be0b481784b32b5c55856293843ed8c90e925985868363d1c",
+          "dt-sec-insights": "73fd4cad330251e1ead965dbc6ac2da4006eb8c4c43b1b7125053c4cf2fe2639",
+          "dt-sec-ioc-hunting": "088c679efd5d8a91fa0a7c81ae751b5ea0da2032883d3e05708bb1371ea0f5f0",
+          "dt-sec-semantic-mapping": "acc7294fe42a035431f7082a67031b1f0d75ba9096be1b5948e02f0439068d6d",
+          "dt-setup-android": "414991c6303cd312981ecb23c7c57066e4c4962d1ef2505a956f43950e300b3b",
+          "dt-setup-flutter": "f223547b489a443f5162da8d069aa508ede47e3bff4ee386f9cb30e2687d5204",
+          "dt-setup-ios": "578d58b82a2debeefb33f31a9aa142e120cf923621dc8ba85c4c4236f5eb35fc",
+          "dt-setup-oneagent": "27c1d68098fbf2852f381d1060fd8e7e9a1f03bd67861e23d62b889ee4b1e237",
+          "dt-setup-react-native": "b5b33ad4768f3a6cbe1ba14e3a5d64a08e66add2a52067b158f72592d6bad108"
+        }
+      }
+    }
+  }
+}

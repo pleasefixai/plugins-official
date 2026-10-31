@@ -1,0 +1,5 @@
+{
+  "name": "cli-for-agent",
+  "version": "1.0.0",
+  "description": "Patterns to design command-line tools that agents run reliably: flags, help, errors."
+}

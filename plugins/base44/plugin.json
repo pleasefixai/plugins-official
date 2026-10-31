@@ -1,0 +1,38 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "base44",
+  "version": "1.0.0",
+  "description": "Guides to build, deploy and troubleshoot Base44 full-stack apps with the Base44 SDK.",
+  "author": {
+    "name": "base44"
+  },
+  "homepage": "https://docs.base44.com",
+  "license": "MIT",
+  "keywords": [
+    "base44",
+    "full-stack",
+    "sdk",
+    "cli",
+    "deployment",
+    "entities",
+    "backend-functions",
+    "javascript",
+    "typescript"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "base44",
+        "commit": "8548a482f606751c55dcdb1365398fbec2fcb64d",
+        "skills": {
+          "base44-cli": "09dc31ff8aad866db1ec916d047e528e0a8c36e6077a526ce2d9cd4e34dd4270",
+          "base44-sdk": "429251ea6081f5dcbf48a9696521b9e6d53eae234c6a1a2f78acf6ac124876f3",
+          "base44-troubleshooter": "aab4b70627c5e54a3fc4efcc9892d2c95644e03f6236fabbe5326097b60a5592"
+        }
+      }
+    }
+  }
+}

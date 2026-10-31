@@ -1,0 +1,5 @@
+{
+  "name": "aws-transform",
+  "version": "1.0.0",
+  "description": "Guides to analyze, upgrade and migrate codebases and workloads to AWS with AWS Transform."
+}

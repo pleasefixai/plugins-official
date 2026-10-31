@@ -1,0 +1,34 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "cli-for-agent",
+  "version": "1.0.0",
+  "description": "Patterns to design command-line tools that agents run reliably: flags, help, errors.",
+  "author": {
+    "name": "Cursor"
+  },
+  "homepage": "https://github.com/cursor/plugins/tree/main/cli-for-agent",
+  "license": "MIT",
+  "keywords": [
+    "cli",
+    "command-line",
+    "agents",
+    "automation",
+    "terminal",
+    "flags",
+    "help"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "cli-for-agent",
+        "commit": "1ba91fc25c0977741dd0e267849e6234b037ed0a",
+        "skills": {
+          "cli-for-agents": "f841153e16518e5bc2c14f416ec0b3522e2bf97c9adbfb9b9594e8c139f4a839"
+        }
+      }
+    }
+  }
+}

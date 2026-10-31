@@ -1,0 +1,34 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "cursor-supermemory",
+  "version": "1.0.0",
+  "description": "Project memory in Supermemory: index a codebase, save facts and search past sessions.",
+  "author": {
+    "name": "Supermemory"
+  },
+  "homepage": "https://supermemory.ai",
+  "license": "MIT",
+  "keywords": [
+    "cursor",
+    "memory",
+    "supermemory",
+    "ai",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "cursor-supermemory",
+        "commit": "83c59685fc15c2940b6900e1b8500932422a4836",
+        "skills": {
+          "memory-init": "59c190c019a58cd7e28e1e6cee135b3e17414ce9c2416948e448a6e7ca2f9fdd",
+          "memory-save": "b110ec3152ab1c2ad2e4ed9f9554b0422a6750f0f1b3fcbcb1521396c768001f",
+          "memory-search": "edf05ce974eb7453d223d47d6a700a7d6888a439c02ce5a9fc30b4ef39c1e376"
+        }
+      }
+    }
+  }
+}

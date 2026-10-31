@@ -1,0 +1,37 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "browser-use",
+  "version": "1.0.0",
+  "description": "Control of your Chrome or a Browser Use Cloud browser to browse, scrape and fill forms.",
+  "author": {
+    "name": "Browser Use"
+  },
+  "homepage": "https://browser-use.com",
+  "license": "MIT",
+  "keywords": [
+    "browser",
+    "browser-use",
+    "cli",
+    "cdp",
+    "chrome",
+    "automation",
+    "scraping",
+    "screenshot",
+    "cloud-browser",
+    "web-agent"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "browser-use",
+        "commit": "4749bcbfe456e5384b98281a8a66119352197f59",
+        "skills": {
+          "browser-use": "eb3c562efd8bbc285724a2e87ad29f3e33c0e76e07cc17dd8319cb5a62b55fdc"
+        }
+      }
+    }
+  }
+}

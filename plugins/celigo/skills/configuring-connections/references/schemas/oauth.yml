@@ -1,0 +1,322 @@
+OAuth:
+  type: object
+  description: |-
+    OAuth 2.0 and OAuth 1.0a authentication configuration.
+    Used as a sub-object within HTTP and REST connection auth configurations.
+    The grantType field selects the OAuth 2.0 flow; for legacy OAuth 1.0a APIs, use the oauth1 sub-object.
+  properties:
+    type:
+      type: string
+      enum:
+        - custom
+        - assistant
+      x-enumDescriptions:
+        custom: Fully user-configured OAuth settings.
+        assistant: Pre-configured OAuth settings via an application assistant connector.
+      description: |-
+        OAuth configuration mode. Controls whether settings are user-configured or
+        pre-populated by an application assistant connector.
+      examples:
+        - custom
+    grantType:
+      type: string
+      enum:
+        - authorizecode
+        - clientcredentials
+        - password
+      x-enumDescriptions:
+        authorizecode: Authorization Code flow requiring user consent via browser redirect.
+        clientcredentials: Client Credentials flow for server-to-server authentication without user involvement.
+        password: Resource Owner Password Credentials flow exchanging username and password for tokens.
+      description: |-
+        OAuth 2.0 grant type that determines the authentication flow.
+        Use authorizecode for user-context integrations, clientcredentials for
+        server-to-server, and password only when the API does not support other flows.
+      default: authorizecode
+      x-lowercase: true
+      examples:
+        - authorizecode
+    authURI:
+      type: string
+      description: |
+        OAuth 2.0 authorization endpoint URL.
+        Required for "authorizecode" grant type. The user is redirected to this URL
+        to authorize the application.
+        Handlebars expressions are supported for tenant-specific endpoints — e.g.
+        "https://{{{connection.settings.storeName}}}.myshopify.com/admin/oauth/authorize".
+
+        Use an HTTPS URL whenever possible. HTTP is not considered a secure protocol; data sent
+        to an HTTP endpoint is not encrypted and may be intercepted or modified in transit.
+      examples:
+        - https://login.example.com/oauth2/authorize
+    tokenURI:
+      type: string
+      description: |
+        OAuth 2.0 token endpoint URL.
+        Required for "authorizecode", "clientcredentials", and "password" grant types.
+        The system exchanges credentials or authorization codes for access tokens at this URL.
+        Handlebars expressions are supported for tenant-specific endpoints.
+
+        Use an HTTPS URL whenever possible. HTTP is not considered a secure protocol; data sent
+        to an HTTP endpoint is not encrypted and may be intercepted or modified in transit.
+      examples:
+        - https://login.example.com/oauth2/token
+    skipOauthValidations:
+      type: boolean
+      description: |
+        When true, skips Celigo's built-in OAuth configuration validation.
+        Use when the API has non-standard OAuth requirements that conflict with validation rules.
+      default: false
+    scope:
+      type: array
+      items:
+        type: string
+      description: |
+        OAuth scopes to request during authorization. Controls the level of API access.
+        Scope values are API-specific (e.g., "read", "write", "admin").
+      examples:
+        - [read, write]
+    scopeDelimiter:
+      type: string
+      description: |
+        Delimiter between multiple scope values. Defaults to a space (" ") per the
+        OAuth 2.0 spec. Some APIs use commas or other delimiters.
+      default: " "
+    clientId:
+      type: string
+      description: |
+        OAuth client ID (application ID) registered with the API provider. An `http`
+        connection takes the app from a `custom_oauth2` iClient referenced by `http._iClientId`
+        (an `mcp` connection from `mcp.http._iClientId`) and doesn't store this field: a create
+        that sends `clientId` and `clientSecret` here answers 201 without either (and stores
+        `useIClientFields: true` unless `false` is sent).
+      examples:
+        - 0oa1b2c3d4EXAMPLE5
+    clientSecret:
+      type: string
+      description: |
+        OAuth client secret (encrypted at rest). Not stored on an `http` connection: the secret
+        belongs on the iClient (see `clientId`).
+      writeOnly: true
+      examples:
+        - cs_abc123EXAMPLE456secret
+    username:
+      type: string
+      description: |
+        Resource owner username. Required when grantType is "password".
+      examples:
+        - svc_account
+    password:
+      type: string
+      description: |
+        Resource owner password (encrypted at rest). Required when grantType is "password".
+      writeOnly: true
+      examples:
+        - s3cr3t-p4ssw0rd
+    clientCredentialsLocation:
+      type: string
+      enum:
+        - basicauthheader
+        - body
+      x-enumDescriptions:
+        basicauthheader: Send client credentials as an HTTP Basic Auth header (recommended).
+        body: Send client credentials as form parameters in the request body.
+      description: |-
+        Where to send client credentials in token requests. Defaults to basicauthheader
+        (HTTP Basic Auth), which is recommended by the OAuth spec. Use body when
+        the API does not support Basic Auth for client credentials.
+      default: basicauthheader
+      x-lowercase: true
+      examples:
+        - basicauthheader
+    accessTokenPath:
+      type: string
+      description: |
+        JSON path to extract the access token from the token endpoint response.
+        Defaults to "access_token" per the OAuth 2.0 spec.
+        Change only if the API returns the token at a non-standard path.
+      examples:
+        - data.access_token
+    accessTokenHeaders:
+      type: array
+      description: |
+        Additional HTTP headers to include in token endpoint requests.
+        Use for APIs that require custom headers beyond the standard OAuth parameters.
+      items:
+        type: object
+        properties:
+          name:
+            type: string
+            description: Header name to send with the token request.
+            examples:
+              - X-Tenant-ID
+          value:
+            type: string
+            description: Header value to send with the token request.
+            examples:
+              - acme-prod
+    accessTokenBody:
+      type: string
+      description: |
+        Additional body content to include in token endpoint requests.
+        Appended to the standard OAuth parameters.
+      examples:
+        - audience=https://api.example.com
+    oauth2RedirectUrl:
+      type: string
+      x-celigo-agent:
+        - handlebars
+      description: |
+        OAuth 2.0 redirect URI (callback URL) registered with the API provider.
+        Must exactly match the redirect URI configured in the OAuth application registration.
+      examples:
+        - https://integrator.io/connection/oauth2callback
+    useIClientFields:
+      type: boolean
+      description: |
+        When true, uses iClient-managed OAuth credentials (clientId/clientSecret)
+        instead of the values in this configuration. The iClient is the connection's
+        `_iClientId` — on an HTTP connection `http._iClientId`, beside `auth`, not inside it —
+        and it also supplies the grant type and the authorization and token endpoints, so a
+        create needs only `auth.type: "oauth"`, `auth.oauth.useIClientFields: true` and the
+        iClient id. The connection holds no tokens until a person completes the authorization
+        in a browser.
+    oauth1:
+      type: object
+      description: |-
+        OAuth 1.0a configuration for legacy APIs that use the older OAuth protocol.
+        Always needs consumerKey and accessToken; HMAC signature methods also need
+        consumerSecret and tokenSecret, while RSA methods need consumerPrivateKey.
+      properties:
+        consumerKey:
+          type: string
+          description: |
+            OAuth 1.0a consumer key (API key).
+            Identifies the application making the request.
+          examples:
+            - dpf43f3p2l4k3l03
+        consumerSecret:
+          type: string
+          description: |
+            OAuth 1.0a consumer secret (encrypted at rest).
+            Required for HMAC and PLAINTEXT signature methods.
+          writeOnly: true
+          examples:
+            - kd94hf93k423kf44EXAMPLE
+        accessToken:
+          type: string
+          description: |
+            OAuth 1.0a access token (encrypted at rest).
+            Represents the user's authorization for the application to access their data.
+          writeOnly: true
+          examples:
+            - nnch734d00sl2jdkEXAMPLE
+        tokenSecret:
+          type: string
+          description: |
+            OAuth 1.0a token secret (encrypted at rest).
+            Required for HMAC and PLAINTEXT signature methods.
+          writeOnly: true
+          examples:
+            - pfkkdhi9sl3r4s00EXAMPLE
+        signatureMethod:
+          type: string
+          enum:
+            - hmac-sha1
+            - hmac-sha256
+            - hmac-sha512
+            - rsa-sha1
+            - rsa-sha256
+            - rsa-sha512
+            - plaintext
+          x-enumDescriptions:
+            hmac-sha1: HMAC signing with SHA-1 (most widely supported, legacy).
+            hmac-sha256: HMAC signing with SHA-256 for improved security.
+            hmac-sha512: HMAC signing with SHA-512 (strongest HMAC variant).
+            rsa-sha1: RSA signing with SHA-1 (legacy).
+            rsa-sha256: RSA signing with SHA-256 for improved security.
+            rsa-sha512: RSA signing with SHA-512 (strongest RSA variant).
+            plaintext: No cryptographic signing, only for testing over HTTPS.
+          description: |-
+            OAuth 1.0a request signing method. HMAC methods require consumerSecret and
+            tokenSecret; RSA methods require consumerPrivateKey. PLAINTEXT offers no
+            cryptographic signing and should only be used for testing over HTTPS.
+          x-lowercase: true
+          examples:
+            - hmac-sha1
+        consumerPrivateKey:
+          type: string
+          description: |
+            RSA private key for OAuth 1.0a RSA signature methods (encrypted at rest).
+            Required when signatureMethod is RSA-SHA1, RSA-SHA256, or RSA-SHA512.
+          writeOnly: true
+        realm:
+          type: string
+          x-celigo-agent:
+            - handlebars
+          description: |
+            OAuth realm value included in the Authorization header.
+            Some APIs require this to identify the authentication domain.
+          examples:
+            - https://api.example.com
+      x-celigo-ai-guidance:
+        - |-
+          ## REQUIRED FIELDS
+          - consumerKey (always required)
+          - accessToken (always required)
+          - For HMAC methods: consumerSecret and tokenSecret
+          - For RSA methods: consumerPrivateKey
+    pkceCodeVerifier:
+      type: string
+      description: |
+        PKCE (Proof Key for Code Exchange) code verifier for enhanced OAuth 2.0 security.
+        Managed internally by the system during authorization code flows.
+      writeOnly: true
+      examples:
+        - dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk
+  # Enforced via 422 on connection POST:
+  # authorizecode requires authURI; clientcredentials requires tokenURI.
+  # Conditional requireds by grantType — nested if/else-if (no allOf), stack-style.
+  if:
+    properties:
+      grantType:
+        const: authorizecode
+    required:
+      - grantType
+  then:
+    required:
+      - authURI
+      - tokenURI
+  else:
+    if:
+      properties:
+        grantType:
+          const: clientcredentials
+      required:
+        - grantType
+    then:
+      required:
+        - tokenURI
+    else:
+      if:
+        properties:
+          grantType:
+            const: password
+        required:
+          - grantType
+      then:
+        required:
+          - tokenURI
+          - username
+          - password
+  x-celigo-ai-guidance:
+    - |-
+      ## OAUTH 2.0 GRANT TYPES
+      - "authorizecode" — Authorization Code flow (browser-based user consent).
+        Requires authURI, tokenURI, and user authorization via browser.
+      - "clientcredentials" — Client Credentials flow (server-to-server, no user).
+        Requires tokenURI.
+      - "password" — Resource Owner Password flow (username/password exchange).
+        Requires tokenURI, username, password.
+      - On an `http` connection the client ID and secret are never stored here: a
+        `custom_oauth2` iClient referenced by `http._iClientId` supplies them.

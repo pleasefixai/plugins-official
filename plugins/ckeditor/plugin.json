@@ -1,0 +1,47 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "ckeditor",
+  "version": "1.0.0",
+  "description": "Guides to install, configure and fix the CKEditor 5 rich text editor in your web apps.",
+  "author": {
+    "name": "CKEditor (CKSource)"
+  },
+  "homepage": "https://ckeditor.com",
+  "license": "MIT",
+  "keywords": [
+    "ckeditor",
+    "ckeditor5",
+    "editor",
+    "wysiwyg",
+    "wysiwyg-editor",
+    "rich-text-editor",
+    "rich-text",
+    "html-editor",
+    "text-editor",
+    "content-editor",
+    "document-editor",
+    "word-processor",
+    "markdown-editor",
+    "contenteditable",
+    "react-editor",
+    "vue-editor",
+    "angular-editor",
+    "collaborative-editor",
+    "track-changes",
+    "ai-writing-assistant"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "ckeditor",
+        "commit": "261766a0d70fe88c34d34336acbd293c69048a62",
+        "skills": {
+          "ckeditor": "ca373b92ec589f6ef95d0d7c476e2ad79a9958e8ac5b7c38ef3ce4c0ee104e5f"
+        }
+      }
+    }
+  }
+}

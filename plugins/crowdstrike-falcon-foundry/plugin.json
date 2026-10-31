@@ -1,0 +1,59 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "crowdstrike-falcon-foundry",
+  "version": "1.0.0",
+  "description": "Guides to build, audit and upgrade CrowdStrike Falcon Foundry apps and their functions.",
+  "author": {
+    "name": "CrowdStrike"
+  },
+  "homepage": "https://github.com/CrowdStrike/foundry-skills",
+  "license": "MIT",
+  "keywords": [
+    "foundry",
+    "crowdstrike",
+    "cybersecurity",
+    "falcon",
+    "ui-development",
+    "collections",
+    "functions",
+    "workflows",
+    "api-integration",
+    "security"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "crowdstrike-falcon-foundry",
+        "commit": "61572f38592d47c747e2595182459781bf0bc679",
+        "skills": {
+          "ai-agents-development": "5443eebffa35dc828b9834a93b99736f813c924e065512d9800ff863bdb3e37a",
+          "api-integrations": "2f0d2eb36610b58d6ddbbfa8aa4afe2676f703325835a17784473cd0eb7812da",
+          "collections-development": "613f63e56af1e1723107f4b247025a2fd079b545b9005e08c907c098af64165a",
+          "debugging-workflows": "c43746ff44a697c3315298201676eaf5e6ecf3957dda82162539ce3e2d364168",
+          "development-workflow": "482b7529480542dc753e262f3a36bb53fab31894b085bf92464f775f687d18ec",
+          "e2e-testing": "6f44318188411c65e7bfbdff0fa857c58526dff7f370b258a03e8c98cb9f1f17",
+          "functions-development": "900f5fc72543fcffa1b63800c343d00a0285ce25a88273d05b71767037778bdf",
+          "functions-falcon-api": "898bb544a491e3771bbb8ef95c4b33e353b66582381c62e96f0ae31ce086c413",
+          "fusion-redirect": "00f347ee85c62c90b156656b3ec23e21a73521cd4c26c2097b43486e1aae4bc7",
+          "security-patterns": "1dd77385bee711b30f141f1ca622a9faf75b454397615b9df13b522112db7d71",
+          "ui-development": "70bafe52153d4d9fd0f84f4dab160162de95275a0ea6e590536b6e4847f854f8",
+          "workflows-development": "b5c64c36b0fcf646f476c460e30bc25c6b70898bf4b7c21ece0f17fe23388bf4"
+        },
+        "also": [
+          {
+            "marketplace": "codex",
+            "plugin": "crowdstrike-falcon-foundry",
+            "commit": "024c8b03f0e26b70c21cac492ca9cc7e4be7a564",
+            "skills": {
+              "app-audit": "e5399e20c45534ff5f61fd70316a99b2d1d69ebf562d8764be1dc0ac785b1300",
+              "app-upgrades": "9b5fe5141657baaca7a2739a211d85f93b7fd3738f12686dd529fc53a3404ea9"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

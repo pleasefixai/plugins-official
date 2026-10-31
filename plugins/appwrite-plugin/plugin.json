@@ -1,0 +1,33 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "appwrite-plugin",
+  "version": "1.0.0",
+  "description": "Guides to build apps on Appwrite with its SDKs for web, mobile and server languages.",
+  "author": {
+    "name": "Appwrite"
+  },
+  "homepage": "https://appwrite.io/",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "appwrite-plugin",
+        "commit": "ce71c971b0be9da5938bef0c3d20a73fa325e32d",
+        "skills": {
+          "appwrite-cli": "cdea1f56fa55d4ca66bd47c09fb9e7bb5f5b5a5ba3c7bebb114816662e391bc8",
+          "appwrite-dart": "caf702f02d43f16174a80da53c63fa8030626a3f2d4aa0de04fdc86563e57d59",
+          "appwrite-dotnet": "e896ae6d243e915367d0f470bde8fc6939243711fd9b7f6741d19c37c345047c",
+          "appwrite-go": "f3984a3dce59641b931874feeb802673a4963c5d69e5eaee89a6ed36624dd68f",
+          "appwrite-kotlin": "df1d385e4a6baf1d3dc24ba1b6a2296872702538c9aa0638ebe9aa4eff600365",
+          "appwrite-php": "10b842fb2eab70b14b6f1875b0362093d17d5e9612023d14499e0c8ac2ccc321",
+          "appwrite-python": "2011d1229bba4e5fbc9138e555f8ff44d45b843f4da098997bbb6270bb4117ee",
+          "appwrite-ruby": "6e64b9c29d6170e33226fec61a6b65661ecb2ee73f32446a5fcf74939c3d77bc",
+          "appwrite-swift": "51f33002fc9409abf3bb583ed9c58ee40757015995a333039d825498fa5e06cc",
+          "appwrite-typescript": "9f5508ec0707ee2dcc58e9c278817f8c9d7f591f79d9ca43fe98d4fe3ade6bce"
+        }
+      }
+    }
+  }
+}

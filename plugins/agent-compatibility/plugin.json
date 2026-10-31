@@ -1,0 +1,34 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "agent-compatibility",
+  "version": "1.0.0",
+  "description": "Scans that check if a repository's startup, tests and docs work for coding agents.",
+  "author": {
+    "name": "Cursor"
+  },
+  "homepage": "https://github.com/cursor/plugins/tree/main/agent-compatibility",
+  "license": "MIT",
+  "keywords": [
+    "agent-compatibility",
+    "agents",
+    "compatibility",
+    "cursor-plugin",
+    "repo-audit",
+    "startup",
+    "validation"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "agent-compatibility",
+        "commit": "1ba91fc25c0977741dd0e267849e6234b037ed0a",
+        "skills": {
+          "check-agent-compatibility": "cee6df6c4130c28e3d6949a2620d4bc1ee6e9e91f72ea291dff1cb3ea07e146f"
+        }
+      }
+    }
+  }
+}

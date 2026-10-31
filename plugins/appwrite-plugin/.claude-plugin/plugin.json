@@ -1,0 +1,5 @@
+{
+  "name": "appwrite-plugin",
+  "version": "1.0.0",
+  "description": "Guides to build apps on Appwrite with its SDKs for web, mobile and server languages."
+}

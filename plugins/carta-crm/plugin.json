@@ -1,0 +1,40 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "carta-crm",
+  "version": "1.0.0",
+  "description": "Company profiles with industry and tags, researched from a website, for Carta CRM.",
+  "author": {
+    "name": "Carta Engineering"
+  },
+  "homepage": "https://carta.com",
+  "keywords": [
+    "carta",
+    "crm",
+    "investors",
+    "companies",
+    "contacts",
+    "deals",
+    "notes",
+    "fundraisings",
+    "search",
+    "enrich",
+    "analytics",
+    "angles",
+    "introductions",
+    "network"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "carta-crm",
+        "commit": "ea7fe1d4db0f0f273799ec4b40070c3c6b00fdcc",
+        "skills": {
+          "enrich-company": "d20070f9f40cc0dd4ac9845a13a2e670dae72eb1cb7656bb1d01918a6a3dfd8f"
+        }
+      }
+    }
+  }
+}

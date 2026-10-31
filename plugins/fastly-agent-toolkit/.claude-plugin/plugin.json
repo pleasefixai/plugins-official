@@ -1,0 +1,5 @@
+{
+  "name": "fastly-agent-toolkit",
+  "version": "1.0.0",
+  "description": "Guides to write, test and deploy Fastly VCL and Compute services and Fastly Next-Gen WAF."
+}

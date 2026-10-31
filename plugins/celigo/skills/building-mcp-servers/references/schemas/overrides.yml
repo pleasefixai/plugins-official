@@ -1,0 +1,349 @@
+Overrides:
+  type: object
+  description: |
+    Per-server bindings for a tool's steps, applied on this server without changing the
+    Tool itself.
+
+    Each lookup (export) step's connection must be bound here, or each `tools/call` fails
+    with "Missing connection overrides. The following connection IDs must be overridden: …".
+    The export and router fields described below as not applied are stored but don't change
+    a call.
+  x-celigo-ai-guidance:
+    - |-
+      Bind each lookup step with an `exports[]` entry whose `_abstractId` and `_id` are both
+      the step's export id; add `_connectionId` to run that step on another connection. An
+      entry with `_connectionId` but no `_id` returns a 404, and binding only some of the
+      Tool's steps still fails the call with "Missing connection overrides".
+    - |-
+      A `connections[]` pair binds only when `_id` names a different connection than
+      `_abstractId`; it then re-maps the steps that use that connection. An identity pair
+      (`_abstractId` equal to `_id`) on a connection that doesn't require end-user
+      credentials leaves the steps unbound. When a step has both, its `exports[]` entry wins.
+    - |-
+      `connections[]` ids aren't validated on save, and the server caches its configuration,
+      so a saved change can take tens of seconds to reach `tools/call`.
+  properties:
+    connections:
+      type: array
+      description: |
+        Connection overrides. Each entry maps an abstract connection reference
+        in the tool to a concrete connection resource for this server.
+      items:
+        type: object
+        properties:
+          _abstractId:
+            type: string
+            description: |
+              The abstract connection identifier from the tool definition.
+              This is the connection reference that will be replaced.
+            examples: ["60a2c4e6f321d800129a1a3c"]
+          _id:
+            type: string
+            x-celigo-refModel: connections
+            format: objectId
+            description: |
+              The concrete connection resource to use in place of the abstract reference.
+            examples: ["5f8d43a1b9e5a80011a35f2c"]
+          _borrowConcurrencyFromConnectionId:
+            type: string
+            x-celigo-refModel: connections
+            description: |
+              Optional connection from which to borrow concurrency limits.
+            examples: ["5f8d43a1b9e5a80011a35f2c"]
+          requiresEndUserCredentials:
+            type: boolean
+            description: |-
+              When true, each end user must supply their own credentials for
+              this connection (a per-user `mcpChild` connection) before the
+              tool runs for them on this server. Same meaning as the
+              server-level `connections[].requiresEndUserCredentials`; by the
+              platform contract the connection counts as requiring end-user
+              credentials when either entry sets it. Only the MCP server
+              override shape carries this field — flow and API tool overrides
+              do not.
+            examples: [true]
+        required:
+          - _abstractId
+    exports:
+      type: array
+      description: |
+        Export (lookup) step bindings. The binding (`_abstractId`, `_id`, and optionally
+        `_connectionId`) is applied to calls; the settings marked below as not applied are
+        stored but ignored.
+      items:
+        type: object
+        properties:
+          _abstractId:
+            type: string
+            description: Abstract export identifier from the tool definition
+            examples: ["60a2c4e6f321d800129a1a3c"]
+          _id:
+            type: string
+            x-celigo-refModel: exports
+            format: objectId
+            description: Concrete export resource to use
+            examples: ["5f8d43a1b9e5a80011a35f2c"]
+          _connectionId:
+            type: string
+            x-celigo-refModel: connections
+            format: objectId
+            description: Override the connection used by this export
+            examples: ["5f8d43a1b9e5a80011a35f2c"]
+          type:
+            type: string
+            enum: ["webhook", "distributed", "test", "delta", "once", "tranlinedelta", "simple", "blob", "all"]
+            x-enumDescriptions:
+              webhook: Event-driven export triggered by incoming webhook calls.
+              distributed: Export distributed across multiple NetSuite worker nodes.
+              test: Export used for testing and validation only.
+              delta: Incremental export that fetches only records changed since the last run.
+              once: One-time export that runs a single time and does not repeat.
+              tranlinedelta: Transaction line-level delta export for NetSuite transaction lines.
+              simple: Basic export that fetches all matching records on each run.
+              blob: Binary large object export for file-based data.
+              all: Export that retrieves all records without filtering.
+            description: Export type override. Not applied on an MCP server; stored, but calls ignore it.
+          pageSize:
+            type: number
+            description: Page size override. Not applied on an MCP server; stored, but calls ignore it.
+            examples: [100]
+          skipRetries:
+            type: boolean
+            description: |-
+              When true, skips retries on failure. Not applied on an MCP server; stored, but
+              calls ignore it.
+          proceedOnFailure:
+            type: boolean
+            description: |-
+              When true, continues processing subsequent records after a failure. Not applied
+              on an MCP server; stored, but calls ignore it.
+          responseMapping:
+            type: object
+            description: |-
+              Response field mappings override. Not applied on an MCP server; stored, but calls
+              ignore it.
+            properties:
+              fields:
+                type: array
+                description: Field-level mappings that copy individual values from the response back onto the record.
+                items:
+                  type: object
+                  properties:
+                    extract:
+                      type: string
+                      description: Path in the response to extract the value from. Uses dot notation to navigate nested objects.
+                      examples: ["data.id"]
+                    generate:
+                      type: string
+                      description: Target field path on the record where the extracted value is stored.
+                      examples: ["customerId"]
+              lists:
+                type: array
+                description: Array-level mappings for one-to-many data in the response.
+                items:
+                  type: object
+                  properties:
+                    generate:
+                      type: string
+                      description: Target array field on the record where the mapped list items are stored.
+                      examples: ["lineItems"]
+                    fields:
+                      type: array
+                      description: Field mappings applied to each item in the response array.
+                      items:
+                        type: object
+                        properties:
+                          extract:
+                            type: string
+                            description: Path within each response list item to extract the value from.
+                            examples: ["sku"]
+                          generate:
+                            type: string
+                            description: Target field path within each mapped list item.
+                            examples: ["itemCode"]
+        required:
+          - _abstractId
+    imports:
+      type: array
+      description: |
+        Import overrides. Customize import resources used within the tool,
+        including connection bindings, hooks, response mappings, and
+        adaptor-specific settings.
+      items:
+        type: object
+        properties:
+          _abstractId:
+            type: string
+            description: Abstract import identifier from the tool definition
+            examples: ["60a2c4e6f321d800129a1a3c"]
+          _connectionId:
+            type: string
+            x-celigo-refModel: connections
+            format: objectId
+            description: Override the connection used by this import
+            examples: ["5f8d43a1b9e5a80011a35f2c"]
+          proceedOnFailure:
+            type: boolean
+            description: When true, continues processing subsequent records after a failure.
+            x-celigo-ai-guidance:
+              - Whether to continue processing on failure
+          responseMapping:
+            type: object
+            description: Override the response field mappings
+            properties:
+              fields:
+                type: array
+                description: Field-level mappings that copy individual values from the response back onto the record.
+                items:
+                  type: object
+                  properties:
+                    extract:
+                      type: string
+                      description: Path in the response to extract the value from. Uses dot notation to navigate nested objects.
+                      examples: ["data.id"]
+                    generate:
+                      type: string
+                      description: Target field path on the record where the extracted value is stored.
+                      examples: ["customerId"]
+              lists:
+                type: array
+                description: Array-level mappings for one-to-many data in the response.
+                items:
+                  type: object
+                  properties:
+                    generate:
+                      type: string
+                      description: Target array field on the record where the mapped list items are stored.
+                      examples: ["lineItems"]
+                    fields:
+                      type: array
+                      description: Field mappings applied to each item in the response array.
+                      items:
+                        type: object
+                        properties:
+                          extract:
+                            type: string
+                            description: Path within each response list item to extract the value from.
+                            examples: ["sku"]
+                          generate:
+                            type: string
+                            description: Target field path within each mapped list item.
+                            examples: ["itemCode"]
+          hooks:
+            type: object
+            description: Override script hooks
+            properties:
+              preMap:
+                type: object
+                description: Hook that runs on each page of records before the import's mappings are applied.
+                properties:
+                  function:
+                    type: string
+                    description: Function to invoke within the referenced script.
+                    examples: ["preMap"]
+                  _scriptId:
+                    type: string
+                    x-celigo-refModel: scripts
+                    format: objectId
+                    description: Script containing the hook function named in `function`.
+                    examples: ["66a1f2c3b4d5e6f7a8b9c0d1"]
+              postMap:
+                type: object
+                description: |-
+                  Hook that runs after the import's mappings are applied but before records
+                  are sent to the destination system.
+                properties:
+                  function:
+                    type: string
+                    description: Function to invoke within the referenced script.
+                    examples: ["postMap"]
+                  _scriptId:
+                    type: string
+                    x-celigo-refModel: scripts
+                    format: objectId
+                    description: Script containing the hook function named in `function`.
+                    examples: ["66a1f2c3b4d5e6f7a8b9c0d2"]
+        required:
+          - _abstractId
+    routers:
+      type: array
+      description: |
+        Router overrides. On an MCP server `name`, `routeRecordsTo` and branch
+        `inputFilter` are stored but not applied to calls.
+      items:
+        type: object
+        properties:
+          _abstractId:
+            type: string
+            description: Abstract router identifier from the tool definition
+            examples: ["router_001"]
+          name:
+            type: string
+            description: Router name override. Not applied on an MCP server; stored, but calls ignore it.
+            examples: ["route_by_region"]
+          routeRecordsTo:
+            type: string
+            enum: ["first_matching_branch", "all_matching_branches"]
+            x-enumDescriptions:
+              first_matching_branch: Routes each record to only the first branch whose criteria match.
+              all_matching_branches: Routes each record to every branch whose criteria match, creating copies.
+            description: Routing strategy override. Not applied on an MCP server; stored, but calls ignore it.
+          routeRecordsUsing:
+            type: string
+            enum: ["input_filters", "script"]
+            x-enumDescriptions:
+              input_filters: Evaluate routing criteria using declarative filter expressions.
+              script: Evaluate routing criteria using a custom JavaScript function.
+            description: Override the routing evaluation method
+          script:
+            type: object
+            description: Override the router script
+            properties:
+              _scriptId:
+                type: string
+                x-celigo-refModel: scripts
+                format: objectId
+                description: Script containing the routing function named in `function`.
+                examples: ["66a1f2c3b4d5e6f7a8b9c0d3"]
+              function:
+                type: string
+                description: Function within the referenced script that returns the name of the branch to route to.
+                examples: ["routeRecord"]
+          branches:
+            type: array
+            description: Override specific branch configurations
+            items:
+              type: object
+              properties:
+                _abstractId:
+                  type: string
+                  description: Abstract branch identifier
+                name:
+                  type: string
+                  description: Override the branch name
+                  examples: ["North America"]
+                description:
+                  type: string
+                  description: Override the branch description
+                  examples: ["Records routed to the North America region"]
+                inputFilter:
+                  type: object
+                  description: |-
+                    Branch filter override. Not applied on an MCP server; stored, but calls
+                    ignore it.
+                  properties:
+                    version:
+                      type: string
+                      enum: ["1"]
+                      x-enumDescriptions:
+                        "1": Version 1 of the Celigo expression-based filter format.
+                      description: Filter format version.
+                    rules:
+                      type: array
+                      description: |-
+                        Filter rules in Celigo expression-based filter format. Array-based DSL where
+                        the first element is an operator (e.g. "equals", "and", "or"), followed by
+                        operands which can be nested expressions.
+                      items: {}
+        required:
+          - _abstractId

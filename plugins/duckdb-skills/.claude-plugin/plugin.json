@@ -1,0 +1,5 @@
+{
+  "name": "duckdb-skills",
+  "version": "1.0.0",
+  "description": "Guides to query and convert data files, S3 buckets and databases with DuckDB."
+}

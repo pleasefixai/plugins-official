@@ -1,0 +1,35 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "aws-amplify",
+  "version": "1.0.0",
+  "description": "Guides to build and deploy full-stack web and mobile apps with AWS Amplify Gen 2.",
+  "author": {
+    "name": "Amazon Web Services"
+  },
+  "homepage": "https://github.com/awslabs/agent-plugins",
+  "license": "Apache-2.0",
+  "keywords": [
+    "aws",
+    "amplify",
+    "fullstack",
+    "authentication",
+    "data",
+    "storage",
+    "graphql",
+    "functions"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "aws-amplify",
+        "commit": "097fe8ad56d8a1d5e2c81d7880adf145553cf244",
+        "skills": {
+          "amplify-workflow": "2b4153d83b25026de4d50ce77a915581b00fd68b855d4cf31460ba19b438742b"
+        }
+      }
+    }
+  }
+}

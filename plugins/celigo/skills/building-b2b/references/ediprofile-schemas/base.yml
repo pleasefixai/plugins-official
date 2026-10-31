@@ -1,0 +1,199 @@
+EDIProfileBase:
+  type: object
+  description: Writable EDI profile fields shared by the request and response schemas.
+  properties:
+    name:
+      type: string
+      description: Human-readable name for the EDI profile
+      x-celigo-ai-guidance:
+        - Name the profile after the trading partner and EDI standard whose interchange identity it carries (e.g. "Acme Corp X12 Profile"), not after a flow's purpose — one partner's profile is reused by every document exchange with that partner.
+      examples: ["Acme Corp X12 Profile", "Partner EDIFACT Profile"]
+    description:
+      type: string
+      description: Detailed description of the EDI profile's purpose
+      examples: ["X12 interchange profile for Acme Corp trading partner"]
+    fileType:
+      type: string
+      enum: ["edix12", "edifact"]
+      x-enumDescriptions:
+        edix12: ANSI X12 EDI standard using ISA/GS envelope segments.
+        edifact: UN/EDIFACT EDI standard using UNB envelope segments.
+      description: The EDI standard this profile is configured for. Immutable after creation.
+      examples: ["edix12", "edifact"]
+    tpInterchangeId:
+      type: string
+      description: |-
+        Trading partner's interchange identifier: the sender ID on files the partner sends and the
+        receiver ID on files you send (X12 ISA06 and ISA08 respectively; the UNB sender and
+        recipient in EDIFACT). On an X12 profile, store it unpadded: parsing compares an inbound
+        file's ISA06 without its padding, so a value padded to 15 characters fails every inbound
+        file (`Interchange Sender ID with data <id> in the EDI file doesn't match with the expected
+        data in the EDI profile.`).
+      examples: ["ACMECORP", "5412345678901"]
+    myInterchangeId:
+      type: string
+      description: |-
+        Your interchange identifier: the receiver ID on files the partner sends and the sender ID
+        on files you send (X12 ISA08 and ISA06 respectively; the UNB recipient and sender in
+        EDIFACT). On an X12 profile, store it unpadded: parsing compares an inbound file's ISA08
+        without its padding, so a value padded to 15 characters fails every inbound file
+        (`Interchange Receiver ID with data <id> in the EDI file doesn't match with the expected
+        data in the EDI profile.`).
+      examples: ["MYCOMPANY", "1234567890123"]
+    controlNumber:
+      type: integer
+      minimum: 1
+      maximum: 999999999
+      default: 1
+      description: Current interchange control number. Incremented with each interchange sent.
+      examples: [1, 1001]
+
+    # --- X12-specific fields (fileType: edix12) ---
+    isa01:
+      type: string
+      enum: ["00", "01", "02", "03", "04", "05"]
+      x-enumDescriptions:
+        "00": No authorization information present.
+        "01": Authorization type 01.
+        "02": Authorization type 02.
+        "03": Authorization type 03.
+        "04": Authorization type 04.
+        "05": Authorization type 05.
+      description: X12 ISA01 — Authorization Information Qualifier.
+      x-celigo-ai-guidance:
+        - |-
+          - 00: No authorization information present
+          - 01-05: Various authorization types
+      examples: ["00"]
+    isa02:
+      type: string
+      description: |-
+        X12 ISA02 — Authorization Information. When parsing, an inbound file's ISA02 must match
+        this value after trimming (`data_mismatch` otherwise), so a blank ISA02 matches `""` and
+        not ten spaces or one (values some trading partner connector forms prescribe).
+      examples: [""]
+    isa03:
+      type: string
+      enum: ["00", "01"]
+      x-enumDescriptions:
+        "00": No security information present.
+        "01": Password-based security.
+      description: X12 ISA03 — Security Information Qualifier.
+      examples: ["00"]
+    isa04:
+      type: string
+      description: |-
+        X12 ISA04 — Security Information. When parsing, an inbound file's ISA04 must match this
+        value after trimming (`data_mismatch` otherwise), so a blank ISA04 matches `""` and not
+        ten spaces or one (values some trading partner connector forms prescribe).
+      examples: [""]
+    tpIdQualifier:
+      type: string
+      description: |
+        Trading partner ID qualifier.
+
+        For X12 (ISA05/ISA07): Values include 01 (DUNS), 08 (UCC EDI), 12 (phone),
+        14 (DUNS+4), ZZ (mutually defined), etc.
+
+        For EDIFACT: Values include 14 (EAN), ZZZ (mutually defined), etc.
+      examples: ["ZZ", "01", "14"]
+    myIdQualifier:
+      type: string
+      description: |
+        Your (sender/receiver) ID qualifier. Same enum as tpIdQualifier.
+      examples: ["ZZ", "01", "14"]
+    isa11:
+      type: string
+      description: |
+        X12 ISA11 - Repetition Separator (or Interchange Control Standards Identifier
+        in older versions). Single character.
+      examples: ["U", "^"]
+    isa12:
+      type: string
+      description: X12 ISA12 - Interchange Control Version Number (5 characters)
+      examples: ["00401", "00501"]
+    isa14:
+      type: string
+      enum: ["0", "1"]
+      x-enumDescriptions:
+        "0": No interchange acknowledgment requested.
+        "1": Interchange acknowledgment requested (TA1).
+      description: X12 ISA14 — Acknowledgment Requested.
+      examples: ["0", "1"]
+    isa15:
+      type: string
+      enum: ["P", "T"]
+      x-enumDescriptions:
+        P: Production data interchange.
+        T: Test data interchange.
+      description: X12 ISA15 — Interchange Usage Indicator.
+      examples: ["P", "T"]
+    isa16:
+      type: string
+      description: X12 ISA16 - Component Element Separator. Single character.
+      examples: [">", ":"]
+    tpGroupId:
+      type: string
+      description: |-
+        Trading partner's X12 application code: GS02 (sender) on files the partner sends and GS03
+        (receiver) on files you send.
+      examples: ["ACME"]
+    myGroupId:
+      type: string
+      description: |-
+        Your X12 application code: GS03 (receiver) on files the partner sends and GS02 (sender) on
+        files you send.
+      examples: ["MYAPP"]
+    gs07:
+      type: string
+      enum: ["X", "T"]
+      x-enumDescriptions:
+        X: Accredited Standards Committee X12.
+        T: Transportation Data Coordinating Committee.
+      description: X12 GS07 — Responsible Agency Code.
+      examples: ["X"]
+    gs08:
+      type: string
+      description: X12 GS08 - Version/Release/Industry Identifier Code
+      examples: ["004010", "005010"]
+
+    # --- EDIFACT-specific fields (fileType: edifact) ---
+    unb010_0001:
+      type: string
+      enum: ["UNOA", "UNOB", "UNOC", "UNOD", "UNOE", "UNOF"]
+      x-enumDescriptions:
+        UNOA: Level A character set (uppercase letters, digits, and basic punctuation).
+        UNOB: Level B character set (Level A plus lowercase letters).
+        UNOC: Level C character set (ISO 8859-1 Latin-1).
+        UNOD: Level D character set (ISO 8859-2 Latin-2).
+        UNOE: Level E character set (ISO 8859-5 Cyrillic).
+        UNOF: Level F character set (ISO 8859-7 Greek).
+      description: |
+        EDIFACT UNB S001/0001 - Syntax Identifier.
+        Identifies the character set used in the interchange.
+      examples: ["UNOB"]
+    unb010_0002:
+      type: string
+      enum: ["1", "2", "3"]
+      x-enumDescriptions:
+        "1": EDIFACT syntax version 1.
+        "2": EDIFACT syntax version 2.
+        "3": EDIFACT syntax version 3.
+      description: |
+        EDIFACT UNB S001/0002 - Syntax Version Number.
+      examples: ["3"]
+    versionNumber:
+      type: string
+      description: |
+        EDIFACT message version number (e.g., "D" for directory).
+      examples: ["D"]
+    releaseNumber:
+      type: string
+      description: |
+        EDIFACT message release number.
+      examples: ["96A", "01B", "14A"]
+    controllingAgency:
+      type: string
+      description: |
+        EDIFACT controlling agency code.
+      examples: ["UN", "EC", "AA"]

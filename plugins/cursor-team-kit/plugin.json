@@ -1,0 +1,51 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "cursor-team-kit",
+  "version": "1.0.0",
+  "description": "Workflows to fix CI, review and ship pull requests, test UIs and clean up code.",
+  "author": {
+    "name": "Cursor"
+  },
+  "homepage": "https://github.com/cursor/plugins",
+  "license": "MIT",
+  "keywords": [
+    "cursor-team-kit",
+    "ci",
+    "code-review",
+    "shipping",
+    "testing",
+    "verification",
+    "local-automation"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "cursor-team-kit",
+        "commit": "1ba91fc25c0977741dd0e267849e6234b037ed0a",
+        "skills": {
+          "check-compiler-errors": "c2ad326682a319ac227e30fc5b5f2116d598921ede3e5d5d90019575288739b7",
+          "control-cli": "3e0e7327e452ed4540e1e3e131b1657eb1dad517f5398b59ad9d80f3b9b7c609",
+          "control-ui": "7f26f17516af8ca3485cefb0771f4f9ed314d19494b57f268dc06279234a248f",
+          "deslop": "740038c614fc7fdef772806e59f7bd901d7b7184cf0a74022f7de8a6462d35e5",
+          "fix-ci": "c6fbf5f36e1664e6066e83b0465905cfea4a3f97985415372334334fc6d38572",
+          "fix-merge-conflicts": "a6657bf563b3873959e54c8d4c03a8aae75dbad54c414244edda62437ef2b118",
+          "get-pr-comments": "989394d4df16bbcc2dfaa4c486bb7574777f535262943ca6bee1c0edefc4f454",
+          "loop-on-ci": "948910bcbc9f39e24e8c85fde2577c94f06a8808eaa361723276afef7ac7d579",
+          "make-pr-easy-to-review": "af7b0d81873f83e5fa8b855e693efc3caae5038ca6fe2bdaf534aead746be3a7",
+          "new-branch-and-pr": "6669b419736af5f002039b6d52268a53a97a447c83521cfa1abaae7ff4a65d51",
+          "pr-review-canvas": "4dd61e72fcb87d31e3421fca4aae22cd54c44462adaee9b7f2f5ddb1d3b70d50",
+          "review-and-ship": "ba1584f6cae047eb365bf1f5e2855621970de43b8b7efe3964724011c229e5af",
+          "run-smoke-tests": "3a309ee6563c2792792a9fbd72f0c347c8e8192c9c9d03bf750ece47536772dc",
+          "thermo-nuclear-code-quality-review": "1bb59994582195f4e209546efe5f9fc5d05d6f19c91d5b18048d0f2186a4fbd2",
+          "verify-this": "cd53e98076a62ab24b5575704e99be5004fac1d51c481d4dbf5c6d15752d1b7d",
+          "weekly-review": "312a270c253c5874b0e6ab99f8b690d576061dc1642eb780b3dac30026145ec2",
+          "what-did-i-get-done": "4973a98ab794fe751bc02f4c91614f696f0e0acc0c2ad4b86f81fc53ae888695",
+          "workflow-from-chats": "fb9c92d1037bd1cb6267a303b4d93d13112b0c6595add146330d149b8a539571"
+        }
+      }
+    }
+  }
+}

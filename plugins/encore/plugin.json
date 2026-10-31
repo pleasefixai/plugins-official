@@ -1,0 +1,54 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "encore",
+  "version": "1.0.0",
+  "description": "Guides to build Encore backends in TypeScript and Go: APIs, auth, databases and tests.",
+  "author": {
+    "name": "Encore"
+  },
+  "homepage": "https://encore.dev/",
+  "license": "MPL-2.0",
+  "keywords": [
+    "encore",
+    "backend",
+    "typescript",
+    "go",
+    "infrastructure",
+    "aws",
+    "gcp",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "encore",
+        "commit": "ded36605dbd2d6b1459f66c95843f927892ff9a0",
+        "skills": {
+          "add-infrastructure": "9c5172e078e343eda5fdcc96bf9ade2ff2cdf23f9848dad85d505adc382eacbf",
+          "api": "1a8ccc5f5fbd7e7d1a4bab08d7cee8ffabffb9a0d5a9e9843c78310540c0084a",
+          "auth": "02cdb8a76afa934ae782bca4c5b3496b276bf745015cf88185f8deda21a27886",
+          "code-review": "02793eb225aad5c93951eb42d8df0f4326c3369da303f0b3df2682a8a9aecabf",
+          "create-service": "4d5a7bcd62df64f11d9fbee71c5607d609f263d061fe4da6a3472cefd780a351",
+          "database": "ef0cfb249824308e7db8595f1ab797273e5bb70e889f94beeef56bcb2bf12326",
+          "frontend": "384a4d0e8d2750386e3cef7658dbc35d5a2bf5351465349ba079cb193cc16be6",
+          "getting-started": "8e56f165506e04093d7242e7acce1a6c4f91672ee725c89822274af545217622",
+          "go-api": "e81ca0c003a6d81da43b7ac0aa14183a21ff7e5cc091bf398f7869a25ac95339",
+          "go-auth": "7d4366301fba3e98f2b2b445a1230fe41fb54bbfcfdded81b937a1ab787a2fe4",
+          "go-code-review": "386c170fa3063a6bcc036a7e377d21369c7fa6c666e400bc926ca47f65956fc2",
+          "go-database": "d6b7e696478948bc45946ab919db8ac2c941f169d865f097254b63de6298d62f",
+          "go-getting-started": "8105182f418fc3aec64c5a763b0d34c3803d64cbdf7087e47ac5674d289471ed",
+          "go-infrastructure": "88fe23575e0cf246650df2f18a60a730d796fa5d23205e3ef6d7c8b604e42c49",
+          "go-service": "d1f6b7ad52b0780822384c3c1b5821eadccfd9b8003c3b59e0e351f1a29abd2b",
+          "go-testing": "5c5154ffce312ebf51edb2e773d0d68eef0ab9ce36642b09fc15145d2788764c",
+          "infrastructure": "0d8c20fcf5f14c2e24c0fa333b90a5045d254f963dff21ecd339c6bd2b802ea6",
+          "migrate": "aca16d270f4355479e6d996ec02654d3c7a734f495c4995e555ca6bef8f50f37",
+          "service": "1c600743310b14b5fcab279319ac5c91babaf1bf95a9c84a45253016021316d7",
+          "testing": "3befb27198f8c25f3aecd6fa3b56f91494e3110e5cb322b83ae171deaab39a1f"
+        }
+      }
+    }
+  }
+}

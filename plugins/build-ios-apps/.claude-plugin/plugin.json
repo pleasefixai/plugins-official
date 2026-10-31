@@ -1,0 +1,5 @@
+{
+  "name": "build-ios-apps",
+  "version": "1.0.0",
+  "description": "Guides to build, profile and debug iOS apps with SwiftUI, App Intents and the Simulator."
+}

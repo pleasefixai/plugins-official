@@ -1,0 +1,1644 @@
+NetSuite:
+  type: object
+  description: |-
+    NetSuite-specific export configuration. Required when `_connectionId` references a NetSuite
+    connection; omit for all other connection types. Supports saved-search, RESTlet, and
+    distributed (SuiteApp) exports, plus two file cabinet modes: blob exports transfer files
+    as-is (set the export's top-level `type` to `blob` and configure `netsuite.blob`), while
+    file exports parse file contents into records (leave the export's top-level `type` unset
+    and configure `netsuite.file`).
+  x-celigo-ai-guidance:
+    - Configuration object for NetSuite data integration exports.
+    - |-
+      This object is REQUIRED when the _connectionId field references a NetSuite
+      connection and must not be included for other connection types.
+      It defines how data is extracted from NetSuite, including saved searches,
+      RESTlets, and distributed/SuiteApp exports.
+    - |-
+      ## NETSUITE EXPORT MODES
+
+      NetSuite exports support several operating modes:
+
+      1. **Saved Search Exports** - Uses NetSuite saved searches to retrieve data
+      2. **RESTlet Exports** - Uses custom RESTlet scripts for data retrieval
+      3. **Distributed Exports** - Uses SuiteApp for real-time or batch processing
+      4. **Blob Exports** - Retrieves files from the NetSuite file cabinet and transfers them WITHOUT parsing them into records (raw binary transfer)
+      5. **File Exports** - Retrieves files from the NetSuite file cabinet and PARSES them into records (CSV, XML, JSON, etc.)
+    - |-
+      ## CRITICAL: Blob vs File Export Configuration
+
+      The export `type` field at the top level determines whether file content is parsed:
+
+      - **For Blob Exports (no parsing)**: Set the export's `type: "blob"` AND configure `netsuite.blob`
+      - **For File Exports (with parsing)**: Leave the export's `type` as null/undefined AND configure `netsuite.file`
+
+      Do NOT set `type: "blob"` when you want file content parsed into records. The "blob" type is specifically for raw file transfers without any parsing.
+    - |-
+      ## IMPLEMENTATION REQUIREMENTS
+
+      - For saved search exports: Configure the `searches` or `type` properties
+      - For RESTlet exports: Configure the `restlet` property with script details
+      - For distributed exports: Configure the `distributed` property
+      - For blob exports (no parsing): Set export `type: "blob"` and configure `netsuite.blob`
+      - For file exports (with parsing): Leave export `type` null and configure `netsuite.file`
+  properties:
+    type:
+      type: string
+      enum:
+        - search
+        - basicSearch
+        - metadata
+        - selectoption
+        - restlet
+        - getList
+        - getServerTime
+        - distributed
+        - file
+      x-enumDescriptions:
+        search: Retrieves records with a NetSuite saved search over SOAP web services; the export form marks this path deprecated in favour of the REST APIs for new exports
+        basicSearch: Retrieves records using a basic NetSuite search query.
+        metadata: Retrieves metadata about a NetSuite record type.
+        selectoption: Retrieves the available select options for a specific field.
+        restlet: Retrieves data using a custom NetSuite RESTlet script.
+        getList: Retrieves a list of records by their internal IDs.
+        getServerTime: Retrieves the current NetSuite server time.
+        distributed: Uses the SuiteApp for real-time, event-driven, or batch exports
+        file: Exports and parses files from the NetSuite file cabinet into records.
+      description: |-
+        Controls how data is retrieved from NetSuite and which sibling object must be configured:
+        `search` pairs with `netsuite.searches`, `restlet` with `netsuite.restlet`, `distributed`
+        with `netsuite.distributed`, and `file` with `netsuite.file.folderInternalId`. For blob
+        exports (raw file transfer without parsing), leave this field unset, set the export's
+        top-level `type` to `blob`, and configure `netsuite.internalId` instead. For lookups
+        (`isLookup: true`), prefer `restlet`, which supports `suiteapp2.0` saved searches with
+        dynamic inputs; `search` is limited for dynamic lookups.
+      examples: ["file", "search"]
+      x-celigo-ai-guidance:
+        - |-
+          ## CRITICAL: File exports vs Blob exports
+
+          - **File exports (with parsing)**: Set netsuite.type to "file" and configure netsuite.file.folderInternalId
+          - **Blob exports (raw transfer, no parsing)**: Leave netsuite.type BLANK/null, set the export's top-level type to "blob", and configure netsuite.internalId
+
+          Do NOT set netsuite.type to "file" for blob exports. For blob exports, this property should be omitted or null.
+        - |-
+          ## RECOMMENDED TYPES:
+
+          - **For Lookups (isLookup: true)**:
+              - **PREFER "restlet"**: This allows you to use `suiteapp2.0` saved searches with dynamic inputs easily.
+              - **AVOID "search"**: Standard search type is often limited for dynamic lookups.
+        - |-
+          ## IMPLEMENTATION GUIDANCE:
+          - For file exports WITH parsing: Set netsuite.type to "file" and configure netsuite.file.folderInternalId
+          - For blob exports (no parsing): Leave netsuite.type blank, set export type to "blob", configure netsuite.internalId
+          - For saved search exports: Set type to "search" and configure netsuite.searches
+          - For RESTlet exports: Set type to "restlet" and configure netsuite.restlet
+          - For distributed/real-time exports: Set type to "distributed" and configure netsuite.distributed
+        - |-
+          ## EXAMPLES:
+          - "file" - For file cabinet exports with parsing
+          - "search" - For saved search exports
+          - null - For blob exports (raw file transfer without parsing)
+    searches:
+      type: array
+      description: |-
+        Saved search configurations that query NetSuite for records. Each entry references a
+        saved search by internal ID, names the record type being searched, and can add filter
+        criteria.
+      x-celigo-ai-guidance:
+        - |-
+          An array of search configurations used to query and retrieve data from NetSuite.
+          Each search object defines a saved search or ad-hoc query configuration.
+        - |-
+          ## STRUCTURE
+          Each item in the array is an object with the following properties:
+          - savedSearchId: The internal ID of a saved search in NetSuite (string)
+          - recordType: The NetSuite record type being searched (string, e.g., "customer", "salesorder")
+          - criteria: Array of search criteria/filters (optional)
+        - |-
+          ## EXAMPLES
+          ```json
+          [
+            {
+              "savedSearchId": "10",
+              "recordType": "customer",
+              "criteria": []
+            }
+          ]
+          ```
+        - |-
+          ## IMPLEMENTATION GUIDANCE
+          - Use savedSearchId to reference an existing saved search in NetSuite
+          - recordType should match a valid NetSuite record type
+          - criteria can be used to add additional filters to the search
+      items:
+        type: object
+        properties:
+          savedSearchId:
+            type: string
+            description: Internal ID of the NetSuite saved search to run.
+          recordType:
+            type: string
+            description: |-
+              NetSuite record type being searched, as its exact lowercase script ID
+              (e.g. "customer", "salesorder") — not the display name.
+            x-celigo-ai-guidance:
+              - |-
+                Must be the exact lowercase script ID as defined in NetSuite (e.g., "customer",
+                "salesorder", "invoice", "vendorbill").
+                This is NOT the display name - use the script ID which is always lowercase with no spaces.
+          criteria:
+            type: array
+            description: Additional filter criteria applied on top of the saved search.
+            x-celigo-ai-guidance:
+              - |-
+                Array of search filters to apply.
+                Each criterion becomes a `search.createFilter()` call inside Celigo's NetSuite
+                SuiteScript runtime.
+              - |-
+                ## REQUIRED FIELDS PER CRITERION
+                The Celigo backend translates each criterion into a
+                `search.createFilter({ name, operator, values })` call.
+                `field` (script-id of the search column) and `operator`
+                are mandatory -- omitting either crashes the saved search
+                at runtime with `search.createFilter: Missing a required
+                argument: name`.
+              - |-
+                ## EXAMPLE
+                ```json
+                [
+                  {"field": "trandate", "operator": "after", "searchValue": "2025-01-01"},
+                  {"field": "status",   "operator": "anyof", "searchValue": ["SalesOrd:B"]}
+                ]
+                ```
+              - |-
+                ## FIELD vs SEARCH COLUMN NAMING
+                The `field` value MUST be a valid search-column `id` for
+                the chosen `recordType` (the ones listed in the
+                SEARCH COLUMNS metadata block) -- NOT a body-field name.
+                For example, Sales Order shipping address line 1 is
+                `shipaddress1` (search column), not `shipaddr1` (body
+                field).
+            items:
+              type: object
+              properties:
+                field:
+                  type: string
+                  description: |-
+                    Script-id of the search column to filter on.  REQUIRED.
+                    Must come from the record type's SEARCH COLUMNS list
+                    (NOT the body-fields list).  Becomes the `name`
+                    argument of NetSuite's `search.createFilter()`.
+                operator:
+                  type: string
+                  description: |-
+                    Comparison operator.  REQUIRED.  Supported values
+                    depend on the column's data type (e.g. `is`,
+                    `isnot`, `after`, `before`, `anyof`,
+                    `noneof`, `contains`, `startswith`,
+                    `greaterthan`, `lessthan`).  Must be a string
+                    NetSuite recognises -- mismatched operators cause
+                    runtime rejection.
+                join:
+                  type: string
+                  description: |-
+                    Optional join name when filtering through a related
+                    record (e.g. `customer` from a sales order).  Use
+                    only when the column lives on a related record and
+                    NetSuite supports the join from the base record type.
+                searchValue:
+                  description: |-
+                    Value (or array of values for `anyof`-style
+                    operators) to compare against the column.  Required
+                    for most operators; omit for the few unary operators
+                    (e.g. `isempty`, `isnotempty`).
+              required:
+                - field
+                - operator
+    metadata:
+      type: object
+      description: Supplemental metadata associated with the NetSuite export.
+    selectoption:
+      type: object
+      description: |-
+        Configuration for `selectoption` exports, which retrieve the available select options
+        for a NetSuite field.
+      x-celigo-ai-guidance:
+        - |-
+          selectoption: > Represents a selectable option within a NetSuite field,
+          typically used in dropdown menus, radio buttons, or other selection controls.
+          Each selectoption consists of a user-friendly label and an associated value that
+          uniquely identifies the option internally.
+          This structure enables consistent data entry, filtering,
+          and categorization within NetSuite forms and records.
+        - |-
+          ## FIELD BEHAVIOR:
+            - Defines a single, discrete choice available to users in selection interfaces such as dropdowns, radio buttons, or multi-select lists.
+            - Can be part of a collection of options presented to the user for making a selection.
+            - Includes both a display label (visible to users) and a corresponding value (used internally or in API interactions).
+            - Supports filtering, categorization, and conditional logic based on the selected option.
+            - May be dynamically generated or statically defined depending on the field configuration.
+        - |-
+          ## IMPLEMENTATION GUIDANCE:
+            - Assign a unique and stable value to each selectoption to prevent ambiguity and maintain data integrity.
+            - Use clear, concise, and user-friendly labels that accurately describe the option's meaning.
+            - Validate option values against expected data types and formats to ensure compatibility with backend processing.
+            - Implement localization strategies for labels to support multiple languages without altering the underlying values.
+            - Consistently apply selectoption structures across all fields requiring predefined choices to standardize user experience.
+            - Consider accessibility best practices when designing labels and selection controls.
+        - |-
+          ## EXAMPLES:
+            - { label: "Active", value: "1" }
+            - { label: "Inactive", value: "2" }
+            - { label: "Pending Approval", value: "3" }
+            - { label: "High Priority", value: "high" }
+            - { label: "Low Priority", value: "low" }
+        - |-
+          ## IMPORTANT NOTES:
+            - The label is intended for display purposes and may be localized; the value is the definitive identifier used in data processing and API calls.
+            - Values should remain consistent over time to avoid breaking integrations or corrupting data.
+            - When supporting multiple languages, labels should be translated appropriately while keeping values unchanged.
+            - Changes to selectoption values or labels should be managed carefully to prevent unintended side effects.
+            - Selectoption entries may be influenced by the context of the parent record, user roles, or permissions.
+        - |-
+          ## DEPENDENCY CHAIN:
+            - Utilized within field definitions that support selection inputs (e
+    customFieldMetadata:
+      type: object
+      description: Metadata describing the custom fields defined in the NetSuite account.
+      x-celigo-ai-guidance:
+        - |-
+          customFieldMetadata:
+          Metadata information related to custom fields defined within the NetSuite environment,
+          providing comprehensive details about each custom field's configuration,
+          behavior,
+          and constraints to facilitate accurate data handling and UI generation.
+        - |-
+          ## FIELD BEHAVIOR:
+          - Contains detailed metadata about custom fields, including their definitions, types, configurations, and constraints.
+          - Provides contextual information necessary for understanding, validating, and manipulating custom fields programmatically.
+          - May include attributes such as field ID, label, data type, default values, validation rules, display settings, sourcing information, and field dependencies.
+          - Used to dynamically interpret or generate UI elements, data validation logic, or data structures based on custom field configurations.
+          - Reflects the current state of custom fields as defined in the NetSuite account, enabling synchronization between the API consumer and the NetSuite environment.
+        - |-
+          ## IMPLEMENTATION GUIDANCE:
+          - Ensure that the metadata accurately reflects the current state of custom fields in the NetSuite account by synchronizing regularly or on configuration changes.
+          - Update the metadata whenever custom fields are added, modified, or removed to maintain consistency and prevent data integrity issues.
+          - Use this metadata to validate input data against custom field constraints (e.g., data type, required status, allowed values) before processing or submission.
+          - Consider caching metadata for performance optimization but implement mechanisms to refresh it periodically or on-demand to capture updates.
+          - Handle cases where customFieldMetadata might be null, incomplete, or partially loaded gracefully, including fallback logic or error handling.
+          - Respect user permissions and access controls when retrieving or exposing custom field metadata to ensure compliance with security policies.
+        - |-
+          ## EXAMPLES:
+          - A custom field metadata object describing a custom checkbox field with ID "custfield_123", label "Approved", default value false, and display type "inline".
+          - Metadata for a custom list/record field specifying the list of valid options, their internal IDs, and whether multiple selections are allowed.
+          - Information about a custom date field including its date format, minimum and maximum allowed dates, and any validation rules applied.
+          - Metadata describing a custom currency field with precision settings and default currency.
+        - |-
+          ## IMPORTANT NOTES:
+          - The structure and content of customFieldMetadata may vary depending on the NetSuite configuration, customizations, and API version.
+          - Access to custom field metadata may require appropriate permissions within the NetSuite environment; unauthorized access may result in incomplete or no metadata.
+    skipGrouping:
+      type: boolean
+      description: |-
+        When true, each saved-search result row becomes its own record. When false or omitted,
+        consecutive result rows that share the record's internal id are grouped into one record
+        shaped as an array of rows — the *Group rows* option in the UI.
+      x-celigo-ai-guidance:
+        - |-
+          A saved search that returns several rows per record (a sublist or multi-select column)
+          is grouped by leaving this false or omitted: each record arrives as an array of its
+          rows, every row carrying the same internal id as the record's trace key, and the
+          preview reports no duplicate trace keys. With `true` the same search emits one object
+          per row and the repeated internal ids surface as duplicate trace keys
+          (`traceKeysDuplicate` in the preview). Grouping keys on the internal id only — a
+          different key needs a `preSavePage` hook, which sees one page at a time.
+        - |-
+          Celigo's documentation requires the saved search to be sorted by Internal ID for
+          grouping to apply.
+        - |-
+          The generic `groupByFields` setting is not the NetSuite mechanism: the platform rejects
+          it on a NetSuite export with `[invalid_config] netsuite connection is not supported for
+          groupByFields property`.
+        - |-
+          Set `true` for an ad-hoc RESTlet search (criteria and columns without a saved
+          search): grouping needs the search sorted by internal id, and an unsorted ad-hoc
+          search fails with `[search_not_sorted]`.
+        - |-
+          For `exportSelect` / `refreshableSelect` dropdowns backed by a NetSuite RESTlet, set `skipGrouping: true`: the UI's option mapper expects flat per-row results, and the platform otherwise wraps each row in its own grouping list (every option's `label` then renders as `undefined`).
+    statsOnly:
+      type: boolean
+      description: |-
+        When true, returns only summary statistics about matching records instead of the
+        detailed records themselves.
+      x-celigo-ai-guidance:
+        - |-
+          statsOnly indicates whether the API response should include only aggregated
+          statistical summary data without any detailed individual records.
+          This property is used to optimize response size and improve performance when
+          detailed data is unnecessary.
+        - |-
+          ## FIELD BEHAVIOR:
+          - When set to true, the API returns only summary statistics such as counts, averages, sums, or other aggregate metrics.
+          - When set to false or omitted, the response includes both detailed data records and the associated statistical summaries.
+          - Helps reduce network bandwidth and processing time by excluding verbose record-level data.
+          - Primarily intended for use cases like dashboards, reports, or monitoring tools where only high-level metrics are required.
+        - |-
+          ## IMPLEMENTATION GUIDANCE:
+          - Default the value to false to ensure full data retrieval unless explicitly requesting summary-only data.
+          - Validate that the input is a boolean to prevent unexpected API behavior.
+          - Use this flag selectively in scenarios where detailed records are not needed to avoid loss of critical information.
+          - Ensure the API endpoint supports this flag before usage, as some endpoints may not implement statsOnly functionality.
+          - Adjust client-side logic to handle different response structures depending on the flag's value.
+        - |-
+          ## EXAMPLES:
+          - statsOnly: true — returns only aggregated statistics such as total counts, averages, or sums without any detailed entries.
+          - statsOnly: false — returns full detailed data records along with statistical summaries.
+          - statsOnly omitted — defaults to false, returning detailed data and statistics.
+        - |-
+          ## IMPORTANT NOTES:
+          - Enabling statsOnly disables access to individual record details, which may limit in-depth data analysis.
+          - The response schema changes significantly when statsOnly is true; clients must handle these differences gracefully.
+          - Some API endpoints may not support this property; verify compatibility in the API documentation.
+          - Pagination parameters may be ignored or behave differently when statsOnly is enabled, since detailed records are excluded.
+        - |-
+          ## DEPENDENCY CHAIN:
+          - May interact with filtering, sorting, or date range parameters that influence the statistical data returned.
+          - Can affect pagination logic because detailed records are omitted when statsOnly is true.
+          - Dependent on the API endpoint's support for summary-only responses.
+        - |-
+          ## TECHNICAL DETAILS:
+          - Data type: Boolean.
+          - Default value: false.
+          - Typically implemented as a query parameter or part of the request payload depending on API design.
+          - Alters the response payload structure by excluding detailed record arrays and including only aggregated metrics.
+          - Helps optimize API performance and reduce response payload size in scenarios where detailed data is unnecessary.
+    internalId:
+      type: string
+      description: |-
+        Internal ID of the file in the NetSuite file cabinet to export. Required for blob
+        exports (the export's top-level `type` is `blob`); the file is transferred as-is
+        without parsing. For parsed file exports, use `netsuite.file.folderInternalId` instead.
+      examples: ["12345", "67890"]
+      x-celigo-ai-guidance:
+        - |-
+          ## CRITICAL: Required for blob exports
+
+          This property is REQUIRED when the export type is "blob". For blob exports, you must specify the internalId of the file to export from the NetSuite file cabinet.
+        - |-
+          ## FIELD BEHAVIOR:
+          - Identifies a specific file in the NetSuite file cabinet by its internal ID
+          - Required for blob exports (raw binary file transfers without parsing)
+          - The file at this internal ID will be exported as-is without parsing
+        - |-
+          ## IMPLEMENTATION GUIDANCE:
+          - For blob exports: Set netsuite.type to "blob" (on the export, not netsuite) and provide netsuite.internalId
+          - Obtain the file's internalId from NetSuite's file cabinet or via API
+          - Validate the internalId corresponds to an existing file before export
+        - |-
+          ## EXAMPLES:
+          - "12345" - Internal ID of a specific file
+          - "67890" - Another file internal ID
+        - |-
+          ## IMPORTANT NOTES:
+          - This is different from netsuite.file.folderInternalId which specifies a folder for file exports with parsing
+          - For blob exports: Use netsuite.internalId (file ID)
+          - For file exports with parsing: Use netsuite.file.folderInternalId (folder ID)
+    blob:
+      type: object
+      properties:
+        purgeFileAfterExport:
+          type: boolean
+          description: |-
+            When true, permanently deletes the file from the NetSuite file cabinet after a
+            successful export. When false or omitted, the file is left in place.
+          x-celigo-ai-guidance:
+            - |-
+              purgeFileAfterExport:
+              Whether to delete the file from the system after it has been successfully exported.
+              This property controls the automatic removal of the source file post-export to
+              help manage storage and maintain system cleanliness.
+            - |-
+              ## FIELD BEHAVIOR:
+              - Determines if the exported file should be removed from the source storage immediately after a successful export operation.
+              - When set to `true`, the system deletes the file as soon as the export completes without errors.
+              - When set to `false` or omitted, the file remains intact in its original location after export.
+              - Facilitates automated cleanup of files to prevent unnecessary storage consumption.
+              - Does not affect the export process itself; deletion occurs only after confirming export success.
+            - |-
+              ## IMPLEMENTATION GUIDANCE:
+              - Confirm that the export operation has fully completed and succeeded before initiating file deletion to avoid data loss.
+              - Verify that the executing user or system has sufficient permissions to delete files from the source location.
+              - Assess downstream workflows or processes that might require access to the file after export before enabling purging.
+              - Implement logging or notification mechanisms to record when files are purged for audit trails and troubleshooting.
+              - Consider integrating with retention policies or backup systems to prevent accidental loss of important data.
+            - |-
+              ## EXAMPLES:
+              - `true` — The file will be deleted immediately after a successful export.
+              - `false` — The file will remain in the source location after export.
+              - Omitted or `null` — Defaults to `false`, meaning the file is retained post-export.
+            - |-
+              ## IMPORTANT NOTES:
+              - File deletion is permanent and cannot be undone; ensure that the file is no longer needed before enabling this option.
+              - Use caution in multi-user or multi-process environments where files may be shared or required beyond the export operation.
+              - Immediate purging may interfere with backup, archival, or compliance requirements if files are deleted too soon.
+              - Consider implementing safeguards or confirmation steps if enabling automatic purging in production environments.
+            - |-
+              ## DEPENDENCY CHAIN:
+              - Relies on the successful completion of the export operation to trigger file deletion.
+              - Dependent on file system permissions and access controls to allow deletion.
+              - May be affected by other system settings related to file retention, archival, or cleanup policies.
+              - Could interact with error handling mechanisms to prevent deletion if export fails or is incomplete.
+            - |-
+              ## TECHNICAL DETAILS:
+              - Typically represented as a boolean value (`true` or `false`).
+              - Default behavior is to retain files unless explicitly set to `true`.
+              - Deletion should be performed using secure
+      description: |-
+        Configuration for blob exports, which transfer files from the NetSuite file cabinet
+        as-is without parsing them into records. To export a blob, set the export's top-level
+        `type` to `blob`, set `netsuite.internalId` to the file's internal ID, and leave
+        `netsuite.type` unset. Use `netsuite.file` instead when file contents should be parsed
+        into records.
+      x-celigo-ai-guidance:
+        - |-
+          blob:
+          Configuration for retrieving raw binary files from NetSuite file cabinet WITHOUT
+          parsing them into records.
+          Use this for binary file transfers (images, PDFs,
+          executables) where the file content should be transferred as-is.
+        - |-
+          ## CRITICAL: Blob export configuration
+
+          For blob exports, configure:
+          1. Set the export's top-level `type` to "blob"
+          2. Set `netsuite.internalId` to the file's internal ID
+          3. Leave `netsuite.type` blank/null (do NOT set it to "file")
+          4. Optionally configure `netsuite.blob.purgeFileAfterExport`
+        - |-
+          ## When to use blob vs file
+          - Blob exports: Raw binary transfer WITHOUT parsing - leave netsuite.type blank
+          - File exports: Parse file contents into records - set netsuite.type to "file"
+
+          Do NOT use blob configuration when you want file content parsed into data records.
+        - |-
+          ## FIELD BEHAVIOR:
+          - Stores raw binary data including files, images, audio, video, or any non-textual content.
+          - Supports download operations for binary content from the NetSuite file cabinet.
+          - File content is transferred as-is without any parsing or transformation.
+          - May be immutable or mutable depending on the specific NetSuite entity and operation.
+          - Requires careful handling to maintain data integrity during transmission and storage.
+        - |-
+          ## IMPLEMENTATION GUIDANCE:
+          - Always encode binary data (e.g., using base64) when transmitting over text-based protocols such as JSON or XML to ensure data integrity.
+          - Validate the size of the blob against NetSuite API limits and storage constraints to prevent errors or truncation.
+          - Implement secure handling practices, including encryption in transit and at rest, to protect sensitive binary data.
+          - Use appropriate MIME/content-type headers when uploading or downloading blobs to correctly identify the data format.
+          - Consider chunked uploads/downloads or streaming for large blobs to optimize performance and resource usage.
+          - Ensure consistent encoding and decoding mechanisms between client and server to avoid data corruption.
+        - |-
+          ## EXAMPLES:
+          - A base64-encoded PDF document attached to a NetSuite customer record.
+          - An image file (PNG or JPEG) stored as a blob for product catalog entries.
+          - A binary export of transaction data in a proprietary format used for integration with external systems.
+          - Audio or video files associated with marketing campaigns or training materials.
+          - Encrypted binary blobs containing sensitive configuration or credential data.
+        - |-
+          ## IMPORTANT NOTES:
+          - Blob size may be limited by NetSuite API constraints or underlying storage capabilities; exceeding these limits can cause failures.
+          - Encoding and decoding must be consistent and correctly implemented to prevent data corruption or loss.
+          - Large blobs should be handled using chunked or streamed transfers to avoid memory issues and improve reliability.
+          - Security is paramount; blobs may contain sensitive information requiring encryption and strict access controls.
+          - Access to blob data typically requires proper authentication and authorization aligned with NetSuite's security model.
+        - |-
+          ## DEPENDENCY CHAIN:
+          - Dependent on authentication and authorization mechanisms
+    restlet:
+      type: object
+      properties:
+        recordType:
+          type: string
+          description: |-
+            NetSuite record type the RESTlet operates on, as its script ID. Custom record
+            types use the "customrecord_" prefix.
+          examples: ["customer", "salesOrder", "invoice", "employee", "customrecord_myCustomRecord", "vendor", "purchaseOrder"]
+          x-celigo-ai-guidance:
+            - |-
+              Saved searches over any transaction type (sales orders, purchase orders,
+              invoices, ...) run with `recordType: "transaction"` and narrow the type through the
+              search or a `criteria` row such as `{"field": "type", "operator": "anyof",
+              "searchValue": ["PurchOrd"]}`.
+        batchSize:
+          type: number
+          description: |-
+            Number of records the RESTlet returns per request (default 1000). This, not the
+            export's `pageSize`, sizes each NetSuite call; the export keeps requesting until the
+            search is exhausted. Larger batches reduce round-trips but raise NetSuite governance
+            and memory use per call; tune to the record's size. The RESTlet caps a call at 1000,
+            so a larger value acts as 1000. In a test run or preview the request is capped at the
+            export's `pageSize` (default 20) instead.
+          examples: [100, 200, 1000]
+        searchId:
+          type: [string, 'null']
+          description: |-
+            Internal ID of the NetSuite saved search the RESTlet executes. Results follow the
+            saved search's current definition, so editing the search in NetSuite changes the
+            export output without changing this ID.
+          examples: ["9013", "customsearch_plan_velocity", "-1"]
+          x-celigo-ai-guidance:
+            - |-
+              Accepts the saved search's internal id (`"9013"`) or script id
+              (`"customsearch_..."`). `"-1"` means no saved search: the RESTlet builds an ad-hoc
+              search from `recordType` + `criteria` + `columns` (see `columns` — required in
+              that mode, along with `netsuite.skipGrouping: true`). Omitting both `searchId`
+              and `columns` fails with `[celigo_config_error] searchId or columns are required`.
+        useSS2Restlets:
+          type: boolean
+          description: |-
+            When true, calls SuiteScript 2.0 RESTlets. When false or omitted, legacy
+            SuiteScript 1.0 RESTlets are used.
+            Set at step creation together with restletVersion — the same
+            creation-time-only constraint applies (see restletVersion).
+          x-celigo-ai-guidance:
+            - |-
+              An authoring-time choice: set it when creating the step (true unless the user
+              explicitly needs a legacy version). It cannot be toggled on a saved step — moving
+              an existing step to a different version means recreating or cloning it.
+            - |-
+              SuiteScript 2.0 steps need the integrator.io SuiteApp installed in the target
+              NetSuite account, and any SuiteScript hooks must be written for the step's
+              version — verify both before cutting a recreated step over.
+        restletVersion:
+          type: string
+          enum:
+            - suitebundle
+            - suiteapp1.0
+            - suiteapp2.0
+          x-enumDescriptions:
+            suitebundle: Legacy SuiteBundle RESTlet version; slated for deprecation — NetSuite no longer updates SuiteScript 1.0.
+            suiteapp1.0: SuiteApp 1.0 RESTlet version using SuiteScript 1.0.
+            suiteapp2.0: SuiteApp 2.0 RESTlet version using SuiteScript 2.0, the modern default.
+          x-lowercase: true
+          description: |-
+            RESTlet version the export invokes. Defaults to `suiteapp2.0` when
+            `useSS2Restlets` is true, `suitebundle` otherwise.
+            The version is fixed when the step is created — the Advanced selector is
+            disabled on existing steps, and migrating an existing export to a
+            different version means recreating or cloning it.
+          x-celigo-ai-guidance:
+            - |-
+              The NetSuite API version cannot be changed on an existing step — the
+              UI disables the selector once the step is saved. When asked to migrate
+              an existing export off the SuiteBundle (or between versions), do not
+              update this field in place; the migration path is recreating or
+              cloning the step with the new version. (Real-time listener steps are
+              `type: distributed` exports — their version lives at
+              `netsuite.distributed.frameworkVersion`, with the same constraint.)
+            - |-
+              SuiteScript hooks are a separate setting from the step's API version:
+              hook code must be written for the same SuiteScript version as the step
+              (1.0 and 2.x are not interchangeable), and migrating a hook is its own
+              task — flag it whenever migrating a step that carries hooks.
+            - |-
+              Author new steps with suiteapp2.0 unless the user explicitly requires
+              a legacy version — NetSuite no longer updates SuiteScript 1.0 and
+              Celigo plans to deprecate the SuiteBundle option.
+        criteria:
+          type: array
+          description: |-
+            Filter conditions added on top of the saved search (the UI's "Additional search
+            criteria"). Each condition pairs a search column with an operator and one or two
+            comparison values, and the conditions are combined with AND — every one must match.
+          x-celigo-ai-guidance:
+            - |-
+              A flat list: each entry becomes one `search.createFilter({ name, join, operator,
+              values, formula })` call and NetSuite ANDs the resulting filters. There is no
+              logical-combinator or grouping property (`join` is NetSuite's related-record
+              join, e.g. `customer`, not an AND/OR operator) — a group object such as
+              `{"operator": "OR", "criteria": [...]}` is rejected with a 422 (`OR` is not a
+              valid enum value for path `operator`).
+            - |-
+              OR or grouped logic belongs in ONE formula condition: `{"field": "formulanumeric",
+              "operator": "equalto", "searchValue": 1, "formula": "CASE WHEN {tranid} =
+              '{{poNumber}}' OR ({shipzip} = '{{zip}}' AND {shipaddress1} = '{{address1}}')
+              THEN 1 ELSE 0 END"}`. The formula is a NetSuite (Oracle SQL) expression over
+              `{searchColumn}` references and can carry Handlebars values from the incoming
+              record. The alternative is a second lookup step filtered to run only when this
+              one returned no record. Do not describe OR between rows as configurable.
+            - |-
+              ## EXAMPLE
+              ```json
+              [
+                {"field": "type", "operator": "anyof", "searchValue": ["PurchOrd"]},
+                {"field": "mainline", "operator": "is", "searchValue": "F"},
+                {"field": "tranid", "operator": "is", "searchValue": "{{poNumber}}"}
+              ]
+              ```
+              `field` must be a search-column id for the record type (the SEARCH COLUMNS
+              metadata block), not a body-field name — e.g. `shipaddress1`, not `shipaddr1`.
+          items:
+            type: object
+            properties:
+              field:
+                type: string
+                description: |-
+                  Script-id of the search column to filter on. This is the primary
+                  field the criterion is evaluated against (e.g. "trandate", "status").
+              join:
+                type: string
+                description: |-
+                  Join relationship that applies this filter to a related record's fields instead
+                  of the base record. Must match a join name NetSuite defines for the record type.
+              operator:
+                type: string
+                enum:
+                  - after
+                  - allof
+                  - any
+                  - anyof
+                  - before
+                  - between
+                  - contains
+                  - doesnotcontain
+                  - doesnotstartwith
+                  - equalto
+                  - greaterthan
+                  - greaterthanorequalto
+                  - haskeywords
+                  - is
+                  - isempty
+                  - isnot
+                  - isnotempty
+                  - lessthan
+                  - lessthanorequalto
+                  - noneof
+                  - notafter
+                  - notallof
+                  - notbefore
+                  - notbetween
+                  - notequalto
+                  - notgreaterthan
+                  - notlessthan
+                  - notlessthanorequalto
+                  - noton
+                  - notonorafter
+                  - notonorbefore
+                  - notwithin
+                  - "on"
+                  - onorafter
+                  - onorbefore
+                  - startswith
+                  - within
+                x-enumDescriptions:
+                  after: Date column is after the value
+                  allof: Multi-select column contains every value in the array
+                  any: NetSuite's any operator for list and multi-select columns
+                  anyof: List or select column equals any value in the array
+                  before: Date column is before the value
+                  between: Numeric column lies between searchValue and searchValue2
+                  contains: Text column contains the substring
+                  doesnotcontain: Text column does not contain the substring
+                  doesnotstartwith: Text column does not start with the value
+                  equalto: Numeric column equals the value
+                  greaterthan: Numeric column is greater than the value
+                  greaterthanorequalto: Numeric column is greater than or equal to the value
+                  haskeywords: Text column contains the keywords
+                  is: Text or checkbox column equals the value exactly (checkboxes use T or F)
+                  isempty: Column has no value
+                  isnot: Text or checkbox column does not equal the value
+                  isnotempty: Column has a value
+                  lessthan: Numeric column is less than the value
+                  lessthanorequalto: Numeric column is less than or equal to the value
+                  noneof: List or select column equals none of the values in the array
+                  notafter: Date column is not after the value
+                  notallof: Multi-select column does not contain every value in the array
+                  notbefore: Date column is not before the value
+                  notbetween: Numeric column lies outside searchValue and searchValue2
+                  notequalto: Numeric column does not equal the value
+                  notgreaterthan: Numeric column is not greater than the value
+                  notlessthan: Numeric column is not less than the value
+                  notlessthanorequalto: Numeric column is not less than or equal to the value
+                  noton: Date column is not on the value
+                  notonorafter: Date column is not on or after the value
+                  notonorbefore: Date column is not on or before the value
+                  notwithin: Date column is outside the range
+                  "on": Date column is on the value
+                  onorafter: Date column is on or after the value
+                  onorbefore: Date column is on or before the value
+                  startswith: Text column starts with the value
+                  within: Date column is within the range
+                description: |-
+                  Comparison operator applied between the column and the search value, using
+                  NetSuite's lowercase search operator names. Which operators a column accepts
+                  depends on its data type.
+                examples: ["is", "anyof", "equalto"]
+                x-celigo-ai-guidance:
+                  - |-
+                    The server validates the value against this list and rejects anything else
+                    with a 422 enum error — including logical words such as `OR`; conditions are
+                    never joined through this property.
+                  - |-
+                    Numeric operators (`equalto`, `notequalto`, `greaterthan`, `lessthan`, the
+                    `...orequalto` / `not...` variants, `between`, `notbetween`) make the platform
+                    coerce a templated `searchValue` to a number, and NetSuite rejects them on text
+                    columns with `sss_invalid_srch_operator`. Compare text and checkbox columns
+                    with `is` / `isnot` and list or select columns with `anyof` / `noneof` (array
+                    `searchValue`).
+              searchValue:
+                description: |-
+                  Value the column is compared against — a string, a number, or an array of
+                  values for `anyof`-style operators. On lookup steps it may be a Handlebars
+                  expression rendered from the incoming record (for example `{{poNumber}}`).
+                examples: ["{{poNumber}}", "F", ["PurchOrd"]]
+                x-celigo-ai-guidance:
+                  - |-
+                    The incoming record is the Handlebars root here: write `{{poNumber}}`, not
+                    `{{record.poNumber}}`. The Flow Builder's step preview rejects the
+                    `record.`-rooted form with `handlebars_template_parse_error` ("poNumber" not
+                    defined in undefined) while a flow run still renders it — write the bare path
+                    so the criterion can be step-previewed.
+                  - |-
+                    A Handlebars path the incoming record does not carry fails the render with
+                    `handlebars_template_parse_error` ("Failed to generate criteria.N.searchValue
+                    from template"). A standalone preview of a lookup that uses `{{...}}` here
+                    fails the same way — outside a flow run there is no record to render from;
+                    preview with a literal value or through a flow test run instead.
+                  - |-
+                    With a numeric `operator` the rendered value is coerced to a number before the
+                    search runs, so a template must resolve to something numeric.
+              searchValue2:
+                description: |-
+                  Second comparison value for the two-value operators `between` and `notbetween`
+                  (the upper bound). Omit for every other operator.
+                x-celigo-ai-guidance:
+                  - |-
+                    Same typing as `searchValue`: a literal or a Handlebars expression, coerced to
+                    a number for the numeric two-value operators.
+              formula:
+                type: string
+                description: |-
+                  NetSuite formula expression used as the filter condition, for criteria that
+                  standard field-operator-value comparisons can't express.
+                examples: ["CASE WHEN {quantity} > 0 THEN 1 ELSE 0 END", "NVL({amount}, 0)", "TO_DATE({trandate})"]
+                x-celigo-ai-guidance:
+                  - |-
+                    Used with a formula column in `field` (`formulanumeric` or `formulatext`):
+                    NetSuite evaluates this expression per record and `operator` / `searchValue`
+                    compare its result. `formulanumeric` `equalto` `1` with `CASE WHEN <condition>
+                    THEN 1 ELSE 0 END` turns any boolean condition — including OR and grouping
+                    across columns — into one criterion, which is the only way to express OR in
+                    this array.
+                  - |-
+                    Oracle SQL syntax: `{searchColumn}` references, single-quoted string literals,
+                    `CASE` / `NVL` / `TO_DATE`; a Handlebars value from the incoming record can be
+                    embedded (`{tranid} = '{{poNumber}}'`). A formula that evaluates false for
+                    every record returns no rows with no error, so verify the expression with a
+                    preview that is expected to return records.
+        columns:
+          type: array
+          description: |-
+            Search columns the RESTlet returns for each matching record. With a saved search,
+            the RESTlet returns the search's own result columns followed by any listed here: a
+            list adds columns and never removes one of the search's, so remove a column in the
+            saved search itself. An ad-hoc search (no `searchId`) must list its columns here.
+          x-celigo-ai-guidance:
+            - |-
+              Entries are objects keyed by `name` — `[{"name": "internalid"}, {"name":
+              "tranid"}]`. Plain strings fail with a 422 `ObjectParameterError`; objects keyed by
+              `_id` fail with a 422 `BSONError` (`_id` is the server's own subdocument id).
+              Omitting both `columns` and `searchId` fails with `[celigo_config_error] searchId
+              or columns are required`.
+            - |-
+              Each `name` must be a search column id for the `recordType` (the SEARCH COLUMNS
+              metadata block), not a body-field id — `shipaddress1`, not `shipaddr1`. Set
+              `label` to control the property name in the exported record.
+          items:
+            type: object
+            properties:
+              _id:
+                type: string
+                readOnly: true
+                description: |-
+                  Subdocument id the server assigns to the column entry on save. Not a NetSuite
+                  field id — never set it when authoring.
+              name:
+                type: string
+                description: Column field name as referenced in the search.
+                x-celigo-ai-guidance:
+                  - |-
+                    REQUIRED. The NetSuite field ID (script ID) of the column to return -- e.g.
+                    `"internalid"`, `"tranid"`, `"entity"`, `"trandate"`, `"status"`,
+                    `"shipaddress1"`, `"item"`.
+                    This is the same identifier that appears in the NetSuite UI's "Field" picker on saved searches,
+                    NOT a label or display name (use `label` for that).
+                  - |-
+                    ## PLATFORM ENFORCEMENT
+                    NetSuite's `search.createColumn` rejects entries
+                    without a `name` argument with
+                    `[application · stage=apiCall] search.createColumn:
+                    Missing a required argument: name`.  The platform
+                    validation runs before any column data is read, so
+                    the export fails fast.
+                  - |-
+                    ## NAME MUST BE A SEARCH COLUMN, NOT A BODY FIELD
+                    NetSuite distinguishes between body fields (the
+                    record's intrinsic fields like `shipaddr1`) and
+                    search columns (the fields exposed for filtering /
+                    sorting in saved searches, like `shipaddress1`).
+                    `columns[].name` MUST be a search column ID, not
+                    a body field ID: take it from the chosen
+                    `recordType`'s SEARCH COLUMNS list.
+                  - |-
+                    ## EXAMPLES
+                    - `"internalid"` -- the record's internal id
+                    - `"tranid"` -- transaction number
+                    - `"entity"` -- customer / vendor reference
+                    - `"datecreated"`, `"lastmodifieddate"`
+                    - `"status"` -- transaction status
+                    - `"shipaddress1"` -- shipping address line 1
+                    - `"item"` -- line item field
+              join:
+                type: string
+                description: |-
+                  Join relationship that sources this column from a related record instead of
+                  the base record. Supports dot notation for nested joins (e.g. "employee.manager").
+                examples: ["customer", "item", "employee.manager", "vendor"]
+              summary:
+                type: string
+                enum: [group, sum, count, avg, min, max]
+                x-enumDescriptions:
+                  group: Group results by this column's value
+                  sum: Sum of the column across the grouped rows
+                  count: Count of grouped rows
+                  avg: Average of the column across the grouped rows
+                  min: Minimum value across the grouped rows
+                  max: Maximum value across the grouped rows
+                x-lowercase: true
+                description: Summary type applied to this column, turning the search into a summary search.
+              formula:
+                type: string
+                description: |-
+                  NetSuite formula expression that computes this column's value at runtime, such
+                  as a CASE statement or date formatting, instead of reading a stored field.
+                examples: ["CASE WHEN {status} = 'Open' THEN 1 ELSE 0 END", "NVL({amount}, 0) * 0.1", "TO_CHAR({trandate}, 'YYYY-MM-DD')"]
+                x-celigo-ai-guidance:
+                  - |-
+                    Use with a formula column in `name` (`formulatext`, `formulanumeric`,
+                    `formuladate`, ...) and give the entry a `label` — the label becomes the
+                    exported record's property name. Oracle SQL syntax over `{searchColumn}`
+                    references; string literals use single quotes.
+              label:
+                type: string
+                description: |-
+                  Display name for the column; it becomes the property name of the column's value
+                  in each exported record.
+                examples: ["Customer Name", "Invoice Date", "Total Amount", "Status"]
+              sort:
+                type: boolean
+                description: When true, query results are sorted by this column's values.
+        markExportedBatchSize:
+          type: integer
+          description: |-
+            Number of records updated per RESTlet call when marking records as exported in
+            NetSuite (live: an integer count, e.g. 100).
+          maximum: 100
+          minimum: 1
+          x-celigo-ui-override: >-
+            min 1 / max 100 mirror the integrator-ui NetSuite export form
+            (netsuite.restlet.markExportedBatchSize, fallsWithinNumericalRange min 1 / max 100).
+            Encoded to mirror the form so builders produce valid configurations.
+        hooks:
+          type: [object, 'null']
+          properties:
+            batchSize:
+              type: number
+              description: |-
+                Legacy location of the RESTlet page size; `restlet.batchSize` is the current
+                field and takes precedence when both are set.
+            preSend:
+              type: object
+              properties:
+                fileInternalId:
+                  type: string
+                  description: |-
+                    Internal ID of the JavaScript file in the NetSuite File Cabinet that defines
+                    the hook function. Must be readable by the role behind the export's connection.
+                  examples: ["12345", "6398"]
+                function:
+                  type: string
+                  description: |-
+                    Name of the global function in that file that NetSuite invokes as the pre
+                    send hook.
+                  examples: ["preSendHookScheduledExport", "appendCustomerEmail"]
+                configuration:
+                  type: object
+                  description: |-
+                    Free-form JSON stored with the hook reference for the script's own use. Custom
+                    settings in scope for the export are passed to the function separately as
+                    `options.settings`.
+              description: |-
+                SuiteScript hook that runs inside NetSuite after a page of records is collected
+                and before it is sent to the Celigo platform.
+              x-celigo-ai-guidance:
+                - |-
+                  The function receives one `options` argument — `data` (the page of records),
+                  `recordType`, `searchId`, `skipGrouping`, `delta`, `once`, `_exportId`,
+                  `_connectionId`, `_flowId`, `_integrationId`, `settings`, `testMode` — and must
+                  return `{ data, errors, errorsAndRetryData }` (`errorsAndRetryData` items are
+                  `{retryData: <record>, errors: [<error>]}`). Throwing stops the flow.
+                - |-
+                  Use it to enrich or filter records with SuiteScript searches and record loads
+                  before they leave NetSuite (no extra API round-trips). The script must be
+                  written for the step's SuiteScript version (1.0 vs 2.x are not interchangeable);
+                  the SuiteScript 1.0 real-time variant receives a single record object rather
+                  than an array.
+          description: |-
+            SuiteScript hooks for the export. Only `preSend` exists on exports; imports carry
+            the pre map, post map, and post submit hooks.
+        cLocked:
+          type: object
+          # TODO(verify): 0 occurrences across all stored exports (restlet/distributed/top-level); semantics unverified
+          description: Lock state that prevents modification of the configuration when set.
+      description: |-
+        Configuration for `restlet` exports. Identifies the RESTlet script that retrieves data
+        from NetSuite, along with the saved search, criteria, and columns it executes with.
+      x-celigo-ai-guidance:
+        - |-
+          Two shapes: a saved-search export (`searchId` set; `criteria` optionally narrows it;
+          `columns` omitted to return the search's own columns) or an ad-hoc search
+          (`searchId: "-1"` or omitted, `recordType` + `criteria` + `columns` supplied, and
+          `netsuite.skipGrouping: true` — without it the run fails with `[search_not_sorted]`).
+    distributed:
+      type: object
+      x-celigo-ai-guidance:
+        - |-
+          A real-time listener is an export with top-level `type: distributed` and
+          `netsuite.type: distributed`. Saving it creates a user event script deployment on the
+          record type that runs after submit, so records arrive only when NetSuite saves one and
+          `POST /v1/exports/preview` cannot sample it.
+      properties:
+        recordType:
+          type: string
+          description: |-
+            NetSuite record type the listener is deployed on, as its lowercase script ID
+            (`customer`, `salesorder`, `customrecord_<scriptid>`) — never the display name or a
+            custom record's numeric internal ID. Types the platform's record-type catalog marks
+            `doesNotSupportRTExport` cannot host a listener and are not offered in the UI.
+          examples: ["customer", "invoice", "salesorder", "itemfulfillment", "vendorbill", "employee", "purchaseorder", "creditmemo"]
+          x-celigo-ai-guidance:
+            - |-
+              Take the value from the `recordTypes` metadata catalog row's `scriptId`, lower-cased:
+              custom records and lists carry NetSuite's numeric internal ID in `id` and the script
+              ID in `scriptId`, so `id` is wrong for them. Skip rows with `doesNotSupportRTExport: true`.
+        executionContext:
+          type: array
+          description: |-
+            NetSuite execution contexts that trigger this distributed export. A record change
+            fires the export only when it occurs in one of the listed contexts.
+          x-celigo-ai-guidance:
+            - |-
+              Defaults to `userinterface` and `webstore` — the manual, time-sensitive saves a
+              real-time export exists for. Bulk contexts such as `csvimport`, `custommassupdate`
+              and `mapreduce` turn every record of a mass update into an outbound call and flood
+              the flow with records a scheduled export would batch; add them only when asked.
+          default:
+            - userinterface
+            - webstore
+          items:
+            type: string
+            enum:
+              - userinterface
+              - webservices
+              - csvimport
+              - offlineclient
+              - portlet
+              - scheduled
+              - suitelet
+              - custommassupdate
+              - workflow
+              - webstore
+              - userevent
+              - mapreduce
+              - restlet
+              - webapplication
+              - restwebservices
+            x-enumDescriptions:
+              userinterface: Triggered by user interactions in the NetSuite UI.
+              webservices: Triggered by SOAP web services API calls.
+              csvimport: Triggered by CSV import operations.
+              offlineclient: Triggered by offline client synchronization.
+              portlet: Triggered by portlet interactions on dashboards.
+              scheduled: Triggered by scheduled script executions.
+              suitelet: Triggered by Suitelet script executions.
+              custommassupdate: Triggered by custom mass update operations.
+              workflow: Triggered by SuiteFlow workflow actions.
+              webstore: Triggered by SuiteCommerce web store transactions.
+              userevent: Triggered by user event script executions.
+              mapreduce: Triggered by Map/Reduce script operations.
+              restlet: Triggered by RESTlet API calls, including the records a NetSuite Distributed import writes.
+              webapplication: Triggered by web application interactions.
+              restwebservices: Triggered by REST web services API calls.
+        disabled:
+          type: boolean
+          description: |-
+            When true, the listener's NetSuite deployment is inactive and record saves no longer
+            trigger the export. Maintained by the platform as the flow is disabled and re-enabled;
+            re-enabling the flow re-registers the deployment. A listener is created disabled, and
+            a flow created already enabled leaves it that way until a flow update sets
+            `disabled: false`, which activates it within seconds.
+          x-celigo-ai-guidance:
+            - |-
+              Pause a listener by disabling its flow, not by setting this field. A listener that has
+              stopped firing is re-registered by disabling and re-enabling the flow.
+        executionType:
+          type: array
+          description: |-
+            Record operations that trigger this distributed export. A record event fires the
+            export only when its operation matches one of the listed types.
+          x-celigo-ai-guidance:
+            - |-
+              Defaults to `create`, `edit` and `xedit` (inline edit) — new records plus every way
+              an existing record changes. Narrow it for event-driven work: Celigo's own example
+              exports a sales order only on `approve` to notify a chat channel.
+            - |-
+              The UI offers thirteen of these values (`create`, `edit`, `delete`, `xedit`,
+              `approve`, `cancel`, `reject`, `pack`, `ship`, `dropship`, `specialorder`,
+              `orderitems`, `paybills`); the API accepts all twenty.
+          default:
+            - create
+            - edit
+            - xedit
+          items:
+            type: string
+            enum:
+              - create
+              - edit
+              - delete
+              - xedit
+              - copy
+              - view
+              - cancel
+              - approve
+              - reject
+              - pack
+              - ship
+              - markcomplete
+              - reassign
+              - editforecast
+              - dropship
+              - specialorder
+              - orderitems
+              - paybills
+              - print
+              - email
+            x-enumDescriptions:
+              create: Triggers when a new record is created.
+              edit: Triggers when a record is edited via the UI.
+              delete: Triggers when a record is deleted.
+              xedit: Triggers when a record is inline-edited without opening it.
+              copy: Triggers when a record is duplicated.
+              view: Triggers when a record is viewed.
+              cancel: Triggers when a transaction is cancelled.
+              approve: Triggers when a record is approved.
+              reject: Triggers when a record is rejected.
+              pack: Triggers when a fulfillment record is packed.
+              ship: Triggers when a fulfillment record is shipped.
+              markcomplete: Triggers when a record is marked as complete.
+              reassign: Triggers when a record is reassigned to another user.
+              editforecast: Triggers when a forecast is edited.
+              dropship: Triggers when a drop ship operation is performed.
+              specialorder: Triggers when a special order operation is performed.
+              orderitems: Triggers when an order items action is performed.
+              paybills: Triggers when a pay bills action is performed.
+              print: Triggers when a print action is performed on a record.
+              email: Triggers when an email action is performed on a record.
+        qualifier:
+          # No object form: the previous 'type: object' matched no stored document.
+          type: [array, string, 'null']
+          description: |-
+            Field-specific qualification criteria the SuiteApp evaluates against the record before
+            exporting it; saves that do not match are discarded. Stored as a filter-expression array
+            of `[field, operator, value]` rules joined by lowercase `"and"` / `"or"`, as a legacy
+            expression string, or null when no criteria are set.
+          examples:
+            - ["custrecord_ai_entitlements_status_code", "!=", "200"]
+            - [["val:entity", "=", "1397"], "and", ["shipstatus", "=", "C"]]
+          x-celigo-ai-guidance:
+            - |-
+              Rules combine strictly pairwise: three conditions are stored as
+              `[A, "and", [B, "and", C]]`, never as a flat `[A, "and", B, "and", C]`.
+            - |-
+              The left operand is a body field ID; sublist (line) fields cannot be used. A select
+              field takes a prefix: `text:<field>` compares the option's label (the UI's "(Name)"
+              row) and `val:<field>` the internal ID (the "(InternalId)" row — `entity.internalid`
+              is stored as `val:entity`); multiselects use `texts:` / `vals:`.
+            - |-
+              Operator tokens are `=`, `!=`, `?` (like), `contains`, `doesNotContain`, `&gt;` and
+              `&lt;` (the HTML entities, literally); emptiness is the rule `[field, "empty", true]`
+              and non-emptiness `[field, "empty", false]`. Checkbox values are `"T"` / `"F"` on
+              SuiteBundle and SuiteApp 1.0 steps and boolean `true` / `false` on `suiteapp2.0` steps.
+            - |-
+              The UI's value dropdown for a select field is NetSuite's own option list for that
+              field on that record type, capped at the first 1,000 options alphabetically — a value
+              missing from the dropdown can still exist in NetSuite. Read the list through the
+              record-type metadata endpoint with `includeSelectOptions=true` before judging it.
+        skipExportFieldId:
+          type: string
+          description: |-
+            Script ID of a checkbox body field on the record type. A save with that box checked is
+            skipped by the listener, which then clears the box itself — used to keep a mass update
+            from fanning out and to stop a write-back import from re-triggering the listener.
+          x-celigo-ai-guidance:
+            - |-
+              For a bidirectional sync, have the write-back import set this checkbox to true in the
+              same save: the listener skips that save and unchecks the box, breaking the loop.
+        hooks:
+          type: object
+          description: |-
+            SuiteScript hook that runs inside NetSuite before the record leaves it.
+          properties:
+            preSend:
+              type: object
+              description: |-
+                Pre-send hook: a SuiteScript function in the NetSuite file cabinet invoked before
+                records leave NetSuite, with the full SuiteScript API available — for example to run
+                dynamic searches against the record being exported.
+              x-celigo-ai-guidance:
+                - |-
+                  The hook's SuiteScript version must match the step's `frameworkVersion` (1.0 and
+                  2.x are not interchangeable); migrating a step to another version means rewriting
+                  the hook as a separate task.
+              properties:
+                fileInternalId:
+                  type: string
+                  description: Internal ID of the file cabinet file that holds the hook's SuiteScript.
+                  examples: ["12345", "987654"]
+                function:
+                  type: string
+                  description: Name of the function in that file to invoke for each export.
+                  examples: ["preSendCustomer", "enrichOrderDetails"]
+                configuration:
+                  type: object
+                  description: Settings passed to the hook function.
+        sublists:
+          type: [array, 'null']
+          description: |-
+            IDs of the NetSuite sublists to include with each exported record (for example `item`
+            for transaction line items). Records are exported with body fields only when no
+            sublists are selected. Legacy documents may store null (equivalent to no sublists).
+          items:
+            type: string
+          examples: [["item"]]
+          x-celigo-ai-guidance:
+            - |-
+              Each selected sublist is an extra query inside the NetSuite save, so select only the
+              sublists the flow maps. Qualification criteria cannot reference sublist fields
+              regardless of this setting.
+        referencedFields:
+          type: object
+          description: |-
+            Field references recorded on the listener by the platform. Not exposed in the listener
+            form; leave as stored.
+        relatedLists:
+          type: object
+          description: |-
+            Related record lists recorded on the listener by the platform. Not exposed in the
+            listener form; leave as stored.
+        forceReload:
+          type: boolean
+          description: |-
+            When true, the listener reloads the record from the database after the save before
+            exporting it, so fields that are populated only once the save completes — such as
+            transaction line IDs on new lines — are included. The reload slows every save of that
+            record type.
+          x-celigo-ai-guidance:
+            - |-
+              Leave false unless a field is missing from the exported payload that NetSuite fills
+              in after submit (line IDs are the documented case); there is no published list of such
+              fields.
+        ioEnvironment:
+          type: string
+          description: |-
+            integrator.io environment the listener's NetSuite deployment reports to. Written by the
+            platform when the listener registers with NetSuite; live-observed values include
+            `production` and `staging`.
+          examples: ["production", "staging"]
+          x-celigo-ai-guidance:
+            - |-
+              Never author or change it. When updating from a GET that returned a value, carry it
+              through unchanged; when the GET returned none, send none.
+        ioDomain:
+          type: string
+          description: |-
+            integrator.io domain the listener's NetSuite deployment calls back to — the account's
+            own regional domain, stamped by the platform on every save and echoed on create and
+            update responses; not returned by GET.
+          examples: ["integrator.io"]
+          x-celigo-ai-guidance:
+            - |-
+              Never author it: the platform re-stamps the account's domain on save. Live-verified on
+              one North America account, where a PUT that omitted it came back with that account's
+              domain (`integrator.io`); other regions carry their own host.
+        lastSyncedDate:
+          type: string
+          format: date-time
+          description: |-
+            When the listener's deployment last synchronized with NetSuite. Written by the platform;
+            not set until the first successful synchronization.
+          x-celigo-ai-guidance:
+            - |-
+              Never author or change it. When updating from a GET that returned a value, carry it
+              through unchanged; when the GET returned none, send none.
+        settings:
+          type: object
+          description: |-
+            Additional key-value settings for the distributed export. Not exposed in the listener
+            form.
+        useSS2Framework:
+          type: boolean
+          description: |-
+            Derived by the platform from `frameworkVersion` — true when it is `suiteapp2.0`, absent
+            otherwise — and echoed on create and update responses; not returned by GET. A value
+            sent on create or update is replaced by the derived one.
+          x-celigo-ai-guidance:
+            - |-
+              Never set this; `frameworkVersion` is authoritative. Live-verified: a PUT sending the
+              opposite value came back with the value derived from `frameworkVersion`.
+        frameworkVersion:
+          type: string
+          enum:
+            - suitebundle
+            - suiteapp1.0
+            - suiteapp2.0
+          x-enumDescriptions:
+            suitebundle: Legacy SuiteBundle framework; slated for deprecation — NetSuite no longer updates SuiteScript 1.0.
+            suiteapp1.0: SuiteApp 1.0 framework using SuiteScript 1.0.
+            suiteapp2.0: SuiteApp 2.0 framework using SuiteScript 2.0, the modern default.
+          description: |-
+            SuiteApp framework version used by the distributed export.
+            Fixed when the step is created — the Advanced selector is disabled on
+            existing steps, and migrating an existing listener to a different
+            version means recreating or cloning it.
+          x-celigo-ai-guidance:
+            - |-
+              The NetSuite API version cannot be changed on an existing step — the
+              UI disables the selector once the step is saved. When asked to
+              migrate an existing real-time listener off the SuiteBundle (or
+              between versions), do not update this field in place; the migration
+              path is recreating or cloning the step with the new version.
+            - |-
+              SuiteScript hooks are a separate setting from the step's API
+              version: hook code must be written for the same SuiteScript version
+              as the step (1.0 and 2.x are not interchangeable), and migrating a
+              hook is its own task — flag it whenever migrating a step that
+              carries hooks.
+            - |-
+              Author new steps with suiteapp2.0 unless the user explicitly
+              requires a legacy version — NetSuite no longer updates SuiteScript
+              1.0 and Celigo plans to deprecate the SuiteBundle option.
+      description: |-
+        Configuration for `distributed` exports, which use the NetSuite SuiteApp to fire
+        real-time, event-driven exports when records change. Define the record type to listen
+        to and the execution contexts and operations that trigger it.
+    getList:
+      # Array, not object; stored occurrences are empty — the item shape below documents
+      # the getList record-reference semantics but is not observed populated.
+      type: array
+      description: |-
+        Configuration for `getList` exports — a list of record references, each retrieving one
+        NetSuite record by its identifier. The export returns the fetched records in list order.
+      x-celigo-ai-guidance:
+        - |-
+          Send getList as a bare array of record references, exactly as GET returns it. Never
+          wrap it in an object (e.g. `"getList": {"type": [...]}`): the adaptor requires an
+          array, and an export saved with the wrapper shape fails at run time with
+          "requires getList prop".
+        - |-
+          Reference standard records with `type` plus `internalId` or `externalId`. Reference
+          custom records with `typeId` instead of `type`; a `typeId` starting with
+          "customtransaction" targets a custom transaction type. When both identifiers are
+          present, `internalId` wins and `externalId` is ignored.
+      items:
+        type: object
+        properties:
+          type:
+            type: string
+            description: |-
+              Standard NetSuite record type to retrieve (e.g. "customer", "salesOrder").
+              Used when `typeId` is absent. Case-sensitive.
+          typeId:
+            type: string
+            description: |-
+              Script ID of a custom record type ("customrecord_...") or custom transaction
+              type ("customtransaction_..."). Takes precedence over `type` when present.
+              Case-sensitive.
+          internalId:
+            type: string
+            description: |-
+              Internal ID of the NetSuite record to retrieve. Assigned by NetSuite at record
+              creation and unique within the record type. Takes precedence over `externalId`.
+          externalId:
+            type: string
+            description: |-
+              Identifier assigned by an external system, used to reference and synchronize the
+              record across systems. Distinct from the NetSuite-assigned internal ID.
+    searchPreferences:
+      type: object
+      properties:
+        bodyFieldsOnly:
+          type: boolean
+          description: |-
+            When true, search results include only the record's body fields and exclude fields
+            from joined or related records. Reduces payload size when related data isn't needed.
+          x-celigo-ai-guidance:
+            - |-
+              bodyFieldsOnly indicates whether the search results should include only the body
+              fields of the records,
+              excluding any joined or related record fields.
+              This setting controls the scope of data returned by the search operation,
+              allowing for more focused and efficient retrieval when only the main record's
+              fields are necessary.
+            - |-
+              ## FIELD BEHAVIOR:
+              - When set to true, search results will include only the fields that belong directly to the main record (body fields), excluding any fields from joined or related records.
+              - When set to false or omitted, search results may include fields from both the main record and any joined or related records specified in the search.
+              - Directly affects the volume and detail of data returned, potentially reducing payload size and improving performance.
+              - Influences how the search engine processes and compiles the result set, limiting it to primary record data when enabled.
+            - |-
+              ## IMPLEMENTATION GUIDANCE:
+              - Use this property to optimize search performance and reduce data transfer when only the main record's fields are required.
+              - Set to true to minimize payload size, which is beneficial for large datasets or bandwidth-sensitive environments.
+              - Verify that your search criteria and downstream processing do not require any joined or related record fields before enabling this option.
+              - If joined fields are necessary for your application logic, keep this property false or unset to ensure complete data retrieval.
+              - Consider this setting in conjunction with other search preferences like pageSize and returnSearchColumns for optimal results.
+            - |-
+              ## EXAMPLES:
+              - `bodyFieldsOnly: true` — returns only the main record's body fields in search results, excluding any joined record fields.
+              - `bodyFieldsOnly: false` — returns both body fields and fields from joined or related records as specified in the search.
+              - Omitted `bodyFieldsOnly` property — defaults to false behavior, including joined fields if requested.
+            - |-
+              ## IMPORTANT NOTES:
+              - Enabling bodyFieldsOnly may omit critical related data if your search logic depends on joined fields, potentially impacting application functionality.
+              - This setting is particularly useful for improving performance and reducing data size in scenarios where joined data is unnecessary.
+              - Not all record types or search operations may support this preference; verify compatibility with your specific use case.
+              - Changes to this setting can affect the structure and completeness of search results, so test thoroughly when modifying.
+            - |-
+              ## DEPENDENCY CHAIN:
+              - This property is part of the `searchPreferences` object within the NetSuite API request.
+              - It influences the fields returned by the search operation, affecting both data scope and payload size.
+              - May
+        pageSize:
+          type: number
+          description: Number of search results NetSuite returns per page.
+          x-celigo-ai-guidance:
+            - |-
+              pageSize specifies the number of search results to be returned per page in a
+              paginated search response.
+              This property controls the size of each page of results when performing searches,
+              enabling efficient handling and retrieval of large datasets by dividing them
+              into manageable chunks.
+              By adjusting pageSize,
+              clients can balance between the volume of data received per request and the
+              performance implications of processing large result sets.
+            - |-
+              ## FIELD BEHAVIOR:
+              - Determines the maximum number of records returned in a single page of search results.
+              - Directly influences the pagination mechanism by setting how many items appear on each page.
+              - Helps optimize network and client performance by limiting the amount of data transferred and processed per response.
+              - Affects the total number of pages available, calculated based on the total number of search results divided by pageSize.
+              - When pageSize is changed between requests, it may affect the consistency of pagination navigation.
+            - |-
+              ## IMPLEMENTATION GUIDANCE:
+              - Assign pageSize a positive integer value that balances response payload size and system performance.
+              - Ensure the value respects any minimum and maximum limits imposed by the API or backend system.
+              - Maintain consistent pageSize values across paginated requests to provide predictable and stable navigation through result pages.
+              - Consider client device capabilities, network bandwidth, and expected user interaction patterns when selecting pageSize.
+              - Implement validation to prevent invalid or out-of-range values that could cause errors or degraded performance.
+              - When dealing with very large datasets, consider smaller pageSize values to reduce memory consumption and improve responsiveness.
+            - |-
+              ## EXAMPLES:
+              - pageSize: 25 — returns 25 search results per page, suitable for standard list views.
+              - pageSize: 100 — returns 100 search results per page, useful for bulk data processing or export scenarios.
+              - pageSize: 10 — returns 10 search results per page, ideal for quick previews or limited bandwidth environments.
+              - pageSize: 50 — a moderate setting balancing data volume and performance for typical use cases.
+            - |-
+              ## IMPORTANT NOTES:
+              - Excessively large pageSize values can increase response times, memory usage, and may lead to timeouts or throttling.
+              - Very small pageSize values can cause a high number of API calls, increasing overall latency and server load.
+              - The API may enforce maximum allowable pageSize limits; requests exceeding these limits may result in errors or automatic truncation.
+              - Changing pageSize mid-pagination can disrupt user experience by altering the number of pages and item offsets.
+              - Some APIs may have default pageSize values if none is specified; explicitly setting page
+        returnSearchColumns:
+          type: boolean
+          description: |-
+            When true, search results include the column data defined in the search. When
+            false, column data is omitted and results contain only minimal record information.
+          x-celigo-ai-guidance:
+            - |-
+              returnSearchColumns:
+              Specifies whether the search operation should return the columns (fields)
+              defined in the search results,
+              providing detailed data for each record matching the search criteria.
+            - |-
+              ## FIELD BEHAVIOR:
+              - Determines if the search response includes the columns specified in the search definition, such as field values and metadata.
+              - When set to true, the search results will contain detailed column data for each record, enabling comprehensive data retrieval.
+              - When set to false, the search results will omit column data, potentially returning only record identifiers or minimal information.
+              - Directly influences the amount of data returned, impacting response payload size and processing time.
+              - Affects how client applications can utilize the search results, depending on the presence or absence of column data.
+            - |-
+              ## IMPLEMENTATION GUIDANCE:
+              - Set to true when detailed search result data is required for processing, reporting, or display purposes.
+              - Set to false to optimize performance and reduce bandwidth usage when only record IDs or minimal data are needed.
+              - Use in conjunction with other search preference settings (e.g., `pageSize`, `returnSearchRows`) to fine-tune search responses.
+              - Ensure client applications are designed to handle both scenarios—presence or absence of column data—to avoid errors or incomplete processing.
+              - Consider the trade-off between data completeness and performance when configuring this property.
+            - |-
+              ## EXAMPLES:
+              - `returnSearchColumns: true` — The search results will include all defined columns for each record, such as names, dates, and custom fields.
+              - `returnSearchColumns: false` — The search results will exclude column data, returning only basic record information like internal IDs.
+            - |-
+              ## IMPORTANT NOTES:
+              - Enabling returnSearchColumns may significantly increase response size and processing time, especially for searches returning many records or columns.
+              - Some search operations or API endpoints may require columns to be returned to function correctly or to provide meaningful results.
+              - Disabling this option can improve performance but limits the detail available in search results, which may affect downstream processing or user interfaces.
+              - Changes to this setting can impact caching, pagination, and sorting behaviors depending on the search implementation.
+            - |-
+              ## DEPENDENCY CHAIN:
+              - Related to other `searchPreferences` properties such as `pageSize` (controls number of records per page) and `returnSearchRows` (controls whether search rows are returned).
+              - Works in tandem with search definition settings that specify which columns are included in the search.
+              - May affect or be affected by API-level configurations or limitations on data retrieval and response formatting.
+      description: Preferences that control how NetSuite executes searches and shapes the results it returns.
+      x-celigo-ai-guidance:
+        - |-
+          searchPreferences:
+          Preferences that control the behavior and parameters of search operations within
+          the NetSuite environment,
+          enabling customization of how search queries are executed and how results are
+          returned to optimize relevance,
+          performance, and user experience.
+        - |-
+          ## FIELD BEHAVIOR:
+          - Defines the execution parameters for search queries, including pagination, sorting, filtering, and result formatting.
+          - Controls the scope, depth, and granularity of data retrieved during search operations.
+          - Influences the performance, accuracy, and relevance of search results based on configured preferences.
+          - Can be adjusted dynamically to tailor search behavior to specific user roles, contexts, or application requirements.
+          - May include settings such as page size limits, sorting criteria, case sensitivity, and filter application.
+        - |-
+          ## IMPLEMENTATION GUIDANCE:
+          - Utilize this property to fine-tune search operations to meet specific user or application needs, improving efficiency and relevance.
+          - Validate all preference values against supported NetSuite search parameters to prevent errors or unexpected behavior.
+          - Establish sensible default preferences to ensure consistent and predictable search results when explicit preferences are not provided.
+          - Allow dynamic updates to preferences to adapt to changing contexts, such as different user roles or data volumes.
+          - Ensure that preference configurations comply with user permissions and role-based access controls to maintain security and data integrity.
+        - |-
+          ## EXAMPLES:
+          - Setting a page size of 50 to limit the number of records returned per search query for better performance.
+          - Enabling case-insensitive search filters to broaden result matching.
+          - Specifying sorting order by transaction date in descending order to show the most recent records first.
+          - Applying filters to restrict search results to a particular customer segment or date range.
+          - Configuring search to exclude inactive records to streamline results.
+        - |-
+          ## IMPORTANT NOTES:
+          - Misconfiguration of searchPreferences can lead to incomplete, irrelevant, or inefficient search results, negatively impacting user experience.
+          - Certain preferences may be restricted or overridden based on user roles, permissions, or API version constraints.
+          - Changes to searchPreferences can affect system performance; excessive page sizes or complex filters may increase load times.
+          - Always verify compatibility of preference settings with the specific NetSuite API version and environment in use.
+          - Consider the impact of preferences on downstream processes that consume search results.
+        - |-
+          ## DEPENDENCY CHAIN:
+          - Depends on the overall search operation configuration and the specific search type being performed.
+          - Interacts with user authentication and authorization settings to enforce access controls on search results.
+          - Influences and is influenced by data retrieval mechanisms and indexing strategies within NetSuite.
+    file:
+      type: object
+      description: |-
+        Configuration for file exports, which retrieve files from the NetSuite file cabinet
+        and parse their contents (CSV, XML, JSON) into records. Leave the export's top-level
+        `type` unset when using this object; for raw transfers without parsing, use
+        `netsuite.blob` with the export's `type` set to `blob` instead.
+      x-celigo-ai-guidance:
+        - |-
+          Configuration for retrieving files from NetSuite file cabinet and PARSING them into records.
+          Use this for structured file exports (CSV, XML,
+          JSON) where the file content should be parsed into data records.
+        - |-
+          ## CRITICAL: When to use file vs blob
+          - Use `netsuite.file` WITH export `type: null/undefined` for file exports WITH parsing (CSV, XML, JSON)
+          - Use `netsuite.blob` WITH export `type: "blob"` for raw binary transfers WITHOUT parsing
+
+          When you want file content to be parsed into individual records, use this `file` configuration and leave the export's `type` field as null or undefined (standard export). Do NOT set `type: "blob"` when using this configuration.
+      properties:
+        folderInternalId:
+          type: string
+          description: |-
+            Internal ID of the NetSuite file cabinet folder to export files from. Accepts a
+            handlebars expression (e.g. `{{record.folderId}}`) when the folder must be
+            selected dynamically from record data. The ID is stable across folder renames and
+            moves, but may differ between non-production and production accounts.
+          examples: ["12345", "67890", "{{record.folderId}}"]
+          x-celigo-ai-guidance:
+            - |-
+              Specify the internal ID for the NetSuite File Cabinet folder from which you want
+              to export your files.
+              If the folder internal ID is required to be dynamic based on the data you are integrating,
+              you can specify the JSON path to the field in your data containing the folder
+              internal ID values instead — with DOUBLE braces (e.g. {{record.folderId}}).
+              Default to a static numeric ID; dynamic substitution is the exception.
+            - |-
+              ## FIELD BEHAVIOR:
+              - Identifies the specific folder in NetSuite's file cabinet to export files from
+              - Must be a valid internal ID that exists in the NetSuite environment
+              - Supports dynamic values using handlebars notation for data-driven folder selection
+              - The internal ID is distinct from folder names or paths; it's a stable numeric identifier
+            - |-
+              ## IMPLEMENTATION GUIDANCE:
+              - Obtain the folderInternalId via NetSuite's UI (File Cabinet > folder properties) or API
+              - For static exports, use the numeric internal ID directly (e.g., "12345")
+              - For dynamic exports, use handlebars syntax to reference a field in your data
+              - Verify folder permissions - the integration user must have access to the folder
+              - The folderInternalId is distinct from folder names or folder paths; it is a stable numeric identifier used internally by NetSuite.
+              - Using an incorrect or non-existent folderInternalId will result in errors or unintended file placement.
+              - Folder permissions and user roles can impact the ability to perform operations even with a valid folderInternalId.
+              - Folder hierarchy changes do not affect the folderInternalId, ensuring persistent reference integrity.
+            - |-
+              ## DEPENDENCY CHAIN:
+              - Depends on the existence of the folder within the NetSuite file cabinet.
+              - Requires appropriate user permissions to access or modify the folder.
+              - Often used in conjunction with file identifiers and other file metadata fields.
+              - May be linked to folder creation or folder search operations to retrieve valid IDs.
+            - |-
+              ## EXAMPLES:
+              - "12345" - Static folder internal ID (the usual form)
+              - "67890" - Another valid folder internal ID
+              - "{{record.folderId}}" - Dynamic folder ID from integration data (double braces)
+            - |-
+              ## IMPORTANT NOTES:
+              - Using an incorrect or non-existent folderInternalId will result in errors
+              - Folder hierarchy changes do not affect the folderInternalId
+              - Internal IDs may differ between sandbox and production environments
+        backupFolderInternalId:
+          type: string
+          description: |-
+            Internal ID of the NetSuite file cabinet folder where backup files are stored.
+            IDs are account-specific and do not transfer between non-production and production
+            environments.
+          examples: ["12345", "67890", "112233"]
+          x-celigo-ai-guidance:
+            - |-
+              backupFolderInternalId is the internal identifier of the backup folder within
+              the NetSuite file cabinet where backup files are stored.
+              This ID uniquely identifies the folder location used for saving backup files programmatically,
+              ensuring that backup operations target the correct directory within the NetSuite environment.
+            - |-
+              ## FIELD BEHAVIOR:
+              - Represents a unique internal ID assigned by NetSuite to a specific folder in the file cabinet.
+              - Directs backup operations to the designated folder location for storing backup files.
+              - Must correspond to an existing and accessible folder within the NetSuite file cabinet.
+              - Typically handled as an integer value in API requests and responses.
+              - Immutable for a given folder; changing the folder requires updating this ID accordingly.
+            - |-
+              ## IMPLEMENTATION GUIDANCE:
+              - Verify that the folder with this internal ID exists before initiating backup operations.
+              - Confirm that the folder has the necessary permissions to allow writing and managing backup files.
+              - Use NetSuite SuiteScript APIs or REST API calls to retrieve and validate folder internal IDs dynamically.
+              - Avoid hardcoding the internal ID; instead, use configuration files, environment variables, or administrative settings to maintain flexibility across environments.
+              - Implement error handling to manage cases where the folder ID is invalid, missing, or inaccessible.
+              - Consider environment-specific IDs for sandbox versus production to prevent misdirected backups.
+            - |-
+              ## EXAMPLES:
+              - 12345
+              - 67890
+              - 112233
+            - |-
+              ## IMPORTANT NOTES:
+              - The internal ID is unique per NetSuite account and environment; IDs do not transfer between sandbox and production.
+              - Deleting or renaming the folder associated with this ID will disrupt backup processes until updated.
+              - Proper access rights and permissions are mandatory to write backup files to the specified folder.
+              - Changes to folder structure or permissions should be coordinated with backup scheduling to avoid failures.
+              - This property is critical for ensuring backup data integrity and recoverability within NetSuite.
+            - |-
+              ## DEPENDENCY CHAIN:
+              - Depends on the existence and accessibility of the folder in the NetSuite file cabinet.
+              - Interacts with backup scheduling, file naming conventions, and storage management properties.
+              - May be linked with authentication and authorization mechanisms controlling file cabinet access.
+              - Relies on NetSuite API capabilities to manage and reference file cabinet folders.
+            - |-
+              ## TECHNICAL DETAILS:
+              - Data type: Integer (typically a 32-bit integer).
+              - Represents the internal NetSuite folder ID, not the folder name or path.
+              - Used in API payloads to specify backup destination folder.
+              - Must be retrieved or confirmed via NetSuite SuiteScript
+        fileNameStartsWith:
+          type: string
+          description: |-
+            Optional prefix filter. Only files whose names start with this string are
+            exported from the configured folder.
+          examples: ["ORDER_", "INV_"]
+        fileNameEndsWith:
+          type: string
+          description: |-
+            Optional suffix filter. Only files whose names end with this string (e.g. a
+            ".csv" extension) are exported from the configured folder.
+          examples: [".csv", ".xml"]
+  required: []

@@ -1,0 +1,89 @@
+Router:
+  type: object
+  description: |
+    Directs records into branches. A router comes in two shapes, told apart by whether
+    `routeRecordsTo` and `routeRecordsUsing` are set: a **branching router** sets both and has two
+    or more branches, each taking the records its `inputFilter` (or the router's `script`)
+    matches — the router node you see in Flow Builder; a **pass-through router** sets neither and
+    has exactly one branch that every record goes straight through — not drawn in Flow Builder,
+    it is the joint that holds the steps before the first branching router and that merges
+    branches back into shared steps (branches rejoin only by pointing `nextRouterId` at the same
+    router). A flow with no branching needs no routers — its steps go in top-level
+    `pageProcessors` — unless it is abstract (`isAbstract`), where top-level `pageProcessors` are
+    rejected and the chain sits in one pass-through router.
+  properties:
+    id:
+      type: string
+      maxLength: 36
+      pattern: '^[A-Za-z0-9_-]+$'
+      description: |
+        Unique identifier for this router within the flow.
+
+        Used to reference this router from branches (`branches[].nextRouterId`)
+        when chaining routers. Must be unique within the flow's router collection.
+        Use at most 36 letters, digits, underscores and hyphens: a longer id, or one
+        with a space or a period, fails the save with 422 ("Router id is missing or
+        contains more than 36 characters or invalid characters. Please correct the
+        router id.").
+      examples: ["router_001", "customer_type_router"]
+    name:
+      type: string
+      description: |
+        Human-readable name for the router.
+
+        Displayed in the UI and logs to help identify the router's purpose.
+      examples: ["Customer Type Router", "Order Status Router"]
+    routeRecordsTo:
+      type: string
+      description: |-
+        How many branches a record may continue down. Set together with `routeRecordsUsing` on a
+        branching router; leave both unset on a one-branch pass-through router.
+      enum: ["first_matching_branch", "all_matching_branches"]
+      x-enumDescriptions:
+        first_matching_branch: Routes each record to only the first branch whose criteria match.
+        all_matching_branches: Routes each record to every branch whose criteria match, creating copies.
+      examples: ["first_matching_branch"]
+      x-celigo-ai-guidance:
+        - Set this and `routeRecordsUsing` together on every router that decides between branches; setting only one of the two is rejected with 422 `invalid_flow_router_config` ("Either both the routeRecordsTo and routeRecordsUsing fields or none of them should be defined on the router.").
+        - Leave both unset on a one-branch pass-through router (the steps before the first branching router, or a merge point). Setting them there still runs, but Flow Builder shows a router node with one branch and no rules. A router with neither field and more than one branch is rejected with 422 `invalid_flow_router_branch`.
+    routeRecordsUsing:
+      type: string
+      description: |-
+        How a branching router decides which branch a record matches. Set together with
+        `routeRecordsTo`; leave both unset on a one-branch pass-through router.
+      enum: ["input_filters", "script"]
+      x-enumDescriptions:
+        input_filters: Evaluate routing criteria using declarative filter expressions.
+        script: Evaluate routing criteria using a custom JavaScript function.
+      examples: ["input_filters"]
+      x-celigo-ai-guidance:
+        - Set this and `routeRecordsTo` together on every router that decides between branches, and leave both unset on a one-branch pass-through router; the rejections for a half-set pair or a multi-branch pass-through are listed on `routeRecordsTo`.
+    script:
+      type: object
+      description: |
+        Script configuration when routeRecordsUsing="script".
+
+        Enables custom routing logic that can't be expressed with filters.
+      properties:
+        _scriptId:
+          type: string
+          format: objectId
+          x-celigo-refModel: scripts
+          description: Reference to the script resource
+          examples: ["60a2c4e6f321d800129a1a3c"]
+        function:
+          type: string
+          description: Function name that returns the branch name for each record
+          examples: ["routeByCustomerType", "calculateBranch"]
+    branches:
+      type: array
+      description: |
+        List of branches that define different processing paths.
+
+        Each branch has its own criteria and processing steps. Records are evaluated
+        against branch criteria in the order defined.
+      items:
+        $ref: "./branch.yml#/Branch"
+  required:
+    - id
+    - branches

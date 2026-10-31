@@ -1,0 +1,5 @@
+{
+  "name": "agent-compatibility",
+  "version": "1.0.0",
+  "description": "Scans that check if a repository's startup, tests and docs work for coding agents."
+}

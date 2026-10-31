@@ -1,0 +1,40 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "desktop-commander",
+  "version": "1.0.0",
+  "description": "Guides for Desktop Commander: terminal sessions, computer health checks, Markdown notes.",
+  "author": {
+    "name": "Desktop Commander"
+  },
+  "homepage": "https://desktopcommander.app",
+  "license": "MIT",
+  "keywords": [
+    "shell",
+    "terminal",
+    "filesystem",
+    "process",
+    "documents",
+    "pdf",
+    "spreadsheet",
+    "desktop-commander"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "desktop-commander",
+        "commit": "75048278f4866f0d8bde26f6f9aa3b8d39dca870",
+        "skills": {
+          "ai-tools-setup": "830453b8d382d60590481a43df375fd6db2d068242f54f51c6540ae91101f2a2",
+          "computer-health-check": "757d7794b80aa64bc59f9112627dd7025f30f2b104b3d15cf7ada23c5ac9d6f6",
+          "desktop-commander-overview": "c0833513b92758086f2380b4a64f5f4892f57ca44a961c5c795e25e2ed341abd",
+          "knowledge-base": "0b5bf734a0d5b3e93883ea9226c75567aba83d00599363fa29ff4c91a1959d10",
+          "obsidian-vault": "4c5d6faea5ff0081e5da3e8aca1366ab4747e2e59e2102c529429812ade7a903",
+          "terminal": "b1380e549827130742e43f240b38a9bd2184635c442cc66c911c430e639112bf"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "duckdb-skills",
+  "version": "1.0.0",
+  "description": "Guides to query and convert data files, S3 buckets and databases with DuckDB.",
+  "author": {
+    "name": "DuckDB Foundation"
+  },
+  "homepage": "https://duckdb.org",
+  "license": "MIT",
+  "keywords": [
+    "duckdb",
+    "ducklake",
+    "parquet",
+    "csv",
+    "json",
+    "avro",
+    "excel",
+    "iceberg",
+    "delta",
+    "read-file",
+    "read-memories",
+    "duckdb-docs",
+    "data-exploration",
+    "session-logs",
+    "query",
+    "sql",
+    "attach-db"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "duckdb-skills",
+        "commit": "7feda8e01e22bc0886c86123f3884947e36d8c69",
+        "skills": {
+          "attach-db": "8b761368526d793f95b2f0813cbf4804a774f925288221a70f94de0cd635581c",
+          "convert-file": "c494512036ab7adb04e149eb308aa71bd8db17e3f91a5da6e8ec9906782e8d11",
+          "duckdb-docs": "1fe34cd2eb851e06747e2921e747ab99ceee04446d56f27b93d11145cdd54ad4",
+          "install-duckdb": "24d48021db0db67df7519af8fe6e742c1af4fa97a7c42432dd2fd19bebaaee2e",
+          "query": "9e568131a0c2dd1b61b3b38f62656fd86eb80c0d0d304c86b7faef3c7b25e7bd",
+          "read-file": "d657f96b8aba9e12faf948e247768ebbb67bfed77b75812c663e283970dfb1a5",
+          "s3-explore": "1e146c32d950a76f98d5c81b6bc1732c3917a19f9ab833b2bcb1ef00aac13d6b",
+          "spatial": "0a7c987f6eb22effdccaff74a4eb37f917e5d5f6bb6fe83d7338313602ef3e9f"
+        }
+      }
+    }
+  }
+}

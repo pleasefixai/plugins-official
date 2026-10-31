@@ -1,0 +1,109 @@
+PageGenerator:
+  type: object
+  description: |-
+    A data source that produces pages of records for the flow. Page generators are the
+    entry points of a flow; each references an export, can carry its own schedule, and
+    multiple generators can run in parallel when the flow enables it.
+  properties:
+    _exportId:
+      type: string
+      format: objectId
+      x-celigo-refModel: exports
+      description: |-
+        Export that retrieves data from the source system. The server rejects page
+        generator entries without a valid export reference unless the entry is a
+        placeholder still being set up (`setupInProgress: true`).
+      examples: ["60a2c4e6f321d800129a1a3c"]
+      x-celigo-ai-guidance:
+        - |-
+          The export defines:
+          - Connection to the source system
+          - Query or API configuration
+          - Data retrieval method (standard, delta, webhook, etc.)
+          - Pagination and filtering rules
+    schedule:
+      type: string
+      description: |-
+        Cron expression for this specific generator, overriding the flow's main schedule.
+        When omitted, the generator inherits the flow's schedule. It is read in the flow's
+        `timezone`, and a flow with no flow-level `schedule` still runs on it. PATCH reaches
+        the flow-level `/schedule` and `/timezone` but not this field, so changing it is a full
+        update of the flow.
+      examples: ["? 5 0,6,12,18 ? * *", "? 30 2 ? * *"]
+      x-celigo-ai-guidance:
+        - |-
+          When specified:
+          - Overrides the flow's main schedule for this generator
+          - Allows different data sources to refresh at different intervals
+          - Useful for sources with varying update frequencies
+        - |-
+          Check for one before rescheduling a flow: a flow-level `schedule` change succeeds
+          but leaves a generator that has its own `schedule` running at its old times. Change
+          the generator's `schedule` instead, with a PUT of the whole flow.
+    skipRetries:
+      type: boolean
+      default: false
+      description: |-
+        When true, failed records from this generator are not retried — errors are logged
+        and the flow continues. When false (the default), failed records are retried per
+        platform policy.
+      examples: [true, false]
+      x-celigo-ai-guidance:
+        - |-
+          When true:
+          - Failed attempts are not retried
+          - Errors are logged but flow may continue
+          - Useful for non-critical or time-sensitive data
+    setupInProgress:
+      type: boolean
+      description: When true, the generator's configuration is still being set up in the UI and the step is not yet runnable.
+      examples: [false]
+    _keepDeltaBehindFlowId:
+      type: string
+      format: objectId
+      x-celigo-refModel: flows
+      description: |-
+        Coordinates delta timing so this generator's checkpoint stays behind the referenced
+        flow, preventing child records from being processed before their parents.
+      examples: ["60a2c4e6f321d800129a1a3c"]
+      x-celigo-ai-guidance:
+        - |-
+          When specified:
+          - This generator's delta timestamp stays behind the referenced flow
+          - Prevents processing child records before parent records
+          - Maintains referential integrity across flows
+    _keepDeltaBehindExportId:
+      type: string
+      format: objectId
+      x-celigo-refModel: exports
+      description: Like `_keepDeltaBehindFlowId` but targets a specific export's delta timestamp.
+      examples: ["60a2c4e6f321d800129a1a3c"]
+      x-celigo-ai-guidance:
+        - |-
+          More granular than _keepDeltaBehindFlowId:
+          - Targets a specific export's delta timestamp
+          - Provides precise control over data dependencies
+          - Useful for complex multi-source synchronization
+    __startDateHelper:
+      type: string
+      readOnly: true
+      description: |-
+        Server-managed scheduling bookkeeping written by the platform when a run
+        starts. Never send it: the API silently drops any client-supplied value.
+  x-celigo-ai-guidance:
+    - |-
+      Page generators are the entry points of a flow that retrieve data from source systems.
+      They can be scheduled independently or inherit the flow's schedule, and multiple generators
+      can run in parallel if configured.
+  # Placeholder generators: the flow builder saves un-configured sources as
+  # {setupInProgress: true} without an export reference; the server accepts and
+  # round-trips these. _exportId is required only for
+  # configured (non-placeholder) generators.
+  if:
+    properties:
+      setupInProgress:
+        const: true
+    required: [setupInProgress]
+  then: {}
+  else:
+    required: [_exportId]

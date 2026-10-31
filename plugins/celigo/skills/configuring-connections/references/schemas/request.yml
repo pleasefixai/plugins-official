@@ -1,0 +1,440 @@
+Request:
+  type: object
+  description: Fields that can be sent when creating or updating a connection.
+  properties:
+    name:
+      type: string
+      minLength: 1
+      description: Display name for the connection.
+      x-celigo-ai-guidance:
+        - Name the connection after the ONE system it authenticates to — the application, plus the account, store, or environment when that distinguishes it (e.g. "Shopify - mystore", "NetSuite Non-Production").
+        - Never name a connection after a flow or use case, and never include a second application in the name (not "Shopify to NetSuite Customer Sync"). Connections are account-level resources reused across many integrations; a use-case name hides which system the credentials belong to and misleads later reuse.
+      examples: ["Salesforce Production", "NetSuite Non-Production", "PostgreSQL Orders DB"]
+      maxLength: 100
+    type:
+      type: string
+      description: Connection type, which determines the authentication and connectivity options available and which config object must be supplied.
+      enum:
+        - netsuite
+        - salesforce
+        - ftp
+        - s3
+        - wrapper
+        - http
+        - rdbms
+        - mongodb
+        - as2
+        - filesystem
+        - mcp
+        - dynamodb
+        - jdbc
+        - van
+        - rest
+      x-enumDescriptions:
+        netsuite: NetSuite ERP connection using token-based authentication (TBA).
+        salesforce: Salesforce CRM connection with OAuth 2.0 authentication.
+        ftp: FTP, SFTP, or FTPS file transfer connection.
+        s3: Amazon S3 cloud storage connection, authenticated with an access key pair or an AWS IAM role (`s3.authType`).
+        wrapper: Wrapper connection that delegates to another connection type.
+        http: Generic HTTP/REST API connection with full configuration control.
+        rdbms: Native relational-database connection — MySQL, PostgreSQL, MariaDB, Microsoft SQL Server, Azure Synapse, Oracle, Snowflake, Google BigQuery, Amazon Redshift (the database is `rdbms.type`).
+        mongodb: MongoDB NoSQL database connection.
+        as2: AS2 (Applicability Statement 2) EDI connection.
+        filesystem: Local or network filesystem connection (requires an Agent).
+        mcp: MCP (Model Context Protocol) server connection.
+        dynamodb: Amazon DynamoDB NoSQL database connection.
+        jdbc: JDBC connection for relational systems without a native `rdbms` type (Databricks, Db2, Workday, NetSuite JDBC) and for the driver-specific paths `jdbc.type` names (Oracle Thin, SQL Server with Active Directory); Redshift, BigQuery and Snowflake are `rdbms` types.
+        van: Value-Added Network connection for EDI document exchange.
+        rest: REST connection driven by a pre-built HTTP Connector template. Deprecated — use `http` instead.
+    externalId:
+      type: string
+      description: External identifier for the connection, often used to correlate it with a record in a third-party system.
+      examples: ["erp-conn-001"]
+    assistant:
+      type: string
+      description: |-
+        Lowercase application name for HTTP connections to systems with an integrator.io
+        adaptor (e.g. "shopify", "ebay"). Only applies to http connections. The platform
+        checks the slug against its current adaptor list — an unknown value fails the save
+        with 422 `enum` — and uses it to resolve the HTTP connector link on every save (see
+        `http._httpConnectorId`), so send it only when the application really is a legacy
+        adaptor: on an Azure Data Lake Storage Gen2 connection it drops the connector ids.
+      examples: ["shopify"]
+      x-celigo-ai-guidance:
+        - |-
+          Omit `assistant` on an Azure Data Lake Storage Gen2 connection. With
+          `assistant: "azuredatalakestoragegen2"` (or any other slug) the save answers 201/200
+          but stores no `http._httpConnectorId` or `http._httpConnectorVersionId`; the
+          connection form never sends it. Send the ADLS connector id and version id without
+          `assistant` — a PUT that drops `assistant` and re-sends them restores the link.
+        - |-
+          A value outside the platform's adaptor list fails with 422 `enum` on `assistant`
+          ("`<value>` is not a valid enum value for path `assistant`."); for a connector-framework
+          application with no legacy adaptor, link it through `http._httpConnectorId` instead.
+    accessScope:
+      type: object
+      description: |-
+        What a Celigo APIs connection (`assistant: integratorceligoapi`) may reach in the
+        account: the account's custom APIs, listeners, standard integrator.io APIs and Celigo
+        Storage folders. A Celigo APIs connection cannot be created without it; an update that
+        omits it leaves the stored scope unchanged. The connection document never carries it —
+        the stored scope is read from `GET /v1/accessScope/connections/{_id}`.
+      required: [type]
+      properties:
+        type:
+          type: string
+          enum: [full, custom, integration]
+          x-enumDescriptions:
+            full: Every custom API, listener and standard integrator.io API in the account, and every Celigo Storage folder
+            custom: Only the APIs, listeners and Celigo Storage folders listed in the sibling arrays
+            integration: Only the integrations listed in `_integrationIds`
+          description: |-
+            How much of the account the connection may reach. Each type takes its own
+            selections: `full` takes none, `custom` takes APIs, listeners and folder paths,
+            `integration` takes integrations only.
+        _apiIds:
+          type: array
+          items:
+            type: string
+            format: objectId
+            x-celigo-refModel: apis
+          description: Custom APIs the connection may invoke. Present when `type` is `custom`.
+        _exportIds:
+          type: array
+          items:
+            type: string
+            format: objectId
+            x-celigo-refModel: exports
+          description: Listeners (webhook exports) the connection may trigger. Present when `type` is `custom`.
+        _integrationIds:
+          type: array
+          items:
+            type: string
+            format: objectId
+            x-celigo-refModel: integrations
+          description: Integrations whose resources the connection may reach. Present when `type` is `integration`.
+        _fileStoragePaths:
+          type: array
+          items:
+            type: string
+          description: |-
+            Celigo Storage folder paths the connection may read and write, matched as prefixes
+            — each path also grants every folder beneath it, `/` alone grants every folder, and
+            there are no wildcards. Present when `type` is `custom`; a `custom` connection with
+            the field omitted or empty has no Celigo Storage access.
+          examples: [["/Reports/", "/Inbound/EDI/"], ["/"]]
+      # The server's cross-field rules (422 invalid_access_scope), nested else-if, stack-style.
+      if: { properties: { type: { const: full } }, required: [type] }
+      then:
+        properties:
+          _apiIds: { maxItems: 0 }
+          _exportIds: { maxItems: 0 }
+          _integrationIds: { maxItems: 0 }
+          _fileStoragePaths: { maxItems: 0 }
+      else:
+        if: { properties: { type: { const: integration } }, required: [type] }
+        then:
+          required: [_integrationIds]
+          properties:
+            _integrationIds: { minItems: 1 }
+            _apiIds: { maxItems: 0 }
+            _exportIds: { maxItems: 0 }
+            _fileStoragePaths: { maxItems: 0 }
+        else:
+          properties:
+            _integrationIds: { maxItems: 0 }
+      x-celigo-ai-guidance:
+        - |-
+          A Celigo APIs connection POST without `accessScope` fails with 422 `missing_required_field`
+          ("Scope is required for this connection. Please select Full access or Custom."); a PUT
+          without it is accepted and the stored scope is unchanged. A `type` outside the enum fails
+          with 422 `enum`.
+        - |-
+          Each mismatch between `type` and the selections fails with 422 `invalid_access_scope` and
+          names the field: `full` with any of `_apiIds`, `_exportIds`, `_integrationIds` or
+          `_fileStoragePaths`; `custom` with `_integrationIds` ("Use \"integration\" access type");
+          `integration` with no `_integrationIds`, or with `_apiIds`, `_exportIds` or
+          `_fileStoragePaths`. An id that is not an existing API or integration fails with 422
+          `invalid_ref`.
+        - |-
+          Choose the narrowest `type` the connection's use needs: a flow that reads or writes Celigo
+          Storage files → `custom` with the folder paths it uses (`/Reports/` grants that folder and
+          everything beneath it); specific custom APIs or listeners → `custom` with their ids; the
+          standard integrator.io REST APIs → `full`. A `custom` connection with `_fileStoragePaths`
+          omitted or empty has no storage access — its storage step fails at run time with 401.
+        - |-
+          The connection document never carries `accessScope`; read the stored scope from
+          `GET /v1/accessScope/connections/{_id}` (`scope`, `apis`, `exports`, `integrations`,
+          `fileStoragePaths`) rather than inferring it from the document.
+    _agentId:
+      type: string
+      format: objectId
+      x-celigo-refModel: agents
+      description: |-
+        Reference to a Celigo on-premise Agent. Required for types that need local network or
+        filesystem access (filesystem, jdbc agent/activedirectory, Oracle rdbms, and on-premise
+        mongodb). The agent establishes a secure tunnel between the on-premise environment and
+        integrator.io.
+      examples: ["5f8d43a1b9e5a80011a35f2c"]
+    _borrowConcurrencyFromConnectionId:
+      type: string
+      format: objectId
+      x-celigo-refModel: connections
+      description: |-
+        Reference to another connection to share concurrency limits with. When set, this
+        connection's traffic counts against the referenced connection's limit instead of its own,
+        and its own concurrency and auto-recovery settings have no effect. One level only: the
+        referenced connection may not itself borrow, and a connection that others borrow from
+        cannot start borrowing. A connection cannot reference itself (422).
+      examples: ["615dfa0742763671275b70ab"]
+      x-celigo-ai-guidance:
+        - |-
+          Set this when several connections target one external account whose API enforces a
+          single account-wide concurrency limit (for example one NetSuite account): put the limit
+          on one parent connection and point the others here, so their combined traffic can never
+          exceed it.
+        - |-
+          A borrower drains through the parent's queue as well as its ceiling, so a high-volume
+          borrower competes with the parent's own flows — settle the priority split before
+          choosing who borrows from whom.
+    autoRecoverRateLimitErrors:
+      type: boolean
+      default: true
+      description: |-
+        When true, rate-limit errors from the target system trigger automatic recovery — concurrency
+        drops to 1 and climbs back toward the adaptor block's `targetConcurrencyLevel`, which is the
+        throughput lever while this is on. Turning it on copies the current `concurrencyLevel` into
+        the target; turning it off unsets the target and leaves `concurrencyLevel` at its current value.
+        A create gets `true` unless it sends `false`; while it is true, set a new connection's level
+        with `targetConcurrencyLevel`. On `http`, `ftp`, `rdbms` and `mongodb` connections the create
+        stores the target sent, or the adaptor's default without one, as both `concurrencyLevel` and
+        `targetConcurrencyLevel`, whatever `concurrencyLevel` the body carried: 1 for `ftp`, 5 for
+        `rdbms` and `mongodb`, and 25 for `http` where the license's `concurrency` is at least 25, so
+        such an `http` create that sends only `concurrencyLevel: 10` is stored at 25. To keep the
+        `concurrencyLevel` you send, create with this `false`.
+        Recovery never runs on `ftp` connections: FTP errors aren't treated as rate limits.
+    __integrationIds:
+      type: array
+      maxItems: 100
+      items:
+        type: string
+        format: objectId
+        x-celigo-refModel: integrations
+      description: |-
+        Integrations to register the new connection on immediately after creation, making it
+        available for use within them. Only honored on `POST /v1/connections` (ignored on PUT)
+        and never persisted on the connection document. Ids are validated before the connection
+        is saved; registration runs after the save, and per-integration failures are reported in
+        `__failedIntegrationRegistrations` on the 201 response without rolling back the new
+        connection.
+      x-celigo-ai-guidance:
+        - |-
+          Invalid input rejects the whole request without creating the connection: a non-array value
+          or duplicate ids fail with 422 invalid_request, an element that is not a valid ObjectId fails
+          with 422 invalid_ref naming __integrationIds[i], an integration that does not exist in the
+          account fails with 404, and more than 100 ids fails with 400 batch_size_exceeded.
+        - |-
+          Integrations installed through an Integration App cannot be registered this way — the
+          connection is still created (201) and the failure is reported in
+          __failedIntegrationRegistrations with code not_allowed.
+      examples: [["6a55be91d16ee8270022893e"]]
+    endUserProvidedFields:
+      type: ['array', 'null']
+      items:
+        type: string
+      description: |-
+        Dot-paths of this connection's fields (for example `http.encrypted.apiKey` or
+        `rdbms.user`) that each MCP end user must supply on their own `mcpChild` copy instead of
+        inheriting the parent's value. Set it on the parent connection an MCP server collects
+        end-user credentials for; omit it everywhere else. Omitting it (or sending `[]`) on
+        `PUT` keeps the stored paths; send `null` to clear them. By the platform contract,
+        changing the stored list — adding, removing, or clearing paths — invalidates the
+        `mcpChild` connections end users already hold against this parent, so each of them
+        sets up again through the MCP setup page before tools that use it run for them.
+      x-celigo-ai-guidance:
+        - |-
+          List only the credential and tenant fields that differ per end user, never a path the
+          account owns: `type`, `_agentId`, `wrapper._stackId`, or any `<adaptor>._iClientId`
+          (e.g. `http._iClientId`) fails the save with 422
+          `mcp_end_user_provided_field_not_allowed`.
+        - |-
+          This is the only MCP end-user field writable through `/v1/connections`; the child
+          connections themselves are created by the end-user setup page, and `connectionRole:
+          mcpChild` in a `POST` or `PUT` body fails with 422 `mcp_child_generic_route_not_allowed`.
+      examples: [["http.encrypted.apiKey", "http.unencrypted.accountId"]]
+    debugDate:
+      type: string
+      format: date-time
+      description: Enables debug logging until this timestamp. Set to a future time to capture request/response logs.
+      examples: ["2026-01-15T09:30:00.000Z"]
+    settingsForm:
+      type: object
+      description: Dynamic form definition for connection-specific custom settings.
+    settings:
+      type: object
+      description: |-
+        Connection-specific settings captured by settingsForm. At runtime, steps using
+        this connection read the values under the fixed scope key `connection` — e.g.
+        `{{settings.connection.<fieldId>}}` in Handlebars or
+        `$.settings.connection.<fieldId>` in Mapper 2.0 envelope references.
+    pgp:
+      description: Present for file-based connections (ftp, s3, filesystem, …) that encrypt or decrypt files with PGP.
+      allOf:
+        - $ref: './pgp.yml#/PGP'
+    ssl:
+      $ref: './ssl.yml#/SSL'
+    # Connection type-specific config objects — supply the one matching `type`.
+    netsuite:
+      description: Present when `type` is `netsuite`.
+      allOf:
+        - $ref: './netsuite.yml#/NetSuite'
+    salesforce:
+      description: Present when `type` is `salesforce`.
+      allOf:
+        - $ref: './salesforce.yml#/Salesforce'
+    ftp:
+      description: Present when `type` is `ftp`.
+      allOf:
+        - $ref: './ftp.yml#/FTP'
+    s3:
+      description: Present when `type` is `s3`.
+      allOf:
+        - $ref: './s3.yml#/S3'
+    http:
+      description: Present when `type` is `http`.
+      allOf:
+        - $ref: './http.yml#/HTTP'
+    rdbms:
+      description: Present when `type` is `rdbms`.
+      allOf:
+        - $ref: './rdbms.yml#/RDBMS'
+    mongodb:
+      description: Present when `type` is `mongodb`.
+      allOf:
+        - $ref: './mongodb.yml#/MongoDB'
+    as2:
+      description: Present when `type` is `as2`.
+      allOf:
+        - $ref: './as2.yml#/AS2'
+    filesystem:
+      description: Present when `type` is `filesystem`.
+      allOf:
+        - $ref: './filesystem.yml#/Filesystem'
+    dynamodb:
+      description: Present when `type` is `dynamodb`.
+      allOf:
+        - $ref: './dynamodb.yml#/DynamoDB'
+    jdbc:
+      description: Present when `type` is `jdbc`.
+      allOf:
+        - $ref: './jdbc.yml#/JDBC'
+    van:
+      description: Present when `type` is `van`.
+      allOf:
+        - $ref: './van.yml#/VAN'
+    mcp:
+      description: Present when `type` is `mcp`.
+      allOf:
+        - $ref: './mcp.yml#/MCP'
+    wrapper:
+      description: Present when `type` is `wrapper`.
+      allOf:
+        - $ref: './wrapper.yml#/Wrapper'
+    rest:
+      deprecated: true
+      description: Present when `type` is `rest`. Deprecated — superseded by `http` with a pre-built HTTP Connector template.
+      allOf:
+        - $ref: './rest.yml#/REST'
+  required:
+    - name
+    - type
+  # The config object matching `type` must be supplied. Nested if/else-if (no allOf), stack-style.
+  # The netsuite branch also carries the per-authType form requireds (they live here, scoped to
+  # type=netsuite, because jdbc connections embed a `netsuite` auth subdoc the form rules don't
+  # apply to — live jdbc connections store token-auto without an account).
+  if: { properties: { type: { const: netsuite } }, required: [type] }
+  then:
+    required: [netsuite]
+    properties:
+      netsuite:
+        if:
+          properties:
+            authType:
+              const: basic
+          required: [authType]
+        then:
+          required: [email, password]
+        else:
+          if:
+            properties:
+              authType:
+                const: token
+            required: [authType]
+          then:
+            required: [account, environment, tokenId, tokenSecret]
+          else:
+            if:
+              properties:
+                authType:
+                  const: token-auto
+              required: [authType]
+            then:
+              required: [account]
+  else:
+    if: { properties: { type: { const: salesforce } }, required: [type] }
+    then: { required: [salesforce] }
+    else:
+      if: { properties: { type: { const: ftp } }, required: [type] }
+      then: { required: [ftp] }
+      else:
+        if: { properties: { type: { const: s3 } }, required: [type] }
+        then: { required: [s3] }
+        else:
+          if: { properties: { type: { const: http } }, required: [type] }
+          then: { required: [http] }
+          else:
+            if: { properties: { type: { const: rdbms } }, required: [type] }
+            then: { required: [rdbms] }
+            else:
+              if: { properties: { type: { const: mongodb } }, required: [type] }
+              then: { required: [mongodb] }
+              else:
+                if: { properties: { type: { const: as2 } }, required: [type] }
+                then: { required: [as2] }
+                else:
+                  # filesystem runs on a Celigo Agent: the connection-level _agentId is API-required
+                  # (422 "The file system connection requires Agent").
+                  if: { properties: { type: { const: filesystem } }, required: [type] }
+                  then: { required: [filesystem, _agentId] }
+                  else:
+                    if: { properties: { type: { const: mcp } }, required: [type] }
+                    then: { required: [mcp] }
+                    else:
+                      if: { properties: { type: { const: dynamodb } }, required: [type] }
+                      then: { required: [dynamodb] }
+                      else:
+                        if: { properties: { type: { const: jdbc } }, required: [type] }
+                        then:
+                          required: [jdbc]
+                          # _agentId is API-enforced for the agent + activedirectory jdbc types (POST 422
+                          # agent_mode_only). Request-only (cross-level), matching filesystem.
+                          if:
+                            properties: { jdbc: { properties: { type: { enum: [agent, activedirectory] } }, required: [type] } }
+                            required: [jdbc]
+                          then: { required: [_agentId] }
+                        else:
+                          if: { properties: { type: { const: van } }, required: [type] }
+                          then: { required: [van] }
+                          else:
+                            if: { properties: { type: { const: wrapper } }, required: [type] }
+                            then:
+                              # _stackId required on create only (form-mirror) — the API accepts a
+                              # wrapper without it (POST 201). Not in the shared/response
+                              # schema because connector-managed wrappers (with _connectorId) omit it.
+                              required: [wrapper]
+                              properties:
+                                wrapper:
+                                  required: [_stackId]
+                            else:
+                              if: { properties: { type: { const: rest } }, required: [type] }
+                              then: { required: [rest] }

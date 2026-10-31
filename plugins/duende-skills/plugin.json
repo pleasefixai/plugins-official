@@ -1,0 +1,62 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "duende-skills",
+  "version": "1.0.0",
+  "description": "Guides for Duende IdentityServer, BFF and ASP.NET Core sign-in, tokens and authorization.",
+  "author": {
+    "name": "Duende Software"
+  },
+  "homepage": "https://duendesoftware.com",
+  "license": "MIT",
+  "keywords": [
+    "identityserver",
+    "oauth",
+    "oidc",
+    "openid-connect",
+    "aspnetcore",
+    "authentication",
+    "authorization",
+    "bff",
+    "token-management",
+    "duende",
+    "dotnet",
+    "security"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "duende-skills",
+        "commit": "fb32edc51982bf1c600e21ba91df32c903098a9c",
+        "skills": {
+          "aspnetcore-authentication": "2e67d87d55fcfe7ac347f8db289466bb165e4a1f775376043a24d71c43d16861",
+          "aspnetcore-authorization": "ce553a41cf38294a1cb680bcee664b348c9542069a298e40f161bdce18790add",
+          "claims-authorization": "0ad0fed3ddef5447a73339129e8aefa30ab47a80d2bae6a3dd9fe36e91fdb5f1",
+          "duende-bff": "68d50d0ff7e9b246eeff9e60107c4f459f10586bde17343cfeee92a12ead1949",
+          "identity-security-hardening": "85837052aca498bcaacc3de30cd47cd85474d1b3483130d11343c5adc75ddff9",
+          "identity-testing-patterns": "e23acfe1f72eb4d90f3c49e013744474eb582258b31c11a84c47b54dd64123e2",
+          "identityserver-api-protection": "a582cf11fc2c133f5f2d134788cb8c7b87b96fb4f380b5bc4bf94f3d648a07c5",
+          "identityserver-aspire": "6f18e56c2e9f8dec65eca59314c2729f674c787669c5be282ff05fa600edea0c",
+          "identityserver-configuration": "6866a027aed63b5a1bb5e0da125065f537e66e6d0c64338a17fb3aeb79b4ec7b",
+          "identityserver-dcr": "23317d242ff84cf720917e8a015ee701299d9e359728e5d41a3cb610d951f2f7",
+          "identityserver-deployment": "c88fbb0f7d60ea176fd6a06ade4c530a7dc07fb5727b014f793aec9bfae19b8c",
+          "identityserver-hosting-setup": "411dbabed0d4ce10b55cec5955e0b15c8be41367b3142369539ba83c13e4614a",
+          "identityserver-key-management": "25d4c070e4c61cf9226a17af3424c0edc18a03a09e3df2be968216988c1f7e06",
+          "identityserver-saml": "d6eabaaea4c41665226ba70ec0c68b77582eef5c1fca618f5c5d29ef544c1d5f",
+          "identityserver-sessions-providers": "a79e133c37ae0a4b8c415c2c8ef08303c6bec7e7c94385cf8e6b2ef9865974db",
+          "identityserver-stores": "1061cd5ba01fd2d3b37b96452ddec78ff907b470849731193fad64b8906c48cc",
+          "identityserver-token-lifecycle": "8ed6343eafefb4e9f9732f06b1021a05be1074589bda408cc878a02044acb7c2",
+          "identityserver-token-security": "0079932e605b57a42036b6275188e8ef0b93cd133bbe4a21b5f7a18736ff884c",
+          "identityserver-ui-flows": "6eea235935c63f1eb0586d7ecabf0ef8d0ff0b13af984a2c3e44f92ee2dff505",
+          "identityserver-upgrade-v7-to-v8": "ff52d0a53b104f9710808188998c2336b7c94525baa59c33b82e359f8e0fde96",
+          "identityserver-usermanagement": "a7b5611481c8e1060cc29b2a65821ef7fdf64135e930284c4519b43d23ca7801",
+          "identityserver4-migration": "dfddb34f17c8716a5bd9fcec947965769ba10b1335d349d73711a7414971bb60",
+          "oauth-oidc-protocols": "fe7679879cdfb32ad9077e3b56c01650a4c5d99f1496728ffa0913f26c73ffb9",
+          "token-management": "79b8872d93a15b13cd8ec7d992e70fe8d5ad03c3dc0be83fa706f2fc635736aa"
+        }
+      }
+    }
+  }
+}

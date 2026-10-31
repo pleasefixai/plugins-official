@@ -1,0 +1,45 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "build-ios-apps",
+  "version": "1.0.0",
+  "description": "Guides to build, profile and debug iOS apps with SwiftUI, App Intents and the Simulator.",
+  "author": {
+    "name": "OpenAI"
+  },
+  "homepage": "https://github.com/openai/plugins",
+  "license": "MIT",
+  "keywords": [
+    "ios",
+    "swift",
+    "swiftui",
+    "app-intents",
+    "shortcuts",
+    "siri",
+    "spotlight",
+    "xcode",
+    "performance",
+    "debugging",
+    "previews"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "codex",
+        "plugin": "build-ios-apps",
+        "commit": "0722921d5542fc593105c27bd52630babd8b8c2a",
+        "skills": {
+          "ios-app-intents": "0e583d0c849bf4b3a6381d1f02e7bd756226ad284a1e81670e52c8916d3476fb",
+          "ios-ettrace-performance": "51f46b41ac3c96f2e8ed5d28c83dd350d16b3db4e6ea5272b3a88573d16a75f1",
+          "ios-memgraph-leaks": "5c73c353ceb79a1574f95ac796b4f0cab08a98f914bb3dba8593e0d2a9f3059d",
+          "ios-simulator-browser": "c06e953ffa100d96198a08b158a30bf832164a2cc0b939bd3dcbb3e35563b065",
+          "swiftui-liquid-glass": "e086255d526125286534f2c2f1c6bec86aa6fcd000b4bbf1f15b8cc2a94cfe21",
+          "swiftui-performance-audit": "815a7f7449325a788f97baa2e464c4f2e92971660cce6b595b5c418c90397954",
+          "swiftui-ui-patterns": "d37b989de6e19e4a0682de86bd1c99341352f24fe125ced6916ab12898bb97a8",
+          "swiftui-view-refactor": "9848f01cc38bf5808fe1e8c7b06b33a55a89ecb560be1506cdc413e65da050df"
+        }
+      }
+    }
+  }
+}

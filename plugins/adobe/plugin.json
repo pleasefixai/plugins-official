@@ -1,0 +1,29 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "adobe",
+  "version": "1.0.0",
+  "description": "Photo edits, portrait retouches, video cuts, mockups and Adobe Express designs.",
+  "author": {
+    "name": "Adobe Inc"
+  },
+  "homepage": "https://www.adobe.com",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "codex",
+        "plugin": "adobe",
+        "commit": "0722921d5542fc593105c27bd52630babd8b8c2a",
+        "skills": {
+          "adobe-batch-edit-photos": "0b139790f06044dc71abc8326bf4c303040bd25b1e5b6aa0c4538137817d8b0e",
+          "adobe-create-mockups": "589044a20b8a226ed50ed05696a5ba175235cb38cf2b75fc6a880f91cdc42222",
+          "adobe-create-social-variations": "d0c1bbc37e9e6c6e650f858b76bf9c92d15c3a9c91290f401847401dc8b30548",
+          "adobe-design-from-template": "39ff6e52eed43f0c3a0ebe1d53c9e00c865ad2ba2e34b13a3c7f3a4acd8cc976",
+          "adobe-edit-quick-cut": "bac943b4ca6fdb3c29d8935043dc2cb5c1bcce0f7ae123cb3f7cefd2bda4337d",
+          "adobe-retouch-portraits": "480aefd83fa6affd28951668c596a4e6328433a787989f2d571c7388ee20618a"
+        }
+      }
+    }
+  }
+}

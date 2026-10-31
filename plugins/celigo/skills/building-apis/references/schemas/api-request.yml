@@ -1,0 +1,280 @@
+ApiRequest:
+  type: object
+  description: Request configuration for a builder-mode API endpoint.
+  properties:
+    name:
+      type: string
+      maxLength: 200
+      description: Display name.
+      examples: ["Get Customer", "Create Order"]
+    description:
+      type: string
+      maxLength: 10240
+      description: Optional description.
+      examples: ["Retrieves customer information by ID"]
+    relativeURI:
+      type: string
+      maxLength: 131072
+      pattern: "^\\/[a-zA-Z0-9:_*\\/\\-\\.]*$"
+      description: |-
+        URI path relative to the version. Callers reach the API at
+        `https://api.integrator.io/apis/{version}{relativeURI}` (on the account's regional
+        host outside the US), with the account's API token. Use colon notation for path
+        params: `/customers/:id`.
+      examples: ["/customers/:id", "/orders", "/products/:productId/variants/:variantId"]
+      x-celigo-ai-guidance:
+        - |-
+          The public endpoint is `https://api.integrator.io/apis/{version}{relativeURI}`, for
+          example `/apis/v1/customers/:id`; `relativeURI` already starts with `/`, so add no
+          slash after the version. Without the `/apis` prefix the request goes to the
+          platform's own API and answers `resource_not_found`.
+          Can include path parameters using colon notation: `/customers/:id`
+          First path segment must be alphanumeric, dash, or underscore only.
+    method:
+      type: string
+      enum: ["GET", "POST", "PUT", "PATCH", "DELETE"]
+      x-enumDescriptions:
+        GET: Retrieve data from the endpoint.
+        POST: Submit data to the endpoint.
+        PUT: Replace data at the endpoint.
+        PATCH: Partially update data at the endpoint.
+        DELETE: Remove data at the endpoint.
+      description: HTTP method for the API endpoint.
+      examples: ["GET", "POST"]
+    headers:
+      type: array
+      description: Expected request headers.
+      items:
+        type: object
+        properties:
+          key:
+            type: string
+            maxLength: 256
+            pattern: "^[a-zA-Z0-9_-]+$"
+            description: Header name
+            examples: ["Content-Type", "X-API-Key"]
+          description:
+            type: string
+            maxLength: 10240
+            description: Description of the header's purpose
+            examples: ["API key for authentication"]
+      x-celigo-ai-guidance:
+        - |-
+          Documents headers that clients should send. Headers are optional by default.
+          Only alphanumeric characters, hyphens, and underscores are allowed in header names.
+    pathParams:
+      type: array
+      description: Path parameters defined in the `relativeURI`.
+      items:
+        type: object
+        properties:
+          key:
+            type: string
+            maxLength: 256
+            description: Parameter name (without the colon prefix)
+            examples: ["id", "customerId"]
+          description:
+            type: string
+            maxLength: 10240
+            description: Description of the parameter
+            examples: ["Unique identifier of the customer"]
+      x-celigo-ai-guidance:
+        - |-
+          Documents the parameters that are part of the URL path (e.g., :id, :customerId).
+          These should match the parameters defined in the relativeURI.
+    queryParams:
+      type: array
+      description: Expected query string parameters.
+      items:
+        type: object
+        properties:
+          key:
+            type: string
+            maxLength: 256
+            pattern: "^[a-zA-Z0-9_\\-:\\/]*$"
+            description: Query parameter name
+            examples: ["limit", "offset", "filter"]
+          dataType:
+            type: string
+            enum: ["string", "number", "boolean"]
+            x-enumDescriptions:
+              string: Parameter value is a text string.
+              number: Parameter value is a numeric value.
+              boolean: Parameter value is true or false.
+            description: Expected data type of the parameter
+            examples: ["string"]
+          description:
+            type: string
+            maxLength: 10240
+            description: Description of the parameter
+            examples: ["Maximum number of records to return"]
+    bodySchema:
+      type: object
+      description: |-
+        JSON Schema describing the expected request body structure. Every
+        object-typed schema node must declare at least one property for the
+        API Builder to render it; omit this field when the endpoint has no
+        body contract.
+      additionalProperties: true
+      examples:
+        - type: object
+          properties:
+            name:
+              type: string
+            email:
+              type: string
+              format: email
+      x-celigo-ai-guidance:
+        - |-
+          Every object-typed schema node — the root, a nested property, or an
+          array's `items` — must carry a non-empty `properties` map. The API
+          persists a property-less object node without error, but the API
+          Builder editor crashes rendering it ("Cannot convert undefined or
+          null to object"), so the mistake only surfaces when the editor opens.
+        - |-
+          When the endpoint has no body contract (e.g. the source spec declares
+          an empty request body), omit `bodySchema` entirely — absent renders
+          fine. Do not substitute a catch-all `{"type": "object"}`, and do not
+          pre-fill `properties: {}` — the API strips empty objects on save, so
+          the empty map never survives the round-trip.
+    mockRequest:
+      type: object
+      description: |-
+        Sample request saved with the API for testing. `POST /v1/apis/{_id}/test/run` doesn't
+        read it; send it as that call's `mockRequest`. A test run still makes outside calls: a
+        lookup with no saved `mockOutput` calls its source live, and the run saves that response
+        as the lookup's `mockOutput`, which later test runs answer from.
+      properties:
+        body:
+          type: object
+          description: Sample request body
+        headers:
+          type: object
+          description: Sample headers
+        pathParams:
+          type: object
+          description: Sample path parameters
+        queryParams:
+          type: object
+          description: Sample query parameters
+      additionalProperties: false
+      x-celigo-ai-guidance:
+        - |-
+          Saving a mockRequest doesn't make test runs use it: a test run without its own
+          mockRequest starts from an empty record. A test run isn't free of outside calls
+          either: a lookup without a saved mockOutput runs live (and the run then saves its
+          response as that mockOutput), and only imports are kept from sending (each returns
+          its mockResponse or a placeholder). Can include body, headers, pathParams, and
+          queryParams; only the body reaches the record the steps see.
+    transform:
+      type: object
+      description: |-
+        Optional transformation applied to the incoming request before processing. The
+        expression form (`type: "expression"` with Transformation 2.0 rules in `expression`)
+        saves and runs. In a test run its rules see only the request body, not `pathParams`,
+        `queryParams` or headers.
+      properties:
+        type:
+          type: string
+          description: Selects the transform form; `expression` runs the rules in `expression`.
+          examples: ["expression"]
+        expression:
+          type: object
+          description: Transformation 2.0 rules applied to the request body.
+          properties:
+            version:
+              type: string
+              description: Rule format; `"2"` selects the rules in `rulesTwoDotZero`.
+              examples: ["2"]
+            rulesTwoDotZero:
+              type: object
+              description: The rules applied to the request body.
+              properties:
+                mode:
+                  type: string
+                  enum: ["create", "modify"]
+                  x-enumDescriptions:
+                    create: Builds a new record from the mappings, dropping unmapped fields.
+                    modify: Edits the incoming record, keeping unmapped fields.
+                  description: How the mappings apply to the record; `modify` keeps the body's own fields beside the mapped ones.
+                  examples: ["modify"]
+                mappings:
+                  type: array
+                  description: Mapper 2.0 rows that write fields onto the record.
+                  items:
+                    type: object
+                    required:
+                      - dataType
+                    properties:
+                      generate:
+                        type: string
+                        description: Record field the row writes.
+                        examples: ["customerId"]
+                      extract:
+                        type: string
+                        description: JSONPath into the request body that the value is read from.
+                        examples: ["$.id"]
+                      dataType:
+                        type: string
+                        enum:
+                          - string
+                          - number
+                          - boolean
+                          - object
+                          - stringarray
+                          - numberarray
+                          - booleanarray
+                          - objectarray
+                          - arrayarray
+                        x-celigo-deprecated-enum-values:
+                          - arrayarray
+                        x-enumDescriptions:
+                          string: Single string value
+                          number: Single numeric value
+                          boolean: Single boolean value
+                          object: Nested object value
+                          stringarray: Array of strings
+                          numberarray: Array of numbers
+                          booleanarray: Array of booleans
+                          objectarray: Array of objects
+                          arrayarray: "Deprecated: not a type the mapper recognizes; a row that uses it fails"
+                        description: Data type the row writes.
+                        examples: ["string"]
+                      sourceDataType:
+                        type: string
+                        description: Data type of the extracted value.
+                        examples: ["string"]
+                      status:
+                        type: string
+                        description: Row status; `Active` rows run.
+                        examples: ["Active"]
+                      mappings:
+                        type: array
+                        description: Child rows of an `object` row, with the same shape as this row.
+                        items:
+                          $ref: '#/ApiRequest/properties/transform/properties/expression/properties/rulesTwoDotZero/properties/mappings/items'
+        _scriptId:
+          type: string
+          format: objectId
+          x-celigo-refModel: scripts
+          description: Reference to a script for custom transformation logic.
+          examples: ["689212a2c42d988978e27a11"]
+        function:
+          type: string
+          description: Function name in the script to execute.
+          examples: ["transformRequest"]
+      x-celigo-ai-guidance:
+        - |-
+          Transforms the request data before it is processed by routers or responses.
+          Useful for normalizing data or extracting specific fields.
+  required:
+    - relativeURI
+    - method
+
+  x-celigo-ai-guidance:
+    - |-
+      Defines how the API endpoint receives data:
+      - HTTP method and URI path
+      - Expected parameters (path, query, headers)
+      - Request body schema
+      - Optional request transformation logic

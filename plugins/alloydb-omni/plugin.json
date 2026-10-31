@@ -1,0 +1,31 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "alloydb-omni",
+  "version": "1.0.0",
+  "description": "Guides to run and manage AlloyDB Omni databases in containers and on Kubernetes.",
+  "author": {
+    "name": "Google LLC"
+  },
+  "homepage": "https://github.com/gemini-cli-extensions/alloydb-omni",
+  "license": "Apache-2.0",
+  "keywords": [
+    "alloydb-omni",
+    "alloydb",
+    "database"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "alloydb-omni",
+        "commit": "37101e3f9aaf0bd4d0acaeee540a0da2fd773d00",
+        "skills": {
+          "alloydb-omni-container": "51af274a19e2bd23c21bc71f78bc8d212773cb900027cdba3f8c5f38bc8ebb20",
+          "alloydb-omni-kubernetes": "04e245b425932c2dc41d8292bdb33491633b81daa4a081a9a2ad34adbe0dde0d"
+        }
+      }
+    }
+  }
+}

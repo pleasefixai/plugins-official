@@ -1,0 +1,5 @@
+{
+  "name": "42crunch-api-security-testing",
+  "version": "1.0.0",
+  "description": "Guides to write OpenAPI specifications, then audit and scan your APIs with 42Crunch."
+}

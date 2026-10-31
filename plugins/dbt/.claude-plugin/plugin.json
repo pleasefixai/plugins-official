@@ -1,0 +1,5 @@
+{
+  "name": "dbt",
+  "version": "1.0.0",
+  "description": "Guides for dbt models, unit tests, Semantic Layer metrics, dbt Mesh and failed jobs."
+}

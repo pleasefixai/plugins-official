@@ -1,0 +1,44 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "42crunch-api-security-testing",
+  "version": "1.0.0",
+  "description": "Guides to write OpenAPI specifications, then audit and scan your APIs with 42Crunch.",
+  "author": {
+    "name": "42Crunch"
+  },
+  "homepage": "https://42crunch.com",
+  "license": "Apache 2.0",
+  "keywords": [
+    "openapi",
+    "api-security",
+    "audit",
+    "scan",
+    "remediation",
+    "vulnerability",
+    "compliance",
+    "owasp",
+    "bola",
+    "bfla",
+    "ai",
+    "devsecops",
+    "42crunch"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "42crunch-api-security-testing",
+        "commit": "faf5305385de8afed9468904e8639be737aff39e",
+        "skills": {
+          "42crunch-api-security-testing": "ca184f664248231ea1e83f079baec633c0a36daed1b1db3df7112a12accb47c4",
+          "42crunch-audit": "48348492bf01a1a575e816dfdec2153fada999f490c48d51d5fa8071d603d8dc",
+          "42crunch-scan": "b0283a10c89bfb5d2765705e855b3381c9fd83b885e4be804495e07fa2cbbba6",
+          "42crunch-setup": "6aff777df78f5e9a9ad26d7858bd3d7fa9862163f652d2d0e91661b9bea7c19c",
+          "code-to-oas": "9b9787c8deba713f48cf48aabe45d9e16f72c71ccd1f2b533dc7b7efb620fde6"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "amazon-location-service",
+  "version": "1.0.0",
+  "description": "Guides to add maps, places search, geocoding and routes with Amazon Location Service.",
+  "author": {
+    "name": "Amazon Web Services"
+  },
+  "homepage": "https://github.com/awslabs/agent-plugins",
+  "license": "Apache-2.0",
+  "keywords": [
+    "location",
+    "maps",
+    "geocoding",
+    "routing",
+    "places",
+    "geofencing",
+    "tracking",
+    "amazon-location",
+    "maplibre",
+    "address",
+    "coordinates"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "amazon-location-service",
+        "commit": "097fe8ad56d8a1d5e2c81d7880adf145553cf244",
+        "skills": {
+          "amazon-location-service": "007c228be7e2dc4e219fe05f2c83c48f0cf50d73fb04ee72ab5530448d2f11c3"
+        }
+      }
+    }
+  }
+}

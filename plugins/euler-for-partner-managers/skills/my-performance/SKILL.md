@@ -1,6 +1,6 @@
 ---
 name: my-performance
-description: Generate a partner's own performance scorecard with one customer — their EULER health score (0–100), key stats (revenue, deals, commissions, referrals), and the single biggest thing to improve — using EULER MCP tools. Use this skill whenever a partner wants their personal performance read — phrases like "how am I doing", "my performance", "my numbers", "my partner scorecard", "how's my pipeline", "am I on track this quarter". Partner-facing (a partner viewing their OWN numbers), NOT a customer admin reviewing partners — that distinction selects this over generate-qbr / portfolio-pulse.
+description: Generate a partner's own performance scorecard with one customer — their EULER health score (0–100), key stats (revenue, deals, commissions, referrals), and the single biggest thing to improve — using EULER MCP tools. Use this skill whenever a partner wants their personal performance read — phrases like "how am I doing", "my performance", "my numbers", "my partner scorecard", "how's my pipeline", "am I on track this quarter". Partner-facing (a partner viewing their OWN numbers), NOT a customer admin reviewing partners — that distinction selects this over generate-qbr.
 ---
 
 # my-performance — your performance scorecard
@@ -20,8 +20,8 @@ DO NOT invoke for:
 
 - **A customer admin reviewing a partner** — that is `generate-qbr` (third-person, the
   full shareable retrospective). This skill is the partner looking at *themselves*.
-- **A customer admin wanting the whole roster** — that is `portfolio-pulse` (portfolio-wide
-  ranking across all the customer's partners). This skill is one partner, one customer.
+- **A customer admin wanting the whole roster** — a ranking across all the customer's
+  partners. This skill is one partner, one customer.
 
 The distinction that selects this skill: **the connected account is the partner, and the
 subject is that same partner's own numbers.** It is the partner-facing **mirror of
@@ -126,8 +126,8 @@ closed-won, or an unsigned foundational agreement **and** 0 lifetime closed-won)
 the read only then.
 
 This is **transparency** — the partner sees exactly how their customer's health model reads
-them, and exactly which move grows the number. Same model `generate-qbr` and `portfolio-pulse`
-use, viewed from the partner's own side.
+them, and exactly which move grows the number. Same model `generate-qbr`
+uses, viewed from the partner's own side.
 
 ## Product how-to questions (`euler_help`)
 

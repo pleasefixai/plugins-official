@@ -1,0 +1,67 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "auth0",
+  "version": "1.0.0",
+  "description": "Guides to add sign-in, MFA, SSO and API protection to your apps with Auth0.",
+  "author": {
+    "name": "Auth0"
+  },
+  "homepage": "https://auth0.com",
+  "license": "Apache-2.0",
+  "keywords": [
+    "auth0",
+    "authentication",
+    "authorization",
+    "oauth",
+    "oidc",
+    "mfa",
+    "sso",
+    "rbac",
+    "sdk",
+    "quickstart",
+    "migration",
+    "branding",
+    "custom-domains",
+    "security",
+    "acul",
+    "universal-login",
+    "jwt",
+    "cli",
+    "react",
+    "nextjs",
+    "vue",
+    "nuxt",
+    "angular",
+    "express",
+    "fastify",
+    "fastapi",
+    "flask",
+    "go",
+    "springboot",
+    "java",
+    "swift",
+    "android",
+    "aspnetcore",
+    "dotnet",
+    "ionic",
+    "capacitor",
+    "react-native",
+    "expo",
+    "spa-js",
+    "node"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "auth0",
+        "commit": "7b3821d533430eef35fd7406a87b7b8d02302bdf",
+        "skills": {
+          "auth0": "552cefdbe3b8fc65e74ac84eea9b8ecf04a1b4401c328d5e31733320503d4ede"
+        }
+      }
+    }
+  }
+}

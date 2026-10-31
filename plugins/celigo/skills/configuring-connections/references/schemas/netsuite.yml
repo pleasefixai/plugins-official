@@ -1,0 +1,268 @@
+NetSuite:
+  type: object
+  description: |-
+    Configuration for NetSuite ERP connections. Used when the connection type is "netsuite".
+    The authType field selects the authentication method; token-based authentication (TBA) is
+    recommended for production.
+  required:
+    - authType
+  x-celigo-ai-guidance:
+    - |-
+      For placeholder/dummy NetSuite connections, use authType "token-auto" with just the account id —
+      integrator.io manages the OAuth client wiring on the backend, so no placeholder tokens are needed.
+  x-celigo-ui-override: >-
+    authType is required by the connection form (the API itself accepts a connection without it). The
+    per-auth-type requireds likewise mirror the form: basic requires email and password; token
+    requires account, environment, tokenId, and tokenSecret; token-auto requires account. The API
+    enforces none of these (each was live-verified to POST 201 when omitted); they are encoded in the
+    connection request schema's type=netsuite branch (not in this file, which jdbc connections also
+    embed for NetSuite JDBC auth) so builders produce connectable connections.
+  properties:
+    authType:
+      type: string
+      examples: ["token-auto"]
+      enum:
+        - basic
+        - token
+        - token-auto
+      x-celigo-deprecated-enum-values:
+        # `basic` is kept in source (existing connections may still report it) but stripped from
+        # the published bundle: new basic connections are rejected by the API (TBA-only WSDLs).
+        - basic
+      x-enumDescriptions:
+        basic: Legacy email and password authentication (not recommended for new connections).
+        token: Manual Token-Based Authentication (TBA) using tokenId and tokenSecret from a NetSuite integration record.
+        token-auto: Automatic token management via Celigo's iClient; requires only the NetSuite account ID.
+      description: |-
+        Authentication method for the NetSuite connection. token-auto delegates the token
+        lifecycle to an iClient; token uses a manually-supplied tokenId/tokenSecret pair.
+      x-celigo-ai-guidance:
+        - |-
+          Default to "token-auto" for new connections, including placeholders (only the account id is needed).
+          Use "token" when the user supplies their own tokenId/tokenSecret. Do not create "basic" connections:
+          the API rejects them with 422 "netsuite_wsdl_tba_mandatory" because the available WSDL versions
+          require Token-Based Authentication.
+      x-lowercase: true
+    account:
+      type: string
+      examples: ["TSTDRV1234567"]
+      description: |-
+        NetSuite account ID (automatically uppercased), required for token and token-auto authentication.
+        Found in NetSuite under Setup > Company > Company Information. Non-production accounts
+        carry an environment suffix (e.g. `123456_SB1`); production and beta use the bare id.
+      x-uppercase: true
+    environment:
+      type: string
+      examples: ["production"]
+      enum:
+        - production
+        - sandbox
+        - sandbox2.0
+        - beta
+      x-enumDescriptions:
+        production: Connect to the live production NetSuite instance.
+        sandbox: Connect to a legacy NetSuite sandbox account.
+        sandbox2.0: Connect to a NetSuite SuiteCloud (SB2.0) sandbox account.
+        beta: Connect to the NetSuite beta/release-preview environment.
+      description: |-
+        NetSuite environment to connect to. Defaults to production when not specified.
+    tokenId:
+      type: string
+      examples: ["c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2"]
+      description: |
+        NetSuite TBA token ID (encrypted at rest). Required when authType is "token".
+
+        Generated in NetSuite under Setup > Users/Roles > Access Tokens.
+        Must be paired with the corresponding tokenSecret.
+      x-celigo-ai-guidance:
+        - Not needed when authType is "token-auto" — integrator.io manages the token wiring in that mode.
+      writeOnly: true
+    tokenSecret:
+      type: string
+      examples: ["3f2a1b0c9d8e7f6a5b4c3d2e1f0a9b8c7d6e5f4a3b2c1d0e9f8a7b6c5d4e3f2a"]
+      description: |
+        NetSuite TBA token secret (encrypted at rest). Required when authType is "token".
+
+        Generated alongside the tokenId in NetSuite. Treat as a sensitive credential.
+      x-celigo-ai-guidance:
+        - Not needed when authType is "token-auto".
+      writeOnly: true
+    entityId:
+      type: string
+      examples: ["1234"]
+      description: NetSuite entity/user ID associated with the token.
+    tokenName:
+      type: string
+      examples: ["Celigo integration token"]
+      description: Human-readable name of the NetSuite access token for identification purposes.
+    roleId:
+      type: string
+      examples: ["3"]
+      description: |
+        NetSuite role ID that determines the permissions for this connection.
+
+        The role controls which records, fields, and operations are accessible.
+        Must match the role associated with the access token in NetSuite.
+    email:
+      type: string
+      deprecated: true
+      description: |
+        NetSuite user email address. Required when authType is "basic".
+        Used as the login credential for basic (email/password) authentication.
+      format: email
+    password:
+      type: string
+      deprecated: true
+      description: NetSuite user password (encrypted at rest). Required when authType is "basic".
+      writeOnly: true
+    requestLevelCredentials:
+      type: boolean
+      default: false
+      description: |
+        When true, authentication credentials are sent with each individual API request
+        rather than maintaining a persistent session. The connection form sets this to true
+        for token (manual TBA) authentication.
+    useSsoLogin:
+      type: boolean
+      readOnly: true
+      deprecated: true
+      description: |-
+        Legacy single-sign-on login flag for the deprecated basic (email/password) auth flow. Not exposed
+        by the current connection form and not settable via the API (writes are silently dropped); retained
+        for the existing connections that carry it. New connections use token-based authentication instead.
+    dataCenterURLs:
+      type: object
+      description: |
+        NetSuite data center URLs for the account, auto-discovered from the account ID.
+        These are populated by the server after a successful connection.
+      readOnly: true
+      properties:
+        restDomain:
+          type: string
+          examples: ["https://1234567.restlets.api.netsuite.com"]
+          description: Base URL for the account's RESTlet and REST API endpoints.
+        webservicesDomain:
+          type: string
+          examples: ["https://1234567.suitetalk.api.netsuite.com"]
+          description: Base URL for the account's SuiteTalk (SOAP) web services endpoints.
+        systemDomain:
+          type: string
+          examples: ["https://1234567.app.netsuite.com"]
+          description: Base URL for the account's NetSuite UI/system endpoints.
+      x-celigo-ai-guidance:
+        - |-
+          NetSuite data center URL overrides. Normally auto-discovered from the account ID.
+          Only set this to override the default data center routing.
+    accountName:
+      type: string
+      examples: ["My Company, Inc."]
+      description: Human-readable NetSuite account name (display purposes only).
+    roleName:
+      type: string
+      examples: ["Administrator"]
+      description: Human-readable name of the NetSuite role (display purposes only).
+    wsdlVersion:
+      type: string
+      examples: ["latest"]
+      description: |-
+        SuiteTalk Web Services WSDL version. The API stores only `latest` or `next`; any other value sent
+        on create or update is normalized to one of these (the connection form's "2025.1" maps to `latest`
+        and "2023.1" maps to `next`; unrecognized version strings fall back to `latest`). Defaults to
+        `latest`, which requires Token-Based Authentication.
+      enum:
+        - latest
+        - next
+      x-enumDescriptions:
+        latest: Current default WSDL release. Shown in the connection form as "2025.1".
+        next: Alternate WSDL release. Shown in the connection form as "2023.1".
+      default: latest
+    applicationId:
+      type: string
+      examples: ["E3CA9D5B-1C2D-3E4F-5A6B-7C8D9E0F1A2B"]
+      description: |
+        NetSuite application ID from the integration record.
+        Required for some authentication configurations to identify the calling application.
+    concurrencyLevelRESTlet:
+      type: number
+      readOnly: true
+      deprecated: true
+      description: |-
+        Deprecated per-endpoint cap on concurrent NetSuite RESTlet requests, superseded by the unified
+        `concurrencyLevel`. Server-reported only — values sent on create or update are silently dropped
+        (live-verified); retained for existing connections.
+      x-celigo-ai-guidance:
+        - |-
+          Maximum concurrent requests to NetSuite RESTlet endpoints.
+          NetSuite enforces governance limits on concurrent RESTlet requests per account.
+          Keep this low to avoid SuiteScript governance errors.
+    concurrencyLevelWebServices:
+      type: number
+      readOnly: true
+      deprecated: true
+      description: |-
+        Deprecated per-endpoint cap on concurrent NetSuite SuiteTalk Web Services (SOAP) requests, superseded
+        by the unified `concurrencyLevel`. Server-reported only — values sent on create or update are
+        silently dropped (live-verified); retained for existing connections.
+      x-celigo-ai-guidance:
+        - |-
+          Maximum concurrent requests to NetSuite SuiteTalk Web Services (SOAP API).
+          NetSuite enforces concurrency limits per account — exceeding them causes
+          "Only one request may be made against a session at a time" errors.
+    concurrencyLevel:
+      type: integer
+      description: |-
+        Maximum number of requests this connection sends to NetSuite in parallel, across SOAP,
+        REST and RESTlet calls. Send no more than the integrator.io license ceiling (25 standard,
+        50 with an Environments license). NetSuite separately enforces one
+        concurrency limit per NetSuite account that every caller of its SOAP, REST and RESTlet
+        APIs shares — all integrator.io connections to that account and every other client
+        calling those APIs from outside integrator.io (other integrations, third-party tools).
+      minimum: 1
+      maximum: 50
+      default: 5
+      x-celigo-ai-guidance:
+        - |-
+          Before raising this connection's ceiling — `targetConcurrencyLevel` while
+          `autoRecoverRateLimitErrors` is on (the default; a PUT of `concurrencyLevel` then
+          changes nothing), `concurrencyLevel` only while it is off — total the ceilings of every
+          connection that targets the same NetSuite `account` and `environment` (a connection
+          that borrows counts under its parent) and keep that total, plus whatever calls the
+          account's APIs from outside integrator.io, within the NetSuite account limit; a value
+          that fits this connection alone can still push the whole account over.
+        - |-
+          The NetSuite limit is the service-tier base (Standard 5, Premium 15, Enterprise and
+          Ultimate 20; legacy tiers 5–20) plus 10 per SuiteCloud Plus license; a sandbox matches
+          its production account. Development and partner accounts are fixed at 5 and do not
+          scale with licenses. NetSuite shows the limit at Setup > Integration > Integration
+          Management > Integration Governance; integrator.io cannot read it — ask for the number
+          rather than assuming headroom.
+        - |-
+          Over the limit, NetSuite rejects requests from every caller of that account at once,
+          not only this connection's — SOAP: `ExceededConcurrentRequestLimitFault` /
+          `WS_REQUEST_BLOCKED`; REST web services: HTTP 429; RESTlets: HTTP 400
+          `SSS_REQUEST_LIMIT_EXCEEDED`. To run several connections against one NetSuite account,
+          put the limit on one parent and point the others at it with
+          `_borrowConcurrencyFromConnectionId`; otherwise raise in small steps.
+    targetConcurrencyLevel:
+      type: integer
+      description: |-
+        Target concurrency level for auto-scaling. The system adjusts concurrency
+        between 1 and this value based on rate limit and governance feedback.
+      minimum: 1
+      maximum: 50
+      default: 5
+      x-celigo-ai-guidance:
+        - |-
+          With `autoRecoverRateLimitErrors` on, this is the level the connection climbs back to
+          after a recovery, so it — not `concurrencyLevel` — is the value that must fit the shared
+          NetSuite account budget described on `concurrencyLevel`.
+    _iClientId:
+      type: string
+      format: objectId
+      x-celigo-refModel: iclients
+      examples: ["66a1b2c3d4e5f60718293a4b"]
+      description: ID of the iClient used for token-based authentication.
+  # The per-authType conditional requireds live in request.yml's type=netsuite branch (not here):
+  # jdbc connections embed this same subdoc for NetSuite JDBC auth, and the connection-form rules
+  # (e.g. token-auto requiring account) do not apply there. The form's tokenAccount/tokenEnvironment
+  # map to account/environment on save.

@@ -1,0 +1,295 @@
+ApiResponse:
+  type: object
+  description: |-
+    Response configuration in a builder-mode API. Each API requires exactly one
+    `success` and one `fail` response; additional `custom` responses are optional.
+  properties:
+    id:
+      type: string
+      description: Unique identifier for this response, referenced by the response router.
+      examples: ["success_response", "error_response", "custom_validation_response"]
+    name:
+      type: string
+      maxLength: 200
+      description: Display name.
+      examples: ["Success Response", "Error Response", "Validation Error"]
+    description:
+      type: string
+      maxLength: 10240
+      description: Optional description of when this response is used.
+      examples: ["Returned when customer is successfully created"]
+    type:
+      type: string
+      enum: ["success", "fail", "custom"]
+      x-enumDescriptions:
+        success: The happy-path response; returned when it's the first response, in list order, whose `inputFilter` matches.
+        fail: The error response; returned when a step fails and that step's `proceedOnFailure` is off.
+        custom: Additional response for specific scenarios, selected by its own `inputFilter`.
+      description: |-
+        Response type. `success` isn't a fallback checked after the `custom` responses: list
+        `custom` responses before it (see `inputFilter`).
+      examples: ["success"]
+      x-celigo-ai-guidance:
+        - |-
+          - **success**: Response for successful operations (required, exactly one)
+          - **fail**: Response for errors (required, exactly one)
+          - **custom**: Additional responses for specific scenarios (optional, multiple allowed), listed before `success`
+    statusCode:
+      type: integer
+      minimum: 100
+      maximum: 599
+      description: HTTP status code to return.
+      examples: [200, 201, 400, 404, 500]
+    headers:
+      type: array
+      description: Response headers to include.
+      items:
+        type: object
+        properties:
+          key:
+            type: string
+            maxLength: 256
+            pattern: "^[a-zA-Z0-9_-]+$"
+            description: Header name
+            examples: ["Content-Type", "X-Request-Id"]
+          value:
+            type: string
+            maxLength: 256
+            description: Header value (can include handlebars templates)
+            examples: ["application/json", "{{requestId}}"]
+          description:
+            type: string
+            maxLength: 10240
+            description: Description of the header
+            examples: ["Content type of the response body"]
+    inputFilter:
+      type: object
+      description: |-
+        Filter criteria for response selection by the response router, which returns the first
+        response in `responses` whose filter matches. A response without an `inputFilter` matches
+        every request, so a `success` listed first answers requests a later `custom` filter
+        matches; the typed `context.success` filter doesn't prevent that, because
+        `context.success` is true whenever no step failed, including when a lookup found nothing.
+        A step that fails with `proceedOnFailure` off selects the `fail` response.
+
+        Send `version` and `rules` directly on `inputFilter`, not inside the
+        `{type: "expression", expression: {...}}` wrapper that export and import filters use. A
+        wrapped filter is saved without an error, but the response is stored with no
+        `inputFilter`, so it matches every request that reaches it.
+      properties:
+        version:
+          type: string
+          enum: ["1"]
+          x-enumDescriptions:
+            "1": Version 1 of the Celigo expression-based filter format.
+          description: Version of the filter format used by `rules`.
+        rules:
+          type: array
+          description: Celigo expression-based filter rules.
+          items: {}
+          examples:
+            - ["empty", ["string", ["extract", "customerId"]]]
+            - ["and", ["notempty", ["string", ["extract", "orderId"]]], ["greaterthan", ["number", ["extract", "amount"]], 1000]]
+          x-celigo-ai-guidance:
+            - |-
+              Array-based DSL where the first element is an operator (e.g., "equals", "and", "or"),
+              followed by operands which can be nested expressions.
+    bodySchema:
+      type: object
+      description: |-
+        JSON Schema describing the response body structure. Every object-typed
+        schema node must declare at least one property for the API Builder to
+        render it; omit this field when the response body has no defined shape.
+      additionalProperties: true
+      examples:
+        - type: object
+          properties:
+            id:
+              type: string
+            name:
+              type: string
+            createdAt:
+              type: string
+              format: date-time
+      x-celigo-ai-guidance:
+        - |-
+          Every object-typed schema node — the root, a nested property, or an
+          array's `items` — must carry a non-empty `properties` map. The API
+          persists a property-less object node without error, but the API
+          Builder editor crashes rendering it ("Cannot convert undefined or
+          null to object"), so the mistake only surfaces when the editor opens.
+        - |-
+          When copying a schema from an external spec, prune property-less
+          object nodes (e.g. an array's `items` that is a bare
+          `{"type": "object"}`) instead of reproducing them. Array-typed roots
+          (which carry `items`, not `properties`) and type-less nullable
+          leaves render fine. Do not pre-fill `properties: {}` — the API
+          strips empty objects on save.
+    mockInput:
+      type:
+        - object
+        - string
+      maxLength: 0
+      description: |-
+        Mock data for testing this response, in the integrator.io canonical
+        record-page format: `{"page_of_records": [{"record": {...}}, ...]}`.
+        The server rejects any other object shape and any non-empty string
+        with a 422; the empty string `""` (a UI draft artifact) is accepted
+        and stored verbatim.
+      required:
+        - page_of_records
+      properties:
+        page_of_records:
+          type: array
+          description: Pages of mock records fed to this response's mappings.
+          items:
+            type: object
+            required:
+              - record
+            properties:
+              record:
+                type: object
+                description: One mock input record (freeform payload).
+              success:
+                type: boolean
+                description: When true, the mock record follows the success path.
+              testMode:
+                type: boolean
+                description: When true, the mock record is treated as a test-mode record.
+      additionalProperties: true
+    mappings:
+      type: array
+      description: |-
+        Mapper 2.0 rows that build the response body from the record the steps produced,
+        under the same rules as the shared Mapper 2.0 schema an import's `mappings` use.
+      items:
+        type: object
+        required:
+          - dataType
+        properties:
+          generate:
+            type: string
+            description: |-
+              Name of the response-body field this row writes. A dot doesn't nest:
+              `customer.id` makes one key named `customer.id`. To nest, use an `object` row
+              with child `mappings`.
+            examples: ["customerId"]
+          dataType:
+            type: string
+            enum:
+              - string
+              - number
+              - boolean
+              - object
+              - stringarray
+              - numberarray
+              - booleanarray
+              - objectarray
+              - arrayarray
+            x-celigo-deprecated-enum-values:
+              - arrayarray
+            x-lowercase: true
+            x-enumDescriptions:
+              string: Single string value
+              number: Single numeric value
+              boolean: Single boolean value
+              object: Nested object value
+              stringarray: Array of strings
+              numberarray: Array of numbers
+              booleanarray: Array of booleans
+              objectarray: Array of objects
+              arrayarray: "Deprecated: not a type the mapper recognizes; a row that uses it fails"
+            description: Data type of the value this mapping writes into the response body.
+            examples: ["string"]
+            x-celigo-ai-guidance:
+              - |-
+                Validator-enforced on every mapping entry: writes fail with
+                `422` ("Path 'dataType' is required."), repeated once per
+                entry that omits it.
+          extract:
+            type: string
+            description: |-
+              Where the value comes from, as a JSONPath into the record (`$.id`). A bare string
+              such as `id` or `record.id` is written as that literal text, not read from the
+              record.
+            examples: ["$.id"]
+          mappings:
+            type: array
+            description: |-
+              Child rows of an `object` row, with the same shape as this row. Each writes one
+              field inside the object this row generates.
+            items:
+              $ref: '#/ApiResponse/properties/mappings/items'
+          hardCodedValue:
+            type: string
+            description: |-
+              Static value written to the target field instead of extracting
+              from input data.
+            x-celigo-ai-guidance:
+              - |-
+                The field name is exactly `hardCodedValue` (capital C). The
+                server does not reject unknown mapping keys: a mapping sent
+                with `hardcodedValue` saves successfully with the value
+                silently dropped — no error, and the target field is then
+                simply absent from the API's responses.
+    lookups:
+      type: array
+      description: Static key-value lookup tables for value transformation.
+      items:
+        type: object
+        properties:
+          name:
+            type: string
+            description: Name of the lookup
+            examples: ["statusCodeMap"]
+          map:
+            type: object
+            description: Key-value mapping object
+          default:
+            type: string
+            description: Default value if key not found
+            examples: ["unknown"]
+          allowFailures:
+            type: boolean
+            description: When true, processing continues even if this lookup fails.
+    hooks:
+      type: object
+      description: Custom scripts to run during response processing.
+      properties:
+        preMap:
+          type: object
+          description: Script to run before applying mappings.
+          properties:
+            _scriptId:
+              type: string
+              format: objectId
+              x-celigo-refModel: scripts
+              description: Reference to the script resource.
+              examples: ["689212a2c42d988978e27a11"]
+            function:
+              type: string
+              description: Function name to execute.
+              examples: ["preMapResponse"]
+        postMap:
+          type: object
+          description: Script to run after applying mappings.
+          properties:
+            _scriptId:
+              type: string
+              format: objectId
+              x-celigo-refModel: scripts
+              description: Reference to the script resource.
+              examples: ["689212a2c42d988978e27a11"]
+            function:
+              type: string
+              description: Function name to execute.
+              examples: ["postMapResponse"]
+  x-celigo-ai-guidance:
+    - |-
+      Defines how to format and return data to the caller. Each API must have:
+      - Exactly one 'success' response (for successful operations)
+      - Exactly one 'fail' response (for errors)
+      - Zero or more 'custom' responses (for specific scenarios)
+      The response router returns the first response whose `inputFilter` matches, and a
+      response without one matches every request, so list the 'custom' responses ahead of
+      'success'.

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "carbone-skill",
+  "version": "1.0.0",
+  "description": "Carbone template reference to merge JSON data into DOCX, XLSX, PPTX and PDF documents.",
+  "author": {
+    "name": "Carbone"
+  },
+  "homepage": "https://carbone.io",
+  "license": "Apache-2.0",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "carbone-skill",
+        "commit": "25207b3f52b97872312eab997ee5c62cc5c9542d",
+        "skills": {
+          "carbone": "f6bc4a26c3caea6f7e4d1c1d5055ad6ce0f97c7a65d74f853472e867651d4450"
+        }
+      }
+    }
+  }
+}

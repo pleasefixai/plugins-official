@@ -1,0 +1,40 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "coder",
+  "version": "1.0.0",
+  "description": "Guides to manage workspaces, templates and modules in a self-hosted Coder deployment.",
+  "author": {
+    "name": "Coder"
+  },
+  "homepage": "https://coder.com",
+  "license": "MIT",
+  "keywords": [
+    "coder",
+    "cloud development environments",
+    "remote development",
+    "workspaces",
+    "terraform",
+    "templates",
+    "mcp",
+    "self-hosted",
+    "ai agents",
+    "devops"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "coder",
+        "commit": "11c88b9310cb96ba9cf8823d9cfdd704b67de99b",
+        "skills": {
+          "modules": "ba8bb20571a3e7d8bc51d49cd6b887e6cf1e206b568ace4b9a7d7834825992ce",
+          "setup": "cb7d2039dfb2eb05751b3b699183d19540122f6d959864b695a6b30f636c51d5",
+          "templates": "d95335f082e50700b085fe3f6c73fba6a2994218f3c6f4e88a1d2e738ba70368",
+          "workspaces": "df47a0fee2fce22a17aefa3a577aaab279424f8f53238d4715915a97f4326fa1"
+        }
+      }
+    }
+  }
+}

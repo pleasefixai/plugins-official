@@ -1,0 +1,5 @@
+{
+  "name": "fiftyone",
+  "version": "1.0.0",
+  "description": "Guides to curate, export and run models on FiftyOne datasets, and to evaluate the results."
+}

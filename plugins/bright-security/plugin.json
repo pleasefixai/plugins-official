@@ -1,0 +1,37 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "bright-security",
+  "version": "1.0.0",
+  "description": "Bright DAST scans of your app's endpoints, with each fix checked by a new scan.",
+  "author": {
+    "name": "Bright Security"
+  },
+  "homepage": "https://brightsec.com",
+  "license": "MIT",
+  "keywords": [
+    "cursor",
+    "bright",
+    "dast",
+    "security",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "bright-security",
+        "commit": "a6017ff1d70c742b635d02d942d5e1622ed07afe",
+        "skills": {
+          "analyze-codebase": "666d36c5aba4bc446a347686eab9e9d65eef8aa15422a01d56b8710be5829b57",
+          "fix-and-validate": "e730b63129da240d6216046bac5b55ba98e95ff651d374bcabc13ba484c7b3e3",
+          "register-entrypoints": "644b5a93abe26f7b6e08630a6a71586d4e4a6b42f93423f0cbed7e4718998f68",
+          "run-scan": "3a7214ee19a297731f9c3f9ab6403c5a86a19c3bdef294ea0944dc9f8a852843",
+          "setup-auth": "b88e82901aedbfcbfbf96a9b4365918ef1765332930920fcb117c1ed152b2c84",
+          "setup-repeater": "9c557a2754e0099f4ae11237918c56e060abd4d1b8e8ccea3ae93cb771e80150"
+        }
+      }
+    }
+  }
+}

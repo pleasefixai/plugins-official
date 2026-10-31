@@ -1,0 +1,5 @@
+{
+  "name": "endorlabs",
+  "version": "1.0.0",
+  "description": "Guides to triage, explain and fix Endor Labs findings in dependencies, code and CI/CD."
+}

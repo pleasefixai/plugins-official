@@ -1,0 +1,40 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "crowdstrike-falcon-fusion",
+  "version": "1.0.0",
+  "description": "Guides to author, deploy, run and debug CrowdStrike Falcon Fusion workflows.",
+  "author": {
+    "name": "CrowdStrike"
+  },
+  "homepage": "https://github.com/CrowdStrike/fusion-skills",
+  "license": "MIT",
+  "keywords": [
+    "crowdstrike",
+    "falcon",
+    "fusion",
+    "soar",
+    "workflow",
+    "automation",
+    "security"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "crowdstrike-falcon-fusion",
+        "commit": "38527dc5afa970543859c31ca5dbf69352bfaa28",
+        "skills": {
+          "authoring": "6d27da92739bfbf55ed3049aee8b87461a923b75e303279d8aade18866731fa0",
+          "deployment": "fc6503ae55de661c96d84741e67c1e05bd82439ad4235272611bb5859c6252fc",
+          "execution": "7d49e2352463b82a1bbc02a211262425f97f131f156ffd5779791e9b1a0f9157",
+          "foundry-redirect": "602241bec5fb09e5e5907eee71eb154b575462c7c99d345374bf0f0d33baaf1b",
+          "lookup-files": "f79e5bfbd7195b9f2a15cdbd86eeccef0222883221c2f237dbbd1badc873d193",
+          "setup": "624af0b7ec1e0f86e102d4bdece68b29c1d1a001278b31d6ead098cc28821daa",
+          "workflows": "1970bb53d43c79f50327764525029b8fe945f1d7e8b45eedb37bb4c45bc059f8"
+        }
+      }
+    }
+  }
+}

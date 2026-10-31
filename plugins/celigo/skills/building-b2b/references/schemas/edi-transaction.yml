@@ -1,0 +1,349 @@
+# Hand-maintained (listed as `editorial` in scripts/sync-map.json): the upstream sources —
+# integrator-api-specs specs/v1/editransaction/components/schemas/{response,query-response}.yml —
+# are two files joined by a cross-file $ref that this self-contained copy inlines. Content below
+# mirrors those sources with the ref inlined and the spec-internal validation records left out;
+# when the upstream files change, refresh this file by hand the same way.
+
+EDITransactionsQueryResponse:
+  type: object
+  description: |-
+    One page of EDI transaction records matching the request filter. When
+    more records exist beyond the `limit`, `pageToken.next` contains an
+    opaque cursor to pass back on the next request for the next page.
+  properties:
+    ediTransactions:
+      type: array
+      description: |-
+        Matching EDI transaction records, newest first by `lastModified`.
+        Empty array when no records match — the endpoint does not switch to
+        204 for empty results.
+      items:
+        $ref: "#/EDITransaction"
+    pageToken:
+      type: object
+      description: |-
+        Pagination cursor. Present only when more records exist beyond
+        the current page. Absent on the last (or only) page.
+      properties:
+        next:
+          type: string
+          description: |-
+            Opaque cursor string. Pass as `pageToken` in the next request
+            body to retrieve the next page.
+
+EDITransaction:
+  type: object
+  required:
+    - _id
+    - _userId
+    - fileType
+    - documentType
+    - direction
+    - faStatus
+    - s3Key
+    - lastModified
+    - controlNumber
+  description: |-
+    A single EDI transaction record indexed by the B2B Manager dashboard.
+
+    Represents one EDI document — one X12 transaction set (e.g. a single 850
+    purchase order) or one EDIFACT message (e.g. a single ORDERS message) —
+    processed through a Celigo flow. Envelope metadata is extracted from the
+    ISA/GS (X12) or UNB/UNG (EDIFACT) segments at flow execution time.
+    X12 and EDIFACT records share common fields (`_id`, `documentType`,
+    `direction`, `faStatus`, etc.) but use different field names for
+    sender/receiver IDs and control numbers — see individual field
+    descriptions.
+
+    Transaction records are retained for the account's data retention period
+    (`dataRetentionPeriod` on account settings: 30, 60, 90 or 180 days after
+    last modification; the license sets the ceiling) and then expire; expired
+    transactions no longer appear in query results. Unlike most resources, these records
+    are not soft-deleted into the recycle bin, and `createdAt` / `deletedAt`
+    are not returned.
+  properties:
+    _id:
+      type: string
+      format: objectId
+      readOnly: true
+      description: Unique identifier for the transaction record.
+      examples: ["5f8d43a1b9e5a80011a35f2c"]
+    lastModified:
+      type: string
+      format: date-time
+      readOnly: true
+      description: |-
+        Timestamp when the record was last updated (e.g. by an faStatus
+        change). Also restarts the retention window — the record is kept for
+        the account's `dataRetentionPeriod` (30, 60, 90 or 180 days) after
+        this timestamp, so a record can outlive the raw file behind it, whose
+        period counts from when the file was stored.
+      examples: ["2026-04-15T14:30:15.123Z"]
+    _userId:
+      type: string
+      format: objectId
+      description: Owning account user ID.
+      x-celigo-refModel: users
+      examples: ["5e58483b68b52e5827d56a86"]
+    _integrationId:
+      type: string
+      format: objectId
+      description: |-
+        Integration that processed this transaction. Omitted on records whose
+        flow ran outside an integration context.
+      x-celigo-refModel: integrations
+      examples: ["66cc9b31f2be816bf9377036"]
+    _flowJobId:
+      type: string
+      format: objectId
+      description: |-
+        Flow-run Job ID that produced this record. Combine with `s3Key` and
+        `POST /v1/jobs/{_flowJobId}/files/signedURL` (body
+        `{ "fileIds": ["<s3Key>"] }`) to download the raw EDI file.
+      x-celigo-refModel: jobs
+      examples: ["6a05fe1675bab7047b42f047"]
+    _faFlowJobId:
+      type: string
+      format: objectId
+      description: |-
+        Job ID of the flow run that processed the functional acknowledgement
+        (997 / CONTRL) for this transaction. Present only once an FA has been
+        received and processed. Use this job — not `_flowJobId` — with
+        `POST /v1/jobs/{_faFlowJobId}/files/signedURL` (body
+        `{ "fileIds": ["<faS3Key>"] }`) to download the FA file.
+      x-celigo-refModel: jobs
+      examples: ["6a05fdbf0f139ef519238dd7"]
+    fileType:
+      type: string
+      enum: [X12, EDIFACT]
+      x-enumDescriptions:
+        X12: ANSI X12 EDI standard.
+        EDIFACT: UN/EDIFACT EDI standard.
+      description: EDI standard family of this transaction.
+    documentType:
+      type: string
+      description: |-
+        EDI document type. X12: usually the numeric transaction-set ID as a
+        string (`"850"`, `"810"`, `"856"`, `"997"`). EDIFACT: UNH01 message
+        type (`"ORDERS"`, `"INVOIC"`, `"DESADV"`, `"CONTRL"`). Not a closed
+        set — file definitions can supply partner-specific document codes
+        instead (e.g. `"PO"`, `"SH"`, `"IB"`, `"OSTRPT"`), so treat this as a
+        free-form label.
+      examples: ["850"]
+    documentNumber:
+      type: string
+      description: |-
+        Business document number extracted from the transaction set
+        (e.g. purchase-order number from BEG03 in an 850 / BGM02 in an
+        ORDERS). Omitted when the document carries no business number or the
+        file definition does not extract one — most functional
+        acknowledgements (997 / CONTRL / FA) and many status or inventory
+        documents. May also be an empty string.
+      examples: ["PO03302026A"]
+    referenceDocumentNumber:
+      type: array
+      description: |-
+        Business documents this one refers back to, each as an upper-cased
+        `<qualifier> <number>` string — for example the purchase order an
+        856 ASN or 810 invoice fulfils. Links the documents of one order
+        lifecycle together. Present only when the file definition extracted
+        at least one reference.
+      items:
+        type: string
+      examples: [["PO 4500012345"]]
+    lifecycleStatus:
+      type: string
+      enum:
+        - PO received
+        - PO sent
+        - PO Ack received
+        - PO Ack sent
+        - PO change req received
+        - PO change req sent
+        - ASN received
+        - ASN sent
+        - Invoice received
+        - Invoice sent
+        - Payment received
+        - Payment sent
+      x-enumDescriptions:
+        PO received: Inbound 850 or ORDERS — a purchase order arrived from the trading partner
+        PO sent: Outbound 850 or ORDERS — a purchase order was sent to the trading partner
+        PO Ack received: Inbound 855 or ORDRSP — the partner acknowledged a purchase order
+        PO Ack sent: Outbound 855 or ORDRSP — a purchase-order acknowledgement was sent
+        PO change req received: Inbound 860 or ORDCHG — the partner requested a purchase-order change
+        PO change req sent: Outbound 860 or ORDCHG — a purchase-order change request was sent
+        ASN received: Inbound 856 or DESADV — an advance ship notice arrived
+        ASN sent: Outbound 856 or DESADV — an advance ship notice was sent
+        Invoice received: Inbound 810 or INVOIC — an invoice arrived
+        Invoice sent: Outbound 810 or INVOIC — an invoice was sent
+        Payment received: Inbound 820 — a payment or remittance advice arrived
+        Payment sent: Outbound 820 — a payment or remittance advice was sent
+      description: |-
+        Order-lifecycle step this document represents, derived from
+        `documentType` and `direction`. Absent when the document type is
+        outside the order cycle (functional acknowledgements, inventory and
+        status documents) and on records that predate lifecycle tracking.
+      examples: ["PO received"]
+    tradingPartnerName:
+      type: string
+      description: |-
+        Display name of the trading partner the document was exchanged with.
+        Present only when the flow resolved the partner; drives the partner
+        filter of the B2B Manager dashboard.
+      examples: ["Globex Retail"]
+    partnerPairKey:
+      type: string
+      description: |-
+        Upper-cased key identifying the trading-partner pair that exchanged
+        the document, shared by every document of that pair so an order
+        lifecycle can be followed across documents together with
+        `referenceDocumentNumber`. Present only when the flow resolved the
+        partner.
+      examples: ["ACME:GLOBEX"]
+    direction:
+      type: string
+      enum: [Inbound, Outbound]
+      x-enumDescriptions:
+        Inbound: Document received from a trading partner.
+        Outbound: Document sent to a trading partner.
+      description: Whether the document was received from or sent to a trading partner.
+    faStatus:
+      type: string
+      enum: [inProgress, notApplicable, notReceived, accepted, acceptedWithErrors, rejected, failed]
+      x-enumDescriptions:
+        inProgress: Awaiting functional acknowledgment from the trading partner.
+        notApplicable: No functional acknowledgment expected — the document is itself an FA, or the trading partner does not require one.
+        notReceived: Functional acknowledgment expected but not yet received.
+        accepted: Functional acknowledgment received and transaction was accepted.
+        acceptedWithErrors: Functional acknowledgment received with errors but transaction was accepted.
+        rejected: Functional acknowledgment received and transaction was rejected.
+        failed: Functional acknowledgment processing failed.
+      description: |-
+        Latest known functional-acknowledgement status for the transaction set.
+        Updates asynchronously as 997 (X12) / CONTRL (EDIFACT) acknowledgements
+        arrive from the trading partner, so this value may change without a
+        new flow run.
+    sandbox:
+      type: boolean
+      deprecated: true
+      description: When true, the record came from a sandbox flow.
+    s3Key:
+      type: string
+      description: |-
+        Opaque file identifier for the raw EDI document in object storage.
+        The value may be a hex token or an EDI file name — treat it as
+        opaque, not as an S3 path or a fixed format. Combine with
+        `_flowJobId` and call
+        `POST /v1/jobs/{_flowJobId}/files/signedURL` with body
+        `{ "fileIds": ["<s3Key>"] }` to obtain a short-lived signed
+        download URL.
+      examples: ["7588296c08f440698d9d601792aebba5"]
+    faS3Key:
+      type: string
+      description: |-
+        Opaque file identifier for the stored functional-acknowledgement
+        (997 / CONTRL) file. Present only once an FA has been received.
+        One acknowledgement file can cover many transactions, which then
+        share the same `faS3Key`. To download the FA file, combine with
+        `_faFlowJobId` (the FA-processing flow run — not `_flowJobId`) and
+        call `POST /v1/jobs/{_faFlowJobId}/files/signedURL` with body
+        `{ "fileIds": ["<faS3Key>"] }`. For parsed FA failure details, use
+        `GET /v1/ediTransactions/{_ediTransactionId}/faDetails?fileType=<X12|EDIFACT>`
+        — pass the transaction's own `fileType`; the route answers 404 without it
+        (available only for transactions with a rejected FA status).
+      examples: ["9a7c3e14b2af45d8bc0e6090c5be6afa"]
+    mdnStatus:
+      type: string
+      enum: [received, sent]
+      x-enumDescriptions:
+        received: An MDN was received from the trading partner, confirming an outbound transmission.
+        sent: An MDN was sent to the trading partner, acknowledging an inbound transmission.
+      description: |-
+        AS2 Message Disposition Notification status. Present only on AS2
+        transactions. `received` appears on outbound transactions (the partner
+        returned an MDN); `sent` appears on inbound transactions (Celigo
+        returned an MDN to the partner).
+    mdnS3Key:
+      type: string
+      description: |-
+        Opaque file identifier for the stored AS2 MDN artifact. Received MDNs
+        (`mdnStatus: received`) use a UUID; sent MDNs store the MDN file name
+        or a hex token — treat the value as opaque. Present only on AS2
+        transactions that have an MDN. Retrieve the parsed MDN via
+        `GET /v1/ediTransactions/{_ediTransactionId}/mdn`.
+      examples: ["70b008bc-93ba-b50f-580b-205fc5cef948"]
+    isaSenderId:
+      type: string
+      description: |-
+        X12 only. ISA06 Interchange Sender ID. On inbound records this is the
+        fixed-width 15-character value as received (space-padded); outbound
+        records store the configured ID unpadded. Absent on EDIFACT records
+        (see `unbSenderId`).
+      examples: ["1234567890     "]
+    isaReceiverId:
+      type: string
+      description: |-
+        X12 only. ISA08 Interchange Receiver ID. On inbound records this is
+        the fixed-width 15-character value as received (space-padded);
+        outbound records store the configured ID unpadded. Absent on EDIFACT
+        records (see `unbReceiverId`).
+      examples: ["CELIGOLABZ     "]
+    gsSenderId:
+      type: string
+      description: X12 only. GS02 Application Sender's Code.
+      examples: ["1234567890"]
+    gsReceiverId:
+      type: string
+      description: X12 only. GS03 Application Receiver's Code.
+      examples: ["CELIGOLABZ"]
+    unbSenderId:
+      type: string
+      description: |-
+        EDIFACT only. UNB02 sender identification. Absent on X12 records
+        (see `isaSenderId`).
+      examples: ["3017581483"]
+    unbReceiverId:
+      type: string
+      description: |-
+        EDIFACT only. UNB03 receiver identification. Absent on X12 records
+        (see `isaReceiverId`).
+      examples: ["7177587895"]
+    controlNumber:
+      type: object
+      description: |-
+        EDI control numbers extracted from the envelope. The property names
+        differ by `fileType`: X12 records use `interchange`, `group`, and
+        `transactionSet`; EDIFACT records use `unb` and `unh` (and `ung`
+        when a UNG group is present).
+      properties:
+        interchange:
+          type: string
+          description: X12 only. ISA13 interchange control number.
+          examples: ["000000005"]
+        group:
+          type: string
+          description: X12 only. GS06 group control number.
+          examples: ["1"]
+        transactionSet:
+          type: string
+          description: |-
+            X12 only. ST02 transaction-set control number. Occasionally
+            stored with a trailing segment terminator and/or CR (e.g.
+            `"0004~\r"` instead of `"0004"`) — strip trailing non-alphanumeric
+            characters when comparing.
+          examples: ["0004"]
+        unb:
+          type: string
+          description: EDIFACT only. UNB05 interchange control reference.
+          examples: ["1"]
+        ung:
+          type: string
+          description: |-
+            EDIFACT only. UNG05 group reference number. Absent when no UNG
+            group is present in the interchange.
+          examples: ["1"]
+        unh:
+          type: string
+          description: EDIFACT only. UNH01 message reference number.
+          examples: ["100001"]

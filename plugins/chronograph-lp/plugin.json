@@ -1,0 +1,35 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "chronograph-lp",
+  "version": "1.0.0",
+  "description": "Cashflow forecasts, commitment pacing, fund exposure and GP meeting prep from Chronograph.",
+  "author": {
+    "name": "Chronograph"
+  },
+  "homepage": "https://www.chronograph.pe/",
+  "license": "Apache-2.0",
+  "keywords": [
+    "private capital",
+    "private equity",
+    "portfolio monitoring",
+    "fund analytics",
+    "limited partner"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "chronograph-lp",
+        "commit": "322b2d3fbd4db0a2eeed117e3b3c31522408ae6f",
+        "skills": {
+          "chronograph-cashflow-forecast": "eeddf34fd5257375966f72756d1745b785892b47b8124bc98f44a406b1ef62e8",
+          "chronograph-commitment-pacing-planner": "9484914ad8ea2aab374497f3b83f8d0444c71bf22b091df413490f370096bdba",
+          "chronograph-gp-meeting-prep": "5e7f333522c9cdf961e894d162dd1d2f53376c4a9f2fd7d6072d3513cd2dd827",
+          "chronograph-look-through-exposure-scan": "870aed4c05895ce6080ea400b56dd2119ba22d2e98554ac84f46bd4d105f5a67"
+        }
+      }
+    }
+  }
+}

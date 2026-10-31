@@ -1,0 +1,30 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "bigquery-data-analytics",
+  "version": "1.0.0",
+  "description": "Guides for BigQuery AI and machine learning queries in standard SQL.",
+  "author": {
+    "name": "Google LLC"
+  },
+  "homepage": "https://github.com/gemini-cli-extensions/bigquery-data-analytics",
+  "license": "Apache-2.0",
+  "keywords": [
+    "bigquery",
+    "data-analytics",
+    "database"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "bigquery-data-analytics",
+        "commit": "6f9b35627d208b03e840271f6522a28f76e7f8df",
+        "skills": {
+          "bigquery-ai-ml": "2df6b406a478896888d00938efc1d7384bbaef15be20321da90eb238924535f9"
+        }
+      }
+    }
+  }
+}

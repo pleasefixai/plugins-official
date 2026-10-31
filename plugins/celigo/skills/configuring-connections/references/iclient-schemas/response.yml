@@ -1,0 +1,16 @@
+iClient:
+  type: object
+  required:
+    - _id
+    - provider
+    - lastModified
+  description: |-
+    iClient object as returned by the API. Includes all request fields
+    plus server-managed metadata. `name` is optional on create and is
+    omitted from GET responses when the iClient was created without
+    one (the create response echoes it as `null`).
+  allOf:
+    - $ref: './base.yml#/IClientBase'
+    - $ref: '../common-schemas/resource-response.yml#/ResourceResponse'
+    - $ref: '../common-schemas/ia-resource-response.yml#/IAResourceResponse'
+

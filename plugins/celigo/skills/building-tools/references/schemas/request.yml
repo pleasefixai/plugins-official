@@ -1,0 +1,11 @@
+Request:
+  type: object
+  description: |-
+    Request schema for creating or updating a tool. Tools are reusable processing
+    units that encapsulate input transformation, conditional routing, and output
+    mapping logic within an integration.
+  required:
+    - name
+    - _integrationId
+  allOf:
+    - $ref: "./base.yml#/ToolBase"

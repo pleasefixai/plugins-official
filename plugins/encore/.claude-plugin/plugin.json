@@ -1,0 +1,5 @@
+{
+  "name": "encore",
+  "version": "1.0.0",
+  "description": "Guides to build Encore backends in TypeScript and Go: APIs, auth, databases and tests."
+}

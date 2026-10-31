@@ -1,0 +1,41 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "fastly-agent-toolkit",
+  "version": "1.0.0",
+  "description": "Guides to write, test and deploy Fastly VCL and Compute services and Fastly Next-Gen WAF.",
+  "author": {
+    "name": "Fastly"
+  },
+  "homepage": "https://github.com/fastly/fastly-agent-toolkit/blob/main/README.md",
+  "license": "MIT",
+  "keywords": [
+    "fastly",
+    "edge",
+    "compute",
+    "vcl",
+    "cdn"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "fastly-agent-toolkit",
+        "commit": "6db70eaf54ba885d56091861224987d6cf06c429",
+        "skills": {
+          "falco": "9789cd516d3e79108297d4ff9fba32a39f1bd6f7c2e9df638c13b1610887c07d",
+          "fastlike": "a559aff1ee5c53d116588632736fd191824c5892f29b66c776a2a81a91186b4a",
+          "fastly": "1f16c471f84d7e2f1a85b2a294f57719b2466ef6cbc5ab1bc60e008485564689",
+          "fastly-cli": "13bd254ed52f16bda98817ff7355be95ae4e677bce269b301eea94c65a1e469e",
+          "fastly-fiddle": "a97dffcd3aa152265295c8d98ccf2eb20097b2a1e72aa48822846dc32b00b75b",
+          "fastly-ngwaf": "89befe1fdb10070f7441261762904ad615ebc18ec94bbcd54802e6286adf7fd2",
+          "fastly-reference-architectures": "7670ad8766c226d965d6c18a83b69f684186e4843430df3a22da8a14a2afef1d",
+          "fastly-stats": "b80dbcb4d2fd4cb09ae83d236a438e73032681f9643a56a8ea10e485db48317c",
+          "viceroy": "927f8410137f79f008a0849ffb2508b53237360b5f379e804fd7ff5698fba7ba",
+          "xvcl": "0cfa09fff6e9d740ed5856236c7d7f31cc9f5bfc136b8b3471ea1053fff5350f"
+        }
+      }
+    }
+  }
+}

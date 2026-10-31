@@ -1,0 +1,41 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "dbt",
+  "version": "1.0.0",
+  "description": "Guides for dbt models, unit tests, Semantic Layer metrics, dbt Mesh and failed jobs.",
+  "author": {
+    "name": "dbt Labs"
+  },
+  "homepage": "https://getdbt.com",
+  "license": "Apache-2.0",
+  "keywords": [
+    "dbt",
+    "analytics-engineering",
+    "data-modeling",
+    "semantic-layer",
+    "sql",
+    "testing"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "dbt",
+        "commit": "a21c3538ee3cc4b5a38b2da33522d11077998f30",
+        "skills": {
+          "adding-dbt-unit-test": "bafb1a4e095731aaf79eb359838d5319b4fc7c0177a7253d02e8bb0dc7cef402",
+          "answering-natural-language-questions-with-dbt": "b54a62587815111d51624e7dcf9ff5d88d3310987104efd8886d2a81793bc6ff",
+          "building-dbt-semantic-layer": "7e38819a3ed8c81e482ca506fb671be92b952e85e96ee10e7de769504f33e24f",
+          "configuring-dbt-mcp-server": "226f1e3b8d7a1823274dcfb6092ddc9485c86cdb51e9d4c548f0c21401ca6144",
+          "fetching-dbt-docs": "d276d64930b16342078a474a66c4a5beeb865c2523cc8cd6dee0f5781c3a4290",
+          "running-dbt-commands": "efc66051e43dae84c3da4a1f0fdcf64c1c637c2ee88e9aa08e1280c1d41f6770",
+          "troubleshooting-dbt-job-errors": "734199f4121bf710a458843de80e305be4477744d58d29327acdd46670db8048",
+          "using-dbt-for-analytics-engineering": "217fbde99ed9cd6149ce897c1e98ebf2c49b1a00abb893b70f0bd93614612a82",
+          "working-with-dbt-mesh": "9f0eed72578f29713f82a6c4dc809e313ed43513d49dbb972555f41551c48209"
+        }
+      }
+    }
+  }
+}

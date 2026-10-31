@@ -18,7 +18,7 @@ DO NOT invoke for:
 
 - **Approving an item** — this skill is read-only; it surfaces + prioritizes the
   queue and deep-links to the dashboard to act. It does not approve anything.
-- **A portfolio overview** — use `portfolio-pulse`.
+- **A portfolio overview** — this skill covers the approval queue only.
 - **A single partner's detail** — use `generate-qbr` / `partner-briefing`.
 
 ## Account type — required: customer admin
@@ -81,7 +81,7 @@ answer in 1–3 sentences (no HTML report) and return to the task.
 ## Output format
 
 Single self-contained HTML, following the **Euler design system** in the modern
-treatment (same stylesheet family as `portfolio-pulse`).
+treatment (same stylesheet family as `generate-qbr` and `partner-briefing`).
 
 ### Lightweight & mobile-responsive (required)
 No JavaScript. **No images** — the brand is a text wordmark ("Euler",

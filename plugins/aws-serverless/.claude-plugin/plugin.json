@@ -1,0 +1,5 @@
+{
+  "name": "aws-serverless",
+  "version": "1.0.0",
+  "description": "Guides to build and run serverless apps with AWS Lambda, API Gateway and Step Functions."
+}

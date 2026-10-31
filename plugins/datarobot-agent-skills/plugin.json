@@ -1,0 +1,47 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "datarobot-agent-skills",
+  "version": "1.0.0",
+  "description": "Guides to train, deploy, explain and monitor DataRobot models and agents.",
+  "author": {
+    "name": "DataRobot"
+  },
+  "homepage": "https://datarobot.com",
+  "license": "Apache-2.0",
+  "keywords": [
+    "datarobot",
+    "machine-learning",
+    "mlops",
+    "automl",
+    "agent-skills"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "datarobot-agent-skills",
+        "commit": "53a4dacc6b55f4fe3ab4840829ebf2d1ea1477dc",
+        "skills": {
+          "datarobot-agent-assist": "3fd34f909d5f2bb47d42359f35bea6165f98652afb342f923e1f0230404302db",
+          "datarobot-agent-llm-selection": "0342395a2e3fda8cdb22446a0c54d761f995fb28d6dee7b0325491dd7a46e05d",
+          "datarobot-app-framework-cicd": "ae750f48c7370c32e209426eb53cdb0f120bd071a273189ad068e9dfc94f444e",
+          "datarobot-connectivity-datastore-sql": "49eaadec4c176fafe3f965bd5eee9369981ece8aeecaae3e70700744f9b6ecf4",
+          "datarobot-connectivity-jdbc-sql": "018dbc83dc389cb7b18d9e22198c603af171bbd35610a7d13e1b501268608c35",
+          "datarobot-data-preparation": "21454534fa0cbe5c4698492d782d40dc27ae358ff7a4ba961eab393a7c40413e",
+          "datarobot-discover": "d04689bf3bc027de82ad58b9a3f13fb5eee836c3c7f43272ce110d0055e20077",
+          "datarobot-external-agent-monitoring": "0762b18be5acd5bf059df681f29bfb9675eac6f2e1250c651558016434808a33",
+          "datarobot-feature-engineering": "85c39e137cfcae12f66099cce706525f06a4c3888c006b1983fa739895332912",
+          "datarobot-model-deployment": "907951a79cab1a0f42d56435c5afb371caea9088df06763c5ee87d1895beed95",
+          "datarobot-model-explainability": "fd25decd3adb955d5f0506f9adfbcc9041aa8debc03c6590794467273597d430",
+          "datarobot-model-monitoring": "084f53005a8ecf973039a26e872c73fa6affbcacf0b1de8e56156cb8bf596e85",
+          "datarobot-model-training": "a77b836f46e9b2a2336f4cce8ef0745e999ff829666ba0397792d2d42494a4a6",
+          "datarobot-predictions": "c58bc7e454c44378668b7e808e9c4595f819cbe0019c38c849b5231b940210c2",
+          "datarobot-setup": "d4c0b853e1f3ead582b0b4a944883446880dff197bbaefeca16eb8e8a4aacc92",
+          "datarobot-workload-api": "712d7efb78028f7258ca0a2a347cc92ecc3f07df12f94e4aaa3dd53fe93feb00"
+        }
+      }
+    }
+  }
+}

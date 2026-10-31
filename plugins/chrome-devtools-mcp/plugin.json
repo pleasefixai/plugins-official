@@ -1,0 +1,38 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "chrome-devtools-mcp",
+  "version": "1.0.0",
+  "description": "Guides to debug web page accessibility, cookies, speed and memory with Chrome DevTools.",
+  "author": {
+    "name": "Google Chrome"
+  },
+  "homepage": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+  "license": "Apache-2.0",
+  "keywords": [
+    "browser",
+    "chrome",
+    "debugging",
+    "mcp",
+    "performance"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "chrome-devtools-mcp",
+        "commit": "a878bcad39584337e055778353246820deafa7c0",
+        "skills": {
+          "a11y-debugging": "e9d4c270efcd7ae7f80fd21d874d393f8987517396083b4884c58d04075eeb56",
+          "chrome-devtools": "f38047b54ade8c8ea909ca0a595c50501ac9697fb1d5b70fa9a5c3aaa452936e",
+          "chrome-devtools-cli": "aaa4defc1fe30b285326930f2335444ef854ff6fb77ddec1a3cd7ba9d9f34065",
+          "cookie-debugging": "a2d91cfc8525f218f7da999a169f5ef88fa0a475c157542b17e3da9c65ebb307",
+          "debug-optimize-lcp": "5719e2333b8b6540489c39990657e6d8c385ba913b4608ab5df4531e96a34e0c",
+          "memory-leak-debugging": "534bbc25ff4ecc455d8c51265dbc703db7a44e9e8900e1cf2d81906480a16bdf",
+          "troubleshooting": "216782ac6cd88733a5102187369d89cba6ccc1963bda9c561582bbc59e7a3cff"
+        }
+      }
+    }
+  }
+}

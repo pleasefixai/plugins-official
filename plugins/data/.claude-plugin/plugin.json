@@ -1,0 +1,5 @@
+{
+  "name": "data",
+  "version": "1.0.0",
+  "description": "Guides to write, test, deploy and debug Apache Airflow DAGs on Astronomer."
+}

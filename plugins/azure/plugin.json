@@ -1,0 +1,73 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "azure",
+  "version": "1.0.0",
+  "description": "Guides to plan, deploy, secure and run apps on Azure, with costs, quotas and diagnostics.",
+  "author": {
+    "name": "Microsoft"
+  },
+  "homepage": "https://github.com/microsoft/azure-skills",
+  "license": "MIT",
+  "keywords": [
+    "azure",
+    "cloud",
+    "infrastructure",
+    "deployment",
+    "microsoft",
+    "devops",
+    "foundry",
+    "diagnostics"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "azure",
+        "commit": "5b4f0c0778079a2f568581107f23349ce9a0a9b2",
+        "skills": {
+          "airunway-aks-setup": "1f2fcc7e5e2abc90ed02ab67e84312248a651bb77d8ffcbf635af89d23079c6e",
+          "appinsights-instrumentation": "a5ab3dc6985e255c0d909074ec73e734cb8bea5491cda87d09541bcfb8ce95f6",
+          "azure-ai": "7919d2957bbbc48ab5a24f943279f336c089e3f347e24c18bebf1d76f3cb5706",
+          "azure-aigateway": "fdb9e4c5d65448c847ce77d978bda20a9217e026a57b6f78d9f7bfcb500c2ade",
+          "azure-app-onboard": "d950fb149463df9b21080f5669f4e8b1f6af9deb95190f2c30726c353a501dd1",
+          "azure-app-onboard-prereq": "2b418378335c033a596acfdc20074025f0d38ee712408f297eacc5f788eb5e4b",
+          "azure-cloud-migrate": "e9ca8c01b5a29cef9c390654ccc4cc6b511d6426edd177d99b3391c1a750d73b",
+          "azure-compliance": "962985385e7f74605856cffa628bf0ee60d715d6b5ba24b697d7f3c44ab4aa2a",
+          "azure-cost": "0e5afdf63bf0caa574491c54e99769a3d0430d751bd54ce93729c8b1814615a3",
+          "azure-deploy": "7a01154a971e89ae9cccd2311d837e1585cf53cac5110b4b3ac6ed94eeb9474a",
+          "azure-diagnostics": "72e2a45102c4fcdf368827a63a81345275358af67fc2d947ba93a9668c5d2bd9",
+          "azure-enterprise-infra-planner": "9f30a07efffaa4003983d4b3c7b459aec9d7cb4225fad2b3a28a608c7cfacdd7",
+          "azure-kubernetes": "e455d9307c15c6641a9847530dbd5a04490ed35dd20b20ac48b56e5f1a5b1631",
+          "azure-kusto": "d87bfeff59a2b142b5523246a1061c180cd249d5246c07f1caf95ac316d2645f",
+          "azure-messaging": "b2cd16a1022b62abc488f07df228bfdae32edf94c3ebd89b74b87e49cdb4c500",
+          "azure-prepare": "bb088b783a74143fe051a586927d037668de1a4901f49d2e1863423a7758ea8f",
+          "azure-quotas": "5ec5a6a9ba67dfde63946e86526029cb6fe29ecad2cfdf10162ac1c367eb2e8f",
+          "azure-reliability": "f18032b89f8649a270e002ef1b0ee0a4634258b066fd2ccf07b96ed0d4ef20b2",
+          "azure-resource-lookup": "551197ff1144a19f48903a6f4db62033d38e4e8cfd6bf731869cd08219702709",
+          "azure-resource-visualizer": "c7e20a3cc564680fd8bc37dc08df8ff821f4d908ddf649a9ead62a0b8a216fb8",
+          "azure-storage": "3a1a92fcdf13dd76825e514686b83f5825b61226fae33cb35d2f85d9ec6cd46a",
+          "azure-upgrade": "4d070f4490f1edde272dfe805843a7501b9b5ee670c0bd851cade25fdb5dc517",
+          "azure-validate": "526f10d59d4781e27544aa04a5c0986bbd36e47a489173a04a1f6f4ed298ea4a",
+          "entra-agent-id": "cba91ee20756fdf97d87abcc8caae9d8e5b9495756cd0df353d2e5678f5a0cf2",
+          "entra-app-registration": "2cd71ef1565bb02f46f4ae0fca2640320036c7bd30060cf27b264df8defbb524",
+          "microsoft-foundry": "56e6680c2879da8f268714f05087dc19f977596dc225547835fe6c577ae87611",
+          "python-appservice-deploy": "a0ed29b93672a0a59565631a95ea49c9096335ce37089ea221def483bfdd2e5a"
+        },
+        "also": [
+          {
+            "marketplace": "cursor",
+            "plugin": "azure",
+            "commit": "9d86ae4a15bcbc82bd49d908c050638d99d02e38",
+            "skills": {
+              "azure-compute": "2a86ba02220e34582f388cbfae5b95699cbf5a4818bfeb6e9704d7d462cbd6cc",
+              "azure-hosted-copilot-sdk": "c884bdf71af983c55f77956e2336b4657c7e666fa2dbc28720c734b9c771f5be",
+              "azure-rbac": "4d9a271de2b49ccf48c83184557391fb4124e7f92e557eeb9fd5f61b41535a9a"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

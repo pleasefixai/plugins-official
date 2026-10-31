@@ -1,0 +1,59 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "data-agent-kit",
+  "version": "1.0.0",
+  "description": "Guides for BigQuery, Dataflow, Spark, managed Airflow and Cloud Storage on Google Cloud.",
+  "author": {
+    "name": "Google LLC"
+  },
+  "homepage": "https://cloud.google.com/products/data-agent-kit",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "data-agent-kit",
+        "commit": "83c53b5f129cdeecabe149ff4ba82645d3e51745",
+        "skills": {
+          "accidental-data-loss-prevention": "888a56886cae21c290f9e715f9df208953d553e656ab51ed26813fb4843ec0c5",
+          "bigquery-ai-ml": "0743dcc4be6f35e88f2c663f8edf9e20ae697f91bb7bcb1f6f724ef1b0597691",
+          "bigquery-bigframes": "aa235e961254a4b142766a763bb053610cbd17c3ff315e6973990782f6bbee1f",
+          "bigquery-data-transfer-service": "0458afd8c9bb4b534d6c90d61490c9cc7877b9ee1b07ad55c06b0749ba9431bf",
+          "bigquery-graph-author": "9e732055e451f49a111601cd3a26578292907136b2349f02e891786ecc28947c",
+          "bigquery-graph-query": "48de9c3ff61342993d75acf34b24c733fb833186501c94a68d5bb8963e6b042a",
+          "bigquery-sql": "32373d856f28ad779c63019ffc518956c076e25dd0eb50150c87b79446eb8a13",
+          "bigtable-basics": "55407273d9e4f879072c7bd9138cd515d5e339dad898a5a84013c087f259b7b1",
+          "building-data-apps": "7891fc22eafb61e9572d511a690eb81de10b034206d9c8ab23fd8b703cc93a27",
+          "dak-setup": "b3ed161119d9456bfc1744c08152f9352d973960e5c5ac3c950e9c5de99c3a82",
+          "data-autocleaning": "ef0a18edb4893a62dfb5f1314209c287a3955e584a3c1581d6f63e2f09a82d7d",
+          "dataform-bigquery": "d3fbea0cd12adaf534c47429db049da067f8a8ea3f7198ec750576d5e361bcd0",
+          "dbt-bigquery": "0ecde0a4f204737c1db294f6160cd88f24e23b1179ee429cc76a7c289cd68140",
+          "discovering-gcp-data-assets": "b8f77b41fe8331a38e6ccadada0a17f6e9e6bd23bc4f81a550760a38ce8c0b57",
+          "enforcing-resource-attribution": "8a97d73872cfa4770608917ce896fb3b08c441f28ee9c344d9b69f54f639ab98",
+          "federate-lakehouse-catalog": "02ed2d1e5510a8dd1bfcfc1068f3a2882a1afb8ed65c6f1b5be6e4540c01cb39",
+          "gcp-composer-troubleshooting": "a040fcea77cae2ce87398b65fd38bed905023f2ba904e2c19bb046c312b475f0",
+          "gcp-data-pipelines": "30f5f07d2feec19e3e131790487819dc327b25383c291ad271de796c923774ac",
+          "gcp-dataflow": "b79ba28c9330bff28288c1414ef7b830019ea9f0bfed8ca5c90ea155824db8ed",
+          "gcp-managed-airflow-dag-authoring": "e3ca12c001edd18e7c9cd35497976e57d2b7afd23f8223abfdc1e9d8531f997c",
+          "gcp-managed-airflow-migrations": "b0d372b9f9cf45ec1b523f7be68bbfa3b8a27951b27d8926b6cd8ee88922b3e4",
+          "gcp-managed-airflow-recommendations": "59c584f3a3c262573999a24b7788dbe657bda7626d968baf7829680f41b4ab8f",
+          "gcp-managed-spark-upgrades": "46fed85f28e4d981b912e2a064cf40fe1fb68569346d67b6f9cb8a03af8a8f1b",
+          "gcp-pipeline-orchestration": "05c24f2700e5eee6fcbc4e6ceb187b31f3b2bdf055fe7ec8cf1697840ea184e9",
+          "gcp-pipeline-resource-provisioning": "064d5ab31e8330f4bcec077a8c447d8ebd3b2e65f17e8628f58ac275f97fae46",
+          "gcp-spark": "3aacb5d78e6122140d3ae8569ea2350434ebe81d35a3b6591a22cac39bbb5e05",
+          "gcp-spark-troubleshooting": "832acad60bd1260ee8d17c9d5a309b7629d26a4c51499f2ea25616771aff5742",
+          "gcs-security-assessment": "48a5527d7dac3c095c8a6d5d5ef7da43c78f9ad39097d87fe42ec074fcf4c1b1",
+          "google-cloud-auth-verification": "a5c2a19b089c4a6418ded87b5208d796aae0b26dca86b7be8f6dfd591f59e046",
+          "google-cloud-storage-basics": "00bbe73857cc946260a984ce13a58c60728d195ad1c902df4083a2ea956cfe95",
+          "google-cloud-storage-bucket-architect": "5a386f75100a87532a0709baa35eb4d425d7a73a5490b13a8983b6eaa6e82956",
+          "google-cloud-storage-fuse": "8b74f681d6b09e37df69db49c98de2ca9af64df1c85476177848590164c79309",
+          "managing-python-dependencies": "ff006ad71ae8819d80a36f196c4b3496b5e9bee50b355db94418a0ac6babcd33",
+          "ml-best-practices": "5d72ffd5c4bfe25806f5dde43f05aa30848382f4aa1bd92567b4339c14e2c5ed",
+          "notebook-guidance": "f7cf0e72c6bb0dc2d5e41505d87d9bdcebe7c7da36f9f3944a91e1dc8f92a1ac",
+          "schema-mapping": "225e2a550f87ccdfb5f1e68e26b9f014588265c53f256fa4e19c4b524584840b"
+        }
+      }
+    }
+  }
+}

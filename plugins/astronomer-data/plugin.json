@@ -1,0 +1,56 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "astronomer-data",
+  "version": "1.0.0",
+  "description": "Guides for Apache Airflow DAGs, data lineage and warehouse queries with Astronomer.",
+  "author": {
+    "name": "Astronomer"
+  },
+  "homepage": "https://astronomer.io",
+  "license": "Apache-2.0",
+  "keywords": [
+    "data-engineering",
+    "airflow",
+    "snowflake",
+    "bigquery",
+    "jupyter",
+    "astronomer",
+    "dbt",
+    "cosmos",
+    "openlineage"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "astronomer-data",
+        "commit": "99bd2bf36b591f6e2780d5978482dc2e8b8826fc",
+        "skills": {
+          "airflow": "0006b4494d8305d7d9a9f935ceae8ed6bf518e1ffde15de385198184af50cd33",
+          "airflow-hitl": "211c289f4ea5cecacf87b89fece2f24866bfb340a863e804055120969107c024",
+          "airflow-plugins": "e725257a9e5502cbaf2ba326ce443fb2d12ffe31b8345021a00d18729671f2d5",
+          "analyzing-data": "27589be1e24bf16735e8e1278462e484fd735835db5d087ddfc7ea8f4610887b",
+          "annotating-task-lineage": "6da024dbd648b8175224987a3ac037d2382cba741ba3356aa2057c412729b499",
+          "authoring-dags": "362dc6b17531bd5bdee866627e46606206fb83b078ca0af2e8fe667fcb6e229e",
+          "blueprint": "64fa1e95b10e3329207d6e77ad6423925298bc0d7034d83be1d495c00283ef4d",
+          "checking-freshness": "5b1d29a7d199dd8118498ad097cf1898fa9ff493e4598d45ef5ec214792672d1",
+          "cosmos-dbt-core": "4aeed4ba071889a4963e0c13cc4f10c5f0c27fb5fd3e769ab007cdfa7afd763e",
+          "cosmos-dbt-fusion": "47122b91fab993d01008686dddc6d41df393994b91bee89639d73098c1baeeda",
+          "creating-openlineage-extractors": "5cf67d01177a4a12fbc97b59080addd655a5b7f859cd94bcb2cdfe27f06b8c51",
+          "debugging-dags": "14f945d80a5bd2d6aacc9786cbd76c5f330ca19d4a6af2d5a0f3972b1c53c6ca",
+          "deploying-airflow": "ed211f1fb7d027d43619134698a5cf602d8d9cc9039b523ebd7fa84729162c88",
+          "managing-astro-local-env": "f54a9567e03b85ffb5586247c56940f69a4e39b6c9a5a20d9b8a2e234c38a283",
+          "migrating-airflow-2-to-3": "949fee340b9b6cd8b50d2ad376563e2d398cb913e1423a8e0652ca36785179ab",
+          "profiling-tables": "f4801ffe4570480e89d86f498f3766fe49c71442be85c4100c41a3218f8c6982",
+          "setting-up-astro-project": "ddffdc836b057ac802d47b5a8333058940d836bf126936882b14e5225f066a5e",
+          "testing-dags": "2cff912a780d7943554c39edf23cc11e949099015b6b8af5eae97ecd32f39cba",
+          "tracing-downstream-lineage": "5afb57f82e1268ad12bed2191fac887fb80b08a047163d0a7a3fddb634d1a965",
+          "tracing-upstream-lineage": "63940433dad24afdd260e73b8e76dd85dfae6eb0fc596bc26024136f8d8eac1b",
+          "warehouse-init": "246c2c211135e95f7122e5ac70b171a204e0d1c47c55f898401ae2e7833e2a44"
+        }
+      }
+    }
+  }
+}

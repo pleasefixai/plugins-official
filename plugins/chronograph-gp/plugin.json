@@ -1,0 +1,36 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "chronograph-gp",
+  "version": "1.0.0",
+  "description": "Portfolio company one-pagers, fund review packs, marks and TVPI analysis from Chronograph.",
+  "author": {
+    "name": "Chronograph"
+  },
+  "homepage": "https://www.chronograph.pe/",
+  "license": "Apache-2.0",
+  "keywords": [
+    "private capital",
+    "private equity",
+    "portfolio monitoring",
+    "fund analytics",
+    "general partner"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "chronograph-gp",
+        "commit": "35cb3d12cf4e24823c0efca4abe6f13c2fd0e5f5",
+        "skills": {
+          "chronograph-budget-vs-actuals-variance": "5c0531fc7697c0c8c3eda3a6a13225d600c47f886f5a5fb180f57e9b4c641fb0",
+          "chronograph-fund-quarterly-review-pack": "6190cc4e21fafe3cf02a1bc3a4131e6ad602e94078805b5d1f5b2083e22d8e90",
+          "chronograph-markup-markdown-brief": "23d27f0c80623102cabe04c3e160ccdb37d751279c4ada7f17bb2e0b09c2ad3c",
+          "chronograph-portfolio-company-one-pager": "31cdb87d58be466e6819bdbf9442cdb66ba4a390b65b1125587d86eda156de2e",
+          "chronograph-tvpi-attribution-by-company": "eba8f36cfc872095d8f9af8f1844cb58a9471952c4c874072520c93fabaee9a8"
+        }
+      }
+    }
+  }
+}

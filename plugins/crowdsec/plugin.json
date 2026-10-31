@@ -1,0 +1,43 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "crowdsec",
+  "version": "1.0.0",
+  "description": "Guides to install, configure and debug CrowdSec, its bouncers, WAF and blocklists.",
+  "author": {
+    "name": "CrowdSec"
+  },
+  "homepage": "https://www.crowdsec.net",
+  "license": "MIT",
+  "keywords": [
+    "crowdsec",
+    "security",
+    "waf",
+    "appsec",
+    "bouncer",
+    "fail2ban",
+    "console",
+    "service-api",
+    "sapi",
+    "blocklist",
+    "integration",
+    "cloud",
+    "bot-detection",
+    "bot-management",
+    "challenge"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "crowdsec",
+        "commit": "8802dbe68a0552fe55dc605b6278f57e57578526",
+        "skills": {
+          "crowdsec": "b3c069d85e7cdb895b841bba4f352b75f4912f290bcc5a81e9a7b56b59a62910",
+          "crowdsec-service-api": "e3663d447ffdd9409f816d9c2da41d05c5801214fdf181d398e2813491791321"
+        }
+      }
+    }
+  }
+}

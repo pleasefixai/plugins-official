@@ -1,0 +1,74 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "compound-engineering",
+  "version": "1.0.0",
+  "description": "Workflows to plan, review, commit and ship code, and to keep the lessons of each task.",
+  "author": {
+    "name": "Every"
+  },
+  "homepage": "https://every.to/",
+  "license": "MIT",
+  "keywords": [
+    "cursor",
+    "plugin",
+    "ai-powered",
+    "compound-engineering",
+    "workflow-automation",
+    "code-review",
+    "rails",
+    "ruby",
+    "python",
+    "typescript",
+    "knowledge-management",
+    "brainstorming",
+    "debugging",
+    "ideation",
+    "workflows"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "compound-engineering",
+        "commit": "dd1bf2b8d905fb9283ca16459bcc4ed172afa8fd",
+        "skills": {
+          "ce-babysit-pr": "3fa619a01d812ad15af8cf33e2aa8de757133be963244a190872593642a392fe",
+          "ce-bakeoff": "82df815e1a063f880220e4dc0e034620934aa2cd80d280539ad5e4e1bdeea580",
+          "ce-brainstorm": "c47d27d99014228d5df74a14bddc57f142748bd15bd54da35e87acba9287aa76",
+          "ce-code-review": "027500aa6c3358b16a1979a102b0112fec19812387082273f912481adcadadbd",
+          "ce-commit": "70abaf2058a5527d28bfca9e52c22c75e9a6a1b9555553884ab4a2817f3bf728",
+          "ce-commit-push-pr": "bbfb9ec09af5dc3e9c308d34b505f3bf230ff073e7c7296d9ca9ace5dccd9c4a",
+          "ce-compound": "e82d76bdbeb1c5730db743aa789fb9491f389a1a5fb21e78d5cf5b97718c4dab",
+          "ce-compound-refresh": "a44f768c4f00fb9ae92bc558a5d8731911d0e11fadae13f15d99e723e05ebf48",
+          "ce-doc-review": "76c8c3834c30a4bd6a324870118cbacebd0af098da56d6ae7cba12095c64a560",
+          "ce-dogfood": "02c0694c891c922a6f326178e0ee66a564f4720ce27dcb7801e0e7377c1c9b4e",
+          "ce-explain": "330c03534fb695b96eb5b8f1d799fa3f439e41e1ca90ad749e30906d71654e57",
+          "ce-handoff": "0a684d8f91af36954d1fa456272bb3e9ffb144919548a415ad8d483a3132c29d",
+          "ce-ideate": "4b079b80cba6fd77a3cfbff57d1496585473bba627c5c8b3f31e512a6ec1ee69",
+          "ce-noslop": "cf35c41357092c238acbfa1768250b75e5e2cd73ffd9c3cc84cb8dabd8291374",
+          "ce-optimize": "1ee3b891aa57273a289df4110d05d136b6ef924de2b4075be7382663dc31ee5b",
+          "ce-plan": "b2d9698d4a1d3eacf44ab0128049d2fa90a5b74eb1b2306ecbf03b09f790b44c",
+          "ce-polish": "6e1f56d535b0f09a7d7fcc682c6508ad2d32daf54804fa62f891d61eb3ab5c6d",
+          "ce-pov": "0dd928189801cd0642b412f11b7c860c590bcc86a65f6732e0e387fa7af5ba83",
+          "ce-product-pulse": "5213c7a5764e0758bafe3c7fe0225471525da81402265265f6ea1fb5427ee847",
+          "ce-promote": "7cebf6dc50f2d666606a030dd71ea4d08a44a4b02f8fa2ba465465bec51a186a",
+          "ce-proof": "d9e3e08c8f6fa17a6860ccfc6ea71b327331be8f934e856a8b40f43917d0a152",
+          "ce-prototype": "b5582d81202241bd87649856967cdfb4d0dc9aa8f3be32c5823c43add1dc945a",
+          "ce-resolve-pr-feedback": "3d05335b840582d0b874e92de8a7624d4f5a97f494290a725f823a31e6b0e6bd",
+          "ce-retune": "25e578ac526ebe52917f4521b284fc18e4bbc58f505d054c2a1deaf9f4be0581",
+          "ce-riffrec-feedback-analysis": "fc6cf035b929e9519c700c988a0a7f71dc83955a96464160939c81f0b8cbe1e7",
+          "ce-setup": "81113b7cdba3627ea9eb375035c6ddf479c72a29cd27507ec9a67c52ab041363",
+          "ce-simplify-code": "04c3bfaf922d0c239df739bd5762c5bc453587b8c32e2861de729b2ec0a32fd0",
+          "ce-strategy": "d2237b4f4c7c8dbf96842e273f84f4d610508ed56b763ab2a05dad17a8489390",
+          "ce-sweep": "6861f02142619a4168153ba9efe5ae9a27c3fe83876c6330b2cd090ff5987e53",
+          "ce-test-browser": "22b8f21f65038f845dcdb753e1e62f27ba23957011a144127ff5673b796170bf",
+          "ce-test-xcode": "69ca097c7adc004741e85757e5ee2767e16682f5a4490f1d15d35d2b13dfd117",
+          "ce-worktree": "f15f40c110574e4acd88e621cd7017f2774d0bc4e7ebf192980c1ea78f6c0518",
+          "wtf": "ea8fa0f62d0c5be48da32e177efaa6c1424ba07a6db5717d33140c1d06729abc"
+        }
+      }
+    }
+  }
+}

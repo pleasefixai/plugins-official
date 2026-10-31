@@ -1,0 +1,5 @@
+{
+  "name": "carbone-skill",
+  "version": "1.0.0",
+  "description": "Carbone template reference to merge JSON data into DOCX, XLSX, PPTX and PDF documents."
+}

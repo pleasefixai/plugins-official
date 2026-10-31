@@ -1,0 +1,35 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "datahub-skills",
+  "version": "1.0.0",
+  "description": "Guides to search, enrich and trace lineage in DataHub, write SQL and build connectors.",
+  "author": {
+    "name": "DataHub"
+  },
+  "homepage": "https://datahub.com",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "datahub-skills",
+        "commit": "a27f8e7bb514591a3ccecd7598e4056989c0db9b",
+        "skills": {
+          "datahub-connector-planning": "ccfb04a67734268f828c838a16df235adffb01abe2b6f8493e9eb4c21cc24084",
+          "datahub-connector-pr-review": "030669e899de34bc89a939ad15def96448a5ca69a5f41a171d21a20a840cff8a",
+          "datahub-enrich": "76071e22769a16c01198e95019b627b75c659c13e47cc514dd8c0cd3ef21def7",
+          "datahub-lineage": "435e998ed2cb79613161f028dd07473731e37428367ab1807743307547b78994",
+          "datahub-mfe-configure-app": "90ae0339413e083fc542f0803910d7a26919999ccf729d234a20c777c478bb24",
+          "datahub-mfe-create-app": "b5e1677fc95f128855521313ad08f94fea8cd4ddc9acd459bada708af2006dbe",
+          "datahub-quality": "c3a2e267a319a73c31880f359470d31354b3448c6311d0ae87bdc94b5a59ffd8",
+          "datahub-search": "3f1a0074723d7c9aa9426f7c887f0ef10b0138bbf64dc1d153ce0666474c67da",
+          "datahub-setup": "43421170a02c483d837918786f990cf6e78d6c3b926d576244836f590825ba9a",
+          "datahub-sql-workflow": "8254f84e1cc7bcb9514553d93e0327d756fa789fbc8304f1bc60a32ee67a33fa",
+          "load-standards": "648c478de0fc92fccea14758a768dd29197ecf95a94779e81f87e0cae020ba90",
+          "using-datahub": "868d4a723da1e40fdd8ea18bb547c49c5547356cb2aacac89f8719a5d1e70319"
+        }
+      }
+    }
+  }
+}

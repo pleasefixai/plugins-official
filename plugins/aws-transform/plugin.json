@@ -1,0 +1,49 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "aws-transform",
+  "version": "1.0.0",
+  "description": "Guides to analyze, upgrade and migrate codebases and workloads to AWS with AWS Transform.",
+  "author": {
+    "name": "Amazon Web Services"
+  },
+  "homepage": "https://github.com/awslabs/agent-plugins",
+  "license": "Apache-2.0",
+  "keywords": [
+    "aws",
+    "aws-transform",
+    "migration",
+    "modernization",
+    "dotnet",
+    "mainframe",
+    "cobol",
+    "vmware",
+    "ec2",
+    "sql-server",
+    "aurora",
+    "java",
+    "python",
+    "sdk",
+    "continuous modernization",
+    "AWS Transform - continuous modernization",
+    "tech debt",
+    "security vulnerabilities",
+    "analyze repos",
+    "security analysis",
+    "modernization analysis",
+    "agentic readiness"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "aws-transform",
+        "commit": "097fe8ad56d8a1d5e2c81d7880adf145553cf244",
+        "skills": {
+          "aws-transform": "9f091cfaf2ffff6de74fd1f902f56dd99166ee5ab78cd8ba4c58d8bec5b798c0"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "name": "build-macos-apps",
+  "version": "1.0.0",
+  "description": "Guides to build, test, sign and ship macOS apps with Xcode, SwiftUI and AppKit."
+}

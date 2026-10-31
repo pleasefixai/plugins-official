@@ -1,0 +1,5 @@
+{
+  "name": "cursor-sdk",
+  "version": "1.0.0",
+  "description": "Guides to build apps, scripts and CI automations that run coding agents from TypeScript."
+}

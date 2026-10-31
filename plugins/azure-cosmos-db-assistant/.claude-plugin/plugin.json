@@ -1,0 +1,5 @@
+{
+  "name": "azure-cosmos-db-assistant",
+  "version": "1.0.0",
+  "description": "Guides for data models, partitions, queries and performance in Azure Cosmos DB."
+}

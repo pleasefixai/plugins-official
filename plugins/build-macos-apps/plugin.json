@@ -1,0 +1,48 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "build-macos-apps",
+  "version": "1.0.0",
+  "description": "Guides to build, test, sign and ship macOS apps with Xcode, SwiftUI and AppKit.",
+  "author": {
+    "name": "OpenAI"
+  },
+  "homepage": "https://github.com/openai/plugins",
+  "license": "MIT",
+  "keywords": [
+    "macos",
+    "swift",
+    "swiftui",
+    "appkit",
+    "xcode",
+    "swiftpm",
+    "debugging",
+    "codesign",
+    "logging",
+    "telemetry",
+    "oslog"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "codex",
+        "plugin": "build-macos-apps",
+        "commit": "0722921d5542fc593105c27bd52630babd8b8c2a",
+        "skills": {
+          "appkit-interop": "2b9b427d4f1c0ac9d80ed2522c18bb6deeaec7e77a0971c5afff6f1f67e70cbf",
+          "build-run-debug": "a7b4f521425efccd02910c213f58a4b8d9210885bc5180ebdd002eab59ee87a1",
+          "liquid-glass": "7bfb4c869bdc77c45edc0f48f46e97f682054ce4b304741e74e650be0320427b",
+          "packaging-notarization": "ea4ce9b90c1de75a1d8d6afff0a33b9b982ee66b05a477b6a96e6f881109dfd9",
+          "signing-entitlements": "f40bb06802b2f5bcb23f72dcf20b00452a0d882352ac360d1cede67b5b49ba4b",
+          "swiftpm-macos": "248cb3b01154baeee2ec1156c46d733a153ad6cf060564aa1525a302cb47a1f0",
+          "swiftui-patterns": "b23d57ec4497688c5965be356b6348565884ebbf87df9167e1c00f01a662debc",
+          "telemetry": "7cf8691616f41eb3e23c5ca9f86042c283ed6c4558575f30cd1d0f4c6a5004ec",
+          "test-triage": "adcf9aacb4ede3b6135a5bcff114b7a7ca8d818a6c11a024ab0b2c39fbb72ce2",
+          "view-refactor": "b950de0d10e6fb853ec7af046d2ec0804f578f65aa37bea723aea21b93c798df",
+          "window-management": "e2d01e01c599ef37a20122a5589cd8aff4a712c8b4d0014c2235675ba27928d1"
+        }
+      }
+    }
+  }
+}

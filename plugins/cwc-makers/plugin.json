@@ -1,0 +1,35 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "cwc-makers",
+  "version": "1.0.0",
+  "description": "Guides to flash M5Stack Cardputer and other ESP32 devices and load MicroPython apps.",
+  "author": {
+    "name": "Anthropic"
+  },
+  "homepage": "https://github.com/moremas/build-with-claude",
+  "license": "Apache-2.0",
+  "keywords": [
+    "cardputer",
+    "m5stack",
+    "esp32",
+    "hardware",
+    "maker",
+    "onboarding",
+    "cwc"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "cwc-makers",
+        "commit": "a7ba5b93db0c7c8d17f3f1d25853adca79598a1a",
+        "skills": {
+          "cardputer-buddy": "50c57abb726b311db9638332e23adfd1358b9cb1398f82ba899ce6e7323a1014",
+          "m5-onboard": "0055402bef1b239c70311177c94262121da3070e06c7dbe7d042c1edbb9370d0"
+        }
+      }
+    }
+  }
+}

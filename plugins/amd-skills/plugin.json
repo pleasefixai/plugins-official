@@ -1,0 +1,38 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "amd-skills",
+  "version": "1.0.0",
+  "description": "Guides to serve, tune and profile LLMs on AMD Instinct GPUs and add local AI to apps.",
+  "author": {
+    "name": "AMD"
+  },
+  "homepage": "https://amd.com",
+  "license": "MIT",
+  "keywords": [
+    "amd",
+    "rocm",
+    "hip",
+    "ryzen-ai",
+    "vllm",
+    "lemonade",
+    "local-ai"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "amd-skills",
+        "commit": "b0c6f80305352a0454fd9707a660ea762f0f5856",
+        "skills": {
+          "hyperloom-workload-optimizer": "21f2c01f827035a105d3740e584e71000b759212c2acaff57dab9070bffbda6b",
+          "local-ai-app-integration": "08e4b28515d69d4fcd96d7beaa9b1da988277a3b6429b0a900c0b09265c956e0",
+          "local-ai-use": "0824e53a9624aff97439a8c36cb742be3ea9db2ae9058d9cf911e258149aa3e1",
+          "serving-llms-on-instinct": "4adf367d2d5cdbe3ff5f005d798d04c5122b651950703db5b9d99b7295cdf316",
+          "tracelens-analysis-orchestrator": "74572ed804859458c45434d9ca0d3ea9ba01767d51174e1572ca8962c3e64762"
+        }
+      }
+    }
+  }
+}

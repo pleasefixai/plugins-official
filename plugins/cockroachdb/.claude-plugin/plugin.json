@@ -1,0 +1,5 @@
+{
+  "name": "cockroachdb",
+  "version": "1.0.0",
+  "description": "Guides to design, secure, migrate and operate CockroachDB clusters and their SQL."
+}

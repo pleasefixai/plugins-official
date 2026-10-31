@@ -1,0 +1,5 @@
+Request:
+  type: object
+  description: Fields that can be sent when inviting or updating an account user.
+  allOf:
+    - $ref: "./base.yml#/UserBase"
