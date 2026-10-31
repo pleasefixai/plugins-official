@@ -1,0 +1,39 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "sap-fiori-mcp-server",
+  "version": "1.0.0",
+  "description": "Guides for SAP Fiori apps: visual filters, charts, tree tables, OPA5 tests and ESLint.",
+  "author": {
+    "name": "SAP SE"
+  },
+  "homepage": "https://github.com/SAP/open-ux-tools/tree/main/packages/fiori-mcp-server",
+  "license": "Apache-2.0",
+  "keywords": [
+    "sap",
+    "fiori",
+    "ui5",
+    "cap",
+    "mcp",
+    "fiori-elements"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "sap-fiori-mcp-server",
+        "commit": "69e2c50833f10e6892d7c8f42b98b13133d8fdc3",
+        "skills": {
+          "sap-fiori-add-visual-filter": "f90021422542d9c92ef12eff11be59191e61d4ef1ab2f46ae2441b597da4b0b4",
+          "sap-fiori-analytical-chart": "bb86ff0ca2702a79bcc45d872ecc771e56c50e7f82083c17b4fab81f01a48b1e",
+          "sap-fiori-app-development": "9b7db7ca5b5a29558bbe5d4eb35579ff1e5697a10d7d18df958119484a235483",
+          "sap-fiori-create-cli": "20f9dd4f2addfcdb0e1debdfd716f6557486b7dbcfcfb179d3ac346577dfa1e7",
+          "sap-fiori-eslint-plugin": "a36e09f325df1b94ba7a0262fb6f18602234cd453d937930a0c6b98e17f77fa7",
+          "sap-fiori-opa5-test-development": "79b1d75a47498f2a4cfe1d77cefa716811229ffed91cb3a9a8f18716ae25ca6f",
+          "sap-fiori-tree-table": "6bd807e26705cd17c97090a0c97798ffdc898b6aa1aea883530bdba042f0710c"
+        }
+      }
+    }
+  }
+}

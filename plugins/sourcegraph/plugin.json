@@ -1,0 +1,25 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "sourcegraph",
+  "version": "1.0.0",
+  "description": "Guides to find implementations, trace symbols and review code with Sourcegraph search.",
+  "author": {
+    "name": "Sourcegraph Community"
+  },
+  "homepage": "https://sourcegraph.com",
+  "license": "MIT",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "sourcegraph",
+        "commit": "674a05e2e28677fc3fdce7491063459455ded573",
+        "skills": {
+          "searching-sourcegraph": "a7f59d1f22c3737bca27b6c13c65e2df860df7708c09a2e277e12377f1275923"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "ui-theme-designer",
+  "version": "1.0.0",
+  "description": "Guides for SAP Fiori design tokens, theme parameters and UI theme designer help.",
+  "author": {
+    "name": "SAP SE"
+  },
+  "homepage": "https://github.com/SAP/ui-theme-designer-plugins-for-coding-agents",
+  "license": "Apache-2.0",
+  "keywords": [
+    "sap",
+    "theming",
+    "fiori",
+    "design-tokens",
+    "ui-theme-designer",
+    "ui5",
+    "ui5-web-components",
+    "fundamental-styles",
+    "plugin"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "ui-theme-designer",
+        "commit": "3eff5832700d85e550b28a3ae58c1763382e405a",
+        "skills": {
+          "ui-theme-designer-design-tokens": "f40a107177635f56966719b6a63df0d25f40c4233838be78b7b43af9bb7cc472",
+          "ui-theme-designer-help": "c22c0345a27c77a740404986a4eb92ad0b7b5b7afb960b4759e5e356d8c23b9f"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "thermos",
+  "version": "1.0.0",
+  "description": "Guides to audit the changes on a branch for bugs, security issues and code quality.",
+  "author": {
+    "name": "Cursor"
+  },
+  "homepage": "https://github.com/cursor/plugins",
+  "license": "MIT",
+  "keywords": [
+    "thermos",
+    "thermo-nuclear",
+    "code-review",
+    "deep-review",
+    "code-quality",
+    "security-review",
+    "subagents"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "thermos",
+        "commit": "1ba91fc25c0977741dd0e267849e6234b037ed0a",
+        "skills": {
+          "thermo-nuclear-code-quality-review": "1bb59994582195f4e209546efe5f9fc5d05d6f19c91d5b18048d0f2186a4fbd2",
+          "thermo-nuclear-review": "a859fab03b5adb8b673e852e8ad63b3f8648dcd239fbead8eca530c800c81ec4",
+          "thermos": "9cf3a0718e5996d63cae0b5c47fe8f5b18533003ebe8eea6f3c7b3ca34dcda15"
+        }
+      }
+    }
+  }
+}

@@ -128,3 +128,45 @@ condition = "AND"
 paths = ['''^plugins/(astronomer-data|astronomer-data-agents|data|data-engineering)/skills/''']
 regexTarget = "secret"
 regexes = ['''^self\.operator\.s3_key$''']
+
+[[allowlists]]
+description = "The upstream commit a plugin's manifest pins (upstream.sources[].commit), which a rule reads as a token when the plugin is named after the vendor (Sourcegraph)."
+condition = "AND"
+paths = ['''^plugins/[^/]+/plugin\.json$''']
+regexTarget = "line"
+regexes = ['''^\s*"commit": "[0-9a-f]{40}",?$''']
+
+[[allowlists]]
+description = "UiPath's examples: the GUIDs of sample folders, processes, connections and catalogs, a GUID cut short with '...', and two phrases of its troubleshooting tables."
+condition = "AND"
+paths = ['''^plugins/uipath/skills/''']
+regexTarget = "secret"
+regexes = ['''^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$''', '''^a1b2c3d4-e5f6-\.\.\.$''', '''^revoked/missing$''', '''^MFA/Conditional$''']
+
+[[allowlists]]
+description = "The made-up keys of the 'never hardcode' examples in NetSuite's OWASP secure coding guide."
+condition = "AND"
+paths = ['''^plugins/netsuite-suitecloud/skills/netsuite-owasp-secure-coding/''']
+regexTarget = "secret"
+regexes = ['''^xx-prod-a8f3k29d5e7b1c4f6$''', '''^sk-prod-a8f3k29d5e7b1c4f6$''', '''^secret_xK9mP2nQ7rT4wY6z$''', '''^my-secret-key-12345$''', '''^sk-live-abc123def456$''', '''^pk_live_51234567890$''', '''^sk_live_09876543210$''']
+
+[[allowlists]]
+description = "Placeholders in Grafana's and GrowthBook's setup examples."
+condition = "AND"
+paths = ['''^plugins/(grafana-assistant|growthbook)/skills/''']
+regexTarget = "secret"
+regexes = ['''^glsa_abcd1234$''', '''^gb_pat_abc123def456$''']
+
+[[allowlists]]
+description = "The name of a key encapsulation algorithm (MLKEM768-X25519) in the web platform's crypto guide, and the {APPLICATION_KEY}:{APPLICATION_SECRET} placeholders of Sinch's curl examples."
+condition = "AND"
+paths = ['''^plugins/(modern-web-guidance|sinch-cursor-plugin)/skills/''']
+regexTarget = "secret"
+regexes = ['''^MLKEM768-X25519$''', '''^"\{APPLICATION_KEY\}:\{APPLICATION_SECRET\}"$''']
+
+[[allowlists]]
+description = "HyperFrames' public PostHog project key, a write-only key PostHog publishes in client code by design."
+condition = "AND"
+paths = ['''^plugins/hyperframes/skills/media-use/scripts/lib/telemetry\.mjs$''']
+regexTarget = "secret"
+regexes = ['''^phc_zjjbX0PnWxERXrMHhkEJWj9A9BhGVLRReICgsfTMmpx$''']

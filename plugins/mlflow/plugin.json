@@ -1,0 +1,36 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "mlflow",
+  "version": "1.0.0",
+  "description": "Guides to trace, debug and score AI agents with MLflow, and to query trace metrics.",
+  "author": {
+    "name": "MLflow Team"
+  },
+  "homepage": "https://mlflow.org/",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "mlflow",
+        "commit": "51a42ea2b07fadb45fb34c7cecf0c87edbe05686",
+        "skills": {
+          "agent-evaluation": "91872bd553aa314b1a3ac5ad831a44da42d5e4ffed4f3f0856f67e291a718845",
+          "analyze-mlflow-chat-session": "fb244ba468ae541573823157ba900b3239c64a5959099959146f67fcd3c0c784",
+          "analyze-mlflow-trace": "ee1fe3744f78096317fc3c2551acc2495b1566c3eed1fbeeb8c42cc0965c8354",
+          "build-a-scorer": "996fa2f161e16c204cb4d18be92f446ee47769d4c7468805ec067d25c04668f9",
+          "debug-agent": "d85af411c04e1eda422eef71bc5a38c0f6685f5db7b58137a0fd1fdbe8396103",
+          "fix-agent-issue": "a2183e19e373cea8a091bb3a5f5906b6164a859770f27aec833afe9877bfaf44",
+          "instrumenting-with-mlflow-tracing": "6054997978df303d542e94408d81a450faaecb3d9d71b6d999fa4f067828a8e0",
+          "mlflow-agent": "b04c8885c8b9c725891753da6d1c5ca21da97efeacfc95b017fe951420d234a1",
+          "mlflow-onboarding": "1bbdc1347755d44adc1883e1289927baefa92c6c128a61b8d9b577ca7af7ea18",
+          "querying-mlflow-metrics": "bbd428064bd2ee7e972c7aa92d347e17a71dc096c96411fbe3143831daa7d2d0",
+          "retrieving-mlflow-traces": "e0a6c7be8b04fe4190c9b10f1171fadf9f6558c0ac386955c07ce2d0f4c15532",
+          "sagemaker-mlflow": "74e4b5ad7fe927b8e8433a47a24bccf97e15fd401e5d4a39593b05f0e0decec0",
+          "searching-mlflow-docs": "47e2e5e2d76bf9b46564c39388dfcde7c957f4fa03b7bd5a3997b862e29cd942"
+        }
+      }
+    }
+  }
+}

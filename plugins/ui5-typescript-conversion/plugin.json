@@ -1,0 +1,34 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "ui5-typescript-conversion",
+  "version": "1.0.0",
+  "description": "Guides to convert SAPUI5 and OpenUI5 projects from JavaScript to TypeScript.",
+  "author": {
+    "name": "SAP SE"
+  },
+  "homepage": "https://github.com/UI5/plugins-coding-agents",
+  "license": "Apache-2.0",
+  "keywords": [
+    "sap",
+    "ui5",
+    "sapui5",
+    "openui5",
+    "plugin",
+    "typescript",
+    "conversion"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "ui5-typescript-conversion",
+        "commit": "2b8c4a944e39609214bce7aef3b05260985f0e91",
+        "skills": {
+          "ui5-typescript-conversion": "62a71fdd891889bc72d61419c30ab43ef8f221d12a94ff82360f9cfdb95aa7ef"
+        }
+      }
+    }
+  }
+}

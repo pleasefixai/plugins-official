@@ -1,0 +1,52 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "spotify-ads-api",
+  "version": "1.0.0",
+  "description": "Guides to plan, build, monitor and report on Spotify Ads campaigns, audiences and pixels.",
+  "author": {
+    "name": "Alex Murphy"
+  },
+  "homepage": "https://github.com/spotify/ads-claude-plugin",
+  "license": "Apache-2.0",
+  "keywords": [
+    "spotify",
+    "ads",
+    "api",
+    "campaigns",
+    "advertising",
+    "oauth",
+    "reporting"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "spotify-ads-api",
+        "commit": "532b47af3d2eb10708b38733d07a5b1433c17e82",
+        "skills": {
+          "account-admin": "4e0cac57e2673e3b5af4959b98b2dc4e3a3a47bb4725135dc1cd86a288b7b041",
+          "ads": "371677c8e965e7b726acbdb7d6430c575cc7459b3bb18184bbda12386ca25598",
+          "api-reference": "93543d4861b5039518d58bb38a6bd210e7d08607138b830ccdec99563713366c",
+          "assets": "504dc38386c3f5b37cd81f8384b63a536cf77999d0e923c7ccb154d8a756d966",
+          "audiences": "818d00224b06671246a8f5487fbb11e8fe3eaa98ddcb83d42587e4fe3e14ea65",
+          "build-campaign": "7ac7e24b7ca5ca8a709bff25754bed0e32c8b87a42a45164a50dadc350a1711c",
+          "bulk": "35690838483e86a572bfd4b4be32e3ffb5065d2ddfbaa5fee921cad0e63415d8",
+          "campaign-strategy": "a91d9cb1dc8cf305d9eff9f5a2d4c0402a1d37209efeb51d67816b5fdd3bea55",
+          "campaigns": "fe45d6d32ebed2770fda09a2286d750c14acacc8eddc93522431707f365e5f55",
+          "change-history": "adc9f98b60e742c3309ce8c6c88ef1fb7c39ce938d77b6431326b18375f3c4e6",
+          "clone": "afcc0f5fb580044ced17da447c309a376c674004b965c685f1cfb77abb9fa3bc",
+          "configure": "e7f1fcd52786da76023a8a3aa360f09107d0a4208021b53419dcddf05cbeac04",
+          "dashboard": "bdb5f93d229972a64b6de40f674cac67e2fc088072f943f53fadb4b812f8b382",
+          "drafts": "56414fc3b7fbc99f594aa0c4b09a173c427bb92f683cbe5ad1d25863e1b47f2a",
+          "export": "78469df94a94140922d615ac0f94eb49f99491f7bdbec455bf126d67dd2d2056",
+          "measurement-debug": "d4f4048d966d29dee910d0540f0498448a89386351430c541cd54896ec50cd34",
+          "measurement-setup": "4327c4d3010858a74239c25b651dad56c3f981dad14b00d23120a8559f8d6031",
+          "monitor": "1076a4316f9cf857d5e278fa1091374d3a7aa866570d1239b31b4375434651ad",
+          "report": "4cd548ec5c44476178ebf19f4e52472f9373b054a46e45ffeb71ce173c5c97e4"
+        }
+      }
+    }
+  }
+}

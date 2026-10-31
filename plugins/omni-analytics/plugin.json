@@ -1,0 +1,53 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "omni-analytics",
+  "version": "1.0.0",
+  "description": "Guides to query, model, build dashboards, embed and administer Omni Analytics.",
+  "author": {
+    "name": "Omni"
+  },
+  "homepage": "https://www.omni.co",
+  "license": "Apache-2.0",
+  "keywords": [
+    "omni",
+    "ai",
+    "agentic-analytics",
+    "agents",
+    "mcp",
+    "data",
+    "analytics",
+    "bi",
+    "business-intelligence",
+    "semantic-layer",
+    "data-modeling",
+    "dashboards",
+    "queries",
+    "blobby",
+    "ai-context",
+    "embed",
+    "iframe",
+    "white-label"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "omni-analytics",
+        "commit": "04f745c53d6ac710476e541c26ed3fdc3d40af4b",
+        "skills": {
+          "omni-admin": "7fcf7a0e98c7c7e69ccb2557b5fa231b3a2e24c14eb23755e15ccc215e211e11",
+          "omni-ai-eval": "db18c3850c3f0b95c4e92dccaf316d5bba9a15a41cd32fd257f4331f3fa65772",
+          "omni-ai-optimizer": "f77d51592eebf310fa16743d036d8ab82b6940c012300d0be2b0b8e7ab34bbc8",
+          "omni-content-builder": "0147712cb0128c35f626040526cd7960e95967be070f0b57380244fefd12dc12",
+          "omni-content-explorer": "8c36b5097d267daebea5c687e92b8536304591f7c70f24ea7ad0886c482b28aa",
+          "omni-embed": "17ac04a3b638af5395cb36d6e6073bafaf7d1a7ee04a5012d8b26beda0df3aed",
+          "omni-model-builder": "ad169dfc294d869e343a2a7ff1b627932e7200d34d4203e455a382ebbf06d200",
+          "omni-model-explorer": "c4a3a66554c2e63a9fc128b7c4d363db69dab9c3bd5a6760fd513319524bcbfc",
+          "omni-query": "fb45a877d9487834fbc08d5d226458b13b4833060eccda902397417317f64367"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "sourcegraph-cursor-plugin",
+  "version": "1.0.0",
+  "description": "Guides to search code, commits and diffs across your repositories with Sourcegraph.",
+  "author": {
+    "name": "Sourcegraph"
+  },
+  "homepage": "https://sourcegraph.com/",
+  "license": "MIT",
+  "keywords": [
+    "sourcegraph",
+    "mcp",
+    "code-search",
+    "cursor"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "sourcegraph-cursor-plugin",
+        "commit": "a3e85326f537b2cf5f9a980ad68ac24ccaa6532c",
+        "skills": {
+          "searching-sourcegraph": "81cf56572c8b1ce7f2565da34aef953b4a0423de094508d400573186f9ea5f9c"
+        }
+      }
+    }
+  }
+}

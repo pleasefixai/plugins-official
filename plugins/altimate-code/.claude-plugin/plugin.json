@@ -1,0 +1,5 @@
+{
+  "name": "altimate-code",
+  "version": "1.0.0",
+  "description": "Guides to review dbt model, schema and macro changes with lineage checks in Altimate Code."
+}

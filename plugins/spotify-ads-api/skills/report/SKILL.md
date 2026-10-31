@@ -1,0 +1,184 @@
+---
+name: report
+description: Pull Spotify Ads API reporting data — aggregate metrics, audience insights, or async CSV reports.
+argument-hint: "aggregate | insights | async-create | async-status <report_id>"
+allowed-tools: ["Read", "Bash", "AskUserQuestion"]
+---
+
+# Spotify Ads API — Reporting
+
+Pull reporting data from the Spotify Ads API. Read settings from the active platform settings file.
+
+## Setup
+
+Set this skill's folder and define the request wrapper:
+
+```bash
+SKILL_DIR="<this skill's folder>"
+api() { "$SKILL_DIR/scripts/api-request.sh" report "$@"; }
+```
+
+Before the first Ads API v3 call, read and follow `$SKILL_DIR/references/live-openapi.md`.
+
+To retrieve settings values (TOKEN, AD_ACCOUNT_ID, AUTO_EXECUTE, BASE_URL, SDK_HEADER, SKILL_HEADER, PLUGIN_VERSION) for use outside API calls, run `api --env`. The output is eval-safe, so `eval $(api --env)` assigns them all.
+
+## Operations
+
+### `aggregate` (default if no argument)
+Get aggregated campaign metrics.
+
+Prompt for:
+- **entity_type** — What to report on: `CAMPAIGN`, `AD_SET`, `AD`, or `AD_ACCOUNT`
+- **fields** — Metrics to include. **Parameter name is `fields`, NOT `report_fields`.**
+  Suggested: `IMPRESSIONS`, `SPEND`, `CLICKS`, `REACH`, `FREQUENCY`, `COMPLETES`
+  Full list: IMPRESSIONS, SPEND, CLICKS, REACH, FREQUENCY, LISTENERS, NEW_LISTENERS,
+  STREAMS, COMPLETES, COMPLETION_RATE, STARTS, FIRST_QUARTILES, MIDPOINTS, THIRD_QUARTILES,
+  VIDEO_VIEWS, CTR, OFF_SPOTIFY_IMPRESSIONS
+- **granularity** (HOUR, DAY, LIFETIME — default LIFETIME)
+- **report_start** / **report_end** (ISO 8601; required for DAY/HOUR, do not send for LIFETIME)
+- **entity_ids** + **entity_ids_type** (optional — filter to specific IDs)
+- **include_parent_entity** (optional, boolean — include parent info for AD_SET/AD)
+
+**Important:** Array query parameters must use **repeated parameter names**, NOT comma-separated.
+**Validation guardrails:**
+- `limit` must be 1-50.
+- `entity_type` must be exactly `CAMPAIGN`, `AD_SET`, `AD`, or `AD_ACCOUNT`.
+- If `entity_ids` is present, always include `entity_ids_type`.
+- If `statuses` is present, always include `entity_status_type`; it must match the status owner.
+- Do not use `segments`, `dimensions`, `groupBy`, or async-report `metrics` names on aggregate reports.
+- Do not include `report_start` or `report_end` when `granularity=LIFETIME`; use `DAY` for date-ranged reporting.
+- For `DAY`, use UTC midnight timestamps for both start and end, e.g. `2026-05-01T00:00:00Z`.
+- Do not guess conversion metric names. Valid aggregate conversion-style fields include `PAGE_VIEWS`, `LEADS`, `ADD_TO_CART`, `PURCHASES`, `REVENUE`, `RETURN_ON_AD_SPEND`, `AVERAGE_ORDER_VALUE`, `START_CHECKOUT`, and `SIGN_UPS`.
+
+```bash
+api GET "ad_accounts/{ad_account_id}/aggregate_reports?\
+entity_type=CAMPAIGN&\
+fields=IMPRESSIONS&fields=SPEND&fields=CLICKS&fields=REACH&fields=FREQUENCY&\
+granularity=LIFETIME&\
+limit=50"
+```
+
+**Granularity constraints:**
+- `LIFETIME`: do not send `report_start` or `report_end`
+- `DAY`: date range must be within 90 days and both timestamps must be UTC midnight
+- `HOUR`: date range must be within the last 2 weeks
+
+Format the response as a readable table with stats broken out per entity. Filter out rows with zero impressions for cleaner output.
+
+### `totals`
+Get deduplicated metrics aggregated across multiple campaigns, ad sets, or ads. Reach and frequency are deduplicated across all specified entities.
+
+Prompt for:
+- **entity_type** (required) — `CAMPAIGN`, `AD_SET`, or `AD` (AD_ACCOUNT not supported here; use `aggregate` instead)
+- **entity_ids** (required) — Up to 50 entity IDs to aggregate across
+- **granularity** (required) — `LIFETIME` or `DAY` (HOUR not supported for totals)
+- **fields** (required) — Metrics: `IMPRESSIONS`, `CLICKS`, `CTR`, `REACH`, `FREQUENCY`
+- **report_start** / **report_end** (required for DAY, optional for LIFETIME)
+
+```bash
+api GET "ad_accounts/{ad_account_id}/aggregate_reports/totals?\
+entity_type=AD_SET&\
+entity_ids=$ID1&entity_ids=$ID2&\
+granularity=LIFETIME&\
+fields=IMPRESSIONS&fields=REACH&fields=FREQUENCY"
+```
+
+Format the response showing aggregated stats per time period (one row for LIFETIME, one row per day for DAY).
+
+### `insights`
+Get audience insight breakdowns.
+
+Prompt for:
+- **insight_dimension** — `ACT_AND_SET`, `AGE`, `AUDIENCE`, `CITY`, `COUNTRY`, `FORMAT`,
+  `GENDER`, `GENRE`, `INTERESTS`, `METRO`, `PLACEMENT`, `PLATFORM`,
+  `PODCAST_EPISODE_TOPIC`, `REGION`, or `TONE`
+- **fields** — Metrics to include. Use repeated `fields` params. Insight reports do not allow
+  `E_CPCL`, `FREQUENCY`, `OFF_SPOTIFY_IMPRESSIONS`, `PAID_LISTENS_FREQUENCY`,
+  `SKIPS`, `SPEND`, `STARTS`, or `UNMUTES`.
+- **entity_ids** — One ad set or campaign ID to analyze (only one ID at a time)
+- **entity_ids_type** — Required when `entity_ids` is set; use `AD_SET` or `CAMPAIGN`
+- **statuses** + **entity_status_type** (optional; must match the entity type used in `entity_ids_type`)
+
+**Insight report guardrails:**
+- Insight reports support one `entity_ids` value at a time — either an ad set ID or a campaign ID.
+- Always send `entity_ids_type` matching the entity: `AD_SET` for ad set IDs, `CAMPAIGN` for campaign IDs.
+- Do not send `entity_type` on insight reports; `entity_type=AD_SET` does not substitute for `entity_ids_type=AD_SET`.
+- Do not send `report_start`, `report_end`, `granularity`, or `limit`; insight reports are LIFETIME only.
+- Use only the listed `insight_dimension` values. Do not use `LOCATION`, `GEO`, `DMA`, `STATE`, `ZIP`, `POSTAL`, `POSTAL_CODE`, `MARKET`, `DEVICE`, `OS`, `ARTIST`, `AGE_RANGE`, or `CITY_NAME`.
+- For geo breakdowns, map user language to valid dimensions: country -> `COUNTRY`, region/state -> `REGION`, metro/DMA -> `METRO`, city -> `CITY`.
+
+```bash
+api GET "ad_accounts/{ad_account_id}/insight_reports?\
+insight_dimension=GENDER&\
+fields=IMPRESSIONS&fields=CLICKS&fields=CTR&\
+entity_ids=$ENTITY_IDS&\
+entity_ids_type=AD_SET"
+```
+
+Format results showing the breakdown by the selected dimension.
+
+**Handling 422 — Insufficient Data:**
+Insight data becomes available only after an ad has delivered enough activity to meet reporting thresholds. If the API returns HTTP 422 with one of these error codes, the entity does not yet have enough data:
+- `ILLEGAL.INSIGHT_REPORT.INSUFFICIENT_IMPRESSIONS`
+- `ILLEGAL.INSIGHT_REPORT.INSUFFICIENT_REACH`
+- `ILLEGAL.INSIGHT_REPORT.INSUFFICIENT_LISTENERS`
+
+When this happens:
+- Inform the user that the entity hasn't met the minimum data threshold yet
+- Suggest checking back later — poll no more than once per day
+- If the ad's flight has ended, stop retrying approximately two weeks after the end date (additional data is unlikely after that point)
+
+### `async-create`
+Create an async CSV report for download.
+
+Prompt for:
+- **name** (2-120 chars, only alphanumeric, underscore, hyphen)
+- **granularity** (DAY or LIFETIME)
+- **dimensions** — What to group by:
+  - AD_ACCOUNT_NAME, CAMPAIGN_NAME, CAMPAIGN_STATUS, CAMPAIGN_OBJECTIVE
+  - AD_SET_NAME, AD_SET_STATUS, AD_SET_BUDGET, AD_SET_COST_MODEL
+  - AD_NAME
+- **metrics** — What to measure:
+  - IMPRESSIONS_ON_SPOTIFY, IMPRESSIONS_OFF_SPOTIFY, SPEND, CLICKS
+  - REACH, FREQUENCY, LISTENERS, NEW_LISTENERS, STREAMS
+  - AD_COMPLETES, CTR, CPM, COMPLETION_RATE
+- **report_start** (required if granularity=DAY)
+- **report_end** (optional)
+- **campaign_ids** (optional — filter to specific campaigns)
+- **statuses** (optional, default: [ACTIVE])
+- **insight_dimension** (optional) — Break down the report by a delivery insight dimension: `ACT_AND_SET`, `AGE`, `AUDIENCE`, `CITY`, `COUNTRY`, `FORMAT`, `GENDER`, `GENRE`, `INTERESTS`, `METRO`, `PLACEMENT`, `PLATFORM`, `PODCAST_EPISODE_TOPIC`, `REGION`, or `TONE`. Only supported with LIFETIME granularity.
+
+**Async report guardrails:**
+- Async report `dimensions` are entity metadata columns only. Do not put `CITY`, `COUNTRY`, `REGION`, `DMA`, `POSTAL_CODE`, `LOCATION`, `AGE`, `GENDER`, `PLATFORM`, `DEVICE`, or `OS` in `dimensions`; use `insight_dimension` with `granularity=LIFETIME` for async CSV delivery insight breakdowns, or `insight_reports` for direct JSON insight results.
+- Use request fields `dimensions` and `metrics`, not `groupBy`, `fields`, `dateRange`, or `entityType`.
+- If `granularity=DAY`, include `report_start`; use UTC midnight timestamps for date boundaries.
+
+```bash
+api POST "ad_accounts/{ad_account_id}/async_reports" \
+  '{
+    "name": "...",
+    "granularity": "DAY",
+    "dimensions": ["CAMPAIGN_NAME", "AD_SET_NAME"],
+    "metrics": ["IMPRESSIONS_ON_SPOTIFY", "SPEND", "CLICKS"],
+    "report_start": "2025-01-01T00:00:00Z",
+    "report_end": "2025-01-31T00:00:00Z"
+  }'
+```
+
+After creating, show the report ID and suggest checking status with `async-status`.
+
+### `async-status <report_id>`
+Check the status of an async report and get the download URL when ready.
+
+```bash
+api GET "ad_accounts/{ad_account_id}/async_reports/$REPORT_ID"
+```
+
+If complete, display the download URL. If still processing, report the status and suggest checking again later. If the status is `FAILED`, inform the user that report generation failed and suggest retrying by creating a new async report with `async-create`.
+
+## Execution Behavior
+
+- If `auto_execute` is `true`, execute directly.
+- If `auto_execute` is `false`, present the curl command and ask for confirmation.
+- Always format report data in readable tables when possible.
+- For large result sets, summarize key metrics and offer to show full data.

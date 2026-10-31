@@ -1,0 +1,40 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "skills",
+  "version": "1.0.0",
+  "description": "Guides to expose local services, secure endpoints and receive webhooks with ngrok.",
+  "author": {
+    "name": "ngrok"
+  },
+  "homepage": "https://ngrok.com",
+  "license": "MIT",
+  "keywords": [
+    "ngrok",
+    "connectivity",
+    "gateway",
+    "networking",
+    "localhost"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "skills",
+        "commit": "72e8ca721b336f5de466e11d9b5430658d2249a6",
+        "skills": {
+          "expose-localhost": "6cc114540cf5756f1c81596464bab51581d3351ed4c9397ef0a590bf661389ca",
+          "ngrok-engine": "b7a92dcfe3042cedda89567de5867c3d2f00375e7844bbc0327266c3026a56b7",
+          "ngrok-setup": "590f10327906d7f77522bc157d0f687e74e45df45c40a84a796df79a04424abf",
+          "ngrok-surfaces": "d7bf99e3b4fab2ccb22d1feb079a27c22c90cf5c27e5ba213839f898dd25e039",
+          "provision-sandbox-access": "cfb51d484751cfb474a4fc3ebaed8ff2bc8cc5393dbb88edbe4da202b7f5ebf1",
+          "receive-webhooks": "09cb32a0c6e1fc2cb16b4b3397f2a824a53a11995917330834618ef13f7403a1",
+          "secure-endpoint": "cbf11d2e9846738ab2f5e404b891054768959e845ca719992ed5a0007530f465",
+          "test-mcp-server": "b880717388a7b02c01d03a72fe9cb12581eaad6904a4bd7cb989b78fdd1e1964",
+          "troubleshoot-ngrok": "82dd341bf2d9b978068251bf3f315589ccb5d7f88fe60ce726672d06144b43c5"
+        }
+      }
+    }
+  }
+}

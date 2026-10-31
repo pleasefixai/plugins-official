@@ -1,0 +1,33 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "rill",
+  "version": "1.0.0",
+  "description": "Guides to build Rill models, metrics views, dashboards and connectors, and analyze data.",
+  "author": {
+    "name": "Rill Data"
+  },
+  "homepage": "https://docs.rilldata.com/developers/build/ai-configuration",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "rill",
+        "commit": "adfce5762be435c026f4731f72e388520cb133cc",
+        "skills": {
+          "rill-analysis": "86f990b21f4f94354ab5fbc65c08f2cbd26ae4dd0b4ec54b30ddc7d67bbad207",
+          "rill-canvas": "f242b1b7820e554271f3af795a233e9cac5b4dd0c4a5854ce9b3990e37abc45e",
+          "rill-component": "e84f5a2e742f4d69acc986f752236202336038b585c20a7ea9efbff66d94f337",
+          "rill-connector": "9a7e8a83e0661bc33bd3bdd2903a58e2aabcc539b31bf3e8ec21fdca0b45dc81",
+          "rill-development": "4d61ef28dfd1829e7cf0b5e906015065c6351f4bd29478fc9957af5b76cbd470",
+          "rill-explore": "0363f84a8f6e21745937e06aa55489b7cc85f841f347c32a7b96493574c832c5",
+          "rill-metrics-view": "4c49003167e78b033a7df5234dd5276beba46948f2707cb7b89effb2ece53a15",
+          "rill-model": "7516974aec6690d0781de1e78a2b0f49ab634ef0ccf7e9148f8c07ccbb9b7035",
+          "rill-rillyaml": "f043ddafd424766fc526af7dc8796641d4bd8cff5a02211bcd7874c75b2201cc",
+          "rill-theme": "cf3f6031bf7fc344cb15fdf8743673854a2b913f1e9ed3ee3361e16191ac4bfc"
+        }
+      }
+    }
+  }
+}

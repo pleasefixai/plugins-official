@@ -1,0 +1,89 @@
+# Common Search Examples
+
+Real-world search examples for common tasks.
+
+## Finding Implementations
+
+**"Where is authentication handled?"**
+```
+code_finder: "repo:^github.com/org/repo$ authentication middleware and token validation"
+```
+Or, for a broader semantic pass:
+```
+nls_search: "repo:^github.com/org/repo$ authentication middleware validation"
+```
+
+**"How do we make API calls?"**
+```
+keyword_search: "repo:^github.com/org/repo$ fetch\|axios\|http\.request"
+```
+
+**"Find all database queries"**
+```
+keyword_search: "repo:^github.com/org/repo$ \.query\(\|\.execute\("
+```
+
+## Understanding Flow
+
+**"How does user signup work end-to-end?"**
+```
+deepsearch: "Trace the user signup flow from form submission to database creation"
+deepsearch_read: <URL or read token returned above>
+```
+
+**"What happens when a payment fails?"**
+```
+deepsearch: "How does the system handle failed payment attempts?"
+deepsearch_read: <URL or read token returned above>
+```
+
+`deepsearch` runs the research job and returns a URL/read token; `deepsearch_read` only reads back an existing job's results — it never takes a question directly, so always call `deepsearch` first.
+
+## Debugging
+
+**"Find where this error is thrown"**
+```
+keyword_search: "repo:^github.com/org/repo$ 'User not found'"
+find_references: Find all usages of the error constant
+```
+
+**"What changed in authentication recently?"**
+```
+diff_search: repos=["github.com/org/repo"] pattern="auth" after="2 weeks ago"
+```
+
+## Finding Patterns
+
+**"How do other features handle validation?"**
+```
+nls_search: "repo:^github.com/org/repo$ input validation schema"
+```
+
+**"Find examples of pagination"**
+```
+keyword_search: "repo:^github.com/org/repo$ offset\|limit\|cursor\|pageToken"
+```
+
+## Tracing Dependencies
+
+**"What uses this utility function?"**
+```
+find_references: repo="github.com/org/repo" path="src/utils/format.ts" symbol="formatDate"
+```
+
+**"Where is this type defined?"**
+```
+go_to_definition: repo="github.com/org/repo" path="src/api/handler.ts" symbol="UserResponse"
+```
+
+## Aggregating Results
+
+**"How many services still call the deprecated `formatDate` helper?"**
+```
+evaluator: "Run keyword_search for formatDate calls across repo:github.com/org/ and count matches grouped by repo"
+```
+
+**"Cross-reference which files changed in the last month also reference the old auth flow"**
+```
+evaluator: "Combine diff_search results (last 30 days) with keyword_search for 'legacyAuth' and list files present in both"
+```

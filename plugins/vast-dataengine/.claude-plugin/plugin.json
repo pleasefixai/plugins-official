@@ -1,0 +1,5 @@
+{
+  "name": "vast-dataengine",
+  "version": "1.0.0",
+  "description": "Guides to build, run and deploy VAST DataEngine functions, triggers and pipelines."
+}

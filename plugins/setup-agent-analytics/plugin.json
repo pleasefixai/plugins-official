@@ -1,0 +1,31 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "setup-agent-analytics",
+  "version": "1.0.0",
+  "description": "Guides to send the prompts and responses of your AI agents to Pendo Agent Analytics.",
+  "author": {
+    "name": "Pendo"
+  },
+  "homepage": "https://github.com/pendo-io/claude-pendo-plugin/tree/main/plugins/setup-agent-analytics",
+  "license": "MIT",
+  "keywords": [
+    "pendo",
+    "analytics",
+    "ai-agents",
+    "instrumentation"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "setup-agent-analytics",
+        "commit": "340d503c23eed487be83693aa4c1837df4a7dcd4",
+        "skills": {
+          "setup-agent-analytics": "0ef46a04e8039c67bec68ca7d609637b371fcf6cb630d29af23f3313182a691c"
+        }
+      }
+    }
+  }
+}

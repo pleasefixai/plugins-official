@@ -1,0 +1,16 @@
+{
+  "id": "composio",
+  "name": "Composio",
+  "description": "Act in GitHub, Slack, Gmail, Notion and 1,000+ other apps through your Composio account.",
+  "group": "automation",
+  "url": "https://connect.composio.dev/mcp",
+  "auth": {
+    "scopes": [],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "auto"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "langfuse",
+  "version": "1.0.0",
+  "description": "Guides to trace, evaluate and manage prompts in Langfuse, and to move to Langfuse.",
+  "author": {
+    "name": "Langfuse"
+  },
+  "homepage": "https://langfuse.com",
+  "license": "MIT",
+  "keywords": [
+    "langfuse",
+    "llm",
+    "observability",
+    "tracing",
+    "prompt-management",
+    "evaluation"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "langfuse",
+        "commit": "b86532b77f16f1e27c7cffa32bb632aa3cd9a352",
+        "skills": {
+          "langfuse": "fbd5b66e2a1bb2daf369067d41257b1b21b1a46544bef3b6261d1c5251c36fbe",
+          "migrate-to-langfuse": "0498d505b47707c716072ea7bf3b18969103d5a705ab345b9f7cc3193b234772"
+        }
+      }
+    }
+  }
+}

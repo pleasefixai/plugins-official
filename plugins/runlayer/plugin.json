@@ -1,0 +1,34 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "runlayer",
+  "version": "1.0.0",
+  "description": "Guides to build tool servers and audit their setup for security risks with Runlayer.",
+  "author": {
+    "name": "Runlayer"
+  },
+  "homepage": "https://www.runlayer.com/",
+  "license": "MIT",
+  "keywords": [
+    "mcp",
+    "security",
+    "governance",
+    "shadow-mcp",
+    "mcp-builder"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "runlayer",
+        "commit": "32f6a6c6c957528c475406b38a5f9b77a5b15d4b",
+        "skills": {
+          "mcp-builder": "32532d70ea777de169ac8bfe473681747485b4b27262a20034cfe85a82f9041c",
+          "mcp-security-audit": "969e938c563c41145cc8117ab40d372bd9b0850b0ae45f9361b20e41ba54f7a4",
+          "plugin-builder": "de02cd8666cd73289be487265165cfe87721a9684c63c7344b927165a9198330"
+        }
+      }
+    }
+  }
+}

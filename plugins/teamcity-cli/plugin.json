@@ -1,0 +1,25 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "teamcity-cli",
+  "version": "1.0.0",
+  "description": "Guides for TeamCity builds, logs, queues, agents and projects, and moves to TeamCity.",
+  "author": {
+    "name": "JetBrains"
+  },
+  "homepage": "https://www.jetbrains.com/teamcity/",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "teamcity-cli",
+        "commit": "ac6c1fd83300b2e42df48fcfff365ba03f73bb92",
+        "skills": {
+          "migrate-to-teamcity": "ed2fa3a6293b668e1c7bed879e8658faccbc68b8bdf9964aa77052e170b0d915",
+          "teamcity-cli": "800882d6dc4625c084523a713f4dd19c351ee50c5a3dea76012d7b11c4f619b5"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "zilliz",
+  "version": "1.0.0",
+  "description": "Guides for Zilliz Cloud clusters, Milvus collections, vector search, backups and access.",
+  "author": {
+    "name": "Zilliz"
+  },
+  "homepage": "https://docs.zilliz.com",
+  "license": "Apache-2.0",
+  "keywords": [
+    "zilliz",
+    "milvus",
+    "vector-database",
+    "semantic-search",
+    "rag"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "zilliz",
+        "commit": "35c86c000c91abb35f3eeed5cca15ebd69cba4d5",
+        "skills": {
+          "acl": "63d76ffeb5435520cc1b651ad89c4665cd89ba7a06beb58e98975401c75f970e",
+          "backup": "183af8321f4d97ce69b23973a189cf000e7ce651d21a42abb3e11278d0e91b2f",
+          "billing": "1fcb86a5762639d2081a7c59325fb02a4b305fd42e83369a2072e436d379a5bd",
+          "cluster": "6cc89f971952492520303e3899a411fea486ed41a0d7911ffca2ea30d1218444",
+          "collection": "f8fb07a74821c6468091b5250d63bda0044eff62848c906b6c8c86dfb6e71662",
+          "database": "7655512c50f0fc1500f34c11e6092286c661a32a38285e7a840bcf74cd8cb5d7",
+          "diagnose": "e621541eaf9f7dbf356bf91f63ba7fc696a3fd97f8c0258aeb8f74cb22c9d3f7",
+          "external-collection": "b5702549412d8afa1edc46ef96bf304e4b9bb89137cb796a7f5952ffccb336a7",
+          "import": "932cdb6b5fdf9ee3e499a281a4a832da0cdcc2125b337bd3e6163d7a949548ef",
+          "index": "615e3722533f39f7ec0e5efe0583d3d92ace25762856c6cd753db1061646656a",
+          "job": "9a7a2c169fefd9c92277010f19679feb37feb805eeddb4c653135e196e50780f",
+          "monitoring": "673bae3eec834aaa5dabe25b36b83b8d8d41ff22728af155dd8094e2a4bb78c3",
+          "on-demand-cluster": "2134747fba7fd17a2b33e278b30dd5013345c2404557f0b697a2e2dba57f7c8e",
+          "partition": "1d2cad6cd09401ae9d78ca28ba2dcc2fcfcd28f191109f7900a5282c307676e4",
+          "privatelink": "81de7c56f6357a8b9791315cb185b2e07a8e38550a7ebad33bb72303996206bc",
+          "project-region": "fb8492bec798e74c0d78c222d17de3b97fa03a34e960bdcba5ecdcfd2d3f5848",
+          "quickstart": "3db2528091fcbc683646f4f637479deea13a55c886360dd0a5a636e922c03e6a",
+          "setup": "de9e736553f2151263a1db41673a41875c08badcbdddc580b3a8e0a3c6bec692",
+          "status": "d88e67b77f3b86215d5c1ff31347ecaf795dfc07e448f4491a04284f76d35403",
+          "user-role": "1b019a239320131adca29e1bb794bf25c3c290ab99c38241abc69efa9e5a3151",
+          "vector": "831516bb246fae98ee9efa281b027ccfa5464371aa959acdcc3f493defea17fe"
+        }
+      }
+    }
+  }
+}

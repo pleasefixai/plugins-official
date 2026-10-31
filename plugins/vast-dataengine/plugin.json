@@ -1,0 +1,39 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "vast-dataengine",
+  "version": "1.0.0",
+  "description": "Guides to build, run and deploy VAST DataEngine functions, triggers and pipelines.",
+  "author": {
+    "name": "VAST Data"
+  },
+  "homepage": "https://vastdata.com",
+  "license": "MIT",
+  "keywords": [
+    "vast",
+    "dataengine",
+    "serverless",
+    "functions",
+    "pipelines",
+    "triggers",
+    "vastde"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "vast-dataengine",
+        "commit": "0d5bdf56e0085e6b89e4e8938a541dcb81b0db64",
+        "skills": {
+          "create-function": "0f227185fc6f8429587c93ec16eeccd770f67e52277cbf94bb25b0053a63e764",
+          "function-manifest": "08baf4144e94039ad801519f1a93775b12fdd40acdb8e6a697f91e0959e2b526",
+          "local-run-and-invoke": "bf0203f9e9ff877f6de3466625f89e2a5952d342e66a2e525f0f9f47efac93c6",
+          "pipeline-deploy-and-observe": "0de6567b3e69cbe8d598ba816023c07d50adf57b53a1f71078270e2e7c4bba5c",
+          "pipeline-manifest": "a88a6081c7be3530d2b4b72a1ce57df2b53cf40c7434a1a7a81f11b676f7796f",
+          "trigger-manifest": "dec1d6e8727ffe3789027520f471eb8193e65a0863bc69b2e568b4a0c435342c"
+        }
+      }
+    }
+  }
+}

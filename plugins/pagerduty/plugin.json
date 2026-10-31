@@ -1,0 +1,33 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "pagerduty",
+  "version": "1.0.0",
+  "description": "Guides to connect your PagerDuty account for incidents, services, schedules and on-call.",
+  "author": {
+    "name": "PagerDuty"
+  },
+  "homepage": "https://www.pagerduty.com/",
+  "license": "Apache-2.0",
+  "keywords": [
+    "pagerduty",
+    "incidents",
+    "oncall",
+    "mcp",
+    "incident-management",
+    "observability"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "pagerduty",
+        "commit": "561df5e3e98d3134af17aad00030ffe7d9ea6df2",
+        "skills": {
+          "pagerduty-mcp-setup": "92ac7595bc9b50f5130d971226c2752fbcddec0e4ce03fa2e04b28ae2088d6b0"
+        }
+      }
+    }
+  }
+}

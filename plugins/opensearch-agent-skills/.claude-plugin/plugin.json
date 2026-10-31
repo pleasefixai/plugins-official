@@ -1,0 +1,5 @@
+{
+  "name": "opensearch-agent-skills",
+  "version": "1.0.0",
+  "description": "Guides to build semantic, hybrid and vector search and analyze logs with OpenSearch."
+}

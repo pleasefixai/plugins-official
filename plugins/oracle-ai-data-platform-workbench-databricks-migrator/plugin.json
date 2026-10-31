@@ -1,0 +1,67 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "oracle-ai-data-platform-workbench-databricks-migrator",
+  "version": "1.0.0",
+  "description": "Guides to move Databricks notebooks, jobs and catalogs to Oracle AI Data Platform.",
+  "author": {
+    "name": "Oracle"
+  },
+  "homepage": "https://docs.oracle.com/en/cloud/paas/ai-data-platform/index.html",
+  "license": "MIT",
+  "keywords": [
+    "oracle",
+    "aidp",
+    "databricks",
+    "migration",
+    "spark",
+    "spark-sql",
+    "delta",
+    "unity-catalog",
+    "hive-metastore",
+    "notebooks",
+    "jobs",
+    "workflow",
+    "dag",
+    "catalog",
+    "ddl",
+    "rewriter",
+    "claude-with-tool-use",
+    "agentic",
+    "automated-migration",
+    "cell-by-cell",
+    "verify-and-fix",
+    "fixup-cell",
+    "redirect-schema",
+    "data-safety",
+    "acceptance-contract",
+    "streaming-convergence",
+    "fuse",
+    "volumes",
+    "oci",
+    "lakehouse",
+    "rest-api"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "oracle-ai-data-platform-workbench-databricks-migrator",
+        "commit": "a7225cbdd935ad47ed9a17ee8f1533e324f42623",
+        "skills": {
+          "aidp-acceptance-contract": "d6c211cf276c72562ddcefdfe1d638c2af2ff4c662508ca16e6af39d8eb5605d",
+          "aidp-bucket-mapping": "cc6ab37be7cbb294fb68dee7543541cde42ee5d51aa46a875a66ede3c58ce1f1",
+          "aidp-build-dag": "99fe5a099cc05896a2848837c6bc6acd919bc3b3484650643b47e1d7acb9d085",
+          "aidp-check-data": "d50ad464c37178890c4224ce4e40d662f8f49cea65af0fe411d01a75c2024c55",
+          "aidp-fixup-cell": "8bdcc46aa1eb767fa9de7a6e2b2b2b56f3ca965993b1b10f647fa388ed6f94f6",
+          "aidp-migrate-catalog": "a4db066d8ac7c0c55a6bb59add8724324524a43f2d29d5cc19edf3604d00dcb8",
+          "aidp-migrate-job": "c83176da4d623031495cd518e649fe2a132ca03b7eb16a9b44ae1804f5f27c47",
+          "aidp-migrator-bootstrap": "1775dacf9113aca0895f13ce316766621cceb6413cb3debc813df8e15aca2142",
+          "aidp-migrator-overview": "f1476f3279a8bf7706137e7fddcf68b3a7dc09e23ffb902f3596e1e2f16097ea",
+          "aidp-resume-migration": "4d9c06ebe17f1c8e96098016a06bf83e97e655c41c9f1d699c09be311397bc58"
+        }
+      }
+    }
+  }
+}

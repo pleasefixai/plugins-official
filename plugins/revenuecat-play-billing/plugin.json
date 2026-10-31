@@ -1,0 +1,52 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "revenuecat-play-billing",
+  "version": "1.0.0",
+  "description": "Guides for RevenueCat on Google Play: purchases, subscriptions, plan changes and webhooks.",
+  "author": {
+    "name": "RevenueCat"
+  },
+  "homepage": "https://www.revenuecat.com/",
+  "license": "Apache-2.0",
+  "keywords": [
+    "revenuecat",
+    "android",
+    "google-play",
+    "play-billing",
+    "subscriptions",
+    "iap"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "revenuecat-play-billing",
+        "commit": "e28ef7dac29c95363b0f8a3152e778f4e1d0725e",
+        "skills": {
+          "rc-alternative-billing": "beb259803239f4a45780bab4b43424e2fe9643ed25a413677992e849d5c4b415",
+          "rc-backend": "29fa16c02fc8503abaa4c615952f1015fc4ba758ceb2f8cd0f9edb28e2077042",
+          "rc-cancellations-pauses-winback": "303ccc421caa9ec477c7f621df257b8e716f5a995e88ce0387ed964f4d871eb1",
+          "rc-catalog-management": "fbe0afa595a68c94081e3eb5d0db340c3de21ed6db95eee34cc32c9aa2afd431",
+          "rc-configuring-the-sdk": "d8883736b9fab70987804e158a463ac80979d99623903a6bc6f22f5a61087026",
+          "rc-error-handling": "e15b3bffdefb273b866306bd53f6dbbb65e5fafd5a75f36e8c5dac8907819195",
+          "rc-one-time-products": "7685385800bc31c6bd6e7f3f75e255c572f7f7c683aea66d1ee53c92afb8780d",
+          "rc-payment-recovery": "f3c9ebd35913a9271a2d655a59cdcea73cdfee5367fb79cf371cbdabc288f713",
+          "rc-plan-changes": "96ab7f9cc7eb994f8432ff101ead2e06f5288543f6b4a4aeaee1063786604601",
+          "rc-price-changes": "1699583f2625290b4366aeb8ed676aa5419ea82983624d8205a1c7f3be06cb85",
+          "rc-purchase-flow": "56c23101ccc7e511603140a8b62959316a9bc9298c9cbf7c258ac357f23d6ca1",
+          "rc-revenuecat-api-quick-reference": "4d1db90d0038a94dcc6a74bc91fae826423fac41b20c522027648df5fee1d7d8",
+          "rc-revenuecat-vs-raw-billing": "8829ef97af3f01eaa97db06b80a3cb36d77a86e186c54598020cf328dbe857dd",
+          "rc-security": "db5c93fb12a4e82c51cf361ea00b8ae6bbf706253270876b38bbb709ce06576d",
+          "rc-setup": "e229d732dd19eedc5202f1d62b23c3c9705f7a13c4a20772854fac0d2992bf4f",
+          "rc-subscription-states": "207b8a911fee47d28a045f1418db1d81601682b1b7e7244e39a2c3b1fa15aae6",
+          "rc-subscriptions": "c4bb2a23f186900a8b7b0bd42d1e26a18b94992b5c4e6399a20bba3ae8de3311",
+          "rc-testing": "042b1b95fb3e0deb2701540affd7a6253db18b1fe45ddef9c490d93eb5a67521",
+          "rc-understanding-revenuecat": "c88614fd34f6b23b67249dac1b454c16e12db433b3e6b61faf582dc20d6d067e",
+          "rc-webhooks": "96176832fe22ab1c0596e3e663af0565b3ac8d4879cac094b1d84a9b42c9b248"
+        }
+      }
+    }
+  }
+}

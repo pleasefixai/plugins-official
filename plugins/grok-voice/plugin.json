@@ -1,0 +1,40 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "grok-voice",
+  "version": "1.0.0",
+  "description": "Guides to add Grok voice chat, dictation and read-aloud to an app, and to debug them.",
+  "author": {
+    "name": "Cursor"
+  },
+  "homepage": "https://github.com/cursor/plugins/tree/main/grok-voice",
+  "license": "MIT",
+  "keywords": [
+    "grok",
+    "xai",
+    "voice",
+    "realtime",
+    "speech-to-speech",
+    "speech-to-text",
+    "text-to-speech",
+    "dictation",
+    "tts",
+    "stt"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "grok-voice",
+        "commit": "1ba91fc25c0977741dd0e267849e6234b037ed0a",
+        "skills": {
+          "add-dictation": "9498a59181e8ada9be0c30ba0b6b00a209ea738fea0875560e3df42e1c4e603e",
+          "add-read-aloud": "eb7b1d226ea51a570385911637615bc0e6f311365ec145d835e3f909a2b51050",
+          "add-voice": "78540f24271b33d92ab5e9f9ca5df3b03ccc9da90b3c8e410aec5cf370695ad5",
+          "debug-voice": "94ffe60146ac7d0b15f74dc2d237f26c6b3e7642b72778f7b70bb6af55ea7b74"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "react-doctor",
+  "version": "1.0.0",
+  "description": "Guides to scan, audit and fix React and Three.js code and performance with React Doctor.",
+  "author": {
+    "name": "React Doctor"
+  },
+  "homepage": "https://www.react.doctor/",
+  "keywords": [
+    "react",
+    "react-native",
+    "static-analysis",
+    "code-quality",
+    "accessibility",
+    "performance"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "react-doctor",
+        "commit": "d8c0517cbf594fd3b88486c116beb58ffcedb7c8",
+        "skills": {
+          "improve-react": "aaba4c2b1fbcc7ecbc3e7ace78b91745ba1a1e7f447ec9ff1ddaf8b376bda767",
+          "improve-threejs": "3a1ca0a41299dfd9a7f974c2680077ef176192e60f9053b3efca25cd12880433",
+          "performance": "b267a3d2780df4971360b5902ec6adc80512e0ae1a637f9bcfc15f7a9430a9ec",
+          "react-doctor": "4800ededf4d5f6f36a864cf6f5c640941b18cab1bd0d98f4fc22f94e4418a84f"
+        }
+      }
+    }
+  }
+}

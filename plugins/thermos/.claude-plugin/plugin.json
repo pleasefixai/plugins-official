@@ -1,0 +1,5 @@
+{
+  "name": "thermos",
+  "version": "1.0.0",
+  "description": "Guides to audit the changes on a branch for bugs, security issues and code quality."
+}

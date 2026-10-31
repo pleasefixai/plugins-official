@@ -1,0 +1,5 @@
+{
+  "name": "idmp-plugin",
+  "version": "1.0.0",
+  "description": "Guides for TDengine IDMP elements, attributes, analyses, events, panels and dashboards."
+}

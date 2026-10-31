@@ -1,0 +1,65 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "salesforce-development",
+  "version": "1.0.0",
+  "description": "Guides for Salesforce metadata, Apex, tests, SOQL, sharing, data and deploys.",
+  "author": {
+    "name": "Salesforce"
+  },
+  "homepage": "https://github.com/forcedotcom/sf-skills/tree/main/plugins/builder/salesforce-development",
+  "license": "Apache-2.0",
+  "keywords": [
+    "salesforce",
+    "apex",
+    "flow",
+    "soql",
+    "metadata",
+    "deploy"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "salesforce-development",
+        "commit": "d3088edf8776a3c23f55aadead587eb3903be2d3",
+        "skills": {
+          "dx-org-manage": "a62448815a636defd69be2eaf689ee3cb8663713ef49f81d548a72235895f532",
+          "dx-project-create": "54110424a931eb0a71eaa2ce76085a12b935afd9c6a2706ff0420b2de37ef659",
+          "platform-apex-anonymous-run": "e135152c56f5520b8940194604e119ce20123237297dc14ba3b54972cee0018b",
+          "platform-apex-generate": "2ce5eaf19f91cfcb24c06b6f21e0b44cf51df0e9a3c82cdf7e1ea9b6d89280aa",
+          "platform-apex-logs-debug": "cf31ecd13a2adc8145f5c9e1fb7ba21d7f9062317261a5ff07d005cdd9ad05d4",
+          "platform-apex-test-generate": "429c46258e80776fac8539245d7e3cc6d343c740a99de8ea73235e4bf8427aa2",
+          "platform-apex-test-run": "fbe3062402ee414065e47937d53c5e0ec646af319ceb3320da1b39f7085bfdd1",
+          "platform-custom-application-generate": "99179b79e70b56443f156d70e46a091a7f8d38e247a93450b5f9e9d08b8c8e60",
+          "platform-custom-field-generate": "c43bd4d7f9806cb3a2d97ab06306e2b6ed3233fc6980f463d1c0bf102b7718a6",
+          "platform-custom-metadata-type-generate": "07e5129aa74c7ebd2d05b1fa6cbc43da29bb6fda6822c579229cd4c38054a26e",
+          "platform-custom-object-generate": "5655e64f67bc2dd9eb18dcc06cd38ece930247740f371e7004538a8ca42b37ed",
+          "platform-custom-report-type-generate": "364f00f91a83efc21f4286d2e2b0e59230cb92dd3bac4e750064d5d1529f16c3",
+          "platform-custom-setting-generate": "78b9f6771eb0ae91bb392c94351267db69df75987fba3d0b0ce1a1b1d3730fe9",
+          "platform-custom-tab-generate": "622b7b540f604dd6a360333ab9a8e3705832977565f98d06c312e269c3a82954",
+          "platform-data-and-tooling-api-context-get": "1fe395ef0e2f0487855ef742ed353f86bd55b35d8d949c8cc33a0e0e20cfcc7c",
+          "platform-data-manage": "b104248636695e2ab2be3182770a61daccd32b0a23fb6d793a7bb0e4a7dd2a50",
+          "platform-deploy-validate": "c7c1f68988787e058d34fa382582aecac86c79aa69a040b9373d3d4fbb110781",
+          "platform-destructive-deploy": "8b3e24c059584f146c75c33c347b18e4ae57b013197a03703b6171e2f3eaa472",
+          "platform-flexipage-generate": "8b23acb3533038e93b5be19fe024426de98cf1de9080700ea73cbd5d7cf134c5",
+          "platform-lightning-app-coordinate": "98f165937dc8ba04e54f4f188edd496e98e16df3ebe5c7d5714792b36331a273",
+          "platform-list-view-generate": "f7a28856aa180e1c08fa7eca019fb1f0c1829d8272532664f95b123333d5ecd0",
+          "platform-manifest-generate": "6ecef32b205139af601ad1b4e44b043064eb325553493ad90e5c4e089f2e98ac",
+          "platform-metadata-api-context-get": "63167667d061a7641b4ab37e8253f47f553c1e32609ec8c1550448efe65dae1e",
+          "platform-metadata-deploy": "ae375c70cecddd3917e34393100e8698b2f0c5cb4730dbb1a09231cd557388b2",
+          "platform-metadata-retrieve": "85d5e9b2607e0cb020ac73593b292e0e82795d7335277a20bb58a4cf54e733cc",
+          "platform-permission-set-generate": "ec0d5ac43bb5bf4461b25f3430e7c908e653fdb56d245221d6996eb75de54278",
+          "platform-quick-deploy": "2515ce1d7509318f6c71738cd9f47f3e16502d91f907a07a61bc388e2a9ce6a7",
+          "platform-report-generate": "c0f65485b67b2875947ad77220403d1ff49b9ef3cf480c8687d077d75486047a",
+          "platform-sharing-owd-configure": "cc9101085c1385f5f2681facc2c8253c7f192c0b4b84de3213f5c153ea8b9c53",
+          "platform-sharing-rules-generate": "a73576490ea6a24f84532a5ff7618bcd14c5090c8c60fecbb707cb0a94c474a6",
+          "platform-soql-query": "4c28b6e7054f61a4a48cf30958343ad7eb624c53fd532e3fccac822900dbd579",
+          "platform-validation-rule-generate": "989e823de3170a0d01d558d066d14055badf9f9fd2a193acdaddf220fa9d3809",
+          "platform-value-set-generate": "4514af10e2edce55aad727f7c0febf30e8736c47e9d0bc2bddfe704447185fa9"
+        }
+      }
+    }
+  }
+}

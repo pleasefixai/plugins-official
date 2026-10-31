@@ -1,0 +1,37 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "logfire",
+  "version": "1.0.0",
+  "description": "Guides to set up Pydantic Logfire observability for an app and its infrastructure.",
+  "author": {
+    "name": "Pydantic"
+  },
+  "homepage": "https://github.com/pydantic/skills/tree/main/plugins/logfire",
+  "license": "MIT",
+  "keywords": [
+    "logfire",
+    "observability",
+    "tracing",
+    "monitoring",
+    "pydantic"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "logfire",
+        "commit": "238d97102650c1caa51f35027aee13c469c59542",
+        "skills": {
+          "logfire-evals": "13891bf54b43b4d0beaf9196bc8b43bd7187723df8226a10adcf4d348196539e",
+          "logfire-infrastructure": "232e7b79a79a53ac940602d073b2a58e5194fdd5856bdc6887f181878872dc8d",
+          "logfire-instrumentation": "4e8ee51efe7c3b6c9f2bde3fef7ea822a651cd34e84eaad06a303552fb6b30a5",
+          "logfire-query": "f78cd4ce21bc23a39bac5ec7d9b467cf697bdeeb6e126d25ce77196bb687f18e",
+          "logfire-setup": "a6553d909410cb9a1bde28282d966fd8d5b1acd1c89b72e9d073952ec5b07ff3",
+          "logfire-ui": "a756ba5258fe1a8e5555d09bf4e93a79d8997e123f3b242dd4372e1e6b06eb9b"
+        }
+      }
+    }
+  }
+}

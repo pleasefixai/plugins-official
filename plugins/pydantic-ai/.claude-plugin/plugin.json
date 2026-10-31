@@ -1,0 +1,5 @@
+{
+  "name": "pydantic-ai",
+  "version": "1.0.0",
+  "description": "Guides to write Pydantic AI agents and migrate from LangChain, OpenAI Agents and others."
+}

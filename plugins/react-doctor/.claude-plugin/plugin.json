@@ -1,0 +1,5 @@
+{
+  "name": "react-doctor",
+  "version": "1.0.0",
+  "description": "Guides to scan, audit and fix React and Three.js code and performance with React Doctor."
+}

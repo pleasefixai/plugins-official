@@ -1,0 +1,24 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "sentry-cli",
+  "version": "1.0.0",
+  "description": "Guides to view Sentry issues, events, projects and organizations, and call its API.",
+  "author": {
+    "name": "Sentry"
+  },
+  "homepage": "https://sentry.io",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "sentry-cli",
+        "commit": "3567c3c937b5cc06667d5b023bda0b2d3f472c54",
+        "skills": {
+          "sentry-cli": "07c21c0ef1654838780e2d8ea79a694b1baa39d400ae0f0a60bc6c379c2cd28d"
+        }
+      }
+    }
+  }
+}

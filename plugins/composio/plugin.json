@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "composio",
-  "version": "1.0.0",
-  "description": "Guides to act in GitHub, Slack, Gmail, Notion and 1,000+ other apps through Composio.",
+  "version": "1.1.0",
+  "description": "Act in GitHub, Slack, Gmail, Notion and 1,000+ other apps through your Composio account.",
   "author": {
     "name": "Composio"
   },
@@ -19,6 +19,7 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "mark": "integrations/composio.png",
       "upstream": {
         "kind": "imported",
         "marketplace": "cursor",
@@ -27,6 +28,9 @@
         "skills": {
           "composio-activity-summary": "121cd2bce6d0ea8d75568db8d004801beff0a0be70c0a6269ede2723a423fa27",
           "composio-mcp": "e5b1274614b5fe74cbe291aca510272e89b8608ac10d791bf1c66d5310e868da"
+        },
+        "guessed": {
+          "composio.name": "2e85588bb086763d"
         }
       }
     }

@@ -1,0 +1,63 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "pinecone",
+  "version": "1.0.0",
+  "description": "Guides for Pinecone indexes, vector and full-text search, Assistants and n8n workflows.",
+  "author": {
+    "name": "Pinecone"
+  },
+  "homepage": "https://github.com/pinecone-io/pinecone-claude-code-plugin",
+  "keywords": [
+    "pinecone",
+    "semantic search",
+    "retrieval",
+    "vector search",
+    "vector database",
+    "retrieval augmented generation",
+    "rag",
+    "agentic rag",
+    "sparse search",
+    "assistant",
+    "pinecone assistant",
+    "rag chatbot",
+    "full text search",
+    "bm25",
+    "hybrid search"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "pinecone",
+        "commit": "c383d38b5cc3c5ec219f2e68026e47ffbf46524a",
+        "skills": {
+          "assistant": "ad2583f22438cf9c664bf547faad4ed51359cb3f75157c1cbb89199f2d291df0",
+          "cli": "3a5707d4b328870a981ae868a1ae799b604234ef7f64b432e2301b59fec880d6",
+          "docs": "72f94542ffe483d5bc7aa9dc6aedfb00ce1aac1e13ea2076cca8cdd8469bcd16",
+          "full-text-search": "74764922fcf3ab8f8f51762531cfeb101dbef75a98fa8db9c37fe9ca8f367ab4",
+          "help": "3dee05dc0728bcec1b8a64d0bc2dacc1508a3953f1e2c0db71f1c9ab16ac351f",
+          "mcp": "dacc0905f31591f70b50124e445ced5ce5b5115fc27da624f98cb648282d8370",
+          "n8n": "636125901d966dafd3ac92da8be6a4ff59730e0e88f39eccfa07f2016bd80497",
+          "query": "e88eb8a3dc776a6d64315d62f4fc2a6c025395b8a05c44dcecb48e19f756eb48",
+          "quickstart": "564554a5968140654f230d5e2fed8577cc22f75855d8f944c515555523628d7f"
+        },
+        "also": [
+          {
+            "marketplace": "cursor",
+            "plugin": "pinecone",
+            "commit": "fa68b8b42302b0a812570ae2a2933eaff362c82b",
+            "skills": {
+              "pinecone-assistant": "870a61dbb7fbff384d130b7f57b63e762210f5b2ad8bb6e7213a16314c9c97b5",
+              "pinecone-full-text-search": "5874c72b3c2f369f2740a93b2e5bdaae236a901f2736c7cba842d1a8c7289549",
+              "pinecone-help": "1c6f11c69300fc55eb201edf69c84aab3df209569e70d8a68026484bcec38ee0",
+              "pinecone-query": "7ebbe31bbbe11de4a6a9d91f979ebfb816d4da49eee7b6bac00b2e548f135bcd",
+              "pinecone-quickstart": "5bcd83ebcc15866404d1aa4a37eac9ddc4f29b5fb1f37b17e5176dae7a9fd07f"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

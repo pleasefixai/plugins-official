@@ -1,0 +1,26 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "mcp-server-dev",
+  "version": "1.0.0",
+  "description": "Guides to build tool servers with interactive views and to package local servers.",
+  "author": {
+    "name": "Anthropic"
+  },
+  "homepage": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/mcp-server-dev",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "mcp-server-dev",
+        "commit": "a7ba5b93db0c7c8d17f3f1d25853adca79598a1a",
+        "skills": {
+          "build-mcp-app": "c0172bc88eeeda9f973ea10b7406fa4cdca21138f425dc67cdf0d75051ecd8eb",
+          "build-mcp-server": "af733dde56bbdcac1447e5871e68a4d68c9771163849718f737945ca9eef4cce",
+          "build-mcpb": "fc2a5a2ef1902d932f578f5bf6c5e578e1c06f27d07cfb5cdbe929059bea138a"
+        }
+      }
+    }
+  }
+}

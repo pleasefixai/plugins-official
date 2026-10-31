@@ -1,0 +1,195 @@
+---
+description: Omni CLI conventions — authentication, command patterns, output handling, and error codes. Apply when making any Omni API call via the CLI.
+globs: []
+alwaysApply: false
+---
+
+# Omni CLI Conventions
+
+## Installation
+
+If the `omni` command is not available, install it:
+
+```bash
+# macOS / Linux
+curl -fsSL https://raw.githubusercontent.com/exploreomni/cli/main/install.sh | sh
+```
+
+Pre-built binaries for macOS (amd64/arm64), Linux (amd64/arm64), and Windows (amd64) are available on the [GitHub Releases page](https://github.com/exploreomni/cli/releases).
+
+> OAuth login (`omni config login`), the `whoami` command, and the `--schema` body-discovery flag require **omni CLI ≥ 1.0.7**. Don't gate on `omni --version` — custom/dev builds (e.g. `local-prs-…`) and `install.sh`-from-`main` binaries carry the features without a release version, so a semver check would reject a capable CLI. Instead probe capability: if a command errors with "unknown command", the binary is too old — ask the user to update it. (See the `whoami` preflight below.)
+
+## Authentication
+
+A profile authenticates with either an **API key** or **OAuth** (browser login). The CLI resolves the token in this order (highest wins):
+
+1. `--token` flag on the command
+2. `OMNI_API_TOKEN` environment variable
+3. The active profile's stored credential — an `apiKey`, or an **OAuth** access token (auto-refreshed; re-login is only needed once the refresh token is gone)
+
+Two API key types exist:
+
+- **Organization API Key** — created in Settings > API Keys by an org admin. Required for SCIM user management, connection management, and most admin endpoints.
+- **Personal Access Token** — created in User Profile > Manage Account > Generate Token. Scoped to the user's permissions. Sufficient for querying, model exploration, and content browsing.
+
+OAuth logs in as the user, so an OAuth profile carries that user's own permissions (like a Personal Access Token).
+
+### Setup
+
+```bash
+# Show available profiles and select the appropriate one
+omni config show
+# If multiple profiles exist, ask the user which to use, then switch:
+omni config use <profile-name>
+```
+
+If no profile exists, create one with `omni config init`:
+
+```bash
+# Non-interactive OAuth (opens a browser to log in):
+omni config init --name <profile> --endpoint https://<org>.omniapp.co --auth oauth
+
+# API key (the key is read from a hidden prompt, never passed as a flag):
+omni config init --name <profile> --endpoint https://<org>.omniapp.co --auth api-key
+```
+
+> The API key is **never** accepted as a command-line flag — that would leak the secret into shell history and process listings. `omni config init` always reads it from a hidden prompt; there is no `--api-key` flag.
+
+Base URL and token are resolved in this order (highest wins):
+1. `--base-url` / `--token` flags on the command
+2. `OMNI_BASE_URL` / `OMNI_API_TOKEN` environment variables
+3. Active profile's `apiEndpoint` / `apiKey` (or OAuth token)
+
+### Authenticating from an agent session
+
+`omni config login [profile]` runs an **OAuth 2.1 authorization-code flow with PKCE**: it starts a localhost callback server, opens the user's browser to the Omni authorization page, and **blocks for up to ~2 minutes** waiting for the redirect. `omni config init --auth oauth` does the same as part of profile creation. Tokens are stored in the profile and refresh automatically.
+
+A headless agent **cannot** complete this flow itself — it can't click through the browser consent, and the call blocks. Handle missing auth like this:
+
+1. **Detect it.** `omni whoami whoami` (or any call) failing with **401** or **403 `Invalid bearer token`** means the active profile isn't authenticated (see the preflight table below).
+2. **Default — hand off to the user.** Ask them to authenticate, then continue. In a Claude Code session the `!` prefix runs the command in-session so its output lands in the conversation:
+   ```bash
+   ! omni config login <profile>
+   ```
+   Do **not** run `config login` autonomously by default — it blocks on a browser consent the agent can't complete, and in a headless/CI session there is no browser, so it times out after ~2 minutes.
+3. **Exception — local interactive machine.** When you're certain the session is on the user's own machine with a browser, the agent *may* run `omni config login <profile>` directly (it opens the user's browser); the user still completes the consent. Never do this in headless/CI.
+
+### Preflight: verify CLI capability, auth, and permissions (`whoami`)
+
+`omni whoami whoami` doubles as the capability gate and the auth check — run it first and branch on the outcome:
+
+```bash
+omni whoami whoami                       # current identity, API-key scope, org role, per-model roles
+omni whoami whoami --model-id <id1,id2>   # scope rolesByModel to specific models
+```
+
+| Outcome | Meaning | Action |
+|---|---|---|
+| exit ≠ 0, stderr `unknown command "whoami"` | CLI predates 1.0.7 — no `whoami`, OAuth login, or `--schema` | Ask the user to update the CLI (see Installation above) |
+| exit ≠ 0, error `HTTP 401` or `403 "Invalid bearer token"` | The credential is missing, expired, or rejected | Hand off to OAuth login (see *Authenticating from an agent session* above) |
+| exit 0, identity JSON | Authenticated and capable | Proceed — read `role` / `rolesByModel` to decide whether an action is permitted *before* attempting it |
+
+Both failure modes exit non-zero, so **branch on the message, not just the exit code**. A `403` whose message is a *permissions* error (not `Invalid bearer token`) means you're authenticated but lack access — that's not an auth-handoff case. `whoami` is **self-scoped and available to non-admins**, so this works for any profile.
+
+**Prefer this capability probe over comparing `omni --version`.** Custom and dev builds (e.g. `local-prs-…`) and `install.sh`-from-`main` binaries carry the features without a release version, so a strict semver gate would reject a perfectly capable CLI. The same idiom guards other version-sensitive features — e.g. `omni documents v2-get --help >/dev/null 2>&1 || echo "CLI too old for the v2 documents API"`. When a probe does fail, `omni update check` (CLI ≥ 1.2.1) reports `currentVersion` / `latestVersion` and an `upgrade` object carrying **both** a `homebrew` and an `other` (`install.sh`) command — it does not detect how this binary was installed, so offer the user both rather than picking one. Note `latestVersion` is `v`-prefixed and `currentVersion` is not, so don't compare them as strings — read `updateAvailable`.
+
+## Command Pattern
+
+All CLI commands follow:
+
+```
+omni <group> <operation> [positional-args] [--flags] [--body 'JSON']
+```
+
+- **Group**: the API resource (e.g., `models`, `documents`, `scim`, `query`)
+- **Operation**: the action (e.g., `list`, `create`, `yaml-get`)
+- **Positional args**: path parameters like `<modelId>`, `<identifier>`, plus shorthand body args (e.g., `omni ai generate-query <model-id> "prompt"`)
+- **Flags**: query parameters and promoted body fields as `--flag-name value`
+- **Body**: request body as `--body '{"key": "value"}'`, `--body -` to read from stdin, or `--body @path/to/file.json` to read a file (still supported, but prefer shorthand args/flags when available)
+
+Behaviors worth knowing:
+
+- **`--body @file` is validated client-side.** Malformed JSON fails before the request with the byte offset (`request body from file … is not valid JSON: … (at byte 2, near "{bad json")`) instead of a server-side 400. Prefer it over shell-quoting large bodies — no escaping, and the file stays diffable.
+- **Required params are enforced client-side.** Missing ones fail as `Error: required flag(s) "q" not set` with no API call. Affects `content search --q`, `models dbt-sync --branch-id`, `models yaml-delete --file-name`, `uploads create --file/--model-id`, `uploads replace-data --file`, and `ai-eval runs-list --prompt-set-id`. Branch on the message: this one is a **local usage error**, not an API rejection — don't retry it or treat it as a permissions problem.
+- **Unknown subcommands error** (`Error: unknown subcommand "…"`) instead of silently printing the group's help, so a typo'd operation no longer looks like a successful no-op. It still **exits 0**, though — branch on the message, not the exit code.
+- **`--query key=value`** (repeatable) sends a query parameter the spec doesn't declare — an escape hatch for endpoints ahead of the CLI's spec. Reach for it only when `--schema`'s `queryParams` lacks the filter you need.
+- **Flag names are kebab-case** — `--page-size`, `--user-id`, `--branch-id`, `--file-name`. Older concatenated spellings (`--pagesize`, `--userid`, …) still work as aliases, so don't "fix" a script that uses them.
+
+### Discovering Commands
+
+```bash
+omni agent-help                    # Agent-oriented guide with common workflows
+omni --help                        # List all command groups
+omni <group> --help                # List operations in a group
+omni <group> <operation> --help    # Show flags and positional args
+```
+
+### Discovering request body shapes
+
+**Every command accepts `--schema`** — not just the ones that take a body. It prints the command's args, query-param flags, request-body schema (field types, descriptions, enums, formats, required fields) with a filled-in example, **and the response shape**, then exits — no API call, no token required. Use it instead of guessing the JSON for `--body`, and to learn a read command's filters before you call it.
+
+`--schema` is the **source of truth** for field-level body detail. Where a skill or reference doc hardcodes a `--body` shape, treat it as a worked example or a carrier for behavioral gotchas (merge semantics, stringify errors, ignored flags) — not an exhaustive field list. When the doc and `--schema` disagree on which fields exist or are required, `--schema` wins.
+
+> **Caveat — `--schema` is authoritative for *which fields exist / are required*, but not always for *exact accepted values*.** Enum values and casing are hand-maintained in places and can drift from what the endpoint enforces. A live example: `documents update-permission-settings`'s `organizationRole` advertises lowercase `viewer|editor|…` but the API enforces **uppercase** `VIEWER|EDITOR|…`. When the API rejects a schema-conformant value (`400 … Invalid <field>` or `… expected one of …`), the **runtime is the source of truth for values** — use what the `400` accepts. (Separately, `query run`'s `query` object renders free-form — no sub-fields — so for `fields`/`sorts`/`filters`/`calculations` use the worked shapes in the `omni-query` skill.)
+
+```bash
+omni query run --schema                    # schema + example for the query body
+omni ai generate-query --schema --compact  # compact, good for piping to jq
+```
+
+The output is `{ method, path, args?, queryParams, body, example?, response }`, plus a top-level `required` array when there are required fields (omitted when there are none). `queryParams` lists each filter with the **exact flag spelling** to pass it (`{ flag, name, type, enum?, required, description }`) — the fastest way to check a flag name. `--help` tells you *that* a body is required; `--schema` tells you its *shape*.
+
+The `response` section (`{ status, contentType, description, schema }`) documents the success shape, and its `description` often carries behavioral detail worth reading — e.g. `query run` notes that the default response is an **ndjson stream**, one object per line, not parseable as a single JSON document. It is still a *spec* view: for exact runtime field paths (e.g. a query's row count is at `cache_metadata.num_rows`, **not** `summary.row_count`), inspect a live response (`-o json`/`csv`) — the runtime remains the source of truth there.
+
+Two companion flags keep large schemas manageable (e.g. `documents v2-create`):
+
+- `--depth N` caps nesting (default 8); `--depth 1` is a top-level overview.
+- `--field PATH` drills into a dotted path, auto-descending arrays and maps.
+
+```bash
+omni documents v2-create --schema --depth 1                        # top-level keys only
+omni documents v2-create --schema --field queryPresentations.data  # just the tiles map
+```
+
+## Output
+
+- Use `-o json` to force structured output for programmatic parsing, or `-o human` for readable tables.
+- The default is `-o auto` (human in a TTY, JSON when piped or redirected).
+- Use `--compact` for single-line JSON (good for piping to `jq`).
+- Errors go to stderr as JSON with `error` and `status` fields
+- **Pass `-o json` explicitly when you parse output.** `auto` only decides when nobody chose: a default set with `omni config set-format` or `OMNI_OUTPUT_FORMAT` applies to piped calls too. On CLI ≥ 1.3.0 this matters for `query run` / `query wait`, whose human output is a rendered table (field labels, model number formats, remaining jobs polled to completion) with no job envelope — no `summary`, `cache_metadata`, or `remaining_job_ids` to validate against.
+- **Keep stderr out of stdout.** Informational output can land on stderr on a successful call — e.g. `query run --workbook` in JSON mode writes `{"workbookUrl": …}` there — so `2>&1` corrupts an NDJSON or CSV payload you meant to parse.
+
+## Error Handling
+
+Omni returns standard HTTP status codes:
+
+| Code | Meaning | Action |
+|------|---------|--------|
+| 401 | Invalid or expired API key | Check your token / `omni config show` |
+| 403 | Insufficient permissions | Need higher role or org-level key |
+| 404 | Resource not found | Verify ID/identifier |
+| 422 | Validation error | Check request body |
+| 429 | Rate limited | Back off and retry |
+
+## Rate Limits
+
+The Omni API enforces rate limits per API key. If you receive a 429, wait before retrying. For batch operations, add a small delay between requests.
+
+## Pagination
+
+List endpoints return cursor-based pagination:
+
+```json
+{
+  "pageInfo": {
+    "hasNextPage": true,
+    "nextCursor": "...",
+    "pageSize": 20,
+    "totalRecords": 58
+  },
+  "records": [...]
+}
+```
+
+Pass `--cursor <nextCursor>` to fetch subsequent pages.

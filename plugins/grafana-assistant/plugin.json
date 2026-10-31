@@ -1,0 +1,31 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "grafana-assistant",
+  "version": "1.0.0",
+  "description": "Guides to ask Grafana Assistant about your Grafana stack and to run ops investigations.",
+  "author": {
+    "name": "Grafana"
+  },
+  "homepage": "https://grafana.com",
+  "license": "Apache-2.0",
+  "keywords": [
+    "grafana",
+    "assistant",
+    "a2a",
+    "cli"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "grafana-assistant",
+        "commit": "12be5634a492f73c189d466c5449d09b853ad7a4",
+        "skills": {
+          "grafana-assistant-cli": "523e8b595d319aa3054daf1c7299ebe0fcfcd1249e94d5b91c0fc005cb9c87a8"
+        }
+      }
+    }
+  }
+}

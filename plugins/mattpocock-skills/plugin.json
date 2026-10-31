@@ -1,0 +1,60 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "mattpocock-skills",
+  "version": "1.0.0",
+  "description": "Guides for engineering work: plan reviews, specs, tickets, TDD, code review and bug fixes.",
+  "author": {
+    "name": "Matt Pocock"
+  },
+  "homepage": "https://github.com/mattpocock/skills",
+  "license": "MIT",
+  "keywords": [
+    "engineering",
+    "skills",
+    "tdd",
+    "code-review",
+    "grilling",
+    "domain-modeling",
+    "productivity"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "mattpocock-skills",
+        "commit": "49dd158d1076134a641b33efb035946536778336",
+        "skills": {
+          "ask-matt": "d87268c884e78248233bd820edfd14fe0744d4b11947f6e4d5f809b719b87314",
+          "code-review": "56c96275028029b67e71d4c121764f07727d5e5309f04147a9d0fad7e04a4b77",
+          "codebase-design": "35556307e5767556748e06531b26c1e95d931c57c8dd06a3f23b08c535a6f52b",
+          "diagnosing-bugs": "09d97ae135e0145fd1d5c97dba60a9ab01b87546f16275292d27a036fc231182",
+          "domain-modeling": "38de8019112f21fd15f2d87acc09f9de213a1d074f74e8e8e03edd0dc7de8e05",
+          "grill-me": "c51c4d895f25157b88063fdf80e72a0824c6b141ce3f8b397bd0aa99a7e4b8e7",
+          "grill-with-docs": "461f5e19db887ddd00bb502c116d719724c98d57214d9e0c9ea01823abf822ef",
+          "grilling": "8b2ba21c8551119954a8d9f88be66d7071bba99d19cbfd6e828844959b7514ae",
+          "handoff": "d9239e558eedd71006cca419daa4cb2f67f0007869141185a3d594994b5de9a0",
+          "implement": "df3b87263f3a09de26fdcdc62702fde099bef02e6185d1200ca132e3246ebca4",
+          "implement-spec": "afbd1d06cec26eb69ef6c17eb4290535abda26f495d96579c6f1051fcc221144",
+          "improve-codebase-architecture": "69dd715a6ab6abd4bf663ab9a16cde5f8a4388c8262f78c8e8a64144edc22e1a",
+          "pr": "027d34a82cd77a4ca353e3a324cf1cd2ee57f85466bb4da88699f9e57a3d195c",
+          "prototype": "ae3834b0222c2b8b73221907bc9259f8a99274fca2ca9536afb0ae51d5151feb",
+          "research": "8490c8be6b5756df3e767171046260493db823e36e25e032da288f74e617b84f",
+          "retro": "c0fb9fd38c7805dc545935ae610c43a6bdd8cddf3b67ac70e9a8adabf48515a6",
+          "setup-matt-pocock-skills": "3510ff88fe4dfcded1acb4c5f237298ae6bff4f3ff40dc92f220e3476b7ccb65",
+          "tdd": "f7f68257a969b36d9de5267cd52cacbfdf65df55512751ed006a47ea0f3e33ba",
+          "teach": "021fbb68770b67e573460a8f33ccabfb6093e731ee7c0ffcf6de6abf0a6d3020",
+          "to-questionnaire": "9ef517ebb4ceebd79e91a1be6bb374fdf429cb82d34d86c91cd60d3d545651e0",
+          "to-spec": "737e111ae8e19765b58cb33ceacf081e471d1bd4a758e50182a7d2f02060d06c",
+          "to-tickets": "9114e562a4080088ccfa09405ec46571fca24c761023979cf79c82ecf1665202",
+          "triage": "0937990cf635760ce5a8879ac365325e9c06d6b6eba54046f2eb3d06c81102f7",
+          "wait-what": "8e010228e64f4bf9f72ab2d251ace5ee6e31ee0fa270defdc85f2353269d9bab",
+          "wayfinder": "c51e9bb43118570115de504a3ce23224db19367ec946c430cf8397790787b0af",
+          "wizard": "8a5fc7ebea74a33b0eefc19c5200579f4d8ba799aa347d9074054586532daa25",
+          "writing-for-agents": "764d178582565c68b7e3a805e041960a0c798c63bb62898f5f04757cb23ece6c"
+        }
+      }
+    }
+  }
+}

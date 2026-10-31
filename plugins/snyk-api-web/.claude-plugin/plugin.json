@@ -1,0 +1,5 @@
+{
+  "name": "snyk-api-web",
+  "version": "1.0.0",
+  "description": "Guides to set up Snyk API & Web scan targets, with logins, 2FA and logout checks."
+}

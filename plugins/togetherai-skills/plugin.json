@@ -1,0 +1,49 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "togetherai-skills",
+  "version": "1.0.0",
+  "description": "Guides for Together AI inference, fine-tuning, embeddings, images, video, audio and GPUs.",
+  "author": {
+    "name": "Together AI"
+  },
+  "homepage": "https://www.together.ai",
+  "license": "MIT",
+  "keywords": [
+    "together-ai",
+    "inference",
+    "fine-tuning",
+    "gpu",
+    "llm",
+    "embeddings",
+    "images",
+    "video",
+    "audio"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "togetherai-skills",
+        "commit": "644d38225bbdef0318462fe222f6f9883c8addcd",
+        "skills": {
+          "together-audio": "f9069dc34c6cd5038b6399a6499ce907a0cf3a447a707e444ddab67d44188c12",
+          "together-batch-inference": "365dcfb17f5edc7826d7cbd276c3926d9f1027439ad47dfef0cb04af4b63cbeb",
+          "together-chat-completions": "12fabd2391d9780eb023749d9dfb19cbdc0df8760e224d985bbc147eb4c6b13d",
+          "together-dedicated-containers": "1652e29f664a440b7c402a3b7d712a30aa2f2230d9673f06b62dc75adbeaff4f",
+          "together-dedicated-model-inference": "013a3afec547eb2b739450f24951a1f25f6d03b23700b291918729118af0c9e4",
+          "together-embeddings": "c962623ac8f486b1555824aa644f7f769478134bf7e9a925ac950b3572980334",
+          "together-evaluations": "4a8adbf826ad9c192d073582617449257d79a3758e085e79029c3f2fe07872c0",
+          "together-fine-tuning": "7b77ab3834fd177a448cff0df470fcb50fd33cb0bc9c3605de957efc47945a02",
+          "together-gpu-clusters": "4b0a87ce72c8ff2241ccdef90daffa2a1327c903b6c961ee75351408f1e11816",
+          "together-images": "429fd4933b66e67b9bf29b4756594ff4caedcc5429f7f0424e8292c6e73845c2",
+          "together-kueue": "6f49d772225a5f9a89d2e31975732646f2ef432e3dd4a6ac0c5368c6f894d29f",
+          "together-sandboxes": "9ea53346b899fb05e28e900d3c8f94ccebbc68d5c3cbedf631ba7c1161089c8a",
+          "together-video": "873898ade4c41ee43307ca58353a8b7eb640fbde856a68c9813a335ced63b312",
+          "together-volcano": "1d2f0788ef9afa94ca38d7b0d3916073a4c470ea3a5e75f03cb0aafb6b0a0ae4"
+        }
+      }
+    }
+  }
+}

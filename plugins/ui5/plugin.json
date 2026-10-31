@@ -1,0 +1,45 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "ui5",
+  "version": "1.0.0",
+  "description": "Guides for SAPUI5 best practices: tests, accessibility, tables, smart controls and cards.",
+  "author": {
+    "name": "SAP SE"
+  },
+  "homepage": "https://github.com/UI5/plugins-coding-agents",
+  "license": "Apache-2.0",
+  "keywords": [
+    "sap",
+    "ui5",
+    "sapui5",
+    "openui5",
+    "opa5",
+    "qunit",
+    "plugin",
+    "linter",
+    "api-documentation",
+    "development-guidelines",
+    "best-practices"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "ui5",
+        "commit": "a99b882ce364ef4b9f52fb4054f5f410c1636563",
+        "skills": {
+          "ui5-best-practices": "6803a91be83e15aa08467be863ee5caf8cb5bbec03eaccc241c6ce534b3e4c09",
+          "ui5-best-practices-accessibility": "01de9a9d23bac9ca8a39304f4cf8293ea447eed0aa1488333caaef953c18c698",
+          "ui5-best-practices-integration-cards": "f1e386df291cd5f43b3ebdf8936ca79383f6818b17f132da88468785a8c8bbea",
+          "ui5-best-practices-mdc": "269e27acc753c00338084ab1b915d7cac336e6b7608992e85893f44a40d40d28",
+          "ui5-best-practices-opa5": "a7cdba35c0193ff3ffb83f3db46fe6f2c218f9a464e3223a098a5bd17081440a",
+          "ui5-best-practices-qunit": "a1cc3829cf45aef4df1e4cbf78ab0876a04c1c0712db1080cde6f59b2a743423",
+          "ui5-best-practices-smart-controls": "72ca0034c6cd0d8a7784513c5ada6d264905ee0f966570c095ddfc6c46246284",
+          "ui5-best-practices-tables": "19981ee5cb46e80929c3b05a6ec1ccf929a40dbfd6e710ab52230f3e6f05bb7c"
+        }
+      }
+    }
+  }
+}

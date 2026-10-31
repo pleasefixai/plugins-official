@@ -1,0 +1,33 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "superagent",
+  "version": "1.0.0",
+  "description": "Guides to set up Superagent Context Guardrails, findings, red-team reports and webhooks.",
+  "author": {
+    "name": "Superagent"
+  },
+  "homepage": "https://superagent.sh",
+  "license": "MIT",
+  "keywords": [
+    "security",
+    "mcp",
+    "red-team",
+    "context-guardrails",
+    "contributor-trust",
+    "runtime-guardrails"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "superagent",
+        "commit": "835e81053fd21abc8e7974235d570acf72ceedd1",
+        "skills": {
+          "superagent": "2a0d2d428464f4228a9a41892842f6aba9e23d59309a8f2db3428ac648e15da6"
+        }
+      }
+    }
+  }
+}

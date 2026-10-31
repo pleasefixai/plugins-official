@@ -1,0 +1,41 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "gsap-skills",
+  "version": "1.0.0",
+  "description": "Guides to build GSAP animations: tweens, timelines, ScrollTrigger, SplitText and React.",
+  "author": {
+    "name": "GSAP"
+  },
+  "homepage": "https://gsap.com/",
+  "license": "MIT",
+  "keywords": [
+    "gsap",
+    "greensock",
+    "javascript animation",
+    "scrolltrigger",
+    "timeline",
+    "react animation",
+    "web animation"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "gsap-skills",
+        "commit": "aed9cfd3277740755f6bfc1155c7aa645403b760",
+        "skills": {
+          "gsap-core": "54ea04b61bcdfe19bf09620f032a801c3ff11fdde2fd9270e7f7a5f484cdd8f5",
+          "gsap-frameworks": "2d9d52c4d97f4f41c8260febc151dfb3db2f28fed6a07cd07f4481022151b68b",
+          "gsap-performance": "ae9bfd168e3385ea47ed2c0a214272d1ac821580ea9dc996674dbbe0dfd0a93f",
+          "gsap-plugins": "53f97dcc40f530b8127ea2052d2d86387598154f7b66ff3c571d983fcb4dda18",
+          "gsap-react": "462bf98687e2e404b99e6eb319c389427e91261b02887a2e99989d58c94dfe5f",
+          "gsap-scrolltrigger": "b1997611820c8b7fdac73312492b1af00308649af0e5ca3426ef905f1903a98d",
+          "gsap-timeline": "8f298b6e82151cf937ff7f94e2fb1a0cd505fc7f498f8dfbac3368f7cffef274",
+          "gsap-utils": "c020319818c823ad19766a142c300d0b2ae644dd3fd685b09cf7a0d069edf67b"
+        }
+      }
+    }
+  }
+}

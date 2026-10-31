@@ -1,0 +1,30 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "netsuite-ai-companion",
+  "version": "1.0.0",
+  "description": "Guides to query NetSuite safely: tool order, SuiteQL checks, subsidiaries and currencies.",
+  "author": {
+    "name": "Oracle NetSuite"
+  },
+  "homepage": "https://github.com/oracle/netsuite-suitecloud-sdk/tree/ai-plugins-dist/anthropic/netsuite-ai-companion",
+  "license": "The Universal Permissive License (UPL), Version 1.0",
+  "keywords": [
+    "netsuite",
+    "aiconnector",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "netsuite-ai-companion",
+        "commit": "23793a10a9bb557c684c5cb8a97f926eb3463f12",
+        "skills": {
+          "netsuite-ai-connector-instructions": "f6b101a8e66b443bbc926101e7c1e6a98e7483b20ab9e9bad46dba6edc90adc8"
+        }
+      }
+    }
+  }
+}

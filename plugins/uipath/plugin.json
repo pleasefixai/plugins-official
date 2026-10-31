@@ -1,0 +1,77 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "uipath",
+  "version": "1.0.0",
+  "description": "Guides to build, test and deploy UiPath automations, agents, flows, apps and solutions.",
+  "author": {
+    "name": "UiPath"
+  },
+  "homepage": "https://www.uipath.com/",
+  "license": "MIT",
+  "keywords": [
+    "uipath",
+    "automation",
+    "rpa",
+    "workflows",
+    "skills",
+    "code",
+    "xaml",
+    "studio",
+    "ui-automation",
+    "ui-testing",
+    "desktop",
+    "browser",
+    "coded-apps",
+    "coded-agents",
+    "agent",
+    "troubleshoot",
+    "webapp",
+    "nupkg",
+    "langgraph",
+    "llamaindex",
+    "openai-agents"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "uipath",
+        "commit": "f18c98ab4bdc52da33958bd559230a8762e563a6",
+        "skills": {
+          "uipath-activity-migrator": "35eb5134ca9e74ed2a66297ddb21f9728fe6a920b6e6756e9243e3341f2be83f",
+          "uipath-admin": "0319c85af865a72c8a522253d5f307367aca79de91df9650f79a96d59ba8bcfd",
+          "uipath-agents": "1754b46fa272750aaec60a6ee9bd57e3f8f9f32b50c150f767f4db273a0ec74a",
+          "uipath-aops": "b894137b51bf6542c0dfc2814c70be3646d95c02470fd2020ffa1787cdb833e9",
+          "uipath-api-workflow": "4abe85a4440d7dbd0dc9b6f292e66e36da55e8276b22584210240f471135629c",
+          "uipath-automation-discovery": "4e70ab2b387405186a6ce62e2913e278613dc1a06c4270eebd29595fc94d7813",
+          "uipath-automationhub": "5466b0a9961417bba1978f5cc4a109b7ebe5dafd2bbb9b5fe2877656ed498cc1",
+          "uipath-coded-apps": "e0ae5823bf708283801011b29afe63418220e08d12ad393d4ebbc1f6a5ed097e",
+          "uipath-connector-builder": "7929d93a1f6f45e2490b1301414db358167db88607a0ea72ab175445f6a4081a",
+          "uipath-feedback": "0e0103f694ceed684aaf5801cf6ff2e3c1faf265d4ecac0872b7a641efbfd61b",
+          "uipath-functions": "d1b0e225d284250b6efda2676ca148cb4d993d187ce1409b304b0ff26d7accfa",
+          "uipath-governance": "3c7f275f4b43bd8137a35bd541e985ee48eb811dcfb2abc1740bb64f253b6a67",
+          "uipath-human-in-the-loop": "e63a978cc58a05a21859c8151d86cc5d686877a8aaac4941fffbb883324edd8c",
+          "uipath-insights": "c2bd5531d4f6f213df64fd36ae25f661101426130eb0c617f2a03a6764223892",
+          "uipath-ixp": "41670e70255bb5d88c4ead586adb130e3d236e7b56293399a3359e68260fd1dc",
+          "uipath-knowledge-bundles": "b4b9f6a4f7ea707c741d64bfbe2696aae3ba36bfbebabf40a780b9b14a4d6f7b",
+          "uipath-maestro-bpmn": "73ea5d76d858b5a5e4f1a2df40618a53b993c4b811ea8b2fd3262e8410ea2b80",
+          "uipath-maestro-case": "fa4b357f8e0976bdc1f31514cee476f5bd583e1258eaff3a8263a098ed2746b5",
+          "uipath-maestro-flow": "05af30cd6f6d46d533bcb8827564691969ffaab6a619f748d6dc9a06f81904ce",
+          "uipath-mcp-servers": "d2db354e6864fc1d55dde4b76aff7ef46e340c12d3cc2dc17cc9ec0748651cff",
+          "uipath-planner": "dae30c09342ad403ba069cdcb89b28f12600d57e59a73e680ae9f239daf73029",
+          "uipath-platform": "df651d593437be7441056d68ac38b53859a3876f3f82a816fae35010cea08c31",
+          "uipath-process-mining": "a0ea9f27ccd60a4dda7ddac929345e3e3be9b989a7d48e8ac6817a8bfb10599f",
+          "uipath-review": "71e9f1a193d17884f930ed547410598e6460440f70d6447e15709d59c0f8a1db",
+          "uipath-rpa": "fd9fed47f4bb1b3412921b075f5b11c301e31d0b2218e241d449c3de0a45baee",
+          "uipath-rules": "742032c9c8d7971804e02df3d3f21388b3ff724a8833a0d0b30d7c4acc1e13cc",
+          "uipath-solution": "d09f7eca9633a9799895ef0521e3bd884d815fea2c0862321206fd00c8c84463",
+          "uipath-tasks": "22db67cf9e45c641fe516e2d72800db44e5cd76a5f9f599c38f3f1679ee62945",
+          "uipath-test": "27e2c9b20d3a6f4ee7b1d2efd4bfd6dd6e336fbe90335c32f196d03a8c676b81",
+          "uipath-troubleshoot": "e010c75cf41b8bc21159719ea94c26bea0acb7724b89f8b09a31e7bc91744e1e"
+        }
+      }
+    }
+  }
+}

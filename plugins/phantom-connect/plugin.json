@@ -1,0 +1,39 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "phantom-connect",
+  "version": "1.0.0",
+  "description": "Guides to add Phantom wallets to apps: social login, signing and Solana transfers.",
+  "author": {
+    "name": "Phantom"
+  },
+  "homepage": "https://phantom.com",
+  "license": "MIT",
+  "keywords": [
+    "phantom",
+    "solana",
+    "wallet",
+    "web3",
+    "connect"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "phantom-connect",
+        "commit": "4162aa88131f0a6b6f0c050b176736f0773d038c",
+        "skills": {
+          "add-social-login": "84c07299ef4503943e02b049317b94aaaa3aea56f563a8b097e4313938475451",
+          "phantom-connect": "81b5e7d7095221ebc8dd42b8df8feeb09f60f57ec0140bee851bf2f5a0dc100f",
+          "phantom-wallet-mcp": "722bf8eb722d6d6f9ba5fc66f2e55db8eeec7897a4920760b080f0f6141cfeb3",
+          "send-sol-transaction": "f5864e2ba3cd65b111161de811f785816500f2305678ac2598056be470ac837d",
+          "setup-browser-app": "a61700eb986a7da472eed5cf2ed175f93aebf9537d54575383b7a3399d056b77",
+          "setup-react-app": "1180f42bd66fd3fc044d08f4a84225447ddb6c11839e3102c91524d33d46dc15",
+          "setup-react-native-app": "d1baa82cb99744cb4f82eeb78d14991507e1244cf2db1ccfdea4948276a6a179",
+          "sign-message": "d1af46ccebf7a8f91ce95807cafb58e0d1849703be49c05348b29bb6f0a16952"
+        }
+      }
+    }
+  }
+}

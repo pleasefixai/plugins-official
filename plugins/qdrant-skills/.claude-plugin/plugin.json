@@ -1,0 +1,5 @@
+{
+  "name": "qdrant-skills",
+  "version": "1.0.0",
+  "description": "Guides to deploy, size, scale, tune, monitor and upgrade Qdrant vector search."
+}

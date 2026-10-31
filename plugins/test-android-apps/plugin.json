@@ -1,0 +1,40 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "test-android-apps",
+  "version": "1.0.0",
+  "description": "Guides to test Android apps in an emulator, with screenshots, UI trees, logs and profiles.",
+  "author": {
+    "name": "OpenAI"
+  },
+  "homepage": "https://github.com/openai/plugins",
+  "license": "MIT",
+  "keywords": [
+    "android",
+    "adb",
+    "emulator",
+    "qa",
+    "logcat",
+    "uiautomator",
+    "performance",
+    "simpleperf",
+    "perfetto",
+    "memory",
+    "leaks",
+    "heap"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "codex",
+        "plugin": "test-android-apps",
+        "commit": "0722921d5542fc593105c27bd52630babd8b8c2a",
+        "skills": {
+          "android-emulator-qa": "379a5ebff97c3bb25b6f3d58fa4deb59199811b5ba6ada7c4f3d6afdbf19453d",
+          "android-performance": "ce12d09895b99fc4b204ed0cd832338d91c1f7638412fbc586eb6bf214dfdfd5"
+        }
+      }
+    }
+  }
+}

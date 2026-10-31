@@ -1,0 +1,5 @@
+{
+  "name": "nightvision",
+  "version": "1.0.0",
+  "description": "Guides to scan web apps and APIs with NightVision: targets, scans, findings and CI/CD."
+}

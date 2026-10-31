@@ -1,0 +1,32 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "pydantic-ai",
+  "version": "1.0.0",
+  "description": "Guides to write Pydantic AI agents and migrate from LangChain, OpenAI Agents and others.",
+  "author": {
+    "name": "Pydantic"
+  },
+  "homepage": "https://github.com/pydantic/skills/tree/main/plugins/ai",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "pydantic-ai",
+        "commit": "238d97102650c1caa51f35027aee13c469c59542",
+        "skills": {
+          "building-pydantic-ai-agents": "024fad2ec778f65752c7afc7f69418b27141d2fa56371629cd41e66b4294d1e5",
+          "migrating-agno-to-pydantic-ai": "d53dc60deede8faa3c67c26103dccaa220617672bf24f0c1a0658d55ae209870",
+          "migrating-claude-agent-sdk-to-pydantic-ai": "9a1f87ad9772e6e63f52482abc6d4f1a4c52ec054193caf26f4bb85b87aa1121",
+          "migrating-google-adk-to-pydantic-ai": "bf3d1995a51ff6a8b4ebaf7c06a7de5a13ee04ee8d6dc34e74eb19bad2c9efd3",
+          "migrating-langchain-to-pydantic-ai": "b84ae1759592cf5cd7f155a2079e3b1c75e10302b3e020e274a5d9155829f2f4",
+          "migrating-mastra-to-pydantic-ai": "2e44c1549b199da8d1e5fb05861425679bde0b406697a877ff52ad74717caf52",
+          "migrating-openai-agents-sdk-to-pydantic-ai": "7c106a3ee948713361f48d857764bf622570ab6dc97e98e7d08f0c37c47ed952",
+          "migrating-pi-to-pydantic-ai": "66741c32eedb69b20e940c7888e85790cc992ac95739410b4accc82d17dcef6c",
+          "migrating-vercel-ai-sdk-and-eve-to-pydantic-ai": "93f472b3e4d0e175e429946837f1c587fff44731b7af73b306c7b80905491981"
+        }
+      }
+    }
+  }
+}

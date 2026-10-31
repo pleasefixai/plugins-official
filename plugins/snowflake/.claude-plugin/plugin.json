@@ -1,0 +1,5 @@
+{
+  "name": "snowflake",
+  "version": "1.0.0",
+  "description": "Guides to connect a Snowflake-managed server for Cortex Search, Cortex Analyst and SQL."
+}

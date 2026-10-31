@@ -1,0 +1,5 @@
+{
+  "name": "snyk-secure-development",
+  "version": "1.0.0",
+  "description": "Guides to choose secure, healthy open-source packages with Snyk package health checks."
+}

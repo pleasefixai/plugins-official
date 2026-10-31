@@ -1,0 +1,66 @@
+---
+name: analytics
+description: Chart GrowthBook product data, build Analytics dashboards, manage the metric catalog, or query the warehouse directly — run Product Analytics explorations, save charts together on a dashboard, search metrics and fact tables, create fact metrics and their fact tables, or fall back to ad-hoc SQL. Use for "show me signups by country", "chart daily active users", "how many orders last week", "build me a dashboard", "put these metrics on a dashboard", "add a chart to this dashboard", "set up reporting for X", "find our revenue metric", "what fact tables exist", "create a metric", "define a metric on the orders table", "what tables contain user data", "run a SQL query", or any "show me / chart / plot / how many" question about product data. For an A/B test's results or choosing experiment metrics, use experiments. For feature flags, use feature-flags. For first-time API key configuration, use gb-setup.
+allowed-tools: Bash(<this skill's folder>/scripts/gb-call *), Bash(sleep *)
+---
+
+# analytics
+
+Domain router for GrowthBook Product Analytics, Analytics dashboards, and the metric catalog. The workflows live in `references/`. Read this router, pick one, then read that file and follow it.
+
+Analytics uses the **v1 API** — `/api/v1/product-analytics/search`, `/columns`, and `/column-values` for discovery, the metric, fact-table, data-source, and funnel `/api/v1/product-analytics/*-exploration` endpoints for charts, `/api/v1/product-analytics/explorations/:id` for polling, `/dashboards` for saved pages of charts (except create, which is `POST /api/v2/dashboards`; the v1 create is deprecated), and `/fact-metrics` and `/fact-tables` for the catalog. The API also exposes SQL explorations, but this skill does not construct or execute arbitrary SQL exploration payloads.
+
+All API calls go through the bundled helper. Under the Claude Code plugin install, it lives at `<this skill's folder>/scripts/gb-call` (the plugin root). Under `npx skills install`, it lives at `scripts/gb-call` relative to this skill's directory. Resolve that path once and substitute it whenever a reference example says `gb-call`; do not assume `gb-call` is on `PATH`. It reads `GB_API_KEY` from the environment first, then falls back to `~/.config/growthbook/.env` (written by **gb-setup**); environment variables take precedence.
+
+When a workflow needs to construct a GrowthBook UI link from a root-relative path, a shell-capable runtime should call `gb-call app-origin` once per conversation, retain the returned trusted origin across workflow and domain handoffs, and prepend it to each path. If the origin is already in context, reuse it; do not call the command once per link. Embedded or MCP adapters that already know their trusted app origin may resolve paths directly. Never derive an app origin from `GB_API_URL`; if `app-origin` refuses because self-hosted configuration is incomplete, route to **gb-setup**. API-returned `explorationUrl` values are already complete and must be used unchanged.
+
+## Pick a workflow
+
+| Read this                         | When the user wants to                                                                                                      |
+| --------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| `references/metric-search.md`     | Browse, find, or audit metrics and fact tables — inventory, a specific definition, or "what can I chart" triage (read-only) |
+| `references/metric-create.md`     | Create a fact metric, creating its underlying fact table first when necessary (writes configuration)                       |
+| `references/analytics-explore.md` | Actually run a chart and report the numbers plus a deep link                                                                |
+| `references/dashboard-create.md`  | Build a new dashboard — several charts saved together on one page (writes a dashboard)                                     |
+| `references/dashboard-edit.md`    | Change a dashboard that already exists: add or remove a chart, swap a metric, change the timeframe, rename it               |
+| `references/sql-query.md`         | Run ad-hoc SQL against the warehouse when no metric or exploration can answer the question (last resort)                     |
+
+When the user names a metric you have not resolved yet, read `metric-search.md` first. It hands `analytics-explore` or `metric-create` a stable definition. When they already named something concrete and just want the numbers, go straight to `analytics-explore.md`.
+
+One chart or several? A single question gets one chart from `analytics-explore`. "Track", "monitor", "reporting", or two or more things to watch together means a dashboard. Route on whether the dashboard exists: no id yet is `dashboard-create`, an id is `dashboard-edit`.
+
+Use `sql-query.md` only when the question can't be answered with existing metrics or the exploration config — custom joins, unmodeled tables, or aggregations the exploration can't express.
+
+## Shared conventions
+
+- **Only fact metrics chart.** `fact__...` ids work in Product Analytics; legacy `met_...` metrics from `/api/v1/metrics` are valid experiment metrics but cannot be charted. Never promise a chart for one.
+- **Explorations are datasource-scoped, and the datasource must be a SQL warehouse.** Mixpanel and Google Analytics datasources can't run explorations.
+- **Pass ids, not display names, between workflows.** Names aren't unique. Fact metric ids always start `fact__`; fact table ids default to `ftb_...` but can be custom, so don't filter on that prefix.
+- **Every id comes from a lookup or from the user's `@` mention — never construct one.** Some are readable (`fact__demo-d7-purchase-retention`) and invite a guess like `fact__AverageOrderValue`; those resolve to nothing, and the failure surfaces late and obscurely.
+- **Discover before constructing.** Use Product Analytics search and columns, and call column-values before using any concrete filter or breakdown value. Never guess a value.
+- **Check before creating.** Prefer an existing `official: true` metric over adding a duplicate with the same meaning.
+- **A `200` from an exploration POST is not necessarily success.** Branch on `exploration.status`; poll `running` explorations by id, surface `error`, and note that `cache=required` can return `exploration: null`.
+- **Handle workflow-endpoint 404s conservatively.** A 404 from `/product-analytics/search` means the server predates these endpoints. On `/columns`, `/column-values`, or `/explorations/:id`, it can also mean the resource is missing or inaccessible. Surface the failure and stop; never probe around access checks, substitute an undocumented endpoint, or re-POST a running exploration.
+- **Use the returned full result rows for numeric insights.** Do not infer values from a chart preview, truncated summary, or config.
+- **Run at most one successful chart per user turn.** Discovery, polling, and one empty-result retry are allowed; once one non-empty exploration succeeds, answer from it unless the user explicitly asks for another chart in a later turn.
+- **Always set `unit` explicitly** on every `dataset.values[]` entry — that is the only level that takes one; a `unit` on the config itself is rejected. For metrics, follow `/columns` exactly: when `metrics[].needsUnit` is true, choose a returned `userIdTypes` entry; when it is false, default to `null`. A unit is an **identifier type**, never a value format such as `currency`. The server does not backfill a missing unit.
+- **A date range's `predefined` is a closed list**, everywhere one appears: `today`, `yesterday`, `last7Days`, `last30Days`, `last90Days`, `last12Months`, `lastCalendarYear`, `customLookback`, `customDateRange`. Any other name is rejected, so every window outside the list is `customLookback` with `lookbackValue` and `lookbackUnit` (`hour`, `day`, `week`, `month`).
+- **`dimensionType` is a closed set**, and `"dimension"` is not in it: `date`, `dynamic`, `static`, `slice`. Only the first two are supported — a date axis is `{ "dimensionType": "date", "column": null, "dateGranularity": "auto" }` and a breakdown by column is `{ "dimensionType": "dynamic", "column": "browser", "maxValues": 5 }`. Naming the field after what you want to group by is the guess the validator rejects.
+- **Never re-send a rejected call unchanged.** A 400 is deterministic: the same body gets the same error, so a retry that has not changed the field the message names only spends the user's turn. Read `body.message`, fix exactly what it names, and send it once more. If the message does not say what a valid value would be, or the same field is rejected twice, stop there — say which field failed and what you tried, and ask the user rather than guessing a third time. Ask about **that field**: a validation error names the field it rejected, and a question about a different one (a column name, a metric choice) cannot resolve it, so the answer arrives and the same call fails again.
+- **Restyling a chart is free.** Cache matching ignores `chartType`, so a different chart type on the same query is a cache hit. Never re-query just to restyle.
+- **A dashboard's chart blocks carry a `config`, not a result.** The create and update calls run every chart server-side, so never POST an exploration first just to get an id for a tile.
+- **An update replaces a dashboard's whole block list.** Read the dashboard in the same turn you write it, and list every tile being kept — but carry an unchanged one as `{ "id": "dshblk_…" }` rather than copying it back in full, and list each id at most once.
+- **A dashboard's `owner` changes only when the user asks.** Create on `POST /api/v2/dashboards` without `owner`, which defaults to the API key's user, unless the user names someone else. Never put `owner` or `ownerEmail` in an update body unless the user asked to reassign the dashboard. For an admin, a stray `owner` silently hands the dashboard to someone else.
+- **Dashboards are not scoped to a datasource** the way metrics and explorations are, but every chart on one is.
+
+## Read-only vs. write
+
+`metric-search` is strictly read-only. `analytics-explore` runs warehouse queries but changes no GrowthBook configuration — it does not create metrics, fact tables, or dashboards. `sql-query` is similar: it never mutates warehouse data, but it executes potentially costly queries and persists a GrowthBook exploration object from the results. `metric-create` writes organization-visible fact-table and fact-metric definitions, and `dashboard-create` / `dashboard-edit` write dashboards; all three must summarize the change in plain language and get confirmation before each write.
+
+Note that explorations execute real warehouse queries, so they cost the user money and time even though they write nothing — and a dashboard write runs one per chart block. Scope them the way the reference files describe rather than fanning out speculatively.
+
+## Handoffs
+
+- The **experiments** skill — when the question is an A/B test readout, or when a chart surfaces something worth testing.
+- The **feature-flags** skill — when the user pivots to shipping or gating the thing the data is about.
+- **gb-setup** — when `gb-call` reports a missing or invalid `GB_API_KEY`.

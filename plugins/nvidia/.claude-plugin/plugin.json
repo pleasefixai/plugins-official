@@ -1,0 +1,5 @@
+{
+  "name": "nvidia",
+  "version": "1.0.0",
+  "description": "Guides for NVIDIA AI-Q research, cuOpt, Dynamo serving, NemoClaw and Omniverse USD."
+}

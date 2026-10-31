@@ -1,0 +1,120 @@
+---
+name: kraken-mcp-integration
+version: 1.0.0
+description: "Connect kraken-cli as an MCP server for native tool calling without subprocess wrappers."
+metadata:
+  openclaw:
+    category: "finance"
+  requires:
+    bins: ["kraken"]
+---
+
+# kraken-mcp-integration
+
+Use this skill to connect `kraken-cli` as an MCP server for structured tool calling over stdio.
+
+MCP tool calls execute through the same command path as CLI commands, so error handling and rate-limit behavior is identical between MCP and CLI.
+
+## Setup
+
+### 1. Add the server
+
+Ask the user to add `kraken` as a custom server in Settings:
+
+- Command: `kraken`
+- Arguments: `mcp -s market,paper,feedback`
+
+`-s market,paper,feedback` is the default service list: public market data, paper
+trading, and the local feedback tool. No real funds can be touched until you opt in explicitly by
+expanding the service list. See [Enabling live trading](#enabling-live-trading)
+below.
+
+Credential resolution follows the standard CLI precedence: command-line
+flags, then `KRAKEN_API_KEY` / `KRAKEN_API_SECRET` in the server's environment
+variables, then a secure local config file managed by the CLI (written by
+`kraken auth set` and `kraken setup`, stored with user-only permissions in
+your OS's standard config directory). The MCP server and the standalone CLI
+share the same config file, so a single `kraken auth set` serves both.
+
+### 2. Set credentials (only needed for live trading)
+
+If you stay on `market,paper,feedback`, skip this step — paper trading needs no keys.
+
+For live trading, the MCP server reads credentials from environment variables:
+
+```bash
+export KRAKEN_API_KEY="your-key"
+export KRAKEN_API_SECRET="your-secret"
+```
+
+### 3. Start a new session
+
+Tools are discovered when a session starts.
+
+## Service Filtering
+
+Control which command groups the MCP server exposes:
+
+```bash
+kraken mcp -s market                    # public data only (safe, no auth)
+kraken mcp -s market,paper,feedback              # market data + paper trading (marketplace default)
+kraken mcp -s market,trade,paper        # add live trading
+kraken mcp -s market,account,trade      # add account queries and live trading
+kraken mcp -s all                       # everything (many tools, includes funding/earn/subaccount)
+```
+
+Keep the service list to what you need. MCP clients typically handle 50-100 tools well.
+
+| Service | Auth | Tools | Risk |
+|---------|------|-------|------|
+| market | No | ~10 | None |
+| account | Yes | ~18 | Read-only |
+| trade | Yes | ~9 | Orders (dangerous) |
+| funding | Yes | ~10 | Withdrawals (dangerous) |
+| earn | Yes | ~6 | Staking (dangerous) |
+| subaccount | Yes | ~2 | Transfers (dangerous) |
+| futures | Mixed | ~39 | Orders (dangerous) |
+| paper | No | ~10 | None (simulation) |
+| auth | No | ~3 | Read-only (auth set/auth reset excluded) |
+
+## Enabling live trading
+
+Every `kraken-cli` marketplace listing ships with `-s market,paper,feedback` by default,
+so a fresh install can never place a real order. To opt in to live trading,
+change the custom server's arguments in Settings to widen the service list, and
+add the credentials as its environment variables:
+
+- Arguments: `mcp -s market,trade,paper`
+- Environment: `KRAKEN_API_KEY="your-key"`, `KRAKEN_API_SECRET="your-secret"`
+
+Recommended upgrade path:
+
+1. Start with `market,paper,feedback` (the default).
+2. Add `trade` once you are comfortable and have an API key scoped to orders
+   only. See the "Recommended key scope" section of the `kraken-cli:kraken-setup` skill
+   before generating a key.
+3. Add `account` if you want the agent to read balances and positions.
+4. Only enable `funding`, `earn`, `subaccount`, or `all` if you specifically
+   need those workflows. Each of these unlocks tools that can move funds off
+   the exchange or alter account structure.
+
+Switching to `-s all` expands the set of tools the agent can reach by
+prompt-injection or mistake. Prefer a narrow list and widen it deliberately.
+
+## Safety
+
+Dangerous tools include `[DANGEROUS: requires human confirmation]` in their description and carry the MCP `destructive_hint` annotation. In guarded mode (default), calls must include `acknowledged=true`. In autonomous mode (`--allow-dangerous`), the per-call confirmation is disabled. MCP clients that respect annotations may still prompt at the client layer.
+
+For fully autonomous operation, see the `kraken-cli:kraken-autonomy-levels` skill.
+
+## Troubleshooting
+
+**"No tools found"**: Check that `kraken` is on your PATH and the service list is valid. Run `kraken mcp -s market` manually to verify it starts.
+
+**Auth errors on tool calls**: Set `KRAKEN_API_KEY` and `KRAKEN_API_SECRET` as environment variables of the custom server in Settings, or run `kraken auth set`.
+
+**Too many tools**: Reduce the service list. `kraken mcp -s market,trade` is a good starting point.
+
+**Streaming commands not available**: WebSocket streaming commands are excluded from MCP v1. Use `kraken ws ...` directly from the terminal for streaming.
+
+If you hit a mismatch between what you are trying to do and the CLI's interface or responses — including a mismatch between this skill and the installed CLI version's contract — feel free to submit feedback with `kraken feedback`.

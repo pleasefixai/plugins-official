@@ -1,0 +1,30 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "plugin-dev",
+  "version": "1.0.0",
+  "description": "Guides to build add-ons for your CLI: agents, skills, commands, hooks and settings.",
+  "author": {
+    "name": "Anthropic"
+  },
+  "homepage": "https://github.com/anthropics/claude-plugins-public/tree/main/plugins/plugin-dev",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "plugin-dev",
+        "commit": "a7ba5b93db0c7c8d17f3f1d25853adca79598a1a",
+        "skills": {
+          "agent-development": "34ac2cce425050cfb88fa3af05ad0c9f78bc464b420a8715ff9f51b3fde25b2f",
+          "command-development": "246afcfbf68a2d10f9b54d574570f81205f7d3967db295db756bd4f2a0d642b0",
+          "hook-development": "7a1be541e8d403adc13900149bdab1f3b55cac01126f80c04cfadc8002f6d93b",
+          "mcp-integration": "11b670f668623128f75c45f474b595429b750e435d9fb45d785a0bfad8bb2496",
+          "plugin-settings": "b176f436f4a41b1ee7a0376747c949cf657bd230a081c14731d12eeb794b0096",
+          "plugin-structure": "ddc179e9c50ac2d08c0e6aaf0e7fef77a6fdbc74b0f579fdb4899b62c7bbde50",
+          "skill-development": "40958162ead267b19bb431754c653d37fdda869c2835f2457a3663a954ca4646"
+        }
+      }
+    }
+  }
+}

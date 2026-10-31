@@ -1,0 +1,36 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "mongodb",
+  "version": "1.0.0",
+  "description": "Guides to tune MongoDB client connections and to size Queryable Encryption.",
+  "author": {
+    "name": "MongoDB"
+  },
+  "homepage": "https://www.mongodb.com/docs/mcp-server/overview/",
+  "license": "Apache-2.0",
+  "keywords": [
+    "mongodb",
+    "database",
+    "mcp",
+    "vector-search"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "mongodb",
+        "commit": "c370a63b27075008a92134686b24af3817edeb00",
+        "skills": {
+          "mongodb-atlas-stream-processing": "e1f165b8108b0f2ec7a3339748dcc69f3deb6437a58a07150f130bf4a7a58b21",
+          "mongodb-connection": "b953bb28f0c8912525c31a4f5e2dbdb5fabb93f736fb0574a3c0842a447d79f4",
+          "mongodb-mcp-setup": "c08b0c9b7c0c1705fc99b6699f69b8ffa41267831b402ff4186ff1bfa686de6e",
+          "mongodb-qe-size-estimation": "6407967a2c4f070b2170b220130c527bf04fa7246f4740b6bda79a32c444406e",
+          "mongodb-query-optimizer": "fe6962ec2f5d553cebe9031d8e24a0461c39f433e6a62c61991d2cf935ed19d8",
+          "mongodb-search-and-ai": "80ac78872acde70becb169a7b409fd5ae80a57ecc1e3ae5c777628b60a1fd058"
+        }
+      }
+    }
+  }
+}

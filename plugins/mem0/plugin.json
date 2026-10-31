@@ -1,0 +1,47 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "mem0",
+  "version": "1.0.0",
+  "description": "Guides to save, find, review and export project memories in Mem0.",
+  "author": {
+    "name": "Mem0"
+  },
+  "homepage": "https://mem0.ai",
+  "license": "Apache-2.0",
+  "keywords": [
+    "mem0",
+    "memory",
+    "mcp",
+    "personalization",
+    "semantic-search",
+    "persistence"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "mem0",
+        "commit": "965140eb190bf390979d41bb6ffff12c0b02e70b",
+        "skills": {
+          "context-loader": "cf5bf62b4a0de056b753e9e41d6e89e9e4c82753e7e59d06b45c029a0dc7ccdf",
+          "dream": "51c372955f79315481fb7f75c1a13b3cff7a3c59f02911418616186ae47d3f44",
+          "export": "ef902a03028f8bfe3364beda43240072394216e748d67b26bd214b3cc5161a1d",
+          "forget": "719df1cce066ad3d3f2316001fd12ad0d17ef3dfaccc7c08a2b71322f00a64fd",
+          "health": "9fc29922319643202472cb9e4e0af7ebcff39894b16ef1709d39d2c0238e9c03",
+          "import": "9ba48d490b9bbd1bf68c0c4bc7e87ab91050e5cf06c2f91bbab3d2b5c05a8a80",
+          "list-projects": "3af4aaf5c5055a109631dd12cfb26e153e7e282aefe946fb7e43ac4b4cdfe813",
+          "mem0": "530dad228849d01a58e800e45419e1d76130dae7e8ba93d0950e57130765c5c4",
+          "memory-reviewer": "a3df69f7e77d5e954e89b66bb57aecf19c02c7b670aa5b4c5913244ffd44a9a8",
+          "peek": "9ba8b3958ed362a0032438d9a6119fe5bd273691c33f27c2896a381c031f434e",
+          "pin": "0cd3082ce21e3ba7dffd9f77ceaf5c3aa54e64b8c4cf7b76282850fe385d9d39",
+          "remember": "6e22c9a4e124c0722e73bb32a2686bba2cde3c2ba38d3683061ebfbed6aa777f",
+          "stats": "1f67cfa1b947af3e5e0f235fbbac9337f010830d2f63e65447213b99840e1dd8",
+          "switch-project": "876fbc4c6204e917ddf005e01ba6a0b66a67cb476da7edfc0edc59dc2f3d085c",
+          "tour": "2887918709c0445d05f45030a21d923f72b419c396a41b6cff3e73cfdf448f88"
+        }
+      }
+    }
+  }
+}

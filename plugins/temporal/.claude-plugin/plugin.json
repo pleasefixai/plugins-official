@@ -1,0 +1,5 @@
+{
+  "name": "temporal",
+  "version": "1.0.0",
+  "description": "Guides to build Temporal workflows and workers and run Temporal Server and Cloud."
+}

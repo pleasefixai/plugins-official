@@ -1,0 +1,35 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "stackhawk-api",
+  "version": "1.0.0",
+  "description": "Guides to report StackHawk findings, scan history and security posture of your apps.",
+  "author": {
+    "name": "StackHawk"
+  },
+  "homepage": "https://docs.stackhawk.com/ai-security/",
+  "license": "MIT",
+  "keywords": [
+    "security",
+    "appsec",
+    "stackhawk",
+    "api",
+    "reporting",
+    "findings",
+    "posture",
+    "triage"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "stackhawk-api",
+        "commit": "d0eea864c42f7c2e872334bb3df424daa1fbaadc",
+        "skills": {
+          "api": "be16c8a9c2f5c0e94ff60d7760a1fc5495dd5fa38812c778617bb5a0cbba39ec"
+        }
+      }
+    }
+  }
+}

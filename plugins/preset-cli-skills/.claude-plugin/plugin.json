@@ -1,0 +1,5 @@
+{
+  "name": "preset-cli-skills",
+  "version": "1.0.0",
+  "description": "Guides to script Preset charts, dashboards, datasets and users from the shell and CI/CD."
+}

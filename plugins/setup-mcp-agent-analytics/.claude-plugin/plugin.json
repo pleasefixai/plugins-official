@@ -1,0 +1,5 @@
+{
+  "name": "setup-mcp-agent-analytics",
+  "version": "1.0.0",
+  "description": "Guides to send the tool calls of your own tool servers to Pendo Agent Analytics."
+}

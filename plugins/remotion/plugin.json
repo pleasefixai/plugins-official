@@ -1,0 +1,47 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "remotion",
+  "version": "1.0.0",
+  "description": "Guides to create, animate, caption, preview and render videos in React with Remotion.",
+  "author": {
+    "name": "Remotion"
+  },
+  "homepage": "https://remotion.dev",
+  "license": "MIT",
+  "keywords": [
+    "remotion",
+    "video",
+    "react",
+    "animation",
+    "composition",
+    "rendering",
+    "ffmpeg",
+    "captions",
+    "audio"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "codex",
+        "plugin": "remotion",
+        "commit": "0722921d5542fc593105c27bd52630babd8b8c2a",
+        "skills": {
+          "remotion-best-practices": "d466ee38dd7a6d2dd2cc5cdb5cc07a2ed8453272b962449d305cefd3d828eb92",
+          "remotion-captions": "def35c833562e2197b040b2c5813aa17a1b73cfac3abecce75dc5c83f7b0fccd",
+          "remotion-create": "fbc7910133208d0bfb2592577a6e411748d84d26a29cf8568f84864e3c5271f6",
+          "remotion-docs": "3938c5443b1900885bd169bb2caccfb26cd924bc8467a11a0e2dc0abf0e97ac9",
+          "remotion-interactivity": "d02640e09af0ce04924448dd8a73d767d3854d633ad41a925a0cec9d42122c7d",
+          "remotion-maps": "1be56644d56cce38fc0efe8f485f52e3120222f2f0b6b3af099a3e79f211386f",
+          "remotion-markup": "ba889cc7263b4a8dd05d2e0ca3e52c84d254247ac1b7dbed08f8f76a650b0034",
+          "remotion-multimedia": "8061d059096ece99de7aa865a46a04c0edc53f8b9d9cc0b076eef32f088fdc9e",
+          "remotion-render": "d884138a2af54d8dbda20e54a139b0b36c13545ea68a59c182f742007aa50d87",
+          "remotion-saas": "10a3b02c241de5118e172db83bd5fd7935103a9bfbe40daa53c939aa5316046f",
+          "remotion-studio": "efcf8f60996040a3c19a477ada196978b767cdbfdc2c257aee01be15cab668e6",
+          "remotion-upgrade": "30fca8ecba2093c95b9ce242f3ee461357e4bc76c5e6e8e6e676fdb86173e166"
+        }
+      }
+    }
+  }
+}

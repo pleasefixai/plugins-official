@@ -1,0 +1,5 @@
+{
+  "name": "playground",
+  "version": "1.0.0",
+  "description": "Guides to build single-file HTML playgrounds with controls, a live preview and a prompt."
+}

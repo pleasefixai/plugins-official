@@ -1,0 +1,25 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "glean-dev-docs",
+  "version": "1.0.0",
+  "description": "Guides to search the Glean developer docs for APIs, SDKs, authentication and indexing.",
+  "author": {
+    "name": "Glean"
+  },
+  "homepage": "https://docs.glean.com/administration/platform/mcp/about",
+  "license": "MIT",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "glean-dev-docs",
+        "commit": "e3bbedb9eeb6df932e798c4a145b635ec0ae253e",
+        "skills": {
+          "dev-docs-guide": "da0f4cc55a951e179215f0a2ad8a68c662e7a0cf39438d1a4a9075bf7c653339"
+        }
+      }
+    }
+  }
+}

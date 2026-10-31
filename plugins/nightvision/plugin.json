@@ -1,0 +1,37 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "nightvision",
+  "version": "1.0.0",
+  "description": "Guides to scan web apps and APIs with NightVision: targets, scans, findings and CI/CD.",
+  "author": {
+    "name": "NightVision Engineering"
+  },
+  "homepage": "https://github.com/nvsecurity/nightvision-skills",
+  "license": "Apache-2.0",
+  "keywords": [
+    "dast",
+    "api-discovery",
+    "security-scanning",
+    "ci-cd",
+    "openapi",
+    "vulnerability-detection"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "nightvision",
+        "commit": "957db6bb934839275c0f643042101bbb675ddbf7",
+        "skills": {
+          "api-discovery": "d0ea753d6752918b6445e029ee785a6f9a2f7677be4eda1cbd173188031ddaa9",
+          "app-security-scan": "f1920f585ec5277d75cb3999cf051518b9a86ccd30bd45479111a7f7e13e2bb5",
+          "ci-cd-integration": "ddb64632164ec7e668e1f13d67a6a868de7f5113eb6fcec96edca9aca861de4f",
+          "scan-configuration": "e31736e583e4dc9255ddb0886ccfd3f7606b8024a3d8bc399ef392ce2ca759ff",
+          "scan-triage": "2fb94fc15e455fb9f573f93c863e72930c60fb41d0917ed52ee170341cfa6e82"
+        }
+      }
+    }
+  }
+}

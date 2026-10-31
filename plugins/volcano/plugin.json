@@ -1,0 +1,46 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "volcano",
+  "version": "1.0.0",
+  "description": "Guides to build and deploy apps on Volcano, with auth, database, storage and functions.",
+  "author": {
+    "name": "Kong"
+  },
+  "homepage": "https://volcano.dev",
+  "license": "Apache-2.0",
+  "keywords": [
+    "volcano",
+    "agents",
+    "serverless",
+    "deploy",
+    "cli"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "volcano",
+        "commit": "77b55df60cbae10efb40070a5b7304ee806d8c6e",
+        "skills": {
+          "install-volcano": "3bfb8f366f5c2db561d5241af5b39ee1808393b870f9f9d480dada32c4116c8e",
+          "volcano-auth": "36e71d0638543bd5f18bf9cc353856176b3e03683552ab4578b14de5b4d8ef8c",
+          "volcano-database": "9962e1c2fc3f9286c9ab88fe482df3a71bba5731c03d4a0c2fac05c93b8af428",
+          "volcano-durable": "2eb4296de61c796848806452093563f64212c70b326bafde358cd028aba9774c",
+          "volcano-error-handling": "4245142f722b2175aedeaf794dbaa2f3de70b610ca8dc8647cdb717b7ae672f6",
+          "volcano-functions": "eb7acdd4bb024604e0fdd9cfa90de828c94682a3aa3111d0c459af069e997540",
+          "volcano-locks": "acc190d42bf1562b0d7a9818cb48a0d8039bdc613a4bf7fa0e60ccc84b3fcb79",
+          "volcano-logs": "b4254ed796e39e08972375d5fbee16d658f22e9f46cd3b65b99b2bf2a5ab4311",
+          "volcano-nextjs": "da3c9946441af4cdc9d9f6be7cab6fbd054fa4417fb1fd3aecf98f25ecf6a5df",
+          "volcano-platform": "44d084c3cda38da555271ee883ca883928d987bdcfb38156aa16a2feca6603d3",
+          "volcano-realtime": "514fae00f0138a0b004530c409461e5b455c93e2dde8ea198472bbc6e7c4abd6",
+          "volcano-sdk": "53cfb2ad0f4c0e7cefc48b3c914414036740b2263fd2eb75da3f49db9be71c46",
+          "volcano-storage": "5a5f6c2059c72523ccd9ff4840d82c92f9476e9f3e4d56ef0b5e806ed1a99414",
+          "volcano-typescript": "7b58318a90470373281edf336a3545cf26762cc22034b77a43923c5db7053549",
+          "volcano-uiux": "a71b26081640c225e46cfcae9018f55499626cba5596051baae902adc3b416e1"
+        }
+      }
+    }
+  }
+}

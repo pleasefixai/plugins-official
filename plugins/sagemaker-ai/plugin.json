@@ -1,0 +1,54 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "sagemaker-ai",
+  "version": "1.0.0",
+  "description": "Guides to plan, fine-tune and evaluate models and debug HyperPod clusters on SageMaker AI.",
+  "author": {
+    "name": "Amazon Web Services"
+  },
+  "homepage": "https://github.com/awslabs/agent-plugins",
+  "license": "Apache-2.0",
+  "keywords": [
+    "sagemaker",
+    "machine-learning",
+    "generative-ai",
+    "fine-tuning",
+    "training",
+    "deployment",
+    "inference",
+    "mlops",
+    "aws"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "sagemaker-ai",
+        "commit": "097fe8ad56d8a1d5e2c81d7880adf145553cf244",
+        "skills": {
+          "dataset-evaluation": "de42dc1637616c09d07b80bd160f55c6fff239a1fce9314c2486844bf579e585",
+          "dataset-transformation": "5031a4d197211fbfcfd1739a14e00e7905b3bc55a3a95aae07cf62c61b1f8cdb",
+          "directory-management": "dd33c19aec3724066881eaa9340e3f3c6d066f1185a8b6ad6e0c579955c1b95e",
+          "finetuning": "f80b56dc607b018847d7608ed35d23bcf6bdcb1b68ec5a31cc6873926318948b",
+          "finetuning-technique": "657e65fb590a9fe37ebe9e25639d284bad6531ba44f69862cc54add40f54d112",
+          "hyperpod-cluster-debugger": "aaef9b6342cd4898f0b0d0debc27683dc96a8b46e886022116637a77ed66e380",
+          "hyperpod-issue-report": "1275545a8a37b4871026a0354856614bb0d3c940cb700ceae02d39952baf41fe",
+          "hyperpod-nccl": "3b8b556b701cda893588c0c4e4882a74248d894b3b294e8d32883e333c94f57c",
+          "hyperpod-node-debugger": "0f830bf1cf622cbbcf7f4f32f8ac8385463d719379dfd11fd5c63f79b6a1693a",
+          "hyperpod-performance-debugger": "f8f12d632b84f5b28e853fe88f3ff97b764870e77ee783ef472e9456a64b517f",
+          "hyperpod-slurm-debugger": "5f15b4748aef1057823c20e30576c0dad81b985c4c471c9f2f3a1e218876ecfe",
+          "hyperpod-ssm": "e6a52bc775442b985992649382e1139ca6e5b86fb7f9aa2da803e02dbc26cf68",
+          "hyperpod-version-checker": "afa197104278b112b341c997323ecc542bf7b9909ca8b47102453e1e18674850",
+          "model-deployment": "c7894c3bb1c52148c7f2a8db8645fca620cafabb7fb0ab03ab0dec116cb325d0",
+          "model-evaluation": "0d9d13b4cfa3010598b24316217a77117492f8d89c67179e1fe26d6bc92a084a",
+          "model-selection": "accb3e8c197a1ee89df8fb812893fca2056101860a46558ea5d473211c84a225",
+          "planning": "7bdd7fedb7d70e35585918b409fddb3b33d3ce1a742e93790990dab7e94b9355",
+          "sdk-getting-started": "881dd508e7a38923632ffd5c5a16cde3e8fb368a28de0a6f37ce5858d24525bb",
+          "use-case-specification": "1e365d9ae02e1e54d400ae76e7a5987a25df45ee2875be48050fc04646ccc1fe"
+        }
+      }
+    }
+  }
+}

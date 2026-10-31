@@ -1,0 +1,35 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "zotero",
+  "version": "1.0.0",
+  "description": "Guides to search a Zotero library, export BibTeX, insert citations and import references.",
+  "author": {
+    "name": "OpenAI"
+  },
+  "homepage": "https://github.com/openai/plugins",
+  "license": "MIT",
+  "keywords": [
+    "zotero",
+    "citations",
+    "bibliography",
+    "bibtex",
+    "references",
+    "research",
+    "papers",
+    "latex"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "codex",
+        "plugin": "zotero",
+        "commit": "0722921d5542fc593105c27bd52630babd8b8c2a",
+        "skills": {
+          "zotero": "e0d3e37829ded825a02c542592a8ecada255cad91f963b1a39edd75e9dd5722b"
+        }
+      }
+    }
+  }
+}

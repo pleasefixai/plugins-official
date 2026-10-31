@@ -1,0 +1,35 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "altimate-code",
+  "version": "1.0.0",
+  "description": "Guides to review dbt model, schema and macro changes with lineage checks in Altimate Code.",
+  "author": {
+    "name": "AltimateAI"
+  },
+  "homepage": "https://www.altimate.ai",
+  "license": "MIT",
+  "keywords": [
+    "dbt",
+    "sql",
+    "data-engineering",
+    "warehouse",
+    "snowflake",
+    "bigquery",
+    "databricks",
+    "column-lineage"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "altimate-code",
+        "commit": "b7c8f68b3dfd303ab3ccf2f43934098811dfe2aa",
+        "skills": {
+          "review": "6eb9ac86719f9ddccde643e41d2f831aa64aa39e4bd9b29c26bf28604f120469"
+        }
+      }
+    }
+  }
+}

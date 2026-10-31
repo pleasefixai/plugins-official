@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "coderabbit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to run CodeRabbit code reviews and fix the issues they find.",
   "author": {
     "name": "CodeRabbit AI"

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "linq",
+  "version": "1.0.0",
+  "description": "Guides to build iMessage, RCS and SMS messaging on Linq and keep line reputation healthy.",
+  "author": {
+    "name": "Linq"
+  },
+  "homepage": "https://linqapp.com",
+  "license": "MIT",
+  "keywords": [
+    "imessage",
+    "sms",
+    "rcs",
+    "messaging",
+    "linq",
+    "api",
+    "cli",
+    "webhooks",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "linq",
+        "commit": "5c019e3eb5da3108883591f4edf1e3743bf1e166",
+        "skills": {
+          "linq-best-practices": "ac3e1ccf0868e2602c0f3881903a9f350da0bac1677370864ec5dd6b355ba844",
+          "linq-build": "37f91c44bf419e0f8177af86cb9cfade66d752ac97e3219bed9f254c60be3f9b",
+          "linq-quickstart": "6c117157d16805da743d71e5a6bee579f245f6455a064d5ba2f5c7f97021377e",
+          "linq-reputation": "dd7d79104b16278d3557f6c122099bda608a7f88a1032bb063ff8895ac339ac8"
+        }
+      }
+    }
+  }
+}

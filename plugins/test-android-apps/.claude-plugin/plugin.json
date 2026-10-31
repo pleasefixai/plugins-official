@@ -1,0 +1,5 @@
+{
+  "name": "test-android-apps",
+  "version": "1.0.0",
+  "description": "Guides to test Android apps in an emulator, with screenshots, UI trees, logs and profiles."
+}

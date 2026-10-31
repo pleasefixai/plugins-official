@@ -1,0 +1,5 @@
+{
+  "name": "sonatype-cursor-plugin",
+  "version": "1.0.0",
+  "description": "Guides to check dependencies for risks and licenses and find safer versions with Sonatype."
+}

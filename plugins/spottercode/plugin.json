@@ -1,0 +1,27 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "spottercode",
+  "version": "1.0.0",
+  "description": "Guides to search ThoughtSpot developer docs for the Visual Embed SDK and REST API v2.",
+  "author": {
+    "name": "ThoughtSpot"
+  },
+  "homepage": "https://thoughtspot.com",
+  "license": "MIT",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "spottercode",
+        "commit": "aa86ed7843b256482fce0ed15a1416bc8db0f860",
+        "skills": {
+          "get-developer-docs-reference": "cb1b718a98c886eb8dc0e9cc7042d985227ac6f6c35e2a639835d436cc6f4443",
+          "get-rest-api-reference": "bc3f4384ed5086895994433699c4cc94a9adfa0671f09948253cef54ac44bff6",
+          "get-visual-embed-sdk-reference": "3e2677f3f32f77982e06acc4155399670003a56565b58b0f477811b97a062300"
+        }
+      }
+    }
+  }
+}

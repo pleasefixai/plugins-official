@@ -1,0 +1,35 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "snyk-api-web",
+  "version": "1.0.0",
+  "description": "Guides to set up Snyk API & Web scan targets, with logins, 2FA and logout checks.",
+  "author": {
+    "name": "Snyk"
+  },
+  "homepage": "https://snyk.io",
+  "license": "Apache-2.0",
+  "keywords": [
+    "mcp",
+    "snyk",
+    "security",
+    "dast",
+    "api-security",
+    "web-security",
+    "vulnerability-scanning"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "snyk-api-web",
+        "commit": "6ebace26f86dfdd067bec63bc839e9ce56f22153",
+        "skills": {
+          "saw-api-target-configuration": "eccac15d6208ca55ba2551932238b6f191122b93fc03c22fca2b23b28a06f288",
+          "saw-web-target-configuration": "4c0052dc725b3ead09c430e04ede8743b318cfb5b337569b4e308261322982ac"
+        }
+      }
+    }
+  }
+}

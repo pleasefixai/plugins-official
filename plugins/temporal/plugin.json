@@ -1,0 +1,39 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "temporal",
+  "version": "1.0.0",
+  "description": "Guides to build Temporal workflows and workers and run Temporal Server and Cloud.",
+  "author": {
+    "name": "Temporal"
+  },
+  "homepage": "https://temporal.io/",
+  "license": "MIT",
+  "keywords": [
+    "temporal",
+    "workflow",
+    "durable-execution",
+    "python",
+    "typescript",
+    "go",
+    "java",
+    "microservices",
+    "distributed-systems"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "codex",
+        "plugin": "temporal",
+        "commit": "0722921d5542fc593105c27bd52630babd8b8c2a",
+        "skills": {
+          "temporal-cloud-setup": "f02983552ff0d66e72794dd47f128675877ee9e93cb8bb339e7487ec377f0d4f",
+          "temporal-developer": "53bfd271712ac577248428a23be0b7f2af60ed6b89effad28d88346565db7403",
+          "temporal-ops": "bc5024cd9f8cbf0f24c8c6e465de38ef7f051e24ab8379baed4a71374d712f40",
+          "temporal-serverless": "9622c6f58d10c065595a2d56bf23316220129a3f02b986295fb15652ab9d8922"
+        }
+      }
+    }
+  }
+}

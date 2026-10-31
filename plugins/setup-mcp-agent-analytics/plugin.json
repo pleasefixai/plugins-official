@@ -1,0 +1,31 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "setup-mcp-agent-analytics",
+  "version": "1.0.0",
+  "description": "Guides to send the tool calls of your own tool servers to Pendo Agent Analytics.",
+  "author": {
+    "name": "Pendo"
+  },
+  "homepage": "https://github.com/pendo-io/claude-pendo-plugin/tree/main/plugins/setup-mcp-agent-analytics",
+  "license": "MIT",
+  "keywords": [
+    "pendo",
+    "analytics",
+    "mcp",
+    "instrumentation"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "setup-mcp-agent-analytics",
+        "commit": "a0f85260c61b93c4511f59545612323a41c3f845",
+        "skills": {
+          "setup-mcp-agent-analytics": "207b5ef4cd0095f7d0a01ba48419f0c27822be3f427b062a00bc8674a2c30206"
+        }
+      }
+    }
+  }
+}
