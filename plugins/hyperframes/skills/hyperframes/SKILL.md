@@ -26,10 +26,10 @@ Apply the first matching row; do not evaluate lower state rows:
 | Specific operation on an existing HyperFrames project: inspect, diagnose, validate, preview, render, publish, or batch-render | Perform only that operation. Skip intent and workflow routing; load `hyperframes:hyperframes-cli` and any required domain skills.                                                                                                                 |
 | Specific edit to an existing project                                                                                          | Make the edit. Do not run the intent layer. To know what is on a project's timeline (tracks, clips, starts, ends, what plays), run `npx hyperframes timeline [--json]` instead of reading `index.html` and every sub-composition file. |
 | `BRIEF.md` exists                                                                                                             | Read `workflow` and `flow`. Execute that workflow; `flow: companion` always executes in `hyperframes:general-video`. Ask no brief questions.                                                                                                      |
-| No brief, but `hyperframes.json` or `STORYBOARD.md` exists                                                                    | Resume from project files and recorded preferences. Infer the owning workflow from existing artifacts. If it cannot be determined uniquely, ask one routing-only question; do not run the intent interview.                            |
+| No brief, but `hyperframes.json` or `STORYBOARD.md` exists                                                                    | Resume from project files. Infer the owning workflow from existing artifacts. If it cannot be determined uniquely, ask one routing-only question; do not run the intent interview.                            |
 | Fresh creation                                                                                                                | Run the intent layer — `references/intent-interview.md` — then route once using § 2's table.                                                                                                                                           |
 
-If a fresh request does not identify the subject or input, ask what the video is about before routing. Check preferences and recipes before asking anything (`references/intent-interview.md`, step 1). A `figma.com` input or a named recipe changes intake, not routing — the interview's "Adapt orthogonal inputs" section handles both.
+If a fresh request does not identify the subject or input, ask what the video is about before routing. Read what already exists before asking anything (`references/intent-interview.md`, step 1). A `figma.com` input changes intake, not routing — the interview's "Adapt orthogonal inputs" section handles it.
 
 ### Keep the project's CLI current
 
@@ -53,17 +53,14 @@ Use the first matching row. Match the requested **deliverable**, not a word or f
 | 4        | Add designed graphic overlays to existing talking-head, interview, or podcast footage without changing the footage | `hyperframes:talking-head-recut`      |
 | 5        | Build a beat-synced video from a music track, with no narration or website capture                                 | `hyperframes:music-to-video`          |
 | 6        | Create an explicitly short, unnarrated, motion-first unit, typically under 10s                                     | `hyperframes:motion-graphics`         |
-| 7        | Explain a GitHub pull request or code change from a PR reference                                                   | `hyperframes:pr-to-video`             |
-| 8        | Market or showcase a website, product site, app, or company from a URL or site-specific brief                      | `hyperframes:product-launch-video`    |
-| 9        | Explain a topic, article, or notes with invented visuals and no product or site capture                            | `hyperframes:faceless-explainer`      |
-| 10       | Any other custom video or composition                                                                              | `hyperframes:general-video`           |
+| 7        | Any other custom video or composition                                                                              | `hyperframes:general-video`           |
 
 Before finalizing the route, read `references/routes/<workflow>.md` — one small file per route: the canonical input/output/trigger contract (available before lazy-installed workflow skills are present) plus that route's interview entry. If the candidate does not satisfy its contract, continue routing instead of forcing the match. Read only the matched route's file.
 
 ### Resolve common ambiguities
 
 - A short animated title, logo sting, stat hit, chart hit, map hit, or standalone lower-third is `hyperframes:motion-graphics` when it is unnarrated and motion is the message. A static title card, narrated sequence, longer montage, or custom loop is `hyperframes:general-video`.
-- An explicitly short motion graphic may use a URL, tweet, article, or screenshot as source material. A generic "make a video from this site" request is `hyperframes:product-launch-video`.
+- An explicitly short motion graphic may use a URL, tweet, article, or screenshot as source material. A generic "make a video from this site" request is `hyperframes:general-video`.
 - Existing footage with captions routes to `hyperframes:embedded-captions`; footage with designed information cards routes to `hyperframes:talking-head-recut`. Retiming, reordering, recoloring, reframing, or remixing footage is a custom edit and falls through to `hyperframes:general-video`.
 - A music file selects `hyperframes:music-to-video` only when its beat grid drives the piece. Music used as a bed does not override the subject-matched route.
 - "I want a storyboard" changes the review process, not the workflow. With no other routing signal, use `hyperframes:general-video`. A confirmed sketched `storyboard.html` may itself be the requested deliverable; the review loop defines that stop point.
@@ -71,7 +68,7 @@ Before finalizing the route, read `references/routes/<workflow>.md` — one smal
 
 ## 3. Route once, then leave
 
-For fresh creation the intent layer (`references/intent-interview.md`) runs the full conversation — memory, triage, pitch round, must-haves, run-shape, hand-off — and **ends by writing `BRIEF.md`. The brief is the only routing artifact the workflow reads**; nothing later re-opens this skill or the interview. Answer every later "what did the route require?" from `BRIEF.md`.
+For fresh creation the intent layer (`references/intent-interview.md`) runs the full conversation — existing files, triage, pitch round, must-haves, run-shape, hand-off — and **ends by writing `BRIEF.md`. The brief is the only routing artifact the workflow reads**; nothing later re-opens this skill or the interview. Answer every later "what did the route require?" from `BRIEF.md`.
 
 ## 4. Install and enter the workflow
 
@@ -91,7 +88,7 @@ Use the bare name without `/`. If the command fails, surface the error; do not r
 | Motion rules, scene blueprints, transitions, runtime adapters                                                                               | `hyperframes:hyperframes-animation` |
 | Seek-safe GSAP, CSS, Anime.js, WAAPI, FLIP, paths, masks, SVG, 3D keyframes, or `hyperframes keyframes` diagnostics                         | `hyperframes:hyperframes-keyframes` |
 | Design specs, concept, palette, typography, narration, beat planning                                                                        | `hyperframes:hyperframes-creative`  |
-| Images, icons, logos, audio, captions, grades, LUTs, reusable media                                                                         | `hyperframes:media-use`             |
+| Narration, transcripts, background removal, grades, and media treatments (`hyperframes tts`, `transcribe`, `remove-background`, `grade-compare`, `media-treatment`); other images, icons, logos, and audio come from the user | `hyperframes:hyperframes-cli`       |
 | Voiceover carve, audio effect chains, automation envelopes, or one chain/fader across several tracks (submix bus)                           | `hyperframes:hyperframes-audio`     |
 | Init, lint, check, snapshots, compare, batch render, Studio, render, publish, or diagnostics                                                | `hyperframes:hyperframes-cli`       |
 | Registry blocks and components                                                                                                              | `hyperframes:hyperframes-registry`  |
@@ -108,17 +105,17 @@ Creator edit phrases are cross-domain requests. Load every skill named in the ma
 | fade, crossfade, track gain/volume, automation, duck/carve, audio effects, or one effect across several tracks     | `hyperframes:general-video` + `hyperframes:hyperframes-core` + `hyperframes:hyperframes-audio`; core places clips, audio mixes placed tracks — including a submix bus over a group of them.                        |
 | picture and sound edits that combine cuts with camera motion or mixing                                             | `hyperframes:general-video` + `hyperframes:hyperframes-core` + `hyperframes:hyperframes-keyframes` when there is visual motion + `hyperframes:hyperframes-audio` when sound is faded, mixed, ducked, automated, or processed. |
 | lay out a project so it reads well in Studio: caption track, tracks per element kind, sub-compositions, safe zones | `hyperframes:hyperframes-studio` + `hyperframes:hyperframes-core`; studio owns the layout conventions, core owns each edit.                                                                             |
-| source or generate media, or preprocess an unsupported mid-source freeze                                           | `hyperframes:media-use`; sourcing/generation/preprocessing only, never placed-track mixing.                                                                                                  |
+| generate narration or transcripts, treat footage, or preprocess an unsupported mid-source freeze                  | `hyperframes:hyperframes-cli` (`hyperframes tts`, `transcribe`, `remove-background`, `media-treatment`); other media comes from the user. Generation/preprocessing only, never placed-track mixing. |
 
 Constant `data-playback-rate` is render-safe for picture and pitch-preserved
 sound. Speed ramps are a `rate` lane in `data-automation`.
 For copyable edit contracts, load `hyperframes:hyperframes-core` → `references/creator-editing-recipes.md`.
 
 Broad feedback about how photographic media looks or behaves also routes to
-`hyperframes:media-use`, even when the user never says “color grading” or “effect”: fix
+`hyperframes media-treatment` (`hyperframes:hyperframes-cli`), even when the user never says “color grading” or “effect”: fix
 dark/flat/boring footage, stylize a clip, hide a face, or improve a media
-reveal. Read `../media-use/references/media-treatments.md` before editing a
-treatment; it governs how footage is treated, never whether media may be used.
+reveal. Run `npx hyperframes media-treatment --capabilities` before editing a
+treatment.
 Do not substitute a generic LUT, CSS filter/overlay, or opacity tween for an
 existing canonical treatment primitive. Keep text/layout/motion-only edits in
 their owning domain.

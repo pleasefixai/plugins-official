@@ -20,7 +20,7 @@ the overlays emerge from what the transcript actually says.
 > **Graphic-packaging sibling of `embedded-captions`.** Captions add the _spoken words_
 > as a readable subtitle; this adds _designed graphics_ on top of the playing video.
 > Plain subtitles → `embedded-captions`. Build a video from scratch → the creation
-> workflows (`product-launch-video` / `faceless-explainer` / …).
+> workflows (`general-video` / `motion-graphics` / …).
 
 Routed through `hyperframes:hyperframes`, the intent layer confirms only the input (which clip) and **announces** the render-strategy questions as deferred asks — aspect, layout, style group, and card count stay at Step 7, where the probed footage and transcript ground the recommendations; the layer's run-shape questions don't apply. A `BRIEF.md`, when present, carries the confirmed input and any user notes — read it first.
 
@@ -71,7 +71,7 @@ export PRODUCER_BROWSER_GPU_MODE=hardware
 ### 2. Create a Work Directory
 
 All artifacts live under `videos/<project-name>/` — the same convention as the other
-video workflows (`product-launch-video` / `faceless-explainer` / `pr-to-video`). Keep
+video workflows (`general-video` / `music-to-video` / `motion-graphics`). Keep
 the cwd at the workspace root; everything below writes under this one subdirectory.
 
 ```bash

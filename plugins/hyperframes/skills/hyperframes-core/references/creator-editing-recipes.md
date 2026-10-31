@@ -211,7 +211,7 @@ Timeline math: `data-start` defines authored order. Source math: source offsets 
 <img src="held-frame.png" data-start="2" data-duration="1" data-track-index="0" class="clip" />
 ```
 
-Timeline math: the still owns its hold duration. Source math: final-source frame, subcomp final state, and visual pose holds are supported. Audio follows: continue, trim, or silence audio deliberately. Owner: `hyperframes:hyperframes-core` + `hyperframes:media-use`. Limit: arbitrary mid-source freeze requires preprocess of a still/segment.
+Timeline math: the still owns its hold duration. Source math: final-source frame, subcomp final state, and visual pose holds are supported. Audio follows: continue, trim, or silence audio deliberately. Owner: `hyperframes:hyperframes-core`. Limit: arbitrary mid-source freeze requires preprocess of a still/segment (for example, extract the frame with `ffmpeg`).
 
 ## Constant speed / slow motion
 

@@ -27,7 +27,7 @@ A short design-led motion graphic. **Asset-first**: decide the asset strategy an
 | -------- | --------------------------------------------------------------------- | ---------------------------------------------------------------- | ----------------------------- |
 | init     | Bash                                                                  | `hyperframes.json`                                               | Step 0                        |
 | plan     | subagent — **decide search?** + classify + asset strategy             | `shot-plan.json` (draft: category, `asset_needs` queries, brief) | `agents/director.md` (Part 1) |
-| source ◇ | Bash — media-use resolve (**skip if `asset_needs` is empty**)         | `assets/` + `assets/index.md`                                    | `phases/source/guide.md`      |
+| source ◇ | Bash — source assets (**skip if `asset_needs` is empty**)             | `assets/` + `assets/index.md`                                    | `phases/source/guide.md`      |
 | design   | subagent — shot design around resolved assets                         | `shot-plan.json` (final: block(s) + layout + motion + positions) | `agents/director.md` (Part 2) |
 | build    | subagent — reuse-first composition                                    | `compositions/index.html`                                        | `agents/builder.md`           |
 | verify   | Bash — `lint`, `check`, proof snapshots; repair on failure            | `snapshots/contact-sheet.jpg`                                    | Step 5                        |
@@ -66,12 +66,11 @@ Build order: one at a time, coverage-first (rough is fine). `kinetic-type` porte
 
 macOS Apple Silicon or Linux x64. System tools: `brew install node ffmpeg`. `npx hyperframes doctor` once. macOS GPU render: `export PRODUCER_BROWSER_GPU_MODE=hardware`.
 
-Optional keys (local fallbacks if unset) — only needed by categories that source/generate assets via media-use:
+Optional (local fallbacks if unset) — only needed by categories that source assets:
 
-| Key                                 | Used for                                                    | Fallback                        |
+| Need                                | Used for                                                    | Fallback                        |
 | ----------------------------------- | ----------------------------------------------------------- | ------------------------------- |
-| `GEMINI_API_KEY` / `GOOGLE_API_KEY` | image generation (media-use resolve)                        | skip generate / search-only     |
-| (asset_scout / search providers)    | `webpage`/`news`/`tweet` + `asset-fusion` real-asset search | category degrades to asset-free |
+| the agent's own web search          | `news`/`tweet` + `asset-fusion` real-asset search           | category degrades to asset-free |
 
 ## Flow
 
@@ -102,14 +101,9 @@ Dispatch one subagent. prompt = full `agents/director.md` + `## Dispatch context
 
 Validation: `[ -s "$PROJECT_DIR/shot-plan.json" ] && echo ok || echo missing`.
 
-### Step 2 — Source ◇ (Bash: media-use, conditional)
+### Step 2 — Source ◇ (Bash, conditional)
 
-If `shot-plan.json.asset_needs` is non-empty, resolve assets (search / generate / fetch → frozen project-local paths + ledger). See `phases/source/guide.md` (wraps `media-use resolve`; the search-driven categories use the news/web/tweet/image search). If `asset_needs` is empty, **skip to Step 3**.
-
-```bash
-# illustrative — see phases/source/guide.md
-(cd "$PROJECT_DIR" && node <SKILL_DIR>/phases/source/resolve.mjs --plan ./shot-plan.json --out ./assets)
-```
+If `shot-plan.json.asset_needs` is non-empty, source assets (user-supplied / capture / search → frozen project-local paths + ledger). See `phases/source/guide.md` (the search-driven categories use the news/web/tweet/image search). If `asset_needs` is empty, **skip to Step 3**.
 
 Degrade gracefully: if a search/provider is unavailable, the category falls back to asset-free (note it in `context.log`).
 
@@ -161,7 +155,7 @@ Verify the output exists, is non-empty, and has the intended duration. The final
 
 ## Design notes (maintainers — execution does not read this)
 
-- **Asset-first rationale:** sourcing is front-loaded and informs shot design (the RWA flow: analyze → search → review → compose). the search-driven categories (`webpage`/`news`/`tweet`) and `asset-fusion` both lean on media-use search (news/web/tweet/image), which is media-use's documented RWA lineage.
+- **Asset-first rationale:** sourcing is front-loaded and informs shot design (the RWA flow: analyze → search → review → compose). the search-driven categories (`webpage`/`news`/`tweet`) and `asset-fusion` both lean on search (news/web/tweet/image).
 - **Reuse-first:** the in-ecosystem analog of LLM-generated templates is "compose catalog blocks + `hyperframes-animation` rules". HF's paused GSAP timeline ≙ Remotion's `useCurrentFrame`.
 - **Category module contract:** one `categories/<id>/module.md` (planning + build), sharing `references/motion-vocabulary.md` (+ optional eval). Adding a category = drop the folder + register its classifier line in `agents/director.md` + its row in `catalog-map.md`; the phase pipeline is untouched.
 - **Directory shape:**
@@ -169,7 +163,7 @@ Verify the output exists, is non-empty, and has the intended duration. The final
   videos/<project-name>/
     hyperframes.json  context.log
     shot-plan.json            # the IR (Director output)
-    assets/  assets/index.md  # media-use output (if sourced)
+    assets/  assets/index.md  # Step 2 output (if sourced)  
     compositions/index.html   # Builder output
     renders/video.mp4
   ```

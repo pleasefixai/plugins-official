@@ -75,19 +75,7 @@ Ask only fields used by the selected route. Route entries identify their must-ha
 
 ### Remembered defaults
 
-Let `<MEDIA_DIR>` be the installed `hyperframes:media-use` skill directory. Let `<MEMORY_ROOT>` be the existing project root. Before scaffolding, use a deliberately nonexistent probe path with no `.media` ancestor, such as `/tmp/hyperframes-intent-memory-<run-id>`; never use the current workspace as the probe. Read merged preferences with:
-
-```bash
-node <MEDIA_DIR>/scripts/prefs.mjs get --hyperframes <MEMORY_ROOT> --json
-```
-
-For the pre-project probe, `<MEMORY_ROOT>` is the nonexistent probe path, so only the personal tier can contribute. If that path already exists or contains `.media`, choose another. Do not claim project provenance before the real project exists.
-
-A remembered value becomes the recommended answer and names its source. It never overrides the current request and never skips a required question. A confirmed recipe is different: adopting the bundle may fill the fields it contains because adoption itself is the confirmation.
-
-Record only values the user confirmed, never values merely inferred or defaulted. Recording happens after the workflow writes `BRIEF.md`; supported keys are listed in `brief-format.md`. A user who sees the recommendation and accepts it has confirmed it. Personal defaults promote only according to `hyperframes:media-use` memory rules.
-
-The first time a project records a preference, say one short line that it will be remembered for future runs. Do not re-record a remembered value merely because an autonomous build reused it; only a confirmation in the current run creates a new memory event.
+Defaults are not remembered between runs. When the user wants the setup of an earlier video, ask them for that project's `BRIEF.md`; its values become the recommended answers and name it as their source. They never override the current request and never skip a required question.
 
 ## 3. Question protocol
 

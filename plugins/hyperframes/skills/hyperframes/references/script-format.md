@@ -2,7 +2,7 @@
 
 The **locked narration** for a project: the final spoken lines + voice + delivery. It is an _optional_ plan-layer file — a video with no narration (bgm-only, silent overlay) has none. The storyboard's per-frame `voiceover` is the lighter, editable _guide_; `SCRIPT.md` is the _commit_. (Storyboard format → `references/storyboard-format.md`.)
 
-This file defines the SCRIPT.md **shape** only. Synthesizing the spoken lines into audio is a capability owned by `media-use` → `../../media-use/audio/references/tts.md`.
+This file defines the SCRIPT.md **shape** only. Synthesizing the spoken lines into audio is the `hyperframes tts` command (`hyperframes:hyperframes-cli`).
 
 Free-form markdown — there is no strict parser; the TTS step extracts the indented spoken lines.
 
@@ -46,7 +46,6 @@ A header block, then one section per spoken line.
 
 ## To TTS
 
-Feed each line's spoken text to the provider documented in
-`media-use/audio/references/tts.md`. The `hyperframes tts` command is
-Kokoro-only; use its `--voice` flag, or use the bundled HeyGen helper when word
-timestamps are required. Real per-word timing replaces the `**Time:**` guides.
+Feed each line's spoken text to `npx hyperframes tts`. The command is
+Kokoro-only; use its `--voice` flag. When word timestamps are required, run
+`npx hyperframes transcribe` on the generated audio. Real per-word timing replaces the `**Time:**` guides.

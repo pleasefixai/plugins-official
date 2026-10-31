@@ -8,8 +8,8 @@ description: >
   bitcrush), automation envelopes drawn on a track's volume or any effect
   parameter, or one submix bus carrying a chain, a fader and an automation clock
   for several tracks at once (`<hf-audio-group>`).
-  Don't use for sourcing or generating audio — finding BGM, SFX, or making a
-  voiceover is `hyperframes:media-use`. Don't use for clip timing or track layout, which is
+  Don't use for sourcing or generating audio — BGM and SFX come from the user,
+  and a voiceover is `hyperframes tts` (`hyperframes:hyperframes-cli`). Don't use for clip timing or track layout, which is
   `hyperframes:hyperframes-core`.
 ---
 
@@ -29,8 +29,9 @@ Clip timing remains `hyperframes:hyperframes-core`: audio/video trims and source
 `data-start`, `data-duration`, and `data-media-start`, and crossfades overlap
 clips on different tracks. This skill owns placed-track fade-in/fade-out,
 crossfade envelopes, track gain/track volume, volume and effect automation,
-ducking/voiceover carve, and the effect chain. `hyperframes:media-use` owns sourcing,
-generation, and preprocessing.
+ducking/voiceover carve, and the effect chain. Sourcing, generation, and preprocessing are
+outside it: the user supplies BGM and SFX, and `hyperframes:hyperframes-cli` covers
+`hyperframes tts` and `hyperframes transcribe`.
 
 Constant `data-playback-rate` (`0.1..10`) is render-safe for picture and
 pitch-preserved sound when matching audio/video elements use the same timing,

@@ -35,7 +35,6 @@
         "commit": "8d2b6e7bdc1c2c26d1abf64ef075c00a1bb230a2",
         "skills": {
           "embedded-captions": "f1b298aa899d86df37d6d0bf68525664e5100bed9d4f4043fd8356f2c7d062c5",
-          "faceless-explainer": "37dffa6e8f81bffc4d42e03e89d54daf69416b09c280db3a94e9b84161d3e4ad",
           "figma": "642cce1b5e211182a92b515a70eae206e75970ef7515d93e85d355a298feb0d2",
           "general-video": "079d3479295e27b4e925951fee82f035208994e259abb77538ee0979cb511891",
           "hyperframes": "ca51ed2be534305cb4c6352b283784cdb18cbcbc673248077ce8d7761928ee72",
@@ -47,11 +46,8 @@
           "hyperframes-keyframes": "f1e1fd54331fb0f2a07e6de1e190a739b5bc8034484b96a27ab4484749c7821b",
           "hyperframes-registry": "097538fb238a4ee89f6c4fdc7cb5ff9f0ca1489e607fdd44b2eaefe2214cce39",
           "hyperframes-studio": "b063eaa9eb1e4b9bffd269c39cef36b6f17ef91bfde72c9012eb4817380151de",
-          "media-use": "e5376453c0d08ac308c433fd1dd976091367245619a8d15cde712c6d5b642ca6",
           "motion-graphics": "9c2ca2e8c384875dbe962657537247271968be3be32c505a268edee00f868784",
           "music-to-video": "190e9885dab9b11d1be24b939c85f2b79a77940745beefab1e82d4b37591c806",
-          "pr-to-video": "1a0f65e1cec1263b2c9cef822e9e89ea8052ad73dad4e1f08bb5c45f4dba9361",
-          "product-launch-video": "ced501f76c52716bcf0762a38d7823ba3c6e1f0261f4acad8647dc15a2f78e8c",
           "remotion-to-hyperframes": "c8eb6f48889f5c06695464adbae1f83ef2d53fad5aa75f9939f35aa39c12b69d",
           "slideshow": "e9b8ea210cfb771e27da68af763a6879f4e6e534a1e36e595202c5591f7b80ac",
           "talking-head-recut": "7018bf017e8606d2704077faba3072e74421704f8e36f38772a9eec7ef158fd3"
