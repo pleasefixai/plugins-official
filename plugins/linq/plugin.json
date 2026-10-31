@@ -32,9 +32,6 @@
           "linq-build": "37f91c44bf419e0f8177af86cb9cfade66d752ac97e3219bed9f254c60be3f9b",
           "linq-quickstart": "6c117157d16805da743d71e5a6bee579f245f6455a064d5ba2f5c7f97021377e",
           "linq-reputation": "dd7d79104b16278d3557f6c122099bda608a7f88a1032bb063ff8895ac339ac8"
-        },
-        "guessed": {
-          "description": "a3a7387a6ad2f8c4"
         }
       }
     }

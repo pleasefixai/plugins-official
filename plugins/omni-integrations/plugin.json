@@ -33,9 +33,6 @@
           "omni-to-databricks-metric-views": "87327210008d4c96689006dff88f0ccd4cf612659a35bdb43269e05ab34d359f",
           "omni-to-dbt-metricflow": "fc8a7d3930194485a549185f61aef0955f745e37bf341b40a48ae1e95733b787",
           "omni-to-snowflake-semantic-view": "8dd6989fa0fedd833722da39e99bc063c14d7ef569c269f2df6ab5e176588bf1"
-        },
-        "guessed": {
-          "description": "dddebce9912d6a5d"
         }
       }
     }

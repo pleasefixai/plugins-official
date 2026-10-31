@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "spottercode",
   "version": "1.0.0",
-  "description": "Guides to search ThoughtSpot developer docs for the Visual Embed SDK and REST API v2.",
+  "description": "ThoughtSpot developer documentation — search Visual Embed SDK, REST API v2, and developer guides through MCP-compatible clients.",
   "author": {
     "name": "ThoughtSpot"
   },

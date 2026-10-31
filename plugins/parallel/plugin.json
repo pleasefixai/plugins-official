@@ -33,9 +33,6 @@
           "parallel-monitor": "1567641a1368d20bec91f2fb609bead84144e70f466fef0a1392f3149ea5a1a5",
           "parallel-web-extract": "ebd8de2dda86cfe50b1d2422c610f00a793cc76a89a4a6a0cfd20606ab96ff2a",
           "parallel-web-search": "e11b5af6af6ee8cd91e90e5be9f11b345bd160216feb24c349e68e5101bca67d"
-        },
-        "guessed": {
-          "description": "9c213a5bee846194"
         }
       }
     }
