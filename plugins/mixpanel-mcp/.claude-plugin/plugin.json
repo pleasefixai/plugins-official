@@ -1,0 +1,5 @@
+{
+  "name": "mixpanel-mcp",
+  "version": "1.0.0",
+  "description": "Guides to set up Mixpanel tracking, find why a metric changed and build dashboards."
+}

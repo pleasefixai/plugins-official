@@ -1,0 +1,5 @@
+{
+  "name": "grafana-assistant",
+  "version": "1.0.0",
+  "description": "Guides to ask Grafana Assistant about your Grafana stack and to run ops investigations."
+}

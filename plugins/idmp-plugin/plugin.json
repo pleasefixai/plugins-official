@@ -1,0 +1,61 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "idmp-plugin",
+  "version": "1.0.0",
+  "description": "Guides for TDengine IDMP elements, attributes, analyses, events, panels and dashboards.",
+  "author": {
+    "name": "TaosData"
+  },
+  "homepage": "https://github.com/taosdata/agent-skills",
+  "keywords": [
+    "TDengine",
+    "IDMP",
+    "database",
+    "monitoring",
+    "alert",
+    "dashboard",
+    "industrial-data",
+    "industrial-manufacturing",
+    "data-management",
+    "iot",
+    "time-series",
+    "asset-modeling",
+    "data-ingestion"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "idmp-plugin",
+        "commit": "bf5197716bacc38908cf8025e594d15be9e00b8c",
+        "skills": {
+          "idmp-ai": "934aca8aa29e13ccf6ebbcdb8e4743927f44abb81ffcca3f8f08a65caad1871c",
+          "idmp-analysis": "48c81151c94ed2ce466942bafd1e1c452de7310268b8d1b30bba0c2351932eef",
+          "idmp-annotation": "75ef5c6d93a2b171fa98e36de5e589c0ffe245860ea702fdbd6f7e8a861cb1d9",
+          "idmp-attribute": "9161f18c2edcc661f4e6cb5ea28181909fce88df5876627601f83cd5406ac1fe",
+          "idmp-dashboard": "9af83626c6f0e8ad7632af164bac27dad2710d7f6ab4967f257301500e0de6a9",
+          "idmp-data": "811247b9b17726523fb77f2c595551e213bbffa3d4969248bddeca839ea72836",
+          "idmp-datasource": "7e8522e0533ce062dcb2a02ded3b56d4c565d338c4b46d1d7dd4ab56d1f3b16b",
+          "idmp-element": "d37db43d773a361670ffbf93cf321a3f609ae5ea99a199d998406f93d8afd2cd",
+          "idmp-event": "8be8ce91d62247e2875d75363af0758456ee1618e438002bea86431008e3877e",
+          "idmp-notification": "aafd25358c4f6f34931aad050fc5b7beb4872dbb67cb1b3c52c8301a6e64bbcd",
+          "idmp-openapi-explorer": "7526f178165cfb09bebbf0c44daaf1cbbcc7fd9df45af5118953700bf54df322",
+          "idmp-panel": "ef6a80a08f7630bf8c1fee9d0af90acdf7dffd6f8cb33b0aa84d5112430cca3c",
+          "idmp-shared": "cf4a4479c7f75f4c51307313306a35135488b337c4fdf57a487f1eedb1f6fc5e",
+          "idmp-template": "3303a64da7aceacee26620ef7754740b277a22b60d7a39b6f553d7181df28267",
+          "idmp-uom": "539fe279d9b3f1106529288c97e8e586d0216d2b51f54d9322d13702b4261a22",
+          "idmp-user-access": "9202db00838fa204443cf726e496fa735ba51d75cfd04071d9b57e03428839c4",
+          "idmp-workflow-alert-create": "65c874344a9ec95f3f96bd269881ba97f9d5d708228caaccad7706d57671f92c",
+          "idmp-workflow-alert-debug": "d6c34ab55be872a389a05890023bb1d1895f02fbd96df547e88e88d945596084",
+          "idmp-workflow-analysis-create": "5ee5ff039a13170d13441fe3e9cd80096a883a7b8267f0defa5988d9874c19b6",
+          "idmp-workflow-asset-bootstrap": "a95f4e8b20d83f0e6b9be6bc64d891113e8053cce64a278ddacf79882441fe14",
+          "idmp-workflow-data-import-export": "38a32b337c89e688ebb01d6d1451f7067f7229f7ef2f384422f069db3633998b",
+          "idmp-workflow-datasource-diagnose": "5f42ff9547b4186f38b80363333c245187361cf24eb0f7bf3015db3dcd119bc8",
+          "idmp-workflow-panel-build": "f0d9b446e4ea0d266eb3410ec3f875c160e3b43966544681b608940fb000571a"
+        }
+      }
+    }
+  }
+}

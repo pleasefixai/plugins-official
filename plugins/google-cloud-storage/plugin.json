@@ -1,0 +1,38 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "google-cloud-storage",
+  "version": "1.0.0",
+  "description": "Guides to design, secure, diagnose and mount Google Cloud Storage buckets.",
+  "author": {
+    "name": "Google LLC"
+  },
+  "homepage": "https://cloud.google.com/storage",
+  "license": "Apache-2.0",
+  "keywords": [
+    "gcs",
+    "google-cloud-storage",
+    "storage",
+    "google-cloud",
+    "cloud storage",
+    "object storage",
+    "blob storage"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "google-cloud-storage",
+        "commit": "c7e3eeefa14ac0492a024458061d662e8b04c891",
+        "skills": {
+          "gcs-security-assessment": "840f58cb34583a86e8af541038d3b7abc551b367a75a66c18d07012068ddb60b",
+          "google-cloud-storage-basics": "fd47f89e5e6b385c18756fe98f77314bed68be5ef6c02dd3f48d2a1e9977231d",
+          "google-cloud-storage-bucket-architect": "e7ef0d5b0937d44bc513e3a597213a830788ef2e194e68a60cc43c76440c0639",
+          "google-cloud-storage-diagnostic": "9a8d565a4e38b466162a57b9c6378352a51409bdd207b46e9dbcbf61f0bd1b6e",
+          "google-cloud-storage-fuse": "2514167ac7e918d400af65f505d01e55f3bb11206a448eb3228f48578af4bf94"
+        }
+      }
+    }
+  }
+}

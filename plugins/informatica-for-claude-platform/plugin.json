@@ -1,0 +1,24 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "informatica-for-claude-platform",
+  "version": "1.0.0",
+  "description": "Guides to find trusted tables, columns, glossary terms and policies in Informatica CDGC.",
+  "author": {
+    "name": "Informatica"
+  },
+  "homepage": "https://github.com/forcedotcom/informatica-claude-plugins/tree/main/informatica-for-claude-platform",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "informatica-for-claude-platform",
+        "commit": "554d02e0f7f2adafeaeeedbde04435b7bd310a47",
+        "skills": {
+          "catalog-and-data-discovery": "f30e5b2a9381387a8e24113d87cffe1ded92fb6068bbebb86da90e8ed8308703"
+        }
+      }
+    }
+  }
+}

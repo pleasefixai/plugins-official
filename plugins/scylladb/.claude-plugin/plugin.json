@@ -1,0 +1,5 @@
+{
+  "name": "scylladb",
+  "version": "1.0.0",
+  "description": "Guides to connect to ScyllaDB Cloud, design CQL tables and run vector search."
+}

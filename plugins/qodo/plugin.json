@@ -1,0 +1,36 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "qodo",
+  "version": "1.0.0",
+  "description": "Guides to review code, read past changes and keep PR review notes with Qodo.",
+  "author": {
+    "name": "Qodo"
+  },
+  "homepage": "https://github.com/qodo-ai/qodo-skills.git",
+  "license": "MIT",
+  "keywords": [
+    "qodo",
+    "code-review",
+    "code-intelligence",
+    "standards",
+    "coding-agents"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "qodo",
+        "commit": "b8c21854199c538b1c35c981c12a93bab4839ef2",
+        "skills": {
+          "qodo-codebase-wisdom": "e5b4f85b62a46eea977283ab81e97a9cbe0ea2fb71a66bc304d43de4d63ecf2d",
+          "qodo-review": "7cb94c39b0b8a51cdc727303b791f1a7267a0904cfb24bca95a19d5745711cfb",
+          "qodo-review-notes": "45a417f3162ba608c5d1607d3e7ea9d6ee24f87e4613bf85b3c33b826daa474e",
+          "qodo-review-resolver": "d0c8f890bcbb26f649abe9ef748d1911bb019109a3035d46c7005f87cf25c8ae",
+          "qodo-setup": "d101dde0a49243284b1413b76de3393922241ec3504cb8f59d443bd5f6e41f4a"
+        }
+      }
+    }
+  }
+}

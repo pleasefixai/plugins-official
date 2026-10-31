@@ -1,0 +1,50 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "nvidia",
+  "version": "1.0.0",
+  "description": "Guides for NVIDIA AI-Q research, cuOpt, Dynamo serving, NemoClaw and Omniverse USD.",
+  "author": {
+    "name": "NVIDIA"
+  },
+  "homepage": "https://build.nvidia.com/skills/",
+  "license": "Apache-2.0 AND CC-BY-4.0",
+  "keywords": [
+    "nvidia",
+    "gpu",
+    "cuda",
+    "ai-agents",
+    "inference",
+    "llm-serving",
+    "robotics",
+    "simulation",
+    "omniverse",
+    "openusd",
+    "digital-twin",
+    "physical-ai",
+    "cad"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "codex",
+        "plugin": "nvidia",
+        "commit": "0722921d5542fc593105c27bd52630babd8b8c2a",
+        "skills": {
+          "aiq-deploy": "e875e32020700f1c859235bf415d5271ec2be2c4044ea245489d2c283c3e37fd",
+          "aiq-research": "5c275db8d4860818657c7650e29971fb1a1f8f012cd66e2da47ed907afa8a9c9",
+          "cuopt-user-rules": "6ff81acd961599c2e3a48dcaea9c1bbdf41b5ca4d1588545515cf16c1b21cb75",
+          "dynamo-interconnect-check": "a5ecc993de4682f534ffe0b4275f28d0ae362eaebe47bca1ee25ff3fdb91d43e",
+          "dynamo-router-starter": "f335e3d197ca703026916428aae14ebc37f5cea3cf669856e468cd43a8afb292",
+          "nemoclaw-user-get-started": "11ca3965e64ce6fd9e0d33416d6f2cd036c25d3ab268479e99215a3036387c6a",
+          "omniverse-cad-to-simready": "9440503d6e489a7cf8fbac7dbbc59d572c9550c81c436738950b1ea599486939",
+          "omniverse-realtime-viewer": "26e838146de43208fca7a66e0d8145c7142bc4facd472d2fcbfe24fff39c29e9",
+          "omniverse-usd-performance-tuning": "db9b596ca04207b1bdb46098530d3cc07415446d56aed7867060b833cf0e65dc",
+          "physical-ai-infrastructure-setup-and-resilient-scaling": "d9750d55a5577db076318d39741db216ce331295a6ac310a239998303764c631",
+          "physical-ai-neural-reconstruction": "c5b9b42da68faf0d5e291f37116f0bc60f3a02d88f0893fda508550a9272ff38"
+        }
+      }
+    }
+  }
+}

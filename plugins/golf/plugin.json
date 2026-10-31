@@ -1,0 +1,31 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "golf",
+  "version": "1.0.0",
+  "description": "Guides to build golf apps with Golf Intelligence course search, scorecards and green maps.",
+  "author": {
+    "name": "Golf Intelligence by Stracka"
+  },
+  "homepage": "https://strackagolf.com",
+  "license": "MIT",
+  "keywords": [
+    "golf",
+    "golf-course-data",
+    "mapping",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "golf",
+        "commit": "d64742f2bdf9099f487f77aebb92f75d2d3d6c67",
+        "skills": {
+          "golf": "4c637ce4e3a5c85228f4965f4c8303b773adce2fdb79726fe05a364d79464805"
+        }
+      }
+    }
+  }
+}

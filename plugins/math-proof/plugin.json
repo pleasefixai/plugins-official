@@ -1,0 +1,27 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "math-proof",
+  "version": "1.0.0",
+  "description": "Guides to work one hard mathematics problem in stages and write a self-contained proof.",
+  "author": {
+    "name": "Anthropic"
+  },
+  "homepage": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/math-proof",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "math-proof",
+        "commit": "a7ba5b93db0c7c8d17f3f1d25853adca79598a1a",
+        "skills": {
+          "solo": "3552c4ef8a7ab1de3fe7dc394b3a520a94c2142555a3ae8c6060227359aa9584"
+        },
+        "guessed": {
+          "description": "b09cba0baa524cc5"
+        }
+      }
+    }
+  }
+}

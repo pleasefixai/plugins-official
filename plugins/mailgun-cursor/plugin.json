@@ -1,0 +1,49 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "mailgun-cursor",
+  "version": "1.0.0",
+  "description": "Guides for Mailgun deliverability, bounces, suppressions, DNS, templates and reports.",
+  "author": {
+    "name": "Sinch"
+  },
+  "homepage": "https://sinch.com/",
+  "license": "Apache-2.0",
+  "keywords": [
+    "mailgun",
+    "email",
+    "deliverability",
+    "dns",
+    "suppression",
+    "templates",
+    "mcp",
+    "cursor"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "mailgun-cursor",
+        "commit": "2b7e89bf4b66ac101dc674903658f78ebd54c99c",
+        "skills": {
+          "address-validation": "4b6ed6f065454e20ae07e38b17c9c5cc9f0b3c6a3eef7d39362eadd949ecad65",
+          "bounce-rate-explanation": "0df7bd70ffb3dac20e13377a96eebbfc172f807ccc7c4b6facd497b77480eb0d",
+          "bounce-suppression-analysis": "f809100af9d921300e248645408619fab36cf77b7c15e5181ff9c1bac0f9d106",
+          "campaign-preflight": "efb7c1db55047a60eed6b73e9b7820602c9aaeef98ed313afc9899d9d1447fe3",
+          "cross-domain-reporting": "764ae57479af6e942ee64d83fb319db48f51db3a6ddfcfbe8b39d26385f3bba5",
+          "deliverability-triage": "51d0553b97e75b0e70f81faf1895f0cf29d3c6b42a8eb864f5a7cfb9761aeab7",
+          "domain-onboarding-dns-verification": "616f89230648617609580041e7f0c75414e97dfe723e31d89a428b5aca2c113b",
+          "engagement-analysis": "967879d660aa48d54e85c15395b55bcc10ad50acac4c9d045b18aad3c8c3b9d4",
+          "inbound-routing-troubleshooting": "3c9780707d855c8c8983c001b0e54cd1de8b6a34ff47b7cbac7fd048b3a72fee",
+          "mcp-troubleshooting": "910459324fa8c7412e7288e859fa2ca671b6da87716d1f359bc62506f381a3e5",
+          "missing-email-investigation": "5c2591f9acaa5490da5eb361d5c60e93e08190c04670cc6cc19a08748e512727",
+          "platform-operator": "420cf6316152460007b2f33da7712f49ce2ea3119e84a6b0a134892b08d2e98c",
+          "post-send-analysis": "b52834685ecf5f7af3d5753dcf1cca29f1a966d7165d36df897feb94db01c060",
+          "sending-health-check": "ae0c8c7e514a0351cb4dc1453e60ebbb763772e64db81054c3d38d0edba84c0f",
+          "sending-template-qa": "33e86023ceae90a4a86b7d3c728d9d59200736689e85b9829980fd3a369c4a1c"
+        }
+      }
+    }
+  }
+}

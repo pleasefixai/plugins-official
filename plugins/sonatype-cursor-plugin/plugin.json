@@ -1,0 +1,35 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "sonatype-cursor-plugin",
+  "version": "1.0.0",
+  "description": "Guides to check dependencies for risks and licenses and find safer versions with Sonatype.",
+  "author": {
+    "name": "Sonatype"
+  },
+  "homepage": "https://www.sonatype.com/",
+  "license": "MIT",
+  "keywords": [
+    "dependencies",
+    "security",
+    "vulnerabilities",
+    "sonatype",
+    "sbom",
+    "supply-chain"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "sonatype-cursor-plugin",
+        "commit": "6f20d407da5df16beff44fde547b83c9c96fdad0",
+        "skills": {
+          "audit-dependencies": "28f9fcf3db4cebfb1d0dd9a0d288f58800a8f7d0176885c9ac82418339b042e3",
+          "check-dependency": "cf047ca89501d056abcae429c85741355a77afa96eddf06d37ffb9162fe92bad",
+          "find-safer-version": "638d26601372e627b815f18b0c89ce48f42e051f3a7e8c425c58d4ba25949c25"
+        }
+      }
+    }
+  }
+}

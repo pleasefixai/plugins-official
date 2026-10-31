@@ -1,0 +1,40 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "streaming-skills-plugin",
+  "version": "1.0.0",
+  "description": "Guides for Kafka clients, Kafka Streams, Flink SQL, UDFs and Schema Registry on Confluent.",
+  "author": {
+    "name": "Confluent"
+  },
+  "homepage": "https://www.confluent.io",
+  "license": "Apache-2.0",
+  "keywords": [
+    "confluent",
+    "kafka",
+    "flink"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "streaming-skills-plugin",
+        "commit": "f3d95b7e6855b690b7670ecee033404e082ab169",
+        "skills": {
+          "confluent-cloud-cdc-tableflow": "d0d2c0014b9a1539f9562299a94bf89ecd97388ddafc72a1aeaf0d196ba0eb97",
+          "confluent-cloud-flink-sql": "7e42ce356a9a6352e797b4d969c776b1f729422e36d15b97da16f5e12addc4c3",
+          "confluent-skill-creator": "3099bd5436c2138925076fc75edb9a112d1aecb664f4c5003281599baa36e32b",
+          "confluent-skill-reviewer": "5b6f44403d7ba417641cf8ee4e85ac315185da7e9dbf77da4b13cc2af3a970e9",
+          "confluent-tuning-advisor": "0d35466cc561c20dcc2d573fe3ddb0ac2cfe95bd7bf48f49e9df1c170e809b89",
+          "developing-kafka-java-client": "2683be183af4c1b395883afdd498835f67540f660a10df0cab11abb393607130",
+          "developing-kafka-python-client": "15bcf629390c1a85907c5f6ef7babaff0368a09aab066e0f41c51ac23dbce627",
+          "flink-udf": "82c9d492450ffd69dbb4240bd661ad95f1a1a2f2c324a5836cc6101b16b87188",
+          "kafka-schema-registry": "ca3d149e50095e28098634971edcf411320cb4a7ac1679c9cec698a300ce5766",
+          "kafka-streams-programming": "5e9e3219b08d344e66b2801f489abc936bded36f3240dd88b6d332a8b22fb0d8",
+          "msk-migration": "2b98171cfa347350218eb54f93598b5f0c5eeb91500bbbbc2c2c84161d2634f0"
+        }
+      }
+    }
+  }
+}

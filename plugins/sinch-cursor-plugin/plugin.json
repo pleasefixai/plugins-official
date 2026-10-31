@@ -1,0 +1,50 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "sinch-cursor-plugin",
+  "version": "1.0.0",
+  "description": "Guides for Sinch SMS, WhatsApp, RCS, voice, fax, verification, numbers and Mailgun.",
+  "author": {
+    "name": "Sinch"
+  },
+  "homepage": "https://sinch.com/",
+  "license": "Apache-2.0",
+  "keywords": [
+    "Sinch",
+    "messaging",
+    "webhooks",
+    "api",
+    "sms",
+    "rcs",
+    "mcp",
+    "ai",
+    "conversation-api"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "sinch-cursor-plugin",
+        "commit": "21687bd0168028bbd276445d487ee8a418009f70",
+        "skills": {
+          "10dlc": "70ed476fd93cbbac676b504d034c3364069bafc87cbe9432df864677297097d4",
+          "authentication": "9eee0eb15ffdcd69922011fb2875789a853d2ac740dbc3fc1c8ac182f2b797c2",
+          "conversation-api": "2a567917625253f157134f5b769ef2ffdf17d8cc2314bd2298b712a53e15e809",
+          "elastic-sip-trunking": "693e5514736060b25c332777db673ebd1ac2c962b0c328fa159d097533014b8a",
+          "fax": "18f227709ab6ec10eafdffa3685b8f36452ffcde37a7a765a3444043ed951d86",
+          "in-app-calling": "d97b41fea7dd8d093d66ca664065d10288eca6fd03a5c316588580b378138940",
+          "mailgun": "597be72f94e73798cf9d9f1922596a3bd0284c3ea333e525d65abda3aa8dff22",
+          "mailgun-inspect": "1eb1d4edf14976b14ef79bbb37066b871e66d6d713b6d842d899f92a6a637507",
+          "mailgun-optimize": "607c4cb2f12e5ea46bffc7b996cbe554e7eb679551d25f60daca8b99a44b2dd1",
+          "mailgun-validate": "a2fa668bc17c3ae506cd9032cc02ffe9a72506f7d0a680eb9cc72192481dc06c",
+          "number-lookup": "b1c8d5c6712ee2a46382721d79382bbcb5f3cf11c75943bfd77640a8cbe8ad6a",
+          "numbers": "bc18e13781e6c17f0aa48c06494fdaa4c5772846ae8d2d9eb7718e198c849c94",
+          "provisioning-api": "8ef9c92cfefb5f696e1d3abbe58717c5627579d5811a988569efffee718e0848",
+          "verification-api": "8a7607abff0be867fd9f16e018ccfbba9cf76d1149ea49c5beb375727eca7942",
+          "voice-api": "960aa12a64a7daa9ca1d012b9055484f21170ec7fdb51907f2b2ca2fd064c306"
+        }
+      }
+    }
+  }
+}

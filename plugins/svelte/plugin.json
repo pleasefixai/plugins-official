@@ -1,0 +1,31 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "svelte",
+  "version": "1.0.0",
+  "description": "Guides to write fast, modern Svelte components with correct reactivity and events.",
+  "author": {
+    "name": "Svelte"
+  },
+  "homepage": "https://svelte.dev/docs/ai/overview",
+  "keywords": [
+    "svelte",
+    "sveltekit",
+    "mcp",
+    "autofixer"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "svelte",
+        "commit": "1a3ba88bba598c6734533c48e23cb5d37424b618",
+        "skills": {
+          "svelte-code-writer": "254d015a7f47041c509e116caec906b103ea6b2a903fc60605ecd0839e61dadd",
+          "svelte-core-bestpractices": "957a91060da5616989db0aef7a83daba4e45552a77efcaaca282356d28895c71"
+        }
+      }
+    }
+  }
+}

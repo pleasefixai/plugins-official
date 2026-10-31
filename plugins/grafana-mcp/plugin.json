@@ -1,0 +1,36 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "grafana-mcp",
+  "version": "1.0.0",
+  "description": "Guides to connect a Grafana instance and use its dashboards, data sources and alerts.",
+  "author": {
+    "name": "Grafana"
+  },
+  "homepage": "https://grafana.com",
+  "license": "Apache-2.0",
+  "keywords": [
+    "grafana",
+    "mcp",
+    "observability",
+    "dashboards",
+    "prometheus",
+    "loki"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "grafana-mcp",
+        "commit": "6c28ba1961d502d82301cbd64d2322e6e960477c",
+        "skills": {
+          "grafana-mcp-tools": "45937ac8206ab13c249ae143d3223212c184a4e1f011b4680e395a4064797d20"
+        },
+        "guessed": {
+          "description": "570d8646819cbfb1"
+        }
+      }
+    }
+  }
+}

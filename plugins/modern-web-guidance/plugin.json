@@ -1,0 +1,33 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "modern-web-guidance",
+  "version": "1.0.0",
+  "description": "Guides to current web practice for HTML, CSS, JavaScript and Chrome extensions.",
+  "author": {
+    "name": "Google Chrome"
+  },
+  "homepage": "https://goo.gle/modern-web-guidance",
+  "license": "Apache-2.0",
+  "keywords": [
+    "web",
+    "html",
+    "css",
+    "javascript",
+    "best-practices"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "modern-web-guidance",
+        "commit": "b31dc0a43ff5d19bcf386a3476a216f3b39a6f55",
+        "skills": {
+          "chrome-extensions": "9b6dc78168756a2d399967433f31621e5200357879bb26c4187961aa538a3235",
+          "modern-web-guidance": "f7b75400da95bbefa6b4503d25dee0c3d3b4a4e197af82ef46af3ca00d7aca38"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "orchestrate",
+  "version": "1.0.0",
+  "description": "Guides to split a large task across parallel cloud agents and collect their handoffs.",
+  "author": {
+    "name": "Cursor"
+  },
+  "homepage": "https://github.com/cursor/plugins/tree/main/orchestrate",
+  "license": "MIT",
+  "keywords": [
+    "orchestrate",
+    "cursor",
+    "cursor-sdk",
+    "agents",
+    "cloud-agents",
+    "parallel",
+    "automation"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "orchestrate",
+        "commit": "1ba91fc25c0977741dd0e267849e6234b037ed0a",
+        "skills": {
+          "orchestrate": "762251ca288f58930efa0246575dfb7d8a323799951fd6aad221b68c25778258"
+        }
+      }
+    }
+  }
+}

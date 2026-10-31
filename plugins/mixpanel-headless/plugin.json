@@ -1,0 +1,39 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "mixpanel-headless",
+  "version": "1.0.0",
+  "description": "Guides to sign in to Mixpanel and to build, read and change Mixpanel dashboards.",
+  "author": {
+    "name": "Mixpanel"
+  },
+  "homepage": "https://mixpanel.github.io/mixpanel-headless/",
+  "license": "MIT",
+  "keywords": [
+    "mixpanel",
+    "analytics",
+    "product-analytics",
+    "python",
+    "data-science",
+    "funnels",
+    "retention",
+    "flows",
+    "dashboards"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "codex",
+        "plugin": "mixpanel-headless",
+        "commit": "0722921d5542fc593105c27bd52630babd8b8c2a",
+        "skills": {
+          "dashboard-expert": "e718e9a42d49568dad1add2df1d11da8d7819a9852d96b7600d2e213cdbe6220",
+          "mixpanel-auth": "1d555dbfde6d935d9ed5cc3c1644129644e62ad87f339887b4d91e4e17951b65",
+          "mixpanelyst": "bc6bd0987c9067a2abb131301dfb3383329da935f8220cca94ec6565b9e6cf19",
+          "setup": "9b14b1841138233f55c148704c015093a0b6fdd2581d79662de193daec7ab2cf"
+        }
+      }
+    }
+  }
+}

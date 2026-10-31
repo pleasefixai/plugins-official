@@ -1,0 +1,36 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "netsuite-suitecloud",
+  "version": "1.0.0",
+  "description": "Guides for NetSuite SuiteScript records, SDF roles and docs, UIF apps and secure code.",
+  "author": {
+    "name": "Oracle NetSuite"
+  },
+  "homepage": "https://github.com/oracle/netsuite-suitecloud-sdk/tree/ai-plugins-dist/anthropic/netsuite-suitecloud",
+  "license": "The Universal Permissive License (UPL), Version 1.0",
+  "keywords": [
+    "netsuite",
+    "suitecloud",
+    "suitescript",
+    "sdf",
+    "uif"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "netsuite-suitecloud",
+        "commit": "23793a10a9bb557c684c5cb8a97f926eb3463f12",
+        "skills": {
+          "netsuite-owasp-secure-coding": "9cc795dc3855c890f571ba8489e82a9bae3b941666495499bf7232d1114b348b",
+          "netsuite-sdf-project-documentation": "04005f987d0f6c414fa706a4597bee16fc683576ce0d3c9c210783333aec7908",
+          "netsuite-sdf-roles-and-permissions": "79f4b2ecb0ef32c5c61c0193a5990e84d303826c8d28d06e10a2676714eefcdf",
+          "netsuite-suitescript-records-reference": "1c7b57c06921f48c0ee0d09a21ed4ee396c2d14fba38f663611a65a6a5b8e676",
+          "netsuite-uif-spa-reference": "312bf76185aef877c0b76228a90035a870fbe520e1c797c3f0442280718c8cf5"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "name": "ui5-typescript-conversion",
+  "version": "1.0.0",
+  "description": "Guides to convert SAPUI5 and OpenUI5 projects from JavaScript to TypeScript."
+}

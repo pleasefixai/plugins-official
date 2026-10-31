@@ -1,0 +1,34 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "save-to-spotify",
+  "version": "1.0.0",
+  "description": "Guides to make audio episodes with narration, chapters and cover art, saved to Spotify.",
+  "author": {
+    "name": "Spotify"
+  },
+  "homepage": "https://github.com/spotify/save-to-spotify",
+  "license": "Apache-2.0",
+  "keywords": [
+    "spotify",
+    "audio",
+    "podcast",
+    "tts",
+    "timeline",
+    "save-to-spotify"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "save-to-spotify",
+        "commit": "9d05c8cd8c8559552f84e27fe30f46b7693ce69a",
+        "skills": {
+          "configure-chapter-skip": "eae0ef01fbd46a8b65025166dbceaad79024197d21314032224d75ad6d512d7f",
+          "save-to-spotify": "f3e6094e0ae403839c019135984be7bdca547ddb4f5377a2381a8fa91d5e2d9e"
+        }
+      }
+    }
+  }
+}

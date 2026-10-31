@@ -1,0 +1,5 @@
+{
+  "name": "sourcegraph-cursor-plugin",
+  "version": "1.0.0",
+  "description": "Guides to search code, commits and diffs across your repositories with Sourcegraph."
+}

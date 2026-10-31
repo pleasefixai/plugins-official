@@ -1,0 +1,5 @@
+{
+  "name": "sourcegraph",
+  "version": "1.0.0",
+  "description": "Guides to find implementations, trace symbols and review code with Sourcegraph search."
+}

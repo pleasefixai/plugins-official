@@ -1,0 +1,5 @@
+{
+  "name": "svelte",
+  "version": "1.0.0",
+  "description": "Guides to write fast, modern Svelte components with correct reactivity and events."
+}

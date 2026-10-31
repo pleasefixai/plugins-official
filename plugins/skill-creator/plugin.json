@@ -1,0 +1,24 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "skill-creator",
+  "version": "1.0.0",
+  "description": "Guides to create skills, test them with evals and improve their descriptions.",
+  "author": {
+    "name": "Anthropic"
+  },
+  "homepage": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/skill-creator",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "skill-creator",
+        "commit": "a7ba5b93db0c7c8d17f3f1d25853adca79598a1a",
+        "skills": {
+          "skill-creator": "887b2027e7eeb09e4e6bcc48f2a0f7f76adc8033462139260a77c6d39799b779"
+        }
+      }
+    }
+  }
+}

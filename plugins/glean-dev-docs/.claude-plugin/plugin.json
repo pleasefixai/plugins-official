@@ -1,0 +1,5 @@
+{
+  "name": "glean-dev-docs",
+  "version": "1.0.0",
+  "description": "Guides to search the Glean developer docs for APIs, SDKs, authentication and indexing."
+}

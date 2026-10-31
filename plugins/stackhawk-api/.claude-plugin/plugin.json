@@ -1,0 +1,5 @@
+{
+  "name": "stackhawk-api",
+  "version": "1.0.0",
+  "description": "Guides to report StackHawk findings, scan history and security posture of your apps."
+}

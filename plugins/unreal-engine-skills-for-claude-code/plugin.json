@@ -1,0 +1,30 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "unreal-engine-skills-for-claude-code",
+  "version": "1.0.0",
+  "description": "Guides to edit levels, Blueprints and assets in Unreal Editor and build editor toolsets.",
+  "author": {
+    "name": "Epic Games"
+  },
+  "homepage": "https://dev.epicgames.com/documentation/unreal-engine/unreal-mcp-in-unreal-editor",
+  "license": "MIT",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "unreal-engine-skills-for-claude-code",
+        "commit": "a6aa73ada02a9fb1f5415bec491f9942c519b297",
+        "skills": {
+          "create-toolset": "1899a7fb22e66cc7f632297eba785178741ee7416b81397e915213ab1d13f155",
+          "unreal-mcp": "3de12572f9c4a8bdcc601f0c6f3a5fe57d56657e3aab3679e51c94adda1e0f9e",
+          "unreal-skill": "294f454da5eea55f117ec5053ee9998566a6b7c181ca8398758b6cc5b505143c"
+        },
+        "guessed": {
+          "description": "04efd32c66cc1e77"
+        }
+      }
+    }
+  }
+}

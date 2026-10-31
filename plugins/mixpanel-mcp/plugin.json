@@ -1,0 +1,28 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "mixpanel-mcp",
+  "version": "1.0.0",
+  "description": "Guides to set up Mixpanel tracking, find why a metric changed and build dashboards.",
+  "author": {
+    "name": "Mixpanel"
+  },
+  "homepage": "https://mixpanel.com/home/",
+  "license": "Apache-2.0",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "mixpanel-mcp",
+        "commit": "c77b566dc539382036cfc6dcf8758ba7f0787df9",
+        "skills": {
+          "create-dashboard": "579329c81c596d03c53599a27c858494282549d9690ced7dcec4d224f12280cb",
+          "deep-research": "7955db31cfb6c69faad71c5e88c71ea3c1de7f590024f65643a6740bc79fe367",
+          "manage-lexicon": "e486f108ca36127fa6987eb698f5035d9ad4004529d9d8a7f84635b17399a4d2",
+          "tracking-implementation": "953e0e6e993957b1f73b591eca9c43d8598a998ff4704dfbf1428c56acd8b5be"
+        }
+      }
+    }
+  }
+}

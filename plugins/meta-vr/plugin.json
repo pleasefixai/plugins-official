@@ -1,0 +1,68 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "meta-vr",
+  "version": "1.0.0",
+  "description": "Guides to build, profile and ship Meta Quest apps with Unity, WebXR and the Spatial SDK.",
+  "author": {
+    "name": "Meta Reality Labs"
+  },
+  "homepage": "https://developers.meta.com/horizon",
+  "license": "Apache-2.0",
+  "keywords": [
+    "meta-quest",
+    "horizon-os",
+    "meta-vr",
+    "vr",
+    "xr",
+    "mixed-reality",
+    "unity",
+    "webxr",
+    "spatial-sdk",
+    "platform-sdk",
+    "android",
+    "metavr",
+    "debugging",
+    "performance",
+    "store-submission",
+    "meta"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "meta-vr",
+        "commit": "8cb3ef460d2f60bb85dddba22797f5dd1d4adcbe",
+        "skills": {
+          "hz-android-2d-porting": "793b5879870cc51e90a65a24efa24fe2490b0e467303437f77518d1bd88757e7",
+          "hz-api-upgrade": "898ce071f0b6002a8bc756c6f723eea9f64ef1fe8b4c8b818778269897d08362",
+          "hz-immersive-designer": "85c113fc41d3cfc9cedc938633259d4b6bcf5ff17fbd6bd88a3141620ddb9928",
+          "hz-iwsdk-webxr": "425df5ba9341ca2b778499a86c0c1b01b0d52c531f4d2b3943288adc3aa3f6dd",
+          "hz-perfetto-debug": "5d663a9f8665f41abb28f7bf4c7852e9c30d16304ef06ddff7a2e2278a8d3819",
+          "hz-platform-sdk": "bbd81c3a94a618bef2055537c9fd1826d41b5b8c3ee4bf7045a749498bfb7e47",
+          "hz-psdk-integration": "806bed65a235ecaf34e46a698e2be440191b1c5858604e45f53c1fec33eba072",
+          "hz-quest-verify-first": "56db22d000a4b93d22a8b3c2a39895276eb357511577540a29089fbf0a552ae2",
+          "hz-simpleperf-debug": "34b94148521b62a1aa02bfec25c7158176f9f4caf2d6978605685d9cdf95659d",
+          "hz-spatial-sdk": "39dc3f04024895f73ec880a1a720ac992343a20dc1daf653a88de195f70a2b31",
+          "hz-store-pwa": "e1423c7be16cae812e1dc7f6ffa0f775bf8925a9cf85d53f1977af9b8e11e82e",
+          "hz-store-submit": "695341459d98f5d120b56a73a3c92635c99c257fbd6fdba964ffec745366801a",
+          "hz-unity-code-review": "9414abc6a04f74a26cd6da73ae77bfaa3ccb34c9b09448f7769ccb5060b01574",
+          "hz-unity-face-tracking": "955340b351098599be2a2d6e8ba995dddfd15b3bb5b30a596e945ccbe80194a7",
+          "hz-unity-fbx-import": "51adf45475559ba662243e96c9e34935e70f3d6b9aac1b6298f16e82e12ad1c6",
+          "hz-unity-meta-movement-sdk-retargeting": "f6a3e13a995fcb55ab02c34afd80887b8d2e48c8e02ad61d0d30b8fb88ae4b6f",
+          "hz-unity-meta-quest-ui": "1e56efe0e39012a571bc13a9efb3e898aa51c41815c04ea51ca941e534df90cc",
+          "hz-unity-passthrough-camera-access": "47a9a4b6df0d73ead61435b92ae981c8e95ff4fc8a3100b10a34915fea65b3ad",
+          "hz-unity-placement": "258bc0882202ce2a1b4acc33dcc04ffdad2a61d48b06273b615e56e574a8dddb",
+          "hz-unity-platform-sdk": "f6df3ce35bb0b5d02d1083ed157bf709df6f318b9fd749027c7ad7cd80181d77",
+          "hz-unity-project-analyzer": "0d746fbe04b1948752330617f8f9af3ab63e3c92d3f1139ffd56cbde165b3719",
+          "hz-unity-tmp-resources": "a7b77f7bf6b6994ac7640342404493352283727b2485d0429e2a1c6f05b954fb",
+          "hz-vr-debug": "437e25fc68565829ae09dc82631e545597633abaf07714a4adeef0ea6ca89cb0",
+          "hz-xr-simulator-setup": "47c7fa14df105cea4e74eccab908e8cd4d6b014a077e21212759a71233e33827",
+          "metavr-cli": "0285a05e461391f724113dee3b3dbaced2513e0333ab10fcbb61d0c4631ea783",
+          "portal": "f8a1015346863ab185ffc169e480ed7b09392845f89f9d6d6e9128ced555504a"
+        }
+      }
+    }
+  }
+}

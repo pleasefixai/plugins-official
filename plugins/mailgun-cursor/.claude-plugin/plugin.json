@@ -1,0 +1,5 @@
+{
+  "name": "mailgun-cursor",
+  "version": "1.0.0",
+  "description": "Guides for Mailgun deliverability, bounces, suppressions, DNS, templates and reports."
+}

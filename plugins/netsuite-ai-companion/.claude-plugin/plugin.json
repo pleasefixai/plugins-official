@@ -1,0 +1,5 @@
+{
+  "name": "netsuite-ai-companion",
+  "version": "1.0.0",
+  "description": "Guides to query NetSuite safely: tool order, SuiteQL checks, subsidiaries and currencies."
+}

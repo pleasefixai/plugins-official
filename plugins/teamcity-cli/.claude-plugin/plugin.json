@@ -1,0 +1,5 @@
+{
+  "name": "teamcity-cli",
+  "version": "1.0.0",
+  "description": "Guides for TeamCity builds, logs, queues, agents and projects, and moves to TeamCity."
+}

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "vsql-extension-builder",
+  "version": "1.0.0",
+  "description": "Guides to install a VillageSQL server and build VillageSQL extensions for MySQL.",
+  "author": {
+    "name": "VillageSQL"
+  },
+  "homepage": "https://villagesql.com",
+  "license": "Apache-2.0",
+  "keywords": [
+    "villagesql",
+    "mysql",
+    "extensions",
+    "database",
+    "developer-tools"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "vsql-extension-builder",
+        "commit": "18f7d68673e2bd5d400b4ee91298e5a4b9e8d24e",
+        "skills": {
+          "vsql-extension-builder": "a69c491d94a85811bb2d3fdb13c01d59e1b495dc091813ee77798e9b90858eb8",
+          "vsql-install-server": "c91a68fffcfec336732e3fab1afcf49c8591727893943332167df00c0cca01ce"
+        }
+      }
+    }
+  }
+}

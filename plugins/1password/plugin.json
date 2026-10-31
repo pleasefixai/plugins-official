@@ -1,0 +1,41 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "1password",
+  "version": "1.0.0",
+  "description": "Guides to create, import and mount .env secrets as 1Password Developer Environments.",
+  "author": {
+    "name": "1Password"
+  },
+  "homepage": "https://1password.com",
+  "license": "MIT",
+  "keywords": [
+    "1password",
+    "secrets",
+    "security",
+    "environment",
+    "env",
+    "dotenv",
+    "hooks",
+    "validation",
+    "mcp",
+    "developer-environments",
+    "linux"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "1password",
+        "commit": "d0e17cdd8ac501abea9f839c4c9353fd4993c707",
+        "skills": {
+          "1password-environments": "28fec06cd6c068f5db316d920d0fa6b344c47f50c2a990a507c01295241d0394"
+        },
+        "guessed": {
+          "description": "191246f56c38cc64"
+        }
+      }
+    }
+  }
+}

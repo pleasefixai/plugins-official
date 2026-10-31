@@ -1,0 +1,39 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "metamask-agent-wallet",
+  "version": "1.0.0",
+  "description": "Guides for MetaMask wallets, transfers, swaps, bridges, perps and prediction markets.",
+  "author": {
+    "name": "MetaMask"
+  },
+  "homepage": "https://metamask.com",
+  "license": "MIT",
+  "keywords": [
+    "metamask",
+    "wallet",
+    "crypto",
+    "ethereum",
+    "swap",
+    "bridge",
+    "perps",
+    "prediction-markets",
+    "agent-wallet"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "metamask-agent-wallet",
+        "commit": "c195dccf2d60aa2a326c1b3713d023ab60e7887c",
+        "skills": {
+          "metamask-agent-wallet": "901d9e644b46a9744ee4783ba615ba7f37a4bb4a473f5beecc7e6e979e9c3937"
+        },
+        "guessed": {
+          "description": "40ca1f5247edbed9"
+        }
+      }
+    }
+  }
+}

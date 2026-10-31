@@ -1,0 +1,5 @@
+{
+  "name": "1password",
+  "version": "1.0.0",
+  "description": "Guides to create, import and mount .env secrets as 1Password Developer Environments."
+}

@@ -1,0 +1,5 @@
+{
+  "name": "mlflow",
+  "version": "1.0.0",
+  "description": "Guides to trace, debug and score AI agents with MLflow, and to query trace metrics."
+}

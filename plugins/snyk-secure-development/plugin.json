@@ -1,0 +1,34 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "snyk-secure-development",
+  "version": "1.0.0",
+  "description": "Guides to choose secure, healthy open-source packages with Snyk package health checks.",
+  "author": {
+    "name": "Snyk"
+  },
+  "homepage": "https://snyk.io",
+  "keywords": [
+    "snyk",
+    "security",
+    "sast",
+    "sca",
+    "remediation"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "snyk-secure-development",
+        "commit": "786986df7330e975b1c35f995b0650171438120d",
+        "skills": {
+          "secure-dependency-health-check": "dc7f93fb9c90497c428d2d7a6cb8d3dce6b8df3af10e2bb771052874d2b924c7"
+        },
+        "guessed": {
+          "description": "c5b4a2bde35d76cd"
+        }
+      }
+    }
+  }
+}

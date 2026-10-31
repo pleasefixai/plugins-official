@@ -1,0 +1,5 @@
+{
+  "name": "gsap-skills",
+  "version": "1.0.0",
+  "description": "Guides to build GSAP animations: tweens, timelines, ScrollTrigger, SplitText and React."
+}

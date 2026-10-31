@@ -1,0 +1,5 @@
+{
+  "name": "ngs-analysis",
+  "version": "1.0.0",
+  "description": "Guides for sequencing analyses: FASTQ QC, RNA-seq, variants, single-cell and microbiome."
+}

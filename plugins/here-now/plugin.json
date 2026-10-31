@@ -1,0 +1,35 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "here-now",
+  "version": "1.0.0",
+  "description": "Guides to publish websites, documents and files to live URLs with here.now.",
+  "author": {
+    "name": "here.now"
+  },
+  "homepage": "https://here.now",
+  "license": "MIT",
+  "keywords": [
+    "here.now",
+    "herenow",
+    "publish",
+    "static-hosting",
+    "deploy",
+    "share",
+    "drive",
+    "storage"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "here.now",
+        "commit": "8ec223e927bb2247636aa0653536f63385f05298",
+        "skills": {
+          "here-now": "3ce44a7bdf0aae0f48704c118e95c108a9425c36bdfc62ac8905d497a2d48b10"
+        }
+      }
+    }
+  }
+}

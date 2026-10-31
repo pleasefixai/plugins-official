@@ -1,0 +1,33 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "qodo-standards",
+  "version": "1.0.0",
+  "description": "Guides to get and manage Qodo coding rules and review standards.",
+  "author": {
+    "name": "Qodo"
+  },
+  "homepage": "https://github.com/qodo-ai/qodo-skills.git",
+  "license": "MIT",
+  "keywords": [
+    "qodo",
+    "code-review",
+    "code-intelligence",
+    "standards",
+    "coding-agents"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "qodo-standards",
+        "commit": "b8c21854199c538b1c35c981c12a93bab4839ef2",
+        "skills": {
+          "qodo-get-rules": "555d08b59905863e3c98c1a95da02bb7074f6fd1babaadb74a78867057dc3eaa",
+          "qodo-manage-standards": "e728e319813e30a9460b9faf7f1a0c036b29d1da1c36142be5ca91cbdc3f5098"
+        }
+      }
+    }
+  }
+}

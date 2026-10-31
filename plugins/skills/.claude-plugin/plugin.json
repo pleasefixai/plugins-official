@@ -1,0 +1,5 @@
+{
+  "name": "skills",
+  "version": "1.0.0",
+  "description": "Guides to expose local services, secure endpoints and receive webhooks with ngrok."
+}

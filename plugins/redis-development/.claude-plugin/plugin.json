@@ -1,0 +1,5 @@
+{
+  "name": "redis-development",
+  "version": "1.0.0",
+  "description": "Guides for Redis data models, search, vectors, clusters, security and semantic caching."
+}

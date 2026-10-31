@@ -1,0 +1,5 @@
+{
+  "name": "sinch-cursor-plugin",
+  "version": "1.0.0",
+  "description": "Guides for Sinch SMS, WhatsApp, RCS, voice, fax, verification, numbers and Mailgun."
+}

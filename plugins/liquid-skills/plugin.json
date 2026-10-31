@@ -1,0 +1,35 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "liquid-skills",
+  "version": "1.0.0",
+  "description": "Guides to write accessible Shopify Liquid themes: sections, blocks, snippets and styles.",
+  "author": {
+    "name": "Shopify"
+  },
+  "homepage": "https://github.com/Shopify/liquid-skills/tree/main/plugins/liquid-skills",
+  "license": "MIT",
+  "keywords": [
+    "liquid",
+    "shopify",
+    "theme",
+    "accessibility",
+    "css",
+    "javascript"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "liquid-skills",
+        "commit": "ae3e4cc3f454923e388bbd841fd931f0c7bf5be4",
+        "skills": {
+          "liquid-theme-a11y": "7ba37ea729411c7cfba6c6ba14b4a3c9789cd997d351adcdcb4b13efc661e41f",
+          "liquid-theme-standards": "276234a073f05c6ba77a8e9f5ffbdbf6383fc0a8fb1013ea2266a2fdb6a071a3",
+          "shopify-liquid-themes": "0bae13153dc39ff75f4c3590889e6a04b79a7eb3b159de5333f3658aa6169caf"
+        }
+      }
+    }
+  }
+}

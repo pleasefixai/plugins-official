@@ -1,0 +1,5 @@
+{
+  "name": "volcano",
+  "version": "1.0.0",
+  "description": "Guides to build and deploy apps on Volcano, with auth, database, storage and functions."
+}

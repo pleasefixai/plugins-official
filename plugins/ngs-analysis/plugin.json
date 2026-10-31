@@ -1,0 +1,59 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "ngs-analysis",
+  "version": "1.0.0",
+  "description": "Guides for sequencing analyses: FASTQ QC, RNA-seq, variants, single-cell and microbiome.",
+  "author": {
+    "name": "OpenAI"
+  },
+  "homepage": "https://github.com/openai/openai",
+  "license": "MIT",
+  "keywords": [
+    "ngs",
+    "sequencing",
+    "bioinformatics",
+    "fastq",
+    "bcl",
+    "rnaseq",
+    "scrnaseq",
+    "variant-calling",
+    "atacseq",
+    "chipseq",
+    "microbiome",
+    "metagenomics",
+    "pipeline-routing",
+    "nextflow",
+    "nf-core"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "codex",
+        "plugin": "ngs-analysis",
+        "commit": "0722921d5542fc593105c27bd52630babd8b8c2a",
+        "skills": {
+          "ngs-amplicon-microbiome": "06e94d102c12560d12440d2dec485ea2e208f4a674133c03ca67f6f36b1c9ad2",
+          "ngs-analysis-router": "954269a1db20dfe1842c6ad78498f42a0269c4f9ddbe9056de067f90b0d1144a",
+          "ngs-atacseq-peaks-qc": "f1b277e65f008737d6de0a8f6a306cae4445dc90dfc05d4d8569fb30b490f40e",
+          "ngs-bcl-to-fastq": "89a0d9c9cafc699dd5297cfefa04c1d1f8b99cf2ac99f8d7fd4612a64a8b2d28",
+          "ngs-bulk-rnaseq": "b511703ebc75d7406b6a7b16d94fb2f5bc5269dc13e85b9e0391eee2570e583c",
+          "ngs-bulk-rnaseq-counts-qc": "9dce9c7b4ecd9315142f7d4ba0baff34238af3c3f01da8e4df7ec400dbb9342c",
+          "ngs-bulk-rnaseq-differential-expression": "66067c87e1f94dba6b882fd357d01b760dcaf6bcd85daadd6903b34cc3cadf93",
+          "ngs-chip-cutrun-peaks-qc": "56dd30edf25204ade8dd503b1419d5caca5816f92078ab5137f70bc38541c53f",
+          "ngs-dna-germline-variants": "1a737ef0e92070dc219596f3b47c618848d922f631a836f604116b86c26f4662",
+          "ngs-dna-somatic-variants": "e2b71f6b26edb0fd9328ae6ad2f0009d5d6f2f998b5bb5e3f27612dcf6fedda6",
+          "ngs-dna-umi-panel-variants": "99f133b4d342151c7662daffd1fbb619f71948497eba1a47816daee0925f6442",
+          "ngs-dna-variant-calling": "ba643f29019b69eb77e9b82cedb54104c7745fa72c7d721fe00540a47334b222",
+          "ngs-epigenomics-peaks": "02490f3d1327c950e1530f9e3860d4cdff7347990d64b99e2a9b1ed836fdbbc0",
+          "ngs-fastq-qc": "86142ce85e0ce80052fb18a69f3a9c59c44e525ac9f9b17710f3dde25ea3eede",
+          "ngs-runtime-env": "3e4f67627ad42f034f8504a923d113999831a9099c5fba6cc55745271563c317",
+          "ngs-scrna-seq": "08daf1907f5d865bfdbf2b4955e9eae2fbcd1f41f0325982307865bf19dd9c3f",
+          "ngs-shotgun-metagenomics": "4cad84eaf646b262b1a6bc393532406a785bb24269caf453e0e688a246233b10",
+          "scrna-seq-qc": "731881c8b292027426a35b565e373e5b88bf8c598dbeaa8945178689d61d1c07"
+        }
+      }
+    }
+  }
+}

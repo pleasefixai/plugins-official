@@ -1,0 +1,36 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "preset-cli-skills",
+  "version": "1.0.0",
+  "description": "Guides to script Preset charts, dashboards, datasets and users from the shell and CI/CD.",
+  "author": {
+    "name": "Preset"
+  },
+  "homepage": "https://www.preset.io",
+  "license": "Apache-2.0",
+  "keywords": [
+    "preset",
+    "superset",
+    "sup",
+    "cli",
+    "shell",
+    "scripting",
+    "ci-cd",
+    "automation"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "preset-cli-skills",
+        "commit": "838f0a408dc1a50adc94175b387550c81371554e",
+        "skills": {
+          "preset-cli": "09bb4e0fd606012927cf04b91aff3eb2073f3935121f712ea8e38ae9189f6486",
+          "preset-cli-mutations": "b5dbecec683bd25212587a1e882950f21c47ae72319d135e3d17456e04f55373"
+        }
+      }
+    }
+  }
+}

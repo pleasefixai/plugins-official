@@ -1,0 +1,5 @@
+{
+  "name": "sentry-cli",
+  "version": "1.0.0",
+  "description": "Guides to view Sentry issues, events, projects and organizations, and call its API."
+}

@@ -1,0 +1,34 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "growthbook",
+  "version": "1.0.0",
+  "description": "Guides for GrowthBook feature flags, A/B tests, metrics and product analytics dashboards.",
+  "author": {
+    "name": "GrowthBook"
+  },
+  "homepage": "https://growthbook.io",
+  "license": "MIT",
+  "keywords": [
+    "growthbook",
+    "feature-flags",
+    "experimentation",
+    "ab-testing"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "growthbook",
+        "commit": "7a84f338fe217b20641cdc5c01b5b37f0b950527",
+        "skills": {
+          "analytics": "f6a7015fd5b3d1a04d71b9ce0012cad5bb37ff512f21a112ad2bc11f3b6dcd0d",
+          "experiments": "1e496c6180605516678e3f21a258decf92b6dc97630682757f894374ed58e004",
+          "feature-flags": "e06138196fa14e9138f0b59015c55d5f3e06cbf036690fb31f2b0e3d13290231",
+          "gb-setup": "40f66850c26ea9cfde101d513bee26f58d0df3d77c3ff39e6410165cdcae5edc"
+        }
+      }
+    }
+  }
+}

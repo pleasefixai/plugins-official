@@ -1,0 +1,36 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "qdrant-skills",
+  "version": "1.0.0",
+  "description": "Guides to deploy, size, scale, tune, monitor and upgrade Qdrant vector search.",
+  "author": {
+    "name": "Qdrant"
+  },
+  "homepage": "https://skills.qdrant.tech",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "qdrant-skills",
+        "commit": "d2127f6e1b9c6611fff10fe939c6fb17761aaec2",
+        "skills": {
+          "qdrant-clients-sdk": "89b0c734f510d15aad23f513c4a4fffe881cf40e3be326005882c204e5f9ded6",
+          "qdrant-deployment-options": "57c90c32a018b35fe57f9267e4a87ef6c6a314b770746f525b6f514a8311ce88",
+          "qdrant-edge": "02d9ff21140a46009f73de15e0f7b6d3589f95082cea4d0b96feb319b70dd925",
+          "qdrant-hybrid-cloud-setup": "626e7245f75e5961d0e05850b267cd93ea84f8fcf79adda6145ca930a4939d6e",
+          "qdrant-migration-tool": "59f6a27e08a36593f3391d211912a61cc3d6447d004effe6a257066ff240076c",
+          "qdrant-model-migration": "e613d90c68649008d7eb50e17e1663141e159092a49e87521c7ed3ddbdc474d3",
+          "qdrant-monitoring": "5e94944c3f451a7befaf751ccb89e20a3d316c59436a442e9fc1d0a1e4ebea2a",
+          "qdrant-multitenancy": "58a4a0f81c808b8609dbe01bf11d1324486e8ad493da5649efda245065211ade",
+          "qdrant-performance-optimization": "72e3460382722acc9229072ca1fb31c420b490850fb806a1ce649280defed1bf",
+          "qdrant-scaling": "a514d770f6acc1b6ac13c25c88709e71f2ad933e888e7655c585d199d988006a",
+          "qdrant-search-quality": "bb622ef70175a03a4fb9366b5cd8a3f3c299d568577383dd0131fa0cd723cbc5",
+          "qdrant-sizing": "369bd0f40a9d53949f2f2df2e92146c75c5ff4a1a62b3b785dc2e07bfc4d4f9b",
+          "qdrant-version-upgrade": "467e5ae9128ce4e061a1481bcafe8f11897f6219136b6713057b35090868791c"
+        }
+      }
+    }
+  }
+}

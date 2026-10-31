@@ -1,0 +1,5 @@
+{
+  "name": "pinecone",
+  "version": "1.0.0",
+  "description": "Guides for Pinecone indexes, vector and full-text search, Assistants and n8n workflows."
+}

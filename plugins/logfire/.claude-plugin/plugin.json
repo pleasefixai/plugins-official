@@ -1,0 +1,5 @@
+{
+  "name": "logfire",
+  "version": "1.0.0",
+  "description": "Guides to set up Pydantic Logfire observability for an app and its infrastructure."
+}

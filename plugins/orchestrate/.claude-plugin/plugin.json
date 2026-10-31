@@ -1,0 +1,5 @@
+{
+  "name": "orchestrate",
+  "version": "1.0.0",
+  "description": "Guides to split a large task across parallel cloud agents and collect their handoffs."
+}

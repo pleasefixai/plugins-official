@@ -1,0 +1,5 @@
+{
+  "name": "ui5-modernization",
+  "version": "1.0.0",
+  "description": "Guides to modernize SAPUI5 apps: deprecated APIs, globals, manifests and test setup."
+}

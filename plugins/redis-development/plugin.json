@@ -1,0 +1,40 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "redis-development",
+  "version": "1.0.0",
+  "description": "Guides for Redis data models, search, vectors, clusters, security and semantic caching.",
+  "author": {
+    "name": "Redis"
+  },
+  "homepage": "https://redis.io",
+  "license": "MIT",
+  "keywords": [
+    "redis",
+    "database",
+    "caching",
+    "vector-search",
+    "performance",
+    "best-practices"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "redis-development",
+        "commit": "a84871d065f398fed55e1633f66b66f731eb4e2b",
+        "skills": {
+          "iris-development": "1fcbd60a8e25feef4887ea1b9bbb6ba51466c4a9a1839a61ad3dd4a2792f1e02",
+          "redis-clustering": "9d24b1d7b92591d41b794f170a56a9cfb1566cfbcf30806f89e8c5197116bfe9",
+          "redis-connections": "29921b5e941f80c9bb90aad1c6cb96129222248916894268d72133388fa27b32",
+          "redis-core": "c6d8c7726715c116a9930619c97c4e36010a1dda287a716c8ffbc537b3658561",
+          "redis-observability": "d8b386790155a21524a8c3724908f5db0e4fa58630988f6df20919ed6767bd4b",
+          "redis-search": "29e45fd782bf970b934771b1e953cb77afde1ce3fe1ffc94b1d6872773bc0b98",
+          "redis-security": "948347fff5fd25316b4108427378adabb68fa48fb9f4cbb593adf402a13e18df",
+          "redis-semantic-cache": "aebc36809610d1f5c23b2774eb92d28e7fd20922dbf9378b954d6a49eedeaa30"
+        }
+      }
+    }
+  }
+}

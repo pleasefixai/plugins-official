@@ -1,0 +1,41 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "shadcn",
+  "version": "1.0.0",
+  "description": "Guides to add, search, fix and style shadcn/ui components, registries and presets.",
+  "author": {
+    "name": "shadcn"
+  },
+  "homepage": "https://ui.shadcn.com",
+  "license": "MIT",
+  "keywords": [
+    "shadcn",
+    "shadcn-ui",
+    "ui",
+    "components",
+    "tailwind",
+    "tailwindcss",
+    "radix",
+    "react",
+    "design-system",
+    "registry",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "shadcn",
+        "commit": "10f1717a3e2a3c16cfbd43877c1e44063d9d749a",
+        "skills": {
+          "shadcn": "22c6f1f7a0761a96f8903c0bffd3360d672b524a53fa3d3f789deb22bd9e299c"
+        },
+        "guessed": {
+          "description": "b298ada751ccb962"
+        }
+      }
+    }
+  }
+}

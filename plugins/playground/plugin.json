@@ -1,0 +1,24 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "playground",
+  "version": "1.0.0",
+  "description": "Guides to build single-file HTML playgrounds with controls, a live preview and a prompt.",
+  "author": {
+    "name": "Anthropic"
+  },
+  "homepage": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/playground",
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "playground",
+        "commit": "a7ba5b93db0c7c8d17f3f1d25853adca79598a1a",
+        "skills": {
+          "playground": "97a30df64e4592802c7a3b7d7f23c2048c6daf7bdf4a55c10ea815c8f1127988"
+        }
+      }
+    }
+  }
+}

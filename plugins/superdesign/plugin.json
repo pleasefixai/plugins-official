@@ -1,0 +1,44 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "superdesign",
+  "version": "1.0.0",
+  "description": "Guides to design or redesign UI, slides and graphics on the Superdesign canvas.",
+  "author": {
+    "name": "Superdesign dev, Inc."
+  },
+  "homepage": "https://superdesign.dev",
+  "license": "MIT",
+  "keywords": [
+    "design",
+    "ui-design",
+    "web-design",
+    "landing-pages",
+    "dashboards",
+    "wireframes",
+    "mockups",
+    "prototyping",
+    "design-systems",
+    "branding",
+    "graphics",
+    "posters",
+    "presentations",
+    "slide-decks",
+    "image-generation",
+    "infinite-canvas",
+    "design-drafts"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "superdesign",
+        "commit": "f9f05cd988c247dce6c072eaf9ac6b162f2ffc4b",
+        "skills": {
+          "superdesign": "e528f0e8c0b9cb78cfe37352b7b2145978393c9429c0c95c4546e7d679f2db89"
+        }
+      }
+    }
+  }
+}

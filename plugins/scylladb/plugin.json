@@ -1,0 +1,38 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "scylladb",
+  "version": "1.0.0",
+  "description": "Guides to connect to ScyllaDB Cloud, design CQL tables and run vector search.",
+  "author": {
+    "name": "ScyllaDB"
+  },
+  "homepage": "https://www.scylladb.com/",
+  "license": "Apache-2.0",
+  "keywords": [
+    "scylla",
+    "scylladb",
+    "database",
+    "nosql",
+    "cql",
+    "data modeling",
+    "vector search",
+    "semantic search",
+    "rag"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "scylladb",
+        "commit": "33ab8b17779571fb07790e264722e9be0d78c9eb",
+        "skills": {
+          "scylladb-cloud-setup": "2f3af25781ee281d3fa29756129bd4d8ef45b8bcf400a513a89ad5c34e53a672",
+          "scylladb-data-modeling": "f753132d8b39545b1f0e79ad865f8a16578763a9aa9f88356c0b8b6759e48b46",
+          "scylladb-vector-search": "59f00a07520d50f0bda6e8e76d2714eceadefd2363bf810270eabaa9b188c61f"
+        }
+      }
+    }
+  }
+}

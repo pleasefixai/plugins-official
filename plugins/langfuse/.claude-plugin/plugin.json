@@ -1,0 +1,5 @@
+{
+  "name": "langfuse",
+  "version": "1.0.0",
+  "description": "Guides to trace, evaluate and manage prompts in Langfuse, and to move to Langfuse."
+}

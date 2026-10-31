@@ -1,0 +1,43 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "omni-integrations",
+  "version": "1.0.0",
+  "description": "Guides to move Omni topics and metrics into Snowflake, Databricks and dbt semantic layers.",
+  "author": {
+    "name": "Omni"
+  },
+  "homepage": "https://www.omni.co",
+  "license": "Apache-2.0",
+  "keywords": [
+    "omni",
+    "integrations",
+    "snowflake",
+    "semantic-views",
+    "databricks",
+    "metric-views",
+    "dbt",
+    "metricflow",
+    "semantic-layer",
+    "data-platforms",
+    "analytics"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "omni-integrations",
+        "commit": "04f745c53d6ac710476e541c26ed3fdc3d40af4b",
+        "skills": {
+          "omni-to-databricks-metric-views": "87327210008d4c96689006dff88f0ccd4cf612659a35bdb43269e05ab34d359f",
+          "omni-to-dbt-metricflow": "fc8a7d3930194485a549185f61aef0955f745e37bf341b40a48ae1e95733b787",
+          "omni-to-snowflake-semantic-view": "8dd6989fa0fedd833722da39e99bc063c14d7ef569c269f2df6ab5e176588bf1"
+        },
+        "guessed": {
+          "description": "dddebce9912d6a5d"
+        }
+      }
+    }
+  }
+}

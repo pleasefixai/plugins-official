@@ -1,0 +1,46 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "pixeltable",
+  "version": "1.0.0",
+  "description": "Guides to build multimodal AI apps on Pixeltable tables, computed columns and embeddings.",
+  "author": {
+    "name": "Pixeltable"
+  },
+  "homepage": "https://docs.pixeltable.com",
+  "license": "Apache-2.0",
+  "keywords": [
+    "pixeltable",
+    "multimodal",
+    "database",
+    "vector-search",
+    "embeddings",
+    "rag",
+    "agents",
+    "orchestration",
+    "video",
+    "audio",
+    "images",
+    "documents",
+    "backend",
+    "computed-columns",
+    "ai",
+    "udf"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "pixeltable",
+        "commit": "c471dbb262b6bc135e903fefd36c6f354101c6b8",
+        "skills": {
+          "pixeltable-skill": "7d5bbd625c1e0c04fe46956cc0ee0c28de21c4df338b9388d38c14452305ae28"
+        },
+        "guessed": {
+          "description": "f46a6539bc249d25"
+        }
+      }
+    }
+  }
+}

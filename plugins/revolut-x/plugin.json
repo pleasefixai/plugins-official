@@ -1,0 +1,40 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "revolut-x",
+  "version": "1.0.0",
+  "description": "Guides to trade crypto, read market data, run grid bots and set alerts with Revolut X.",
+  "author": {
+    "name": "Revolut"
+  },
+  "homepage": "https://www.revolut.com/",
+  "license": "MIT",
+  "keywords": [
+    "revolut",
+    "crypto",
+    "exchange",
+    "trading",
+    "cli",
+    "market-data",
+    "grid-bot"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "revolut-x",
+        "commit": "5b0370bf406f6d010f100a66c37449d319b4a3e0",
+        "skills": {
+          "revx-account": "b24f59c18e24e7285024e9f9dbc00171e45e0404fbbc71efd8527195bc9dfb90",
+          "revx-auth": "2b398afece93d89032170adffd16719e561e462a1bc2102f5776d881b6b08ec0",
+          "revx-market": "e381f5e67efc64b9660a6232bfe4ea2c438a8f821c85b52af3d06226f4d83a96",
+          "revx-monitor": "c128083663a8135aff5ca124bc14e48909c2f58120c0e6cfdcf8355c808fcc38",
+          "revx-strategy": "4dae49aa48e352b6ed9dbd3b57596f963325895f58e6393af8affce2a5e1570a",
+          "revx-telegram": "6820d89d1cb4308cd2aaba2deb88de5323a84461df4c1ddf912a34b88c062563",
+          "revx-trading": "b90e2ef4880b47b280e8db6a73fab7a05607dc4183096e630b000560e843d29a"
+        }
+      }
+    }
+  }
+}

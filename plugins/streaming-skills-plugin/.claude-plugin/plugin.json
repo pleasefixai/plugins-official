@@ -1,0 +1,5 @@
+{
+  "name": "streaming-skills-plugin",
+  "version": "1.0.0",
+  "description": "Guides for Kafka clients, Kafka Streams, Flink SQL, UDFs and Schema Registry on Confluent."
+}

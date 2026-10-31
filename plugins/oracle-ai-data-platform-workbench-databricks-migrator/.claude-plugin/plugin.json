@@ -1,0 +1,5 @@
+{
+  "name": "oracle-ai-data-platform-workbench-databricks-migrator",
+  "version": "1.0.0",
+  "description": "Guides to move Databricks notebooks, jobs and catalogs to Oracle AI Data Platform."
+}

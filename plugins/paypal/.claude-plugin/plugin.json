@@ -1,0 +1,5 @@
+{
+  "name": "paypal",
+  "version": "1.0.0",
+  "description": "Guides to build PayPal checkout, subscriptions, invoices, disputes, payouts and webhooks."
+}

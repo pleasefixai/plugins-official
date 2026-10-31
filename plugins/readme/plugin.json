@@ -1,0 +1,36 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "readme",
+  "version": "1.0.0",
+  "description": "Guides to set up a ReadMe hub and update its docs, API reference and changelog.",
+  "author": {
+    "name": "ReadMe"
+  },
+  "homepage": "https://readme.io",
+  "license": "MIT",
+  "keywords": [
+    "readme",
+    "documentation",
+    "docs",
+    "api-reference",
+    "openapi",
+    "changelog",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "readme",
+        "commit": "89234b77a16e8668dcfed6d2b27ad0a7cfaf84bf",
+        "skills": {
+          "mcp-auth": "20dbf7dc94ebb4deb64c9829370085264834fbf42932260df89089be9063493f",
+          "mcp-server": "9899e9f23f174b39ab35aade1a379a8bccc93492cc74a90a883806cd46dc28e1",
+          "onboarding": "20c0b040a7dab6de9fb9589aa5735c94a61ecbe6b11aaaa0ec0d6d5dd0c4b95b"
+        }
+      }
+    }
+  }
+}

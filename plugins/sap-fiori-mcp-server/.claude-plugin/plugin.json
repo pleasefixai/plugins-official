@@ -1,0 +1,5 @@
+{
+  "name": "sap-fiori-mcp-server",
+  "version": "1.0.0",
+  "description": "Guides for SAP Fiori apps: visual filters, charts, tree tables, OPA5 tests and ESLint."
+}

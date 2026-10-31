@@ -1,0 +1,42 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "jfrog",
+  "version": "1.0.0",
+  "description": "Guides to connect package managers to JFrog Artifactory and to use the JFrog AI Catalog.",
+  "author": {
+    "name": "JFrog Ltd."
+  },
+  "homepage": "https://jfrog.com",
+  "license": "Apache-2.0",
+  "keywords": [
+    "jfrog",
+    "artifactory",
+    "xray",
+    "security",
+    "devops",
+    "supply-chain",
+    "artifacts",
+    "curation",
+    "agent-guard",
+    "package-resolution",
+    "ai-catalog"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "jfrog",
+        "commit": "9b1f8f6c883522a87502e5155abd593a8befe3c5",
+        "skills": {
+          "jfrog": "b40ba7486f5fdbcb7057658144653d7d9188d702a5b4e5c2f9c13afcad8a141f",
+          "jfrog-ai-catalog": "ab84dc4ee9130462dd0fef8bf1b3cfb8a2edae36f67df1f3444203cfe8d16856",
+          "jfrog-package-curation": "8ad512d51b07fa1c0e07a74bb6fe626866c1ce297678e6b2e72066294ca17dce",
+          "jfrog-reference-architecture": "fb9d0f97e646eae08120045cef6414fc6f20efd5a7d0f543a1062dda901ea7d1",
+          "jfrog-setup-package-managers": "05cfc54edcfbbc0e2adc04e1c0fd74cfeafd26e69ffbbad44123af3168ab8f3a"
+        }
+      }
+    }
+  }
+}

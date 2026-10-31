@@ -1,0 +1,31 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "opensearch-agent-skills",
+  "version": "1.0.0",
+  "description": "Guides to build semantic, hybrid and vector search and analyze logs with OpenSearch.",
+  "author": {
+    "name": "OpenSearch"
+  },
+  "homepage": "https://opensearch.org",
+  "license": "Apache-2.0",
+  "keywords": [
+    "search",
+    "observability",
+    "opensearch",
+    "aws"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "opensearch-agent-skills",
+        "commit": "c4eda2591f50e7950f0d5c2fd3698abfd74018be",
+        "skills": {
+          "opensearch-skills": "ae738bda830fd2e5d2c19e621910b5f8d1c21108f25bed158e3891235f0809f8"
+        }
+      }
+    }
+  }
+}

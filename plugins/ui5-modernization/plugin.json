@@ -1,0 +1,51 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "ui5-modernization",
+  "version": "1.0.0",
+  "description": "Guides to modernize SAPUI5 apps: deprecated APIs, globals, manifests and test setup.",
+  "author": {
+    "name": "SAP SE"
+  },
+  "homepage": "https://github.com/UI5/plugins-coding-agents",
+  "license": "Apache-2.0",
+  "keywords": [
+    "ui5",
+    "sapui5",
+    "openui5",
+    "modernization",
+    "linter",
+    "upgrade"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "ui5-modernization",
+        "commit": "2b8c4a944e39609214bce7aef3b05260985f0e91",
+        "skills": {
+          "fix-bootstrap-params": "1ead24cb7ae9a8a3257a0fb1061a2b18d1dacec7237dcd51bfc8fb00578644d1",
+          "fix-component-async": "d8ee4da0d6648924f760f83851f9f5ea6e7bbf9a70a1113f7296254e6315b6bf",
+          "fix-control-renderer": "9d286bc3cdc4a77d08c968deef0a80f75b27f2b4870331037b71e7f349510d05",
+          "fix-csp-compliance": "370bfe029cc3c68b7e7602f4c8e9118992fd1cdb124437c6b3f37c04af25a44e",
+          "fix-cyclic-deps": "e6567aecd239b7fbda0b81f20176362c659a76ca5d2e3607c347f3e2dc90cb57",
+          "fix-deprecated-controls": "159b52ba66d99a57be7a9f5be117912c81d6faffb5cbf9f7e672936212e3b04d",
+          "fix-fiori-elements-extensions": "ea7e71494efbd5dd6d9960f9abf025adb18506f670172d9487e241a076325ec1",
+          "fix-js-globals": "661cb2fbfd80f829e30d2dd20ff9b8199a1c8c8bd74cfe59e571ca9f519a64d6",
+          "fix-library-init": "a148a88393a0ae2d91b30abe8419fbbb9996ff69cff9ed75a8fe2f91af5a2747",
+          "fix-linter-blind-spots": "dafa82004132a7f3675ebaeea867244d64b10ff2c20d496c18c770772c0584ff",
+          "fix-manifest-json": "bdba9679c4ea03c94ef58b798ed8c0b52e7c1e87d3cc02a8ecf3149528a843d2",
+          "fix-partially-deprecated-apis": "f1e7245f5850dca6d0dd7764f87fec1db6644980d498218842ec67720b0b7409",
+          "fix-pseudo-modules": "6c17250c1575e4bec5df0c36ca3b67280faef953a344a4dca788752cc7c6c8bd",
+          "fix-table-row-mode": "65c6202d435f2d24310aee5a959bff1041d68d80c6f1efc352c1e54b3fe49d0c",
+          "fix-xml-globals": "2f6c9278c815cf8a7c25cd6a17d470d9ddd0af4afdbbc766e79f991b22e3439e",
+          "fix-xml-native-html": "9e3a62ec74051ada665f0d9d1cd6915490d668342b7c6579e8be907793a7099e",
+          "modernize-flp-sandbox": "db8ae31d84bd795f0e2036f619a8492265d8b854c853a288ac8f9ac9a0fdecba",
+          "modernize-test-starter": "0d6cca2f6c5c34f6e48c38f73294cfbf5d93bd578e403e02dc25a66ad56c54df",
+          "modernize-ui5-app": "f3622f8f2a3f9d4ea7224eb0f58ba6a6f9a3f2e3bdf449d2bb9b463fc822c808"
+        }
+      }
+    }
+  }
+}

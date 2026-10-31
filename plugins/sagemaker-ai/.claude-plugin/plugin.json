@@ -1,0 +1,5 @@
+{
+  "name": "sagemaker-ai",
+  "version": "1.0.0",
+  "description": "Guides to plan, fine-tune and evaluate models and debug HyperPod clusters on SageMaker AI."
+}

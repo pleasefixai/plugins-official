@@ -1,0 +1,37 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "vibe-prospecting",
+  "version": "1.0.0",
+  "description": "Guides to find, enrich and export B2B companies and contacts with Vibe Prospecting.",
+  "author": {
+    "name": "vibeprospecting.ai"
+  },
+  "homepage": "https://www.vibeprospecting.ai/product/claude-plugin",
+  "license": "MIT",
+  "keywords": [
+    "b2b",
+    "prospecting",
+    "leads",
+    "sales",
+    "enrichment",
+    "companies",
+    "contacts"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "claude",
+        "plugin": "vibe-prospecting",
+        "commit": "ca43f6d92395462d8915dc31364bbce6a83e4006",
+        "skills": {
+          "vibe-prospecting": "7bdc8220a8fa4318157ab33b71fa14ba2c9c58d74eac55632a8a29bdf5f5f0b4"
+        },
+        "guessed": {
+          "description": "3bead0f297a9e499"
+        }
+      }
+    }
+  }
+}

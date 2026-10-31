@@ -1,0 +1,41 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "name": "hostinger-cursor-plugin",
+  "version": "1.0.0",
+  "description": "Guides to deploy, move, audit and maintain websites, WordPress and domains on Hostinger.",
+  "author": {
+    "name": "Hostinger"
+  },
+  "homepage": "https://hostinger.com",
+  "license": "MIT",
+  "keywords": [
+    "hosting",
+    "nodejs",
+    "deployment",
+    "mcp",
+    "hostinger",
+    "dns",
+    "wordpress",
+    "vps"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.10.0",
+      "upstream": {
+        "kind": "imported",
+        "marketplace": "cursor",
+        "plugin": "hostinger-cursor-plugin",
+        "commit": "0a3d81434bc4a651b9d435764d1ab78946fd7cbd",
+        "skills": {
+          "audit-hosting": "7720effb53fa9601b1dbc723e812c113c429db91b6fc8ac41bbc0514bd8698b2",
+          "connect-domain": "cfe3209ff75b318243f95440706e511b009051bb1aa89a47ec4fb4fe8b9b4994",
+          "deploy-to-hosting": "77ee8576a85e475d83ad568a9da8de79b5fc694c982236818b7acb1fa04df5f0",
+          "hostinger-headless": "9e90819e7c103a7527bea19100af037a6353122496b6bc57a9ac69de5459b157",
+          "maintain-wordpress": "7408b53c605fcdda2839ba1f7b569d6abae151edfb5fd755ddaef1bb62a1b776",
+          "migrate-to-hosting": "a737e3baf79d5fa38d4eda677abee1ead344bfbd1c5518d5e36ff1c6ca3ad6ce",
+          "troubleshoot-website": "ba64eef144babebde1eb9f2696fa551a9ca2fdfdd1e5e7067d7f07d73ff5581b"
+        }
+      }
+    }
+  }
+}

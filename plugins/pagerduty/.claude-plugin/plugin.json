@@ -1,0 +1,5 @@
+{
+  "name": "pagerduty",
+  "version": "1.0.0",
+  "description": "Guides to connect your PagerDuty account for incidents, services, schedules and on-call."
+}

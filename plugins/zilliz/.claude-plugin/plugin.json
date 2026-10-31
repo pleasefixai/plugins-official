@@ -1,0 +1,5 @@
+{
+  "name": "zilliz",
+  "version": "1.0.0",
+  "description": "Guides for Zilliz Cloud clusters, Milvus collections, vector search, backups and access."
+}
