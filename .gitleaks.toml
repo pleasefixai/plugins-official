@@ -93,3 +93,38 @@ condition = "AND"
 paths = ['''^plugins/zoom/skills/''']
 regexTarget = "secret"
 regexes = ['''^"CLIENT_ID:CLIENT_SECRET"$''']
+
+[[allowlists]]
+description = "Sample passwords of Microsoft's Azure SQL examples, and the published key of the Azure Cosmos DB emulator."
+condition = "AND"
+paths = ['''^plugins/azure-sql-developer/skills/''', '''^plugins/azure-cosmos-db-assistant/skills/''']
+regexTarget = "secret"
+regexes = ['''^YourStr0ng_Passw0rd$''', '''^An0ther_Str0ng_Passw0rd$''', '''^C2y6yDjf5/R\+ob0N8A7Cgv30VRDJIWEHLM\+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==$''']
+
+[[allowlists]]
+description = "AWS's documented example access key, in Dynatrace's sample security events."
+condition = "AND"
+paths = ['''^plugins/dynatrace/skills/''']
+regexTarget = "secret"
+regexes = ['''^ASIAEXAMPLEACCESSKEY$''']
+
+[[allowlists]]
+description = "Placeholders in Carbone's and Auth0's curl examples and Auth0's config sample."
+condition = "AND"
+paths = ['''^plugins/carbone-skill/skills/''', '''^plugins/auth0/skills/''']
+regexTarget = "secret"
+regexes = ['''^API_TOKEN$''', '''^TOKEN_WITHOUT_ADMIN_SCOPE$''', '''^generated_32_byte_hex$''']
+
+[[allowlists]]
+description = "The base64 of \"my-secret-value\" in Fastly's example, and the sample output of ClickHouse's local Postgres start."
+condition = "AND"
+paths = ['''^plugins/fastly-agent-toolkit/skills/''', '''^plugins/clickhouse-best-practices/skills/''']
+regexTarget = "secret"
+regexes = ['''^bXktc2VjcmV0LXZhbHVl$''', '''^n2efVm0c4nL5dstCyIFxqTSa$''']
+
+[[allowlists]]
+description = "Python code that reads an operator's s3_key attribute, in Astronomer's OpenLineage examples."
+condition = "AND"
+paths = ['''^plugins/(astronomer-data|astronomer-data-agents|data|data-engineering)/skills/''']
+regexTarget = "secret"
+regexes = ['''^self\.operator\.s3_key$''']
