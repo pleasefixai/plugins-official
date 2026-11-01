@@ -1,5 +1,5 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "endorlabs",
   "version": "1.0.1",
   "description": "Guides to triage, explain and fix Endor Labs findings in dependencies, code and CI/CD.",

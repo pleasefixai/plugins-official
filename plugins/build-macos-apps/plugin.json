@@ -1,5 +1,5 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "build-macos-apps",
   "version": "1.0.1",
   "description": "Guides to build, test, sign and ship macOS apps with Xcode, SwiftUI and AppKit.",

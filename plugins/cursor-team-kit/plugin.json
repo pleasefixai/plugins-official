@@ -1,5 +1,5 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "cursor-team-kit",
   "version": "1.0.1",
   "description": "Workflows to fix CI, review and ship pull requests, test UIs and clean up code.",

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "chrome-devtools-mcp",
   "version": "1.0.1",
   "description": "Guides to debug web page accessibility, cookies, speed and memory with Chrome DevTools.",

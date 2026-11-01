@@ -1,5 +1,5 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "dnb-risk-analytics",
   "version": "1.0.1",
   "description": "Portfolios, risk alerts, screening and KYB checks in D&B Risk Analytics.",

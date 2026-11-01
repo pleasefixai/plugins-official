@@ -1,5 +1,5 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "dynatrace",
   "version": "1.0.1",
   "description": "Guides for DQL queries, dashboards, alerts, logs, traces and security data in Dynatrace.",
