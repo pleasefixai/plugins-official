@@ -1,5 +1,5 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "azure-sql-developer",
   "version": "1.0.1",
   "description": "Guides to build and test apps on Azure SQL Database in a local container, then in Azure.",

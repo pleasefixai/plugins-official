@@ -1,5 +1,5 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "aleph",
   "version": "1.0.1",
   "description": "Financial plans, forecasts and consolidated finance data from your Aleph account.",

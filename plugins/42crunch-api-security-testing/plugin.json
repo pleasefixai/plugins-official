@@ -1,5 +1,5 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "42crunch-api-security-testing",
   "version": "1.0.1",
   "description": "Guides to write OpenAPI specifications, then audit and scan your APIs with 42Crunch.",

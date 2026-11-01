@@ -1,5 +1,5 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "aws-transform",
   "version": "1.0.1",
   "description": "Guides to analyze, upgrade and migrate codebases and workloads to AWS with AWS Transform.",

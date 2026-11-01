@@ -1,5 +1,5 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "aws-agents-for-devsecops",
   "version": "1.0.1",
   "description": "Incident analysis, code scans and pen tests with AWS DevOps Agent and AWS Security Agent.",

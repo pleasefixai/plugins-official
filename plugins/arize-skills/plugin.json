@@ -1,5 +1,5 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "arize-skills",
   "version": "1.0.1",
   "description": "Tracing, datasets, experiments, evaluators and prompt tuning for LLM apps with Arize AX.",
