@@ -1,5 +1,5 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "ckeditor",
   "version": "1.0.1",
   "description": "Guides to install, configure and fix the CKEditor 5 rich text editor in your web apps.",

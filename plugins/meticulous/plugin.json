@@ -1,5 +1,5 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "meticulous",
   "version": "1.0.1",
   "description": "Visual regression test runs, replays and screenshot diffs in Meticulous.",

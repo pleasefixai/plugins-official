@@ -1,5 +1,5 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "nightvision",
   "version": "1.0.1",
   "description": "Guides to scan web apps and APIs with NightVision: targets, scans, findings and CI/CD.",

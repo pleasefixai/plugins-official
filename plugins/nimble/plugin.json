@@ -1,5 +1,5 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "nimble",
   "version": "1.0.2",
   "description": "Web search, page extraction, crawls and structured web data from Nimble.",

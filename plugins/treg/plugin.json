@@ -1,5 +1,5 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "treg",
   "version": "1.0.1",
   "description": "SEO, social, ad and company enrichment data from 4,000+ provider endpoints, through Treg.",

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "data-agent-kit",
   "version": "1.0.1",
   "description": "Guides for BigQuery, Dataflow, Spark, managed Airflow and Cloud Storage on Google Cloud.",

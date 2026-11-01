@@ -1,5 +1,5 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "vercel",
   "version": "1.0.1",
   "description": "Projects, deployments, domains and logs on Vercel, with guides for Next.js and AI SDK.",

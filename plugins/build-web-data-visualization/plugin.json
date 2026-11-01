@@ -1,5 +1,5 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "build-web-data-visualization",
   "version": "1.0.1",
   "description": "Guides to design, build and test charts, maps, dashboards and diagrams for the web.",

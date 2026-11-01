@@ -1,5 +1,5 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "microsoft-365",
   "version": "1.2.1",
   "description": "Mail, calendar, files and meetings through your firm's Microsoft 365 account.",

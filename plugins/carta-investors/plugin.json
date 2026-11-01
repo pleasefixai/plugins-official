@@ -1,5 +1,5 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "carta-investors",
   "version": "1.0.1",
   "description": "A Carta Workhub view of requests, capital calls and reporting with your fund admin team.",

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "vibe-prospecting",
   "version": "1.0.1",
   "description": "Guides to find, enrich and export B2B companies and contacts with Vibe Prospecting.",

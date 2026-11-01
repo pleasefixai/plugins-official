@@ -1,5 +1,5 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "clickfunnels",
   "version": "1.0.1",
   "description": "Funnels, pages, contacts, orders and emails from your ClickFunnels workspace.",

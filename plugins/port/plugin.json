@@ -1,5 +1,5 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "port",
   "version": "1.0.1",
   "description": "Software catalog, workflows and AI agents in your Port developer portal.",

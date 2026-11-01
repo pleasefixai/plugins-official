@@ -1,5 +1,5 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "pagerduty",
   "version": "1.0.1",
   "description": "Guides to connect your PagerDuty account for incidents, services, schedules and on-call.",

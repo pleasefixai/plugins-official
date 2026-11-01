@@ -1,5 +1,5 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "amplemarket",
   "version": "1.0.2",
   "description": "People and company search, lead enrichment and sequences from your Amplemarket account.",

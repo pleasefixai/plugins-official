@@ -1,5 +1,5 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "profound",
   "version": "1.0.1",
   "description": "How AI answer engines see your brand: visibility, sentiment and citations in Profound.",

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "linq-alpha",
   "version": "1.0.1",
   "description": "Fundamentals, estimates, transcripts, filings and market data from LinqAlpha.",

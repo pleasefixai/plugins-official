@@ -1,5 +1,5 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "mixpanel-headless",
   "version": "1.0.1",
   "description": "Guides to sign in to Mixpanel and to build, read and change Mixpanel dashboards.",

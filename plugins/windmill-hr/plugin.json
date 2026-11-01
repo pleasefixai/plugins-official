@@ -1,5 +1,5 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "windmill-hr",
   "version": "1.0.1",
   "description": "Performance reviews, feedback, 1:1s and pulse surveys in your Windmill workspace.",

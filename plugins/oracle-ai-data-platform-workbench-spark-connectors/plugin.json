@@ -1,5 +1,5 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "oracle-ai-data-platform-workbench-spark-connectors",
   "version": "1.0.1",
   "description": "Guides to connect Oracle AI Data Platform notebooks to 26 data sources with Spark.",

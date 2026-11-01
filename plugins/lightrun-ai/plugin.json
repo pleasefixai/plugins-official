@@ -1,5 +1,5 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "lightrun-ai",
   "version": "1.0.1",
   "description": "Live logs, snapshots and metrics from your running services, added through Lightrun.",

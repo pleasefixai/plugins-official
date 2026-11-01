@@ -1,5 +1,5 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "razorpay-remote-mcp-server",
   "version": "1.0.1",
   "description": "Payments, payment links, refunds, orders and settlements in your Razorpay account.",

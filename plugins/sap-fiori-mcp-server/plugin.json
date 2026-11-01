@@ -1,5 +1,5 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "sap-fiori-mcp-server",
   "version": "1.0.1",
   "description": "Guides for SAP Fiori apps: visual filters, charts, tree tables, OPA5 tests and ESLint.",

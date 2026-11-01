@@ -1,5 +1,5 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "token-security",
   "version": "1.0.1",
   "description": "Identities, non-human identities, AI agents, secrets and findings from Token Security.",

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "teamcity-cli",
   "version": "1.0.1",
   "description": "Guides for TeamCity builds, logs, queues, agents and projects, and moves to TeamCity.",

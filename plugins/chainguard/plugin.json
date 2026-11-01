@@ -1,5 +1,5 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "chainguard",
   "version": "1.0.2",
   "description": "Hardened container images, packages, advisories and version history from Chainguard.",

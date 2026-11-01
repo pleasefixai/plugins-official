@@ -1,5 +1,5 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "riverside",
   "version": "1.0.1",
   "description": "Recordings, transcripts, video edits and social clips in your Riverside account.",
