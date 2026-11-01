@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "planetscale",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Organizations, databases, branches, schemas and query insights in PlanetScale.",
   "author": {
     "name": "PlanetScale"
@@ -10,6 +10,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "PlanetScale",
+      "category": "developer_tools",
       "upstream": {
         "kind": "imported",
         "marketplace": "claude",

@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "mintlify-cursor-plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Your Mintlify documentation sites, their pages and settings.",
   "author": {
     "name": "Mintlify"
@@ -17,6 +17,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Mintlify",
+      "category": "knowledge",
       "mark": "integrations/mintlify_cursor_plugin.svg",
       "upstream": {
         "kind": "imported",

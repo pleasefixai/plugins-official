@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "razorpay-ace-marketplace",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Products, carts and checkout across Indian D2C brands, through Razorpay.",
   "author": {
     "name": "Razorpay"
@@ -23,6 +23,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Razorpay ACE Marketplace",
+      "category": "other",
       "mark": "integrations/razorpay_ace_marketplace.png",
       "upstream": {
         "kind": "imported",

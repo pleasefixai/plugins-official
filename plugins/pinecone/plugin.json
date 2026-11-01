@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "pinecone",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides for Pinecone indexes, vector and full-text search, Assistants and n8n workflows.",
   "author": {
     "name": "Pinecone"
@@ -27,6 +27,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Pinecone",
+      "category": "developer_tools",
       "upstream": {
         "kind": "imported",
         "marketplace": "claude",

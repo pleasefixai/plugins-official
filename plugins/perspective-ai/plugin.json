@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "perspective-ai",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "AI interviews that replace your forms, and the answers they collect, in Perspective AI.",
   "author": {
     "name": "Perspective AI"
@@ -23,6 +23,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Perspective AI",
+      "category": "forms_data",
       "mark": "integrations/perspective_ai.svg",
       "upstream": {
         "kind": "imported",

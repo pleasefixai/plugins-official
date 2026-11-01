@@ -1,5 +1,5 @@
 {
   "name": "razorpay-remote-mcp-server",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Payments, payment links, refunds, orders and settlements in your Razorpay account."
 }

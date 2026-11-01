@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "revolut-x",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to trade crypto, read market data, run grid bots and set alerts with Revolut X.",
   "author": {
     "name": "Revolut"
@@ -20,6 +20,9 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Revolut X",
+      "category": "market_data",
+      "mark": "mark.png",
       "upstream": {
         "kind": "imported",
         "marketplace": "cursor",

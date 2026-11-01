@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "quo",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Calls, texts, contacts and tasks from your Quo business phone.",
   "author": {
     "name": "Quo"
@@ -19,6 +19,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Quo",
+      "category": "communication",
       "mark": "integrations/quo.png",
       "upstream": {
         "kind": "imported",

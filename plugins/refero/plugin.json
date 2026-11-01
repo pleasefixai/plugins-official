@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "refero",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Screens and user flows from real products, collected by Refero for design research.",
   "author": {
     "name": "Refero"
@@ -19,6 +19,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Refero",
+      "category": "design",
       "mark": "integrations/refero.png",
       "upstream": {
         "kind": "imported",

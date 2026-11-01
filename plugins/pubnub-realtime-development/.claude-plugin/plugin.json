@@ -1,5 +1,5 @@
 {
   "name": "pubnub-realtime-development",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides and tools for building realtime chat, presence and live events with PubNub."
 }

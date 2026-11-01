@@ -1,5 +1,5 @@
 {
   "name": "plugin-dev",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to build add-ons for your CLI: agents, skills, commands, hooks and settings."
 }

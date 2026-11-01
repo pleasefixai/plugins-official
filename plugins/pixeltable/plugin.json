@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "pixeltable",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to build multimodal AI apps on Pixeltable tables, computed columns and embeddings.",
   "author": {
     "name": "Pixeltable"
@@ -29,6 +29,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Pixeltable",
+      "category": "developer_tools",
       "upstream": {
         "kind": "imported",
         "marketplace": "claude",

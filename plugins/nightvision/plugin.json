@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "nightvision",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to scan web apps and APIs with NightVision: targets, scans, findings and CI/CD.",
   "author": {
     "name": "NightVision Engineering"
@@ -19,6 +19,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "NightVision",
+      "category": "developer_tools",
       "upstream": {
         "kind": "imported",
         "marketplace": "claude",

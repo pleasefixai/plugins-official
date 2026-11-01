@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "mux",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Videos, live streams and playback data in your Mux account.",
   "author": {
     "name": "Mux"
@@ -21,6 +21,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Mux",
+      "category": "developer_tools",
       "mark": "integrations/mux.svg",
       "upstream": {
         "kind": "imported",

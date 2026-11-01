@@ -1,5 +1,5 @@
 {
   "name": "remotion",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to create, animate, caption, preview and render videos in React with Remotion."
 }

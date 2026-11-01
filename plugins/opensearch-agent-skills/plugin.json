@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "opensearch-agent-skills",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to build semantic, hybrid and vector search and analyze logs with OpenSearch.",
   "author": {
     "name": "OpenSearch"
@@ -17,6 +17,9 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "OpenSearch",
+      "category": "developer_tools",
+      "mark": "mark.png",
       "upstream": {
         "kind": "imported",
         "marketplace": "cursor",

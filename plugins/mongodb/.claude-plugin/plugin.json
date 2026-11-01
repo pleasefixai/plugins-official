@@ -1,5 +1,5 @@
 {
   "name": "mongodb",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to tune MongoDB client connections and to size Queryable Encryption."
 }
