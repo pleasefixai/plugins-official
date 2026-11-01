@@ -1,11 +1,13 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "pipedrive",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Deals, contacts, organisations and activities from your Pipedrive CRM.",
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Pipedrive",
+      "category": "crm",
       "mark": "mark.png"
     }
   }

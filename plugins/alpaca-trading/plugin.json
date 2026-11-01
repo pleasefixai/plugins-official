@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "alpaca-trading",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Orders, positions, portfolio and market data from your Alpaca trading account.",
   "author": {
     "name": "Alpaca"
@@ -15,6 +15,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Alpaca Trading API",
+      "category": "market_data",
       "mark": "integrations/alpaca_trading.png",
       "upstream": {
         "kind": "imported",

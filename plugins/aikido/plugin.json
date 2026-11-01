@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "aikido",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Aikido security issues and code scans for vulnerabilities and leaked secrets.",
   "author": {
     "name": "Aikido Security"
@@ -21,6 +21,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Aikido Security",
+      "category": "developer_tools",
       "upstream": {
         "kind": "imported",
         "marketplace": "claude",

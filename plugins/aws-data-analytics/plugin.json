@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "aws-data-analytics",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides for data lakes, ETL and queries with S3 Tables, Glue, Athena, Redshift and MWAA.",
   "author": {
     "name": "Amazon Web Services"
@@ -60,6 +60,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "AWS Data Analytics",
+      "category": "developer_tools",
       "upstream": {
         "kind": "imported",
         "marketplace": "claude",

@@ -1,5 +1,5 @@
 {
   "name": "algolia-productivity",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Search indices, recommendations and search analytics from your Algolia account."
 }
