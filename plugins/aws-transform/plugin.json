@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "aws-transform",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to analyze, upgrade and migrate codebases and workloads to AWS with AWS Transform.",
   "author": {
     "name": "Amazon Web Services"
@@ -35,6 +35,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "AWS Transform",
+      "category": "developer_tools",
       "upstream": {
         "kind": "imported",
         "marketplace": "claude",

@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "amplemarket",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "People and company search, lead enrichment and sequences from your Amplemarket account.",
   "author": {
     "name": "Cursor"
@@ -20,6 +20,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Amplemarket",
+      "category": "crm",
       "mark": "integrations/amplemarket.png",
       "upstream": {
         "kind": "imported",

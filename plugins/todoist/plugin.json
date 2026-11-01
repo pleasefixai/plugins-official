@@ -1,11 +1,13 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "todoist",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Tasks, projects and comments from your Todoist account.",
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Todoist",
+      "category": "projects_time",
       "mark": "mark.svg"
     }
   }

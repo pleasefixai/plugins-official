@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "bigquery-data-analytics",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides for BigQuery AI and machine learning queries in standard SQL.",
   "author": {
     "name": "Google LLC"
@@ -16,6 +16,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "BigQuery Data Analytics",
+      "category": "developer_tools",
       "upstream": {
         "kind": "imported",
         "marketplace": "claude",

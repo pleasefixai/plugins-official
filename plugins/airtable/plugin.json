@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "airtable",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Bases, tables and records from your Airtable workspace.",
   "extensions": {
     "ai.pleasefix.client": {
@@ -22,7 +22,9 @@
           "sales-ops": "11830656af71a070330ecadbdfddc35c6c2283844ab89cbbcac0a50445e3b329",
           "show-airtable-link": "39b83f4cbee19c11325d95cf3042f1b167e24ab3f4c279f3fc25d848fa1efa61"
         }
-      }
+      },
+      "displayName": "Airtable",
+      "category": "forms_data"
     }
   }
 }

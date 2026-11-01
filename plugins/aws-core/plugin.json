@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "aws-core",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to build, deploy, secure and run apps on AWS, with costs and architecture reviews.",
   "author": {
     "name": "Amazon Web Services"
@@ -120,6 +120,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "AWS Core",
+      "category": "developer_tools",
       "upstream": {
         "kind": "imported",
         "marketplace": "claude",

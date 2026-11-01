@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "altimate-code",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to review dbt model, schema and macro changes with lineage checks in Altimate Code.",
   "author": {
     "name": "AltimateAI"
@@ -21,6 +21,9 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Altimate Code",
+      "category": "developer_tools",
+      "mark": "mark.svg",
       "upstream": {
         "kind": "imported",
         "marketplace": "claude",

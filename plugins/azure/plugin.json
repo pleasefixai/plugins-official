@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "azure",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to plan, deploy, secure and run apps on Azure, with costs, quotas and diagnostics.",
   "author": {
     "name": "Microsoft"
@@ -21,6 +21,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Azure",
+      "category": "developer_tools",
       "upstream": {
         "kind": "imported",
         "marketplace": "claude",

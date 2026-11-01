@@ -1,5 +1,5 @@
 {
   "name": "alpaca-broker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "End-customer accounts, funding, orders and positions on Alpaca's Broker API."
 }

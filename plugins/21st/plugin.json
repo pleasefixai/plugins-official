@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "21st",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to find, install and generate React UI components and brand logos with 21st.dev.",
   "author": {
     "name": "21st.dev"
@@ -21,6 +21,9 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "21st.dev",
+      "category": "developer_tools",
+      "mark": "mark.svg",
       "upstream": {
         "kind": "imported",
         "marketplace": "cursor",

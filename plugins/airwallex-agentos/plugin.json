@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "airwallex-agentos",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Payouts, cards, billing and treasury from your Airwallex account.",
   "author": {
     "name": "Airwallex"
@@ -24,6 +24,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Airwallex",
+      "category": "finance_ops",
       "upstream": {
         "kind": "imported",
         "marketplace": "claude",

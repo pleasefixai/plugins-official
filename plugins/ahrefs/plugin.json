@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "ahrefs",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Keywords, backlinks, rankings and site audits from your Ahrefs account.",
   "author": {
     "name": "Cursor"
@@ -20,6 +20,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Ahrefs",
+      "category": "marketing",
       "mark": "integrations/ahrefs.png",
       "upstream": {
         "kind": "imported",

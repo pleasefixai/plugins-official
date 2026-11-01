@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "boltz-api-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Protein and small-molecule binder design, screens and ADME predictions with Boltz.",
   "author": {
     "name": "Boltz"
@@ -25,6 +25,9 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Boltz API",
+      "category": "knowledge",
+      "mark": "mark.svg",
       "upstream": {
         "kind": "imported",
         "marketplace": "codex",

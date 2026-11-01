@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "amplitude",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Charts, dashboards, experiments and user behaviour from your Amplitude projects.",
   "author": {
     "name": "Amplitude"
@@ -27,6 +27,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Amplitude",
+      "category": "product_analytics",
       "mark": "integrations/amplitude.png",
       "upstream": {
         "kind": "imported",

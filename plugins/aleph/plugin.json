@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "aleph",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Financial plans, forecasts and consolidated finance data from your Aleph account.",
   "author": {
     "name": "Aleph"
@@ -17,6 +17,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Aleph",
+      "category": "finance_ops",
       "mark": "integrations/aleph.png",
       "upstream": {
         "kind": "imported",

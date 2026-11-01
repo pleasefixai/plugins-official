@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "1inch-mcp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides for token swaps, limit orders, wallet data and market prices with 1inch.",
   "author": {
     "name": "1inch"
@@ -25,6 +25,9 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "1inch",
+      "category": "finance_ops",
+      "mark": "mark.svg",
       "upstream": {
         "kind": "imported",
         "marketplace": "cursor",
