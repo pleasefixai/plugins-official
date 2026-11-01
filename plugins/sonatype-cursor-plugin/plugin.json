@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "sonatype-cursor-plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to check dependencies for risks and licenses and find safer versions with Sonatype.",
   "author": {
     "name": "Sonatype"
@@ -19,6 +19,9 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Sonatype",
+      "category": "developer_tools",
+      "mark": "mark.svg",
       "upstream": {
         "kind": "imported",
         "marketplace": "cursor",

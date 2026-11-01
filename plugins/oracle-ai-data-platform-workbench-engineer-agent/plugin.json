@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "oracle-ai-data-platform-workbench-engineer-agent",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides for Oracle AI Data Platform tables, Spark SQL, notebooks, jobs and agent flows.",
   "author": {
     "name": "Oracle"
@@ -50,6 +50,9 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Oracle AI Data Platform Engineer",
+      "category": "developer_tools",
+      "mark": "mark.png",
       "upstream": {
         "kind": "imported",
         "marketplace": "claude",

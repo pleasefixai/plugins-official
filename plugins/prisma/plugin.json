@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "prisma",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Prisma Postgres databases, schema migrations and SQL queries.",
   "author": {
     "name": "Prisma"
@@ -10,6 +10,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Prisma",
+      "category": "developer_tools",
       "mark": "integrations/prisma.svg",
       "upstream": {
         "kind": "imported",

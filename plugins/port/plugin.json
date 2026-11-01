@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "port",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Software catalog, workflows and AI agents in your Port developer portal.",
   "author": {
     "name": "Port"
@@ -24,6 +24,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Port",
+      "category": "developer_tools",
       "mark": "integrations/port_eu.svg",
       "upstream": {
         "kind": "imported",

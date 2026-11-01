@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "customer-io",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Campaigns, segments and people in your Customer.io workspace.",
   "author": {
     "name": "Cursor"
@@ -20,6 +20,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Customer.io",
+      "category": "marketing",
       "mark": "integrations/customer_io.svg",
       "upstream": {
         "kind": "imported",

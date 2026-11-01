@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "senselab",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Memories, shared rooms and decision traces that help your agents learn in SenseLab.",
   "author": {
     "name": "SenseLab"
@@ -21,6 +21,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "SenseLab",
+      "category": "knowledge",
       "mark": "integrations/senselab.png",
       "upstream": {
         "kind": "imported",

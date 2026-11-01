@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "adobe",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Photo edits, portrait retouches, video cuts, mockups and Adobe Express designs.",
   "author": {
     "name": "Adobe Inc"
@@ -10,6 +10,9 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Adobe",
+      "category": "design",
+      "mark": "mark.png",
       "upstream": {
         "kind": "imported",
         "marketplace": "codex",

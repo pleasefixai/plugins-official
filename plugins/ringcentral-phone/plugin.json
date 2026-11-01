@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "ringcentral-phone",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Calls, AI call notes, SMS, voicemail and fax from your RingCentral phone.",
   "author": {
     "name": "Cursor"
@@ -19,6 +19,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "RingCentral Phone",
+      "category": "communication",
       "upstream": {
         "kind": "imported",
         "marketplace": "cursor",

@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "razorpay-remote-mcp-server",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Payments, payment links, refunds, orders and settlements in your Razorpay account.",
   "author": {
     "name": "Razorpay"
@@ -21,6 +21,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Razorpay",
+      "category": "finance_ops",
       "mark": "integrations/razorpay_remote_mcp_server.png",
       "upstream": {
         "kind": "imported",

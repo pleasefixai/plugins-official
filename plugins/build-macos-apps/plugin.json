@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "build-macos-apps",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to build, test, sign and ship macOS apps with Xcode, SwiftUI and AppKit.",
   "author": {
     "name": "OpenAI"
@@ -24,6 +24,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Build macOS Apps",
+      "category": "developer_tools",
       "upstream": {
         "kind": "imported",
         "marketplace": "codex",

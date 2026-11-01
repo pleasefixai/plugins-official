@@ -1,5 +1,5 @@
 {
   "name": "devtools-for-agents",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to debug web page accessibility, speed and memory leaks with Chrome DevTools."
 }

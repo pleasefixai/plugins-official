@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "google-cloud-bigquery",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Datasets, tables and SQL queries in Google Cloud BigQuery.",
   "author": {
     "name": "Cursor"
@@ -21,6 +21,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Google Cloud BigQuery",
+      "category": "developer_tools",
       "mark": "integrations/google_cloud_bigquery.svg",
       "upstream": {
         "kind": "imported",

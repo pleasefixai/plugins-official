@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "aws-startup-advisor",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "AWS architecture advice, credits, programs and Terraform checks for startups, by stage.",
   "author": {
     "name": "Amazon Web Services"
@@ -93,6 +93,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "AWS Startup Advisor",
+      "category": "developer_tools",
       "upstream": {
         "kind": "imported",
         "marketplace": "claude",

@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "heygen",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Avatar videos, personalized video messages and translated videos made with HeyGen.",
   "author": {
     "name": "HeyGen"
@@ -28,6 +28,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "HeyGen",
+      "category": "design",
       "upstream": {
         "kind": "imported",
         "marketplace": "cursor",

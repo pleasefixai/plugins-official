@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "quiverai",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "SVG graphics generated, vectorized, animated and edited with QuiverAI.",
   "author": {
     "name": "QuiverAI"
@@ -19,6 +19,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "QuiverAI",
+      "category": "design",
       "mark": "integrations/quiverai.svg",
       "upstream": {
         "kind": "imported",

@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "appwrite-plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to build apps on Appwrite with its SDKs for web, mobile and server languages.",
   "author": {
     "name": "Appwrite"
@@ -10,6 +10,9 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Appwrite",
+      "category": "developer_tools",
+      "mark": "mark.svg",
       "upstream": {
         "kind": "imported",
         "marketplace": "cursor",

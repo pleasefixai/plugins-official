@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "mixpanel-headless",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to sign in to Mixpanel and to build, read and change Mixpanel dashboards.",
   "author": {
     "name": "Mixpanel"
@@ -22,6 +22,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Mixpanel Headless",
+      "category": "product_analytics",
       "upstream": {
         "kind": "imported",
         "marketplace": "codex",

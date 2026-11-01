@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "twilio-developer-kit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides and docs for building with Twilio messaging, voice, Verify and SendGrid email.",
   "author": {
     "name": "Twilio"
@@ -30,6 +30,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Twilio Developer Kit",
+      "category": "developer_tools",
       "mark": "integrations/twilio_developer_kit.svg",
       "upstream": {
         "kind": "imported",

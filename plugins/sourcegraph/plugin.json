@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "sourcegraph",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to find implementations, trace symbols and review code with Sourcegraph search.",
   "author": {
     "name": "Sourcegraph Community"
@@ -11,6 +11,9 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Sourcegraph",
+      "category": "developer_tools",
+      "mark": "mark.png",
       "upstream": {
         "kind": "imported",
         "marketplace": "claude",

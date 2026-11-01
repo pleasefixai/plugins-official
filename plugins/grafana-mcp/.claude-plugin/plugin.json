@@ -1,5 +1,5 @@
 {
   "name": "grafana-mcp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to connect a Grafana instance and use its dashboards, data sources and alerts."
 }

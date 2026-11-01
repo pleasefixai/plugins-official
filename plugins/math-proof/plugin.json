@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "math-proof",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to work one hard mathematics problem in stages and write a self-contained proof.",
   "author": {
     "name": "Anthropic"
@@ -10,6 +10,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Math Proof",
+      "category": "knowledge",
       "upstream": {
         "kind": "imported",
         "marketplace": "claude",

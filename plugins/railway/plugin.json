@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "railway",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Projects, services, databases and deployments on Railway.",
   "author": {
     "name": "Railway"
@@ -20,6 +20,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Railway",
+      "category": "developer_tools",
       "mark": "integrations/railway.png",
       "upstream": {
         "kind": "imported",

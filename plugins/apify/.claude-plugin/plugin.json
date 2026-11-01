@@ -1,5 +1,5 @@
 {
   "name": "apify",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Actors, runs and the web data they scrape, from your Apify account."
 }

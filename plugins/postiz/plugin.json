@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "postiz",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Scheduled posts, media and analytics for your social channels in Postiz.",
   "author": {
     "name": "Nevo David"
@@ -35,6 +35,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Postiz",
+      "category": "marketing",
       "upstream": {
         "kind": "imported",
         "marketplace": "claude",

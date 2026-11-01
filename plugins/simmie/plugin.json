@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "simmie",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Sales roleplay simulations, scoring rubrics and practice links in Simmie.",
   "author": {
     "name": "Simmie"
@@ -17,6 +17,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Simmie",
+      "category": "crm",
       "mark": "integrations/simmie.svg",
       "upstream": {
         "kind": "imported",

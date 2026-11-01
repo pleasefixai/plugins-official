@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "jam",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Jam bug reports with their screen recordings, console logs and network requests.",
   "author": {
     "name": "Jam"
@@ -20,6 +20,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Jam",
+      "category": "developer_tools",
       "mark": "integrations/jam.svg",
       "upstream": {
         "kind": "imported",

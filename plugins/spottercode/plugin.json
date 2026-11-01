@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "spottercode",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to search ThoughtSpot developer docs for the Visual Embed SDK and REST API v2.",
   "author": {
     "name": "ThoughtSpot"
@@ -11,6 +11,9 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "ThoughtSpot",
+      "category": "product_analytics",
+      "mark": "mark.svg",
       "upstream": {
         "kind": "imported",
         "marketplace": "cursor",

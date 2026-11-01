@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "opsera-devsecops",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Security scans, compliance audits and architecture analysis of your code by Opsera.",
   "author": {
     "name": "Opsera"
@@ -23,6 +23,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Opsera",
+      "category": "developer_tools",
       "mark": "integrations/opsera_devsecops.png",
       "upstream": {
         "kind": "imported",

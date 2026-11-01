@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "macaly-code",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Web apps built and hosted on Macaly.",
   "author": {
     "name": "Macaly"
@@ -21,6 +21,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Macaly Cloud",
+      "category": "developer_tools",
       "mark": "integrations/macaly_code.svg",
       "upstream": {
         "kind": "imported",

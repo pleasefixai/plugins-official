@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "tldraw",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Diagrams and sketches that your agent draws on a tldraw canvas.",
   "author": {
     "name": "tldraw"
@@ -10,6 +10,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Tldraw",
+      "category": "design",
       "mark": "integrations/tldraw.svg",
       "upstream": {
         "kind": "imported",

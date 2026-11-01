@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "mastercard-developers",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Mastercard's API documentation, specifications and integration guides.",
   "author": {
     "name": "Mastercard Developers"
@@ -23,6 +23,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Mastercard Developers",
+      "category": "developer_tools",
       "mark": "integrations/mastercard_developers.png",
       "upstream": {
         "kind": "imported",

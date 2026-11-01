@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "honeycomb",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Traces, queries, boards, SLOs and triggers in your Honeycomb environments.",
   "author": {
     "name": "Honeycomb"
@@ -21,6 +21,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Honeycomb",
+      "category": "developer_tools",
       "upstream": {
         "kind": "imported",
         "marketplace": "claude",

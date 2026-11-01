@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "consensus",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Peer-reviewed research papers and findings from the Consensus academic search engine.",
   "author": {
     "name": "Consensus"
@@ -10,6 +10,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Consensus",
+      "category": "knowledge",
       "mark": "integrations/consensus.svg",
       "upstream": {
         "kind": "imported",

@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "highlevel",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Contacts, conversations, opportunities, calendars and payments in HighLevel.",
   "author": {
     "name": "Cursor"
@@ -25,6 +25,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "HighLevel",
+      "category": "crm",
       "upstream": {
         "kind": "imported",
         "marketplace": "cursor",

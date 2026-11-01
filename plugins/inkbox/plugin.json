@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "inkbox",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An Inkbox identity for your agent, with its own email, phone number, contacts and notes.",
   "author": {
     "name": "Inkbox"
@@ -23,6 +23,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Inkbox",
+      "category": "communication",
       "mark": "integrations/inkbox.png",
       "upstream": {
         "kind": "imported",

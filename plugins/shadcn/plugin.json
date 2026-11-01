@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "shadcn",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to add, search, fix and style shadcn/ui components, registries and presets.",
   "author": {
     "name": "shadcn"
@@ -24,6 +24,9 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "shadcn/ui",
+      "category": "developer_tools",
+      "mark": "mark.png",
       "upstream": {
         "kind": "imported",
         "marketplace": "cursor",

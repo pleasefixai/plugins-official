@@ -1,5 +1,5 @@
 {
   "name": "zotero",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to search a Zotero library, export BibTeX, insert citations and import references."
 }

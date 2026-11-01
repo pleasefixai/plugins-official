@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "oracle-ai-data-platform-workbench-spark-connectors",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to connect Oracle AI Data Platform notebooks to 26 data sources with Spark.",
   "author": {
     "name": "Oracle"
@@ -46,6 +46,9 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Oracle AI Data Platform Spark Connectors",
+      "category": "developer_tools",
+      "mark": "mark.png",
       "upstream": {
         "kind": "imported",
         "marketplace": "claude",

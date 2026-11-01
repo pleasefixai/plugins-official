@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "app-builder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to build, test and deploy Adobe App Builder projects, actions and UIs.",
   "author": {
     "name": "Adobe Developer App Builder"
@@ -27,6 +27,9 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Adobe Developer App Builder",
+      "category": "developer_tools",
+      "mark": "mark.png",
       "upstream": {
         "kind": "imported",
         "marketplace": "cursor",

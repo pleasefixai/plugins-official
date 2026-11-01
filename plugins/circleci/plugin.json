@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "circleci",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Pipelines, workflows, jobs and test results from your CircleCI organisation.",
   "author": {
     "name": "CircleCI"
@@ -20,6 +20,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "CircleCI",
+      "category": "developer_tools",
       "mark": "integrations/circleci.png",
       "upstream": {
         "kind": "imported",

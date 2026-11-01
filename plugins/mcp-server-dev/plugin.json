@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "mcp-server-dev",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to build tool servers with interactive views and to package local servers.",
   "author": {
     "name": "Anthropic"
@@ -10,6 +10,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "MCP Server Dev",
+      "category": "developer_tools",
       "upstream": {
         "kind": "imported",
         "marketplace": "claude",

@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "huggingface-skills",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Models, datasets, Spaces and papers on the Hugging Face Hub.",
   "author": {
     "name": "Hugging Face"
@@ -20,6 +20,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Hugging Face",
+      "category": "developer_tools",
       "mark": "integrations/huggingface_skills.png",
       "upstream": {
         "kind": "imported",

@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "bitrise",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Mobile app builds, workflows, tests and releases from your Bitrise workspace.",
   "author": {
     "name": "Bitrise"
@@ -23,6 +23,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Bitrise",
+      "category": "developer_tools",
       "mark": "integrations/bitrise.svg",
       "upstream": {
         "kind": "imported",

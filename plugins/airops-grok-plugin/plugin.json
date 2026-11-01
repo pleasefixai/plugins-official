@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "airops-grok-plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Brand kits, content opportunities, AI search visibility and knowledge bases from AirOps.",
   "author": {
     "name": "AirOps"
@@ -10,6 +10,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "AirOps",
+      "category": "marketing",
       "mark": "integrations/airops_grok_plugin.png",
       "upstream": {
         "kind": "imported",

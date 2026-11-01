@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "preset-cli-skills",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to script Preset charts, dashboards, datasets and users from the shell and CI/CD.",
   "author": {
     "name": "Preset"
@@ -21,6 +21,9 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Preset",
+      "category": "product_analytics",
+      "mark": "mark.png",
       "upstream": {
         "kind": "imported",
         "marketplace": "claude",

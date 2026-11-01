@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "hostinger-cursor-plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to deploy, move, audit and maintain websites, WordPress and domains on Hostinger.",
   "author": {
     "name": "Hostinger"
@@ -21,6 +21,9 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Hostinger",
+      "category": "developer_tools",
+      "mark": "mark.png",
       "upstream": {
         "kind": "imported",
         "marketplace": "cursor",

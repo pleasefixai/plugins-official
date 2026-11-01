@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "fullenrich",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Prospects, verified emails and phone numbers found by FullEnrich's waterfall enrichment.",
   "author": {
     "name": "Fullenrich"
@@ -25,6 +25,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "FullEnrich",
+      "category": "crm",
       "mark": "integrations/fullenrich.svg",
       "upstream": {
         "kind": "imported",

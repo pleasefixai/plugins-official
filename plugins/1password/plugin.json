@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "1password",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to create, import and mount .env secrets as 1Password Developer Environments.",
   "author": {
     "name": "1Password"
@@ -24,6 +24,9 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "1Password",
+      "category": "developer_tools",
+      "mark": "mark.svg",
       "upstream": {
         "kind": "imported",
         "marketplace": "cursor",

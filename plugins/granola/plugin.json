@@ -1,11 +1,13 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "granola",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Meeting notes and transcripts from your Granola account.",
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Granola",
+      "category": "meetings",
       "mark": "mark.svg"
     }
   }

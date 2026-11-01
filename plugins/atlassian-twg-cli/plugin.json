@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "atlassian-twg-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Setup of Atlassian Teamwork Graph for work context from Jira, Confluence and Bitbucket.",
   "author": {
     "name": "Atlassian"
@@ -32,6 +32,9 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Atlassian Teamwork Graph",
+      "category": "projects_time",
+      "mark": "mark.png",
       "upstream": {
         "kind": "imported",
         "marketplace": "claude",

@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "build-ios-apps",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to build, profile and debug iOS apps with SwiftUI, App Intents and the Simulator.",
   "author": {
     "name": "OpenAI"
@@ -24,6 +24,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Build iOS Apps",
+      "category": "developer_tools",
       "upstream": {
         "kind": "imported",
         "marketplace": "codex",

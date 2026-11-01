@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "mercury",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Accounts, balances, transactions and recipients in your Mercury bank account.",
   "author": {
     "name": "Mercury"
@@ -20,6 +20,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Mercury",
+      "category": "finance_ops",
       "mark": "integrations/mercury.svg",
       "upstream": {
         "kind": "imported",

@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "legalzoom",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Legal guidance from LegalZoom attorneys, and LegalZoom's legal tools for your business.",
   "author": {
     "name": "LegalZoom"
@@ -11,6 +11,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "LegalZoom",
+      "category": "finance_ops",
       "upstream": {
         "kind": "imported",
         "marketplace": "claude",

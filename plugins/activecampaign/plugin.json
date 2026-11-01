@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "activecampaign",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Contacts, deals, email campaigns and automations from your ActiveCampaign account.",
   "author": {
     "name": "ActiveCampaign"
@@ -20,6 +20,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "ActiveCampaign",
+      "category": "marketing",
       "mark": "integrations/activecampaign.png",
       "upstream": {
         "kind": "imported",

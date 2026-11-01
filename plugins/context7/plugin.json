@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "context7",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Current, version-specific documentation and code examples for software libraries.",
   "author": {
     "name": "Upstash"
@@ -19,6 +19,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Context7",
+      "category": "developer_tools",
       "mark": "integrations/context7.png",
       "upstream": {
         "kind": "imported",

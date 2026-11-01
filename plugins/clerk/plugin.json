@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "clerk",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Applications, users, domains and instance settings from your Clerk workspace.",
   "author": {
     "name": "Clerk"
@@ -32,6 +32,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Clerk",
+      "category": "developer_tools",
       "mark": "integrations/clerk.svg",
       "upstream": {
         "kind": "imported",

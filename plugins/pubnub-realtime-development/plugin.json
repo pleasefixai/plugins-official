@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "pubnub-realtime-development",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides and tools for building realtime chat, presence and live events with PubNub.",
   "author": {
     "name": "PubNub"
@@ -22,6 +22,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "PubNub",
+      "category": "developer_tools",
       "mark": "integrations/pubnub_realtime_development.svg",
       "upstream": {
         "kind": "imported",

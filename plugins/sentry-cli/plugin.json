@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "sentry-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to view Sentry issues, events, projects and organizations, and call its API.",
   "author": {
     "name": "Sentry"
@@ -10,6 +10,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Sentry CLI",
+      "category": "developer_tools",
       "upstream": {
         "kind": "imported",
         "marketplace": "claude",

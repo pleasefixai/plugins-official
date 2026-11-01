@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "magic-patterns",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "UI prototypes, designs and inspiration in your Magic Patterns account.",
   "author": {
     "name": "Magic Patterns"
@@ -10,6 +10,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Magic Patterns",
+      "category": "design",
       "mark": "integrations/magic_patterns.svg",
       "upstream": {
         "kind": "imported",

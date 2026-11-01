@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "notion",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Pages and databases from your Notion workspace.",
   "extensions": {
     "ai.pleasefix.client": {
@@ -26,7 +26,9 @@
             }
           }
         ]
-      }
+      },
+      "displayName": "Notion",
+      "category": "knowledge"
     }
   }
 }

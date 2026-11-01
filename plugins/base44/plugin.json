@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "base44",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to build, deploy and troubleshoot Base44 full-stack apps with the Base44 SDK.",
   "author": {
     "name": "base44"
@@ -22,6 +22,9 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Base44",
+      "category": "developer_tools",
+      "mark": "mark.png",
       "upstream": {
         "kind": "imported",
         "marketplace": "claude",

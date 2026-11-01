@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "expo",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Expo and EAS builds, updates, app store submissions and docs for React Native apps.",
   "author": {
     "name": "Expo Team"
@@ -28,6 +28,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Expo",
+      "category": "developer_tools",
       "mark": "integrations/expo.png",
       "upstream": {
         "kind": "imported",

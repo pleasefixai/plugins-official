@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "runway",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Images, videos, music and speech generated with Runway and its partner models.",
   "author": {
     "name": "Runway"
@@ -21,6 +21,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Runway",
+      "category": "design",
       "mark": "integrations/runway.png",
       "upstream": {
         "kind": "imported",

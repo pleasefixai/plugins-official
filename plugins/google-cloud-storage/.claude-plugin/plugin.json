@@ -1,5 +1,5 @@
 {
   "name": "google-cloud-storage",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to design, secure, diagnose and mount Google Cloud Storage buckets."
 }

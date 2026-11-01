@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "writer-mcp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Writer playbooks, their runs and the deliverables that they produce.",
   "author": {
     "name": "WRITER"
@@ -19,6 +19,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Writer",
+      "category": "automation",
       "mark": "integrations/writer_mcp.png",
       "upstream": {
         "kind": "imported",

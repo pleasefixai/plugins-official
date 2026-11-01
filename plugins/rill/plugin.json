@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "rill",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to build Rill models, metrics views, dashboards and connectors, and analyze data.",
   "author": {
     "name": "Rill Data"
@@ -10,6 +10,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Rill",
+      "category": "product_analytics",
       "upstream": {
         "kind": "imported",
         "marketplace": "claude",

@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "chatprd",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Product requirement documents, templates and projects from your ChatPRD account.",
   "author": {
     "name": "ChatPRD"
@@ -19,6 +19,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "ChatPRD",
+      "category": "projects_time",
       "upstream": {
         "kind": "imported",
         "marketplace": "cursor",

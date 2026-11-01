@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "skill-creator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to create skills, test them with evals and improve their descriptions.",
   "author": {
     "name": "Anthropic"
@@ -10,6 +10,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Skill Creator",
+      "category": "developer_tools",
       "upstream": {
         "kind": "imported",
         "marketplace": "claude",
