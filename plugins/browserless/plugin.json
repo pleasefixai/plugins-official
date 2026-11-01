@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "browserless",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Headless browsers in the Browserless cloud, to scrape, crawl and search the web.",
   "author": {
     "name": "Browserless"
@@ -26,6 +26,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Browserless",
+      "category": "developer_tools",
       "mark": "integrations/browserless.svg",
       "upstream": {
         "kind": "imported",

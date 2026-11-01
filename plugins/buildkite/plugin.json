@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "buildkite",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Pipelines, builds, jobs and test results from your Buildkite organisation.",
   "author": {
     "name": "Buildkite"
@@ -21,6 +21,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Buildkite",
+      "category": "developer_tools",
       "mark": "integrations/buildkite.png",
       "upstream": {
         "kind": "imported",

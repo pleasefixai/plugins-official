@@ -1,5 +1,5 @@
 {
   "name": "digitalocean",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Droplets, App Platform apps, Kubernetes, databases and networking on DigitalOcean."
 }

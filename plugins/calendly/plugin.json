@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "calendly",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Event types, availability and bookings from your Calendly account.",
   "author": {
     "name": "Cursor"
@@ -19,6 +19,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Calendly",
+      "category": "projects_time",
       "mark": "integrations/calendly.svg",
       "upstream": {
         "kind": "imported",

@@ -1,5 +1,5 @@
 {
   "name": "duende-skills",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides for Duende IdentityServer, BFF and ASP.NET Core sign-in, tokens and authorization."
 }

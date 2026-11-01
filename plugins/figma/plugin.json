@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "figma",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Designs, components, variables and design context from your Figma files.",
   "author": {
     "name": "Figma"
@@ -17,6 +17,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Figma",
+      "category": "design",
       "mark": "integrations/figma.svg",
       "upstream": {
         "kind": "imported",

@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "cloudflare",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Workers, storage, DNS and the other resources of your Cloudflare account.",
   "author": {
     "name": "Cloudflare"
@@ -23,6 +23,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Cloudflare",
+      "category": "developer_tools",
       "mark": "integrations/cloudflare.png",
       "upstream": {
         "kind": "imported",

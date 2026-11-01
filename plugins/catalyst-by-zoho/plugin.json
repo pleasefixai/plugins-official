@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "catalyst-by-zoho",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Tables, data, cache and storage buckets of your Catalyst by Zoho projects.",
   "author": {
     "name": "Catalyst by Zoho"
@@ -23,6 +23,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Catalyst by Zoho",
+      "category": "developer_tools",
       "upstream": {
         "kind": "imported",
         "marketplace": "claude",

@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "clickup",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Tasks, lists, docs and spaces from your ClickUp workspace.",
   "extensions": {
     "ai.pleasefix.client": {
@@ -25,7 +25,9 @@
             }
           }
         ]
-      }
+      },
+      "displayName": "ClickUp",
+      "category": "projects_time"
     }
   }
 }

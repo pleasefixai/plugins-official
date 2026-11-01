@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "duckdb-skills",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to query and convert data files, S3 buckets and databases with DuckDB.",
   "author": {
     "name": "DuckDB Foundation"
@@ -30,6 +30,9 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "DuckDB",
+      "category": "developer_tools",
+      "mark": "mark.svg",
       "upstream": {
         "kind": "imported",
         "marketplace": "claude",

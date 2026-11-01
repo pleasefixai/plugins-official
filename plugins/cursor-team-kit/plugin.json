@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "cursor-team-kit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Workflows to fix CI, review and ship pull requests, test UIs and clean up code.",
   "author": {
     "name": "Cursor"
@@ -20,6 +20,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Cursor Team Kit",
+      "category": "developer_tools",
       "upstream": {
         "kind": "imported",
         "marketplace": "cursor",

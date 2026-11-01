@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "compound-engineering",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Workflows to plan, review, commit and ship code, and to keep the lessons of each task.",
   "author": {
     "name": "Every"
@@ -28,6 +28,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Compound Engineering",
+      "category": "developer_tools",
       "upstream": {
         "kind": "imported",
         "marketplace": "cursor",
