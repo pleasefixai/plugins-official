@@ -1,5 +1,5 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "webull",
   "version": "1.0.1",
   "description": "Accounts, positions, orders, watchlists and market data from your Webull account.",

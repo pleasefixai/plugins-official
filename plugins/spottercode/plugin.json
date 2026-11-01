@@ -1,5 +1,5 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "spottercode",
   "version": "1.0.1",
   "description": "Guides to search ThoughtSpot developer docs for the Visual Embed SDK and REST API v2.",
