@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "grafana-assistant",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to ask Grafana Assistant about your Grafana stack and to run ops investigations.",
   "author": {
     "name": "Grafana"
@@ -17,6 +17,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Grafana Assistant",
+      "category": "developer_tools",
       "upstream": {
         "kind": "imported",
         "marketplace": "claude",

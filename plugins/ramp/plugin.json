@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "ramp",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Card transactions, bills and reimbursements from your Ramp account.",
   "extensions": {
     "ai.pleasefix.client": {
@@ -28,7 +28,9 @@
           "transaction-cleanup": "653aa2e7a52dbf4515b017ae69876963017e0f03bd915746e323a56fcd08f12b",
           "vendor-document-upload": "02e7901fb070cdb265f92e5f11ae243c50c1e1732cc5ac9254e6138e64e4ec87"
         }
-      }
+      },
+      "displayName": "Ramp",
+      "category": "finance_ops"
     }
   }
 }

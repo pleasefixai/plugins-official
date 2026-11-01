@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "alloydb-omni",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to run and manage AlloyDB Omni databases in containers and on Kubernetes.",
   "author": {
     "name": "Google LLC"
@@ -16,6 +16,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "AlloyDB Omni",
+      "category": "developer_tools",
       "upstream": {
         "kind": "imported",
         "marketplace": "claude",

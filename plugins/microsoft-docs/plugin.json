@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "microsoft-docs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Microsoft Learn documentation, API references and code samples.",
   "author": {
     "name": "Microsoft"
@@ -24,6 +24,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Microsoft Learn",
+      "category": "knowledge",
       "mark": "integrations/microsoft_docs.png",
       "upstream": {
         "kind": "imported",

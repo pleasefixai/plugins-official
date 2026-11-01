@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "descript",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Video and audio projects in Descript, to create, edit by text and publish.",
   "author": {
     "name": "Descript"
@@ -21,6 +21,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Descript",
+      "category": "design",
       "mark": "integrations/descript.svg",
       "upstream": {
         "kind": "imported",

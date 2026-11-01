@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "ifttt",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "IFTTT Applets, and the actions and queries of the services they connect.",
   "author": {
     "name": "IFTTT"
@@ -24,6 +24,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "IFTTT",
+      "category": "automation",
       "mark": "integrations/ifttt.svg",
       "upstream": {
         "kind": "imported",

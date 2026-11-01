@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "greenhouse",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Candidates, jobs, applications and scorecards in Greenhouse Recruiting.",
   "author": {
     "name": "Cursor"
@@ -20,6 +20,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Greenhouse",
+      "category": "other",
       "upstream": {
         "kind": "imported",
         "marketplace": "cursor",

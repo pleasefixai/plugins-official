@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "aws-agents",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "AWS documentation and regional availability, to build and run AI agents on AWS.",
   "author": {
     "name": "Amazon Web Services"
@@ -51,6 +51,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "AI Agents on AWS",
+      "category": "developer_tools",
       "upstream": {
         "kind": "imported",
         "marketplace": "claude",

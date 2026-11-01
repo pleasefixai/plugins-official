@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "dash",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "AI agents, agent sessions, shadow AI and supply-chain risk, and AI spend in Dash Security.",
   "author": {
     "name": "Dash Security"
@@ -23,6 +23,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Dash Security",
+      "category": "developer_tools",
       "mark": "integrations/dash.png",
       "upstream": {
         "kind": "imported",

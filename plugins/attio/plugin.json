@@ -1,11 +1,13 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "attio",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Records, lists, notes and tasks from your Attio workspace.",
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Attio",
+      "category": "crm",
       "mark": "mark.svg"
     }
   }

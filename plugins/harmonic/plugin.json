@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "harmonic",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Company and people data from Harmonic, to find, research and enrich startups.",
   "author": {
     "name": "Harmonic"
@@ -19,6 +19,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Harmonic",
+      "category": "private_markets",
       "mark": "integrations/harmonic.png",
       "upstream": {
         "kind": "imported",

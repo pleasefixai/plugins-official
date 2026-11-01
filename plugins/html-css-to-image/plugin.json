@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "html-css-to-image",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Images and PDFs rendered from HTML, CSS, templates or live web pages.",
   "author": {
     "name": "HTML/CSS to Image"
@@ -21,6 +21,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "HTML/CSS to Image",
+      "category": "design",
       "mark": "integrations/html_css_to_image.png",
       "upstream": {
         "kind": "imported",

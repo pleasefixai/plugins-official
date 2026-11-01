@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "gitbook",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "GitBook documentation sites, spaces, pages and change requests.",
   "author": {
     "name": "GitBook"
@@ -20,6 +20,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "GitBook",
+      "category": "knowledge",
       "mark": "integrations/gitbook.png",
       "upstream": {
         "kind": "imported",

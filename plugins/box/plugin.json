@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "box",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Files, folders, hubs and Box AI answers from your Box account.",
   "author": {
     "name": "Box"
@@ -29,6 +29,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Box",
+      "category": "storage",
       "mark": "integrations/box.png",
       "upstream": {
         "kind": "imported",

@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "cli-for-agent",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Patterns to design command-line tools that agents run reliably: flags, help, errors.",
   "author": {
     "name": "Cursor"
@@ -20,6 +20,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "CLI for Agents",
+      "category": "developer_tools",
       "upstream": {
         "kind": "imported",
         "marketplace": "cursor",

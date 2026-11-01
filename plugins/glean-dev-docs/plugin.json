@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "glean-dev-docs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to search the Glean developer docs for APIs, SDKs, authentication and indexing.",
   "author": {
     "name": "Glean"
@@ -11,6 +11,9 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Glean Developer Docs",
+      "category": "developer_tools",
+      "mark": "mark.png",
       "upstream": {
         "kind": "imported",
         "marketplace": "cursor",

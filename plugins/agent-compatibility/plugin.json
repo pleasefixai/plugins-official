@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "agent-compatibility",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Scans that check if a repository's startup, tests and docs work for coding agents.",
   "author": {
     "name": "Cursor"
@@ -20,6 +20,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Agent Compatibility",
+      "category": "developer_tools",
       "upstream": {
         "kind": "imported",
         "marketplace": "cursor",

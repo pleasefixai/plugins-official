@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "lightrun-ai",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Live logs, snapshots and metrics from your running services, added through Lightrun.",
   "author": {
     "name": "Lightrun"
@@ -17,6 +17,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Lightrun",
+      "category": "developer_tools",
       "mark": "integrations/lightrun_ai.png",
       "upstream": {
         "kind": "imported",

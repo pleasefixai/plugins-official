@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "golf",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to build golf apps with Golf Intelligence course search, scorecards and green maps.",
   "author": {
     "name": "Golf Intelligence by Stracka"
@@ -17,6 +17,9 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Golf Intelligence by Stracka",
+      "category": "developer_tools",
+      "mark": "mark.png",
       "upstream": {
         "kind": "imported",
         "marketplace": "cursor",

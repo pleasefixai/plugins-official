@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "adobe-for-creativity",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Photo and video edits, design templates, fonts and PDFs with Adobe's creative tools.",
   "author": {
     "name": "Adobe"
@@ -17,6 +17,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Adobe for Creativity",
+      "category": "design",
       "mark": "integrations/adobe_for_creativity.png",
       "upstream": {
         "kind": "imported",

@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "revyl",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Mobile app tests on Revyl cloud devices, run and verified by your agent.",
   "author": {
     "name": "Revyl"
@@ -22,6 +22,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Revyl",
+      "category": "developer_tools",
       "mark": "integrations/revyl.png",
       "upstream": {
         "kind": "imported",

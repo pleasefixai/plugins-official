@@ -1,5 +1,5 @@
 {
   "name": "aikido",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Aikido security issues and code scans for vulnerabilities and leaked secrets."
 }

@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "cursor-sdk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to build apps, scripts and CI automations that run coding agents from TypeScript.",
   "author": {
     "name": "Cursor"
@@ -22,6 +22,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Cursor SDK",
+      "category": "developer_tools",
       "upstream": {
         "kind": "imported",
         "marketplace": "cursor",

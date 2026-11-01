@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "bigdata-com",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Financial news, filings, transcripts and company research from Bigdata.com.",
   "author": {
     "name": "RavenPack"
@@ -36,6 +36,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Bigdata.com",
+      "category": "market_data",
       "mark": "integrations/bigdata_com.svg",
       "upstream": {
         "kind": "imported",

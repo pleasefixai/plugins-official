@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "brex",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Expenses, receipts, bills, cards and travel from your Brex account.",
   "author": {
     "name": "Cursor"
@@ -20,6 +20,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Brex",
+      "category": "finance_ops",
       "mark": "integrations/brex.png",
       "upstream": {
         "kind": "imported",

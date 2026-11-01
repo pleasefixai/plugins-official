@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "ngs-analysis",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides for sequencing analyses: FASTQ QC, RNA-seq, variants, single-cell and microbiome.",
   "author": {
     "name": "OpenAI"
@@ -28,6 +28,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "NGS Analysis",
+      "category": "knowledge",
       "upstream": {
         "kind": "imported",
         "marketplace": "codex",

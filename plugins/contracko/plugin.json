@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "contracko",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Contracts, key terms, obligations and renewal deadlines from your Contracko account.",
   "author": {
     "name": "Contracko"
@@ -31,6 +31,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Contracko",
+      "category": "finance_ops",
       "mark": "integrations/contracko.png",
       "upstream": {
         "kind": "imported",

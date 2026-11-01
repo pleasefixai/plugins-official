@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "firecrawl",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Web search, page scraping and site crawls with Firecrawl.",
   "author": {
     "name": "Firecrawl"
@@ -10,6 +10,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Firecrawl",
+      "category": "knowledge",
       "mark": "integrations/firecrawl.png",
       "upstream": {
         "kind": "imported",

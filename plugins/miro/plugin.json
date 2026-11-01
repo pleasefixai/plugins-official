@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "miro",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Boards, diagrams, sticky notes and documents in your Miro workspace.",
   "author": {
     "name": "Miro"
@@ -49,6 +49,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Miro",
+      "category": "design",
       "mark": "integrations/miro.png",
       "upstream": {
         "kind": "imported",

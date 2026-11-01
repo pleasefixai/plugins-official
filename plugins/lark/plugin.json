@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "lark",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Docs, messages and groups in your Lark workspace.",
   "author": {
     "name": "Cursor"
@@ -19,6 +19,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Lark",
+      "category": "projects_time",
       "mark": "integrations/lark.svg",
       "upstream": {
         "kind": "imported",

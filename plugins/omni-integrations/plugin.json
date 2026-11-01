@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "omni-integrations",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to move Omni topics and metrics into Snowflake, Databricks and dbt semantic layers.",
   "author": {
     "name": "Omni"
@@ -24,6 +24,9 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Omni Integrations",
+      "category": "product_analytics",
+      "mark": "mark.png",
       "upstream": {
         "kind": "imported",
         "marketplace": "cursor",

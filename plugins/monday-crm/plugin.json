@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "monday-crm",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Contacts, accounts, deals and activities in your monday CRM boards.",
   "author": {
     "name": "monday.com"
@@ -28,6 +28,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "monday CRM",
+      "category": "crm",
       "mark": "integrations/monday_crm.png",
       "upstream": {
         "kind": "imported",
