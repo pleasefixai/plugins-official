@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "gsap-skills",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to build GSAP animations: tweens, timelines, ScrollTrigger, SplitText and React.",
   "author": {
     "name": "GSAP"
@@ -20,6 +20,9 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "GSAP",
+      "category": "developer_tools",
+      "mark": "mark.svg",
       "upstream": {
         "kind": "imported",
         "marketplace": "cursor",

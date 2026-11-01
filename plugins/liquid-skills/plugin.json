@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "liquid-skills",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to write accessible Shopify Liquid themes: sections, blocks, snippets and styles.",
   "author": {
     "name": "Shopify"
@@ -19,6 +19,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Shopify Liquid",
+      "category": "developer_tools",
       "upstream": {
         "kind": "imported",
         "marketplace": "claude",

@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "govtribe",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Federal contract opportunities, awards, agencies and competitors from GovTribe.",
   "author": {
     "name": "GovTribe"
@@ -11,6 +11,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "GovTribe",
+      "category": "market_data",
       "upstream": {
         "kind": "imported",
         "marketplace": "claude",

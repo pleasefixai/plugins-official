@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "kapa",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Answers from your company's knowledge sources connected to Kapa: docs, tickets and wikis.",
   "author": {
     "name": "Kapa"
@@ -26,6 +26,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "kapa.ai",
+      "category": "knowledge",
       "mark": "integrations/kapa.svg",
       "upstream": {
         "kind": "imported",

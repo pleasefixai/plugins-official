@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "flexport",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Shipments, freight rates and bookings in your Flexport account.",
   "author": {
     "name": "Flexport"
@@ -16,6 +16,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Flexport",
+      "category": "other",
       "mark": "integrations/flexport.svg",
       "upstream": {
         "kind": "imported",

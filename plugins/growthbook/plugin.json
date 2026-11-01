@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "growthbook",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides for GrowthBook feature flags, A/B tests, metrics and product analytics dashboards.",
   "author": {
     "name": "GrowthBook"
@@ -17,6 +17,9 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "GrowthBook",
+      "category": "product_analytics",
+      "mark": "mark.png",
       "upstream": {
         "kind": "imported",
         "marketplace": "claude",

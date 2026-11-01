@@ -1,5 +1,5 @@
 {
   "name": "kong-konnect",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "API and AI gateways, control planes, services and developer portals in Kong Konnect."
 }

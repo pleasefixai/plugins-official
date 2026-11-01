@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "freightright",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Freight rates, quote requests, bookings and shipment tracking from Freight Right.",
   "author": {
     "name": "Freight Right"
@@ -27,6 +27,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Freight Right",
+      "category": "other",
       "mark": "integrations/freightright.svg",
       "upstream": {
         "kind": "imported",

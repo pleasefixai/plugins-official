@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "forge-skills",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Atlassian Forge app development: guides, docs search and design system components.",
   "author": {
     "name": "Atlassian"
@@ -19,6 +19,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Atlassian Forge",
+      "category": "developer_tools",
       "mark": "integrations/forge_skills_ads_mcp.png",
       "upstream": {
         "kind": "imported",

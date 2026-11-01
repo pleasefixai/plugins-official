@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "listen-labs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Customer research studies, interviews and their findings in Listen Labs.",
   "author": {
     "name": "Listen Labs"
@@ -17,6 +17,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Listen Labs",
+      "category": "knowledge",
       "mark": "integrations/listen_labs.png",
       "upstream": {
         "kind": "imported",

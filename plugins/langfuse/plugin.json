@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "langfuse",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to trace, evaluate and manage prompts in Langfuse, and to move to Langfuse.",
   "author": {
     "name": "Langfuse"
@@ -19,6 +19,9 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Langfuse",
+      "category": "developer_tools",
+      "mark": "mark.svg",
       "upstream": {
         "kind": "imported",
         "marketplace": "claude",
