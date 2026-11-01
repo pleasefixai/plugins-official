@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "mattpocock-skills",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides for engineering work: plan reviews, specs, tickets, TDD, code review and bug fixes.",
   "author": {
     "name": "Matt Pocock"
@@ -20,6 +20,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Matt Pocock",
+      "category": "developer_tools",
       "upstream": {
         "kind": "imported",
         "marketplace": "claude",

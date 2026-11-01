@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "landbase-agent-plugins",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "B2B lists of companies and people from Landbase, built and enriched from a search.",
   "author": {
     "name": "Landbase"
@@ -10,6 +10,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Landbase",
+      "category": "crm",
       "mark": "integrations/landbase_agent_plugins.png",
       "upstream": {
         "kind": "imported",

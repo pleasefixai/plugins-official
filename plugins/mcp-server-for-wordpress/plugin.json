@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "mcp-server-for-wordpress",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Posts, pages, media and users of your WordPress site, through miniOrange.",
   "author": {
     "name": "miniOrange"
@@ -21,6 +21,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "miniOrange for WordPress",
+      "category": "marketing",
       "upstream": {
         "kind": "imported",
         "marketplace": "cursor",

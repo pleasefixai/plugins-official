@@ -1,5 +1,5 @@
 {
   "name": "jfrog",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to connect package managers to JFrog Artifactory and to use the JFrog AI Catalog."
 }

@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "gojiberry",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Warm leads, buying signals and outreach campaigns in your Gojiberry workspace.",
   "author": {
     "name": "Gojiberry AI"
@@ -23,6 +23,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Gojiberry AI",
+      "category": "crm",
       "mark": "integrations/gojiberry.png",
       "upstream": {
         "kind": "imported",

@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "make",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Scenarios, AI agents and their runs in your Make organization.",
   "author": {
     "name": "Make"
@@ -21,6 +21,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Make",
+      "category": "automation",
       "mark": "integrations/make.png",
       "upstream": {
         "kind": "imported",

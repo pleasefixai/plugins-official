@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "manufact",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Your MCP servers and apps on Manufact, and the mcp-use documentation.",
   "author": {
     "name": "Manufact"
@@ -20,6 +20,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Manufact",
+      "category": "developer_tools",
       "mark": "integrations/manufact.svg",
       "upstream": {
         "kind": "imported",

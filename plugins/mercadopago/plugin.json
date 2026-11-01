@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "mercadopago",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Mercado Pago's payment APIs, documentation and integration checks.",
   "author": {
     "name": "Mercado Pago Developer Experience"
@@ -28,6 +28,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Mercado Pago",
+      "category": "developer_tools",
       "mark": "integrations/mercadopago.svg",
       "upstream": {
         "kind": "imported",

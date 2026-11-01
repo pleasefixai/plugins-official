@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "juicebox",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Candidate searches, shortlists and sourcing agents in Juicebox.",
   "author": {
     "name": "Cursor"
@@ -20,6 +20,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Juicebox",
+      "category": "other",
       "mark": "integrations/juicebox.svg",
       "upstream": {
         "kind": "imported",

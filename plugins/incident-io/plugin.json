@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "incident-io",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Incidents, on-call schedules, escalations and the service catalog in incident.io.",
   "author": {
     "name": "incident.io"
@@ -19,6 +19,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "incident.io",
+      "category": "developer_tools",
       "mark": "integrations/incident_io.png",
       "upstream": {
         "kind": "imported",

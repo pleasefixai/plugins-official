@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "kraken-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to trade spot and futures on Kraken: orders, risk, paper trades, staking and tax.",
   "author": {
     "name": "Kraken"
@@ -21,6 +21,9 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Kraken",
+      "category": "market_data",
+      "mark": "mark.svg",
       "upstream": {
         "kind": "imported",
         "marketplace": "cursor",

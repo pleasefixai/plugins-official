@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "grafana-cloud-mcp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Dashboards, metrics, logs, traces and alerts in your Grafana Cloud stack.",
   "author": {
     "name": "Grafana"
@@ -20,6 +20,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Grafana Cloud",
+      "category": "developer_tools",
       "upstream": {
         "kind": "imported",
         "marketplace": "claude",

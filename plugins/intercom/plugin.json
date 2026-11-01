@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "intercom",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Conversations, contacts, companies and help center articles in your Intercom workspace.",
   "author": {
     "name": "Intercom"
@@ -20,6 +20,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Intercom",
+      "category": "support",
       "upstream": {
         "kind": "imported",
         "marketplace": "claude",

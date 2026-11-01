@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "informatica-for-claude-platform",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to find trusted tables, columns, glossary terms and policies in Informatica CDGC.",
   "author": {
     "name": "Informatica"
@@ -10,6 +10,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Informatica",
+      "category": "developer_tools",
       "upstream": {
         "kind": "imported",
         "marketplace": "claude",

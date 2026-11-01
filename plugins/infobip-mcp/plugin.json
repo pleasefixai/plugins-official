@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "infobip-mcp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Messages, calls, verification codes, senders and account data on Infobip.",
   "author": {
     "name": "Infobip"
@@ -27,6 +27,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Infobip",
+      "category": "communication",
       "mark": "integrations/infobip_2fa.png",
       "upstream": {
         "kind": "imported",

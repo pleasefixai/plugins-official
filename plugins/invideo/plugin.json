@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "invideo",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Videos made with invideo AI: generated media, edited timelines and exports.",
   "author": {
     "name": "invideo AI"
@@ -20,6 +20,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "invideo AI",
+      "category": "design",
       "mark": "integrations/invideo.svg",
       "upstream": {
         "kind": "imported",

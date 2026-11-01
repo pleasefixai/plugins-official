@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "lusha",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Verified contacts, phone numbers, company signals and lookalike prospects from Lusha.",
   "author": {
     "name": "Lusha"
@@ -26,6 +26,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Lusha",
+      "category": "crm",
       "mark": "integrations/lusha.png",
       "upstream": {
         "kind": "imported",
