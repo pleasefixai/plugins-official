@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "datadog",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Logs, metrics, traces, monitors and incidents from your Datadog account (US1 site).",
   "author": {
     "name": "Datadog"
@@ -10,6 +10,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Datadog",
+      "category": "developer_tools",
       "mark": "integrations/datadog.png",
       "upstream": {
         "kind": "imported",

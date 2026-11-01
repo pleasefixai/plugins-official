@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "deriv",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Deriv API schemas, payload checks and guides for building trading apps.",
   "author": {
     "name": "Deriv"
@@ -21,6 +21,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Deriv",
+      "category": "developer_tools",
       "mark": "integrations/deriv.png",
       "upstream": {
         "kind": "imported",

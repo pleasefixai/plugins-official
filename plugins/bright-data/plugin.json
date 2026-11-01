@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "bright-data",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to search the web, scrape pages, drive browsers and write code with Bright Data.",
   "author": {
     "name": "Bright Data"
@@ -21,6 +21,9 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Bright Data",
+      "category": "knowledge",
+      "mark": "mark.png",
       "upstream": {
         "kind": "imported",
         "marketplace": "cursor",

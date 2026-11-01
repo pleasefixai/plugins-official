@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "duende-skills",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides for Duende IdentityServer, BFF and ASP.NET Core sign-in, tokens and authorization.",
   "author": {
     "name": "Duende Software"
@@ -25,6 +25,9 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Duende",
+      "category": "developer_tools",
+      "mark": "mark.png",
       "upstream": {
         "kind": "imported",
         "marketplace": "claude",

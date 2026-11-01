@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "docker-skills",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides for Dockerfiles, Compose, Docker Agent and Docker Sandboxes, with safe Docker use.",
   "author": {
     "name": "Docker"
@@ -20,6 +20,9 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Docker",
+      "category": "developer_tools",
+      "mark": "mark.png",
       "upstream": {
         "kind": "imported",
         "marketplace": "cursor",

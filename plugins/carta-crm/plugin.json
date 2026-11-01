@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "carta-crm",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Company profiles with industry and tags, researched from a website, for Carta CRM.",
   "author": {
     "name": "Carta Engineering"
@@ -26,6 +26,9 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Carta CRM",
+      "category": "private_markets",
+      "mark": "mark.svg",
       "upstream": {
         "kind": "imported",
         "marketplace": "claude",

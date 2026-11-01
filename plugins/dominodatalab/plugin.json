@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "dominodatalab",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides for Domino Data Lab projects, jobs, datasets, apps, experiments and model serving.",
   "author": {
     "name": "Domino Data Lab"
@@ -23,6 +23,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Domino Data Lab",
+      "category": "developer_tools",
       "upstream": {
         "kind": "imported",
         "marketplace": "claude",

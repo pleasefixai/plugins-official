@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "clearskies",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CRM records, meetings, call transcripts and email connected to your Clearskies workspace.",
   "author": {
     "name": "Clearskies"
@@ -24,6 +24,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Clearskies",
+      "category": "crm",
       "mark": "integrations/clearskies.png",
       "upstream": {
         "kind": "imported",

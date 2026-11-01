@@ -1,5 +1,5 @@
 {
   "name": "datahub-skills",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to search, enrich and trace lineage in DataHub, write SQL and build connectors."
 }

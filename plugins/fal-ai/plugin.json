@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "fal-ai",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Images, video, music, voice and 3D models generated from a prompt with fal.",
   "author": {
     "name": "fal"
@@ -17,6 +17,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "fal",
+      "category": "design",
       "mark": "integrations/fal_ai.png",
       "upstream": {
         "kind": "imported",

@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "celigo",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to build Celigo integrations: flows, exports, imports, mappings and EDI.",
   "author": {
     "name": "Celigo"
@@ -21,6 +21,9 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Celigo",
+      "category": "automation",
+      "mark": "mark.svg",
       "upstream": {
         "kind": "imported",
         "marketplace": "cursor",
