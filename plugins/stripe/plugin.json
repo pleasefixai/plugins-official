@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "stripe",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Payments, customers, invoices and subscriptions.",
   "extensions": {
     "ai.pleasefix.client": {
@@ -24,7 +24,9 @@
           "stripe-projects": "f50bdb39096e80876612dd824ebe22ae6a44867039098021848bda3c9ae3bf5d",
           "upgrade-stripe": "a0eabbf9e4eaa1118d8f0c40ba1f4a4544c2875d2140a79acc31b012763eda11"
         }
-      }
+      },
+      "displayName": "Stripe",
+      "category": "finance_ops"
     }
   }
 }

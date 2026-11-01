@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "spotify-ads-api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to plan, build, monitor and report on Spotify Ads campaigns, audiences and pixels.",
   "author": {
     "name": "Alex Murphy"
@@ -20,6 +20,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Spotify Ads API",
+      "category": "marketing",
       "upstream": {
         "kind": "imported",
         "marketplace": "claude",

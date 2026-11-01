@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "videogen",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Videos made in VideoGen from text, images or scripts, and exported as MP4.",
   "author": {
     "name": "VideoGen"
@@ -19,6 +19,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "VideoGen",
+      "category": "design",
       "mark": "integrations/videogen.png",
       "upstream": {
         "kind": "imported",

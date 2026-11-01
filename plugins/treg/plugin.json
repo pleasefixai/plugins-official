@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "treg",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "SEO, social, ad and company enrichment data from 4,000+ provider endpoints, through Treg.",
   "author": {
     "name": "Superdesign"
@@ -21,6 +21,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Treg",
+      "category": "marketing",
       "mark": "integrations/treg.svg",
       "upstream": {
         "kind": "imported",

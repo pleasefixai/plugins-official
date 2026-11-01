@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "snowflake",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to connect a Snowflake-managed server for Cortex Search, Cortex Analyst and SQL.",
   "author": {
     "name": "Snowflake"
@@ -20,6 +20,9 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Snowflake",
+      "category": "developer_tools",
+      "mark": "mark.svg",
       "upstream": {
         "kind": "imported",
         "marketplace": "cursor",

@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "upstash",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Redis, QStash, Vector and Search in your Upstash account, with guides for its SDKs.",
   "author": {
     "name": "Upstash"
@@ -28,6 +28,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Upstash",
+      "category": "developer_tools",
       "mark": "integrations/upstash.png",
       "upstream": {
         "kind": "imported",

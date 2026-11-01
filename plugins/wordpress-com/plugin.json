@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "wordpress-com",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Sites, posts, pages and media in your WordPress.com account.",
   "author": {
     "name": "WordPress.com"
@@ -19,6 +19,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "WordPress.com",
+      "category": "marketing",
       "mark": "integrations/wordpress_com.png",
       "upstream": {
         "kind": "imported",

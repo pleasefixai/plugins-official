@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "wingspan",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Contractors, payables and contractor payments in your Wingspan account.",
   "author": {
     "name": "Wingspan"
@@ -20,6 +20,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Wingspan",
+      "category": "finance_ops",
       "mark": "integrations/wingspan.png",
       "upstream": {
         "kind": "imported",

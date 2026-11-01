@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "token-security",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Identities, non-human identities, AI agents, secrets and findings from Token Security.",
   "author": {
     "name": "Token Security"
@@ -21,6 +21,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Token Security",
+      "category": "developer_tools",
       "mark": "integrations/token_security.png",
       "upstream": {
         "kind": "imported",

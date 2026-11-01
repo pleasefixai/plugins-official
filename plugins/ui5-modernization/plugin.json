@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "ui5-modernization",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to modernize SAPUI5 apps: deprecated APIs, globals, manifests and test setup.",
   "author": {
     "name": "SAP SE"
@@ -19,6 +19,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "UI5 Modernization",
+      "category": "developer_tools",
       "upstream": {
         "kind": "imported",
         "marketplace": "claude",

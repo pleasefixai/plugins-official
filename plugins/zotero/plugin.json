@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
   "name": "zotero",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to search a Zotero library, export BibTeX, insert citations and import references.",
   "author": {
     "name": "OpenAI"
@@ -21,6 +21,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Zotero",
+      "category": "knowledge",
       "upstream": {
         "kind": "imported",
         "marketplace": "codex",
