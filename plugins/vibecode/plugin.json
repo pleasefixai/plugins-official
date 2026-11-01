@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "vibecode",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "iPhone apps and web apps that you build by chat in Vibecode.",
   "author": {
     "name": "Vibecode"
@@ -20,6 +20,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Vibecode",
+      "category": "developer_tools",
       "mark": "integrations/vibecode.png",
       "upstream": {
         "kind": "imported",

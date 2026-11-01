@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "superme",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Answers from the SuperMe profiles of founders and executives, and from its work groups.",
   "author": {
     "name": "SuperMe"
@@ -23,6 +23,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "SuperMe",
+      "category": "knowledge",
       "mark": "integrations/superme.png",
       "upstream": {
         "kind": "imported",

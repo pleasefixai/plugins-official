@@ -29,13 +29,9 @@ plugins=$(
     dir=${dir%/}
     rows=("$dir/$ext_key"/integrations/*.json)
     skills=("$dir"/skills/*/SKILL.md)
-    category=other
-    if ((${#rows[@]} == 1)); then
-      category=$(jq -er '.group' "${rows[0]}") || { echo "$dir: the row has no group" >&2; exit 1; }
-    fi
     logos=$("$scripts/row-logos.sh" "$dir" | jq -R -n '[inputs | split("\t") | {key: (.[1] | ltrimstr("row-") | sub("\\.[^.]*$"; "")), value: .[1]}] | from_entries')
     row_list=$(for row in "${rows[@]}"; do jq . "$row"; done | jq -s 'sort_by(.id)')
-    jq --arg folder "${dir#plugins/}" --arg category "$category" \
+    jq --arg folder "${dir#plugins/}" \
       --argjson mcps ${#rows[@]} --argjson skills ${#skills[@]} \
       --argjson rows "$row_list" --argjson logos "$logos" \
       --arg base "$base" --arg key "$ext_key" '
@@ -47,12 +43,13 @@ plugins=$(
       | "\($base)/\($name)@\($version)" as $release
       | {
           name: $name,
+          displayName: need($ext.displayName; "displayName"),
           description: need(.description; "description"),
           author: (.author | if type == "object" then .name else . end | if . == "" then null else . end),
           homepage: .homepage,
           license: .license,
           keywords: (.keywords // []),
-          category: $category,
+          category: need($ext.category; "category"),
           mark: (if $ext.mark then "\($release)/mark.\($ext.mark | split(".") | last)" else null end),
           format: ($ext.format // false),
           required: ($ext.required // false),

@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "streaming-skills-plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides for Kafka clients, Kafka Streams, Flink SQL, UDFs and Schema Registry on Confluent.",
   "author": {
     "name": "Confluent"
@@ -16,6 +16,9 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Confluent",
+      "category": "developer_tools",
+      "mark": "mark.png",
       "upstream": {
         "kind": "imported",
         "marketplace": "claude",

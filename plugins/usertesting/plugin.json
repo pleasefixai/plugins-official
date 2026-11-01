@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "usertesting",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Tests, sessions and customer feedback from your UserTesting account.",
   "author": {
     "name": "UserTesting"
@@ -17,6 +17,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "UserTesting",
+      "category": "knowledge",
       "mark": "integrations/usertesting.png",
       "upstream": {
         "kind": "imported",

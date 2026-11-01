@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "setup-mcp-agent-analytics",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to send the tool calls of your own tool servers to Pendo Agent Analytics.",
   "author": {
     "name": "Pendo"
@@ -17,6 +17,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Pendo Agent Analytics for MCP",
+      "category": "product_analytics",
       "upstream": {
         "kind": "imported",
         "marketplace": "claude",

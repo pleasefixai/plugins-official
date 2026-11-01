@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "thousandeyes",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Network tests, alerts, outages and path views from your Cisco ThousandEyes account.",
   "author": {
     "name": "Cisco ThousandEyes"
@@ -19,6 +19,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Cisco ThousandEyes",
+      "category": "developer_tools",
       "upstream": {
         "kind": "imported",
         "marketplace": "cursor",

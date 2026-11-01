@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "turso",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Organizations, databases and groups in Turso Cloud, and SQL queries on them.",
   "author": {
     "name": "Turso"
@@ -19,6 +19,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Turso",
+      "category": "developer_tools",
       "mark": "integrations/turso.png",
       "upstream": {
         "kind": "imported",

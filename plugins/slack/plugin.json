@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "slack",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Messages, threads and search from your Slack workspace.",
   "extensions": {
     "ai.pleasefix.client": {
@@ -23,7 +23,9 @@
           "slack-search": "206815fef7f27e487ae49def1944599d3351de0e9c7974ca7cbc5a642c868f4c",
           "test-slack-app": "5e1ba3cb113b340cbb1e890bb08aa15806cf277830e647d0cf21c9d63b06ff29"
         }
-      }
+      },
+      "displayName": "Slack",
+      "category": "communication"
     }
   }
 }

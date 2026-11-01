@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "synthflow",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Voice agents and their calls in Synthflow, with reviews of calls and agent prompts.",
   "author": {
     "name": "Synthflow"
@@ -19,6 +19,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Synthflow",
+      "category": "communication",
       "mark": "integrations/synthflow.png",
       "upstream": {
         "kind": "imported",

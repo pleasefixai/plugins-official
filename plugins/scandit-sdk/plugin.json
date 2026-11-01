@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "scandit-sdk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides and docs to add Scandit barcode scanning and ID capture to your apps.",
   "author": {
     "name": "Scandit"
@@ -40,6 +40,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Scandit",
+      "category": "developer_tools",
       "mark": "integrations/scandit_sdk.svg",
       "upstream": {
         "kind": "imported",

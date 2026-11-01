@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "youdotcom-agent-skills",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Web search, research with citations and page content from You.com.",
   "author": {
     "name": "You.com"
@@ -29,6 +29,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "You.com",
+      "category": "knowledge",
       "mark": "integrations/youdotcom_agent_skills.svg",
       "upstream": {
         "kind": "imported",

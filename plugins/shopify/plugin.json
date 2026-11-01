@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "shopify",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Shopify stores to build and run: products, pages, design and settings.",
   "author": {
     "name": "Shopify"
@@ -10,6 +10,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Shopify",
+      "category": "other",
       "mark": "integrations/shopify.png",
       "upstream": {
         "kind": "imported",

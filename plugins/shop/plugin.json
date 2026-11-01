@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "shop",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Products from millions of stores, with carts, checkout and orders in Shop.",
   "author": {
     "name": "Shopify"
@@ -28,6 +28,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Shop",
+      "category": "other",
       "upstream": {
         "kind": "imported",
         "marketplace": "cursor",

@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "slides",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Presentations in your Slides.com account, to create, edit and share.",
   "author": {
     "name": "Slides.com"
@@ -16,6 +16,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Slides.com",
+      "category": "design",
       "mark": "integrations/slides.svg",
       "upstream": {
         "kind": "imported",

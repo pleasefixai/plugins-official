@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "sideshift",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "UGC campaigns, creators, contracts, messages and payouts in your SideShift company.",
   "author": {
     "name": "SideShift"
@@ -23,6 +23,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "SideShift",
+      "category": "marketing",
       "mark": "integrations/sideshift.png",
       "upstream": {
         "kind": "imported",

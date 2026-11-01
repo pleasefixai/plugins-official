@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "valtown",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Vals, HTTP endpoints, crons and SQLite data in your Val Town account.",
   "author": {
     "name": "Val Town"
@@ -19,6 +19,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Val Town",
+      "category": "developer_tools",
       "mark": "integrations/valtown.svg",
       "upstream": {
         "kind": "imported",

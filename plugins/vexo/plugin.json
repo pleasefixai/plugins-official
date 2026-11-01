@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "vexo",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Spoken requests from your Vexo Band, run as tasks with the results sent back to Vexo.",
   "author": {
     "name": "VexoAI"
@@ -20,6 +20,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Vexo",
+      "category": "automation",
       "mark": "integrations/vexo.svg",
       "upstream": {
         "kind": "imported",

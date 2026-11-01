@@ -1,5 +1,5 @@
 {
   "name": "vsql-extension-builder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to install a VillageSQL server and build VillageSQL extensions for MySQL."
 }

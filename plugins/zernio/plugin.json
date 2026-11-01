@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "zernio",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Social posts, schedules, comments, messages and ads on 14 networks, through Zernio.",
   "author": {
     "name": "Zernio"
@@ -24,6 +24,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Zernio",
+      "category": "marketing",
       "mark": "integrations/zernio.svg",
       "upstream": {
         "kind": "imported",

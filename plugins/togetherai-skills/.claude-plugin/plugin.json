@@ -1,5 +1,5 @@
 {
   "name": "togetherai-skills",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides for Together AI inference, fine-tuning, embeddings, images, video, audio and GPUs."
 }

@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "test-android-apps",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to test Android apps in an emulator, with screenshots, UI trees, logs and profiles.",
   "author": {
     "name": "OpenAI"
@@ -25,6 +25,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Test Android Apps",
+      "category": "developer_tools",
       "upstream": {
         "kind": "imported",
         "marketplace": "codex",

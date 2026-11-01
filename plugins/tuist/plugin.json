@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "tuist",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Builds, test runs, bundles and cache runs from your Tuist dashboard.",
   "author": {
     "name": "Tuist"
@@ -23,6 +23,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Tuist",
+      "category": "developer_tools",
       "mark": "integrations/tuist.svg",
       "upstream": {
         "kind": "imported",

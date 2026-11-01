@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "wonder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Designs on a Wonder canvas, where each design is real code.",
   "author": {
     "name": "Wonder"
@@ -21,6 +21,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Wonder",
+      "category": "design",
       "upstream": {
         "kind": "imported",
         "marketplace": "cursor",

@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "x",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Posts, timelines, trends, Spaces, communities, lists and bookmarks on X.",
   "author": {
     "name": "Cursor"
@@ -28,6 +28,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "X",
+      "category": "marketing",
       "mark": "integrations/x.png",
       "upstream": {
         "kind": "imported",

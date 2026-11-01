@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "scylladb",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to connect to ScyllaDB Cloud, design CQL tables and run vector search.",
   "author": {
     "name": "ScyllaDB"
@@ -22,6 +22,9 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "ScyllaDB",
+      "category": "developer_tools",
+      "mark": "mark.svg",
       "upstream": {
         "kind": "imported",
         "marketplace": "cursor",

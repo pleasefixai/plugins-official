@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "ui-theme-designer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides for SAP Fiori design tokens, theme parameters and UI theme designer help.",
   "author": {
     "name": "SAP SE"
@@ -22,6 +22,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "SAP UI Theme Designer",
+      "category": "design",
       "upstream": {
         "kind": "imported",
         "marketplace": "claude",

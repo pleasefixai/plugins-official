@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "ryze-ai",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Google Ads, Meta Ads, GA4, Search Console and SEO data in your Ryze workspace.",
   "author": {
     "name": "Ryze AI"
@@ -41,6 +41,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Ryze AI",
+      "category": "marketing",
       "mark": "integrations/ryze_ai.png",
       "upstream": {
         "kind": "imported",

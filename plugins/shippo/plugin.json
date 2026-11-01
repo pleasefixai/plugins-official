@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "shippo",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Shipping rates, labels, tracking and address checks for 40+ carriers, through Shippo.",
   "author": {
     "name": "Shippo"
@@ -22,6 +22,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Shippo",
+      "category": "other",
       "mark": "integrations/shippo.svg",
       "upstream": {
         "kind": "imported",

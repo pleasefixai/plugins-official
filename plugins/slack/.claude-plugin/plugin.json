@@ -1,5 +1,5 @@
 {
   "name": "slack",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Messages, threads and search from your Slack workspace."
 }
