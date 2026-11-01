@@ -1,12 +1,14 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "mintlify",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Mintlify's own documentation, to build and configure documentation sites.",
   "homepage": "https://www.mintlify.com/",
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Mintlify",
+      "category": "developer_tools",
       "mark": "integrations/mintlify.svg",
       "upstream": {
         "kind": "imported",

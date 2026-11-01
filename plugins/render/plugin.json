@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "render",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Services, deploys, logs and metrics of your apps on Render.",
   "author": {
     "name": "Render"
@@ -19,6 +19,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Render",
+      "category": "developer_tools",
       "mark": "integrations/render.svg",
       "upstream": {
         "kind": "imported",

@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "nvidia",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides for NVIDIA AI-Q research, cuOpt, Dynamo serving, NemoClaw and Omniverse USD.",
   "author": {
     "name": "NVIDIA"
@@ -26,6 +26,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "NVIDIA",
+      "category": "developer_tools",
       "upstream": {
         "kind": "imported",
         "marketplace": "codex",

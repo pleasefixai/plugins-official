@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "migma",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Email campaigns, designs, audiences and sends in your Migma account.",
   "author": {
     "name": "Migma AI"
@@ -20,6 +20,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Migma",
+      "category": "marketing",
       "mark": "integrations/migma.svg",
       "upstream": {
         "kind": "imported",

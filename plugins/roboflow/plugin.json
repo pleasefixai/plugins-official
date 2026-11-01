@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "roboflow",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Datasets, annotations, model training and vision workflows in your Roboflow workspace.",
   "author": {
     "name": "Roboflow"
@@ -21,6 +21,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Roboflow",
+      "category": "developer_tools",
       "mark": "integrations/roboflow.svg",
       "upstream": {
         "kind": "imported",

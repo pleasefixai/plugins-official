@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "raisely",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Campaigns, donations, supporters and fundraisers in your Raisely account.",
   "author": {
     "name": "Raisely"
@@ -10,6 +10,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Raisely",
+      "category": "crm",
       "mark": "integrations/raisely.png",
       "upstream": {
         "kind": "imported",

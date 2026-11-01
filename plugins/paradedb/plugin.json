@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "paradedb",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "ParadeDB documentation: full-text search, vector search and analytics in Postgres.",
   "author": {
     "name": "ParadeDB"
@@ -10,6 +10,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "ParadeDB",
+      "category": "developer_tools",
       "mark": "integrations/paradedb.png",
       "upstream": {
         "kind": "imported",

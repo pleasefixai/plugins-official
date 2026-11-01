@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "motion",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Motion's animation documentation, CSS springs and, with Motion+, performance audits.",
   "author": {
     "name": "Motion"
@@ -23,6 +23,8 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "Motion",
+      "category": "developer_tools",
       "mark": "integrations/motion.svg",
       "upstream": {
         "kind": "imported",

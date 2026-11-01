@@ -1,7 +1,7 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "pagerduty",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guides to connect your PagerDuty account for incidents, services, schedules and on-call.",
   "author": {
     "name": "PagerDuty"
@@ -19,6 +19,9 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "displayName": "PagerDuty",
+      "category": "developer_tools",
+      "mark": "mark.svg",
       "upstream": {
         "kind": "imported",
         "marketplace": "cursor",
