@@ -1,5 +1,5 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "hyperframes",
   "version": "1.0.1",
   "description": "Guides to make videos, motion graphics, captions and slideshows in HTML with HyperFrames.",

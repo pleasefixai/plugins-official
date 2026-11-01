@@ -1,5 +1,5 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "meta-vr",
   "version": "1.0.1",
   "description": "Guides to build, profile and ship Meta Quest apps with Unity, WebXR and the Spatial SDK.",

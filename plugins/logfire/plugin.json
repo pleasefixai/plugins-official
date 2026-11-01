@@ -1,5 +1,5 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "logfire",
   "version": "1.0.1",
   "description": "Guides to set up Pydantic Logfire observability for an app and its infrastructure.",
