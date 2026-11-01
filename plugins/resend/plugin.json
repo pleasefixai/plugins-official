@@ -1,5 +1,5 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "resend",
   "version": "1.0.1",
   "description": "Emails, domains, audiences and broadcasts in your Resend account.",

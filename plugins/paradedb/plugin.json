@@ -1,5 +1,5 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "paradedb",
   "version": "1.0.1",
   "description": "ParadeDB documentation: full-text search, vector search and analytics in Postgres.",

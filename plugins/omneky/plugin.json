@@ -1,5 +1,5 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.1.0/plugin.schema.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "omneky",
   "version": "1.0.1",
   "description": "Ad campaigns, creatives, brand catalogue and results on Meta, Google, TikTok and more.",
