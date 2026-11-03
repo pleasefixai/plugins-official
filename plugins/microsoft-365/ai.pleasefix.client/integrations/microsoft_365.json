@@ -1,7 +1,7 @@
 {
   "id": "microsoft_365",
   "name": "Microsoft 365",
-  "description": "Mail, calendar, files and meetings through your firm's Microsoft 365 account.",
+  "description": "Mail in Outlook, calendar, files in OneDrive and SharePoint, and Teams meetings through your firm's Microsoft 365 account.",
   "group": "communication",
   "url": "https://mcp-ms365.pleasefix.ai/mcp",
   "headers": {
