@@ -1,5 +1,5 @@
 {
   "name": "microsoft-365",
-  "version": "1.2.1",
-  "description": "Mail, calendar, files and meetings through your firm's Microsoft 365 account."
+  "version": "1.2.2",
+  "description": "Mail in Outlook, calendar, files in OneDrive and SharePoint, and Teams meetings through your firm's Microsoft 365 account."
 }
