@@ -1,11 +1,6 @@
 ---
 name: authoring-dags
 description: Workflow and best practices for writing Apache Airflow DAGs. Use when the user wants to create a new DAG, write pipeline code, or asks about DAG patterns and conventions. For testing and debugging DAGs, see the testing-dags skill.
-hooks:
-  Stop:
-    - hooks:
-        - type: command
-          command: "echo 'Remember to test your DAG with the testing-dags skill'"
 ---
 
 # DAG Authoring Skill

@@ -4,18 +4,6 @@ description: Reviews DataHub connector implementations against 22 golden standar
 effort: high
 user-invocable: true
 allowed-tools: Bash(gh pr view *), Bash(gh pr diff *), Bash(gh pr list *), Bash(git diff *), Bash(git log *), Bash(git branch *), Bash(bash *gather-connector-context*), Bash(python *extract_aspects.py*)
-hooks:
-  SessionStart:
-    - type: prompt
-      prompt: |
-        DataHub Connector PR Review skill activated.
-
-        **Follow the workflow in order:**
-        1. Load golden standards from `${CLAUDE_SKILL_DIR}/standards/`
-        2. Create task checklist for progress tracking
-        3. Proceed with review mode (Full/Incremental/Specialized)
-
-        If pr-review-toolkit agents are available, use them for deep analysis. Otherwise, perform the checks manually using the fallback instructions in the skill.
 ---
 
 # DataHub Connector Review
