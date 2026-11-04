@@ -10,7 +10,6 @@ jobs:
   check:
     runs-on: ubuntu-24.04
     env:
-      GH_TOKEN: ${{ github.token }}
       GITLEAKS_VERSION: 8.30.1
       GITLEAKS_SHA256: 551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb
     steps:
@@ -31,7 +30,7 @@ jobs:
           previous=
           prev_tag=$(git tag -l 'index-*' | sort -V | tail -n 1)
           if [[ -n $prev_tag ]]; then
-            gh release download "$prev_tag" --pattern marketplace.json --output "$RUNNER_TEMP/previous.json"
+            curl -sSf --retry 3 https://plugins.pleasefix.ai/marketplace.json -o "$RUNNER_TEMP/previous.json"
             previous=$RUNNER_TEMP/previous.json
           fi
           for dir in plugins/*/; do basename "$dir"; done |

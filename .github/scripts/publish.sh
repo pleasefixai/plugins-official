@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
-# Release each plugin version that has no release yet, then release the index.
+# Upload each plugin version that has no tag yet, then upload the index.
 #
 # Usage: publish.sh [--dry-run]
 #
-# Run it from the repository root, with every tag fetched. It needs GH_TOKEN
-# and GITHUB_REPOSITORY. With --dry-run, it prints what it would release and
-# creates nothing. A run that fails halfway can run again: it skips each
-# version that already has a release.
+# Run it from the repository root, with every tag fetched. It needs R2_BUCKET,
+# R2_S3_ENDPOINT and the AWS_* credentials, and a token that can push tags. With
+# --dry-run, it prints what it would publish and writes nothing. A run that fails
+# halfway can run again: the same bytes at the same key are no change, and a
+# version that has its tag comes back from the bucket.
 set -euo pipefail
 shopt -s inherit_errexit nullglob
 
@@ -14,18 +15,28 @@ dry_run=false
 [[ ${1:-} == --dry-run ]] && dry_run=true
 
 scripts=$(dirname "$(realpath "$0")")
-repo=$GITHUB_REPOSITORY
+public=https://plugins.pleasefix.ai
 sha=$(git rev-parse HEAD)
-note=$(git log -1 --format=%s "$sha")
 work=$(mktemp -d)
 
 has_tag() { git rev-parse -q --verify "refs/tags/$1" >/dev/null; }
 
-release() {
+# put <file> <key> [mutable]
+put() {
   if $dry_run; then
-    echo "Dry run: would create the release $1 with: ${*:2}"
+    echo "Dry run: would upload $2."
   else
-    gh release create "$@"
+    "$scripts/r2-put.sh" "$@"
+  fi
+}
+
+# Tags come last: a version with its tag is in the bucket.
+push_tag() {
+  if $dry_run; then
+    echo "Dry run: would create the tag $1."
+  else
+    git tag "$1" "$sha"
+    git push --quiet origin "refs/tags/$1"
   fi
 }
 
@@ -33,7 +44,7 @@ release() {
 prev_tag=$(git tag -l 'index-*' | sort -V | tail -n 1)
 previous=$work/previous.json
 if [[ -n $prev_tag ]]; then
-  gh release download "$prev_tag" --repo "$repo" --pattern marketplace.json --output "$previous"
+  curl -sSf --retry 3 "$public/marketplace.json" -o "$previous"
   n=$((${prev_tag#index-} + 1))
 else
   echo '{"plugins": []}' >"$previous"
@@ -42,7 +53,7 @@ fi
 index_tag=index-$n
 echo "Previous index: ${prev_tag:-none}. New index: $index_tag."
 
-# 1-2. Release each plugin version that has no release yet.
+# 1-2. Upload each plugin version that has no tag yet.
 echo '{}' >"$work/facts.json"
 released=0
 for dir in plugins/*/; do
@@ -56,26 +67,22 @@ for dir in plugins/*/; do
   if [[ $listed == true ]]; then
     continue
   elif has_tag "$tag"; then
-    # Released by an earlier run that failed before its index.
-    echo "$tag: released, not in the index yet."
-    gh release download "$tag" --repo "$repo" --pattern "$(basename "$archive")" --dir "$work"
+    # Uploaded by an earlier run that failed before its index.
+    echo "$tag: uploaded, not in the index yet."
+    curl -sSf --retry 3 "$public/plugins/$name/$version/$(basename "$archive")" -o "$archive"
   else
     echo "$tag: new."
     "$scripts/pack.sh" "$dir" "$archive"
-    assets=("$archive")
+    folder=plugins/$name/$version
+    put "$archive" "$folder/$(basename "$archive")"
     mark=$(jq -r '.extensions["ai.pleasefix.client"].mark // empty' "$dir/plugin.json")
     if [[ -n $mark ]]; then
-      mkdir -p "$work/$tag"
-      cp "$dir/ai.pleasefix.client/$mark" "$work/$tag/mark.${mark##*.}"
-      assets+=("$work/$tag/mark.${mark##*.}")
+      put "$dir/ai.pleasefix.client/$mark" "$folder/mark.${mark##*.}"
     fi
     while IFS=$'\t' read -r logo asset; do
-      mkdir -p "$work/$tag"
-      cp "$logo" "$work/$tag/$asset"
-      assets+=("$work/$tag/$asset")
+      put "$logo" "$folder/$asset"
     done < <("$scripts/row-logos.sh" "$dir")
-    release "$tag" "${assets[@]}" --repo "$repo" --target "$sha" --latest=false \
-      --title "$tag" --notes "$note"
+    push_tag "$tag"
     released=$((released + 1))
   fi
   jq --arg n "$name" --arg sha256 "$(sha256sum "$archive" | cut -d ' ' -f 1)" \
@@ -111,7 +118,9 @@ fi
 if ((released == 0)) && [[ -n $prev_tag ]]; then
   "$scripts/build-index.sh" "$prev_tag" "$work/facts.json" "$previous" >"$work/same.json"
   mkdir -p "$work/prev-assets"
-  gh release download "$prev_tag" --repo "$repo" --pattern 'requestable-*' --dir "$work/prev-assets" 2>/dev/null || true
+  for url in $(jq -r '.requestable[].mark // empty' "$previous"); do
+    curl -sSf --retry 3 "$url" -o "$work/prev-assets/$(basename "$url")"
+  done
   if [[ $(jq -S . "$work/same.json") == "$(jq -S . "$previous")" ]] &&
     diff -r --exclude marketplace.json "$work/index" "$work/prev-assets" >/dev/null; then
     echo "Nothing changed since $prev_tag. No new index."
@@ -119,15 +128,19 @@ if ((released == 0)) && [[ -n $prev_tag ]]; then
   fi
 fi
 
-release "$index_tag" "$work"/index/* --repo "$repo" --target "$sha" --latest \
-  --title "$index_tag" --notes "$note"
+# 5. Upload the index folder, then the current index, then the tag.
+for file in "$work"/index/*; do
+  put "$file" "indexes/$index_tag/$(basename "$file")"
+done
+put "$work/index/marketplace.json" marketplace.json mutable
+push_tag "$index_tag"
 
-# 5. Check that the new index is the latest release.
+# 6. Check that the bucket serves the new index.
 if ! $dry_run; then
-  latest=$(gh api "repos/$repo/releases/latest" --jq .tag_name)
-  if [[ $latest != "$index_tag" ]]; then
-    echo "The latest release is $latest, not $index_tag." >&2
+  curl -sSf --retry 3 -H 'Cache-Control: no-cache' "$public/marketplace.json" -o "$work/served.json"
+  if ! cmp -s "$work/index/marketplace.json" "$work/served.json"; then
+    echo "The bucket does not serve the index of $index_tag." >&2
     exit 1
   fi
-  echo "The latest release is $index_tag."
+  echo "The bucket serves $index_tag."
 fi
