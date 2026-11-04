@@ -2,7 +2,7 @@
   "id": "envoy",
   "name": "Envoy",
   "description": "Visitors, employees, desks and rooms in your Envoy workplace.",
-  "group": "other",
+  "group": "projects_time",
   "url": "https://mcp.envoy.com/mcp",
   "auth": {
     "scopes": [],
