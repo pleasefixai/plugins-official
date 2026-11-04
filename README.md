@@ -7,14 +7,14 @@ This repository holds the official plugin catalog of the [Pleasefix](https://ple
 - `plugins/`: one folder per plugin, at its latest version. The version is in the plugin's `plugin.json`.
 - `requestable/`: the providers that a user can request in the app, but that the catalog does not offer yet.
 
-## Releases
+## Where the catalog is published
 
-Each plugin version is a release, with the tag `<name>@<version>`. The release holds the plugin's archive and its logo. Releases keep every version, also the versions that the repository no longer holds.
+The catalog is published to `plugins.pleasefix.ai`. Each plugin version has a folder, `plugins/<name>/<version>/`, with the plugin's archive and its logo, and a tag, `<name>@<version>`. The folders keep every version, also the versions that the repository no longer holds.
 
-Each publish also makes an index release, with the tag `index-<n>`. The newest index release is marked "latest". The app reads the index at this address:
+Each publish also makes a folder, `indexes/index-<n>/`, and a tag, `index-<n>`. The app reads the current index at this address:
 
 ```
-https://github.com/pleasefixai/plugins-official/releases/latest/download/marketplace.json
+https://plugins.pleasefix.ai/marketplace.json
 ```
 
 ## Who writes the plugins

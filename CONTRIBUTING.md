@@ -13,9 +13,9 @@ The `check` workflow runs on each pull request and checks these rules.
 
 ## Publishing
 
-Do not create releases or tags by hand. When a pull request merges into `main`, the `publish` workflow does these steps:
+Do not create tags by hand. When a pull request merges into `main`, the `publish` workflow does these steps:
 
-1. It packs each plugin version that has no release yet, and releases it with the tag `<name>@<version>`.
-2. It generates the index, `marketplace.json`, and releases it with the tag `index-<n>`, marked "latest".
+1. It packs each plugin version that has no tag yet, uploads it to `plugins.pleasefix.ai`, and adds the tag `<name>@<version>`.
+2. It generates the index, `marketplace.json`, uploads it, and adds the tag `index-<n>`.
 
 To see what a publish would do, run the `publish` workflow by hand with `dry_run` set. It creates nothing.

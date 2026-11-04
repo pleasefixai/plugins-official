@@ -4,8 +4,8 @@
 #
 # Usage: build-index.sh <index tag> <facts.json> [<previous index>]
 #
-# Run it from the repository root. <index tag> is the tag of the index release
-# that will hold the requestable logos. <facts.json> maps a plugin name to
+# Run it from the repository root. <index tag> names the index's folder in the
+# bucket, which holds the requestable logos. <facts.json> maps a plugin name to
 # {"sha256", "size"} of its latest version's archive. A plugin with no facts
 # takes them from the previous index, which must then list its latest version.
 # Each plugin's older versions come from the previous index, as they are.
@@ -20,7 +20,7 @@ if [[ -z $previous ]]; then
   echo '{"plugins": []}' >"$previous"
 fi
 
-base="https://github.com/${GITHUB_REPOSITORY:-pleasefixai/plugins-official}/releases/download"
+base=https://plugins.pleasefix.ai
 ext_key='ai.pleasefix.client'
 scripts=$(dirname "$(realpath "$0")")
 
@@ -40,7 +40,7 @@ plugins=$(
       | if $name != $folder then error("\($folder): plugin.json names \($name)") else . end
       | need(.version; "version") as $version
       | need(.extensions[$key]; "extension \($key)") as $ext
-      | "\($base)/\($name)@\($version)" as $release
+      | "\($base)/plugins/\($name)/\($version)" as $release
       | {
           name: $name,
           displayName: need($ext.displayName; "displayName"),
@@ -72,7 +72,7 @@ requestable=$(
     for ext in svg png; do
       [[ -f ${file%.json}.$ext ]] && { mark=$ext; break; }
     done
-    jq --arg mark "$mark" --arg release "$base/$index_tag" '
+    jq --arg mark "$mark" --arg release "$base/indexes/$index_tag" '
       {id, name, description, category}
       + (if $mark != "" then {mark: "\($release)/requestable-\(.id).\($mark)"} else {} end)' "$file"
   done

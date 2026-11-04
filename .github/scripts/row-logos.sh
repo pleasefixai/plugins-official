@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # List the row logos of one plugin folder, one per line: the logo's path, a
-# tab, and its asset name in the plugin's release (row-<id>.<ext>). A row's
+# tab, and its name in the version's folder (row-<id>.<ext>). A row's
 # logo is integrations/<id>.svg, or else integrations/<id>.png.
 #
 # Usage: row-logos.sh <plugin folder>
