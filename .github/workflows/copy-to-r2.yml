@@ -1,0 +1,44 @@
+name: copy-to-r2
+
+# Run by hand, once, when the catalog moves off GitHub releases. The next pull
+# request removes it.
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Check every download against the index, and write nothing.
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+jobs:
+  copy:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    environment: publish
+    env:
+      GH_TOKEN: ${{ github.token }}
+      AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      AWS_DEFAULT_REGION: auto
+      # R2 refuses the checksums newer AWS tools add by default.
+      AWS_REQUEST_CHECKSUM_CALCULATION: when_required
+      AWS_RESPONSE_CHECKSUM_VALIDATION: when_required
+      R2_S3_ENDPOINT: ${{ secrets.R2_S3_ENDPOINT }}
+      R2_BUCKET: ${{ secrets.R2_BUCKET }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+
+      - name: Fetch the tags
+        run: git fetch --tags --force origin
+
+      - name: Copy
+        run: .github/scripts/copy-to-r2.sh ${{ inputs.dry_run && '--dry-run' || '' }}
