@@ -2,7 +2,7 @@
   "id": "windmill_hr",
   "name": "Windmill HR",
   "description": "Performance reviews, feedback, 1:1s and pulse surveys in your Windmill workspace.",
-  "group": "other",
+  "group": "crm",
   "url": "https://mcp.gowindmill.com/mcp",
   "auth": {
     "scopes": [],

@@ -2,7 +2,7 @@
   "id": "sonos",
   "name": "Sonos",
   "description": "Music, radio, Sonos favorites and playlists played on your Sonos speakers.",
-  "group": "other",
+  "group": "automation",
   "url": "https://mcp.ws.sonos.com/mcp",
   "auth": {
     "scopes": [],

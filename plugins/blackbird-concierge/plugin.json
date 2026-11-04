@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "blackbird-concierge",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Restaurant search and reservations on OpenTable, Resy and SevenRooms, through Blackbird.",
   "author": {
     "name": "Blackbird"

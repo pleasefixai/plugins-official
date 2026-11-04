@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "shop",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Products from millions of stores, with carts, checkout and orders in Shop.",
   "author": {
     "name": "Shopify"
