@@ -1,12 +1,6 @@
 ---
 name: migrating-dagster-to-airflow
 description: Guide for migrating Dagster projects to Apache Airflow 3 on Astro. Use when the user mentions migrating, converting, or porting Dagster (or Dagster+) code to Airflow or Astro, wants to plan or assess such a migration, or asks what a Dagster construct maps to in Airflow. Covers assets, partitions, schedules, sensors, declarative automation, resources, IO managers, ops/jobs, dbt, Pipes, Components, and Dagster+ platform config. Always load this skill as the first step for any Dagster-to-Airflow request.
-hooks:
-  PostToolUse:
-    - matcher: "Edit"
-      hooks:
-        - type: command
-          command: "echo 'Migrated DAG edited: consider re-running gates 1-3: python3 scripts/validate_dag.py <astro_project> --manifest manifest.json'"
 ---
 
 # Dagster → Airflow 3 (Astro) migration

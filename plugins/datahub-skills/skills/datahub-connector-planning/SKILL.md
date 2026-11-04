@@ -5,19 +5,6 @@ description: |
 user-invocable: true
 effort: high
 allowed-tools: Bash(pip index versions *), Bash(ls *), Bash(find * -name * -type *), Bash(grep * --include=*.py *)
-hooks:
-  SessionStart:
-    - type: prompt
-      prompt: |
-        DataHub Connector Planning skill activated.
-
-        **Follow the 4-step workflow in order:**
-        1. Classify the source system type
-        2. Research the source using the connector-researcher agent
-        3. Gather user requirements and create the planning document
-        4. Present summary and get user approval
-
-        Ask the user which source system they want to build a connector for if not already specified.
 ---
 
 # DataHub Connector Planning
