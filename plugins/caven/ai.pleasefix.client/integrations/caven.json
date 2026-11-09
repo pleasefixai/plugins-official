@@ -1,0 +1,31 @@
+{
+  "id": "caven",
+  "name": "Caven",
+  "description": "Meeting recordings, transcripts, summaries and action items from your Caven account.",
+  "group": "meetings",
+  "url": "https://api.caven.io/mcp",
+  "auth": {
+    "scopes": [
+      "recordings:personal",
+      "recordings:shared",
+      "recordings:list",
+      "recordings:get",
+      "transcripts:list",
+      "summaries:list",
+      "action-items:list",
+      "speakers:list",
+      "tags:list",
+      "organization:get",
+      "organization:users",
+      "teams:list",
+      "folders:list"
+    ],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "dcr"
+    }
+  },
+  "unstated_lifetime": "open_ended"
+}
