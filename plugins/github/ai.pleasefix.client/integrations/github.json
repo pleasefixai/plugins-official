@@ -7,10 +7,15 @@
   "auth": {
     "scopes": [],
     "discovery": {
-      "mode": "discover"
+      "mode": "static",
+      "issuer": "https://github.com/login/oauth",
+      "authorization_endpoint": "https://github.com/login/oauth/authorize",
+      "token_endpoint": "https://cloud.pleasefix.ai/oauth/github/token",
+      "resource": "https://api.githubcopilot.com/mcp/"
     },
     "registration": {
-      "mode": "auto"
+      "mode": "provided",
+      "client_id": "Iv23lifR7yQvLdUUKUaZ"
     }
   }
 }
