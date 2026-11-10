@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "github",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Repositories, pull requests, issues and Actions runs on GitHub.",
   "author": {
     "name": "OpenAI"
