@@ -7,10 +7,17 @@
   "auth": {
     "scopes": [],
     "discovery": {
-      "mode": "discover"
+      "mode": "static",
+      "issuer": "https://mcp.hubspot.com",
+      "authorization_endpoint": "https://mcp.hubspot.com/oauth/authorize/user",
+      "token_endpoint": "https://cloud.pleasefix.ai/oauth/hubspot/token",
+      "resource": "https://mcp.hubspot.com"
     },
     "registration": {
-      "mode": "auto"
+      "mode": "provided",
+      "client_id": "29a63169-ac62-4103-a975-651bdbeea826"
     }
-  }
+  },
+  "callback_port": 53220,
+  "redirect_uri": "https://cloud.pleasefix.ai/oauth/hubspot/callback"
 }
