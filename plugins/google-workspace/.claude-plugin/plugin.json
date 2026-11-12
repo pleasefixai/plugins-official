@@ -1,0 +1,5 @@
+{
+  "name": "google-workspace",
+  "version": "1.0.0",
+  "description": "Gmail, Drive and Calendar from your Google Workspace account. It reads mail, files and events, and writes Gmail drafts."
+}

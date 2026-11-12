@@ -1,0 +1,49 @@
+{
+  "id": "google_workspace",
+  "name": "Google Workspace",
+  "description": "Mail, files and events in your Google Workspace account. Reads Gmail, Drive and Calendar, and writes Gmail drafts.",
+  "group": "communication",
+  "command": "uvx",
+  "args": [
+    "workspace-mcp==2.3.0",
+    "--transport",
+    "streamable-http",
+    "--permissions",
+    "gmail:readonly+drafts",
+    "drive:readonly",
+    "calendar:readonly"
+  ],
+  "environment": {
+    "MCP_ENABLE_OAUTH21": "true",
+    "EXTERNAL_OAUTH21_PROVIDER": "true",
+    "GOOGLE_OAUTH_CLIENT_ID": "PLEASEFIX_GOOGLE_CLIENT_ID.apps.googleusercontent.com"
+  },
+  "listen": {
+    "port_variable": "WORKSPACE_MCP_PORT",
+    "host_variable": "WORKSPACE_MCP_HOST",
+    "key_variable": "FASTMCP_SERVER_AUTH_GOOGLE_JWT_SIGNING_KEY",
+    "path": "/mcp"
+  },
+  "auth": {
+    "scopes": [
+      "openid",
+      "https://www.googleapis.com/auth/userinfo.email",
+      "https://www.googleapis.com/auth/userinfo.profile",
+      "https://www.googleapis.com/auth/gmail.readonly",
+      "https://www.googleapis.com/auth/gmail.compose",
+      "https://www.googleapis.com/auth/drive.readonly",
+      "https://www.googleapis.com/auth/calendar.readonly"
+    ],
+    "discovery": {
+      "mode": "static",
+      "issuer": "https://accounts.google.com",
+      "authorization_endpoint": "https://accounts.google.com/o/oauth2/v2/auth",
+      "token_endpoint": "https://cloud.pleasefix.ai/oauth/google/token"
+    },
+    "registration": {
+      "mode": "provided",
+      "client_id": "PLEASEFIX_GOOGLE_CLIENT_ID.apps.googleusercontent.com"
+    }
+  },
+  "writes": true
+}

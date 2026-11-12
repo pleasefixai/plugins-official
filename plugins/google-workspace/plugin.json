@@ -1,0 +1,25 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "google-workspace",
+  "version": "1.0.0",
+  "description": "Gmail, Drive and Calendar from your Google Workspace account. It reads mail, files and events, and writes Gmail drafts.",
+  "homepage": "https://github.com/taylorwilsdon/google_workspace_mcp",
+  "license": "MIT",
+  "keywords": [
+    "google",
+    "google workspace",
+    "gmail",
+    "drive",
+    "calendar",
+    "mail",
+    "drafts"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.11.10",
+      "displayName": "Google Workspace",
+      "category": "communication",
+      "mark": "integrations/google_workspace.svg"
+    }
+  }
+}
