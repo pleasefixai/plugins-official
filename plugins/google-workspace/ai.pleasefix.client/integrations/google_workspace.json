@@ -16,7 +16,7 @@
   "environment": {
     "MCP_ENABLE_OAUTH21": "true",
     "EXTERNAL_OAUTH21_PROVIDER": "true",
-    "GOOGLE_OAUTH_CLIENT_ID": "PLEASEFIX_GOOGLE_CLIENT_ID.apps.googleusercontent.com"
+    "GOOGLE_OAUTH_CLIENT_ID": "720995605719-pv93l1d46l0jm9dragvcb8krggvi53is.apps.googleusercontent.com"
   },
   "listen": {
     "port_variable": "WORKSPACE_MCP_PORT",
@@ -42,7 +42,7 @@
     },
     "registration": {
       "mode": "provided",
-      "client_id": "PLEASEFIX_GOOGLE_CLIENT_ID.apps.googleusercontent.com"
+      "client_id": "720995605719-pv93l1d46l0jm9dragvcb8krggvi53is.apps.googleusercontent.com"
     }
   },
   "writes": true
