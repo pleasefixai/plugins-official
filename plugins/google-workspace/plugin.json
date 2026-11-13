@@ -16,7 +16,7 @@
   ],
   "extensions": {
     "ai.pleasefix.client": {
-      "engines": ">=26.11.10",
+      "engines": ">=26.11.10b2",
       "displayName": "Google Workspace",
       "category": "communication",
       "mark": "integrations/google_workspace.svg"
