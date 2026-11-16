@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "google-drive",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Files, folders, Docs, Sheets and Slides in your Google Drive.",
   "author": {
     "name": "OpenAI"
@@ -25,6 +25,7 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "withdrawn": true,
       "displayName": "Google Drive",
       "category": "storage",
       "upstream": {
