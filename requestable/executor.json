@@ -1,0 +1,7 @@
+{
+  "id": "executor",
+  "name": "Executor",
+  "description": "The tools you connect in Executor, plus the custom tools and automations you build.",
+  "category": "automation",
+  "homepage": "https://executor.sh"
+}

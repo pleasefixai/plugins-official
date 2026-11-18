@@ -1,0 +1,7 @@
+{
+  "id": "bitrise",
+  "name": "Bitrise",
+  "description": "Mobile app builds, workflows, tests and releases from your Bitrise workspace.",
+  "category": "developer_tools",
+  "homepage": "https://bitrise.io"
+}
