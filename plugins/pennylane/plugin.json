@@ -1,11 +1,12 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "pennylane",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Invoices, ledger entries and accounting records from your Pennylane account.",
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "withdrawn": true,
       "displayName": "Pennylane",
       "category": "finance_ops",
       "mark": "mark.png"

@@ -1,0 +1,7 @@
+{
+  "id": "rootly",
+  "name": "Rootly",
+  "description": "Incidents, alerts, on-call schedules and retrospectives in your Rootly account.",
+  "category": "developer_tools",
+  "homepage": "https://rootly.com"
+}

@@ -1,0 +1,7 @@
+{
+  "id": "upstash",
+  "name": "Upstash",
+  "description": "Redis, QStash, Vector and Search in your Upstash account, with guides for its SDKs.",
+  "category": "developer_tools",
+  "homepage": "https://upstash.com/"
+}

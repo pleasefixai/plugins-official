@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "zoom",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Meetings, recordings, transcripts and Docs from your Zoom account.",
   "author": {
     "name": "Zoom"
@@ -26,6 +26,7 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "withdrawn": true,
       "displayName": "Zoom",
       "category": "meetings",
       "mark": "integrations/zoom.png",

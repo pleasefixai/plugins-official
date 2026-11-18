@@ -1,0 +1,7 @@
+{
+  "id": "render",
+  "name": "Render",
+  "description": "Services, deploys, logs and metrics of your apps on Render.",
+  "category": "developer_tools",
+  "homepage": "https://render.com"
+}

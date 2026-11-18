@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "docusign",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Envelopes, templates, workflows and agreements in your Docusign account.",
   "author": {
     "name": "Cursor"
@@ -19,6 +19,7 @@
   "extensions": {
     "ai.pleasefix.client": {
       "engines": ">=26.10.0",
+      "withdrawn": true,
       "displayName": "Docusign",
       "category": "finance_ops",
       "mark": "integrations/docusign.png",
