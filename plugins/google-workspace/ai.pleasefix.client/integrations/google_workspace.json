@@ -1,7 +1,7 @@
 {
   "id": "google_workspace",
   "name": "Google Workspace",
-  "description": "Mail, files and events in your Google Workspace account. Reads Gmail, Drive and Calendar, and writes Gmail drafts.",
+  "description": "Mail, files and events in your Google Workspace account. Reads Gmail, Drive and Calendar, and writes, sends and labels Gmail mail.",
   "group": "communication",
   "command": "uvx",
   "args": [
@@ -9,7 +9,7 @@
     "--transport",
     "streamable-http",
     "--permissions",
-    "gmail:readonly+drafts",
+    "gmail:send",
     "drive:readonly",
     "calendar:readonly"
   ],
@@ -30,7 +30,10 @@
       "https://www.googleapis.com/auth/userinfo.email",
       "https://www.googleapis.com/auth/userinfo.profile",
       "https://www.googleapis.com/auth/gmail.readonly",
+      "https://www.googleapis.com/auth/gmail.labels",
+      "https://www.googleapis.com/auth/gmail.modify",
       "https://www.googleapis.com/auth/gmail.compose",
+      "https://www.googleapis.com/auth/gmail.send",
       "https://www.googleapis.com/auth/drive.readonly",
       "https://www.googleapis.com/auth/calendar.readonly"
     ],
