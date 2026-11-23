@@ -31,7 +31,10 @@ plugins=$(
     skills=("$dir"/skills/*/SKILL.md)
     logos=$("$scripts/row-logos.sh" "$dir" | jq -R -n '[inputs | split("\t") | {key: (.[1] | ltrimstr("row-") | sub("\\.[^.]*$"; "")), value: .[1]}] | from_entries')
     row_list=$(for row in "${rows[@]}"; do jq . "$row"; done | jq -s 'sort_by(.id)')
-    jq --arg folder "${dir#plugins/}" \
+    # The plugin's guide, as text. An empty file reads as no guide.
+    readme=/dev/null
+    [[ -f $dir/README.md ]] && readme=$dir/README.md
+    jq --arg folder "${dir#plugins/}" --rawfile readme "$readme" \
       --argjson mcps ${#rows[@]} --argjson skills ${#skills[@]} \
       --argjson rows "$row_list" --argjson logos "$logos" \
       --arg base "$base" --arg key "$ext_key" '
@@ -49,6 +52,7 @@ plugins=$(
           homepage: .homepage,
           license: .license,
           keywords: (.keywords // []),
+          readme: (if $readme == "" then null else $readme end),
           category: need($ext.category; "category"),
           mark: (if $ext.mark then "\($release)/mark.\($ext.mark | split(".") | last)" else null end),
           format: ($ext.format // false),
