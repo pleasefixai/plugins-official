@@ -3,6 +3,7 @@
   "name": "HubSpot",
   "description": "Contacts, companies, deals and tickets in your HubSpot CRM.",
   "group": "crm",
+  "precondition": "If HubSpot says you do not have install access, a Super Admin of your HubSpot account must approve Pleasefix under Settings › Integrations › Connected apps.",
   "url": "https://mcp.hubspot.com",
   "auth": {
     "scopes": [],
