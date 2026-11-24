@@ -1,0 +1,37 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "odoo",
+  "version": "1.0.0",
+  "description": "Your firm's Odoo database: contacts, sales, CRM, invoices, inventory and the other apps you run, through Odoo's own MCP server.",
+  "author": {
+    "name": "Pleasefix"
+  },
+  "homepage": "https://www.odoo.com/documentation/20.0/applications/productivity/ai/mcp_server.html",
+  "keywords": [
+    "odoo",
+    "erp",
+    "crm",
+    "sales",
+    "accounting",
+    "invoicing",
+    "inventory",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.11.6",
+      "displayName": "Odoo",
+      "category": "finance_ops",
+      "mark": "integrations/odoo.png",
+      "settings": {
+        "database_url": {
+          "type": "string",
+          "title": "Odoo address",
+          "description": "The address of your Odoo database as your browser shows it, with https:// and without a slash at the end.",
+          "required": true,
+          "example": "https://acme.odoo.com"
+        }
+      }
+    }
+  }
+}

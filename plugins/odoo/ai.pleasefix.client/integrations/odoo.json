@@ -1,0 +1,21 @@
+{
+  "id": "odoo",
+  "name": "Odoo",
+  "description": "Records in your firm's Odoo database: contacts, sales, CRM, invoices, inventory and more.",
+  "group": "finance_ops",
+  "url": "${settings.database_url}/mcp",
+  "auth": {
+    "scopes": [
+      "mcp"
+    ],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "cimd"
+    }
+  },
+  "writes": true,
+  "precondition": "Before you connect, an Odoo admin must add https://cloud.pleasefix.ai/api/oauth/client-metadata.json under Settings › Integrations › MCP OAuth in your database.",
+  "unstated_lifetime": "open_ended"
+}

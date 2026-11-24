@@ -1,0 +1,5 @@
+{
+  "name": "odoo",
+  "version": "1.0.0",
+  "description": "Your firm's Odoo database: contacts, sales, CRM, invoices, inventory and the other apps you run, through Odoo's own MCP server."
+}
