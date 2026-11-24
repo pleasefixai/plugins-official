@@ -1,0 +1,5 @@
+{
+  "name": "netdocuments",
+  "version": "1.0.0",
+  "description": "Your firm's NetDocuments: workspaces, folders and documents, through NetDocuments' own MCP server (ndConnect)."
+}

@@ -1,0 +1,36 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "netdocuments",
+  "version": "1.0.0",
+  "description": "Your firm's NetDocuments: workspaces, folders and documents, through NetDocuments' own MCP server (ndConnect).",
+  "author": {
+    "name": "Pleasefix"
+  },
+  "homepage": "https://www.netdocuments.com/ndconnect",
+  "keywords": [
+    "netdocuments",
+    "ndconnect",
+    "document management",
+    "dms",
+    "legal",
+    "matters",
+    "mcp"
+  ],
+  "extensions": {
+    "ai.pleasefix.client": {
+      "engines": ">=26.11.6",
+      "displayName": "NetDocuments",
+      "category": "storage",
+      "mark": "integrations/netdocuments.png",
+      "settings": {
+        "region": {
+          "type": "string",
+          "title": "Region",
+          "description": "The region where your firm's NetDocuments lives: us, uk, de, au or ca. The address you sign in at tells you which, as this plugin's README shows.",
+          "required": true,
+          "example": "uk"
+        }
+      }
+    }
+  }
+}

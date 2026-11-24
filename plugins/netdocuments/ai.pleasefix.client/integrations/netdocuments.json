@@ -1,0 +1,22 @@
+{
+  "id": "netdocuments",
+  "name": "NetDocuments",
+  "description": "Workspaces, folders and documents in your firm's NetDocuments.",
+  "group": "storage",
+  "url": "https://web-api.${settings.region}.netdocuments.app/connect/mcp",
+  "auth": {
+    "scopes": [
+      "read",
+      "organize",
+      "edit"
+    ],
+    "discovery": {
+      "mode": "discover"
+    },
+    "registration": {
+      "mode": "dcr"
+    }
+  },
+  "writes": true,
+  "precondition": "Your firm needs ndMAX Enterprise, and a NetDocuments admin must turn on AI connectors (ndConnect) in Security Center before you connect."
+}
